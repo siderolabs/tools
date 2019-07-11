@@ -1,0 +1,32 @@
+name: tcl
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.9/tcl-core8.6.9-src.tar.gz
+        destination: tcl.tar.gz
+        sha256: ae52393dca82d5bbc8cad9b95fcf0cf8375603480ee31e7a480a951ab7ecbb4e
+        sha512: 306a38a27729b764bae2eae6c4cdd8cd6aee5de6bd924d6a487c8691ee874e4459abc1fa785183c2f6ff4d2d57be98093dd7460c5a668cf994e8f1c31516ae67
+
+    prepare: |
+      tar -xzf tcl.tar.gz --strip-components=1
+      mkdir build
+      cd build
+      ../unix/configure \
+          --prefix=${TOOLCHAIN}
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs  install
+      chmod -v u+w /rootfs${TOOLCHAIN}/lib/libtcl8.6.so
+      make DESTDIR=/rootfs install-private-headers
+      ln -sv tclsh8.6 /rootfs${TOOLCHAIN}/bin/tclsh
