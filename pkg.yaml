@@ -1,0 +1,41 @@
+name: curl
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/libressl:3db5cb9
+  - image: docker.io/autonomy/zlib:4e1cd1f
+  - image: docker.io/autonomy/pkg-config:60373d8
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://curl.haxx.se/download/curl-7.63.0.tar.xz
+        destination: curl.tar.xz
+        sha256: 9600234c794bfb8a0d3f138e9294d60a20e7a5f10e35ece8cf518e2112d968c4
+        sha512: c905eb157c6b0093f1b1a506e4782b83af423fd6de1ce0ab5372164a686ef292ffb10d7999d3dec2de602f63ee41b65e1a1008409dd8c959a597644c0ecb395b
+
+    prepare: |
+      tar -xJf curl.tar.xz --strip-components=1
+      mkdir build
+      cd build
+
+      # This is required to avoid "One or more libs available at link-time are not available at run-time".
+      export PKG_CONFIG_PATH=${TOOLCHAIN}/lib/pkgconfig
+
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --disable-static \
+          --enable-threaded-resolver \
+          --with-ca-bundle=${TOOLCHAIN}/etc/ssl/certs/ca-certificates \
+          --with-zlib \
+          --with-ssl
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
