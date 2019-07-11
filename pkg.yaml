@@ -1,0 +1,38 @@
+name: pcre
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/zlib:4e1cd1f
+  - image: docker.io/autonomy/bzip2:33106f0
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.pcre.org/pub/pcre/pcre-8.43.tar.bz2
+        destination: pcre.tar.bz2
+        sha256: 91e762520003013834ac1adb4a938d53b22a216341c061b0cf05603b290faf6b
+        sha512: 3b4ac2c7ccd77c9575d07a33c3456f40b50731029e62d01fb8f2f5871d7118e12bc9e6bc7a8079769c765e38da5ecf98c4b261b10ff0a2f14f0881b434f67af7
+
+    prepare: |
+      tar -xjf pcre.tar.bz2 --strip-components=1
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+            --enable-unicode-properties \
+            --enable-pcre16 \
+            --enable-pcre32 \
+            --enable-pcregrep-libz \
+            --enable-pcregrep-libbz2 \
+            --disable-static
+            # TODO(andrewrynhard): Enable libreadline with: --enable-pcretest-libreadline
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
