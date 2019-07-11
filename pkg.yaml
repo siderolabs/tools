@@ -1,0 +1,37 @@
+name: musl-fts
+install:
+  - make
+  - m4
+  - libtool
+  - autoconf
+  - automake
+  - pkgconfig
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://github.com/pullmoll/musl-fts/archive/v1.2.7/musl-fts-1.2.7.tar.gz
+        destination: musl-fts.tar.gz
+        sha256: 49ae567a96dbab22823d045ffebe0d6b14b9b799925e9ca9274d47d26ff482a6
+        sha512: 949f73b9406b06bd8712c721b4ec89afcb37d4eaef5666cccf3712242d3a57fc0acf3ca994934e0f57c1e92f40521a9370132a21eb6d1957415a83c76bf20feb
+
+    prepare: |
+      tar -xzf musl-fts.tar.gz --strip-components=1
+
+      ./bootstrap.sh
+      mkdir build
+      cd build
+
+      ../configure \
+          --prefix=${TOOLCHAIN}
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
