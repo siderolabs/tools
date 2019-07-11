@@ -1,0 +1,35 @@
+name: swig
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/zlib:4e1cd1f
+  - image: docker.io/autonomy/pcre:e1b790f
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://downloads.sourceforge.net/project/swig/swig/swig-4.0.0/swig-4.0.0.tar.gz
+        destination: swig.tar.gz
+        sha256: e8a39cd6437e342cdcbd5af27a9bf11b62dc9efec9248065debcb8276fcbb925
+        sha512: c897b87fb8b21caf8d1bee2c39cb9675a3b0ee047110e808c310a2787f8b89585738726e9f517c64e9d2f1b8311136365c569528f399b444b1081f69689b7165
+
+    prepare: |
+      tar -xzf swig.tar.gz --strip-components=1
+
+      mkdir build
+      cd build
+
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --without-maximum-compile-warnings \
+          LDFLAGS="-Wl,-rpath=${TOOLCHAIN}/lib"
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
