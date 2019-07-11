@@ -1,0 +1,29 @@
+name: gawk
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/gawk/gawk-4.2.1.tar.xz
+        destination: gawk.tar.xz
+        sha256: d1119785e746d46a8209d28b2de404a57f983aa48670f4e225531d3bdc175551
+        sha512: 0e3006a795dc3ac91359a7d2590c0cccbfd39b18a1d491617d68505c55a2800355b1439050681b4fcacf65fb0d533151a046babe0fd774503037bab363ef2ae4
+
+    prepare: |
+      tar -xJf gawk.tar.xz --strip-components=1
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
