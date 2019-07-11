@@ -1,0 +1,38 @@
+name: perl
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://www.cpan.org/src/5.0/perl-5.28.2.tar.xz
+        destination: perl.tar.xz
+        sha256: 0b0189bfa4b2da20e899b4bdd746ac402e8f746a58e4fcf5516484157f2aab07
+        sha512: 0f2e4f7cb5d8cf6e00054b3842907e29b6c85902d97fb881d5bea65edbc875fef4e15e064561fac7c8db4939586576dd76a225026c7cca9624261c887b1fdb08
+      - url: https://github.com/arsv/perl-cross/releases/download/1.2.3/perl-cross-1.2.3.tar.gz
+        destination: perl-cross.tar.gz
+        sha256: 84583a1bb5f3a2c64d13d031386c114382e5c62955c6f84a27cec8318536627c
+        sha512: bd4fb3fa835b807c3ffb613a7fe935f92df5d89f603bf3f92fb3d249928f3ba69f078cdd46de5749d53e47bc437756f8e3530d7adc40b6eaa21265295af85616
+
+    prepare: |
+      tar -xJf perl.tar.xz --strip-components=1
+      tar -xzf perl-cross.tar.gz --strip-components=1
+
+      # This is hardcoded in ./ext/Errno/Errno_pm.P.
+      # Copy it from our toolchain to where it is expected.
+      cp ${TOOLCHAIN}/include/errno.h /usr/include
+
+      ./configure \
+          --prefix=${TOOLCHAIN}
+
+    build: |
+      make -j $(nproc)
+
+    install: |
+      mkdir -p /rootfs${TOOLCHAIN}/bin
+      cp -v perl cpan/podlators/scripts/pod2man /rootfs${TOOLCHAIN}/bin
+      mkdir -pv /rootfs${TOOLCHAIN}/lib/perl5/5.28.2
+      cp -Rv lib/* /rootfs${TOOLCHAIN}/lib/perl5/5.28.2
