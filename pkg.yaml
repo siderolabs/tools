@@ -1,0 +1,36 @@
+name: gettext
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/gettext/gettext-0.19.8.1.tar.xz
+        destination: gettext.tar.xz
+        sha256: 105556dbc5c3fbbc2aa0edb46d22d055748b6f5c7cd7a8d99f8e7eb84e938be4
+        sha512: 3553227b62f2a7d9b67c881ef889c030a6a21d5ecd210c4bf3d649df0b37193a99a68cf8fd5f2c69b6a87e847035dd9576f9bcb9363422866e26b04f4f6dd431
+
+    prepare: |
+      tar -xJf gettext.tar.xz --strip-components=1
+      mkdir build
+      cd build
+      EMACS="no" ../gettext-tools/configure \
+          --prefix=${TOOLCHAIN} \
+          --enable-relocatable \
+          --disable-shared
+
+    build: |
+      cd build
+      make -C gnulib-lib -j $(nproc)
+      make -C intl pluralx.c -j $(nproc)
+      make -C src msgfmt -j $(nproc)
+      make -C src msgmerge -j $(nproc)
+      make -C src xgettext -j $(nproc)
+
+    install: |
+      cd build
+      mkdir -p /rootfs${TOOLCHAIN}/bin
+      cp -v src/{msgfmt,msgmerge,xgettext} /rootfs${TOOLCHAIN}/bin
