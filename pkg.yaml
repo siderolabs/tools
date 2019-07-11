@@ -1,0 +1,30 @@
+name: cpio
+install:
+  - make
+  - autoconf
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.gz
+        destination: cpio.tar.gz
+        sha256: 08a35e92deb3c85d269a0059a27d4140a9667a6369459299d08c17f713a92e73
+        sha512: 640a6980273b699dba147e7b656440d3bd09c1c3ac71650f218ca1e4b4309c04b391ff2a8569e12d7a95827dd2781ab369542de20cc3c26dab3431f2efbdc905
+
+    prepare: |
+      tar -xzf cpio.tar.gz --strip-components=1
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN}
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
