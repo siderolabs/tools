@@ -1,0 +1,33 @@
+name: git
+install:
+  - make
+  - autoconf
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/zlib:4e1cd1f
+  - image: docker.io/autonomy/tcl:648e1d6
+  - image: docker.io/autonomy/gettext:156b4b0
+  - image: docker.io/autonomy/libressl:3db5cb9
+  - image: docker.io/autonomy/curl:014afb9
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz
+        destination: git.tar.xz
+        sha256: 9d2e91e2faa2ea61ba0a70201d023b36f54d846314591a002c610ea2ab81c3e9
+        sha512: 3f05ea3a645d4d74c7380b03e2de39f893ff77a05d8b595ce30300d1d4e032f11d84952366096f8effd5fba18dfa5ebb946bc07a984eb7cbbda113cb88202f6c
+
+    prepare: |
+      tar -xJf git.tar.xz --strip-components=1
+      make configure
+      ./configure \
+          --prefix=${TOOLCHAIN} \
+          --with-zlib=${TOOLCHAIN}
+
+    build: |
+      make -j $(nproc)
+
+    install: |
+      make DESTDIR=/rootfs install
