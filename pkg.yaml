@@ -1,0 +1,29 @@
+name: findutils
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/findutils/findutils-4.6.0.tar.gz
+        destination: findutils.tar.gz
+        sha256: ded4c9f73731cd48fec3b6bdaccce896473b6d8e337e9612e16cf1431bb1169d
+        sha512: 41fcd4197c1efbd77f7420e5754e2cf9332dfef19f90c65a8fa1844bb4bc5d529c8393ee0ff979a054e9ac65ff71d7fe3921ea079f9960843412fc9a71f8afd4
+
+    prepare: |
+      tar -xzf findutils.tar.gz --strip-components=1
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
