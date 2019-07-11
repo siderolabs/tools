@@ -1,0 +1,30 @@
+name: texinfo
+install:
+  - make
+  - perl
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/texinfo/texinfo-6.5.tar.xz
+        destination: texinfo.tar.xz
+        sha256: 77774b3f4a06c20705cc2ef1c804864422e3cf95235e965b1f00a46df7da5f62
+        sha512: 06831b4c74a1ba7a9cff937069e40ab26db1204aa8761d63254651ffacf6b0cb95d7078ba1cc59d95427239ab7e4f4aedf582967854281bfea3850b1ed5b1fdc
+
+    prepare: |
+      tar -xJf texinfo.tar.xz --strip-components=1
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN}
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
