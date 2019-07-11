@@ -1,0 +1,31 @@
+name: bash
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/bash/bash-4.4.18.tar.gz
+        destination: bash.tar.gz
+        sha256: 604d9eec5e4ed5fd2180ee44dd756ddca92e0b6aa4217bbab2b6227380317f23
+        sha512: bd3048338aded9dee31651011aaa46bc8fba83a27fa063e3d47bcbe85ebbd86816d9080d1a658cfbd1736a2c80e98fdb659019c192d332472b00aa305e0285b0
+
+    prepare: |
+      tar -xzf bash.tar.gz --strip-components=1
+      mkdir build
+      cd build
+
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --without-bash-malloc
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
