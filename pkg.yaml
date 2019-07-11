@@ -1,0 +1,37 @@
+name: ncurses
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz
+        destination: ncurses.tar.gz
+        sha256: aa057eeeb4a14d470101eff4597d5833dcef5965331be3528c08d99cebaa0d17
+        sha512: e308af43f8b7e01e98a55f4f6c4ee4d1c39ce09d95399fa555b3f0cdf5fd0db0f4c4d820b4af78a63f6cf6d8627587114a40af48cfc066134b600520808a77ee
+
+    prepare: |
+      tar -xzf ncurses.tar.gz --strip-components=1
+      mkdir build
+      cd build
+
+      sed -i s/mawk// ../configure
+
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --with-shared \
+          --without-debug \
+          --without-ada \
+          --enable-widec \
+          --enable-overwrite
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
