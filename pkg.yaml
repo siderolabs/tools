@@ -1,0 +1,49 @@
+name: expect
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/tcl:648e1d6
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://downloads.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz
+        destination: expect.tar.gz
+        sha256: 49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34
+        sha512: a8dc25e8175f67e029e15cbcfca1705165c1c4cb2dd37eaaaebffb61e3ba132d9519cd73ca5add4c3358a2b0b7a91e878279e8d0b72143ff2c287fce07e4659a
+
+    prepare: |
+      tar -xzf expect.tar.gz --strip-components=1
+      mkdir build
+      cd build
+
+      extras=""
+      case $ARCH in
+          x86_64)
+          ;;
+          aarch64 | armv7)
+              extras="--build=arm-linux --host=arm-linux"
+          ;;
+          *)
+              echo "unsupported arch ${ARCH}"
+              exit 1
+          ;;
+      esac
+
+      cp -v ../configure{,.orig}
+      sed 's:/usr/local/bin:/bin:' ../configure.orig > ../configure
+
+      ../configure ${extras} \
+          --prefix=${TOOLCHAIN} \
+          --with-tcl=${TOOLCHAIN}/lib \
+          --with-tclinclude=${TOOLCHAIN}/include
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs SCRIPTS="" install
