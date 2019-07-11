@@ -1,0 +1,33 @@
+name: bison
+install:
+  - make
+  - perl
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/m4:c53d3d8
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/bison/bison-3.0.5.tar.xz
+        destination: bison.tar.xz
+        sha256: 075cef2e814642e30e10e8155e93022e4a91ca38a65aa1d5467d4e969f97f338
+        sha512: 00b448db8abe91b07e32ff5273c6617bc1350d806f92073a9472f4c2f0de5d22c152795674171b74f2eb9eff8d36f8173b82dacb215601bb071ae39404d4a8a2
+
+    prepare: |
+      tar -xJf bison.tar.xz --strip-components=1
+      mkdir build
+      cd build
+
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          FORCE_UNSAFE_CONFIGURE=1
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
