@@ -1,0 +1,29 @@
+name: grep
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/grep/grep-3.1.tar.xz
+        destination: grep.tar.xz
+        sha256: db625c7ab3bb3ee757b3926a5cfa8d9e1c3991ad24707a83dde8a5ef2bf7a07e
+        sha512: 05494381c7dd8aad7e2ee4c17450de8d7b969a99dcfe17747db60df3475bf02d5323d091e896e8343e4f3251c29dc7f0b7a9f93c575c9d58ee2a57014c2c9d26
+
+    prepare: |
+      tar -xJf grep.tar.xz --strip-components=1
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN}
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
