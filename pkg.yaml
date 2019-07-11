@@ -1,0 +1,36 @@
+name: file
+install:
+  - make
+  - autoconf
+  - automake
+  - libtool
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://github.com/file/file/archive/FILE5_34.tar.gz
+        destination: file.tar.gz
+        sha256: cf6014a703b71767cc1b00a101e8147c9db267dba3c4fee972b2a359355389cb
+        sha512: 499df0346c9c5a7ac9e0e91da8ad67532bbc514dc6f5513ec90825cdbdc88dceb85108d099b0177f0ff3f2591183b19052515ebcd8aa5891b461452da18310e5
+
+    prepare: |
+      tar -xzf file.tar.gz --strip-components=1
+
+      autoreconf --install
+
+      mkdir build
+      cd build
+
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
