@@ -1,0 +1,30 @@
+name: make
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/make/make-4.2.1.tar.gz
+        destination: make.tar.gz
+        sha256: e40b8f018c1da64edd1cc9a6fce5fa63b2e707e404e20cad91fbae337c98a5b7
+        sha512: d5f6ce3ac7c9a55cf8c1c04afa7d967dd311c9bb3167275ebb2649cf144f3740cf08450dc010a6acdea1fd529fd528a50b3c3381f4c9a7e83ec59b761817a038
+
+    prepare: |
+      tar -xzf make.tar.gz --strip-components=1
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --without-guile
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
