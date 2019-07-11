@@ -1,0 +1,32 @@
+name: automake
+install:
+  - make
+  - perl
+  - autoconf
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+  - to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/automake/automake-1.16.1.tar.xz
+        destination: automake.tar.xz
+        sha256: 5d05bb38a23fd3312b10aea93840feec685bdf4a41146e78882848165d3ae921
+        sha512: 4013bd31f4903b10875caa7d6ac16a14623a4eb91aa758924dee5b990e234fb50848d131e2dbdbbbc32f89c41a14f9c52a0064c37aa6760c524d607b354b13c3
+
+    prepare: |
+      tar -xJf automake.tar.xz --strip-components=1
+      mkdir build
+      cd build
+
+      ../configure \
+          --prefix=${TOOLCHAIN}
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
