@@ -1,0 +1,32 @@
+name: coreutils
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/coreutils/coreutils-8.30.tar.xz
+        destination: coreutils.tar.xz
+        sha256: e831b3a86091496cdba720411f9748de81507798f6130adeaef872d206e1b057
+        sha512: 25bc132c0d89ce71c33e417f04649c9fcfce6c5ef8b19f093b2e9e2851bfde9b5a31e20499d9c427332228ba54b88d445ddb445551e1944bb8f5cbff5ffa4eda
+
+    prepare: |
+      tar -xJf coreutils.tar.xz --strip-components=1
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --enable-install-program=hostname \
+          FORCE_UNSAFE_CONFIGURE=1 \
+          TIME_T_32_BIT_OK=yes
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
