@@ -1,0 +1,34 @@
+name: tar
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/tar/tar-1.30.tar.xz
+        destination: tar.tar.xz
+        sha256: f1bf92dbb1e1ab27911a861ea8dde8208ee774866c46c0bb6ead41f4d1f4d2d3
+        sha512: 9c8b2cacf8f6ca1b19f788d4ec0410127c4d71e54b9c9cac99ee5af6c002189ccc521302955510bb22a54a069ffd00fc2de12ac776985cbbeb3f1ecf38a4f8d9
+
+    prepare: |
+      tar -xJf tar.tar.xz --strip-components=1
+      patch -p1 < /pkg/patches/system-xexec-shell.patch
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --with-gzip=${TOOLCHAIN}/bin/gzip \
+          --with-bzip2=${TOOLCHAIN}/bin/bzip2 \
+          --with-xz=${TOOLCHAIN}/bin/xz \
+          FORCE_UNSAFE_CONFIGURE=1
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
