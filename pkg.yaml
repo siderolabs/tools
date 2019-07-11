@@ -1,0 +1,52 @@
+name: elfutils
+install:
+  - make
+  - patch
+  - autoconf
+  - automake
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/zlib:4e1cd1f
+  - image: docker.io/autonomy/argp-standalone:d99eb22
+  - image: docker.io/autonomy/musl-fts:d02ec7a
+  - image: docker.io/autonomy/musl-obstack:36661cd
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://sourceware.org/ftp/elfutils/0.173/elfutils-0.173.tar.bz2
+        destination: elfutils.tar.bz2
+        sha256: b76d8c133f68dad46250f5c223482c8299d454a69430d9aa5c19123345a000ff
+        sha512: 7f38e4ce2098b685f15030bf01f0a66a74aa32fbfcead0304c1d0e0a929b348a72f99e685cd4605465f4337393382112f64b8847e6c2f7cc1a57a4fd03d03eb3
+    prepare: |
+      tar -xjf elfutils.tar.bz2 --strip-components=1
+
+      patch -Np0 -i /pkg/patches/elfutils-0.173-fix-uninitialized.patch
+      patch -Np0 -i /pkg/patches/elfutils-0.173-musl-cdefs.patch
+      patch -Np0 -i /pkg/patches/elfutils-0.173-musl-fts-obstack.patch
+      patch -Np0 -i /pkg/patches/elfutils-0.173-musl-macros.patch
+      patch -Np0 -i /pkg/patches/elfutils-0.173-musl-qsort_r.patch
+      patch -Np0 -i /pkg/patches/elfutils-0.173-musl-strerror_r.patch
+      patch -Np0 -i /pkg/patches/elfutils-0.173-musl-strndupa.patch
+      autoreconf -if
+
+      cp /pkg/files/elfutils-0.173-missingfile-error.h src/error.h
+
+      mkdir build
+      cd build
+
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --without-bzlib \
+          CFLAGS="${CFLAGS} -fPIC -Wno-error"
+      cp -v ../src/error.h ${TOOLCHAIN}/include
+
+    build: |
+      cd build
+      make -C lib libeu.a -j $(nproc)
+      make -C libelf -j $(nproc)
+
+    install: |
+      cd build
+      make -C libelf DESTDIR=/rootfs install
