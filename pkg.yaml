@@ -1,0 +1,30 @@
+name: protobuf
+install:
+  - make
+  - patch
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz
+        destination: protobuf-cpp-3.7.1.tar.gz
+        sha256: 97f6cdaa0724d5a8cd3375d5f5cf4bd253d5ad5291154f533ed0d94a9d501ef3
+        sha512: 6e6873f83dc6e8cf565874c428799b0dd86f7eb83130d7eec26225f640560bb74e1604fda16ffd507e0416567236831922fbd9f5354308abee945b5b83ca153e
+
+    prepare: |
+      tar -xzf protobuf-cpp-3.7.1.tar.gz --strip-components=1
+
+      ./configure \
+      --prefix="${TOOLCHAIN}" \
+      --disable-shared
+
+      patch -p0 < /pkg/patches/musl-fix.patch
+
+    build: |
+      make -j $(nproc)
+
+    install: |
+      make DESTDIR=/rootfs install
