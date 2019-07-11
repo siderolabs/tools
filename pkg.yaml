@@ -1,0 +1,32 @@
+name: dejagnu
+install:
+  - make
+  - tcl
+  - expect
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/dejagnu/dejagnu-1.6.1.tar.gz
+        destination: dejagnu.tar.gz
+        sha256: bf5b28bb797e0ace4cfc0766a996339c795d8223bef54158be7887046bc01692
+        sha512: 887aa7c8b8698fe193f393b75479aad2c0724d6baa52e6f7172c48172f6546956c5f932afb574ba38b7c79e630981eeaf1d6d3c9edb3862ab5f39c5c09dce682
+
+    prepare: |
+      tar -xzf dejagnu.tar.gz --strip-components=1
+      mkdir build
+      cd build
+
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+
+    build: |
+      cd build
+      make DESTDIR=/rootfs install
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
