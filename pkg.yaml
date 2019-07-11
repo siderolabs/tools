@@ -1,0 +1,29 @@
+name: dtc
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/m4:c53d3d8
+  - image: docker.io/autonomy/bison:f20f464
+  - image: docker.io/autonomy/flex:801265d
+  - image: docker.io/autonomy/pkg-config:60373d8
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-1.5.0.tar.xz
+        destination: dtc.tar.xz
+        sha256: c672e443c9f7e39f5a7c8e602da6777f9ad55ad70de87de300a43828c8050172
+        sha512: fd1e692a1b7bf7987f921ad17d9be6719f7b3aa7915873b45fa86f4ecb1398a0a62cdf53c1fddf98a0f7fed9bf34a79f684018bd01a2b5e88746b50879bf7102
+
+    prepare: |
+      tar -xJf dtc.tar.xz --strip-components=1
+
+      sed -i s:-Werror::g Makefile
+
+    build: |
+      make -j $(nproc)
+
+    install: |
+      make DESTDIR=/rootfs PREFIX=${TOOLCHAIN} install
