@@ -1,0 +1,32 @@
+name: pkg-config
+install:
+  - make
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
+        destination: pkg-config.tar.gz
+        sha256: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
+        sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
+
+    prepare: |
+      tar -xzf pkg-config.tar.gz --strip-components=1
+      mkdir build
+      cd build
+
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --with-internal-glib \
+          --disable-host-too
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
