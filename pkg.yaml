@@ -1,0 +1,33 @@
+name: flex
+install:
+  - make
+  - m4
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz
+        destination: flex.tar.gz
+        sha256: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
+        sha512: e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e
+
+    prepare: |
+      tar -xzf flex.tar.gz --strip-components=1
+      mkdir build
+      cd build
+
+      sed -i "/math.h/a #include <malloc.h>" ../src/flexdef.h
+
+      ../configure \
+          --prefix=${TOOLCHAIN}
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
