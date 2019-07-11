@@ -1,0 +1,48 @@
+name: bc
+install:
+  - make
+  - texinfo
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/bc/bc-1.07.1.tar.gz
+        destination: bc.tar.gz
+        sha256: 62adfca89b0a1c0164c2cdca59ca210c1d44c3ffc46daf9931cf4942664cb02a
+        sha512: 02126d0db6b6ed06d56cfc292d6f5475ff1e574779d7e69c7809bbb1e13f946f57ea07da2a7666baa092507a951a822044b0970075f75eefe65a5c1999b75d34
+
+    prepare: |
+      tar -xzf bc.tar.gz --strip-components=1
+
+      cat > bc/fix-libmath_h << "EOF"
+      #! /bin/bash
+      sed -e '1   s/^/{"/' \
+          -e     's/$/",/' \
+          -e '2,$ s/^/"/'  \
+          -e   '$ d'       \
+          -i libmath.h
+
+      sed -e '$ s/$/0}/' \
+          -i libmath.h
+      EOF
+
+      sed -i -e '/flex/s/as_fn_error/: ;; # &/' ./configure
+
+      mkdir build
+      cd build
+      ../configure \
+          --prefix=${TOOLCHAIN} \
+          --with-readline \
+          --mandir=${TOOLCHAIN}/share/man \
+          --infodir=${TOOLCHAIN}/share/info
+
+    build: |
+      cd build
+      make -j $(nproc)
+
+    install: |
+      cd build
+      make DESTDIR=/rootfs install
