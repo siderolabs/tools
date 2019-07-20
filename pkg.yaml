@@ -21,12 +21,10 @@ steps:
 
       patch -p1 </pkg/patches/fix-compat.patch
       patch -p1 </pkg/patches/0003-mksquashfs.c-get-inline-functions-work-with-C99.patch
-      cd squashfs-tools
-      sed "s/#XZ_SUPPORT/XZ_SUPPORT/" -i Makefile
 
     build: |
       cd squashfs-tools
-      make
+      make LDFLAGS="$LDFLAGS -Wl,-rpath=/toolchain/lib" XZ_SUPPORT=0 LZMA_XZ_SUPPORT=1 LZMA_SUPPORT=0
 
     install: |
       cd squashfs-tools
