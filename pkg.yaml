@@ -26,5 +26,9 @@ steps:
 
     build: |
       cd squashfs-tools
-      mkdir /rootfs
-      make INSTALL_DIR=/rootfs
+      make
+
+    install: |
+      cd squashfs-tools
+      mkdir -p /rootfs/toolchain/bin
+      make install INSTALL_DIR=/rootfs/toolchain/bin
