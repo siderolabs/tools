@@ -1,0 +1,30 @@
+name: squashfs-tools
+install:
+  - make
+  - patch
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/xz:9e880b7
+  - image: docker.io/autonomy/zlib:4e1cd1f
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz
+        destination: squashfs.tar.gz
+        sha256: 0d605512437b1eb800b4736791559295ee5f60177e102e4d4ccd0ee241a5f3f6
+        sha512: 854ed7acc99920f24ecf11e0da807e5a2a162eeda55db971aba63a03f0da2c13b20ec0564a906c4b0e415bd8258b273a10208c7abc0704f2ceea773aa6148a79
+
+    prepare: |
+      tar -xf squashfs.tar.gz --strip-components=1
+
+      patch -p1 </pkg/patches/fix-compat.patch
+      patch -p1 </pkg/patches/0003-mksquashfs.c-get-inline-functions-work-with-C99.patch
+      cd squashfs-tools
+      sed "s/#XZ_SUPPORT/XZ_SUPPORT/" -i Makefile
+
+    build: |
+      cd squashfs-tools
+      mkdir /rootfs
+      make INSTALL_DIR=/rootfs
