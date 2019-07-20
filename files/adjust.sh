@@ -2,16 +2,14 @@
 
 set -eoux pipefail
 
-export ARCH=$(uname -m)
-
 mv -v /toolchain/bin/{ld,ld-old}
-mv -v /toolchain/${ARCH}-linux-musl/bin/{ld,ld-old}
+mv -v /toolchain/$(gcc -dumpmachine)/bin/{ld,ld-old}
 mv -v /toolchain/bin/{ld-new,ld}
-ln -sv /toolchain/bin/ld /toolchain/${ARCH}-linux-musl/bin/ld
+ln -sv /toolchain/bin/ld /toolchain/$(gcc -dumpmachine)/bin/ld
 
 gcc -dumpspecs | sed -e "s@/toolchain@@g" \
--e '/\*startfile_prefix_spec:/{n;s@.*@/lib/ @}' \
--e '/\*cpp:/{n;s@$@ -isystem /include@}' > `dirname $(gcc --print-libgcc-file-name)`/specs
+    -e '/\*startfile_prefix_spec:/{n;s@.*@/lib/ @}' \
+    -e '/\*cpp:/{n;s@$@ -isystem /include@}' > `dirname $(gcc --print-libgcc-file-name)`/specs
 
 echo 'int main(){}' > dummy.c
 cc dummy.c -v -Wl,--verbose &> dummy.log
