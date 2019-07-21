@@ -43,7 +43,7 @@ dependencies:
   - image: docker.io/autonomy/protoc-gen-go:93b480c
   - image: docker.io/autonomy/python2:98564e5
   - image: docker.io/autonomy/sed:662ead7
-  - image: docker.io/autonomy/squashfs-tools:f468b7f
+  - image: docker.io/autonomy/squashfs-tools:87658ee
   - image: docker.io/autonomy/swig:35efcf9
   - image: docker.io/autonomy/tar:0791718
   - image: docker.io/autonomy/tcl:648e1d6
