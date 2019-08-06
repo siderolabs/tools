@@ -7,7 +7,7 @@ dependencies:
   - image: docker.io/autonomy/bash:48e85fc
   - image: docker.io/autonomy/bc:1b24e89
   - image: docker.io/autonomy/bison:f20f464
-  - image: docker.io/autonomy/bzip2:33106f0
+  - image: docker.io/autonomy/bzip2:4c40401
   - image: docker.io/autonomy/ca-certificates:c6fe138
   - image: docker.io/autonomy/coreutils:2352c24
   - image: docker.io/autonomy/cpio:08e31a9
