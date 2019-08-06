@@ -8,10 +8,10 @@ finalize:
     to: /
 steps:
   - sources:
-      - url: https://fossies.org/linux/misc/bzip2-1.0.6.tar.gz
+      - url: https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
         destination: bzip2.tar.gz
-        sha256: a2848f34fcd5d6cf47def00461fcb528a0484d8edef8208d6d2e2909dc61d9cd
-        sha512: 00ace5438cfa0c577e5f578d8a808613187eff5217c35164ffe044fbafdfec9e98f4192c02a7d67e01e5a5ccced630583ad1003c37697219b0f147343a3fdd12
+        sha256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
+        sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
     prepare: |
       tar -xzf bzip2.tar.gz --strip-components=1
