@@ -1,0 +1,28 @@
+name: go-sanitizer
+install:
+  - g++
+dependencies:
+  - image: docker.io/autonomy/toolchain:d1f6110
+finalize:
+  - from: /rootfs
+    to: /
+steps:
+  - sources:
+      - url: https://github.com/llvm-mirror/compiler-rt/archive/fe2c72c59aa7f4afa45e3f65a5d16a374b6cce26.tar.gz
+        destination: compiler-rt-fe2c72c59aa7f4afa45e3f65a5d16a374b6cce26.tar.gz
+        sha256: 3f6ca12d7bd8500476537711cfceb9024beaa59e112242422c8c6887578aa18e
+        sha512: 283c48f79b07c59a5b0f426551a24fa4835ea658685b0d3c9bd00bb32e98862ac64b2d2384d204a73f39afa2ffb671bfaaf7f1ae9063ff0b0d370b9a576e8e84
+
+    prepare: |
+      tar -xzf compiler-rt-fe2c72c59aa7f4afa45e3f65a5d16a374b6cce26.tar.gz --strip-components=1
+      patch -p1 < /pkg/patches/sanitizer.patch
+
+    build: |
+      cd lib/tsan/go
+      ./buildgo.sh
+
+    install: |
+      FINAL="/rootfs${TOOLCHAIN}/go/src/runtime/race"
+      mkdir -p "${FINAL}"
+
+      mv lib/tsan/go/race_linux_amd64.syso ${FINAL}/race_linux_amd64.syso

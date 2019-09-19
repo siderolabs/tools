@@ -1,0 +1,110 @@
+From 2e1154fcf86aa5d15feef95536f8713df05311d7 Mon Sep 17 00:00:00 2001
+From: Richard Musiol <mail@richard-musiol.de>
+Date: Thu, 23 Feb 2017 12:47:07 +0100
+Subject: [PATCH] hack to make Go's -race flag work on Alpine
+
+---
+ lib/sanitizer_common/sanitizer_allocator.cc |  2 +-
+ lib/sanitizer_common/sanitizer_common.cc    |  2 ++
+ lib/sanitizer_common/sanitizer_linux.cc     | 10 +++++-----
+ lib/tsan/rtl/tsan_platform_linux.cc         |  2 +-
+ 4 files changed, 9 insertions(+), 7 deletions(-)
+
+diff --git a/lib/sanitizer_common/sanitizer_allocator.cc b/lib/sanitizer_common/sanitizer_allocator.cc
+index 0fdaef17f..31546a1aa 100644
+--- a/lib/sanitizer_common/sanitizer_allocator.cc
++++ b/lib/sanitizer_common/sanitizer_allocator.cc
+@@ -26,7 +26,7 @@ const char *PrimaryAllocatorName = "SizeClassAllocator";
+ const char *SecondaryAllocatorName = "LargeMmapAllocator";
+ 
+ // ThreadSanitizer for Go uses libc malloc/free.
+-#if SANITIZER_GO || defined(SANITIZER_USE_MALLOC)
++#if defined(SANITIZER_USE_MALLOC)
+ # if SANITIZER_LINUX && !SANITIZER_ANDROID
+ extern "C" void *__libc_malloc(uptr size);
+ #  if !SANITIZER_GO
+diff --git a/lib/sanitizer_common/sanitizer_common.cc b/lib/sanitizer_common/sanitizer_common.cc
+index 7d72b0cfe..6cf736174 100644
+--- a/lib/sanitizer_common/sanitizer_common.cc
++++ b/lib/sanitizer_common/sanitizer_common.cc
+@@ -275,6 +275,7 @@ uptr ReadBinaryNameCached(/*out*/char *buf, uptr buf_len) {
+   return name_len;
+ }
+ 
++#if !SANITIZER_GO
+ void PrintCmdline() {
+   char **argv = GetArgv();
+   if (!argv) return;
+@@ -283,6 +284,7 @@ void PrintCmdline() {
+     Printf("%s ", argv[i]);
+   Printf("\n\n");
+ }
++#endif
+ 
+ // Malloc hooks.
+ static const int kMaxMallocFreeHooks = 5;
+diff --git a/lib/sanitizer_common/sanitizer_linux.cc b/lib/sanitizer_common/sanitizer_linux.cc
+index e1f00a93b..e2682c3f4 100644
+--- a/lib/sanitizer_common/sanitizer_linux.cc
++++ b/lib/sanitizer_common/sanitizer_linux.cc
+@@ -27,7 +27,7 @@
+ #include "sanitizer_placement_new.h"
+ #include "sanitizer_procmaps.h"
+ 
+-#if SANITIZER_LINUX
++#if SANITIZER_LINUX && !SANITIZER_GO
+ #include <asm/param.h>
+ #endif
+ 
+@@ -104,7 +104,7 @@ extern struct ps_strings *__ps_strings;
+ #define environ _environ
+ #endif
+ 
+-#if !SANITIZER_ANDROID
++#if !SANITIZER_ANDROID && !SANITIZER_GO
+ #include <sys/signal.h>
+ #endif
+ 
+@@ -545,7 +545,7 @@ const char *GetEnv(const char *name) {
+ #endif
+ }
+ 
+-#if !SANITIZER_FREEBSD && !SANITIZER_NETBSD && !SANITIZER_OPENBSD
++#if !SANITIZER_FREEBSD && !SANITIZER_NETBSD && !SANITIZER_OPENBSD && !SANITIZER_GO
+ extern "C" {
+ SANITIZER_WEAK_ATTRIBUTE extern void *__libc_stack_end;
+ }
+@@ -577,7 +577,7 @@ static void ReadNullSepFileToArray(const char *path, char ***arr,
+ }
+ #endif
+ 
+-#if !SANITIZER_OPENBSD
++#if !SANITIZER_OPENBSD && !SANITIZER_GO
+ static void GetArgsAndEnv(char ***argv, char ***envp) {
+ #if SANITIZER_FREEBSD
+   // On FreeBSD, retrieving the argument and environment arrays is done via the
+@@ -1069,7 +1069,7 @@ uptr GetPageSize() {
+ // Android post-M sysconf(_SC_PAGESIZE) crashes if called from .preinit_array.
+ #if SANITIZER_ANDROID
+   return 4096;
+-#elif SANITIZER_LINUX && (defined(__x86_64__) || defined(__i386__))
++#elif SANITIZER_LINUX && defined(EXEC_PAGESIZE)
+   return EXEC_PAGESIZE;
+ #elif SANITIZER_USE_GETAUXVAL
+   return getauxval(AT_PAGESZ);
+diff --git a/lib/tsan/rtl/tsan_platform_linux.cc b/lib/tsan/rtl/tsan_platform_linux.cc
+index de989b780..de7ccfe70 100644
+--- a/lib/tsan/rtl/tsan_platform_linux.cc
++++ b/lib/tsan/rtl/tsan_platform_linux.cc
+@@ -63,7 +63,7 @@
+ # undef sa_sigaction
+ #endif
+ 
+-#if SANITIZER_FREEBSD
++#if SANITIZER_FREEBSD && !SANITIZER_GO
+ extern "C" void *__libc_stack_end;
+ void *__libc_stack_end = 0;
+ #endif
+-- 
+2.22.0
+
