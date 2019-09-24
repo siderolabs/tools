@@ -1,9 +1,10 @@
 name: golang
 install:
   - make
-  - go
+  - gcc
 dependencies:
   - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/{{ .Organization }}/go-sanitizer:d25794a-dirty
 finalize:
   - from: /rootfs
     to: /
@@ -19,17 +20,35 @@ steps:
         sha512: 2f65d5035d2b4ae8610c3337e0fcba64692c63953b54bf735f634da3532c6573ed08927865bf068b00a3885663815c5efc7dbd9a1b3d6337c9a0c62168aabca7
 
     prepare: |
-      tar -xzf go1.12.9.src.tar.gz --strip-components=1
+      mkdir go-bootstrap go
+      (cd go && tar -xzf ../go1.12.9.src.tar.gz --strip-components=1)
+      (cd go-bootstrap && tar -xzf ../go1.4-bootstrap-20171003.tar.gz --strip-components=1)
 
     build: |
-      export CGO_ENABLED=0
-      export GOROOT_BOOTSTRAP="/usr/lib/go"
-      export GOROOT_FINAL="/rootfs${TOOLCHAIN}/go"
+      cd go-bootstrap
+
+      echo "FUN"
+      (cd src && sh make.bash)
+      echo "MORE FUn"
+
+      export GOROOT_BOOTSTRAP="$PWD"
+      cd ..
+
+      cd go
+
+      export GOROOT_FINAL="${TOOLCHAIN}/go"
       cd src
       sh make.bash
 
+      ls -l runtime/race/race_linux_amd64.syso
+      mv /toolchain/go/src/runtime/race/race_linux_amd64.syso runtime/race/race_linux_amd64.syso
+      ls -l runtime/race/race_linux_amd64.syso
+
+      sh race.bash
+
     install: |
-      export GOROOT_FINAL="/rootfs${TOOLCHAIN}/go"
+      cd go
+      export GOROOT_FINAL="${TOOLCHAIN}/go"
       rm -rf pkg/obj
       rm -rf pkg/bootstrap
       rm -f pkg/tool/*/api
@@ -40,5 +59,5 @@ steps:
       find src -type f -a \( -name "*.bash" -o -name "*.rc" -o -name "*.bat" \) \
       -exec rm -rf \{\} \+
 
-      mkdir -p "${GOROOT_FINAL}"
-      mv * "${GOROOT_FINAL}"
+      mkdir -p "/rootfs${GOROOT_FINAL}"
+      mv * "/rootfs${GOROOT_FINAL}"
