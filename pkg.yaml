@@ -9,17 +9,17 @@ finalize:
     to: /
 steps:
   - sources:
-      - url: https://dl.google.com/go/go1.12.9.src.tar.gz
-        destination: go1.12.9.src.tar.gz
-        sha256: ab0e56ed9c4732a653ed22e232652709afbf573e710f56a07f7fdeca578d62fc
-        sha512: 57041e7fb767f528aa9fc2592d205d3a7c120c73f92dc8d91f17f816e12aa6152c8421b333081800a5f50b1bb656f203a25faf8ed92c69a6ec164ce0a5619c13
+      - url: https://dl.google.com/go/go1.12.10.src.tar.gz
+        destination: go.src.tar.gz
+        sha256: f56e48fce80646d3c94dcf36d3e3f490f6d541a92070ad409b87b6bbb9da3954
+        sha512: 9d40cf8d71daffe43f5872597b316cd1150ae640d852ff0f0be3126cc7bb40b9a0290bb02d7fabdf808f40ab3f67a56d2eaeba3b32299fa9b0a3df03899f6ac2
       - url: https://dl.google.com/go/go1.4-bootstrap-20171003.tar.gz
         destination: go1.4-bootstrap-20171003.tar.gz
         sha256: f4ff5b5eb3a3cae1c993723f3eab519c5bae18866b5e5f96fe1102f0cb5c3e52
         sha512: 2f65d5035d2b4ae8610c3337e0fcba64692c63953b54bf735f634da3532c6573ed08927865bf068b00a3885663815c5efc7dbd9a1b3d6337c9a0c62168aabca7
 
     prepare: |
-      tar -xzf go1.12.9.src.tar.gz --strip-components=1
+      tar -xzf go.src.tar.gz --strip-components=1
 
     build: |
       export CGO_ENABLED=0
