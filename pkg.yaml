@@ -23,7 +23,7 @@ dependencies:
   - image: docker.io/autonomy/gawk:23f4cfd
   - image: docker.io/autonomy/gettext:156b4b0
   - image: docker.io/autonomy/git:6495ae8
-  - image: docker.io/autonomy/golang:2256c4b
+  - image: docker.io/autonomy/golang:540106a
   - image: docker.io/autonomy/gperf:d1539d2
   - image: docker.io/autonomy/grep:b4a238a
   - image: docker.io/autonomy/gzip:3c4f1fd
