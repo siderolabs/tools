@@ -9,10 +9,10 @@ finalize:
     to: /
 steps:
   - sources:
-      - url: https://dl.google.com/go/go1.12.10.src.tar.gz
+      - url: https://dl.google.com/go/go1.13.1.src.tar.gz
         destination: go.src.tar.gz
-        sha256: f56e48fce80646d3c94dcf36d3e3f490f6d541a92070ad409b87b6bbb9da3954
-        sha512: 9d40cf8d71daffe43f5872597b316cd1150ae640d852ff0f0be3126cc7bb40b9a0290bb02d7fabdf808f40ab3f67a56d2eaeba3b32299fa9b0a3df03899f6ac2
+        sha256: 81f154e69544b9fa92b1475ff5f11e64270260d46e7e36c34aafc8bc96209358
+        sha512: 696fc735271bd76ae59c5015c8efa52121243257f4ffcc1460fd79cf9a5e167db0b30d04137ec71a8789742673c2288bd62d55b546c2d2b2a05e8b3669af8616
       - url: https://dl.google.com/go/go1.4-bootstrap-20171003.tar.gz
         destination: go1.4-bootstrap-20171003.tar.gz
         sha256: f4ff5b5eb3a3cae1c993723f3eab519c5bae18866b5e5f96fe1102f0cb5c3e52
