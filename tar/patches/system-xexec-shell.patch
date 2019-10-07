@@ -1,0 +1,27 @@
+diff -Naur a/src/system.c b/src/system.c
+--- a/src/system.c	2017-01-02 12:43:50.000000000 +0000
++++ b/src/system.c	2019-06-16 01:28:41.531617000 +0000
+@@ -29,12 +29,12 @@
+ {
+   char *argv[4];
+
+-  argv[0] = (char *) "/bin/sh";
++  argv[0] = (char *) "/toolchain/bin/bash";
+   argv[1] = (char *) "-c";
+   argv[2] = (char *) cmd;
+   argv[3] = NULL;
+
+-  execv ("/bin/sh", argv);
++  execv ("/toolchain/bin/bash", argv);
+   exec_fatal (cmd);
+ }
+
+@@ -203,7 +203,7 @@
+   pid_t child;
+   const char *shell = getenv ("SHELL");
+   if (! shell)
+-    shell = "/bin/sh";
++    shell = "/toolchain/bin/bash";
+   child = xfork ();
+   if (child == 0)
+     {

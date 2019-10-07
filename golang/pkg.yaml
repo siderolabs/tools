@@ -1,0 +1,44 @@
+name: golang
+install:
+- make
+- go
+dependencies:
+- image: docker.io/autonomy/toolchain:d1f6110
+steps:
+- sources:
+  - url: https://dl.google.com/go/go1.13.1.src.tar.gz
+    destination: go.src.tar.gz
+    sha256: 81f154e69544b9fa92b1475ff5f11e64270260d46e7e36c34aafc8bc96209358
+    sha512: 696fc735271bd76ae59c5015c8efa52121243257f4ffcc1460fd79cf9a5e167db0b30d04137ec71a8789742673c2288bd62d55b546c2d2b2a05e8b3669af8616
+  - url: https://dl.google.com/go/go1.4-bootstrap-20171003.tar.gz
+    destination: go1.4-bootstrap-20171003.tar.gz
+    sha256: f4ff5b5eb3a3cae1c993723f3eab519c5bae18866b5e5f96fe1102f0cb5c3e52
+    sha512: 2f65d5035d2b4ae8610c3337e0fcba64692c63953b54bf735f634da3532c6573ed08927865bf068b00a3885663815c5efc7dbd9a1b3d6337c9a0c62168aabca7
+  prepare:
+  - |
+    tar -xzf go.src.tar.gz --strip-components=1
+  build:
+  - |
+    export CGO_ENABLED=0
+    export GOROOT_BOOTSTRAP="/usr/lib/go"
+    export GOROOT_FINAL="/rootfs${TOOLCHAIN}/go"
+    cd src
+    sh make.bash
+  install:
+  - |
+    export GOROOT_FINAL="/rootfs${TOOLCHAIN}/go"
+    rm -rf pkg/obj
+    rm -rf pkg/bootstrap
+    rm -f pkg/tool/*/api
+    find src \( -type f -a -name "*_test.go" \) \
+    -exec rm -rf \{\} \+
+    find src \( -type d -a -name "testdata" \) \
+    -exec rm -rf \{\} \+
+    find src -type f -a \( -name "*.bash" -o -name "*.rc" -o -name "*.bat" \) \
+    -exec rm -rf \{\} \+
+
+    mkdir -p "${GOROOT_FINAL}"
+    mv * "${GOROOT_FINAL}"
+finalize:
+- from: /rootfs
+  to: /
