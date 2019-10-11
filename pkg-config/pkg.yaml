@@ -1,8 +1,7 @@
 name: pkg-config
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz

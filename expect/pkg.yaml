@@ -1,9 +1,8 @@
 name: expect
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
 - stage: tcl
+- stage: make
 steps:
 - sources:
   - url: https://downloads.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz

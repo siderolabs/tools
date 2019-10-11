@@ -1,6 +1,5 @@
 name: musl-fts
 install:
-- make
 - m4
 - libtool
 - autoconf
@@ -8,6 +7,7 @@ install:
 - pkgconfig
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://github.com/pullmoll/musl-fts/archive/v1.2.7/musl-fts-1.2.7.tar.gz

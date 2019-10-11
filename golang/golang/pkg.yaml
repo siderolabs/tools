@@ -1,9 +1,8 @@
 name: golang
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
 - stage: golang-bootstrap
+- stage: make
 steps:
 - sources:
   - url: https://dl.google.com/go/go1.13.1.src.tar.gz

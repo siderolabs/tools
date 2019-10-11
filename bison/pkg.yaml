@@ -1,10 +1,10 @@
 name: bison
 install:
-- make
 - perl
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
 - stage: m4
+- stage: make
 steps:
 - sources:
   - url: https://ftp.gnu.org/gnu/bison/bison-3.0.5.tar.xz

@@ -1,10 +1,9 @@
 name: swig
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
 - stage: zlib
 - stage: pcre
+- stage: make
 steps:
 - sources:
   - url: https://downloads.sourceforge.net/project/swig/swig/swig-4.0.0/swig-4.0.0.tar.gz

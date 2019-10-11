@@ -1,8 +1,7 @@
 name: perl
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://www.cpan.org/src/5.0/perl-5.28.2.tar.xz
@@ -20,7 +19,8 @@ steps:
 
     # This is hardcoded in ./ext/Errno/Errno_pm.P.
     # Copy it from our toolchain to where it is expected.
-    cp ${TOOLCHAIN}/include/errno.h /usr/include
+    mkdir -p /usr/include
+    cp ${TOOLCHAIN}/include/errno.h /usr/include/
 
     ./configure \
         --prefix=${TOOLCHAIN}

@@ -1,11 +1,11 @@
 name: squashfs-tools
 install:
-- make
 - patch
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
 - stage: xz
 - stage: zlib
+- stage: make
 steps:
 - sources:
   - url: https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz

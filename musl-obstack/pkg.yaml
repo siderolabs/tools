@@ -1,12 +1,12 @@
 name: musl-obstack
 install:
-- make
 - libtool
 - autoconf
 - automake
 - pkgconfig
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://github.com/pullmoll/musl-obstack/archive/v1.1/musl-obstack-1.1.tar.gz

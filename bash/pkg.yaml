@@ -1,8 +1,7 @@
 name: bash
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://ftp.gnu.org/gnu/bash/bash-4.4.18.tar.gz
