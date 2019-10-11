@@ -1,9 +1,9 @@
 name: protobuf
 install:
-- make
 - patch
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz

@@ -1,9 +1,9 @@
 name: argp-standalone
 install:
-- make
 - patch
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: http://www.lysator.liu.se/~nisse/misc/argp-standalone-1.3.tar.gz

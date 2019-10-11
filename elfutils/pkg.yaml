@@ -1,6 +1,5 @@
 name: elfutils
 install:
-- make
 - patch
 - autoconf
 - automake
@@ -10,6 +9,7 @@ dependencies:
 - stage: argp-standalone
 - stage: musl-fts
 - stage: musl-obstack
+- stage: make
 steps:
 - sources:
   - url: https://sourceware.org/ftp/elfutils/0.173/elfutils-0.173.tar.bz2

@@ -1,8 +1,7 @@
 name: patch
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://ftp.gnu.org/gnu/patch/patch-2.7.6.tar.xz

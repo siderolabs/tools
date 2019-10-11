@@ -1,10 +1,10 @@
 name: dejagnu
 install:
-- make
 - tcl
 - expect
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://ftp.gnu.org/gnu/dejagnu/dejagnu-1.6.1.tar.gz

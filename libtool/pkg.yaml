@@ -1,9 +1,9 @@
 name: libtool
 install:
-- make
 - m4
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: http://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.gz

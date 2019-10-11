@@ -1,8 +1,7 @@
 name: xz
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://downloads.sourceforge.net/project/lzmautils/xz-5.2.4.tar.xz

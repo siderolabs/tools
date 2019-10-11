@@ -1,8 +1,7 @@
 name: gettext
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://ftp.gnu.org/gnu/gettext/gettext-0.19.8.1.tar.xz

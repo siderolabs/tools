@@ -1,8 +1,7 @@
 name: sed
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://ftp.gnu.org/gnu/sed/sed-4.5.tar.xz

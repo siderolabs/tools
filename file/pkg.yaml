@@ -1,11 +1,11 @@
 name: file
 install:
-- make
 - autoconf
 - automake
 - libtool
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://github.com/file/file/archive/FILE5_34.tar.gz

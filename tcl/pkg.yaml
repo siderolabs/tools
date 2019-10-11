@@ -1,8 +1,7 @@
 name: tcl
-install:
-- make
 dependencies:
 - image: docker.io/autonomy/toolchain:d1f6110
+- stage: make
 steps:
 - sources:
   - url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.9/tcl-core8.6.9-src.tar.gz
