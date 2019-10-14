@@ -2,61 +2,61 @@ name: tools
 variant: scratch
 shell: /toolchain/bin/bash
 dependencies:
-- image: docker.io/autonomy/toolchain:d1f6110
-- stage: argp-standalone
-- stage: autoconf
-- stage: automake
-- stage: bash
-- stage: bc
-- stage: bison
-- stage: bzip2
-- stage: ca-certificates
-- stage: coreutils
-- stage: cpio
-- stage: curl
-- stage: dejagnu
-- stage: diffutils
-- stage: dtc
-- stage: elfutils
-- stage: expect
-- stage: file
-- stage: findutils
-- stage: flex
-- stage: gawk
-- stage: gettext
-- stage: git
-- stage: golang
-- stage: gperf
-- stage: grep
-- stage: gzip
-- stage: kmod
-- stage: libressl
-- stage: libtool
-- stage: m4
-- stage: make
-- stage: musl-fts
-- stage: musl-obstack
-- stage: ncurses
-- stage: patch
-- stage: pcre
-- stage: perl
-- stage: pkg-config
-- stage: protobuf
-- stage: protoc-gen-go
-- stage: python2
-- stage: sed
-- stage: squashfs-tools
-- stage: swig
-- stage: tar
-- stage: tcl
-- stage: texinfo
-- stage: util-linux
-- stage: xz
-- stage: zlib
+  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: argp-standalone
+  - stage: autoconf
+  - stage: automake
+  - stage: bash
+  - stage: bc
+  - stage: bison
+  - stage: bzip2
+  - stage: ca-certificates
+  - stage: coreutils
+  - stage: cpio
+  - stage: curl
+  - stage: dejagnu
+  - stage: diffutils
+  - stage: dtc
+  - stage: elfutils
+  - stage: expect
+  - stage: file
+  - stage: findutils
+  - stage: flex
+  - stage: gawk
+  - stage: gettext
+  - stage: git
+  - stage: golang
+  - stage: gperf
+  - stage: grep
+  - stage: gzip
+  - stage: kmod
+  - stage: libressl
+  - stage: libtool
+  - stage: m4
+  - stage: make
+  - stage: musl-fts
+  - stage: musl-obstack
+  - stage: ncurses
+  - stage: patch
+  - stage: pcre
+  - stage: perl
+  - stage: pkg-config
+  - stage: protobuf
+  - stage: protoc-gen-go
+  - stage: python2
+  - stage: sed
+  - stage: squashfs-tools
+  - stage: swig
+  - stage: tar
+  - stage: tcl
+  - stage: texinfo
+  - stage: util-linux
+  - stage: xz
+  - stage: zlib
 steps:
-- prepare:
-  - |
-    cp /pkg/files/adjust.sh ${TOOLCHAIN}/bin
+  - prepare:
+      - |
+        cp /pkg/files/adjust.sh ${TOOLCHAIN}/bin
 finalize:
-- from: /toolchain
-  to: /toolchain
+  - from: /toolchain
+    to: /toolchain
