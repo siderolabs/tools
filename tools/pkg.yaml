@@ -2,7 +2,7 @@ name: tools
 variant: scratch
 shell: /toolchain/bin/bash
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - image: "{{ .TOOLCHAIN_IMAGE }}"
   - stage: argp-standalone
   - stage: autoconf
   - stage: automake
