@@ -2,7 +2,7 @@ name: make
 install:
   - make
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - image: "{{ .TOOLCHAIN_IMAGE }}"
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/make/make-4.2.1.tar.gz
