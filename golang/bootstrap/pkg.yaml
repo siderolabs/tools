@@ -1,6 +1,6 @@
 name: golang-bootstrap
 dependencies:
-  - image: docker.io/autonomy/toolchain:d1f6110
+  - image: docker.io/autonomy/toolchain:0714f82
   - stage: make
 steps:
   - sources:
@@ -10,7 +10,7 @@ steps:
         sha512: 2f65d5035d2b4ae8610c3337e0fcba64692c63953b54bf735f634da3532c6573ed08927865bf068b00a3885663815c5efc7dbd9a1b3d6337c9a0c62168aabca7
 
     env:
-      GOROOT_FINAL: "{{ .TOOLCHAIN }}/go_bootstrap"
+      GOROOT_FINAL: '{{ .TOOLCHAIN }}/go_bootstrap'
 
     prepare:
       - tar -xzf go1.4-bootstrap-20171003.tar.gz --strip-components=1

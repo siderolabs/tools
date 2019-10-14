@@ -19,14 +19,3 @@ grep -B1 '^ /include' dummy.log
 grep 'SEARCH.*/lib' dummy.log | sed 's|; |\n|g'
 grep "/lib/libc.so succeeded" dummy.log
 rm -v dummy.c a.out dummy.log
-
-# # Ensure that `make menuconfig` works for the kernel build.
-
-# mkdir -p /usr/lib/pkgconfig
-# ln -s /toolchain/include /usr/include
-
-# for lib in ncurses form panel menu ; do
-#     rm -vf                    /lib/lib${lib}.so
-#     echo "INPUT(-l${lib}w)" > /lib/lib${lib}.so
-#     ln -sfv ${lib}w.pc        /lib/pkgconfig/${lib}.pc
-# done

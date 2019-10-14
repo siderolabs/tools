@@ -1,32 +1,33 @@
 name: squashfs-tools
 install:
-- patch
+  - patch
 dependencies:
-- image: docker.io/autonomy/toolchain:d1f6110
-- stage: xz
-- stage: zlib
-- stage: make
+  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: xz
+  - stage: zlib
+  - stage: make
 steps:
-- sources:
-  - url: https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz
-    destination: squashfs.tar.gz
-    sha256: 0d605512437b1eb800b4736791559295ee5f60177e102e4d4ccd0ee241a5f3f6
-    sha512: 854ed7acc99920f24ecf11e0da807e5a2a162eeda55db971aba63a03f0da2c13b20ec0564a906c4b0e415bd8258b273a10208c7abc0704f2ceea773aa6148a79
-  prepare:
-  - |
-    tar -xf squashfs.tar.gz --strip-components=1
+  - sources:
+      - url: https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz
+        destination: squashfs.tar.gz
+        sha256: 0d605512437b1eb800b4736791559295ee5f60177e102e4d4ccd0ee241a5f3f6
+        sha512: 854ed7acc99920f24ecf11e0da807e5a2a162eeda55db971aba63a03f0da2c13b20ec0564a906c4b0e415bd8258b273a10208c7abc0704f2ceea773aa6148a79
+    prepare:
+      - |
+        tar -xf squashfs.tar.gz --strip-components=1
 
-    patch -p1 </pkg/patches/fix-compat.patch
-    patch -p1 </pkg/patches/0003-mksquashfs.c-get-inline-functions-work-with-C99.patch
-  build:
-  - |
-    cd squashfs-tools
-    make LDFLAGS="$LDFLAGS -Wl,-rpath=/toolchain/lib" XZ_SUPPORT=1 LZMA_XZ_SUPPORT=0 LZMA_SUPPORT=0
-  install:
-  - |
-    cd squashfs-tools
-    mkdir -p /rootfs/toolchain/bin
-    make install INSTALL_DIR=/rootfs/toolchain/bin
+        patch -p1 </pkg/patches/fix-compat.patch
+        patch -p1 </pkg/patches/0003-mksquashfs.c-get-inline-functions-work-with-C99.patch
+        patch -p1 </pkg/patches/squashfs-tools-4.3-sysmacros.patch
+    build:
+      - |
+        cd squashfs-tools
+        make LDFLAGS="$LDFLAGS -Wl,-rpath=/toolchain/lib" XZ_SUPPORT=1 LZMA_XZ_SUPPORT=0 LZMA_SUPPORT=0
+    install:
+      - |
+        cd squashfs-tools
+        mkdir -p /rootfs/toolchain/bin
+        make install INSTALL_DIR=/rootfs/toolchain/bin
 finalize:
-- from: /rootfs
-  to: /
+  - from: /rootfs
+    to: /
