@@ -1,9 +1,8 @@
 name: cpio
-install:
-  - autoconf
 dependencies:
   - image: docker.io/autonomy/toolchain:0714f82
   - stage: make
+  - stage: autoconf
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.gz

@@ -1,10 +1,10 @@
 name: automake
-install:
-  - perl
-  - autoconf
 dependencies:
   - image: docker.io/autonomy/toolchain:0714f82
   - stage: make
+  - stage: perl
+  - stage: autoconf
+  - stage: m4
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/automake/automake-1.16.1.tar.xz
