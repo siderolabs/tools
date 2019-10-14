@@ -1,9 +1,8 @@
 name: squashfs-tools
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: base
   - stage: xz
   - stage: zlib
-  - stage: make
   - stage: patch
 steps:
   - sources:

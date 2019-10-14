@@ -1,7 +1,6 @@
 name: m4
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/m4/m4-1.4.18.tar.xz

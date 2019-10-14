@@ -1,7 +1,6 @@
 name: kmod
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
 steps:
   - sources:
       - url: https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-25.tar.xz

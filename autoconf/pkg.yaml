@@ -1,9 +1,10 @@
 name: autoconf
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
   - stage: perl
+    runtime: yes
   - stage: m4
+    runtime: yes
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz

@@ -1,0 +1,6 @@
+name: base
+dependencies:
+  - image: docker.io/autonomy/toolchain:0714f82
+    runtime: true
+  - stage: make
+    runtime: true

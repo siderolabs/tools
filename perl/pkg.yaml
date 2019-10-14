@@ -1,7 +1,6 @@
 name: perl
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
 steps:
   - sources:
       - url: https://www.cpan.org/src/5.0/perl-5.28.2.tar.xz

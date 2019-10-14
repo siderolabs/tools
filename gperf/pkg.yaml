@@ -1,7 +1,6 @@
 name: gperf
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
 steps:
   - sources:
       - url: http://ftp.gnu.org/pub/gnu/gperf/gperf-3.1.tar.gz

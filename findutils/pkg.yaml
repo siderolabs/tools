@@ -1,7 +1,6 @@
 name: findutils
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/findutils/findutils-4.7.0.tar.xz

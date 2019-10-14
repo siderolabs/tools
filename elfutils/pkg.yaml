@@ -1,16 +1,13 @@
 name: elfutils
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: base
   - stage: zlib
   - stage: argp-standalone
   - stage: musl-fts
   - stage: musl-obstack
-  - stage: make
   - stage: patch
   - stage: autoconf
   - stage: automake
-  - stage: perl
-  - stage: m4
 steps:
   - sources:
       - url: https://sourceware.org/ftp/elfutils/0.173/elfutils-0.173.tar.bz2

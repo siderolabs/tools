@@ -1,6 +1,6 @@
 name: protoc-gen-go
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: base
   - stage: golang
 steps:
   - sources:

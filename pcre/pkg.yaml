@@ -1,9 +1,8 @@
 name: pcre
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: base
   - stage: zlib
   - stage: bzip2
-  - stage: make
 steps:
   - sources:
       - url: https://ftp.pcre.org/pub/pcre/pcre-8.43.tar.bz2

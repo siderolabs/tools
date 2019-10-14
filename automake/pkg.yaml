@@ -1,10 +1,9 @@
 name: automake
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
   - stage: perl
+    runtime: yes
   - stage: autoconf
-  - stage: m4
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/automake/automake-1.16.1.tar.xz

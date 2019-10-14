@@ -1,7 +1,6 @@
 name: ncurses
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz
