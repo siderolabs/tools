@@ -1,9 +1,9 @@
 name: bc
-install:
-  - texinfo
 dependencies:
   - image: docker.io/autonomy/toolchain:0714f82
   - stage: make
+  - stage: texinfo
+  - stage: perl
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/bc/bc-1.07.1.tar.gz

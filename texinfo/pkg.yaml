@@ -1,9 +1,8 @@
 name: texinfo
-install:
-  - perl
 dependencies:
   - image: docker.io/autonomy/toolchain:0714f82
   - stage: make
+  - stage: perl
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/texinfo/texinfo-6.5.tar.xz

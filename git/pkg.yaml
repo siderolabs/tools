@@ -1,6 +1,4 @@
 name: git
-install:
-  - autoconf
 dependencies:
   - image: docker.io/autonomy/toolchain:0714f82
   - stage: zlib
@@ -9,6 +7,9 @@ dependencies:
   - stage: libressl
   - stage: curl
   - stage: make
+  - stage: autoconf
+  - stage: perl
+  - stage: m4
 steps:
   - sources:
       - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz

@@ -1,10 +1,9 @@
 name: autoconf
-install:
-  - perl
-  - m4
 dependencies:
   - image: docker.io/autonomy/toolchain:0714f82
   - stage: make
+  - stage: perl
+  - stage: m4
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz
