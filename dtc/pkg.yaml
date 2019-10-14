@@ -1,11 +1,10 @@
 name: dtc
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: base
   - stage: m4
   - stage: bison
   - stage: flex
   - stage: pkg-config
-  - stage: make
 steps:
   - sources:
       - url: https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-1.5.0.tar.xz

@@ -1,10 +1,9 @@
 name: curl
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: base
   - stage: libressl
   - stage: zlib
   - stage: pkg-config
-  - stage: make
 steps:
   - sources:
       - url: https://curl.haxx.se/download/curl-7.63.0.tar.xz

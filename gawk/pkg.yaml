@@ -1,7 +1,6 @@
 name: gawk
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/gawk/gawk-4.2.1.tar.xz

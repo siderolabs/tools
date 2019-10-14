@@ -1,7 +1,6 @@
 name: bc
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
   - stage: texinfo
   - stage: perl
 steps:

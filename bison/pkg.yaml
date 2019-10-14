@@ -1,8 +1,7 @@
 name: bison
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: base
   - stage: m4
-  - stage: make
   - stage: perl
 steps:
   - sources:

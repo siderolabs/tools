@@ -1,7 +1,6 @@
 name: argp-standalone
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
   - stage: patch
 steps:
   - sources:

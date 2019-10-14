@@ -1,7 +1,6 @@
 name: diffutils
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/diffutils/diffutils-3.6.tar.xz

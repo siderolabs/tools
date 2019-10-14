@@ -1,8 +1,8 @@
 name: libtool
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
-  - stage: make
+  - stage: base
   - stage: m4
+    runtime: true
 steps:
   - sources:
       - url: http://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.gz

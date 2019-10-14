@@ -1,8 +1,7 @@
 name: python2
 dependencies:
-  - image: docker.io/autonomy/toolchain:0714f82
+  - stage: base
   - stage: zlib
-  - stage: make
 steps:
   - sources:
       - url: https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tar.xz
