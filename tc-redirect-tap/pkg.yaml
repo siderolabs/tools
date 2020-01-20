@@ -1,0 +1,25 @@
+name: tc-redirect-tap
+dependencies:
+  - stage: base
+  - stage: golang
+steps:
+  - sources:
+      - url: https://github.com/firecracker-microvm/firecracker-go-sdk/archive/v0.19.0.tar.gz
+        destination: firecracker-go-sdk.tar.gz
+        sha256: 101a788aff42441e2caa8e8231c3285d15a2f55bc3c188ecbde340de3fe788c3
+        sha512: 83187e14be799aff71b4ce8761d74c96eaeade230f19ecb8d3f39bcf75f93935302edcaee884dfc369f5072cf63f82934334d043cd5d31e7859e8700d25c041f
+    prepare:
+      - |
+        tar -xzf firecracker-go-sdk.tar.gz --strip-components=1
+    build:
+      - |
+        export PATH=${TOOLCHAIN}/go/bin:${PATH}
+        make -C cni
+    install:
+      - |
+        export CNI_BIN_ROOT=/rootfs/opt/cni/bin
+        mkdir -p $CNI_BIN_ROOT
+        make -C cni install
+finalize:
+  - from: /rootfs
+    to: /

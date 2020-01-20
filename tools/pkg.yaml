@@ -48,6 +48,7 @@ dependencies:
   - stage: squashfs-tools
   - stage: swig
   - stage: tar
+  - stage: tc-redirect-tap
   - stage: tcl
   - stage: texinfo
   - stage: util-linux
