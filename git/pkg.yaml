@@ -6,6 +6,7 @@ dependencies:
   - stage: gettext
   - stage: libressl
   - stage: curl
+    runtime: true
   - stage: autoconf
 steps:
   - sources:

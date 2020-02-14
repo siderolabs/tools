@@ -2,6 +2,7 @@ name: curl
 dependencies:
   - stage: base
   - stage: libressl
+    runtime: true
   - stage: zlib
   - stage: pkg-config
 steps:
