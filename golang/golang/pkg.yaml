@@ -4,10 +4,10 @@ dependencies:
   - stage: golang-bootstrap
 steps:
   - sources:
-      - url: https://dl.google.com/go/go1.13.6.src.tar.gz
+      - url: https://dl.google.com/go/go1.14.src.tar.gz
         destination: go.src.tar.gz
-        sha256: aae5be954bdc40bcf8006eb77e8d8a5dde412722bc8effcdaf9772620d06420c
-        sha512: dffb6e06eea0b1541901dfbed8d28e8cc1eac3184dc40a19ed3637737df796a67a2e7170b228e1003d36b14e6f0f13bb8be9d2a702834a9c06228d1821659528
+        sha256: 6d643e46ad565058c7a39dac01144172ef9bd476521f42148be59249e4b74389
+        sha512: b04f2a90b9693f2c7a0b5c7048f186318937f3dd3831162c4130d88e2b185a5047db15e284041c70f1f42da512f42e5e85c13256018982cf2739244a31874328
 
     env:
       GOROOT_BOOTSTRAP: '{{ .TOOLCHAIN }}/go_bootstrap'
