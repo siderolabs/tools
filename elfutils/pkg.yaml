@@ -10,10 +10,10 @@ dependencies:
   - stage: automake
 steps:
   - sources:
-      - url: https://sourceware.org/ftp/elfutils/0.173/elfutils-0.173.tar.bz2
+      - url: http://deb.debian.org/debian/pool/main/e/elfutils/elfutils_0.176.orig.tar.bz2
         destination: elfutils.tar.bz2
-        sha256: b76d8c133f68dad46250f5c223482c8299d454a69430d9aa5c19123345a000ff
-        sha512: 7f38e4ce2098b685f15030bf01f0a66a74aa32fbfcead0304c1d0e0a929b348a72f99e685cd4605465f4337393382112f64b8847e6c2f7cc1a57a4fd03d03eb3
+        sha256: eb5747c371b0af0f71e86215a5ebb88728533c3a104a43d4231963f308cd1023
+        sha512: 7f032913be363a43229ded85d495dcf7542b3c85974aaaba0d984228dc9ac1721da3dc388d3fa02325a80940161db7e9ad2c9e4521a424ad8a7d050c0902915b
     prepare:
       - |
         tar -xjf elfutils.tar.bz2 --strip-components=1
