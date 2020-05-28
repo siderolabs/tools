@@ -1,7 +1,7 @@
 name: golang
 dependencies:
   - stage: base
-  - stage: golang-bootstrap
+  - stage: '{{ if eq .ARCH "aarch64" }}golang-alpine{{ else }}golang-bootstrap{{ end }}'
 steps:
   - sources:
       - url: https://dl.google.com/go/go1.14.3.src.tar.gz
