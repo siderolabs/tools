@@ -1,0 +1,16 @@
+name: golang-alpine
+dependencies:
+  - stage: base
+install:
+  - go
+steps:
+  - env:
+      GOROOT_FINAL: '{{ .TOOLCHAIN }}/go_bootstrap'
+
+    install:
+      - mkdir -p "/rootfs${GOROOT_FINAL}"
+      - cp -r /usr/lib/go/* "/rootfs${GOROOT_FINAL}"
+
+finalize:
+  - from: /rootfs
+    to: /
