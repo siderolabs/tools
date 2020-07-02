@@ -4,10 +4,10 @@ dependencies:
   - stage: patch
 steps:
   - sources:
-      - url: https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz
+      - url: https://github.com/protocolbuffers/protobuf/releases/download/v3.12.3/protobuf-cpp-3.12.3.tar.gz
         destination: protobuf-cpp-3.7.1.tar.gz
-        sha256: 97f6cdaa0724d5a8cd3375d5f5cf4bd253d5ad5291154f533ed0d94a9d501ef3
-        sha512: 6e6873f83dc6e8cf565874c428799b0dd86f7eb83130d7eec26225f640560bb74e1604fda16ffd507e0416567236831922fbd9f5354308abee945b5b83ca153e
+        sha256: 4ef97ec6a8e0570d22ad8c57c99d2055a61ea2643b8e1a0998d2c844916c4968
+        sha512: a30677d152eee663960ed363b62464a455057796a5938e900deaa8fa0e3ba468675be450846b7c27b722114ee6d735bd27edc302f38a39486f7e44f71d155c66
     prepare:
       - |
         tar -xzf protobuf-cpp-3.7.1.tar.gz --strip-components=1
