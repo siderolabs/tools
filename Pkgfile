@@ -1,6 +1,6 @@
-# syntax = docker.io/autonomy/bldr:v0.1.0-alpha.0-frontend
+# syntax = docker.io/autonomy/bldr:v0.2.0-alpha.2-frontend
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: docker.io/autonomy/toolchain:52e8abf
+  TOOLCHAIN_IMAGE: docker.io/autonomy/toolchain:v0.1.0-4-gaee36a0
