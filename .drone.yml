@@ -30,21 +30,18 @@ steps:
     image: autonomy/build-container:latest
     commands:
       - git fetch --tags
-      - apk add coreutils
-      - echo -e "$BUILDX_KUBECONFIG" > /root/.kube/config
-      - docker buildx create --driver kubernetes --driver-opt replicas=2 --driver-opt namespace=ci --driver-opt image=moby/buildkit:v0.6.2 --name ci --buildkitd-flags="--allow-insecure-entitlement security.insecure" --use
-      - docker buildx inspect --bootstrap
+      - install-ci-key
+      - setup-buildx-amd64-arm64
     environment:
-      BUILDX_KUBECONFIG:
-        from_secret: kubeconfig
-    privileged: true
+      SSH_KEY:
+        from_secret: ssh_key
     volumes:
       - name: docker-socket
         path: /var/run
       - name: docker
         path: /root/.docker/buildx
-      - name: kube
-        path: /root/.kube
+      - name: ssh
+        path: /root/.ssh
 
   - name: build-pull-request
     image: autonomy/build-container:latest
@@ -60,8 +57,8 @@ steps:
         path: /var/run
       - name: docker
         path: /root/.docker/buildx
-      - name: kube
-        path: /root/.kube
+      - name: ssh
+        path: /root/.ssh
 
   - name: build-and-publish
     image: autonomy/build-container:latest
@@ -83,15 +80,15 @@ steps:
         path: /var/run
       - name: docker
         path: /root/.docker/buildx
-      - name: kube
-        path: /root/.kube
+      - name: ssh
+        path: /root/.ssh
 
 volumes:
   - name: docker-socket
     temp: {}
   - name: docker
     temp: {}
-  - name: kube
+  - name: ssh
     temp: {}
 ---
 kind: pipeline
