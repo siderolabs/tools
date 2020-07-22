@@ -10,21 +10,6 @@ get:
 kind: pipeline
 name: default
 
-services:
-  - name: docker
-    image: docker:19.03.3-dind
-    entrypoint:
-      - dockerd
-    command:
-      - --dns=8.8.8.8
-      - --dns=8.8.4.4
-      - --mtu=1440
-      - --log-level=error
-    privileged: true
-    volumes:
-      - name: docker-socket
-        path: /var/run
-
 steps:
   - name: setup-ci
     image: autonomy/build-container:latest
@@ -38,10 +23,10 @@ steps:
     volumes:
       - name: docker-socket
         path: /var/run
-      - name: docker
-        path: /root/.docker/buildx
       - name: ssh
         path: /root/.ssh
+      - name: docker
+        path: /root/.docker/buildx
 
   - name: build-pull-request
     image: autonomy/build-container:latest
@@ -55,10 +40,10 @@ steps:
     volumes:
       - name: docker-socket
         path: /var/run
-      - name: docker
-        path: /root/.docker/buildx
       - name: ssh
         path: /root/.ssh
+      - name: docker
+        path: /root/.docker/buildx
 
   - name: build-and-publish
     image: autonomy/build-container:latest
@@ -78,14 +63,15 @@ steps:
     volumes:
       - name: docker-socket
         path: /var/run
-      - name: docker
-        path: /root/.docker/buildx
       - name: ssh
         path: /root/.ssh
+      - name: docker
+        path: /root/.docker/buildx
 
 volumes:
   - name: docker-socket
-    temp: {}
+    host:
+      path: /var/ci-docker
   - name: docker
     temp: {}
   - name: ssh
