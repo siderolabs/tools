@@ -1,0 +1,42 @@
+name: cmake
+dependencies:
+  - stage: base
+  - stage: bzip2
+  - stage: curl
+  - stage: expat
+  - stage: libuv
+  - stage: ncurses
+  - stage: rhash
+  - stage: xz
+  - stage: zlib
+steps:
+  - sources:
+      - url: https://www.cmake.org/files/v3.18/cmake-3.18.1.tar.gz
+        destination: cmake.tar.gz
+        sha256: c0e3338bd37e67155b9d1e9526fec326b5c541f74857771b7ffed0c46ad62508
+        sha512: e0591d5fb234f3e7b74d6d2aad44fbf3e19e69547bd428681ba6ad0461d4f3d2a154605808b4733531d2c66f0e91eb39a179ae0d89a37e92a3f20e9cae691468
+    env:
+      CC: gcc
+      CXX: g++
+      LD_LIBRARY_PATH: /toolchain/lib
+    prepare:
+      - |
+        tar -xzf cmake.tar.gz --strip-components=1
+
+        ./bootstrap \
+            --prefix=${TOOLCHAIN} \
+            --system-libs \
+            --no-system-jsoncpp \
+            --no-system-libarchive \
+            --parallel=$(nproc) \
+            -- -DCMAKE_BUILD_TYPE:STRING=Release \
+               -DCMAKE_INSTALL_RPATH=/toolchain/lib
+      - |
+        make -j $(nproc)
+    install:
+      - |
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /
+# || (cat Bootstrap.cmk/cmake_bootstrap.log; exit 1)
