@@ -11,6 +11,7 @@ dependencies:
   - stage: bison
   - stage: bzip2
   - stage: ca-certificates
+  - stage: cmake
   - stage: coreutils
   - stage: cpio
   - stage: curl
@@ -18,6 +19,7 @@ dependencies:
   - stage: diffutils
   - stage: dtc
   - stage: elfutils
+  - stage: expat
   - stage: expect
   - stage: file
   - stage: findutils
@@ -33,6 +35,7 @@ dependencies:
   - stage: kmod
   - stage: libressl
   - stage: libtool
+  - stage: libuv
   - stage: m4
   - stage: make
   - stage: musl-fts
@@ -45,6 +48,7 @@ dependencies:
   - stage: protobuf
   - stage: protoc-gen-go
   - stage: python2
+  - stage: rhash
   - stage: sed
   - stage: squashfs-tools
   - stage: swig

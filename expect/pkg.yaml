@@ -4,10 +4,10 @@ dependencies:
   - stage: tcl
 steps:
   - sources:
-      - url: https://downloads.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz
+      - url: http://deb.debian.org/debian/pool/main/e/expect/expect_5.45.4.orig.tar.gz
         destination: expect.tar.gz
-        sha256: 49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34
-        sha512: a8dc25e8175f67e029e15cbcfca1705165c1c4cb2dd37eaaaebffb61e3ba132d9519cd73ca5add4c3358a2b0b7a91e878279e8d0b72143ff2c287fce07e4659a
+        sha256: d082bf340fdb7a85b1e4e5df4d967d0140835db34a8a035c3102abb5eb62d450
+        sha512: 89ee8da2bfefc2baa5b0213c0d93be9a9eff1c3a1f437800c48395737ef359f3975f3355399be4494d491c080479e2b82bf9edbc9711ef1f6d3f3ae2ef613336
     prepare:
       - |
         tar -xzf expect.tar.gz --strip-components=1
