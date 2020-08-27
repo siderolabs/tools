@@ -15,20 +15,16 @@ steps:
         EMACS="no" ../gettext-tools/configure \
             --prefix=${TOOLCHAIN} \
             --enable-relocatable \
-            --disable-shared
+            --disable-shared \
+            --disable-java
     build:
       - |
         cd build
-        make -C gnulib-lib -j $(nproc)
-        make -C intl pluralx.c -j $(nproc)
-        make -C src msgfmt -j $(nproc)
-        make -C src msgmerge -j $(nproc)
-        make -C src xgettext -j $(nproc)
+        make -j $(nproc)
     install:
       - |
         cd build
-        mkdir -p /rootfs${TOOLCHAIN}/bin
-        cp -v src/{msgfmt,msgmerge,xgettext} /rootfs${TOOLCHAIN}/bin
+        make install DESTDIR=/rootfs
 finalize:
   - from: /rootfs
     to: /
