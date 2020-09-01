@@ -13,6 +13,10 @@ steps:
     environment:
       SSH_KEY:
         from_secret: ssh_key
+    resources:
+      requests:
+        cpu: 24000
+        memory: 48GiB
     volumes:
       - name: docker-socket
         path: /var/run
