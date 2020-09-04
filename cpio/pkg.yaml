@@ -4,13 +4,16 @@ dependencies:
   - stage: autoconf
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.gz
+      - url: https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.gz
         destination: cpio.tar.gz
-        sha256: 08a35e92deb3c85d269a0059a27d4140a9667a6369459299d08c17f713a92e73
-        sha512: 640a6980273b699dba147e7b656440d3bd09c1c3ac71650f218ca1e4b4309c04b391ff2a8569e12d7a95827dd2781ab369542de20cc3c26dab3431f2efbdc905
+        sha256: e87470d9c984317f658567c03bfefb6b0c829ff17dbf6b0de48d71a4c8f3db88
+        sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
     prepare:
       - |
         tar -xzf cpio.tar.gz --strip-components=1
+
+        patch -p1 < /pkg/patches/gcc-10.patch
+
         mkdir build
         cd build
         ../configure \

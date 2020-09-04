@@ -3,4 +3,5 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: docker.io/autonomy/toolchain:v0.1.0-4-gaee36a0
+  TOOLCHAIN_IMAGE: docker.io/autonomy/toolchain:v0.1.0-6-gb80d728
+
