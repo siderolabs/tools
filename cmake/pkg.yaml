@@ -31,6 +31,7 @@ steps:
             --parallel=$(nproc) \
             -- -DCMAKE_BUILD_TYPE:STRING=Release \
                -DCMAKE_INSTALL_RPATH=/toolchain/lib
+    build:
       - |
         make -j $(nproc)
     install:
