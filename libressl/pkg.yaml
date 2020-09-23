@@ -3,10 +3,10 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.0.tar.gz
+      - url: https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.1.tar.gz
         destination: libressl.tar.gz
-        sha256: eb5f298408b723f11a0ca0192c122ecb79b4855bfdf7eea183a6264296a13cf4
-        sha512: db7fec664bef8d76204ca691c11df236abce3c85b2a51011eec5bd302e273b62fa3cfce0430980915c3f3ce34176d5ef9c187902f0b39d7fc151e69e552b499c
+        sha256: d28db224cfb6d18009b2a7e8cb213cd5c943bbec87550062fef6a38479250315
+        sha512: 0204177ad0291f3fce4c77ab21cce17785d0239f2ae4be8fbdce5575cc98775186caa0e1851b211c05be07e3cc603111eeaac4379c8977e7b140fedee2551f93
     prepare:
       - |
         tar -xzf libressl.tar.gz --strip-components=1
