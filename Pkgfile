@@ -1,6 +1,9 @@
-# syntax = docker.io/autonomy/bldr:v0.2.0-alpha.2-frontend
+# syntax = ghcr.io/talos-systems/bldr:v0.2.0-alpha.3-frontend
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/talos-systems/toolchain:v0.1.0-7-g3b96e8c
+  TOOLCHAIN_IMAGE: ghcr.io/talos-systems/toolchain:v0.1.0-9-g4489575
+
+labels:
+  org.opencontainers.image.source: https://github.com/talos-systems/tools
