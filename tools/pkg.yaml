@@ -2,7 +2,7 @@ name: tools
 variant: scratch
 shell: /toolchain/bin/bash
 dependencies:
-  - image: "{{ .TOOLCHAIN_IMAGE }}"
+  - image: '{{ .TOOLCHAIN_IMAGE }}'
   - stage: argp-standalone
   - stage: autoconf
   - stage: automake
@@ -48,6 +48,7 @@ dependencies:
   - stage: protobuf
   - stage: protoc-gen-go
   - stage: python2
+  - stage: python3
   - stage: rhash
   - stage: sed
   - stage: squashfs-tools
