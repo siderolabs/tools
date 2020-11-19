@@ -1,0 +1,33 @@
+name: python3
+dependencies:
+  - stage: base
+  - stage: zlib
+steps:
+  - sources:
+      - url: https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tar.xz
+        destination: python.tar.xz
+        sha256: 9c73e63c99855709b9be0b3cc9e5b072cb60f37311e8c4e50f15576a0bf82854
+        sha512: b141039c9701a8cb0d15cd11a279153077524af4d0599e7d2c7279d4c18d05fda06b33ef82342d875de996c7117b7dc6eb154dc3669d38a1efa99801aeec6c5e
+    prepare:
+      - |
+        tar -xJf python.tar.xz --strip-components=1
+
+        mkdir build
+        cd build
+
+        sed -i '/def add_multiarch_paths/a \        return' ../setup.py
+
+        ../configure \
+            --prefix=${TOOLCHAIN} \
+            --with-ensurepip=no
+    build:
+      - |
+        cd build
+        make -j $(nproc)
+    install:
+      - |
+        cd build
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /
