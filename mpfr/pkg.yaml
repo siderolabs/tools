@@ -1,0 +1,30 @@
+name: mpfr
+dependencies:
+  - stage: base
+  - stage: gmp
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.2.tar.xz
+        destination: mpfr.tar.xz
+        sha256: 1d3be708604eae0e42d578ba93b390c2a145f17743a744d8f3f8c2ad5855a38a
+        sha512: d583555d08863bf36c89b289ae26bae353d9a31f08ee3894520992d2c26e5683c4c9c193d7ad139632f71c0a476d85ea76182702a98bf08dde7b6f65a54f8b88
+    prepare:
+      - |
+        tar -xJf mpfr.tar.xz --strip-components=1
+        mkdir build
+        cd build
+        ../configure \
+            --prefix=${TOOLCHAIN} \
+            --enable-thread-safe \
+            --disable-static
+    build:
+      - |
+        cd build
+        make -j $(nproc)
+    install:
+      - |
+        cd build
+        make install DESTDIR=/rootfs
+finalize:
+  - from: /rootfs
+    to: /

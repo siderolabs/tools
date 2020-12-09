@@ -1,0 +1,29 @@
+name: gmp
+dependencies:
+  - stage: base
+  - stage: m4
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/gmp/gmp-6.2.0.tar.xz
+        destination: gmp.tar.xz
+        sha256: 258e6cd51b3fbdfc185c716d55f82c08aff57df0c6fbd143cf6ed561267a1526
+        sha512: a066f0456f0314a1359f553c49fc2587e484ff8ac390ff88537266a146ea373f97a1c0ba24608bf6756f4eab11c9056f103c8deb99e5b57741b4f7f0ec44b90c
+    prepare:
+      - |
+        tar -xJf gmp.tar.xz --strip-components=1
+        mkdir build
+        cd build
+        ../configure \
+            --prefix=${TOOLCHAIN} \
+            --disable-static
+    build:
+      - |
+        cd build
+        make -j $(nproc)
+    install:
+      - |
+        cd build
+        make install DESTDIR=/rootfs
+finalize:
+  - from: /rootfs
+    to: /

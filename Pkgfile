@@ -3,7 +3,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/talos-systems/toolchain:v0.1.0-9-g4489575
+  TOOLCHAIN_IMAGE: ghcr.io/talos-systems/toolchain:v0.1.0-10-ge152e38
 
 labels:
   org.opencontainers.image.source: https://github.com/talos-systems/tools

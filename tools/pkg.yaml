@@ -27,6 +27,7 @@ dependencies:
   - stage: gawk
   - stage: gettext
   - stage: git
+  - stage: gmp
   - stage: golang
   - stage: gperf
   - stage: grep
@@ -38,6 +39,8 @@ dependencies:
   - stage: libuv
   - stage: m4
   - stage: make
+  - stage: mpc
+  - stage: mpfr
   - stage: musl-fts
   - stage: musl-obstack
   - stage: ncurses
