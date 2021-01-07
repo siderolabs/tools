@@ -4,13 +4,13 @@ dependencies:
   - stage: patch
 steps:
   - sources:
-      - url: https://github.com/protocolbuffers/protobuf/releases/download/v3.12.3/protobuf-cpp-3.12.3.tar.gz
-        destination: protobuf-cpp-3.7.1.tar.gz
-        sha256: 4ef97ec6a8e0570d22ad8c57c99d2055a61ea2643b8e1a0998d2c844916c4968
-        sha512: a30677d152eee663960ed363b62464a455057796a5938e900deaa8fa0e3ba468675be450846b7c27b722114ee6d735bd27edc302f38a39486f7e44f71d155c66
+      - url: https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protobuf-cpp-3.14.0.tar.gz
+        destination: protobuf-cpp.tar.gz
+        sha256: 50ec5a07c0c55d4ec536dd49021f2e194a26bfdbc531d03d1e9d4d3e27175659
+        sha512: 021a377a2bcfb1ee540e49371d1d7297d77359fd0de7b4a079918e8580258a7ee14256a9b392853dc6744e88d63b2fae723ab61cc9af599828f07f48b0161c74
     prepare:
       - |
-        tar -xzf protobuf-cpp-3.7.1.tar.gz --strip-components=1
+        tar -xzf protobuf-cpp.tar.gz --strip-components=1
 
         ./configure \
         --prefix="${TOOLCHAIN}" \
