@@ -1,0 +1,26 @@
+name: protoc-gen-go-grpc
+dependencies:
+  - stage: base
+  - stage: golang
+steps:
+  - sources:
+      - url: https://github.com/grpc/grpc-go/archive/v1.34.0.tar.gz
+        destination: grpc-go.tar.gz
+        sha256: 44eef6f9d159f289383ba844ca1a5b56eaf1a34463ee4b8e9e55c98d62108c1d
+        sha512: 4e71741a97a575a0257bd4deb2b8f35c78f564c492c889a12c3ef8218e0aff33e881f85c05d25d48cefcf51990e4ef1a8861065a4847fe08044d468c5d9c6fa0
+    prepare:
+      - |
+        tar -xzf grpc-go.tar.gz --strip-components=1
+    build:
+      - |
+        export PATH=${TOOLCHAIN}/go/bin:${PATH}
+        export GO111MODULE=on
+        cd cmd/protoc-gen-go-grpc
+        go build .
+    install:
+      - |
+        mkdir -p /rootfs${TOOLCHAIN}/bin
+        mv cmd/protoc-gen-go-grpc/protoc-gen-go-grpc /rootfs${TOOLCHAIN}/bin
+finalize:
+  - from: /rootfs
+    to: /
