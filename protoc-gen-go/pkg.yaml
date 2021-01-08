@@ -4,23 +4,27 @@ dependencies:
   - stage: golang
 steps:
   - sources:
-      - url: https://github.com/protocolbuffers/protobuf-go/archive/v1.25.0.tar.gz
-        destination: protobuf-go.tar.gz
-        sha256: c1c04d6e36c0d0fb6f3374197f9025d7e6df13f38a974098be020617c00fbaf2
-        sha512: f5e4c2399174ae41d73f902b189f792a22856e88cfdf2c09a9f39871179f2e937d2de24a46fc5e95b6c3870fab17d832480b95be49d27d8664ec2e0a4706cf3b
+      # We have to use github.com/golang/protobuf/protoc-gen-go instead of
+      # google.golang.org/protobuf/cmd/protoc-gen-go (see https://github.com/golang/protobuf/issues/1070)
+      # because the latter package was introduced in grpc-go v1.30,
+      # but upgrading grpc-go is not easy due to https://github.com/etcd-io/etcd/issues/12124.
+      - url: https://github.com/golang/protobuf/archive/v1.4.3.tar.gz
+        destination: golang-protobuf.tar.gz
+        sha256: 5736f943f8647362f5559689df6154f3c85d261fb088867c8a68494e2a767610
+        sha512: e8d4cb5bd4e10436db137ca1c53eb75c8e5c9637863a1d29e960f2e52505097da93a153b00ba5e0dc6fc355490cd51e185e861682fc1ce75bf56d6cd032366ee
     prepare:
       - |
-        tar -xzf protobuf-go.tar.gz --strip-components=1
+        tar -xzf golang-protobuf.tar.gz --strip-components=1
     build:
       - |
         export PATH=${TOOLCHAIN}/go/bin:${PATH}
         export GO111MODULE=on
-        cd cmd/protoc-gen-go
+        cd protoc-gen-go
         go build .
     install:
       - |
         mkdir -p /rootfs${TOOLCHAIN}/bin
-        mv cmd/protoc-gen-go/protoc-gen-go /rootfs${TOOLCHAIN}/bin
+        mv protoc-gen-go/protoc-gen-go /rootfs${TOOLCHAIN}/bin
 finalize:
   - from: /rootfs
     to: /
