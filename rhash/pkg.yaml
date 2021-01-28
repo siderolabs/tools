@@ -4,10 +4,10 @@ dependencies:
   - stage: libressl
 steps:
   - sources:
-      - url: http://deb.debian.org/debian/pool/main/r/rhash/rhash_1.4.0.orig.tar.gz
+      - url: http://deb.debian.org/debian/pool/main/r/rhash/rhash_1.4.1.orig.tar.gz
         destination: rhash.tar.gz
-        sha256: 2ea39540f5c580da0e655f7b483c19e0d31506aed4202d88e8459fa7aeeb8861
-        sha512: 2f02487fffe8d1bc70c4454829bbd250a15fbd09db5ef85c54d3e8ad1008e84616ea54483292deae45047a27964e27b26d9b3da8447e7c37dac1e2ce18a63a07
+        sha256: 430c812733e69b78f07ce30a05db69563450e41e217ae618507a4ce2e144a297
+        sha512: 30bbef7ce7815ee4ac062c537206a0b895845f61de4b1fdc0c0494f66284d9f3c1b06f812ea913fa35a3342d230d25d0986a1db644c7b4464bc1185997beb638
     prepare:
       - |
         tar -xzf rhash.tar.gz --strip-components=1
