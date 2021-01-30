@@ -50,6 +50,7 @@ dependencies:
   - stage: pkg-config
   - stage: protobuf
   - stage: protoc-gen-go
+  - stage: prototool
   - stage: python2
   - stage: python3
   - stage: rhash

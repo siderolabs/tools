@@ -1,0 +1,26 @@
+name: prototool
+dependencies:
+  - stage: base
+  - stage: golang
+steps:
+  - sources:
+      - url: https://github.com/uber/prototool/archive/v1.10.0.tar.gz
+        destination: prototool.tar.gz
+        sha256: 5b516418f41f7283a405bf4a8feb2c7034d9f3d8c292b2caaebcd218581d2de4
+        sha512: 4fd8471ec22d3807ff94ac298d6e1953feddb37f8aeaf633d243d3a16d4354d99bda53b412ad42be471eedc3a791de35a3a33167cdbebcc089e62d08b3adb145
+    prepare:
+      - |
+        tar -xzf prototool.tar.gz --strip-components=1
+    build:
+      - |
+        export PATH=${TOOLCHAIN}/go/bin:${PATH}
+        export GO111MODULE=on
+        cd cmd/prototool
+        go build .
+    install:
+      - |
+        mkdir -p /rootfs${TOOLCHAIN}/bin
+        mv cmd/prototool/prototool /rootfs${TOOLCHAIN}/bin
+finalize:
+  - from: /rootfs
+    to: /
