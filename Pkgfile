@@ -1,5 +1,7 @@
 # syntax = ghcr.io/talos-systems/bldr:v0.2.0-alpha.3-frontend
 
+# Sync bldr image with Makefile
+
 format: v1alpha2
 
 vars:

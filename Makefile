@@ -5,6 +5,10 @@ TAG ?= $(shell git describe --tag --always --dirty)
 BRANCH ?= $(shell git rev-parse --abbrev-ref HEAD)
 REGISTRY_AND_USERNAME := $(REGISTRY)/$(USERNAME)
 
+# Sync bldr image with Pkgfile
+BLDR ?= docker run --rm --volume $(PWD):/tools --entrypoint=/bldr \
+	ghcr.io/talos-systems/bldr:v0.2.0-alpha.3-frontend graph --root=/tools
+
 BUILD := docker buildx build
 PLATFORM ?= linux/amd64,linux/arm64
 PROGRESS ?= auto
@@ -13,7 +17,7 @@ COMMON_ARGS := --file=Pkgfile
 COMMON_ARGS += --progress=$(PROGRESS)
 COMMON_ARGS += --platform=$(PLATFORM)
 
-TARGETS =  tools
+TARGETS = tools
 
 all: $(TARGETS) ## Builds all known pkgs.
 
@@ -36,4 +40,4 @@ $(TARGETS):
 
 .PHONY: deps.png
 deps.png:
-	bldr graph | dot -Tpng > deps.png
+	$(BLDR) graph | dot -Tpng > deps.png
