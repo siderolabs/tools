@@ -29,6 +29,7 @@ dependencies:
   - stage: git
   - stage: gmp
   - stage: golang
+  - stage: golangci-lint
   - stage: gperf
   - stage: grep
   - stage: gzip
