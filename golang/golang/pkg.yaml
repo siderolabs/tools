@@ -4,10 +4,10 @@ dependencies:
   - stage: '{{ if eq .ARCH "aarch64" }}golang-alpine{{ else }}golang-bootstrap{{ end }}'
 steps:
   - sources:
-      - url: https://dl.google.com/go/go1.15.8.src.tar.gz
+      - url: https://dl.google.com/go/go1.16.1.src.tar.gz
         destination: go.src.tar.gz
-        sha256: 540c0ab7781084d124991321ed1458e479982de94454a98afab6acadf38497c2
-        sha512: 4b805425550aff5c38f1f66fa7f7b3282b20850b1c0735898ee62820080514a2a6ab573f1d6984656c5bb955ec2b10cef90fbb7ab6a6c8f1e75ebc0964a04a80
+        sha256: 680a500cd8048750121677dd4dc055fdfd680ae83edc7ed60a4b927e466228eb
+        sha512: c7674be1a4a03c031d13a52e03a5e134bd2f499fe1bde3083885e363528252fce43b119974b804c8c46ec59e85337bb94e96b7a7183bdb78301898e222b3bba1
 
     env:
       GOROOT_BOOTSTRAP: '{{ .TOOLCHAIN }}/go_bootstrap'
