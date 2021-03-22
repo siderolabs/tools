@@ -4,10 +4,10 @@ dependencies:
   - stage: golang
 steps:
   - sources:
-      - url: https://github.com/protocolbuffers/protobuf-go/archive/v1.25.0.tar.gz
+      - url: https://github.com/protocolbuffers/protobuf-go/archive/v1.26.0.tar.gz
         destination: protobuf-go.tar.gz
-        sha256: c1c04d6e36c0d0fb6f3374197f9025d7e6df13f38a974098be020617c00fbaf2
-        sha512: f5e4c2399174ae41d73f902b189f792a22856e88cfdf2c09a9f39871179f2e937d2de24a46fc5e95b6c3870fab17d832480b95be49d27d8664ec2e0a4706cf3b
+        sha256: 26218474bcf776ecf32d7d194c6bfaca8e7b4f0c087e5b595fd50fbb31409676
+        sha512: 18d3392fae131014e95961cc7490c8a4f0e0a7d95a18f0a469a9f2b119a1b89bf1952881950129e2b96ea4096b220ff8a3250736ca6efd5eca004f56db861844
     prepare:
       - |
         tar -xzf protobuf-go.tar.gz --strip-components=1
