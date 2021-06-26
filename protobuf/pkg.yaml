@@ -1,13 +1,12 @@
 name: protobuf
 dependencies:
   - stage: base
-  - stage: patch
 steps:
   - sources:
-      - url: https://github.com/protocolbuffers/protobuf/releases/download/v3.15.6/protobuf-cpp-3.15.6.tar.gz
+      - url: https://github.com/protocolbuffers/protobuf/releases/download/v3.17.3/protobuf-cpp-3.17.3.tar.gz
         destination: protobuf-cpp.tar.gz
-        sha256: bbdfb7455431d7d58666e8a2996d14b236718ff238eecde10646581e4c87f168
-        sha512: e41d687351ee7ad38e83e5e952ca53e44d8e8b02242ea6fcf218960e5409921ddd5ee0588dfcf9485b425d3711bb060d3f61129900b952fda368008e13cb3830
+        sha256: 51cec99f108b83422b7af1170afd7aeb2dd77d2bcbb7b6bad1f92509e9ccf8cb
+        sha512: efad397f5cdda6639d5e9980fe6eeadc1ef768bf1d96b1e528a1d7ba1d81ceb49e22cbd78d9b4ab3518236055140568342ff138204b4a47234fb2957a89d2db8
     prepare:
       - |
         tar -xzf protobuf-cpp.tar.gz --strip-components=1
@@ -15,8 +14,6 @@ steps:
         ./configure \
         --prefix="${TOOLCHAIN}" \
         --disable-shared
-
-        patch -p0 < /pkg/patches/musl-fix.patch
     build:
       - |
         make -j $(nproc)
