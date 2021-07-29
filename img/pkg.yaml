@@ -7,34 +7,44 @@ dependencies:
   - stage: git
   - stage: pkg-config
   - stage: libseccomp
+  - stage: patch
 steps:
   - env:
-      GO111MODULE: off
       GOPATH: /go
       PKGPATH: src/github.com/genuinetools/img
       CGO_ENABLED: "1"
+      LD_LIBRARY_PATH: /toolchain/lib
     sources:
-      - url: https://github.com/genuinetools/img/archive/9856fcb98e30a8152a7f5f1445bb3ecc11598e75.tar.gz
+      - url: https://github.com/genuinetools/img/archive/refs/tags/v0.5.11.tar.gz
         destination: img.tar.gz
-        sha256: 73756b8d6d27d665ceeac8ae06678be477c53a832db2e2e24171672e46811442
-        sha512: bd18a8a83c6f99d63f7e520660ac772cbe80cc2281b71a18f71f447e8f6018f17c31c34143c7d7138e18b8d97a1ff6f70eb1b22f153b962f5ae2ba40778ea182
+        sha256: c6d805ab899db639fa08f0e33fe6673593be8336d288bb1cb4cb81a3229a916f
+        sha512: de80c2c26dd2fb780fb0447f07b5478e1571067ec934fb2adb32dff1aa3853ff872388b9c9c168c139194ab5d38672fb3b4c76c4f77fd8e61ce48bde8cae8c1b
     prepare:
       - |
+        export PATH=${GOPATH}/bin:${TOOLCHAIN}/go/bin:${PATH}
+
+        go install github.com/go-bindata/go-bindata/go-bindata@v3.1.2+incompatible
+
         mkdir -p ${GOPATH}/${PKGPATH}
         tar -xzf img.tar.gz --strip-components=1 -C ${GOPATH}/${PKGPATH}
+
+        cd ${GOPATH}/${PKGPATH}
+        patch -p1 < /pkg/patches/reproducibility.patch
     build:
       - |
         export PATH=${GOPATH}/bin:${TOOLCHAIN}/go/bin:${PATH}
+
         cd ${GOPATH}/${PKGPATH}
-        go get github.com/go-bindata/go-bindata/...
-        make
+        make $PWD/cross/bin/runc
+        touch -ch -t 202108110000 ./cross/bin/runc
+        make internal/binutils/runc.go
+        touch -ch -t 202108110000 internal/binutils/runc.go
+        make static
     install:
       - |
-        cd ${GOPATH}/${PKGPATH}
-        export PATH=${GOPATH}/bin:${TOOLCHAIN}/go/bin:${PATH}
-        make install
         mkdir -p /rootfs${TOOLCHAIN}/bin
-        mv ${GOPATH}/bin/img /rootfs${TOOLCHAIN}/bin
+        cd ${GOPATH}/${PKGPATH}
+        mv img /rootfs${TOOLCHAIN}/bin
 finalize:
   - from: /rootfs
     to: /

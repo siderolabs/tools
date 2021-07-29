@@ -2,6 +2,7 @@ name: git
 dependencies:
   - stage: base
   - stage: zlib
+    runtime: true
   - stage: tcl
   - stage: gettext
   - stage: libressl

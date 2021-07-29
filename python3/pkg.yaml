@@ -2,12 +2,15 @@ name: python3
 dependencies:
   - stage: base
   - stage: zlib
+  - stage: patch
 steps:
   - sources:
-      - url: https://www.python.org/ftp/python/3.9.2/Python-3.9.2.tar.xz
+      - url: https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tar.xz
         destination: python.tar.xz
-        sha256: 3c2034c54f811448f516668dce09d24008a0716c3a794dd8639b5388cbde247d
-        sha512: b204d865e4c974951830008c381678876987da267c37bce3b4e488c07aa744658e57b8dc5d248051d0391f3b580e69877f7772abc0a0de5288349d448ccf0789
+        sha256: 397920af33efc5b97f2e0b57e91923512ef89fc5b3c1d21dbfc8c4828ce0108a
+        sha512: 01c529e3207738d8771caeb5ed6217e10745c21aa39832fe3185e1c87fdb6aedead97ce38dbb11e02d873654028bd8071c3f345c18452769520723284efe9dc1
+    env:
+      SOURCE_DATE_EPOCH: "1"
     prepare:
       - |
         tar -xJf python.tar.xz --strip-components=1
@@ -28,6 +31,21 @@ steps:
       - |
         cd build
         make DESTDIR=/rootfs install
+
+        # needed for some packages, especially packages that backport functionality
+        # to 2.x from 3.x
+        for item in /rootfs${TOOLCHAIN}/lib/python3.9/test/*; do
+          if [[ "$item" != */test_support.py* ]]; then
+            rm -rf "$item"
+          else
+            echo $item
+          fi
+        done
+
+        touch /rootfs${TOOLCHAIN}/lib/python3.9/test/__init__.py
+
+        # Determinism: remove all bytecode
+        find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"
 finalize:
   - from: /rootfs
     to: /
