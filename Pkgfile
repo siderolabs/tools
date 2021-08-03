@@ -1,4 +1,4 @@
-# syntax = ghcr.io/talos-systems/bldr:v0.2.0-alpha.3-frontend
+# syntax = ghcr.io/talos-systems/bldr:v0.2.0-alpha.4-frontend
 
 # Sync bldr image with Makefile
 
