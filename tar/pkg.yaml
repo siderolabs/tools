@@ -1,6 +1,7 @@
 name: tar
 dependencies:
   - stage: base
+  - stage: patch
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/tar/tar-1.30.tar.xz
