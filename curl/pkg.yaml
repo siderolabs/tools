@@ -4,6 +4,7 @@ dependencies:
   - stage: libressl
     runtime: true
   - stage: zlib
+    runtime: true
   - stage: pkg-config
 steps:
   - sources:
