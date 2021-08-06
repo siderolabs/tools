@@ -4,10 +4,10 @@ dependencies:
   - stage: golang
 steps:
   - sources:
-      - url: https://github.com/grpc/grpc-go/archive/refs/tags/v1.38.0.tar.gz
+      - url: https://github.com/grpc/grpc-go/archive/refs/tags/v1.39.1.tar.gz
         destination: grpc-go.tar.gz
-        sha256: fd6a2e2ae9e810670fdb63d196275ddb171e7f99f3bb801a02dde973de2f557b
-        sha512: 9657bfcc23ea3f98654dc2650b28a85d4ecf398151e0f0d83da67eff870e28b95599550f2090690e863ee306d9f72f60bba5c4c2bdd3db9683b8a50d056ed68d
+        sha256: 5c08d70fa32bebc917f1b684d60281d15d2dd7f8a7f5992710f7a2257304fcba
+        sha512: 0019f3d64ca4982978d125b8387987856abea2173845bbcf07c606a66abf98e784c2a734d62e8cb10e7760f5ae0c6acaaa486af7088521cfdc5b3266abe2d64c
     prepare:
       - |
         tar -xzf grpc-go.tar.gz --strip-components=1
