@@ -2,6 +2,7 @@ name: rhash
 dependencies:
   - stage: base
   - stage: libressl
+  - stage: patch
 steps:
   - sources:
       - url: http://deb.debian.org/debian/pool/main/r/rhash/rhash_1.4.1.orig.tar.gz

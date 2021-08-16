@@ -2,6 +2,7 @@ name: cpio
 dependencies:
   - stage: base
   - stage: autoconf
+  - stage: patch
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.gz
