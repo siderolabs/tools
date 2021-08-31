@@ -1,6 +1,7 @@
 name: ncurses
 dependencies:
   - stage: base
+  - stage: patch
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz
@@ -12,6 +13,9 @@ steps:
     prepare:
       - |
         tar -xzf ncurses.tar.gz --strip-components=1
+
+        patch -p1 < /pkg/patches/reproducibility.patch
+
         mkdir build
         cd build
 
@@ -32,8 +36,6 @@ steps:
       - |
         cd build
         make DESTDIR=/rootfs install
-
-        rm /rootfs${TOOLCHAIN}/lib/*.a
 finalize:
   - from: /rootfs
     to: /
