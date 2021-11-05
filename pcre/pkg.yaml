@@ -5,10 +5,10 @@ dependencies:
   - stage: bzip2
 steps:
   - sources:
-      - url: https://ftp.pcre.org/pub/pcre/pcre-8.43.tar.bz2
+      - url: https://downloads.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.bz2
         destination: pcre.tar.bz2
-        sha256: 91e762520003013834ac1adb4a938d53b22a216341c061b0cf05603b290faf6b
-        sha512: 3b4ac2c7ccd77c9575d07a33c3456f40b50731029e62d01fb8f2f5871d7118e12bc9e6bc7a8079769c765e38da5ecf98c4b261b10ff0a2f14f0881b434f67af7
+        sha256: 4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8
+        sha512: 91bff52eed4a2dfc3f3bfdc9c672b88e7e2ffcf3c4b121540af8a4ae8c1ce05178430aa6b8000658b9bb7b4252239357250890e20ceb84b79cdfcde05154061a
     prepare:
       - |
         tar -xjf pcre.tar.bz2 --strip-components=1
