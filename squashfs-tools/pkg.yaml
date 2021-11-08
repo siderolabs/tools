@@ -6,16 +6,15 @@ dependencies:
   - stage: patch
 steps:
   - sources:
-      - url: https://github.com/plougher/squashfs-tools/archive/4.4.tar.gz
+      - url: https://github.com/plougher/squashfs-tools/archive/refs/tags/4.5.tar.gz
         destination: squashfs.tar.gz
-        sha256: a7fa4845e9908523c38d4acf92f8a41fdfcd19def41bd5090d7ad767a6dc75c3
-        sha512: 133ce437fb8c929933d52cff710b61dd9181f6f8be58250b0d6a59a7bb79a2b350f68f456b06a0e17c469409a71272d586802d570248273ddcd5dad088c00308
+        sha256: b9e16188e6dc1857fe312633920f7d71cc36b0162eb50f3ecb1f0040f02edddd
+        sha512: e00610487d24eed9e5dadcf84014a3d7faa9815d8ce00fd4660e6c8ce394dccf185ed9f387f4fa1313b9812fe770f802bdcbaef87887f2bcefacf234594a72e0
     prepare:
       - |
         tar -xf squashfs.tar.gz --strip-components=1
 
         patch -p1 </pkg/patches/fix-compat.patch
-        patch -p1 </pkg/patches/fnocommon.patch
     build:
       - |
         cd squashfs-tools
