@@ -1,0 +1,40 @@
+name: ccache
+dependencies:
+  - stage: base
+  - stage: expat
+  - stage: curl
+  - stage: libuv
+  - stage: rhash
+  - stage: xz
+  - stage: zstd
+  - stage: cmake
+steps:
+  - sources:
+      - url: https://github.com/ccache/ccache/releases/download/v4.5.1/ccache-4.5.1.tar.gz
+        destination: ccache.tar.gz
+        sha256: f0d3cff5d555d6868f14a7d05696f0370074e475304fd5aa152b98f892364981
+        sha512: b59ea1811ea6105f4d7a844075d3e5e49ee3aadf81effacd3540bc04f786ee03f5eab4132020964609738afc2af3f0deee33f05949209a00d366c355cfb9795b
+    env:
+      LD_LIBRARY_PATH: /toolchain/lib
+    prepare:
+      - |
+        tar -xzf ccache.tar.gz --strip-components=1
+
+        mkdir build
+        cd build
+        cmake -DCMAKE_BUILD_TYPE=Release \
+          -DENABLE_DOCUMENTATION=OFF \
+          -DREDIS_STORAGE_BACKEND=OFF \
+          -DCMAKE_INSTALL_PREFIX=${TOOLCHAIN} \
+          ..
+    build:
+      - |
+        cd build
+        make -j $(nproc)
+    install:
+      - |
+        cd build
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /

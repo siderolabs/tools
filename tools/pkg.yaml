@@ -11,6 +11,7 @@ dependencies:
   - stage: bison
   - stage: bzip2
   - stage: ca-certificates
+  - stage: ccache
   - stage: cmake
   - stage: coreutils
   - stage: cpio
@@ -62,6 +63,7 @@ dependencies:
   - stage: util-linux
   - stage: xz
   - stage: zlib
+  - stage: zstd
 steps:
   - prepare:
       - |

@@ -1,0 +1,40 @@
+name: zstd
+dependencies:
+  - stage: base
+  - stage: expat
+  - stage: curl
+  - stage: libuv
+  - stage: rhash
+  - stage: xz
+  - stage: cmake
+steps:
+  - sources:
+      - url: https://github.com/facebook/zstd/releases/download/v1.5.1/zstd-1.5.1.tar.gz
+        destination: zstd.tar.gz
+        sha256: e28b2f2ed5710ea0d3a1ecac3f6a947a016b972b9dd30242369010e5f53d7002
+        sha512: 00c7f5f6f6a2b51557f3ede56026d54d8e023c85f9824496f4522524ce8ced495e88d56452e3510df6ec1bf53e659b2633cdcc84d016bcdbfdcc76e142d3620f
+    env:
+      LD_LIBRARY_PATH: /toolchain/lib
+    prepare:
+      - |
+        tar -xzf zstd.tar.gz --strip-components=1
+
+        cd build/cmake
+        mkdir builddir
+        cd builddir
+
+        cmake -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_INSTALL_PREFIX=${TOOLCHAIN} \
+          -DCMAKE_INSTALL_LIBDIR=${LD_LIBRARY_PATH} \
+          ..
+    build:
+      - |
+        cd build/cmake/builddir
+
+        make -j $(nproc)
+    install:
+      - |
+        make PREFIX=${TOOLCHAIN} DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /
