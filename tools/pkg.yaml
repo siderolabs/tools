@@ -62,6 +62,7 @@ dependencies:
   - stage: util-linux
   - stage: xz
   - stage: zlib
+  - stage: zstd
 steps:
   - prepare:
       - |

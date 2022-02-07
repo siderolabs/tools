@@ -3,6 +3,7 @@ dependencies:
   - stage: base
   - stage: xz
   - stage: zlib
+  - stage: zstd
   - stage: patch
 steps:
   - sources:
@@ -18,7 +19,7 @@ steps:
     build:
       - |
         cd squashfs-tools
-        make LDFLAGS="$LDFLAGS -Wl,-rpath=/toolchain/lib" XZ_SUPPORT=1 LZMA_XZ_SUPPORT=0 LZMA_SUPPORT=0
+        make LDFLAGS="$LDFLAGS -Wl,-rpath=/toolchain/lib" XZ_SUPPORT=1 LZMA_XZ_SUPPORT=0 LZMA_SUPPORT=0 ZSTD_SUPPORT=1
     install:
       - |
         cd squashfs-tools

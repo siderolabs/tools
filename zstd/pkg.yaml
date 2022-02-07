@@ -1,0 +1,25 @@
+name: zstd
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz
+        destination: zstd.tar.gz
+        sha256: 7c42d56fac126929a6a85dbc73ff1db2411d04f104fae9bdea51305663a83fd0
+        sha512: 96dbd2eb6623e3564a0fd36489b61bc3cb27758a584fdc9f064f3985d2e8b5605d7022890d00a6d15464d3cd0707d7e75d8cf6210323782d0af406b90a6d6784
+    env:
+      PREFIX: /toolchain
+      CFLAGS: -O2
+    prepare:
+      - |
+        tar -xzf zstd.tar.gz --strip-components=1
+    build:
+      - |
+        make -j $(nproc) -C lib HAVE_PTHREAD=1 HAVE_ZLIB=0 HAVE_LZMA=0 HAVE_LZ4=0 lib-mt
+        make -j $(nproc) -C programs HAVE_PTHREAD=1 HAVE_ZLIB=0 HAVE_LZMA=0 HAVE_LZ4=0
+    install:
+      - |
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /
