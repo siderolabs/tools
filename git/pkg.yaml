@@ -5,7 +5,7 @@ dependencies:
     runtime: true
   - stage: tcl
   - stage: gettext
-  - stage: libressl
+  - stage: openssl
   - stage: curl
     runtime: true
   - stage: autoconf

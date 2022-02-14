@@ -3,17 +3,23 @@ dependencies:
   - stage: base
   - stage: zlib
   - stage: patch
+  - stage: libffi
+  - stage: openssl
+  - stage: pkg-config
 steps:
   - sources:
-      - url: https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tar.xz
+      - url: https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tar.xz
         destination: python.tar.xz
-        sha256: 397920af33efc5b97f2e0b57e91923512ef89fc5b3c1d21dbfc8c4828ce0108a
-        sha512: 01c529e3207738d8771caeb5ed6217e10745c21aa39832fe3185e1c87fdb6aedead97ce38dbb11e02d873654028bd8071c3f345c18452769520723284efe9dc1
+        sha256: 17de3ac7da9f2519aa9d64378c603a73a0e9ad58dffa8812e45160c086de64c7
+        sha512: 215a7159face84788fe547c1e2689b8d0ae510275157cf01636bef2902d0ff465f844eb0328c9f39fd1cd03a1d1736d4cf258992f2788e492a801a372032c08b
     env:
       SOURCE_DATE_EPOCH: "1"
+      LD_LIBRARY_PATH: "/toolchain/lib"
     prepare:
       - |
         tar -xJf python.tar.xz --strip-components=1
+
+        patch -p1 < /pkg/patches/musl-find_library.patch
 
         mkdir build
         cd build
@@ -34,7 +40,7 @@ steps:
 
         # needed for some packages, especially packages that backport functionality
         # to 2.x from 3.x
-        for item in /rootfs${TOOLCHAIN}/lib/python3.9/test/*; do
+        for item in /rootfs${TOOLCHAIN}/lib/python3.10/test/*; do
           if [[ "$item" != */test_support.py* ]]; then
             rm -rf "$item"
           else
@@ -42,7 +48,7 @@ steps:
           fi
         done
 
-        touch /rootfs${TOOLCHAIN}/lib/python3.9/test/__init__.py
+        touch /rootfs${TOOLCHAIN}/lib/python3.10/test/__init__.py
 
         # Determinism: remove all bytecode
         find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"

@@ -1,7 +1,7 @@
 name: curl
 dependencies:
   - stage: base
-  - stage: libressl
+  - stage: openssl
     runtime: true
   - stage: zlib
     runtime: true

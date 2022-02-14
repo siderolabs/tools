@@ -1,7 +1,7 @@
 name: rhash
 dependencies:
   - stage: base
-  - stage: libressl
+  - stage: openssl
   - stage: patch
 steps:
   - sources:

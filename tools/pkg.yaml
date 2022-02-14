@@ -34,16 +34,18 @@ dependencies:
   - stage: gzip
   - stage: img
   - stage: kmod
-  - stage: libressl
+  - stage: libffi
   - stage: libtool
   - stage: libuv
   - stage: m4
   - stage: make
+  - stage: meson
   - stage: mpc
   - stage: mpfr
   - stage: musl-fts
   - stage: musl-obstack
   - stage: ncurses
+  - stage: openssl
   - stage: patch
   - stage: pcre
   - stage: perl

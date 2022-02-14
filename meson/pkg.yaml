@@ -1,0 +1,25 @@
+name: meson
+dependencies:
+  - stage: base
+  - stage: libffi
+  - stage: python3
+steps:
+  - sources:
+      - url: https://github.com/mesonbuild/meson/releases/download/0.61.2/meson-0.61.2.tar.gz
+        destination: meson.tar.gz
+        sha256: 0233a7f8d959079318f6052b0939c27f68a5de86ba601f25c9ee6869fb5f5889
+        sha512: 0cbc686b23a4d0b74e723a97869898c1e44977ee354ed9186ccac3e527c00b7407f62a15435cb9588e9d63f4e87de54da0a7fac5b251079d1a13851f17d61529
+    env:
+      LD_LIBRARY_PATH: "/toolchain/lib"
+    prepare:
+      - |
+        tar -xzf meson.tar.gz --strip-components=1
+    build:
+      - |
+        python3 setup.py build
+    install:
+      - |
+        python3 setup.py install --prefix=/toolchain --root="/rootfs"
+finalize:
+  - from: /rootfs
+    to: /
