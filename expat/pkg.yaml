@@ -3,10 +3,10 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://github.com/libexpat/libexpat/releases/download/R_2_4_1/expat-2.4.1.tar.bz2
+      - url: https://github.com/libexpat/libexpat/releases/download/R_2_4_5/expat-2.4.5.tar.bz2
         destination: expat.tar.bz2
-        sha256: 2f9b6a580b94577b150a7d5617ad4643a4301a6616ff459307df3e225bcfbf40
-        sha512: b24e19c3f91e0f3d1ad3b08a810b8874e272ddfc6d4fd8f79c14c13eddf410648343b9f69fba2ce165be46c143cecf8d66cf446b4930da42f92def555ecd3408
+        sha256: fbb430f964c7a2db2626452b6769e6a8d5d23593a453ccbc21701b74deabedff
+        sha512: 904c0631689f2a4092a544959d8b917b34563762075e49a7b7aa40533bfd7d89b46113d1a58477c2bc3a0abf9b68408b43ac13e82da01f79ac79466bcf2edbf9
     prepare:
       - |
         tar -xjf expat.tar.bz2 --strip-components=1
