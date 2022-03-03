@@ -20,6 +20,9 @@ steps:
     install:
       - |
         python3 setup.py install --prefix=/toolchain --root="/rootfs"
+
+        # Determinism: remove all bytecode
+        find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"
 finalize:
   - from: /rootfs
     to: /
