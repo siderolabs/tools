@@ -1,5 +1,5 @@
 REGISTRY ?= ghcr.io
-USERNAME ?= talos-systems
+USERNAME ?= siderolabs
 SHA ?= $(shell git describe --match=none --always --abbrev=8 --dirty)
 TAG ?= $(shell git describe --tag --always --dirty)
 BRANCH ?= $(shell git rev-parse --abbrev-ref HEAD)
@@ -8,7 +8,7 @@ SOURCE_DATE_EPOCH ?= $(shell git log -1 --pretty=%ct)
 
 # Sync bldr image with Pkgfile
 BLDR ?= docker run --rm --volume $(PWD):/tools --entrypoint=/bldr \
-	ghcr.io/talos-systems/bldr:v0.2.0-alpha.4-frontend graph --root=/tools
+	ghcr.io/siderolabs/bldr:v0.2.0-alpha.7-frontend graph --root=/tools
 
 BUILD := docker buildx build
 PLATFORM ?= linux/amd64,linux/arm64
