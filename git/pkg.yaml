@@ -11,10 +11,10 @@ dependencies:
   - stage: autoconf
 steps:
   - sources:
-      - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz
+      - url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.35.2.tar.xz
         destination: git.tar.xz
-        sha256: 9d2e91e2faa2ea61ba0a70201d023b36f54d846314591a002c610ea2ab81c3e9
-        sha512: 3f05ea3a645d4d74c7380b03e2de39f893ff77a05d8b595ce30300d1d4e032f11d84952366096f8effd5fba18dfa5ebb946bc07a984eb7cbbda113cb88202f6c
+        sha256: c73d0c4fa5dcebdb2ccc293900952351cc5fb89224bb133c116305f45ae600f3
+        sha512: fac143daf547f4f1952101bc0006b53ac50c1741394a8c75dc517f595ce58b183c7daabcb23a7f9fc87fe22250e298441b0b7cc7af93820110877d65c036b76a
     prepare:
       - |
         tar -xJf git.tar.xz --strip-components=1
