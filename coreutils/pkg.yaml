@@ -3,10 +3,10 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/coreutils/coreutils-8.30.tar.xz
+      - url: https://ftp.gnu.org/gnu/coreutils/coreutils-9.1.tar.xz
         destination: coreutils.tar.xz
-        sha256: e831b3a86091496cdba720411f9748de81507798f6130adeaef872d206e1b057
-        sha512: 25bc132c0d89ce71c33e417f04649c9fcfce6c5ef8b19f093b2e9e2851bfde9b5a31e20499d9c427332228ba54b88d445ddb445551e1944bb8f5cbff5ffa4eda
+        sha256: 61a1f410d78ba7e7f37a5a4f50e6d1320aca33375484a3255eddf17a38580423
+        sha512: a6ee2c549140b189e8c1b35e119d4289ec27244ec0ed9da0ac55202f365a7e33778b1dc7c4e64d1669599ff81a8297fe4f5adbcc8a3a2f75c919a43cd4b9bdfa
     prepare:
       - |
         tar -xJf coreutils.tar.xz --strip-components=1
