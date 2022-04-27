@@ -8,10 +8,10 @@ dependencies:
   - stage: pkg-config
 steps:
   - sources:
-      - url: https://curl.haxx.se/download/curl-7.63.0.tar.xz
+      - url: https://curl.haxx.se/download/curl-7.83.0.tar.xz
         destination: curl.tar.xz
-        sha256: 9600234c794bfb8a0d3f138e9294d60a20e7a5f10e35ece8cf518e2112d968c4
-        sha512: c905eb157c6b0093f1b1a506e4782b83af423fd6de1ce0ab5372164a686ef292ffb10d7999d3dec2de602f63ee41b65e1a1008409dd8c959a597644c0ecb395b
+        sha256: bbff0e6b5047e773f3c3b084d80546cc1be4e354c09e419c2d0ef6116253511a
+        sha512: be02bb2a8a3140eff3a9046f27cd4f872ed9ddaa644af49e56e5ef7dfec84a15b01db133469269437cddc937eda73953fa8c51bb758f7e98873822cd2290d3a9
     prepare:
       - |
         tar -xJf curl.tar.xz --strip-components=1
