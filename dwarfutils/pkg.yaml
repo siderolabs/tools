@@ -1,0 +1,41 @@
+name: dwarfutils
+dependencies:
+  - stage: base
+  - stage: zlib
+  - stage: elfutils
+steps:
+  - sources:
+      - url: https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/dwarfutils/20210528-1/dwarfutils_20210528.orig.tar.gz
+        destination: dwarfutils.tar.gz
+        sha256: b8ba0ee9b70d2052d45272489d79bf456c4d342fc8c3bba45038afc50ec6e28b
+        sha512: e0f9c88554053ee6c1b1333960891189e7820c4a4ddc302b7e63754a4cdcfc2acb1b4b6083a722d1204a75e994fff3401ecc251b8c3b24090f8cb4046d90f870
+    prepare:
+      - |
+        tar -xvf dwarfutils.tar.gz --strip-components=1
+
+        ./configure --prefix=/usr --enable-shared
+    build:
+      - |
+        make
+    install:
+      - |
+        cd /tmp/build/0/libdwarf
+        install -d /rootfs/usr/include/libdwarf
+        install dwarf.h libdwarf.h /rootfs/usr/include/libdwarf
+
+        #libdwarf
+        cd /tmp/build/0/libdwarf/.libs
+
+        install -d /rootfs/usr/lib
+        install -m 644 libdwarf.a /rootfs/usr/lib
+        install -m 644 libdwarf.so /rootfs/usr/lib
+
+        # dwarfdump
+        cd /tmp/build/0/dwarfdump
+
+        install -Dm755 dwarfdump /rootfs/usr/bin/dwarfdump
+        install -Dm644 dwarfdump.1 /rootfs/usr/share/man/man1/dwarfdump.1
+        install -Dm644 dwarfdump.conf /rootfs/usr/lib/dwarfdump.conf
+finalize:
+  - from: /rootfs
+    to: /
