@@ -4,7 +4,10 @@ SHA ?= $(shell git describe --match=none --always --abbrev=8 --dirty)
 TAG ?= $(shell git describe --tag --always --dirty)
 BRANCH ?= $(shell git rev-parse --abbrev-ref HEAD)
 REGISTRY_AND_USERNAME := $(REGISTRY)/$(USERNAME)
-SOURCE_DATE_EPOCH ?= $(shell git log -1 --pretty=%ct)
+# inital commit time
+# git rev-list --max-parents=0 HEAD
+# git log e2983a47abbfaf9cb1cc740c87af26f29a837ee0 --pretty=%ct
+SOURCE_DATE_EPOCH ?= "1559830076"
 
 # Sync bldr image with Pkgfile
 BLDR ?= docker run --rm --volume $(PWD):/tools --entrypoint=/bldr \

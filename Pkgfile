@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.5.0-1-g5831f78
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.5.0-2-g8cbf98a
 
 labels:
   org.opencontainers.image.source: https://github.com/siderolabs/tools
