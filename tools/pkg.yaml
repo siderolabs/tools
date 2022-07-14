@@ -18,6 +18,7 @@ dependencies:
   - stage: dejagnu
   - stage: diffutils
   - stage: dtc
+  - stage: dwarfutils
   - stage: elfutils
   - stage: expat
   - stage: expect
@@ -46,6 +47,7 @@ dependencies:
   - stage: musl-obstack
   - stage: ncurses
   - stage: openssl
+  - stage: pahole
   - stage: patch
   - stage: pcre
   - stage: perl

@@ -25,6 +25,7 @@ steps:
         patch -Np0 -i /pkg/patches/elfutils-0.173-musl-qsort_r.patch
         patch -Np0 -i /pkg/patches/elfutils-0.173-musl-strerror_r.patch
         patch -Np0 -i /pkg/patches/elfutils-0.173-musl-strndupa.patch
+        patch -Np0 -i /pkg/patches/libdw-dwarf-frame-register.patch
         autoreconf -if
 
         cp /pkg/files/elfutils-0.173-missingfile-error.h src/error.h
@@ -40,12 +41,12 @@ steps:
     build:
       - |
         cd build
-        make -C lib libeu.a -j $(nproc)
-        make -C libelf -j $(nproc)
+
+        make
     install:
       - |
         cd build
-        make -C libelf DESTDIR=/rootfs install
+        make DESTDIR=/rootfs install
 finalize:
   - from: /rootfs
     to: /

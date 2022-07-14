@@ -23,7 +23,8 @@ steps:
 
         ./configure \
             --prefix=${TOOLCHAIN} \
-            --disable-static
+            --disable-static \
+            CFLAGS="${CFLAGS} -fPIC"
     build:
       - |
         make -j $(nproc)
