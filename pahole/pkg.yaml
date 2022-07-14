@@ -1,0 +1,48 @@
+name: pahole
+dependencies:
+  - stage: argp-standalone
+  - stage: base
+  - stage: patch
+  - stage: elfutils
+  - stage: dwarfutils
+  - stage: cmake
+  - stage: curl
+  - stage: expat
+  - stage: libuv
+  - stage: musl-obstack
+  - stage: musl-fts
+  - stage: rhash
+  - stage: xz
+steps:
+  - sources:
+      - url: https://git.kernel.org/pub/scm/devel/pahole/pahole.git/snapshot/pahole-1.23.tar.gz
+        destination: pahole.tar.gz
+        sha256: 1cc78061a75ccd6894943e7e39398c191b9173e4830d12fe93a8ff61a3967036
+        sha512: e2f9da02c47bdf22fc0988be75168ba99eaa428b167153768e5e3457c510c7ac6e6f73d11e22b5b741b01fad46ebb74d5fff312f4112b03e9aac3b7b21553e3f
+      - url: https://github.com/libbpf/libbpf/archive/refs/tags/v0.8.0.tar.gz
+        destination: libbpf.tar.gz
+        sha256: f4480242651a93c101ece320030f6b2b9b437f622f807719c13cb32569a6d65a
+        sha512: 8b034a9c8f23207638630b95ff95a651148a800589eb52f2fe09698bf3c4147f2e2008b24de45a70832cc7669cdfebd78bc491e575ca0b27de5c2de3b1fb5637
+    prepare:
+      - |
+        tar -xzf pahole.tar.gz --strip-components=1
+        tar -C lib/bpf -xzf libbpf.tar.gz --strip-components=1
+
+        patch -Np0 -i /pkg/patches/libff-to-latest.patch
+    build:
+      - |
+        mkdir build && cd build
+
+        cmake -DCMAKE_INSTALL_PREFIX=${TOOLCHAIN} \
+              -DCMAKE_MODULE_PATH=/usr/lib/cmake \
+              -DCMAKE_INSTALL_RPATH=${TOOLCHAIN}/lib \
+              -D__LIB=lib \
+              ..
+    install:
+      - |
+        cd build
+        make DESTDIR=/rootfs install
+        rm -rf /rootfs/toolchain/share
+finalize:
+  - from: /rootfs
+    to: /
