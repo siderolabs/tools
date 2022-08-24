@@ -7,5 +7,79 @@ format: v1alpha2
 vars:
   TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.6.0-2-gee7deca
 
+  # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
+  argp_standalone_version: 1.5.0
+  argp_standalone_sha256: c29eae929dfebd575c38174f2c8c315766092cec99a8f987569d0cad3c6d64f6
+  argp_standalone_sha512: fa2eb61ea00f7a13385e5c1e579dd88471d6ba3a13b6353e924fe71914b90b40688b42a9f1789bc246e03417fee1788b1990753cda8c8d4a544e85f26b63f9e2
+
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/autoconf.git
+  autoconf_version: 2.69
+  autoconf_sha256: 64ebcec9f8ac5b2487125a86a7760d2591ac9e1d3dbd59489633f9de62a57684
+  autoconf_sha512: 995d3e5a8eb1eb37e2b7fae53c6ec7a9b4df997286b7d643344818f94636756b1bf5ff5ea9155e755cb9461149a853dfbf2886fc6bd7132e5afa9c168e306e9b
+
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/automake.git
+  automake_version: 1.16.1
+  automake_sha256: 5d05bb38a23fd3312b10aea93840feec685bdf4a41146e78882848165d3ae921
+  automake_sha512: 4013bd31f4903b10875caa7d6ac16a14623a4eb91aa758924dee5b990e234fb50848d131e2dbdbbbc32f89c41a14f9c52a0064c37aa6760c524d607b354b13c3
+
+  # renovate: datasource=git-tags extractVersion=^bash-(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/bash.git
+  bash_version: 4.4.18
+  bash_sha256: 604d9eec5e4ed5fd2180ee44dd756ddca92e0b6aa4217bbab2b6227380317f23
+  bash_sha512: bd3048338aded9dee31651011aaa46bc8fba83a27fa063e3d47bcbe85ebbd86816d9080d1a658cfbd1736a2c80e98fdb659019c192d332472b00aa305e0285b0
+
+  # renovate: datasource=git-tags versioning=loose depName=git://git.savannah.gnu.org/bison.git
+  bison_version: 3.0.5
+  bison_sha256: 075cef2e814642e30e10e8155e93022e4a91ca38a65aa1d5467d4e969f97f338
+  bison_sha512: 00b448db8abe91b07e32ff5273c6617bc1350d806f92073a9472f4c2f0de5d22c152795674171b74f2eb9eff8d36f8173b82dacb215601bb071ae39404d4a8a2
+
+  # renovate: datasource=git-tags extractVersion=^bzip2-(?<version>.*)$ depName=git://sourceware.org/git/bzip2.git
+  bzip2_version: 1.0.8
+  bzip2_sha256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
+  bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
+
+  # renovate: datasource=gitlab-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
+  cmake_version: 3.18.1
+  cmake_sha256: c0e3338bd37e67155b9d1e9526fec326b5c541f74857771b7ffed0c46ad62508
+  cmake_sha512: e0591d5fb234f3e7b74d6d2aad44fbf3e19e69547bd428681ba6ad0461d4f3d2a154605808b4733531d2c66f0e91eb39a179ae0d89a37e92a3f20e9cae691468
+
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/coreutils.git
+  coreutils_version: 9.1
+  coreutils_sha256: 61a1f410d78ba7e7f37a5a4f50e6d1320aca33375484a3255eddf17a38580423
+  coreutils_sha512: a6ee2c549140b189e8c1b35e119d4289ec27244ec0ed9da0ac55202f365a7e33778b1dc7c4e64d1669599ff81a8297fe4f5adbcc8a3a2f75c919a43cd4b9bdfa
+
+  # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/cpio.git
+  cpio_version: 2_13
+  cpio_sha256: e87470d9c984317f658567c03bfefb6b0c829ff17dbf6b0de48d71a4c8f3db88
+  cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
+
+  # renovate: datasource=github-releases depName=curl/curl
+  curl_version: 7.84.0
+  curl_sha256: 2d118b43f547bfe5bae806d8d47b4e596ea5b25a6c1f080aef49fbcd817c5db8
+  curl_sha512: 86231866a35593a1637fbc0c6af3b6761bdfd99fb35580cc52970c36f19604f93dce59fea67a1d5bb4b455f719307599c7916c77d14f2b661f6bf7fb1ca716ce
+
+  # renovate: datasource=git-tags extractVersion=^dejagnu-(?<version>.*)-release$ versioning=loose depName=git://git.savannah.gnu.org/dejagnu.git
+  dejagnu_version: 1.6.1
+  dejagnu_sha256: bf5b28bb797e0ace4cfc0766a996339c795d8223bef54158be7887046bc01692
+  dejagnu_sha512: 887aa7c8b8698fe193f393b75479aad2c0724d6baa52e6f7172c48172f6546956c5f932afb574ba38b7c79e630981eeaf1d6d3c9edb3862ab5f39c5c09dce682
+
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/diffutils.git
+  diffutils_version: 3.6
+  diffutils_sha256: d621e8bdd4b573918c8145f7ae61817d1be9deb4c8d2328a65cea8e11d783bd6
+  diffutils_sha512: 3c159ff1cb7c901b0a57518483566b5740ca3c45aeb8d3004089f052975481db52994cc18592c502c68b0d2a1e22f1f7830f0d8dd9a9ed86de96e28cce9f70c1
+
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/dtc/dtc.git
+  dtc_version: 1.6.0
+  dtc_sha256: 10503b0217e1b07933e29e8d347a00015b2431bea5f59afe0bed3af30340c82d
+  dtc_sha512: 15433b24f1d6b7ed1f8066d050bd1bcbf988731aa38147564e3dd04b5f69af8d69e03befdc621a768526c620425a9bdd24aad4f9ff135930d6a1eeb0625f7de3
+
+  # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
+  dwarfutils_version: 0.4.1
+  dwarfutils_sha256: 34277b969d30be3cc4c6fbce6926dd3e6f9ea9a27b01951c6753b479aadfd5ef
+  dwarfutils_sha512: 793fe487de80fe6878f022b90f49ec334a0d7db071ff22a11902db5e3457cc7f3f853945a9ac74de2c40f7f388277f21c5b2e62745bca92d2bb55c51e9577693
+
+  # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ versioning=loose depName=git://sourceware.org/git/elfutils.git
+  elfutils_version: 0.187
+  elfutils_sha256: e70b0dfbe610f90c4d1fe0d71af142a4e25c3c4ef9ebab8d2d72b65159d454c8
+  elfutils_sha512: a9b9e32b503b8b50a62d4e4001097ed2721d3475232a6380e6b9853bd1647aec016440c0ca7ceb950daf1144f8db9814ab43cf33cc0ebef7fc91e9e775c9e874
 labels:
   org.opencontainers.image.source: https://github.com/siderolabs/tools

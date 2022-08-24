@@ -2,25 +2,20 @@ name: argp-standalone
 dependencies:
   - stage: base
   - stage: patch
+  - stage: autoconf
+  - stage: automake
 steps:
   - sources:
-      - url: http://www.lysator.liu.se/~nisse/misc/argp-standalone-1.3.tar.gz
+      # https://git.alpinelinux.org/aports/tree/main/argp-standalone/APKBUILD
+      - url: https://github.com/argp-standalone/argp-standalone/archive/refs/tags/{{ .argp_standalone_version }}.tar.gz
         destination: argp-standalone.tar.gz
-        sha256: dec79694da1319acd2238ce95df57f3680fea2482096e483323fddf3d818d8be
-        sha512: 58c3feb8852b90248fff39e49b5019bd0dcf646790c3eaf70c3262eb81dda31a61dc0a45963c7b4a010e80fc14b37288dcb3b3ef48d02f2d33dd72c1c62e62d9
+        sha256: "{{ .argp_standalone_sha256 }}"
+        sha512: "{{ .argp_standalone_sha512 }}"
     prepare:
       - |
         tar -xzvf argp-standalone.tar.gz --strip-components=1
 
-        patch -p0 </pkg/patches/argp-standalone-1.3-musl-fix-inline.patch
-
-        # We don't use a build directory because compiling fails with
-        #14 5.809 ../../testsuite/ex1.c:8:10: fatal error: argp.h: No such file or directory
-        #14 5.809  #include <argp.h>
-        #14 5.809           ^~~~~~~~
-        #14 5.809 ../../testsuite/ex3.c:55:10: fatal error: argp.h: No such file or directory
-        #14 5.809  #include <argp.h>
-
+        autoreconf -vif
         ./configure \
             --prefix=${TOOLCHAIN} \
             --disable-static \

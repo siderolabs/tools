@@ -7,10 +7,10 @@ dependencies:
   - stage: pkg-config
 steps:
   - sources:
-      - url: https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-1.6.0.tar.xz
+      - url: https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-{{ .dtc_version }}.tar.xz
         destination: dtc.tar.xz
-        sha256: 10503b0217e1b07933e29e8d347a00015b2431bea5f59afe0bed3af30340c82d
-        sha512: 15433b24f1d6b7ed1f8066d050bd1bcbf988731aa38147564e3dd04b5f69af8d69e03befdc621a768526c620425a9bdd24aad4f9ff135930d6a1eeb0625f7de3
+        sha256: "{{ .dtc_sha256 }}"
+        sha512: "{{ .dtc_sha512 }}"
     prepare:
       - |
         tar -xJf dtc.tar.xz --strip-components=1

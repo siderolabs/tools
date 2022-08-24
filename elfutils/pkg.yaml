@@ -10,34 +10,24 @@ dependencies:
   - stage: automake
 steps:
   - sources:
-      - url: http://deb.debian.org/debian/pool/main/e/elfutils/elfutils_0.176.orig.tar.bz2
+      - url: https://sourceware.org/elfutils/ftp/{{ .elfutils_version }}/elfutils-{{ .elfutils_version }}.tar.bz2
         destination: elfutils.tar.bz2
-        sha256: eb5747c371b0af0f71e86215a5ebb88728533c3a104a43d4231963f308cd1023
-        sha512: 7f032913be363a43229ded85d495dcf7542b3c85974aaaba0d984228dc9ac1721da3dc388d3fa02325a80940161db7e9ad2c9e4521a424ad8a7d050c0902915b
+        sha256: "{{ .elfutils_sha256 }}"
+        sha512: "{{ .elfutils_sha512 }}"
     prepare:
       - |
         tar -xjf elfutils.tar.bz2 --strip-components=1
 
-        patch -Np0 -i /pkg/patches/elfutils-0.173-fix-uninitialized.patch
-        patch -Np0 -i /pkg/patches/elfutils-0.173-musl-cdefs.patch
-        patch -Np0 -i /pkg/patches/elfutils-0.173-musl-fts-obstack.patch
-        patch -Np0 -i /pkg/patches/elfutils-0.173-musl-macros.patch
-        patch -Np0 -i /pkg/patches/elfutils-0.173-musl-qsort_r.patch
-        patch -Np0 -i /pkg/patches/elfutils-0.173-musl-strerror_r.patch
-        patch -Np0 -i /pkg/patches/elfutils-0.173-musl-strndupa.patch
-        patch -Np0 -i /pkg/patches/libdw-dwarf-frame-register.patch
-        autoreconf -if
-
-        cp /pkg/files/elfutils-0.173-missingfile-error.h src/error.h
+        patch -p1 < /pkg/patches/musl-macros.patch
 
         mkdir build
         cd build
 
         ../configure \
             --prefix=${TOOLCHAIN} \
-            --without-bzlib \
+            --disable-libdebuginfod \
+            --disable-debuginfod \
             CFLAGS="${CFLAGS} -fPIC -Wno-error"
-        cp -v ../src/error.h ${TOOLCHAIN}/include
     build:
       - |
         cd build

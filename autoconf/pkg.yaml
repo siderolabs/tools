@@ -7,10 +7,10 @@ dependencies:
     runtime: yes
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz
+      - url: https://ftp.gnu.org/gnu/autoconf/autoconf-{{ .autoconf_version }}.tar.xz
         destination: autoconf.tar.xz
-        sha256: 64ebcec9f8ac5b2487125a86a7760d2591ac9e1d3dbd59489633f9de62a57684
-        sha512: 995d3e5a8eb1eb37e2b7fae53c6ec7a9b4df997286b7d643344818f94636756b1bf5ff5ea9155e755cb9461149a853dfbf2886fc6bd7132e5afa9c168e306e9b
+        sha256: "{{ .autoconf_sha256 }}"
+        sha512: "{{ .autoconf_sha512 }}"
     prepare:
       - |
         tar -xJvf autoconf.tar.xz --strip-components=1
