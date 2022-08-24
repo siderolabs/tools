@@ -3,10 +3,10 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/findutils/findutils-4.7.0.tar.xz
+      - url: https://ftp.gnu.org/gnu/findutils/findutils-{{ .findutils_version }}.tar.xz
         destination: findutils.tar.gz
-        sha256: c5fefbdf9858f7e4feb86f036e1247a54c79fc2d8e4b7064d5aaa1f47dfa789a
-        sha512: 650a24507f8f4ebff83ad28dd27daa4785b4038dcaadc4fe00823b976e848527074cce3f9ec34065b7f037436d2aa6e9ec099bc05d7472c29864ac2c69de7f2e
+        sha256: "{{ .findutils_sha256 }}"
+        sha512: "{{ .findutils_sha512 }}"
     prepare:
       - |
         tar -xf findutils.tar.gz --strip-components=1

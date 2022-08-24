@@ -5,10 +5,10 @@ dependencies:
   - stage: mpfr
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz
+      - url: https://ftp.gnu.org/gnu/mpc/mpc-{{ .mpc_version }}.tar.gz
         destination: mpc.tar.gz
-        sha256: 6985c538143c1208dcb1ac42cedad6ff52e267b47e5f970183a3e75125b43c2e
-        sha512: 72d657958b07c7812dc9c7cbae093118ce0e454c68a585bfb0e2fa559f1bf7c5f49b93906f580ab3f1073e5b595d23c6494d4d76b765d16dde857a18dd239628
+        sha256: "{{ .mpc_sha256 }}"
+        sha512: "{{ .mpc_sha512 }}"
     prepare:
       - |
         tar -xzf mpc.tar.gz --strip-components=1

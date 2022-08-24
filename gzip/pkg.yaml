@@ -3,10 +3,10 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/gzip/gzip-1.12.tar.xz
+      - url: https://ftp.gnu.org/gnu/gzip/gzip-{{ .gzip_version }}.tar.xz
         destination: gzip.tar.xz
-        sha256: ce5e03e519f637e1f814011ace35c4f87b33c0bbabeec35baf5fbd3479e91956
-        sha512: 116326fe991828227de150336a0c016f4fe932dfbb728a16b4a84965256d9929574a4f5cfaf3cf6bb4154972ef0d110f26ab472c93e62ec9a5fd7a5d65abea24
+        sha256: "{{ .gzip_sha256 }}"
+        sha512: "{{ .gzip_sha512 }}"
     prepare:
       - |
         tar -xJf gzip.tar.xz --strip-components=1

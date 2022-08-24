@@ -6,10 +6,10 @@ dependencies:
   - stage: libtool
 steps:
   - sources:
-      - url: https://dist.libuv.org/dist/v1.37.0/libuv-v1.37.0.tar.gz
+      - url: https://dist.libuv.org/dist/{{ .libuv_version }}/libuv-{{ .libuv_version }}.tar.gz
         destination: libuv.tar.gz
-        sha256: 6f2794313c9603388ed4b7b818b3bed5f784f886ae3ce5b3424b331813f6a391
-        sha512: dc5f616871d8ea10d7d5f66f5b1044eb1deeab7714a5fb515a40ca9a45d01efea310c182b74a4152da26c9de9ca75b0ba13b103eb0e63361144216aac408223a
+        sha256: "{{ .libuv_sha256 }}"
+        sha512: "{{ .libuv_sha512 }}"
     prepare:
       - |
         tar -xzf libuv.tar.gz --strip-components=1

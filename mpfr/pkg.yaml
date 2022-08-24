@@ -4,10 +4,10 @@ dependencies:
   - stage: gmp
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.2.tar.xz
+      - url: https://ftp.gnu.org/gnu/mpfr/mpfr-{{ .mpfr_version }}.tar.xz
         destination: mpfr.tar.xz
-        sha256: 1d3be708604eae0e42d578ba93b390c2a145f17743a744d8f3f8c2ad5855a38a
-        sha512: d583555d08863bf36c89b289ae26bae353d9a31f08ee3894520992d2c26e5683c4c9c193d7ad139632f71c0a476d85ea76182702a98bf08dde7b6f65a54f8b88
+        sha256: "{{ .mpfr_sha256 }}"
+        sha512: "{{ .mpfr_sha512 }}"
     prepare:
       - |
         tar -xJf mpfr.tar.xz --strip-components=1

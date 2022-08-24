@@ -4,10 +4,10 @@ dependencies:
   - stage: texinfo
 steps:
   - sources:
-      - url: https://github.com/libffi/libffi/releases/download/v3.4.2/libffi-3.4.2.tar.gz
+      - url: https://github.com/libffi/libffi/releases/download/v{{ .libffi_version }}/libffi-{{ .libffi_version }}.tar.gz
         destination: libffi.tar.gz
-        sha256: 540fb721619a6aba3bdeef7d940d8e9e0e6d2c193595bc243241b77ff9e93620
-        sha512: 31bad35251bf5c0adb998c88ff065085ca6105cf22071b9bd4b5d5d69db4fadf16cadeec9baca944c4bb97b619b035bb8279de8794b922531fddeb0779eb7fb1
+        sha256: "{{ .libffi_sha256 }}"
+        sha512: "{{ .libffi_sha512 }}"
     prepare:
       - |
         tar -xzf libffi.tar.gz --strip-components=1

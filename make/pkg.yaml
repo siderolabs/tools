@@ -5,10 +5,10 @@ dependencies:
   - image: "{{ .TOOLCHAIN_IMAGE }}"
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/make/make-4.3.tar.gz
+      - url: https://ftp.gnu.org/gnu/make/make-{{ .make_version }}.tar.gz
         destination: make.tar.gz
-        sha256: e05fdde47c5f7ca45cb697e973894ff4f5d79e13b750ed57d7b66d8defc78e19
-        sha512: 9a1185cc468368f4ec06478b1cfa343bf90b5cd7c92c0536567db0315b0ee909af53ecce3d44cfd93dd137dbca1ed13af5713e8663590c4fdd21ea635d78496b
+        sha256: "{{ .make_sha256 }}"
+        sha512: "{{ .make_sha512 }}"
     prepare:
       - |
         tar -xzf make.tar.gz --strip-components=1

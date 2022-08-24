@@ -7,10 +7,10 @@ dependencies:
   - stage: pkg-config
 steps:
   - sources:
-      - url: https://github.com/void-linux/musl-obstack/archive/refs/tags/v1.2.2.tar.gz
+      - url: https://github.com/void-linux/musl-obstack/archive/refs/tags/{{ .musl_obstack_version }}.tar.gz
         destination: musl-obstack.tar.gz
-        sha256: 6eac88961c58a53f31cccd719b97d1b33c65436c51664e760a9582e2659c1314
-        sha512: 61ac90d8878ea620a5bab3ea8be1f8e42d26040475609f5a389a68b2dc0cfb4a10084deb994568392e5671b8ba405e9e78eb7e6313d03afbbcdde82d2e7995b0
+        sha256: "{{ .musl_obstack_sha256 }}"
+        sha512: "{{ .musl_obstack_sha512 }}"
     prepare:
       - |
         tar -xzf musl-obstack.tar.gz --strip-components=1

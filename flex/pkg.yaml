@@ -4,10 +4,10 @@ dependencies:
   - stage: m4
 steps:
   - sources:
-      - url: https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz
+      - url: https://github.com/westes/flex/releases/download/v{{ .flex_version }}/flex-{{ .flex_version }}.tar.gz
         destination: flex.tar.gz
-        sha256: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
-        sha512: e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e
+        sha256: "{{ .flex_sha256 }}"
+        sha512: "{{ .flex_sha512 }}"
     prepare:
       - |
         tar -xzf flex.tar.gz --strip-components=1

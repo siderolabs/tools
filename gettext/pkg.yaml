@@ -3,10 +3,10 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/gettext/gettext-0.19.8.1.tar.xz
+      - url: https://ftp.gnu.org/gnu/gettext/gettext-{{ .gettext_version }}.tar.xz
         destination: gettext.tar.xz
-        sha256: 105556dbc5c3fbbc2aa0edb46d22d055748b6f5c7cd7a8d99f8e7eb84e938be4
-        sha512: 3553227b62f2a7d9b67c881ef889c030a6a21d5ecd210c4bf3d649df0b37193a99a68cf8fd5f2c69b6a87e847035dd9576f9bcb9363422866e26b04f4f6dd431
+        sha256: "{{ .gettext_sha256 }}"
+        sha512: "{{ .gettext_sha512 }}"
     prepare:
       - |
         tar -xJf gettext.tar.xz --strip-components=1
