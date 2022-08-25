@@ -143,11 +143,6 @@ vars:
   gzip_sha256: ce5e03e519f637e1f814011ace35c4f87b33c0bbabeec35baf5fbd3479e91956
   gzip_sha512: 116326fe991828227de150336a0c016f4fe932dfbb728a16b4a84965256d9929574a4f5cfaf3cf6bb4154972ef0d110f26ab472c93e62ec9a5fd7a5d65abea24
 
-  # renovate: datasource=github-releases depName=genuinetools/img
-  img_version: v0.5.11
-  img_sha256: c6d805ab899db639fa08f0e33fe6673593be8336d288bb1cb4cb81a3229a916f
-  img_sha512: de80c2c26dd2fb780fb0447f07b5478e1571067ec934fb2adb32dff1aa3853ff872388b9c9c168c139194ab5d38672fb3b4c76c4f77fd8e61ce48bde8cae8c1b
-
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
   kmod_version: 25
   kmod_sha256: 7165e6496656159dcb909a91ed708a0fe273a4b128b4b1dc997ccb5189eef1cd

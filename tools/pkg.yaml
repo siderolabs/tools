@@ -33,7 +33,6 @@ dependencies:
   - stage: gperf
   - stage: grep
   - stage: gzip
-  - stage: img
   - stage: kmod
   - stage: libffi
   - stage: libtool
