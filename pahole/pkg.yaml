@@ -3,12 +3,16 @@ dependencies:
   - stage: argp-standalone
   - stage: base
   - stage: patch
+    runtime: true
   - stage: elfutils
   - stage: dwarfutils
   - stage: cmake
+  - stage: pkg-config
+    runtime: true
   - stage: curl
   - stage: expat
   - stage: libuv
+  - stage: libbpf
   - stage: musl-obstack
   - stage: musl-fts
   - stage: rhash
@@ -19,23 +23,17 @@ steps:
         destination: pahole.tar.gz
         sha256: "{{.pahole_sha256 }}"
         sha512: "{{.pahole_sha512 }}"
-      - url: https://github.com/libbpf/libbpf/archive/refs/tags/{{ .libbpf_version }}.tar.gz
-        destination: libbpf.tar.gz
-        sha256: "{{ .libbpf_sha256 }}"
-        sha512: "{{ .libbpf_sha512 }}"
     prepare:
       - |
         tar -xzf pahole.tar.gz --strip-components=1
-        tar -C lib/bpf -xzf libbpf.tar.gz --strip-components=1
-
-        patch -Np0 -i /pkg/patches/libff-to-latest.patch
     build:
       - |
         mkdir build && cd build
 
         cmake -DCMAKE_INSTALL_PREFIX=${TOOLCHAIN} \
+              -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_MODULE_PATH=/usr/lib/cmake \
-              -DCMAKE_INSTALL_RPATH=${TOOLCHAIN}/lib \
+              -DLIBBPF_EMBEDDED=OFF \
               -D__LIB=lib \
               ..
     install:

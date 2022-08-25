@@ -1,0 +1,26 @@
+name: libbpf
+dependencies:
+  - stage: base
+  - stage: elfutils
+  - stage: zlib
+steps:
+  - sources:
+      - url: https://github.com/libbpf/libbpf/archive/refs/tags/{{ .libbpf_version }}.tar.gz
+        destination: libbpf.tar.gz
+        sha256: "{{ .libbpf_sha256 }}"
+        sha512: "{{ .libbpf_sha512 }}"
+    prepare:
+      - |
+        tar -xzf libbpf.tar.gz --strip-components=1
+    build:
+      - |
+        cd src
+        make -j $(nproc) NO_PKG_CONFIG=1
+    install:
+      - |
+        cd src
+        make install PREFIX=${TOOLCHAIN} LIBSUBDIR=lib DESTDIR=/rootfs
+        make install_uapi_headers PREFIX=${TOOLCHAIN} LIBSUBDIR=lib DESTDIR=/rootfs
+finalize:
+  - from: /rootfs
+    to: /

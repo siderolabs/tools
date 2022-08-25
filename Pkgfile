@@ -87,7 +87,7 @@ vars:
   expat_sha256: a247a7f6bbb21cf2ca81ea4cbb916bfb9717ca523631675f99b3d4a5678dcd16
   expat_sha512: 46cc9d725f359b77681a2875bfefa15ceee50eb9513f6577607c0c5833dfa4241565c74f26b84b38d802c3cd8c32f00204fd74272bcecbd21229425764eef86c
 
-  # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ depName=file/file
+  # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ versioning=loose depName=file/file
   file_version: 5_34
   file_sha256: cf6014a703b71767cc1b00a101e8147c9db267dba3c4fee972b2a359355389cb
   file_sha512: 499df0346c9c5a7ac9e0e91da8ad67532bbc514dc6f5513ec90825cdbdc88dceb85108d099b0177f0ff3f2591183b19052515ebcd8aa5891b461452da18310e5
@@ -147,6 +147,11 @@ vars:
   kmod_version: 25
   kmod_sha256: 7165e6496656159dcb909a91ed708a0fe273a4b128b4b1dc997ccb5189eef1cd
   kmod_sha512: d579cd0cea24a06362a74927b7a3c777e9e01c990306e1032e4781cd441ffe435c70f2c2c4f6ae39eb1d857e622746411d5824d0c0d8bb79f91dc9fa51956252
+
+  # renovate: datasource=github-tags depName=libbpf/libbpf
+  libbpf_version: v1.0.0
+  libbpf_sha256: 16701e7c3a731a03fe08dee9893c95a86c879192955d12bc7495645e9ab1bc6e
+  libbpf_sha512: e99aea1ff477114549b41c272a975169a79ffc1daf4bcaba586cd13d0fc0b23c336cb406fd8e64b73350fe16e2d423fa68a29601d15e2477955c7a92358fb7f8
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
   libffi_version: 3.4.2
@@ -213,15 +218,10 @@ vars:
   openssl_sha256: d7939ce614029cdff0b6c20f0e2e5703158a489a72b2507b8bd51bf8c8fd10ca
   openssl_sha512: cb9f184ec4974a3423ef59c8ec86b6bf523d5b887da2087ae58c217249da3246896fdd6966ee9c13aea9e6306783365239197e9f742c508a0e35e5744e3e085f
 
-  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
-  pahole_version: 1.23
-  pahole_sha256: 1cc78061a75ccd6894943e7e39398c191b9173e4830d12fe93a8ff61a3967036
-  pahole_sha512: e2f9da02c47bdf22fc0988be75168ba99eaa428b167153768e5e3457c510c7ac6e6f73d11e22b5b741b01fad46ebb74d5fff312f4112b03e9aac3b7b21553e3f
-
-  # renovate: datasource=github-tags versioning=loose depName=libbpf/libbpf
-  libbpf_version: v0.8.0
-  libbpf_sha256: f4480242651a93c101ece320030f6b2b9b437f622f807719c13cb32569a6d65a
-  libbpf_sha512: 8b034a9c8f23207638630b95ff95a651148a800589eb52f2fe09698bf3c4147f2e2008b24de45a70832cc7669cdfebd78bc491e575ca0b27de5c2de3b1fb5637
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
+  pahole_version: 1.24
+  pahole_sha256: eeb88a62c3aaa1f4c389117b7e7cc08a49acc8a0e7f165f76dd9c5ab9af2c266
+  pahole_sha512: 8cc67538a8c543adee0c48759f63764d0f1c643db878a22ecb6d413b2dbafdc73f810ba9e0ca1a2ff062c71e9944624b28d0df8589c8367ee85725684fb1d5aa
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/patch.git
   patch_version: 2.7.6
