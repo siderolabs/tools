@@ -5,10 +5,10 @@ dependencies:
   - stage: pcre
 steps:
   - sources:
-      - url: https://ftp.osuosl.org/pub/blfs/conglomeration/swig/swig-4.0.0.tar.gz
+      - url: https://sourceforge.net/projects/swig/files/swig/swig-{{ .swig_version }}/swig-{{ .swig_version }}.tar.gz/download
         destination: swig.tar.gz
-        sha256: e8a39cd6437e342cdcbd5af27a9bf11b62dc9efec9248065debcb8276fcbb925
-        sha512: c897b87fb8b21caf8d1bee2c39cb9675a3b0ee047110e808c310a2787f8b89585738726e9f517c64e9d2f1b8311136365c569528f399b444b1081f69689b7165
+        sha256: "{{ .swig_sha256 }}"
+        sha512: "{{ .swig_sha512 }}"
     prepare:
       - |
         tar -xzf swig.tar.gz --strip-components=1

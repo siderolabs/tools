@@ -3,10 +3,10 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://zlib.net/fossils/zlib-1.2.12.tar.gz
+      - url: https://zlib.net/fossils/zlib-{{ .zlib_version }}.tar.gz
         destination: zlib.tar.gz
-        sha256: 91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9
-        sha512: cc2366fa45d5dfee1f983c8c51515e0cff959b61471e2e8d24350dea22d3f6fcc50723615a911b046ffc95f51ba337d39ae402131a55e6d1541d3b095d6c0a14
+        sha256: "{{ .zlib_sha256 }}"
+        sha512: "{{ .zlib_sha512 }}"
     prepare:
       - |
         tar -xf zlib.tar.gz --strip-components=1

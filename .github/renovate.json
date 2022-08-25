@@ -12,21 +12,14 @@
         },
         {
             "fileMatch": [
-                "Pkgfile"
+                "Pkgfile",
+                "Makefile"
             ],
             "matchStrings": [
-                "# syntax\\s+=\\s+(?<depName>ghcr.io\\/siderolabs\\/bldr):(?<currentValue>v.*)\\n"
+                "(?<depName>ghcr.io\\/siderolabs\\/bldr):(?<currentValue>v.*-frontend)"
             ],
             "datasourceTemplate": "docker",
             "versioningTemplate": "semver"
-        }
-    ],
-    "packageRules": [
-        {
-            "matchPackageNames": [
-                "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git"
-            ],
-            "allowedVersions": "<= 5.15"
         }
     ],
     "schedule": [

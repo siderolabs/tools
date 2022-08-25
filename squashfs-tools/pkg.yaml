@@ -7,10 +7,10 @@ dependencies:
   - stage: patch
 steps:
   - sources:
-      - url: https://github.com/plougher/squashfs-tools/archive/refs/tags/4.5.tar.gz
+      - url: https://github.com/plougher/squashfs-tools/archive/refs/tags/{{ .squashfs_tools_version }}.tar.gz
         destination: squashfs.tar.gz
-        sha256: b9e16188e6dc1857fe312633920f7d71cc36b0162eb50f3ecb1f0040f02edddd
-        sha512: e00610487d24eed9e5dadcf84014a3d7faa9815d8ce00fd4660e6c8ce394dccf185ed9f387f4fa1313b9812fe770f802bdcbaef87887f2bcefacf234594a72e0
+        sha256: "{{ .squashfs_tools_sha256 }}"
+        sha512: "{{ .squashfs_tools_sha512 }}"
     prepare:
       - |
         tar -xf squashfs.tar.gz --strip-components=1

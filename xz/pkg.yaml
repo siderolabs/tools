@@ -8,10 +8,10 @@ dependencies:
   - stage: libtool
 steps:
   - sources:
-      - url: https://github.com/xz-mirror/xz/archive/refs/tags/v5.2.5.tar.gz
+      - url: https://github.com/xz-mirror/xz/archive/refs/tags/{{ .xz_version }}.tar.gz
         destination: xz.tar.gz
-        sha256: 0d2b89629f13dd1a0602810529327195eff5f62a0142ccd65b903bc16a4ac78a
-        sha512: 686f01cfe33e2194766a856c48668c661b25eee194a443524f87ce3f866e0eb54914075b4e00185921516c5211db8cd5d2658f4b91f4a3580508656f776f468e
+        sha256: "{{ .xz_sha256 }}"
+        sha512: "{{ .xz_sha512 }}"
     prepare:
       - |
         mkdir -p xz build

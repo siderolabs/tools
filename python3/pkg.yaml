@@ -8,10 +8,10 @@ dependencies:
   - stage: pkg-config
 steps:
   - sources:
-      - url: https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tar.xz
+      - url: https://www.python.org/ftp/python/{{ .python_version }}/Python-{{ .python_version }}.tar.xz
         destination: python.tar.xz
-        sha256: 17de3ac7da9f2519aa9d64378c603a73a0e9ad58dffa8812e45160c086de64c7
-        sha512: 215a7159face84788fe547c1e2689b8d0ae510275157cf01636bef2902d0ff465f844eb0328c9f39fd1cd03a1d1736d4cf258992f2788e492a801a372032c08b
+        sha256: "{{ .python_sha256 }}"
+        sha512: "{{ .python_sha512 }}"
     env:
       SOURCE_DATE_EPOCH: "1"
       LD_LIBRARY_PATH: "/toolchain/lib"

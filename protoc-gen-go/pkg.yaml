@@ -4,10 +4,10 @@ dependencies:
   - stage: golang
 steps:
   - sources:
-      - url: https://github.com/protocolbuffers/protobuf-go/archive/refs/tags/v1.27.1.tar.gz
+      - url: https://github.com/protocolbuffers/protobuf-go/archive/refs/tags/{{ .protoc_gen_go_version }}.tar.gz
         destination: protobuf-go.tar.gz
-        sha256: 3ec41a8324431e72f85e0dc0c2c098cc14c3cb1ee8820996c8f46afca2d65609
-        sha512: a0236bc88b963df0acc2a2c7c247334614b2d555f341e103fd06759665802069a320ced4ab51be658283cc816ec9f2d53ed98728895c5b8ce18954a17663264b
+        sha256: "{{ .protoc_gen_go_sha256 }}"
+        sha512: "{{ .protoc_gen_go_sha512 }}"
     prepare:
       - |
         tar -xzf protobuf-go.tar.gz --strip-components=1

@@ -4,10 +4,10 @@ dependencies:
   - stage: patch
 steps:
   - sources:
-    - url: https://www.cpan.org/src/5.0/perl-5.34.0.tar.xz
+    - url: https://www.cpan.org/src/5.0/perl-{{ .perl_version }}.tar.xz
       destination: perl.tar.xz
-      sha256: 82c2e5e5c71b0e10487a80d79140469ab1f8056349ca8545140a224dbbed7ded
-      sha512: 691b4b31eacec357191fba777612b4e3eae59e946a22998a50766697c0d61db1d42a9b3bc1e41abf0d1ca1893e4a7c06d7bf3290480cf03d7f79befd7a8a3267
+      sha256: "{{ .perl_sha256 }}"
+      sha512: "{{ .perl_sha512 }}"
     env:
       SOURCE_DATE_EPOCH: "1"
     prepare:

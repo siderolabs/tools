@@ -5,10 +5,10 @@ dependencies:
   - stage: patch
 steps:
   - sources:
-      - url: http://deb.debian.org/debian/pool/main/r/rhash/rhash_1.4.1.orig.tar.gz
+      - url: https://github.com/rhash/RHash/archive/refs/tags/{{ .rhash_version }}.tar.gz
         destination: rhash.tar.gz
-        sha256: 430c812733e69b78f07ce30a05db69563450e41e217ae618507a4ce2e144a297
-        sha512: 30bbef7ce7815ee4ac062c537206a0b895845f61de4b1fdc0c0494f66284d9f3c1b06f812ea913fa35a3342d230d25d0986a1db644c7b4464bc1185997beb638
+        sha256: "{{ .rhash_sha256 }}"
+        sha512: "{{ .rhash_sha512 }}"
     prepare:
       - |
         tar -xzf rhash.tar.gz --strip-components=1

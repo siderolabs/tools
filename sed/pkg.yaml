@@ -3,10 +3,10 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/sed/sed-4.5.tar.xz
+      - url: https://ftp.gnu.org/gnu/sed/sed-{{ .sed_version }}.tar.xz
         destination: sed.tar.xz
-        sha256: 7aad73c8839c2bdadca9476f884d2953cdace9567ecd0d90f9959f229d146b40
-        sha512: f95fb27e03b2301dae63878413b4c48e40341cc676945a612e1d0bd911da3192858ae142791292a99fbdaacbc7dab2d6fccb50787c06846f99b0b3740b40c196
+        sha256: "{{ .sed_sha256 }}"
+        sha512: "{{ .sed_sha512 }}"
     prepare:
       - |
         tar -xJf sed.tar.xz --strip-components=1
