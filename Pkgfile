@@ -273,6 +273,7 @@ vars:
   squashfs_tools_sha256: b9e16188e6dc1857fe312633920f7d71cc36b0162eb50f3ecb1f0040f02edddd
   squashfs_tools_sha512: e00610487d24eed9e5dadcf84014a3d7faa9815d8ce00fd4660e6c8ce394dccf185ed9f387f4fa1313b9812fe770f802bdcbaef87887f2bcefacf234594a72e0
 
+  # TODO: switch to pcre2 once next version of swig is released
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=swig/swig
   swig_version: 4.0.0
   swig_sha256: e8a39cd6437e342cdcbd5af27a9bf11b62dc9efec9248065debcb8276fcbb925

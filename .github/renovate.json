@@ -6,7 +6,7 @@
                 "Pkgfile"
             ],
             "matchStrings": [
-                "# renovate: datasource=(?<datasource>.*?)(?:\\s+extractVersion=(?<extractVersion>.+?))?(?:\\s+versioning=(?<versioning>.+?))?\\s+depName=(?<depName>.*?)?\\s.*_version:\\s*(?<currentValue>.*)"
+                "# renovate: datasource=(?<datasource>.*?)(?:\\s+extractVersion=(?<extractVersion>.+?))?(?:\\s+versioning=(?<versioning>.+?))?\\s+depName=(?<depName>.+?)?\\s(?:\\s+.*_(?:version|VERSION):\\s+(?<currentValue>.*))?(?:\\s.*_(?:ref|REF):\\s+(?<currentDigest>.*))?"
             ],
             "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
         },
@@ -20,6 +20,14 @@
             ],
             "datasourceTemplate": "docker",
             "versioningTemplate": "semver"
+        }
+    ],
+    "packageRules": [
+        {
+            "matchPackageNames": [
+                "tcltk/tcl"
+            ],
+            "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)?$"
         }
     ],
     "schedule": [
