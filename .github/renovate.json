@@ -1,6 +1,8 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
+        ":dependencyDashboard",
+        ":gitSignOff",
         ":semanticCommitScopeDisabled",
         "schedule:earlyMondays"
     ],
@@ -32,11 +34,20 @@
             "matchPackageNames": [
                 "tcltk/tcl"
             ],
-            "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)?$"
+            "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-?(?<patch>\\d+)?$"
         },
         {
             "matchPackageNames": [
-                "git://git.savannah.gnu.org/autoconf.git"
+                "file/file",
+                "git://git.savannah.gnu.org/cpio.git",
+                "git://git.savannah.gnu.org/tar.git"
+            ],
+            "versioning": "regex:^(?<major>\\d+)_(?<minor>\\d+)_?(?<patch>\\d+)?$"
+        },
+        {
+            "matchPackageNames": [
+                "git://git.savannah.gnu.org/autoconf.git",
+                "git://git.savannah.gnu.org/bash.git"
             ],
             "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?$"
         },
@@ -80,6 +91,5 @@
             ],
             "groupName": "releases"
         }
-    ],
-    "dependencyDashboard": true
+    ]
 }

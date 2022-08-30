@@ -12,7 +12,7 @@ vars:
   argp_standalone_sha256: c29eae929dfebd575c38174f2c8c315766092cec99a8f987569d0cad3c6d64f6
   argp_standalone_sha512: fa2eb61ea00f7a13385e5c1e579dd88471d6ba3a13b6353e924fe71914b90b40688b42a9f1789bc246e03417fee1788b1990753cda8c8d4a544e85f26b63f9e2
 
-  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/autoconf.git
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/autoconf.git
   autoconf_version: 2.69
   autoconf_sha256: 64ebcec9f8ac5b2487125a86a7760d2591ac9e1d3dbd59489633f9de62a57684
   autoconf_sha512: 995d3e5a8eb1eb37e2b7fae53c6ec7a9b4df997286b7d643344818f94636756b1bf5ff5ea9155e755cb9461149a853dfbf2886fc6bd7132e5afa9c168e306e9b
@@ -22,12 +22,12 @@ vars:
   automake_sha256: 5d05bb38a23fd3312b10aea93840feec685bdf4a41146e78882848165d3ae921
   automake_sha512: 4013bd31f4903b10875caa7d6ac16a14623a4eb91aa758924dee5b990e234fb50848d131e2dbdbbbc32f89c41a14f9c52a0064c37aa6760c524d607b354b13c3
 
-  # renovate: datasource=git-tags extractVersion=^bash-(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/bash.git
+  # renovate: datasource=git-tags extractVersion=^bash-(?<version>.*)$ depName=git://git.savannah.gnu.org/bash.git
   bash_version: 4.4.18
   bash_sha256: 604d9eec5e4ed5fd2180ee44dd756ddca92e0b6aa4217bbab2b6227380317f23
   bash_sha512: bd3048338aded9dee31651011aaa46bc8fba83a27fa063e3d47bcbe85ebbd86816d9080d1a658cfbd1736a2c80e98fdb659019c192d332472b00aa305e0285b0
 
-  # renovate: datasource=git-tags versioning=loose depName=git://git.savannah.gnu.org/bison.git
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/bison.git
   bison_version: 3.0.5
   bison_sha256: 075cef2e814642e30e10e8155e93022e4a91ca38a65aa1d5467d4e969f97f338
   bison_sha512: 00b448db8abe91b07e32ff5273c6617bc1350d806f92073a9472f4c2f0de5d22c152795674171b74f2eb9eff8d36f8173b82dacb215601bb071ae39404d4a8a2
@@ -47,7 +47,7 @@ vars:
   coreutils_sha256: 61a1f410d78ba7e7f37a5a4f50e6d1320aca33375484a3255eddf17a38580423
   coreutils_sha512: a6ee2c549140b189e8c1b35e119d4289ec27244ec0ed9da0ac55202f365a7e33778b1dc7c4e64d1669599ff81a8297fe4f5adbcc8a3a2f75c919a43cd4b9bdfa
 
-  # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/cpio.git
+  # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/cpio.git
   cpio_version: 2_13
   cpio_sha256: e87470d9c984317f658567c03bfefb6b0c829ff17dbf6b0de48d71a4c8f3db88
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
@@ -87,7 +87,7 @@ vars:
   expat_sha256: a247a7f6bbb21cf2ca81ea4cbb916bfb9717ca523631675f99b3d4a5678dcd16
   expat_sha512: 46cc9d725f359b77681a2875bfefa15ceee50eb9513f6577607c0c5833dfa4241565c74f26b84b38d802c3cd8c32f00204fd74272bcecbd21229425764eef86c
 
-  # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ versioning=loose depName=file/file
+  # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ depName=file/file
   file_version: 5_34
   file_sha256: cf6014a703b71767cc1b00a101e8147c9db267dba3c4fee972b2a359355389cb
   file_sha512: 499df0346c9c5a7ac9e0e91da8ad67532bbc514dc6f5513ec90825cdbdc88dceb85108d099b0177f0ff3f2591183b19052515ebcd8aa5891b461452da18310e5
@@ -279,12 +279,12 @@ vars:
   swig_sha256: e8a39cd6437e342cdcbd5af27a9bf11b62dc9efec9248065debcb8276fcbb925
   swig_sha512: c897b87fb8b21caf8d1bee2c39cb9675a3b0ee047110e808c310a2787f8b89585738726e9f517c64e9d2f1b8311136365c569528f399b444b1081f69689b7165
 
-  # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/tar.git
+  # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_30
   tar_sha256: f1bf92dbb1e1ab27911a861ea8dde8208ee774866c46c0bb6ead41f4d1f4d2d3
   tar_sha512: 9c8b2cacf8f6ca1b19f788d4ec0410127c4d71e54b9c9cac99ee5af6c002189ccc521302955510bb22a54a069ffd00fc2de12ac776985cbbeb3f1ecf38a4f8d9
 
-  # renovate: datasource=github-tags extractVersion=^core-(?<version>.*)$ versioning=loose depName=tcltk/tcl
+  # renovate: datasource=github-tags extractVersion=^core-(?<version>.*)$ depName=tcltk/tcl
   tcl_version: 8-6-9
   tcl_sha256: 58014662862485f62e95f3804dd4840bc63af3c559f0d7d7fc178792794a20d8
   tcl_sha512: e1dc7b8f1eb6dad1b61cb3136eed8cf538e8f14038795395bd21052bea491a3770af8523148a5fc2507afcb370f6b91612bb94810e3c7cdce47a710bc432f67a
