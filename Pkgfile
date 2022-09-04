@@ -23,7 +23,7 @@ vars:
   automake_sha512: 4013bd31f4903b10875caa7d6ac16a14623a4eb91aa758924dee5b990e234fb50848d131e2dbdbbbc32f89c41a14f9c52a0064c37aa6760c524d607b354b13c3
 
   # renovate: datasource=git-tags extractVersion=^bash-(?<version>.*)$ depName=git://git.savannah.gnu.org/bash.git
-  bash_version: 4.4.18
+  bash_version: 5.1
   bash_sha256: 604d9eec5e4ed5fd2180ee44dd756ddca92e0b6aa4217bbab2b6227380317f23
   bash_sha512: bd3048338aded9dee31651011aaa46bc8fba83a27fa063e3d47bcbe85ebbd86816d9080d1a658cfbd1736a2c80e98fdb659019c192d332472b00aa305e0285b0
 
@@ -103,7 +103,7 @@ vars:
   flex_sha512: e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e
 
   # renovate: datasource=git-tags extractVersion=^gawk-(?<version>.*)$ depName=git://git.savannah.gnu.org/gawk.git
-  gawk_version: 4.2.1
+  gawk_version: 5.2.0
   gawk_sha256: d1119785e746d46a8209d28b2de404a57f983aa48670f4e225531d3bdc175551
   gawk_sha512: 0e3006a795dc3ac91359a7d2590c0cccbfd39b18a1d491617d68505c55a2800355b1439050681b4fcacf65fb0d533151a046babe0fd774503037bab363ef2ae4
 
@@ -144,7 +144,7 @@ vars:
   gzip_sha512: 116326fe991828227de150336a0c016f4fe932dfbb728a16b4a84965256d9929574a4f5cfaf3cf6bb4154972ef0d110f26ab472c93e62ec9a5fd7a5d65abea24
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
-  kmod_version: 25
+  kmod_version: 30
   kmod_sha256: 7165e6496656159dcb909a91ed708a0fe273a4b128b4b1dc997ccb5189eef1cd
   kmod_sha512: d579cd0cea24a06362a74927b7a3c777e9e01c990306e1032e4781cd441ffe435c70f2c2c4f6ae39eb1d857e622746411d5824d0c0d8bb79f91dc9fa51956252
 
@@ -239,7 +239,7 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=protocolbuffers/protobuf
-  protobuf_version: 3.19.1
+  protobuf_version: 21.5
   protobuf_sha256: 645192532f28254152b51c01868efdf9b766b1dbe49c77cccd6efcdb2d7c7bc2
   protobuf_sha512: e02185e26887da5de76d6bf446ec693df865ed454c6b4b2c80e936b7c8a837e79f2e34df874d72d818118b17169adbb386b0cbc95242d225e657b0945da4cc1d
 
