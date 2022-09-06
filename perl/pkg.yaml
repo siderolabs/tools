@@ -32,7 +32,9 @@ steps:
           -Duseshrplib \
           -Dd_semctl_semun \
           -Ud_csh \
-          -Dusenm
+          -Dusenm \
+          -Dcf_email=buildkit@buildkitsandbox \
+          -Dmydomain=buildkitsandbox
     build:
       - |
         make -j $(nproc)

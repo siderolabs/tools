@@ -3,7 +3,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://github.com/protocolbuffers/protobuf/releases/download/v{{ .protobuf_version }}/protobuf-cpp-{{ .protobuf_version }}.tar.gz
+      - url: https://github.com/protocolbuffers/protobuf/releases/download/v{{ regexReplaceAll "^\\d+\\." .protobuf_version "${1}" }}/protobuf-cpp-{{ .protobuf_version }}.tar.gz
         destination: protobuf-cpp.tar.gz
         sha256: "{{ .protobuf_sha256 }}"
         sha512: "{{ .protobuf_sha512 }}"

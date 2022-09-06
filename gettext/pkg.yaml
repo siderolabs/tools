@@ -12,7 +12,7 @@ steps:
         tar -xJf gettext.tar.xz --strip-components=1
         mkdir build
         cd build
-        EMACS="no" ../gettext-tools/configure \
+        ../configure \
             --prefix=${TOOLCHAIN} \
             --enable-relocatable \
             --disable-shared \

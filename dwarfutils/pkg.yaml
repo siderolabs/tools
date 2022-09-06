@@ -8,6 +8,8 @@ steps:
         destination: dwarfutils.tar.xz
         sha256: "{{ .dwarfutils_sha256 }}"
         sha512: "{{ .dwarfutils_sha512 }}"
+    env:
+      SOURCE_DATE_EPOCH: "1"
     prepare:
       - |
         tar -xvf dwarfutils.tar.xz --strip-components=1

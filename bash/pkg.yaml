@@ -1,15 +1,87 @@
 name: bash
 dependencies:
   - stage: base
+  - stage: patch
+    runtime: true
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/bash/bash-{{ .bash_version }}.tar.gz
         destination: bash.tar.gz
         sha256: "{{ .bash_sha256 }}"
         sha512: "{{ .bash_sha512 }}"
+      # ref https://git.alpinelinux.org/aports/tree/main/bash/APKBUILD?h=3.16-stable
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-001
+        destination: bash51-001.patch
+        sha256: ebb07b3dbadd98598f078125d0ae0d699295978a5cdaef6282fe19adef45b5fa
+        sha512: 1cd86805a2639614372aec29a710bc456e330abcbbaa0867820c94f714a1fa5fb5c1b18aa2c10263ae0bce9dad7579c7af2f732282315c1c34bfd6a90777bfd2
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-002
+        destination: bash51-002.patch
+        sha256: 15ea6121a801e48e658ceee712ea9b88d4ded022046a6147550790caf04f5dbe
+        sha512: 923e7822a9629645347d3aea0058fb5e2d52223507159a62369309f264612df44a84931c19e0ccb3852e98ce672dfbd454477090b4041b5a0de477c94eb61088
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-003
+        destination: bash51-003.patch
+        sha256: 22f2cc262f056b22966281babf4b0a2f84cb7dd2223422e5dcd013c3dcbab6b1
+        sha512: 01e952dcfdae58624723d64912ea3444eed2fdcd266ba1a929b95ec3abd70f914bf400607c3f7bb7a94ac2925f794f91f37c1929d5bb987de2ba7f60a19cb8bd
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-004
+        destination: bash51-004.patch
+        sha256: 9aaeb65664ef0d28c0067e47ba5652b518298b3b92d33327d84b98b28d873c86
+        sha512: 10ff24cd91a2cd88818bfa7218050843af6b409e43fcca89f5ec70d8266020c6c2a55132426271f165cd0f154f49eb0f8ec2761b80fc066c921b83120bb543ce
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-005
+        destination: bash51-005.patch
+        sha256: cccbb5e9e6763915d232d29c713007a62b06e65126e3dd2d1128a0dc5ef46da5
+        sha512: fa83d894fe874a05b9a7d47b8bca8e5b7f4067221d82e8b1af616d17725592c3737c621f2a8ad3c917b29846012c37c85acd34dcbb43eb6b05065ccce89b260c
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-006
+        destination: bash51-006.patch
+        sha256: 75e17d937de862615c6375def40a7574462210dce88cf741f660e2cc29473d14
+        sha512: b9b6e3d71f7b7718e2e8598ec8e337dcc675571fb233c29e5230ebf14eab2249204531f2fe8c4d1459c5fed10acb679048588d1e457e98dbc00ffc4d2cd227e3
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-007
+        destination: bash51-007.patch
+        sha256: acfcb8c7e9f73457c0fb12324afb613785e0c9cef3315c9bbab4be702f40393a
+        sha512: e4ebdc47e780ddc2588ecdfcfe00cb618039c7044e250ab2b836b0735c461ebacd15beaf2145e277c70b7f51cded55bd8dde7757df810f33f8dae306ee5ba571
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-008
+        destination: bash51-008.patch
+        sha256: f22cf3c51a28f084a25aef28950e8777489072628f972b12643b4534a17ed2d1
+        sha512: 97f9558a08a66cc9da62c285bf9118b39328e25ed3b9277728e0539b1ac0adef176a090e39cd96dc03d6fd900d8155bd58040cb3390a09f637bab1de8af3faf6
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-009
+        destination: bash51-009.patch
+        sha256: e45cda953ab4b4b4bde6dc34d0d8ca40d1cc502046eb28070c9ebcd47e33c3ee
+        sha512: 2d3c65162ec4e5c3dfeb439891950ef2c43973a84122fcdf6b56c388466c7e671dbc9b236d2253f01411b668c365855263995dbacb8e6f9e9dbcb7e6c2cc518c
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-010
+        destination: bash51-010.patch
+        sha256: a2c8d7b2704eeceff7b1503b7ad9500ea1cb6e9393faebdb3acd2afdd7aeae2a
+        sha512: aac4a0b72b559566334f1029c52754f4c98185af99e09436e401d83ab81bab7882d0d8050674b30f171733f3628157777a264566e927e93db2ea5a18d26630f1
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-011
+        destination: bash51-011.patch
+        sha256: 58191f164934200746f48459a05bca34d1aec1180b08ca2deeee3bb29622027b
+        sha512: bb9e47a570bb9758c365831f9650b9379b60862b8cef572edc3cd833df96ebb8b9612de474bdc2a03ff4efc2275f871d55962295385e38f3658874488e974b81
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-012
+        destination: bash51-012.patch
+        sha256: 10f189c8367c4a15c7392e7bf70d0ff6953f78c9b312ed7622303a779273ab98
+        sha512: 59819914b6821d9f4af0aade7b9b7ea92368c2b8eb8407cea11dfeee7208905dd06bdef7a049d7b1c4fac41c44d9a130b95a061957a9649050b37471b3044cf1
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-013
+        destination: bash51-013.patch
+        sha256: c7acb66df435d284304c16ca83a5265f9edd9368612095b01a733d45c77ed5ad
+        sha512: 67535155f49a7f54f151e62aba9274f82d01f33a1a1a7e5efd1aa0d63ba2d078765f0b5e22cb24db7132eff2d8c5852a3688298baa5217b8b6e159aae065d748
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-014
+        destination: bash51-014.patch
+        sha256: 6a4ee0c81b437b96279a792c1efcec4ba56f009195a318083db6b53b096f83d0
+        sha512: f658ab7ef01ba1d26f735e24b23bf35687e15b0d5d20f90da233d000745a55bdba142c11e9fba52e3b84470ec625fab60cc74cd6be533d990496a3795c658e88
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-015
+        destination: bash51-015.patch
+        sha256: 1b37692ef1f6cc3dcec246773443276066e6b1379868f8c14e01f4dfd4df80f0
+        sha512: fd4bc85f942a3a16c545f7e951a24f620ff2d884640dea6e05f305aaf88ed41862bfb05eea2258881608de696f9dc7a0fe3bebb51a011f50b720ea7a66699184
+      - url: https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-016
+        destination: bash51-016.patch
+        sha256: 8899144f76a5db1fb41a89ed881c9f19add95728dd71db324f772ef225c5384f
+        sha512: 020b3f3db77ca603a27a3423323538db5c9844be17ee428cf7cda80bebdcc715d30eab6c95773541cb8d14f3ad9e6142bf0adcda0e745ee638242508cc0ab05f
     prepare:
       - |
         tar -xzf bash.tar.gz --strip-components=1
+
+        for patch in bash51-*.patch; do
+          patch -p0 < $patch
+        done
+
         mkdir build
         cd build
 
@@ -19,6 +91,8 @@ steps:
     build:
       - |
         cd build
+        # parallel build workarounds
+        make y.tab.c && make builtins/libbuiltins.a
         make -j $(nproc)
     install:
       - |

@@ -5,7 +5,7 @@ dependencies:
   - stage: pcre
 steps:
   - sources:
-      - url: https://sourceforge.net/projects/swig/files/swig/swig-{{ .swig_version }}/swig-{{ .swig_version }}.tar.gz/download
+      - url: https://onboardcloud.dl.sourceforge.net/project/swig/swig/swig-{{ .swig_version }}/swig-{{ .swig_version }}.tar.gz
         destination: swig.tar.gz
         sha256: "{{ .swig_sha256 }}"
         sha512: "{{ .swig_sha512 }}"

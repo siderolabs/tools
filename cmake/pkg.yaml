@@ -11,7 +11,7 @@ dependencies:
   - stage: zlib
 steps:
   - sources:
-      - url: https://www.cmake.org/files/v{{ regexReplaceAll ".\\d+$" .cmake_version "${1}" |  }}/cmake-{{ .cmake_version }}.tar.gz
+      - url: https://www.cmake.org/files/v{{ regexReplaceAll ".\\d+$" .cmake_version "${1}" }}/cmake-{{ .cmake_version }}.tar.gz
         destination: cmake.tar.gz
         sha256: "{{ .cmake_sha256 }}"
         sha512: "{{ .cmake_sha512 }}"
