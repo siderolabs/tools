@@ -250,9 +250,9 @@ vars:
   protoc_gen_go_sha512: 53d78281bbae47baa2a2e029eafd37f9b1e26a5e17bb9f30ee3d7b875871ed07445845d9bb3168b148c057f2c16fd834606dd71cbe00f56dc8061b1907f75482
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.42.0
-  protoc_gen_go_grpc_sha256: fb3cca7bd67fe2dfd614b5f51917c33c82fa0d0b646c1397d8b97db65a14f17a
-  protoc_gen_go_grpc_sha512: ff22842854ef4b3cfd842b344f3ac3641a815e1383b86fee90bfeeaeb7ee47aed9297379132a15d640c57bcb8b36da45c63f0437465c38122cbe941b52b7597c
+  protoc_gen_go_grpc_version: v1.49.0
+  protoc_gen_go_grpc_sha256: 2499f14c2d4c4b1dec22dff442c92f71bc6461a47874247285b1d0abbd0c59d7
+  protoc_gen_go_grpc_sha512: cea8ee7dc333e29d7bb56a57e0a601371776623a92e7bdf6cb86ef29f71f6986961c8a2992a2b36850cfbfcc0fe1fbc1d64e2383dfcdb2592484cdd66e8812a5
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.10.7
