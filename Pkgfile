@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.6.0-9-g1b97abc
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.6.0-10-g064f73b
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -38,9 +38,9 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 3.24.1
-  cmake_sha256: 4931e277a4db1a805f13baa7013a7757a0cbfe5b7932882925c7061d9d1fa82b
-  cmake_sha512: 67bfafcf9ceba617d7ebbb0ac88b689a2d90ab51fea4a83bd073ee082fb55de8962ce7fb283f3db5f455d286f2199843ffa595a1de207d4fa3e4472d951eb289
+  cmake_version: 3.24.2
+  cmake_sha256: 0d9020f06f3ddf17fb537dc228e1a56c927ee506b486f55fe2dc19f69bf0c8db
+  cmake_sha512: 6f0e8e29bf0336f555ba72c4d83f35d820f8a5159cc999d48795dc57a6627b4ee3966dda84ca97d39906e35dd476ea00cf80023672cc0fad862e2996194c0674
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.1
@@ -73,9 +73,9 @@ vars:
   dtc_sha512: 26cd351ddca411ab96b93ac3e763f817f9f8a80ca66a8707e1077f771ed8e7e04c01f321ab8ab27b2f9826d9d438483fe3156401493bfd29cef3cc71a1414568
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 0.4.1
-  dwarfutils_sha256: 34277b969d30be3cc4c6fbce6926dd3e6f9ea9a27b01951c6753b479aadfd5ef
-  dwarfutils_sha512: 793fe487de80fe6878f022b90f49ec334a0d7db071ff22a11902db5e3457cc7f3f853945a9ac74de2c40f7f388277f21c5b2e62745bca92d2bb55c51e9577693
+  dwarfutils_version: 0.4.2
+  dwarfutils_sha256: c4369b6d9a929cb9e206f0cd65c325e76bbd1e66d49da19da5e7bc0cb8e6841a
+  dwarfutils_sha512: 6d2a3ebf0104362dd9cecec272935684f977db119810eea0eec88c9f56a042f260a4f6ed3bbabde8592fe16f98cbd81b4ab2878005140e05c8f475df6380d1c2
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ versioning=loose depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.187
@@ -88,9 +88,9 @@ vars:
   expat_sha512: 46cc9d725f359b77681a2875bfefa15ceee50eb9513f6577607c0c5833dfa4241565c74f26b84b38d802c3cd8c32f00204fd74272bcecbd21229425764eef86c
 
   # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ depName=file/file
-  file_version: 5_42
-  file_sha256: d7374d06451154a628831df58e835fa3263825d0ad593df0fb8a911418d27863
-  file_sha512: 7df20a1818a59feaa92012c6e19c263db1ac006d19bdec9fd69f47da702dae040f53371f112c31c38e42a35279a668a9e98469bc19cc88bed781ba46db235942
+  file_version: 5_43
+  file_sha256: 58da4fd66c858a1a883105d593320906d64f8835311683184952a33defc9da6d
+  file_sha512: a961136cd89794bf45eb107fbe7785603b5d40363d0634c6c85e96d4ca9f85087c98442ca1fb0089beff60e9c3a49aa6acab8b67416e72b7d32c67ad5b1d1fa2
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
   findutils_version: 4.9.0
@@ -240,9 +240,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 3.21.5
-  protobuf_sha256: 58c8a18b4ec22655535c493155c5465a8903e8249094ceead87e00763bdbc44f
-  protobuf_sha512: d466e290105ce3df88fd10e11b2f463126b1f055e1ed7ebb133025e2108fa74645d287696041bc481c246e6b6ece873e40f73469b65b89e9a0caa8df5211038d
+  protobuf_version: 3.21.6
+  protobuf_sha256: a3c4c104b98a21a577ce5ecc0d9b9f43a359b917d0bcf69467b70dc27416dfdc
+  protobuf_sha512: f481c28305547ce70de4888f9e2e44e01320e16b63289295bb19c44689ce747a4f469bc5860d754ceedf6c5590b5cf3c384a445ffb2cf9a8ef43403cad415d8d
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.28.1
