@@ -104,9 +104,6 @@ trigger:
     exclude:
       - renovate/*
       - dependabot/*
-  status:
-    - success
-    - failure
 
 depends_on:
   - default
