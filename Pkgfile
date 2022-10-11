@@ -214,9 +214,9 @@ vars:
   ncurses_sha512: 5373f228cba6b7869210384a607a2d7faecfcbfef6dbfcd7c513f4e84fbd8bcad53ac7db2e7e84b95582248c1039dcfc7c4db205a618f7da22a166db482f0105
 
   # renovate: datasource=git-tags extractVersion=^OpenSSL_(?<version>.*)$ versioning=loose depName=git://git.openssl.org/openssl.git
-  openssl_version: 1_1_1q
-  openssl_sha256: d7939ce614029cdff0b6c20f0e2e5703158a489a72b2507b8bd51bf8c8fd10ca
-  openssl_sha512: cb9f184ec4974a3423ef59c8ec86b6bf523d5b887da2087ae58c217249da3246896fdd6966ee9c13aea9e6306783365239197e9f742c508a0e35e5744e3e085f
+  openssl_version: 1_1_1r
+  openssl_sha256: e389352ae3d5ae4d38597bf8a54f1dcb6fb3c8b50f4fe58a94bb1bf7f85d82a0
+  openssl_sha512: 73577707f7846af3c53606cb7590872306ba2bce331dc64692acb6d998a95982221dd39948f5f4ef7430897c0430bc61410983c5bac0f8dd88f2d9dbbc305fae
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.24
