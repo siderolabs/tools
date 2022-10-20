@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.6.0-10-g064f73b
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.6.0-14-g966e3d3
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -113,9 +113,9 @@ vars:
   gettext_sha512: 61e93bc9876effd3ca1c4e64ff6ba5bd84b24951ec2cc6f40a0e3248410e60f887552f29ca1f70541fb5524f6a4e8191fed288713c3e280e18922dd5bff1a2c9
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.38.0
-  git_sha256: 923eade26b1814de78d06bda8e0a9f5da8b7c4b304b3f9050ffb464f0310320a
-  git_sha512: 5c475d25b40a01cc62be28478b9b5a1b0cedf91c3e007d4869019a25bdc980b5ef9b761e7ee02d7c581bff6c7dbf2696a624431a718dcd976bad34a3f2be5cb6
+  git_version: 2.38.1
+  git_sha256: 97ddf8ea58a2b9e0fbc2508e245028ca75911bd38d1551616b148c1aa5740ad9
+  git_sha512: e62ca6f54f01d2e4ccffb5f94e8e5cd2f3e098b766d909c694a8daf4d00d5cdeb9cc5ff8e9bc55d888406f292ba99433d334d4da9689c0ce5d7299a3c67c90e0
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
@@ -214,9 +214,9 @@ vars:
   ncurses_sha512: 5373f228cba6b7869210384a607a2d7faecfcbfef6dbfcd7c513f4e84fbd8bcad53ac7db2e7e84b95582248c1039dcfc7c4db205a618f7da22a166db482f0105
 
   # renovate: datasource=git-tags extractVersion=^OpenSSL_(?<version>.*)$ versioning=loose depName=git://git.openssl.org/openssl.git
-  openssl_version: 1_1_1r
-  openssl_sha256: e389352ae3d5ae4d38597bf8a54f1dcb6fb3c8b50f4fe58a94bb1bf7f85d82a0
-  openssl_sha512: 73577707f7846af3c53606cb7590872306ba2bce331dc64692acb6d998a95982221dd39948f5f4ef7430897c0430bc61410983c5bac0f8dd88f2d9dbbc305fae
+  openssl_version: 1_1_1q
+  openssl_sha256: d7939ce614029cdff0b6c20f0e2e5703158a489a72b2507b8bd51bf8c8fd10ca
+  openssl_sha512: cb9f184ec4974a3423ef59c8ec86b6bf523d5b887da2087ae58c217249da3246896fdd6966ee9c13aea9e6306783365239197e9f742c508a0e35e5744e3e085f
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.24
@@ -240,9 +240,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 3.21.7
-  protobuf_sha256: 70de993af0b4f2ddacce59e62ba6d7b7e48faf48beb1b0d5f1ac0e1fb0a68423
-  protobuf_sha512: 8c2d1c74fc78df63cb656905ef6b6d761f86b0a50c3958d5257bb83a14bf45c28bd8db437eca78c233722b712e969307660a7d7d1895a5fd1d3a609ff45fa2fc
+  protobuf_version: 3.21.8
+  protobuf_sha256: f6251f2d00aad41b34c1dfa3d752713cb1bb1b7020108168a4deaa206ba8ed42
+  protobuf_sha512: ef4939dcd7d10a602f95cb8d6fdb5d31c53bd39f18678572f97d443be01093e05a69b6756e8431a27200ad30decf2a007274a5b90ecaecbb5d8e341008bba175
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.28.1
@@ -250,14 +250,14 @@ vars:
   protoc_gen_go_sha512: 53d78281bbae47baa2a2e029eafd37f9b1e26a5e17bb9f30ee3d7b875871ed07445845d9bb3168b148c057f2c16fd834606dd71cbe00f56dc8061b1907f75482
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.50.0
-  protoc_gen_go_grpc_sha256: 6c9aa7a1362d661e6a64e328bc2cb74bef562cec3e3a137c33b188ee69fc5fe1
-  protoc_gen_go_grpc_sha512: a4376bfae70e79fb9167a530f5bd5d5204bd4faca29932948159a39a56571ebc47f800ac22bff04aa36d641f5e101db5c3da89ed6a842c6162cd762f10eaedc2
+  protoc_gen_go_grpc_version: v1.50.1
+  protoc_gen_go_grpc_sha256: 2da3f8ca865d05198fd9748fe85234ac4cfec5db2e8c6024e3c31a18dc205ec7
+  protoc_gen_go_grpc_sha512: bb13a5a6ce76a5c742a45f6ad7d063406c650bd6d7434323f7b5e8bb800953d7a92f9c4f10bd25f4c0791b4b8924366e90074ee5be7f9b8b56829b2b676094c6
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.10.7
-  python_sha256: 6eed8415b7516fb2f260906db5d48dd4c06acc0cb24a7d6cc15296a604dcdc48
-  python_sha512: dc3432d72ee7382617318c9645204876d13bb61d4caf3fbbb65e6b14897261123c743049657c95e159e5566daf4dcde613d2e393f025de758f610b44eb958313
+  python_version: 3.10.8
+  python_sha256: 6a30ecde59c47048013eb5a658c9b5dec277203d2793667f578df7671f7f03f3
+  python_sha512: 40e3e77d79618c81d6fc57c5d119b99c2959dcf932f40aad6b26f2ec39c5e713e6ff298f7597b4fad2ab94680db3732483b5ca0a45e6ae58c14580b3ea44cb0f
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.3
@@ -306,9 +306,9 @@ vars:
   xz_sha512: 864f3a5faf334734b1bd9af90393b08d808aacaed43b7872a4db639d5bdb3cb64fb47e64bf1fcfb5617a9b7b320cb0bf3e5a2dce2bf423f529e9de80fc9375b6
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=madler/zlib
-  zlib_version: 1.2.12
-  zlib_sha256: 91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9
-  zlib_sha512: cc2366fa45d5dfee1f983c8c51515e0cff959b61471e2e8d24350dea22d3f6fcc50723615a911b046ffc95f51ba337d39ae402131a55e6d1541d3b095d6c0a14
+  zlib_version: 1.2.13
+  zlib_sha256: b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30
+  zlib_sha512: 99f0e843f52290e6950cc328820c0f322a4d934a504f66c7caa76bd0cc17ece4bf0546424fc95135de85a2656fed5115abb835fd8d8a390d60ffaf946c8887ad
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=facebook/zstd
   zstd_version: 1.5.2
