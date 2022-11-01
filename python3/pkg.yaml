@@ -48,7 +48,7 @@ steps:
           fi
         done
 
-        touch /rootfs${TOOLCHAIN}/lib/python3.10/test/__init__.py
+        touch /rootfs${TOOLCHAIN}/lib/python3.11/test/__init__.py
 
         # Determinism: remove all bytecode
         find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"

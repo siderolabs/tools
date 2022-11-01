@@ -5,10 +5,10 @@ dependencies:
   - stage: bzip2
 steps:
   - sources:
-      - url: https://downloads.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.bz2
+      - url: https://github.com/PCRE2Project/pcre2/releases/download/pcre2-{{ .pcre2_version }}/pcre2-{{ .pcre2_version }}.tar.bz2
         destination: pcre.tar.bz2
-        sha256: 4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8
-        sha512: 91bff52eed4a2dfc3f3bfdc9c672b88e7e2ffcf3c4b121540af8a4ae8c1ce05178430aa6b8000658b9bb7b4252239357250890e20ceb84b79cdfcde05154061a
+        sha256: "{{ .pcre2_sha256 }}"
+        sha512: "{{ .pcre2_sha512 }}"
     prepare:
       - |
         tar -xjf pcre.tar.bz2 --strip-components=1
@@ -17,12 +17,11 @@ steps:
         ../configure \
             --prefix=${TOOLCHAIN} \
               --enable-unicode-properties \
-              --enable-pcre16 \
-              --enable-pcre32 \
-              --enable-pcregrep-libz \
-              --enable-pcregrep-libbz2 \
+              --enable-pcre216 \
+              --enable-pcre232 \
+              --enable-pcre2grep-libz \
+              --enable-pcre2grep-libbz2 \
               --disable-static
-              # TODO(andrewrynhard): Enable libreadline with: --enable-pcretest-libreadline
     build:
       - |
         cd build
@@ -31,6 +30,7 @@ steps:
       - |
         cd build
         make DESTDIR=/rootfs install
+        rm -rf /rootfs/toolchain/share
 finalize:
   - from: /rootfs
     to: /
