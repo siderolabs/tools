@@ -295,7 +295,7 @@ vars:
   tcl_sha512: 4a23bbfc687efa5aecaef5a29892ea75c12fbb952aa948e702380117fab34f51413b03872ab844de0638ac70df32124af2ca87d8fb17d010dcf91e934ac6199b
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/texinfo.git
-  texinfo_version: 6.8
+  texinfo_version: 7.0
   texinfo_sha256: 8eb753ed28bca21f8f56c1a180362aed789229bd62fff58bf8368e9beb59fec4
   texinfo_sha512: 0ff9290b14e4d83e32b889cfa24e6d065f98b2a764daf6b92c6c895fddbb35258398da6257c113220d5a4d886f7b54b09c4b117ca5eacfee6797f9bffde0f909
 
