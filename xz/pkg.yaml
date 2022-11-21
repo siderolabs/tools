@@ -8,7 +8,7 @@ dependencies:
   - stage: libtool
 steps:
   - sources:
-      - url: https://github.com/xz-mirror/xz/archive/refs/tags/{{ .xz_version }}.tar.gz
+      - url: https://tukaani.org/xz/xz-{{ .xz_version | replace "v" "" }}.tar.gz
         destination: xz.tar.gz
         sha256: "{{ .xz_sha256 }}"
         sha512: "{{ .xz_sha512 }}"
