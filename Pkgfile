@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.6.0-17-g01bc67e
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -73,9 +73,9 @@ vars:
   dtc_sha512: 26cd351ddca411ab96b93ac3e763f817f9f8a80ca66a8707e1077f771ed8e7e04c01f321ab8ab27b2f9826d9d438483fe3156401493bfd29cef3cc71a1414568
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 0.4.2
-  dwarfutils_sha256: c4369b6d9a929cb9e206f0cd65c325e76bbd1e66d49da19da5e7bc0cb8e6841a
-  dwarfutils_sha512: 6d2a3ebf0104362dd9cecec272935684f977db119810eea0eec88c9f56a042f260a4f6ed3bbabde8592fe16f98cbd81b4ab2878005140e05c8f475df6380d1c2
+  dwarfutils_version: 0.5.0
+  dwarfutils_sha256: 11fa822c60317fa00e1a01a2ac9e8388f6693e8662ab72d352c5f50c7e0112a9
+  dwarfutils_sha512: 53ef7062deacaac2c8a7c829699ee53c88c7865437a54b70b2807da3f24cee13083b5bdd16bcc7ba6e194a271c23860e75cf92c2cc61ec94a7da837f4ee794e2
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ versioning=loose depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.188
@@ -103,9 +103,9 @@ vars:
   flex_sha512: e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e
 
   # renovate: datasource=git-tags extractVersion=^gawk-(?<version>.*)$ depName=git://git.savannah.gnu.org/gawk.git
-  gawk_version: 5.1.1
-  gawk_sha256: d87629386e894bbea11a5e00515fc909dc9b7249529dad9e6a3a2c77085f7ea2
-  gawk_sha512: 794538fff03fdb9a8527a6898b26383d01988e8f8456f8d48131676387669a8bb3e706fa1a17f6b6316ddba0ebe653c24ad5dd769f357de509d6ec25f3ff1a43
+  gawk_version: 5.2.1
+  gawk_sha256: 673553b91f9e18cc5792ed51075df8d510c9040f550a6f74e09c9add243a7e4f
+  gawk_sha512: f81da3e61987d1460326dc79fdbabacfd4660219bf66ec8ba18877500fd24e160761e401a5b868067f82bec46a6a808098f3f6a1f4c8b710e439cd3f99ffa56c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/gettext.git
   gettext_version: 0.21.1
@@ -184,9 +184,9 @@ vars:
   make_sha512: 4be73f494295dcfa10034531b0d920cfdb5438bc20625f863f5c878549c140e1e67195162580c53060c3c11c67a2c739c09051f02cdd283e5aa9ebcd68975a1f
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 0.64.0
-  meson_sha256: c5e27e091c2a35b9049e152a6535045ebbd057253aeb67856de6ecbb7b917bab
-  meson_sha512: 0656515e983d98350081dc7cd726bff4a83ed1e24d414c022ea804317f2ff86052b53bbbc36e00847541f2cbe19ebe4c87bb35a174bf6321864363512a4cf6b0
+  meson_version: 0.64.1
+  meson_sha256: 3a8e030c2334f782085f81627062cc6d4a6771edf31e055ffe374f9e6b089ab9
+  meson_sha512: 4896f5a09f89cadce028080f70e5ca005fd3bb2141a730a0ad71ded63d1bde6d1254957fe079f5e4c6e3b9420a9fcc4525b01e689979f0bab6d09d6483ca42ec
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.2.1
@@ -290,9 +290,9 @@ vars:
   tar_sha512: 5e77c4a7b49983ad7d15238c2bce28be7a8aa437b4b1815fc00abd13096da308b6bba196cc6e3ed79d85e62823d520ae0d8fcda2d93873842cf84dc3369fc902
 
   # renovate: datasource=github-tags extractVersion=^core-(?<version>.*)$ depName=tcltk/tcl
-  tcl_version: 8-6-12
-  tcl_sha256: eb5dfae6b872c7c860f05a213b55a81a7d235450ac53c52aa79dd5cfadcccd95
-  tcl_sha512: 4a23bbfc687efa5aecaef5a29892ea75c12fbb952aa948e702380117fab34f51413b03872ab844de0638ac70df32124af2ca87d8fb17d010dcf91e934ac6199b
+  tcl_version: 8-6-13
+  tcl_sha256: d9c68b6f76623e046df549ac988a064adf6ec063da6ae229c842f7b68fc78aee
+  tcl_sha512: 23cd8e7673ac19594ec3ca70c6de4c471ce0a0ca7694bd232a7d04d280f9cb1f7e0b677411b0dbcc8c6ea61bf9cd9a59a86f0b07bab5f0a3c7bf46becc9cd73c
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/texinfo.git
   texinfo_version: 7.0
