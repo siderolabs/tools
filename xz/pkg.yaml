@@ -8,15 +8,15 @@ dependencies:
   - stage: libtool
 steps:
   - sources:
-      - url: https://tukaani.org/xz/xz-{{ .xz_version | replace "v" "" }}.tar.gz
-        destination: xz.tar.gz
+      - url: https://udomain.dl.sourceforge.net/project/lzmautils/xz-{{ .xz_version | replace "v" "" }}.tar.xz
+        destination: xz.tar.xz
         sha256: "{{ .xz_sha256 }}"
         sha512: "{{ .xz_sha512 }}"
     prepare:
       - |
         mkdir -p xz build
 
-        tar -xf xz.tar.gz --strip-components=1 -C xz
+        tar -xf xz.tar.xz --strip-components=1 -C xz
 
         cd xz
         ./autogen.sh --no-po4a
