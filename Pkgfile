@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.2.0-alpha.10
+# syntax = ghcr.io/siderolabs/bldr:v0.2.0-alpha.11
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-2-gaa91e85
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -38,9 +38,9 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 3.25.0
-  cmake_sha256: 306463f541555da0942e6f5a0736560f70c487178b9d94a5ae7f34d0538cdd48
-  cmake_sha512: f6e527161b8501c72b71a95ff7a0cf304ae02a214086ff58dd686543243d939e83faf94780cda477b19e4d42e4b8f1ff96c52f98e8f7f717e102a5229f4dd44c
+  cmake_version: 3.25.1
+  cmake_sha256: 1c511d09516af493694ed9baf13c55947a36389674d657a2d5e0ccedc6b291d8
+  cmake_sha512: ec4203cac569e3c340bf6535d193d9ccff9c4e4d59a7a7ae5b9156172f647d9f9212bdc37b3c12cbd676b1351b9a64364c563aaa968a2f41e0f402410ed78d57
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.1
@@ -245,9 +245,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 3.21.9
-  protobuf_sha256: bddc5dd16da45c89a510704683e02ba08c30af78fe092d255cf25b9b01259405
-  protobuf_sha512: 0ca95bc37acf6f6ac90834931ed9a73e1181b7994cc331b759312b8c252d6d7e6b81c62ab87b2c2777e6b0f7a55bcc3b2555ac270326f7890555088e6c50c803
+  protobuf_version: 3.21.10
+  protobuf_sha256: 7482ebfa862b1691cac2cb02ea1ffc56ff7f82c928dc876360f35579423c1465
+  protobuf_sha512: 3194c4789f58db429110323ee206404247848f4c45720b19074ba2de5240ad5c48f494add114e4d429dcf96081563db12cb7436be646f43b5d15f2b44bb1586e
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.28.1
@@ -280,9 +280,9 @@ vars:
   squashfs_tools_sha512: b3934ea1e26c7508110312711465644a6d9674b6b5332a7d011e191fa3c1d4b8be694214794a0f6005263d0f4e18bab96af2f7ed66a178f8e3bb3a781cd44896
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=swig/swig
-  swig_version: 4.1.0
-  swig_sha256: d6a9a8094e78f7cfb6f80a73cc271e1fe388c8638ed22668622c2c646df5bb3d
-  swig_sha512: a7d43d6aa764923826786081a3f2e25aa0f8345e1169c1e57bf02d01f6f41c92d8db0f360ec86e0e428ef5a21d1b5cd3edb7e4b71d0beff3e6611e344b5c22b1
+  swig_version: 4.1.1
+  swig_sha256: 2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b
+  swig_sha512: 1cea1918455a75ebc9b2653dd1715bd5dcd974554955f324295c6a6f14c0a715651b221b85fad4a8af5197e0c75bfe7b590bc6ba7178c26245fbbd9a7e110100
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34
@@ -295,9 +295,9 @@ vars:
   tcl_sha512: 23cd8e7673ac19594ec3ca70c6de4c471ce0a0ca7694bd232a7d04d280f9cb1f7e0b677411b0dbcc8c6ea61bf9cd9a59a86f0b07bab5f0a3c7bf46becc9cd73c
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/texinfo.git
-  texinfo_version: 7.0
-  texinfo_sha256: 20744b82531ce7a04d8cee34b07143ad59777612c3695d5855f29fba40fbe3e0
-  texinfo_sha512: 99f691515a3c43c76eca7dd78e8a79108ec8d64ebb2a677bb0473e5a67da50ebdf14d9c5428ebe7618f6cba435e6a4c42079ad2f5665371b06585f2fd28d695e
+  texinfo_version: 7.0.1
+  texinfo_sha256: bcd221fdb2d807a8a09938a0f8d5e010ebd2b58fca16075483d6fcb78db2c6b2
+  texinfo_sha512: 8e1616341fbbfe0cd90bd1b0452874c75b99d88dffe5f88c53fdc32f00d67c07c15c6c774b241e1f7507f0347314737e533854939c3be6334ca9feb9cd049009
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
   util_linux_version: 2.38.1
@@ -305,9 +305,9 @@ vars:
   util_linux_sha512: 07f11147f67dfc6c8bc766dfc83266054e6ede776feada0566b447d13276b6882ee85c6fe53e8d94a17c03332106fc0549deca3cf5f2e92dda554e9bc0551957
 
   # renovate: datasource=git-tags depName=https://git.tukaani.org/xz.git
-  xz_version: v5.2.8
-  xz_sha256: ec5cda9f0b91336ab1b881d3d144e8203fcca604e607caca8ae678ddbc29207d
-  xz_sha512: aaba9e4dfabc1ccb66b92f5930ca07219089c7c02396be80bd727073f90c824d2698f7aaaf156b881fdc6750da993e8a6289929d71225df8327bc3beed5cdee1
+  xz_version: v5.2.9
+  xz_sha256: 287ef163e7e57561e9de590b2a9037457af24f03a46bbd12bf84f3263679e8d2
+  xz_sha512: fa844d63ceedf3b35c38f82532dc3b847543ac37b9e56db774c234af73d1385a300ba1033154689059031f18793d791c8cdb65bbeb031691d837f76e673372a7
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=madler/zlib
   zlib_version: 1.2.13
