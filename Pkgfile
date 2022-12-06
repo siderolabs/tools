@@ -124,9 +124,9 @@ vars:
   gmp_sha512: c99be0950a1d05a0297d65641dd35b75b74466f7bf03c9e8a99895a3b2f9a0856cd17887738fa51cf7499781b65c049769271cbcb77d057d2e9f1ec52e07dd84
 
   # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ versioning=loose depName=golang/go
-  golang_version: 1.19.3
-  golang_sha256: 18ac263e39210bcf68d85f4370e97fb1734166995a1f63fb38b4f6e07d90d212
-  golang_sha512: 9aa8548597d52455afad8bf3b882eeeb9992814721ff2b9d8ed1f0e1ee0fec74aecd9d4e8c9c00eafbfe690bcdc50f3ad0b00bc4818b87e9d584cce7df97ee76
+  golang_version: 1.19.4
+  golang_sha256: eda74db4ac494800a3e66ee784e495bfbb9b8e535df924a8b01b1a8028b7f368
+  golang_sha512: 00866e171d73170583e292439beecdaaee1b8fa907b6ab03013390b0cd7eaebfbe8cb9f9222f1af86933b50602e584677bc3aa25993c02d07a11625a62db263b
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/gperf.git
   gperf_version: 3.1
