@@ -229,9 +229,9 @@ vars:
   patch_sha512: fcca87bdb67a88685a8a25597f9e015f5e60197b9a269fa350ae35a7991ed8da553939b4bbc7f7d3cfd863c67142af403b04165633acbce4339056a905e87fbd
 
   # renovate: datasource=github-releases extractVersion=^pcre2-(?<version>.*)$ versioning=loose depName=PCRE2Project/pcre2
-  pcre2_version: 10.40
-  pcre2_sha256: 14e4b83c4783933dc17e964318e6324f7cae1bc75d8f3c79bc6969f00c159d68
-  pcre2_sha512: 00e7b48a6554b9127cb6fe24c5cacf72783416a9754ec88f62f73c52f46ed72c86c1869e62c91a31b2ff2cbafbbedabca44b3f1eb7670bc92f49d8401c7374e8
+  pcre2_version: 10.41
+  pcre2_sha256: 0f78cebd3e28e346475fb92e95fe9999945b4cbaad5f3b42aca47b887fb53308
+  pcre2_sha512: 328f331a56f152424f6021b37f8dcf660842c55d43ff39f1b49115f0d05ed651d0bbb66b43c0ed61d65022030615768b92ce5e6218a54e4e17152ec473cca68d
 
   # perl uses even numbered minor versions for stable releases - https://www.cpan.org/src/README.html
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=Perl/perl5
@@ -260,9 +260,9 @@ vars:
   protoc_gen_go_grpc_sha512: 362d15ba69f6efa9fa61c906a4271c0d68015b07da8d80bd648ba6418cc2608dc179e2ec1e526b0d56030311cd2e5779129447268b5fcb575056d3887d9c6ece
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.11.0
-  python_sha256: a57dc82d77358617ba65b9841cee1e3b441f386c3789ddc0676eca077f2951c3
-  python_sha512: 314eef88ae0d68760f34d7a32f238fd2ecb27c50963baa7357c42ad8159026ec50229a0b31d83c39710a472904a06422afc082f9658a90a1dc83ccb74c08039d
+  python_version: 3.11.1
+  python_sha256: 85879192f2cffd56cb16c092905949ebf3e5e394b7f764723529637901dfb58f
+  python_sha512: 5edd70c881e083c96199c60471f18f9ebc4c97a2d45dc66f89e16d7c3638d8a5d2cbf2e84b1be3d7f1178ce9f7fa4197884385c1ee3618ff66a538f872f318ed
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.3
