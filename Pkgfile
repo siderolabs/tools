@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-3-g45b5b5d
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-4-ge6ae945
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -113,9 +113,9 @@ vars:
   gettext_sha512: 61e93bc9876effd3ca1c4e64ff6ba5bd84b24951ec2cc6f40a0e3248410e60f887552f29ca1f70541fb5524f6a4e8191fed288713c3e280e18922dd5bff1a2c9
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.38.1
-  git_sha256: 97ddf8ea58a2b9e0fbc2508e245028ca75911bd38d1551616b148c1aa5740ad9
-  git_sha512: e62ca6f54f01d2e4ccffb5f94e8e5cd2f3e098b766d909c694a8daf4d00d5cdeb9cc5ff8e9bc55d888406f292ba99433d334d4da9689c0ce5d7299a3c67c90e0
+  git_version: 2.39.0
+  git_sha256: ba199b13fb5a99ca3dec917b0bd736bc0eb5a9df87737d435eddfdf10d69265b
+  git_sha512: f072cae7738279b1c0f8202e83a243ff0164b03d3be22895aa875caa265150a5773e1f062724b3eb82bc64b163730b6f451b82fa0c904167a8fa53ced5d3b1df
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
@@ -149,9 +149,9 @@ vars:
   kmod_sha512: e2cd34e600a72e44710760dfda9364b790b8352a99eafbd43e683e4a06f37e6b5c0b5d14e7c28070e30fc5fc6ceddedf7b97f3b6c2c5c2d91204fefd630b9a3e
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
-  libbpf_version: v1.0.1
-  libbpf_sha256: 3d6afde67682c909e341bf194678a8969f17628705af25f900d5f68bd299cb03
-  libbpf_sha512: 2ee6d85c0a33f723e5b93ddddf97118e67754c9e44ca0449ceb49126820f89fea9ddc282a5add764dc4da090af6164cc6641b497489253d192ed01bc397df9be
+  libbpf_version: v1.1.0
+  libbpf_sha256: 5da826c968fdb8a2f714701cfef7a4b7078be030cf58b56143b245816301cbb8
+  libbpf_sha512: 751126893883c68e5472724988327e03f7f52becd472f7d6239fa838762f857e54a0347f8f824b8c32ca93b8f419310a86e1d75e3646dae72c2d2992d093b828
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
   libffi_version: 3.4.4
@@ -189,9 +189,9 @@ vars:
   meson_sha512: 4896f5a09f89cadce028080f70e5ca005fd3bb2141a730a0ad71ded63d1bde6d1254957fe079f5e4c6e3b9420a9fcc4525b01e689979f0bab6d09d6483ca42ec
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
-  mpc_version: 1.3.0
-  mpc_sha256: 0e3b12181d37207230f5a7a7ddcfc22abfc5fc9c05825e1a65401a489a432a2a
-  mpc_sha512: 9c18b24f7542dc1dc5e10cf58fd242e73d79a9dc3619c3f08d52aed75ad0e7d9e2ba2c46857717c8b921b084af2efc8c0d2d7173081af764b81c24a8971ddd9a
+  mpc_version: 1.3.1
+  mpc_sha256: ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8
+  mpc_sha512: 4bab4ef6076f8c5dfdc99d810b51108ced61ea2942ba0c1c932d624360a5473df20d32b300fc76f2ba4aa2a97e1f275c9fd494a1ba9f07c4cb2ad7ceaeb1ae97
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpfr/mpfr.git
   mpfr_version: 4.1.1
@@ -229,9 +229,9 @@ vars:
   patch_sha512: fcca87bdb67a88685a8a25597f9e015f5e60197b9a269fa350ae35a7991ed8da553939b4bbc7f7d3cfd863c67142af403b04165633acbce4339056a905e87fbd
 
   # renovate: datasource=github-releases extractVersion=^pcre2-(?<version>.*)$ versioning=loose depName=PCRE2Project/pcre2
-  pcre2_version: 10.41
-  pcre2_sha256: 0f78cebd3e28e346475fb92e95fe9999945b4cbaad5f3b42aca47b887fb53308
-  pcre2_sha512: 328f331a56f152424f6021b37f8dcf660842c55d43ff39f1b49115f0d05ed651d0bbb66b43c0ed61d65022030615768b92ce5e6218a54e4e17152ec473cca68d
+  pcre2_version: 10.42
+  pcre2_sha256: 8d36cd8cb6ea2a4c2bb358ff6411b0c788633a2a45dabbf1aeb4b701d1b5e840
+  pcre2_sha512: 72fbde87fecec3aa4b47225dd919ea1d55e97f2cbcf02aba26e5a0d3b1ffb58c25a80a9ef069eb99f9cf4e41ba9604ad06a7ec159870e1e875d86820e12256d3
 
   # perl uses even numbered minor versions for stable releases - https://www.cpan.org/src/README.html
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=Perl/perl5
@@ -245,9 +245,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 3.21.11
-  protobuf_sha256: 96f0ab99b7414e44e7bf9b218bb59510d61549ca68e648f19e3622f9999bec00
-  protobuf_sha512: e945e0f364cff53bb56b89725c05bf11f7989a4ec9264972842dc62f086001d39b5de8ceab330e334af65fd3edbe3ffcc73cd959e27ef72485dd06be7b78c06b
+  protobuf_version: 3.21.12
+  protobuf_sha256: 4eab9b524aa5913c6fffb20b2a8abf5ef7f95a80bc0701f3a6dbb4c607f73460
+  protobuf_sha512: 2307d405bee7a20fa11a04b27f3345304dae5bbcdadc3ff2099a6d5facd55951c4e158ae99d8d07bbfdfdb3fabc84ddc5b60fec06912d70e5655d6bed04fa873
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.28.1
@@ -305,9 +305,9 @@ vars:
   util_linux_sha512: 07f11147f67dfc6c8bc766dfc83266054e6ede776feada0566b447d13276b6882ee85c6fe53e8d94a17c03332106fc0549deca3cf5f2e92dda554e9bc0551957
 
   # renovate: datasource=git-tags depName=https://git.tukaani.org/xz.git
-  xz_version: v5.2.9
-  xz_sha256: 287ef163e7e57561e9de590b2a9037457af24f03a46bbd12bf84f3263679e8d2
-  xz_sha512: fa844d63ceedf3b35c38f82532dc3b847543ac37b9e56db774c234af73d1385a300ba1033154689059031f18793d791c8cdb65bbeb031691d837f76e673372a7
+  xz_version: v5.4.0
+  xz_sha256: 5f260e3b43f75cf43ca43d107dd18209f7d516782956a74ddd53288e02a83a31
+  xz_sha512: 0ef70c8803d86b731fa55bc017401609a4c2ee34244c1e561075941571c4954905b9fd65f40daf00043fc9aca7712fa8407a66d5e0097eaa834718c41dc518d5
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=madler/zlib
   zlib_version: 1.2.13
