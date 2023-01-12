@@ -19,6 +19,7 @@ PROGRESS ?= auto
 PUSH ?= false
 DEST ?= _out
 COMMON_ARGS := --file=Pkgfile
+COMMON_ARGS += --provenance=false
 COMMON_ARGS += --progress=$(PROGRESS)
 COMMON_ARGS += --platform=$(PLATFORM)
 COMMON_ARGS += --build-arg=SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH)
