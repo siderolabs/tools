@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-4-ge6ae945
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-7-g6c37dec
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -88,9 +88,9 @@ vars:
   expat_sha512: 46cc9d725f359b77681a2875bfefa15ceee50eb9513f6577607c0c5833dfa4241565c74f26b84b38d802c3cd8c32f00204fd74272bcecbd21229425764eef86c
 
   # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ depName=file/file
-  file_version: 5_43
-  file_sha256: 58da4fd66c858a1a883105d593320906d64f8835311683184952a33defc9da6d
-  file_sha512: a961136cd89794bf45eb107fbe7785603b5d40363d0634c6c85e96d4ca9f85087c98442ca1fb0089beff60e9c3a49aa6acab8b67416e72b7d32c67ad5b1d1fa2
+  file_version: 5_44
+  file_sha256: 64c72d99926d2af13c2f20df1e136059d762e3c6ba450e26d5fb3fe5af5fd26f
+  file_sha512: 547429f30105a1c96604b67440cbd1c52f684d8ce6b26e2413dd54ede8aadb2ffb489b52e67bfab9ff5a48133f0aa0589873e58dc7c6c0a10a59571cf9850b95
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
   findutils_version: 4.9.0
@@ -184,9 +184,9 @@ vars:
   make_sha512: 4be73f494295dcfa10034531b0d920cfdb5438bc20625f863f5c878549c140e1e67195162580c53060c3c11c67a2c739c09051f02cdd283e5aa9ebcd68975a1f
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 0.64.1
-  meson_sha256: 3a8e030c2334f782085f81627062cc6d4a6771edf31e055ffe374f9e6b089ab9
-  meson_sha512: 4896f5a09f89cadce028080f70e5ca005fd3bb2141a730a0ad71ded63d1bde6d1254957fe079f5e4c6e3b9420a9fcc4525b01e689979f0bab6d09d6483ca42ec
+  meson_version: 1.0.0
+  meson_sha256: aa50a4ba4557c25e7d48446abfde857957dcdf58385fffbe670ba0e8efacce05
+  meson_sha512: 9b1195cfe856c1aa51bc79f6eb4d0f94925bb02d0a9fbd68a6a6ced6e5c252b09b22d9aac812640687e49b8d64a313ce48d0a69a3bf83ea8ffb8c9dab559fc23
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.3.1
@@ -194,9 +194,9 @@ vars:
   mpc_sha512: 4bab4ef6076f8c5dfdc99d810b51108ced61ea2942ba0c1c932d624360a5473df20d32b300fc76f2ba4aa2a97e1f275c9fd494a1ba9f07c4cb2ad7ceaeb1ae97
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpfr/mpfr.git
-  mpfr_version: 4.1.1
-  mpfr_sha256: ffd195bd567dbaffc3b98b23fd00aad0537680c9896171e44fe3ff79e28ac33d
-  mpfr_sha512: be468749bd88870dec37be35e544983a8fb7bda638eb9414c37334b9d553099ea2aa067045f51ae2c8ab86d852ef833e18161d173e414af0928e9a438c9b91f1
+  mpfr_version: 4.2.0
+  mpfr_sha256: 06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993
+  mpfr_sha512: 58e843125884ca58837ae5159cd4092af09e8f21931a2efd19c15de057c9d1dc0753ae95c592e2ce59a727fbc491af776db8b00a055320413cdcf2033b90505c
 
   # renovate: datasource=github-tags depName=void-linux/musl-fts
   musl_fts_version: v1.2.7
@@ -209,9 +209,9 @@ vars:
   musl_obstack_sha512: b2bbed19c4ab2714ca794bdcb1a84fad1af964e884d4f3bbe91c9937ca089d92b8472cb05ebe998a9f5c85cb922b9b458db91eff29077bd099942e1ce18e16cc
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=mirror/ncurses
-  ncurses_version: 6.3
-  ncurses_sha256: 97fc51ac2b085d4cde31ef4d2c3122c21abc217e9090a43a30fc5ec21684e059
-  ncurses_sha512: 5373f228cba6b7869210384a607a2d7faecfcbfef6dbfcd7c513f4e84fbd8bcad53ac7db2e7e84b95582248c1039dcfc7c4db205a618f7da22a166db482f0105
+  ncurses_version: 6.4
+  ncurses_sha256: 6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
+  ncurses_sha512: 1c2efff87a82a57e57b0c60023c87bae93f6718114c8f9dc010d4c21119a2f7576d0225dab5f0a227c2cfc6fb6bdbd62728e407f35fce5bf351bb50cf9e0fd34
 
   # renovate: datasource=git-tags extractVersion=^OpenSSL_(?<version>.*)$ versioning=loose depName=git://git.openssl.org/openssl.git
   openssl_version: 1_1_1s
@@ -255,9 +255,9 @@ vars:
   protoc_gen_go_sha512: 53d78281bbae47baa2a2e029eafd37f9b1e26a5e17bb9f30ee3d7b875871ed07445845d9bb3168b148c057f2c16fd834606dd71cbe00f56dc8061b1907f75482
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.51.0
-  protoc_gen_go_grpc_sha256: 344372bd68df3353e32aeb80b754ddcde7b8834cbaf3ef16b46e6fd1da27faa7
-  protoc_gen_go_grpc_sha512: 362d15ba69f6efa9fa61c906a4271c0d68015b07da8d80bd648ba6418cc2608dc179e2ec1e526b0d56030311cd2e5779129447268b5fcb575056d3887d9c6ece
+  protoc_gen_go_grpc_version: v1.52.0
+  protoc_gen_go_grpc_sha256: 6feac57ca2edb0eb15d06ee9a92e48e6e3d38eb47f9375d83c9a2f6f7c8c4728
+  protoc_gen_go_grpc_sha512: 902702b05bad30ddd4e03677bec0641f53800b75a9bb979cb7a271ee7952d75fdacc9c905b5917ecd5a5941a67eaf3c82459629894a9e7af70bad3ed2857f912
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.11.1
@@ -305,9 +305,9 @@ vars:
   util_linux_sha512: 07f11147f67dfc6c8bc766dfc83266054e6ede776feada0566b447d13276b6882ee85c6fe53e8d94a17c03332106fc0549deca3cf5f2e92dda554e9bc0551957
 
   # renovate: datasource=git-tags depName=https://git.tukaani.org/xz.git
-  xz_version: v5.4.0
-  xz_sha256: 5f260e3b43f75cf43ca43d107dd18209f7d516782956a74ddd53288e02a83a31
-  xz_sha512: 0ef70c8803d86b731fa55bc017401609a4c2ee34244c1e561075941571c4954905b9fd65f40daf00043fc9aca7712fa8407a66d5e0097eaa834718c41dc518d5
+  xz_version: v5.4.1
+  xz_sha256: 5d9827aa1875b21c288f78864bb26d2650b436ea8d2cad364e4921eb6266a5a5
+  xz_sha512: f890ee5207799fbc7bb9ae031f444d39d82275b0e1b8cc7f01fdb9270050e38849bd1269db2a2f12fe87b5e23e03f9e809a5c3456d066c0a56e6f98d728553ea
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=madler/zlib
   zlib_version: 1.2.13
