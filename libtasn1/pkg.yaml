@@ -1,0 +1,26 @@
+name: libtasn1
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/libtasn1/libtasn1-{{ .libtasn1_version }}.tar.gz
+        destination: libtasn1.tar.gz
+        sha256: "{{ .libtasn1_sha256 }}"
+        sha512: "{{ .libtasn1_sha512 }}"
+    prepare:
+      - |
+        tar -xf libtasn1.tar.gz --strip-components=1
+
+        ./configure \
+            --prefix=${TOOLCHAIN} \
+            --disable-static \
+
+    build:
+      - |
+        make DESTDIR=/rootfs
+    install:
+      - |
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /

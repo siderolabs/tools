@@ -1,0 +1,26 @@
+name: libunistring
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/libunistring/libunistring-{{ .libunistring_version }}.tar.xz
+        destination: libunistring.tar.xz
+        sha256: "{{ .libunistring_sha256 }}"
+        sha512: "{{ .libunistring_sha512 }}"
+    prepare:
+      - |
+        tar -xf libunistring.tar.xz --strip-components=1
+
+        ./configure \
+            --prefix=${TOOLCHAIN} \
+            --disable-static \
+
+    build:
+      - |
+        make DESTDIR=/rootfs
+    install:
+      - |
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /

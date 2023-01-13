@@ -1,0 +1,39 @@
+name: gnutls
+dependencies:
+  - stage: base
+  - stage: nettle
+  - stage: gmp
+  - stage: zlib
+  - stage: texinfo
+  - stage: pkg-config
+  - stage: libtasn1
+  - stage: libunistring
+steps:
+  - sources:
+      - url: https://www.gnupg.org/ftp/gcrypt/gnutls/v{{ regexReplaceAll ".\\d+$" .gnutls_version "${1}" }}/gnutls-{{ .gnutls_version }}.tar.xz
+        destination: gnutls.tar.xz
+        sha256: "{{ .gnutls_sha256 }}"
+        sha512: "{{ .gnutls_sha512 }}"
+    prepare:
+      - |
+        tar -xf gnutls.tar.xz --strip-components=1
+
+        ./configure \
+            --prefix=${TOOLCHAIN} \
+            --enable-ktls \
+            --disable-openssl-compatibility \
+            --disable-rpath \
+            --disable-static \
+            --disable-guile \
+            --disable-valgrind-tests \
+            --without-p11-kit
+
+    build:
+      - |
+        make DESTDIR=/rootfs
+    install:
+      - |
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /

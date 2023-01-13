@@ -32,12 +32,15 @@ dependencies:
   - stage: golang
   - stage: gperf
   - stage: grep
+  - stage: gnutls
   - stage: gzip
   - stage: kmod
   - stage: libbpf
   - stage: libffi
   - stage: libtool
   - stage: libuv
+  - stage: libtasn1
+  - stage: libunistring
   - stage: m4
   - stage: make
   - stage: meson
@@ -45,6 +48,7 @@ dependencies:
   - stage: mpfr
   - stage: musl-fts
   - stage: musl-obstack
+  - stage: nettle
   - stage: ncurses
   - stage: openssl
   - stage: pahole

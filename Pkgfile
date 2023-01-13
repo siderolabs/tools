@@ -138,6 +138,11 @@ vars:
   grep_sha256: 498d7cc1b4fb081904d87343febb73475cf771e424fb7e6141aff66013abc382
   grep_sha512: 2014519a80c6dcd799837e1bd7d9d5ebe8729ec54b0dc76981dac4755a9a8a9f200470cdcc911e2825bed8162e61da39e3dd60289f7393b48bf67314077d0c79
 
+  # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
+  gnutls_version: 3.7.8
+  gnutls_sha256: c58ad39af0670efe6a8aee5e3a8b2331a1200418b64b7c51977fb396d4617114
+  gnutls_sha512: 4199bcf7c9e3aab2f52266aadceefc563dfe2d938d0ea1f3ec3be95d66f4a8c8e5494d3a800c03dd02ad386dec1738bd63e1fe0d8b394a2ccfc7d6c6a0cc9359
+
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/gzip.git
   gzip_version: 1.12
   gzip_sha256: ce5e03e519f637e1f814011ace35c4f87b33c0bbabeec35baf5fbd3479e91956
@@ -162,6 +167,16 @@ vars:
   libseccomp_version: 2.5.4
   libseccomp_sha256: d82902400405cf0068574ef3dc1fe5f5926207543ba1ae6f8e7a1576351dcbdb
   libseccomp_sha512: 92650bd7d1d48b383f402a536b97a017fd0f6ad1234daf4b938d01c92e8d134a01d2f2dd45fd9e2d025d7556bd1386ec360402145a87f20580c85949d62cea0e
+
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.com/gnutls/libtasn1.git
+  libtasn1_version: 4.19.0
+  libtasn1_sha256: 1613f0ac1cf484d6ec0ce3b8c06d56263cc7242f1c23b30d82d23de345a63f7a
+  libtasn1_sha512: 287f5eddfb5e21762d9f14d11997e56b953b980b2b03a97ed4cd6d37909bda1ed7d2cdff9da5d270a21d863ab7e54be6b85c05f1075ac5d8f0198997cf335ef4
+
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libunistring.git
+  libunistring_version: 1.1
+  libunistring_sha256: 827c1eb9cb6e7c738b171745dac0888aa58c5924df2e59239318383de0729b98
+  libunistring_sha512: 01a4267bbd301ea5c389b17ee918ae5b7d645da8b2c6c6f0f004ff2dead9f8e50cda2c6047358890a5fceadc8820ffc5154879193b9bb8970f3fb1fea1f411d6
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
   libtool_version: 2.4.7
@@ -212,6 +227,11 @@ vars:
   ncurses_version: 6.4
   ncurses_sha256: 6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
   ncurses_sha512: 1c2efff87a82a57e57b0c60023c87bae93f6718114c8f9dc010d4c21119a2f7576d0225dab5f0a227c2cfc6fb6bdbd62728e407f35fce5bf351bb50cf9e0fd34
+
+  # renovate: datasource=git-tags extractVersion=^nettle_(?<version>.*)_release.*$ depName=https://git.lysator.liu.se/nettle/nettle.git
+  nettle_version: 3.8.1
+  nettle_sha256: 364f3e2b77cd7dcde83fd7c45219c834e54b0c75e428b6f894a23d12dd41cbfe
+  nettle_sha512: a405da3438d185d96917b03b00abb9ab43e04f58f770f657f716c25d64bb258ee170a71328e74736caa7121f50c0c89d3cc840c1201d2a92cfaf1357d24bdc6a
 
   # renovate: datasource=git-tags extractVersion=^OpenSSL_(?<version>.*)$ versioning=loose depName=git://git.openssl.org/openssl.git
   openssl_version: 1_1_1s
