@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.2.0-alpha.11
+# syntax = ghcr.io/siderolabs/bldr:v0.2.0-alpha.12
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-7-g6c37dec
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-8-g4abcb3e
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -63,9 +63,9 @@ vars:
   dejagnu_sha512: 1a737132bd912cb527e7f2fcbe70ffff8ccc8604a0ffdecff87ba2a16aeeefd800f5792aeffdbe79be6daa35cedb1c60e41002ca4aabb5370a460028191b76c4
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/diffutils.git
-  diffutils_version: 3.8
-  diffutils_sha256: a6bdd7d1b31266d11c4f4de6c1b748d4607ab0231af5188fc2533d0ae2438fec
-  diffutils_sha512: 279441270987e70d5ecfaf84b6285a4866929c43ec877e50f154a788858d548a8a316f2fc26ad62f7348c8d289cb29a09d06dfadce1806e3d8b4ea88c8b1aa7c
+  diffutils_version: 3.9
+  diffutils_sha256: d80d3be90a201868de83d78dad3413ad88160cc53bcc36eb9eaf7c20dbf023f1
+  diffutils_sha512: d43280cb1cb2615a8867d971467eb9a3fa037fe9a411028068036f733dab42b10d42767093cea4de71e62b2659a3ec73bd7d1a8f251befd49587e32802682d0f
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/dtc/dtc.git
   dtc_version: 1.6.1
@@ -113,9 +113,9 @@ vars:
   gettext_sha512: 61e93bc9876effd3ca1c4e64ff6ba5bd84b24951ec2cc6f40a0e3248410e60f887552f29ca1f70541fb5524f6a4e8191fed288713c3e280e18922dd5bff1a2c9
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.39.0
-  git_sha256: ba199b13fb5a99ca3dec917b0bd736bc0eb5a9df87737d435eddfdf10d69265b
-  git_sha512: f072cae7738279b1c0f8202e83a243ff0164b03d3be22895aa875caa265150a5773e1f062724b3eb82bc64b163730b6f451b82fa0c904167a8fa53ced5d3b1df
+  git_version: 2.39.1
+  git_sha256: 40a38a0847b30c371b35873b3afcf123885dd41ea3ecbbf510efa97f3ce5c161
+  git_sha512: b1821a814947f01adf98206a7e9a01da9daa617b1192e8ef6968b05af8d874f028fb26b5f828a9c48f734ef2c276f4d23bdc898ba46fb7aaa96dbe68081037e9
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
