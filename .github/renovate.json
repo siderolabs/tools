@@ -32,6 +32,13 @@
     "packageRules": [
         {
             "matchPackageNames": [
+                "golang/go",
+                "git://git.savannah.gnu.org/make.git"
+            ],
+            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?$"
+        },
+        {
+            "matchPackageNames": [
                 "tcltk/tcl"
             ],
             "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-?(?<patch>\\d+)?$"

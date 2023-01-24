@@ -123,7 +123,7 @@ vars:
   gmp_sha256: fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2
   gmp_sha512: c99be0950a1d05a0297d65641dd35b75b74466f7bf03c9e8a99895a3b2f9a0856cd17887738fa51cf7499781b65c049769271cbcb77d057d2e9f1ec52e07dd84
 
-  # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ versioning=loose depName=golang/go
+  # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ depName=golang/go
   golang_version: 1.19.5
   golang_sha256: 8e486e8e85a281fc5ce3f0bedc5b9d2dbf6276d7db0b25d3ec034f313da0375f
   golang_sha512: 26754f2a4870d0a5484162b626dad5109a33c116675898c84de46155659dadeff2b3fa9ea3dd0c7da8d23c8ff0974cfe42bdd07484e6f784617de3a577b3c883
@@ -315,9 +315,9 @@ vars:
   tcl_sha512: 23cd8e7673ac19594ec3ca70c6de4c471ce0a0ca7694bd232a7d04d280f9cb1f7e0b677411b0dbcc8c6ea61bf9cd9a59a86f0b07bab5f0a3c7bf46becc9cd73c
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/texinfo.git
-  texinfo_version: 7.0.1
-  texinfo_sha256: bcd221fdb2d807a8a09938a0f8d5e010ebd2b58fca16075483d6fcb78db2c6b2
-  texinfo_sha512: 8e1616341fbbfe0cd90bd1b0452874c75b99d88dffe5f88c53fdc32f00d67c07c15c6c774b241e1f7507f0347314737e533854939c3be6334ca9feb9cd049009
+  texinfo_version: 7.0.2
+  texinfo_sha256: f211ec3261383e1a89e4555a93b9d017fe807b9c3992fb2dff4871dae6da54ad
+  texinfo_sha512: 26dd5bb1392f2197ecde296ba157d4533f4b11fadf1238481da4cf2b3796c665ce96049df8d2f9a6d4fa22b7e9013d9978d195e525288663f0a54482bbc22b2b
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
   util_linux_version: 2.38.1
