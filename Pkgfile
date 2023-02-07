@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-9-gaaa689a
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-10-g1277e2e
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -275,9 +275,9 @@ vars:
   protoc_gen_go_sha512: 53d78281bbae47baa2a2e029eafd37f9b1e26a5e17bb9f30ee3d7b875871ed07445845d9bb3168b148c057f2c16fd834606dd71cbe00f56dc8061b1907f75482
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.52.0
-  protoc_gen_go_grpc_sha256: 6feac57ca2edb0eb15d06ee9a92e48e6e3d38eb47f9375d83c9a2f6f7c8c4728
-  protoc_gen_go_grpc_sha512: 902702b05bad30ddd4e03677bec0641f53800b75a9bb979cb7a271ee7952d75fdacc9c905b5917ecd5a5941a67eaf3c82459629894a9e7af70bad3ed2857f912
+  protoc_gen_go_grpc_version: v1.52.3
+  protoc_gen_go_grpc_sha256: ccbeb93c10b30a0473fc411d0f05df3bdecccf6f21890897c6625b8f0fd4a854
+  protoc_gen_go_grpc_sha512: e079d139021e119c602b47c15cbe2216820f2ddac16ffcda0d0cb698c19259c16eca6b2ecc4f46b406f6974a4b38f864383633719595ae38fe454d4d7dd30792
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.11.1
