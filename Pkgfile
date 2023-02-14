@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-10-g1277e2e
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-12-g72514c3
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -139,9 +139,9 @@ vars:
   grep_sha512: 2014519a80c6dcd799837e1bd7d9d5ebe8729ec54b0dc76981dac4755a9a8a9f200470cdcc911e2825bed8162e61da39e3dd60289f7393b48bf67314077d0c79
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
-  gnutls_version: 3.7.8
-  gnutls_sha256: c58ad39af0670efe6a8aee5e3a8b2331a1200418b64b7c51977fb396d4617114
-  gnutls_sha512: 4199bcf7c9e3aab2f52266aadceefc563dfe2d938d0ea1f3ec3be95d66f4a8c8e5494d3a800c03dd02ad386dec1738bd63e1fe0d8b394a2ccfc7d6c6a0cc9359
+  gnutls_version: 3.8.0
+  gnutls_sha256: 0ea0d11a1660a1e63f960f157b197abe6d0c8cb3255be24e1fb3815930b9bdc5
+  gnutls_sha512: 2507b3133423fdaf90fbd826ccb1142e9ff6fc90fcd5531720218f19ddf0e6bbb8267d23bad35c0954860e5a4179da74823e0c8357db56a14f252e6ec9d59629
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/gzip.git
   gzip_version: 1.12
@@ -335,8 +335,8 @@ vars:
   zlib_sha512: 99f0e843f52290e6950cc328820c0f322a4d934a504f66c7caa76bd0cc17ece4bf0546424fc95135de85a2656fed5115abb835fd8d8a390d60ffaf946c8887ad
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=facebook/zstd
-  zstd_version: 1.5.2
-  zstd_sha256: 7c42d56fac126929a6a85dbc73ff1db2411d04f104fae9bdea51305663a83fd0
-  zstd_sha512: 96dbd2eb6623e3564a0fd36489b61bc3cb27758a584fdc9f064f3985d2e8b5605d7022890d00a6d15464d3cd0707d7e75d8cf6210323782d0af406b90a6d6784
+  zstd_version: 1.5.4
+  zstd_sha256: 0f470992aedad543126d06efab344dc5f3e171893810455787d38347343a4424
+  zstd_sha512: 2896a6dd6b60cc251720356babcbab6018c874eb2149121b26e28041496fc355a9cb5fd1b39c91558fcfbafb789b3d721264a0f9b5734f893d5f3cdf97016394
 labels:
   org.opencontainers.image.source: https://github.com/siderolabs/tools
