@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-12-g72514c3
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-13-gf5f77cc
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -52,10 +52,10 @@ vars:
   cpio_sha256: e87470d9c984317f658567c03bfefb6b0c829ff17dbf6b0de48d71a4c8f3db88
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
-  # renovate: datasource=github-releases depName=curl/curl
-  curl_version: 7.84.0
-  curl_sha256: 2d118b43f547bfe5bae806d8d47b4e596ea5b25a6c1f080aef49fbcd817c5db8
-  curl_sha512: 86231866a35593a1637fbc0c6af3b6761bdfd99fb35580cc52970c36f19604f93dce59fea67a1d5bb4b455f719307599c7916c77d14f2b661f6bf7fb1ca716ce
+  # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
+  curl_version: 7_88_0
+  curl_sha256: fd17432cf28714a4cf39d89e26b8ace0d8901199fe5d01d75eb0ae3bbfcc731f
+  curl_sha512: 2008cbc67694f746b7449f087a19b2a9a4950333d6bac1cdc7d80351aa38d8d9b442087dedbc7b0909a419d3b10f510521c942aac012d04a53c32bdb15dce5f0
 
   # renovate: datasource=git-tags extractVersion=^dejagnu-(?<version>.*)-release$ versioning=loose depName=git://git.savannah.gnu.org/dejagnu.git
   dejagnu_version: 1.6.3
@@ -82,10 +82,10 @@ vars:
   elfutils_sha256: fb8b0e8d0802005b9a309c60c1d8de32dd2951b56f0c3a3cb56d21ce01595dff
   elfutils_sha512: 585551b2d937d19d1becfc2f28935db1dd1a3d25571a62f322b70ac8da98c1a741a55d070327705df6c3e2ee026652e0b9a3c733b050a0b0ec5f2fc75d5b74b5
 
-  # renovate: datasource=github-releases depName=libexpat/libexpat
-  expat_version: 2.4.8
-  expat_sha256: a247a7f6bbb21cf2ca81ea4cbb916bfb9717ca523631675f99b3d4a5678dcd16
-  expat_sha512: 46cc9d725f359b77681a2875bfefa15ceee50eb9513f6577607c0c5833dfa4241565c74f26b84b38d802c3cd8c32f00204fd74272bcecbd21229425764eef86c
+  # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
+  expat_version: 2_5_0
+  expat_sha256: 6f0e6e01f7b30025fa05c85fdad1e5d0ec7fd35d9f61b22f34998de11969ff67
+  expat_sha512: 22fd904d75aab7506a85c03519b9cf79e44898c8e1ba6abf6cb7f95de71b8e63a7e2d5cf4395e3627d46035ea29342b3e631a8809fef8aad3f59976dc075ad17
 
   # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ depName=file/file
   file_version: 5_44
@@ -113,9 +113,9 @@ vars:
   gettext_sha512: 61e93bc9876effd3ca1c4e64ff6ba5bd84b24951ec2cc6f40a0e3248410e60f887552f29ca1f70541fb5524f6a4e8191fed288713c3e280e18922dd5bff1a2c9
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.39.1
-  git_sha256: 40a38a0847b30c371b35873b3afcf123885dd41ea3ecbbf510efa97f3ce5c161
-  git_sha512: b1821a814947f01adf98206a7e9a01da9daa617b1192e8ef6968b05af8d874f028fb26b5f828a9c48f734ef2c276f4d23bdc898ba46fb7aaa96dbe68081037e9
+  git_version: 2.39.2
+  git_sha256: 475f75f1373b2cd4e438706185175966d5c11f68c4db1e48c26257c43ddcf2d6
+  git_sha512: fdca70bee19401c5c7a6d2f3d70bd80b6ba99f6a9f97947de31d4366ee3a78a18d5298abb25727ec8ef67131bca673e48dff2a5a050b6e032884ab04066b20cb
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP

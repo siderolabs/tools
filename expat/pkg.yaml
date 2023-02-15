@@ -3,7 +3,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://github.com/libexpat/libexpat/releases/download/R_{{ .expat_version | replace "." "_" }}/expat-{{ .expat_version }}.tar.bz2
+      - url: https://github.com/libexpat/libexpat/releases/download/R_{{ .expat_version }}/expat-{{ .expat_version | replace "_" "." }}.tar.bz2
         destination: expat.tar.bz2
         sha256: "{{ .expat_sha256 }}"
         sha512: "{{ .expat_sha512 }}"

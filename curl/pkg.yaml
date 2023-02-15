@@ -8,7 +8,7 @@ dependencies:
   - stage: pkg-config
 steps:
   - sources:
-      - url: https://curl.haxx.se/download/curl-{{ .curl_version }}.tar.xz
+      - url: https://curl.haxx.se/download/curl-{{ .curl_version | replace "_" "." }}.tar.xz
         destination: curl.tar.xz
         sha256: "{{ .curl_sha256 }}"
         sha512: "{{ .curl_sha512 }}"

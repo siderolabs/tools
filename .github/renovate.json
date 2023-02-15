@@ -46,6 +46,8 @@
         },
         {
             "matchPackageNames": [
+                "curl/curl",
+                "libexpat/libexpat",
                 "file/file",
                 "git://git.savannah.gnu.org/cpio.git",
                 "git://git.savannah.gnu.org/tar.git"
