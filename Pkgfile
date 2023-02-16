@@ -248,11 +248,6 @@ vars:
   patch_sha256: ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
   patch_sha512: fcca87bdb67a88685a8a25597f9e015f5e60197b9a269fa350ae35a7991ed8da553939b4bbc7f7d3cfd863c67142af403b04165633acbce4339056a905e87fbd
 
-  # renovate: datasource=github-releases extractVersion=^pcre2-(?<version>.*)$ versioning=loose depName=PCRE2Project/pcre2
-  pcre2_version: 10.42
-  pcre2_sha256: 8d36cd8cb6ea2a4c2bb358ff6411b0c788633a2a45dabbf1aeb4b701d1b5e840
-  pcre2_sha512: 72fbde87fecec3aa4b47225dd919ea1d55e97f2cbcf02aba26e5a0d3b1ffb58c25a80a9ef069eb99f9cf4e41ba9604ad06a7ec159870e1e875d86820e12256d3
-
   # perl uses even numbered minor versions for stable releases - https://www.cpan.org/src/README.html
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=Perl/perl5
   perl_version: 5.36.0
@@ -299,11 +294,6 @@ vars:
   squashfs_tools_sha256: 277b6e7f75a4a57f72191295ae62766a10d627a4f5e5f19eadfbc861378deea7
   squashfs_tools_sha512: b3934ea1e26c7508110312711465644a6d9674b6b5332a7d011e191fa3c1d4b8be694214794a0f6005263d0f4e18bab96af2f7ed66a178f8e3bb3a781cd44896
 
-  # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=swig/swig
-  swig_version: 4.1.1
-  swig_sha256: 2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b
-  swig_sha512: 1cea1918455a75ebc9b2653dd1715bd5dcd974554955f324295c6a6f14c0a715651b221b85fad4a8af5197e0c75bfe7b590bc6ba7178c26245fbbd9a7e110100
-
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34
   tar_sha256: 63bebd26879c5e1eea4352f0d03c991f966aeb3ddeb3c7445c902568d5411d28
@@ -324,7 +314,7 @@ vars:
   util_linux_sha256: 60492a19b44e6cf9a3ddff68325b333b8b52b6c59ce3ebd6a0ecaa4c5117e84f
   util_linux_sha512: 07f11147f67dfc6c8bc766dfc83266054e6ede776feada0566b447d13276b6882ee85c6fe53e8d94a17c03332106fc0549deca3cf5f2e92dda554e9bc0551957
 
-  # renovate: datasource=git-tags depName=https://git.tukaani.org/xz.git
+  # renovate: datasource=github-releases depName=tukaani-project/xz
   xz_version: v5.4.1
   xz_sha256: 5d9827aa1875b21c288f78864bb26d2650b436ea8d2cad364e4921eb6266a5a5
   xz_sha512: f890ee5207799fbc7bb9ae031f444d39d82275b0e1b8cc7f01fdb9270050e38849bd1269db2a2f12fe87b5e23e03f9e809a5c3456d066c0a56e6f98d728553ea
