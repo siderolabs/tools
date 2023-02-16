@@ -53,6 +53,7 @@ dependencies:
   - stage: openssl
   - stage: pahole
   - stage: patch
+  - stage: pcre
   - stage: perl
   - stage: pkg-config
   - stage: protobuf
@@ -62,6 +63,7 @@ dependencies:
   - stage: rhash
   - stage: sed
   - stage: squashfs-tools
+  - stage: swig
   - stage: tar
   - stage: tcl
   - stage: texinfo
