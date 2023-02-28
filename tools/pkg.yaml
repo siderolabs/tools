@@ -37,6 +37,7 @@ dependencies:
   - stage: kmod
   - stage: libbpf
   - stage: libffi
+  - stage: libnl
   - stage: libtool
   - stage: libuv
   - stage: libtasn1

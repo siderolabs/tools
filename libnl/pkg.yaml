@@ -1,0 +1,27 @@
+name: libnl
+dependencies:
+  - stage: base
+  - stage: flex
+  - stage: bison
+  - stage: m4
+steps:
+  - sources:
+      - url: https://github.com/thom311/libnl/releases/download/libnl{{ .libnl_version }}/libnl-{{ .libnl_version | replace "_" "." }}.tar.gz
+        destination: libnl.tar.gz
+        sha256: "{{ .libnl_sha256 }}"
+        sha512: "{{ .libnl_sha512 }}"
+    prepare:
+      - |
+        tar -xzf libnl.tar.gz --strip-components=1
+
+        ./configure \
+          --prefix="${TOOLCHAIN}"
+    build:
+      - |
+        make -j $(nproc)
+    install:
+      - |
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /
