@@ -1,19 +1,24 @@
 name: protobuf
 dependencies:
   - stage: base
+  - stage: cmake
+  - stage: abseil
+  - stage: curl
+  - stage: libuv
+  - stage: xz
+  - stage: expat
+  - stage: rhash
 steps:
   - sources:
-      - url: https://github.com/protocolbuffers/protobuf/releases/download/v{{ regexReplaceAll "^\\d+\\." .protobuf_version "${1}" }}/protobuf-cpp-{{ .protobuf_version }}.tar.gz
-        destination: protobuf-cpp.tar.gz
+      - url: https://github.com/protocolbuffers/protobuf/releases/download/v{{ .protobuf_version }}/protobuf-{{ .protobuf_version }}.tar.gz
+        destination: protobuf.tar.gz
         sha256: "{{ .protobuf_sha256 }}"
         sha512: "{{ .protobuf_sha512 }}"
     prepare:
       - |
-        tar -xzf protobuf-cpp.tar.gz --strip-components=1
+        tar -xzf protobuf.tar.gz --strip-components=1
 
-        ./configure \
-        --prefix="${TOOLCHAIN}" \
-        --disable-shared
+        cmake . -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_ABSL_PROVIDER=package
     build:
       - |
         make -j $(nproc)

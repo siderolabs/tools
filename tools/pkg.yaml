@@ -3,6 +3,7 @@ variant: scratch
 shell: /toolchain/bin/bash
 dependencies:
   - image: '{{ .TOOLCHAIN_IMAGE }}'
+  - stage: abseil
   - stage: argp-standalone
   - stage: autoconf
   - stage: automake

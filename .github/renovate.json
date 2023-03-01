@@ -46,6 +46,12 @@
         },
         {
             "matchPackageNames": [
+                "protocolbuffers/protobuf"
+            ],
+            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)"
+        },
+        {
+            "matchPackageNames": [
                 "curl/curl",
                 "libexpat/libexpat",
                 "file/file",

@@ -7,6 +7,11 @@ format: v1alpha2
 vars:
   TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-13-gf5f77cc
 
+  # renovate: datasource=github-releases versioning=loose depName=abseil/abseil-cpp
+  abseil_version: 20230125.1
+  abseil_sha256: 81311c17599b3712069ded20cca09a62ab0bf2a89dfa16993786c8782b7ed145
+  abseil_sha512: 160764e2d10f1a5970b6ea7323868d231070c57b48fcc92e3614bca9d0e9ee0a571b66dfdc560934883de542f32dfbb1ba7b03c11bda8f03e63a5f31e273be6a
+
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
   argp_standalone_sha256: c29eae929dfebd575c38174f2c8c315766092cec99a8f987569d0cad3c6d64f6
@@ -53,9 +58,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 7_88_0
-  curl_sha256: fd17432cf28714a4cf39d89e26b8ace0d8901199fe5d01d75eb0ae3bbfcc731f
-  curl_sha512: 2008cbc67694f746b7449f087a19b2a9a4950333d6bac1cdc7d80351aa38d8d9b442087dedbc7b0909a419d3b10f510521c942aac012d04a53c32bdb15dce5f0
+  curl_version: 7_88_1
+  curl_sha256: 1dae31b2a7c1fe269de99c0c31bb488346aab3459b5ffca909d6938249ae415f
+  curl_sha512: b8d30c52a6d1c3e272608a7a8db78dfd79aef21330f34d6f1df43839a400e13ac6aac72a383526db0b711a70ecbec89a3b934677d7ecf5094fd64d3dbcb3492f
 
   # renovate: datasource=git-tags extractVersion=^dejagnu-(?<version>.*)-release$ versioning=loose depName=git://git.savannah.gnu.org/dejagnu.git
   dejagnu_version: 1.6.3
@@ -68,14 +73,14 @@ vars:
   diffutils_sha512: d43280cb1cb2615a8867d971467eb9a3fa037fe9a411028068036f733dab42b10d42767093cea4de71e62b2659a3ec73bd7d1a8f251befd49587e32802682d0f
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/dtc/dtc.git
-  dtc_version: 1.6.1
-  dtc_sha256: 65cec529893659a49a89740bb362f507a3b94fc8cd791e76a8d6a2b6f3203473
-  dtc_sha512: 26cd351ddca411ab96b93ac3e763f817f9f8a80ca66a8707e1077f771ed8e7e04c01f321ab8ab27b2f9826d9d438483fe3156401493bfd29cef3cc71a1414568
+  dtc_version: 1.7.0
+  dtc_sha256: 29edce3d302a15563d8663198bbc398c5a0554765c83830d0d4c0409d21a16c4
+  dtc_sha512: d3ba6902a9a2f2cdbaff55f12fca3cfe4a1ec5779074a38e3d8b88097c7abc981835957e8ce72971e10c131e05fde0b1b961768e888ff96d89e42c75edb53afb
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 0.5.0
-  dwarfutils_sha256: 11fa822c60317fa00e1a01a2ac9e8388f6693e8662ab72d352c5f50c7e0112a9
-  dwarfutils_sha512: 53ef7062deacaac2c8a7c829699ee53c88c7865437a54b70b2807da3f24cee13083b5bdd16bcc7ba6e194a271c23860e75cf92c2cc61ec94a7da837f4ee794e2
+  dwarfutils_version: 0.6.0
+  dwarfutils_sha256: 8d6f2e67ac6fae59c7019bf41b58fa620187a136cd5977e117f15b820ffc7e75
+  dwarfutils_sha512: 839ba5e4162630ad804d76bd2aa86f35780a178dcda110106a5ee4fb27807fdf45f12e8bbb399ff53721121d0169a73335898f94218a1853116bb106dd455950
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ versioning=loose depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.188
@@ -199,14 +204,14 @@ vars:
   m4_sha512: 47f595845c89709727bda0b3fc78e3188ef78ec818965b395532e7041cabe9e49677ee4aca3d042930095a7f8df81de3da1026b23b6897be471f6cf13ddd512b
 
   # renovate: datasource=git-tags versioning=loose depName=git://git.savannah.gnu.org/make.git
-  make_version: 4.4
-  make_sha256: 581f4d4e872da74b3941c874215898a7d35802f03732bdccee1d4a7979105d18
-  make_sha512: 4be73f494295dcfa10034531b0d920cfdb5438bc20625f863f5c878549c140e1e67195162580c53060c3c11c67a2c739c09051f02cdd283e5aa9ebcd68975a1f
+  make_version: 4.4.1
+  make_sha256: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
+  make_sha512: 145260cbd6a8226cef3dfef0c8baba31847beaebc7e6b65d39d02715fd4f4cab9b139b6c3772e550088d4f9ae80c6d3ed20b9a7664c693644dfb96b4cb60e67c
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.0.0
-  meson_sha256: aa50a4ba4557c25e7d48446abfde857957dcdf58385fffbe670ba0e8efacce05
-  meson_sha512: 9b1195cfe856c1aa51bc79f6eb4d0f94925bb02d0a9fbd68a6a6ced6e5c252b09b22d9aac812640687e49b8d64a313ce48d0a69a3bf83ea8ffb8c9dab559fc23
+  meson_version: 1.0.1
+  meson_sha256: d926b730de6f518728cc7c57bc5e701667bae0c3522f9e369427b2cc7839d3c1
+  meson_sha512: 3d2e2630f9eacf2fd999d5068d82b2a719400a55cfdea5d38253410a3ee74def638ac09622bceb72edf7bc867ae3de6a5f48c1846601e7e4b5afdf3ac9339ebc
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.3.1
@@ -270,9 +275,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 3.21.12
-  protobuf_sha256: 4eab9b524aa5913c6fffb20b2a8abf5ef7f95a80bc0701f3a6dbb4c607f73460
-  protobuf_sha512: 2307d405bee7a20fa11a04b27f3345304dae5bbcdadc3ff2099a6d5facd55951c4e158ae99d8d07bbfdfdb3fabc84ddc5b60fec06912d70e5655d6bed04fa873
+  protobuf_version: 22.0
+  protobuf_sha256: e340f39fad1e35d9237540bcd6a2592ccac353e5d21d0f0521f6ab77370e0142
+  protobuf_sha512: 83e2eb51e99985bab466b0770e8cf45584fa2e8a65880f64db641194020283d1119bcd1361aab11095cb92d48ed41c83d74a6e19f6e91808f48a91b5578ed310
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.28.1
