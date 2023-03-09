@@ -43,9 +43,9 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 3.25.2
-  cmake_sha256: c026f22cb931dd532f648f087d587f07a1843c6e66a3dfca4fb0ea21944ed33c
-  cmake_sha512: 20146d06a1722c36249192944a58e4780aad334d2bc5ce2a3d8c4f24656630c5b71ca0ae7ed53587e3d46f488bd773452fa60c3fc7045fe54db2dbc6ffd86390
+  cmake_version: 3.25.3
+  cmake_sha256: cc995701d590ca6debc4245e9989939099ca52827dd46b5d3592f093afe1901c
+  cmake_sha512: ebcb5616ca418fe164863b157f67cff6e8c49b0f8f723c0bd219466211f3cfe8b93c4b3ad0fe6d2d3772881fd867b0905340945156f6d70a9ea08bfb7eb98550
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.1
@@ -83,9 +83,9 @@ vars:
   dwarfutils_sha512: 839ba5e4162630ad804d76bd2aa86f35780a178dcda110106a5ee4fb27807fdf45f12e8bbb399ff53721121d0169a73335898f94218a1853116bb106dd455950
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ versioning=loose depName=git://sourceware.org/git/elfutils.git
-  elfutils_version: 0.188
-  elfutils_sha256: fb8b0e8d0802005b9a309c60c1d8de32dd2951b56f0c3a3cb56d21ce01595dff
-  elfutils_sha512: 585551b2d937d19d1becfc2f28935db1dd1a3d25571a62f322b70ac8da98c1a741a55d070327705df6c3e2ee026652e0b9a3c733b050a0b0ec5f2fc75d5b74b5
+  elfutils_version: 0.189
+  elfutils_sha256: 39bd8f1a338e2b7cd4abc3ff11a0eddc6e690f69578a57478d8179b4148708c8
+  elfutils_sha512: 93a877e34db93e5498581d0ab2d702b08c0d87e4cafd9cec9d6636dfa85a168095c305c11583a5b0fb79374dd93bc8d0e9ce6016e6c172764bcea12861605b71
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
   expat_version: 2_5_0
@@ -129,9 +129,9 @@ vars:
   gmp_sha512: c99be0950a1d05a0297d65641dd35b75b74466f7bf03c9e8a99895a3b2f9a0856cd17887738fa51cf7499781b65c049769271cbcb77d057d2e9f1ec52e07dd84
 
   # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ depName=golang/go
-  golang_version: 1.20.1
-  golang_sha256: b5c1a3af52c385a6d1c76aed5361cf26459023980d0320de7658bae3915831a2
-  golang_sha512: 57453419fafac8af10f4037b0162326555aab0e87cd1d246d5e977246c075a0504c23022d5c14bfcae9ca1c3250652ddd7c6fcf2209a926525e5f7d0d40ab52d
+  golang_version: 1.20.2
+  golang_sha256: 4d0e2850d197b4ddad3bdb0196300179d095bb3aefd4dfbc3b36702c3728f8ab
+  golang_sha512: ba8f894b1baa6b3c1bdaafa113feff8d16c25d91f8e44bd4e7ffb46d7b329309290f27385804399baa9834691290a209fc7a193b24fd197ea11a16ce4a1b9d39
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/gperf.git
   gperf_version: 3.1
@@ -139,9 +139,9 @@ vars:
   gperf_sha512: 855ebce5ff36753238a44f14c95be7afdc3990b085960345ca2caf1a2db884f7db74d406ce9eec2f4a52abb8a063d4ed000a36b317c9a353ef4e25e2cca9a3f4
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/grep.git
-  grep_version: 3.8
-  grep_sha256: 498d7cc1b4fb081904d87343febb73475cf771e424fb7e6141aff66013abc382
-  grep_sha512: 2014519a80c6dcd799837e1bd7d9d5ebe8729ec54b0dc76981dac4755a9a8a9f200470cdcc911e2825bed8162e61da39e3dd60289f7393b48bf67314077d0c79
+  grep_version: 3.9
+  grep_sha256: abcd11409ee23d4caf35feb422e53bbac867014cfeed313bb5f488aca170b599
+  grep_sha512: 38aaa28bded9f6d1d527356e9e63bb1dafb4ec8f09e83f2d3bc86c1d6af1a5a8cb9895067375b5b8929ec2cba6ab71c369ed4c6e2a0f7a01dec3c11a6f4c1836
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
   gnutls_version: 3.8.0
@@ -275,14 +275,14 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 22.0
-  protobuf_sha256: e340f39fad1e35d9237540bcd6a2592ccac353e5d21d0f0521f6ab77370e0142
-  protobuf_sha512: 83e2eb51e99985bab466b0770e8cf45584fa2e8a65880f64db641194020283d1119bcd1361aab11095cb92d48ed41c83d74a6e19f6e91808f48a91b5578ed310
+  protobuf_version: 22.1
+  protobuf_sha256: d0454de964d49aacc5473f894afd58ef9f61698cc39e644d465d60adf5fd5ba5
+  protobuf_sha512: d378b08b5b55a70beb3f3321147c0540b2402e957b640b817d7ac84912c513eeb0768088d50e364f8efb8441e978e2b30e55bd021f60ec6681c7032613638d21
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
-  protoc_gen_go_version: v1.28.1
-  protoc_gen_go_sha256: df0b3dceeff0e1b6d029e60f076edd0d852cb8f3c2fe4fe3fe40164f16ec9b6b
-  protoc_gen_go_sha512: 53d78281bbae47baa2a2e029eafd37f9b1e26a5e17bb9f30ee3d7b875871ed07445845d9bb3168b148c057f2c16fd834606dd71cbe00f56dc8061b1907f75482
+  protoc_gen_go_version: v1.29.0
+  protoc_gen_go_sha256: b0ed4f3d61e3783837f119fc89a99eac4415632d4c98d1a0f93d8499023d72fa
+  protoc_gen_go_sha512: 7b28953e874bff3f3a008d06fc68f9ac28a884b1fa36b193e64b8b91f246d446af3a30399049d0b37eb354b85636aadbf3348cb5f6888f9d0b8d5e118d234866
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
   protoc_gen_go_grpc_version: v1.53.0
