@@ -18,7 +18,7 @@ steps:
       - |
         tar -xzf protobuf.tar.gz --strip-components=1
 
-        cmake . -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_ABSL_PROVIDER=package
+        cmake . -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_ABSL_PROVIDER=package -DCMAKE_INSTALL_PREFIX=${TOOLCHAIN}
     build:
       - |
         make -j $(nproc)
