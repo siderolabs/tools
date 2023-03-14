@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-13-gf5f77cc
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-14-gda83992
 
   # renovate: datasource=github-releases versioning=loose depName=abseil/abseil-cpp
   abseil_version: 20230125.1
@@ -43,9 +43,9 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 3.25.3
-  cmake_sha256: cc995701d590ca6debc4245e9989939099ca52827dd46b5d3592f093afe1901c
-  cmake_sha512: ebcb5616ca418fe164863b157f67cff6e8c49b0f8f723c0bd219466211f3cfe8b93c4b3ad0fe6d2d3772881fd867b0905340945156f6d70a9ea08bfb7eb98550
+  cmake_version: 3.26.0
+  cmake_sha256: 4256613188857e95700621f7cdaaeb954f3546a9249e942bc2f9b3c26e381365
+  cmake_sha512: c9d166989abbae71002fe2fbe589c18794a0d6d2ff61fd197c473ff593066a1a17d12889cd875d63fa8824327c8ad165cb03d1f17e517dcef6b2de3b0f0ee789
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ versioning=loose depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.1
@@ -118,9 +118,9 @@ vars:
   gettext_sha512: 61e93bc9876effd3ca1c4e64ff6ba5bd84b24951ec2cc6f40a0e3248410e60f887552f29ca1f70541fb5524f6a4e8191fed288713c3e280e18922dd5bff1a2c9
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.39.2
-  git_sha256: 475f75f1373b2cd4e438706185175966d5c11f68c4db1e48c26257c43ddcf2d6
-  git_sha512: fdca70bee19401c5c7a6d2f3d70bd80b6ba99f6a9f97947de31d4366ee3a78a18d5298abb25727ec8ef67131bca673e48dff2a5a050b6e032884ab04066b20cb
+  git_version: 2.40.0
+  git_sha256: b17a598fbf58729ef13b577465eb93b2d484df1201518b708b5044ff623bf46d
+  git_sha512: a2720f8f9a0258c0bb5e23badcfd68a147682e45a5d039a42c47128296c508109d5039029db89311a35db97a9008585e84ed11b400846502c9be913d67f0fd90
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
@@ -275,14 +275,14 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 22.1
-  protobuf_sha256: d0454de964d49aacc5473f894afd58ef9f61698cc39e644d465d60adf5fd5ba5
-  protobuf_sha512: d378b08b5b55a70beb3f3321147c0540b2402e957b640b817d7ac84912c513eeb0768088d50e364f8efb8441e978e2b30e55bd021f60ec6681c7032613638d21
+  protobuf_version: 22.2
+  protobuf_sha256: 1ff680568f8e537bb4be9813bac0c1d87848d5be9d000ebe30f0bc2d7aabe045
+  protobuf_sha512: 7b3607faa405901ecc878a04a53e412cd72d52dd5aa44f22cc704c6dbfb78d33f057dca7c2dd7f22b33c8e5a20c3a44e95c40081976c7c34ac1f09ed24df025d
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
-  protoc_gen_go_version: v1.29.0
-  protoc_gen_go_sha256: b0ed4f3d61e3783837f119fc89a99eac4415632d4c98d1a0f93d8499023d72fa
-  protoc_gen_go_sha512: 7b28953e874bff3f3a008d06fc68f9ac28a884b1fa36b193e64b8b91f246d446af3a30399049d0b37eb354b85636aadbf3348cb5f6888f9d0b8d5e118d234866
+  protoc_gen_go_version: v1.29.1
+  protoc_gen_go_sha256: 6ae96be3eebf1bb92a5b9d20cd4082fc32e29e3d7f722c08852ec000a9a637c9
+  protoc_gen_go_sha512: 101cc570fd41d7dd84d499ebc5f6b5640c0825ac943ff47e15e431f34d4750ffdeb40db36de4881ba548450f3612397bcf36e3d0235cb74f2922ff95a0d64d80
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
   protoc_gen_go_grpc_version: v1.53.0
