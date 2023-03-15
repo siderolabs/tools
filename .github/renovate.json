@@ -34,7 +34,8 @@
         {
             "matchPackageNames": [
                 "golang/go",
-                "git://git.savannah.gnu.org/make.git"
+                "git://git.savannah.gnu.org/make.git",
+                "git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git"
             ],
             "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?$"
         },
