@@ -58,7 +58,7 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 7_88_1
+  curl_version: 8_0_1
   curl_sha256: 1dae31b2a7c1fe269de99c0c31bb488346aab3459b5ffca909d6938249ae415f
   curl_sha512: b8d30c52a6d1c3e272608a7a8db78dfd79aef21330f34d6f1df43839a400e13ac6aac72a383526db0b711a70ecbec89a3b934677d7ecf5094fd64d3dbcb3492f
 
