@@ -19,7 +19,7 @@ steps:
         tar -xf xz.tar.xz --strip-components=1 -C xz
 
         cd xz
-        ./autogen.sh --no-po4a
+        ./autogen.sh --no-po4a --no-doxygen
 
         cd ../build
         ../xz/configure \
