@@ -8,9 +8,9 @@ vars:
   TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-15-g5126300
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
-  abseil_version: 20230125.1
-  abseil_sha256: 81311c17599b3712069ded20cca09a62ab0bf2a89dfa16993786c8782b7ed145
-  abseil_sha512: 160764e2d10f1a5970b6ea7323868d231070c57b48fcc92e3614bca9d0e9ee0a571b66dfdc560934883de542f32dfbb1ba7b03c11bda8f03e63a5f31e273be6a
+  abseil_version: 20230125.2
+  abseil_sha256: 9a2b5752d7bfade0bdeee2701de17c9480620f8b237e1964c1b9967c75374906
+  abseil_sha512: b2ba5023610aacb680b22bef894372810e6e7df76e630e56ac2f4b9498f70a872171f4562f6560ab78e837437b7bcfd3c47bfc2a5bb7fb20f28ec490dc8ed61f
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -43,9 +43,9 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 3.26.0
-  cmake_sha256: 4256613188857e95700621f7cdaaeb954f3546a9249e942bc2f9b3c26e381365
-  cmake_sha512: c9d166989abbae71002fe2fbe589c18794a0d6d2ff61fd197c473ff593066a1a17d12889cd875d63fa8824327c8ad165cb03d1f17e517dcef6b2de3b0f0ee789
+  cmake_version: 3.26.1
+  cmake_sha256: f29964290ad3ced782a1e58ca9fda394a82406a647e24d6afd4e6c32e42c412f
+  cmake_sha512: e631e4f2277a640015a3c3a2690f0ff68577c4d04d2c39bda0b04afc142df4514b7a813c34e3f245c229ee0d6dcaf667a0f6fd8d76785ea2ff61f5295ae85ada
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.2
@@ -139,9 +139,9 @@ vars:
   gperf_sha512: 855ebce5ff36753238a44f14c95be7afdc3990b085960345ca2caf1a2db884f7db74d406ce9eec2f4a52abb8a063d4ed000a36b317c9a353ef4e25e2cca9a3f4
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/grep.git
-  grep_version: 3.9
-  grep_sha256: abcd11409ee23d4caf35feb422e53bbac867014cfeed313bb5f488aca170b599
-  grep_sha512: 38aaa28bded9f6d1d527356e9e63bb1dafb4ec8f09e83f2d3bc86c1d6af1a5a8cb9895067375b5b8929ec2cba6ab71c369ed4c6e2a0f7a01dec3c11a6f4c1836
+  grep_version: 3.10
+  grep_sha256: 24efa5b595fb5a7100879b51b8868a0bb87a71c183d02c4c602633b88af6855b
+  grep_sha512: 865e8f3fd7afc68f1a52f5e1e1ee05fb9c6d6182201efb0dbdf6075347b0b1d2bf0784537a8f8dd4fb050d523f7a1d2fb5b9c3e3245087d0e6cc12d6e9d3961b
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
   gnutls_version: 3.8.0
@@ -285,9 +285,9 @@ vars:
   protoc_gen_go_sha512: 379860dda3ccff3d6687520d92320a7543562cea104634a17abe5733c2d028116d2740434b33e39e7b263b9468806da7fe15af40c8e23c490c67fd9f9db8b770
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.53.0
-  protoc_gen_go_grpc_sha256: acc2f19f13b778bbc2fe77ce4c6afe51e87793971acc5c0bb1e8e141a5643a3f
-  protoc_gen_go_grpc_sha512: c3bfa8ff0383e6cec6a37369bce5c9e8320ca76a22da96e24b364f62e00a3bab15ffeab9ff3f5d3d8989ed9685e7c01c761124ab3c1dffe2f2bd3b3519a2cf94
+  protoc_gen_go_grpc_version: v1.54.0
+  protoc_gen_go_grpc_sha256: 239698a5748b4e94d333075df216f4a62ddbe1b72ece970e5e9746e0ce8e55f4
+  protoc_gen_go_grpc_sha512: f7e5a21c69dde9aad83f1d62a64ccca29fe7281719e1cbc7e79fba650b01a9767dfcbe8aad801a7dc90b55d6a217fbd51264dafbb3637de9fd9c877351b1e051
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.11.2
@@ -305,9 +305,9 @@ vars:
   sed_sha512: 36157a4b4a2430cf421b7bd07f1675d680d9f1616be96cf6ad6ee74a9ec0fe695f8d0b1e1f0b008bbb33cc7fcde5e1c456359bbbc63f8aebdd4fedc3982cf6dc
 
   # renovate: datasource=github-tags depName=plougher/squashfs-tools
-  squashfs_tools_version: 4.6
-  squashfs_tools_sha256: afc157495fa90d2042172fc642237afe1956f1a5beb141058bba3256b8d92013
-  squashfs_tools_sha512: 3a9effb9a5cf46fbb9f393e58bd938874dc4121828b77c67d659117ee84643917998a8503d629f46f1eff1826f6d7ae59ac2d803a5cdc3cfb1006ef2b3abf8c8
+  squashfs_tools_version: 4.6.1
+  squashfs_tools_sha256: 94201754b36121a9f022a190c75f718441df15402df32c2b520ca331a107511c
+  squashfs_tools_sha512: 10e8a4b1e2327e062aef4f85860e76ebcd7a29e4c19e152ff7edec4a38316982b5bcfde4ab69da6bcb931258d264c2b6cb40cb5f635f9e6f6eba1ed5976267cb
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=swig/swig
   swig_version: 4.1.1
@@ -325,9 +325,9 @@ vars:
   tcl_sha512: 23cd8e7673ac19594ec3ca70c6de4c471ce0a0ca7694bd232a7d04d280f9cb1f7e0b677411b0dbcc8c6ea61bf9cd9a59a86f0b07bab5f0a3c7bf46becc9cd73c
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ depName=git://git.savannah.gnu.org/texinfo.git
-  texinfo_version: 7.0.2
-  texinfo_sha256: f211ec3261383e1a89e4555a93b9d017fe807b9c3992fb2dff4871dae6da54ad
-  texinfo_sha512: 26dd5bb1392f2197ecde296ba157d4533f4b11fadf1238481da4cf2b3796c665ce96049df8d2f9a6d4fa22b7e9013d9978d195e525288663f0a54482bbc22b2b
+  texinfo_version: 7.0.3
+  texinfo_sha256: 74b420d09d7f528e84f97aa330f0dd69a98a6053e7a4e01767eed115038807bf
+  texinfo_sha512: 7d14f7458f2b7d0ee0b740e00a5fc2a9d61d33811aa5905d649875ec518dcb4f01be46fb0c46748f7dfe36950597a852f1473ab0648d5add225bc8f35528a8ff
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
   util_linux_version: 2.38.1
