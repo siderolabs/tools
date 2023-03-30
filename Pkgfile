@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.7.0-15-g5126300
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.8.0
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20230125.2
@@ -43,9 +43,9 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 3.26.1
-  cmake_sha256: f29964290ad3ced782a1e58ca9fda394a82406a647e24d6afd4e6c32e42c412f
-  cmake_sha512: e631e4f2277a640015a3c3a2690f0ff68577c4d04d2c39bda0b04afc142df4514b7a813c34e3f245c229ee0d6dcaf667a0f6fd8d76785ea2ff61f5295ae85ada
+  cmake_version: 3.26.2
+  cmake_sha256: d54f25707300064308ef01d4d21b0f98f508f52dda5d527d882b9d88379f89a8
+  cmake_sha512: 7f4eefbffce2bad241261583b0b8962519dc266fa0c6c5ea6917a785eb2b81ebeda637ed9035965a43e9f89f072bc509d4583b5d595a7b72f5e54bb5170f7c9c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.2
