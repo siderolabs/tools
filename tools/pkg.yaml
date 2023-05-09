@@ -33,6 +33,7 @@ dependencies:
   - stage: golang
   - stage: gperf
   - stage: grep
+  - stage: gnuefi
   - stage: gnutls
   - stage: gzip
   - stage: kmod
@@ -40,6 +41,7 @@ dependencies:
   - stage: libffi
   - stage: libnl
   - stage: libtool
+  - stage: libcap
   - stage: libuv
   - stage: libtasn1
   - stage: libunistring

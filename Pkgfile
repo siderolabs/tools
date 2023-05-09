@@ -143,6 +143,12 @@ vars:
   grep_sha256: 24efa5b595fb5a7100879b51b8868a0bb87a71c183d02c4c602633b88af6855b
   grep_sha512: 865e8f3fd7afc68f1a52f5e1e1ee05fb9c6d6182201efb0dbdf6075347b0b1d2bf0784537a8f8dd4fb050d523f7a1d2fb5b9c3e3245087d0e6cc12d6e9d3961b
 
+  # renovate: datasource=git-tags depName=https://git.code.sf.net/p/gnu-efi/code.git
+  # we have to use 3.0.15 for now, since anything later breaks building sd-stub/sd-boot.
+  gnuefi_version: 3.0.15
+  gnuefi_sha256: 931a257b9c5c1ba65ff519f18373c438a26825f2db7866b163e96d1b168f20ea
+  gnuefi_sha512: 64d408b6d115bdc6eebae12fbd6cd907ed5f847f54e506c1e8f8ea5de38a95cf6fac66ab1009bd1d0bd2d54ad45ad598d29bcc303926a5899bf5cc25448cbb2f
+
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
   gnutls_version: 3.8.0
   gnutls_sha256: 0ea0d11a1660a1e63f960f157b197abe6d0c8cb3255be24e1fb3815930b9bdc5
@@ -162,6 +168,11 @@ vars:
   libbpf_version: v1.1.0
   libbpf_sha256: 5da826c968fdb8a2f714701cfef7a4b7078be030cf58b56143b245816301cbb8
   libbpf_sha512: 751126893883c68e5472724988327e03f7f52becd472f7d6239fa838762f857e54a0347f8f824b8c32ca93b8f419310a86e1d75e3646dae72c2d2992d093b828
+
+  # renovate: datasource=git-tags extractVersion=^libcap-(?<version>.*)$ depName=git://git.kernel.org/pub/scm/libs/libcap/libcap.git
+  libcap_version: 2.68
+  libcap_sha256: 90be3b6d41be5f81ae4b03ec76012b0d27c829293684f6c05b65d5f9cce724b2
+  libcap_sha512: ede3e1356aef22e18a46dc8ff0727500ab023bea698cf2bb822abb06625e272940afea52ad6457d0cd8cf1c7f435f1b568baf0a6bf0a08ae96fbf6d7502f9de2
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
   libffi_version: 3.4.4

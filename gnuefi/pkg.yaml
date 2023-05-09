@@ -1,0 +1,31 @@
+name: gnuefi
+dependencies:
+  - stage: base
+  - stage: patch
+    runtime: true
+steps:
+  - sources:
+      - url: https://src.fedoraproject.org/lookaside/extras/gnu-efi/gnu-efi-{{ .gnuefi_version }}.tar.bz2/sha512/64d408b6d115bdc6eebae12fbd6cd907ed5f847f54e506c1e8f8ea5de38a95cf6fac66ab1009bd1d0bd2d54ad45ad598d29bcc303926a5899bf5cc25448cbb2f/gnu-efi-{{ .gnuefi_version }}.tar.bz2
+        destination: gnuefi.tar.bz2
+        sha256: "{{ .gnuefi_sha256 }}"
+        sha512: "{{ .gnuefi_sha512 }}"
+    prepare:
+      - |
+        tar -xf gnuefi.tar.bz2 --strip-components=1
+
+        patch -p1 < /pkg/patches/no-werror.patch
+    build:
+      - |
+        make -j $(nproc) -C lib
+        make -j $(nproc) -C gnuefi
+        make -j $(nproc) -C inc
+    install:
+      - |
+        mkdir -p /rootfs
+
+        make -j $(nproc ) -C lib PREFIX=${TOOLCHAIN} INSTALLROOT=/rootfs install
+        make -j $(nproc ) -C gnuefi PREFIX=${TOOLCHAIN} INSTALLROOT=/rootfs install
+        make -j $(nproc ) -C inc PREFIX=${TOOLCHAIN} INSTALLROOT=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /
