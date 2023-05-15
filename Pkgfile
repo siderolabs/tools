@@ -179,6 +179,11 @@ vars:
   libffi_sha256: d66c56ad259a82cf2a9dfc408b32bf5da52371500b84745f7fb8b645712df676
   libffi_sha512: 88680aeb0fa0dc0319e5cd2ba45b4b5a340bc9b4bcf20b1e0613b39cd898f177a3863aa94034d8e23a7f6f44d858a53dcd36d1bb8dee13b751ef814224061889
 
+  # renovate: datasource=github-tags extractVersion=^json-c-(?<version>.*)-.*$ depName=json-c/json-c
+  libjson_c_version: 0.16
+  libjson_c_sha256: 8e45ac8f96ec7791eaf3bb7ee50e9c2100bbbc87b8d0f1d030c5ba8a0288d96b
+  libjson_c_sha512: 255cff99033340b2c2678255d41dae7808f83ed0c102e693d2d9e186bd1f21dd1385fcaa360c0fc087a00965a9567fbda733370e6b518a9be2f1bb0a80439151
+
   # renovate datasource=github-releases extractVersion=^libnl(?<version>.*)$ depName=thom311/libnl
   libnl_version: 3_7_0
   libnl_sha256: 9fe43ccbeeea72c653bdcf8c93332583135cda46a79507bfd0a483bb57f65939
@@ -325,6 +330,11 @@ vars:
   swig_sha256: 2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b
   swig_sha512: 1cea1918455a75ebc9b2653dd1715bd5dcd974554955f324295c6a6f14c0a715651b221b85fad4a8af5197e0c75bfe7b590bc6ba7178c26245fbbd9a7e110100
 
+  # renovate: datasource=github-releases depName=systemd/systemd
+  systemd_version: 253
+  systemd_sha256: acbd86d42ebc2b443722cb469ad215a140f504689c7a9133ecf91b235275a491
+  systemd_sha512: 3bbc431a292ab590b70d3b490a528f71d30ccf478ddfa66d1c210f40c260ef49ac30651c19f2d073acf38d68398a4a6fbf95391f0e3ea0333d94b9d4e81d514f
+
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34
   tar_sha256: 63bebd26879c5e1eea4352f0d03c991f966aeb3ddeb3c7445c902568d5411d28
@@ -339,6 +349,11 @@ vars:
   texinfo_version: 7.0.3
   texinfo_sha256: 74b420d09d7f528e84f97aa330f0dd69a98a6053e7a4e01767eed115038807bf
   texinfo_sha512: 7d14f7458f2b7d0ee0b740e00a5fc2a9d61d33811aa5905d649875ec518dcb4f01be46fb0c46748f7dfe36950597a852f1473ab0648d5add225bc8f35528a8ff
+
+  # renovate: datasource=github-tags depName=tpm2-software/tpm2-tss
+  tpm2_tss_version: 4.0.1
+  tpm2_tss_sha256: 532a70133910b6bd842289915b3f9423c0205c0ea009d65294ca18a74087c950
+  tpm2_tss_sha512: ed6ddc52cb0e8c1082a4bb001e1225eb9905fd2380da88db5fd69ff5b5d9d43a93eb67b634e49d53eb5d586832da3aef2c4c7e5f18d51bb730481f8913319d7d
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
   util_linux_version: 2.38.1

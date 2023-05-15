@@ -39,6 +39,7 @@ dependencies:
   - stage: kmod
   - stage: libbpf
   - stage: libffi
+  - stage: libjson-c
   - stage: libnl
   - stage: libtool
   - stage: libcap
@@ -68,9 +69,13 @@ dependencies:
   - stage: sed
   - stage: squashfs-tools
   - stage: swig
+  - stage: sd-boot
+  - stage: sd-measure
+  - stage: sd-stub
   - stage: tar
   - stage: tcl
   - stage: texinfo
+  - stage: tpm2-tss
   - stage: util-linux
   - stage: xz
   - stage: zlib

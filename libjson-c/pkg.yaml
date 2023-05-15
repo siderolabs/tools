@@ -1,0 +1,36 @@
+name: libjson-c
+dependencies:
+  - stage: base
+  - stage: cmake
+    runtime: true
+  - stage: curl
+  - stage: libuv
+  - stage: xz
+  - stage: rhash
+  - stage: expat
+steps:
+  - sources:
+      - url: https://s3.amazonaws.com/json-c_releases/releases/json-c-{{ .libjson_c_version }}.tar.gz
+        destination: json-c.tar.gz
+        sha256: "{{ .libjson_c_sha256 }}"
+        sha512: "{{ .libjson_c_sha512 }}"
+    prepare:
+      - |
+        tar -xzf json-c.tar.gz --strip-components=1
+
+        cmake -B build \
+          -DCMAKE_INSTALL_PREFIX=${TOOLCHAIN} \
+          -DCMAKE_INSTALL_LIBDIR=lib \
+          -DBUILD_SHARED_LIBS=True \
+          -DBUILD_STATIC_LIBS=True \
+          -DCMAKE_BUILD_TYPE=None \
+         .
+    build:
+      - |
+        make -C build -j $(nproc)
+    install:
+      - |
+        make -C build DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /

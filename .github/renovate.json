@@ -66,7 +66,8 @@
         },
         {
             "matchPackageNames": [
-                "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git"
+                "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git",
+                "systemd/systemd"
             ],
             "versioning": "regex:^(?<major>\\d+)\\.?(?<minor>\\d+)?\\.?(?<patch>\\d+)?$"
         },
@@ -104,6 +105,12 @@
                 "Perl/perl5"
             ],
             "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d[02468]+)\\.(?<patch>\\d+)$"
+        },
+        {
+            "matchPackageNames": [
+                "json-c/json-c"
+            ],
+            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?\\.?(?<build>\\d+)?$"
         },
         {
             "matchPackagePatterns": [
