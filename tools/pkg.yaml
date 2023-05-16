@@ -66,6 +66,7 @@ dependencies:
   - stage: protoc-gen-go-grpc
   - stage: python3
   - stage: rhash
+  - stage: sbsign
   - stage: sed
   - stage: squashfs-tools
   - stage: swig

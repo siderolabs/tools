@@ -42,6 +42,11 @@ vars:
   bzip2_sha256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
+  # update when updating sbsign, for the commit here: https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/tree/lib?h=v0.9.5
+  ccan_version: b1f28e17227f2320d07fe052a8a48942fe17caa5
+  ccan_sha256: 79f709f16f6223c6d464fe17ea0dc4432ee67abaad575ed35b000a85b998f4f7
+  ccan_sha512: 35a1c1de05a755df50a75440865146dd363c47015be6fa84250888f01e6bab1661c3af5db0340e1fd7f9f84db388fb2d5fcd0d86d0e1bde34ed13b23d673d740
+
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
   cmake_version: 3.26.3
   cmake_sha256: bbd8d39217509d163cb544a40d6428ac666ddc83e22905d3e52c925781f0f659
@@ -314,6 +319,11 @@ vars:
   rhash_version: v1.4.3
   rhash_sha256: 1e40fa66966306920f043866cbe8612f4b939b033ba5e2708c3f41be257c8a3e
   rhash_sha512: d87ffcde28d8f25cf775c279fed457e52d24523ed9b695629dae694b3c22372247d18f6032f8ce13a0b70fa2953be408982e46659daaa7c4ab227ae89eaed9c7
+
+  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git
+  sbsign_version: 0.9.5
+  sbsign_sha256: a2323e54be6d17f50ceb3253ca6ed063171a5bcb7079bfa594008cd2aeb7fdea
+  sbsign_sha512: 3b23bdf1855132a91e2063039bd4d14c5564e9cd8f551711aa89a91646ff783afb6e318479e9cf46eedbc914a1eade142398c774d8dbfef8fd1d65cbbe60aabd
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/sed.git
   sed_version: 4.9
