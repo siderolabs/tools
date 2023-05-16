@@ -144,7 +144,7 @@ vars:
   gperf_sha512: 855ebce5ff36753238a44f14c95be7afdc3990b085960345ca2caf1a2db884f7db74d406ce9eec2f4a52abb8a063d4ed000a36b317c9a353ef4e25e2cca9a3f4
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/grep.git
-  grep_version: 3.10
+  grep_version: 3.11
   grep_sha256: 24efa5b595fb5a7100879b51b8868a0bb87a71c183d02c4c602633b88af6855b
   grep_sha512: 865e8f3fd7afc68f1a52f5e1e1ee05fb9c6d6182201efb0dbdf6075347b0b1d2bf0784537a8f8dd4fb050d523f7a1d2fb5b9c3e3245087d0e6cc12d6e9d3961b
 
@@ -175,7 +175,7 @@ vars:
   libbpf_sha512: b5291e807a3c83cb80a47e3518a3ab5ad0b0e6157842117c0684c32e525dce0cca199c3c9028390b94a73ff968391aa023312d3b8bd7472aff1c9ee5206c424e
 
   # renovate: datasource=git-tags extractVersion=^libcap-(?<version>.*)$ depName=git://git.kernel.org/pub/scm/libs/libcap/libcap.git
-  libcap_version: 2.68
+  libcap_version: 2.69
   libcap_sha256: 90be3b6d41be5f81ae4b03ec76012b0d27c829293684f6c05b65d5f9cce724b2
   libcap_sha512: ede3e1356aef22e18a46dc8ff0727500ab023bea698cf2bb822abb06625e272940afea52ad6457d0cd8cf1c7f435f1b568baf0a6bf0a08ae96fbf6d7502f9de2
 
