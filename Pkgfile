@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.2.0-alpha.12
+# syntax = ghcr.io/siderolabs/bldr:v0.2.0-alpha.12-4-g857d0d8
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.8.0-2-g93007fc
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.8.0-3-g80a2609
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20230125.3
@@ -144,9 +144,9 @@ vars:
   gperf_sha512: 855ebce5ff36753238a44f14c95be7afdc3990b085960345ca2caf1a2db884f7db74d406ce9eec2f4a52abb8a063d4ed000a36b317c9a353ef4e25e2cca9a3f4
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/grep.git
-  grep_version: 3.10
-  grep_sha256: 24efa5b595fb5a7100879b51b8868a0bb87a71c183d02c4c602633b88af6855b
-  grep_sha512: 865e8f3fd7afc68f1a52f5e1e1ee05fb9c6d6182201efb0dbdf6075347b0b1d2bf0784537a8f8dd4fb050d523f7a1d2fb5b9c3e3245087d0e6cc12d6e9d3961b
+  grep_version: 3.11
+  grep_sha256: 1db2aedde89d0dea42b16d9528f894c8d15dae4e190b59aecc78f5a951276eab
+  grep_sha512: f254a1905a08c8173e12fbdd4fd8baed9a200217fba9d7641f0d78e4e002c1f2a621152d67027d9b25f0bb2430898f5233dc70909d8464fd13d7dd9298e65c42
 
   # renovate: datasource=git-tags depName=https://git.code.sf.net/p/gnu-efi/code.git
   # we have to use 3.0.15 for now, since anything later breaks building sd-stub/sd-boot.
@@ -175,9 +175,9 @@ vars:
   libbpf_sha512: b5291e807a3c83cb80a47e3518a3ab5ad0b0e6157842117c0684c32e525dce0cca199c3c9028390b94a73ff968391aa023312d3b8bd7472aff1c9ee5206c424e
 
   # renovate: datasource=git-tags extractVersion=^libcap-(?<version>.*)$ depName=git://git.kernel.org/pub/scm/libs/libcap/libcap.git
-  libcap_version: 2.68
-  libcap_sha256: 90be3b6d41be5f81ae4b03ec76012b0d27c829293684f6c05b65d5f9cce724b2
-  libcap_sha512: ede3e1356aef22e18a46dc8ff0727500ab023bea698cf2bb822abb06625e272940afea52ad6457d0cd8cf1c7f435f1b568baf0a6bf0a08ae96fbf6d7502f9de2
+  libcap_version: 2.69
+  libcap_sha256: f311f8f3dad84699d0566d1d6f7ec943a9298b28f714cae3c931dfd57492d7eb
+  libcap_sha512: 647c307dc451517da9d089495ab959b4a6fbbe41c79f4e1e9bb663569dad630ead0c2e413dfb393319e3ea14dc9848c81b392107fe3382ce1813d278c3394a7f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
   libffi_version: 3.4.4
