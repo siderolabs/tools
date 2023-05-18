@@ -35,6 +35,7 @@ steps:
         pip3 install jinja2 ninja
 
         patch -p1 < /pkg/patches/musl.patch
+        patch -p1 < /pkg/patches/26445.patch
 
         meson setup build \
           --buildtype=release \

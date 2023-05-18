@@ -1,0 +1,27 @@
+From 54b306449ab3b6917f6f3534241e8b39fe9e98f1 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <medhefgo@web.de>
+Date: Thu, 16 Feb 2023 15:24:44 +0100
+Subject: [PATCH] boot: Fix assertion failure
+
+The TPM code expects a description unless the PCR index indicates that
+no measurements have to take place. The assert was preempting this
+check from happening.
+
+Fixes: #26428
+---
+ src/boot/efi/measure.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/boot/efi/measure.c b/src/boot/efi/measure.c
+index a8bbc62eaae0..949e26350c78 100644
+--- a/src/boot/efi/measure.c
++++ b/src/boot/efi/measure.c
+@@ -146,7 +146,7 @@ EFI_STATUS tpm_log_event(uint32_t pcrindex, EFI_PHYSICAL_ADDRESS buffer, size_t
+         EFI_TCG2 *tpm2;
+         EFI_STATUS err;
+ 
+-        assert(description);
++        assert(description || pcrindex == UINT32_MAX);
+ 
+         /* If EFI_SUCCESS is returned, will initialize ret_measured to true if we actually measured
+          * something, or false if measurement was turned off. */
