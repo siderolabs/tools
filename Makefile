@@ -10,7 +10,7 @@ REGISTRY_AND_USERNAME := $(REGISTRY)/$(USERNAME)
 SOURCE_DATE_EPOCH ?= "1559830076"
 
 # Sync bldr image with Pkgfile
-BLDR_IMAGE := ghcr.io/siderolabs/bldr:v0.2.0-alpha.12-4-g857d0d8
+BLDR_IMAGE := ghcr.io/siderolabs/bldr:v0.2.0
 BLDR ?= docker run --rm --volume $(PWD):/tools --entrypoint=/bldr \
 	$(BLDR_IMAGE) graph --root=/tools
 
@@ -42,15 +42,16 @@ target-%: ## Builds the specified target defined in the Pkgfile. The build resul
 local-%: ## Builds the specified target defined in the Pkgfile using the local output type. The build result will be output to the specified local destination.
 	@$(MAKE) target-$* TARGET_ARGS="--output=type=local,dest=$(DEST) $(TARGET_ARGS)"
 
-rebuild-%: ## Builds the specified target twice into $(DEST)/build-1/2 and compares results.
-	@rm -fr $(DEST)/build-1 $(DEST)/build-2 $(DEST)/build-1.txt $(DEST)/build-2.txt
-	@$(MAKE) target-$* PROGRESS=plain TARGET_ARGS="--output=type=local,dest=$(DEST)/build-1 $(TARGET_ARGS)" 2>&1 | tee $(DEST)/build-1.txt
-	@docker buildx rm reproducer || true
-	@docker buildx create --driver docker-container --driver-opt network=host --name reproducer
-	@$(MAKE) target-$* PROGRESS=plain TARGET_ARGS="--output=type=local,dest=$(DEST)/build-2 --builder=reproducer $(TARGET_ARGS)" 2>&1 | tee $(DEST)/build-2.txt
-	@docker buildx rm reproducer
-	@find _out/ -exec touch -ch -t 202108110000 {} \;
-	@diffoscope _out/build-1 _out/build-2
+reproducibility-test:
+	@$(MAKE) reproducibility-test-local-tools
+
+reproducibility-test-local-%: ## Builds the specified target defined in the Pkgfile using the local output type. The build result will be output to the specified local destination.
+	@rm -rf _out1/ _out2/
+	@$(MAKE) local-$* DEST=_out1
+	@$(MAKE) local-$* DEST=_out2 TARGET_ARGS="--no-cache"
+	@touch -ch -t $$(date -d @$(SOURCE_DATE_EPOCH) +%Y%m%d0000) _out1 _out2
+	@diffoscope _out1 _out2
+	@rm -rf _out1/ _out2/
 
 docker-%: ## Builds the specified target defined in the Pkgfile using the docker output type. The build result will be loaded into Docker.
 	@$(MAKE) target-$* TARGET_ARGS="$(TARGET_ARGS)"
