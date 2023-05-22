@@ -13,7 +13,7 @@ steps:
         sha256: "{{ .python_sha256 }}"
         sha512: "{{ .python_sha512 }}"
     env:
-      SOURCE_DATE_EPOCH: "1"
+      SOURCE_DATE_EPOCH: {{ .BUILD_ARG_SOURCE_DATE_EPOCH }}
       LD_LIBRARY_PATH: "/toolchain/lib"
     prepare:
       - |
