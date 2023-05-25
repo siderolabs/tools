@@ -1,0 +1,45 @@
+name: swtpm
+dependencies:
+  - stage: base
+  - stage: autoconf
+    runtime: true
+  - stage: automake
+    runtime: true
+  - stage: pkg-config
+    runtime: true
+  - stage: coreutils
+  - stage: expect
+  - stage: gawk
+  - stage: glib2
+  - stage: json-glib
+  - stage: libffi
+  - stage: libseccomp
+  - stage: libtasn1
+  - stage: libtool
+  - stage: libtpms
+  - stage: openssl
+  - stage: pcre
+  - stage: python3
+  - stage: socat
+  - stage: zlib
+steps:
+  - sources:
+      - url: https://github.com/stefanberger/swtpm/archive/refs/tags/{{ .swtpm_version }}.tar.gz
+        destination: swtpm.tar.gz
+        sha256: "{{ .swtpm_sha256 }}"
+        sha512: "{{ .swtpm_sha512 }}"
+    prepare:
+      - |
+        tar -xf swtpm.tar.gz --strip-components=1
+
+        ./autogen.sh \
+          --prefix=${TOOLCHAIN}
+    build:
+      - |
+        make -j $(nproc)
+    install:
+      - |
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /

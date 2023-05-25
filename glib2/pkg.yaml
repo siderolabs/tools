@@ -1,0 +1,49 @@
+name: glib2
+dependencies:
+  - stage: base
+  - stage: pkg-config
+    runtime: true
+  - stage: meson
+    runtime: true
+  - stage: coreutils
+  - stage: libffi
+  - stage: openssl
+  - stage: pcre
+  - stage: python3
+  - stage: zlib
+steps:
+  - sources:
+      - url: https://download.gnome.org/sources/glib/{{ regexReplaceAll ".\\d+$" .glib2_version "${1}" }}/glib-{{ .glib2_version }}.tar.xz
+        destination: glib2.tar.gz
+        sha256: "{{ .glib2_sha256 }}"
+        sha512: "{{ .glib2_sha512 }}"
+    env:
+      LD_LIBRARY_PATH: "/toolchain/lib"
+    prepare:
+      - |
+        tar -xf glib2.tar.gz --strip-components=1
+
+        mkdir -p /usr/bin
+        ln -sf /toolchain/bin/env /usr/bin/env
+        ln -sf /toolchain/bin/python3 /toolchain/bin/python
+
+        pip3 install jinja2 ninja
+
+        meson setup build \
+          --prefix=${TOOLCHAIN} \
+          --buildtype=release \
+          -Dman=false \
+          -Dtests=false \
+          -Dglib_debug=disabled \
+          -Dglib_assert=false \
+          -Dglib_checks=false \
+    build:
+      - |
+        ninja -j $(nproc) -C build
+    install:
+      - |
+        DESTDIR=/rootfs ninja -C build install
+        rm -rf /rootfs/toolchain/share
+finalize:
+  - from: /rootfs
+    to: /

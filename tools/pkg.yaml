@@ -29,23 +29,26 @@ dependencies:
   - stage: gawk
   - stage: gettext
   - stage: git
+  - stage: glib2
   - stage: gmp
+  - stage: gnuefi
+  - stage: gnutls
   - stage: golang
   - stage: gperf
   - stage: grep
-  - stage: gnuefi
-  - stage: gnutls
   - stage: gzip
+  - stage: json-glib
   - stage: kmod
   - stage: libbpf
+  - stage: libcap
   - stage: libffi
   - stage: libjson-c
   - stage: libnl
-  - stage: libtool
-  - stage: libcap
-  - stage: libuv
   - stage: libtasn1
+  - stage: libtool
+  - stage: libtpms
   - stage: libunistring
+  - stage: libuv
   - stage: m4
   - stage: make
   - stage: meson
@@ -53,8 +56,8 @@ dependencies:
   - stage: mpfr
   - stage: musl-fts
   - stage: musl-obstack
-  - stage: nettle
   - stage: ncurses
+  - stage: nettle
   - stage: openssl
   - stage: pahole
   - stage: patch
@@ -67,12 +70,14 @@ dependencies:
   - stage: python3
   - stage: rhash
   - stage: sbsign
-  - stage: sed
-  - stage: squashfs-tools
-  - stage: swig
   - stage: sd-boot
   - stage: sd-measure
   - stage: sd-stub
+  - stage: sed
+  - stage: socat
+  - stage: squashfs-tools
+  - stage: swig
+  - stage: swtpm
   - stage: tar
   - stage: tcl
   - stage: texinfo

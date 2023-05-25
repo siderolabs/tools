@@ -108,6 +108,7 @@
         },
         {
             "matchPackageNames": [
+                "git://repo.or.cz/socat.git",
                 "json-c/json-c"
             ],
             "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?\\.?(?<build>\\d+)?$"
