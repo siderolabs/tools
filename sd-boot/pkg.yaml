@@ -13,7 +13,6 @@ dependencies:
   - stage: pkg-config
     runtime: true
   - stage: python3
-  - stage: tpm2-tss
   - stage: util-linux
 steps:
   - sources:
@@ -48,7 +47,6 @@ steps:
           -Dgnu-efi=true \
           -Defi-libdir=/toolchain/lib \
           -Defi-includedir=/toolchain/include/efi \
-          -Dtpm2=true \
           -Dtests=false
     build:
       - |

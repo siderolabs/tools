@@ -127,11 +127,6 @@ vars:
   git_sha256: 4893b8b98eefc9fdc4b0e7ca249e340004faa7804a433d17429e311e1fef21d2
   git_sha512: 9ab41c64c6e666c314683bc4925535e037d43f947b8d327ff7d0379ac12899f4effcc2fe4e47b1ce652ad7140aa4f01f3b99f9cc0cf854cfeface1a5d3e1893e
 
-  # renovate: datasource=git-tags depName=https://gitlab.gnome.org/GNOME/glib.git
-  glib2_version: 2.76.3
-  glib2_sha256: c0be444e403d7c3184d1f394f89f0b644710b5e9331b54fa4e8b5037813ad32a
-  glib2_sha512: 291b8913918d411b679442b888f56893a857a77decfe428086c8bd1da1949498938ddb0bf254ed99d192e4a09b5e8cee1905fd6932ee642463fb229cac7c226e
-
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
   gmp_version: 6.2.1
@@ -169,11 +164,6 @@ vars:
   gzip_sha256: ce5e03e519f637e1f814011ace35c4f87b33c0bbabeec35baf5fbd3479e91956
   gzip_sha512: 116326fe991828227de150336a0c016f4fe932dfbb728a16b4a84965256d9929574a4f5cfaf3cf6bb4154972ef0d110f26ab472c93e62ec9a5fd7a5d65abea24
 
-  # renovate: datasource=git-tags depName=https://gitlab.gnome.org/GNOME/json-glib.git
-  json_glib_version: 1.6.6
-  json_glib_sha256: 96ec98be7a91f6dde33636720e3da2ff6ecbb90e76ccaa49497f31a6855a490e
-  json_glib_sha512: b9a737e4ba3ecdfb9cb8f5fb751cc74e5b1553664d3088c44a1f9e5396d4037958af214dcd290ddf5af98088f46167e10e371e134e1de5cbb7aec84c5c0fd017
-
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
   kmod_version: 30
   kmod_sha256: f897dd72698dc6ac1ef03255cd0a5734ad932318e4adbaebc7338ef2f5202f9f
@@ -193,11 +183,6 @@ vars:
   libffi_version: 3.4.4
   libffi_sha256: d66c56ad259a82cf2a9dfc408b32bf5da52371500b84745f7fb8b645712df676
   libffi_sha512: 88680aeb0fa0dc0319e5cd2ba45b4b5a340bc9b4bcf20b1e0613b39cd898f177a3863aa94034d8e23a7f6f44d858a53dcd36d1bb8dee13b751ef814224061889
-
-  # renovate: datasource=github-tags extractVersion=^json-c-(?<version>.*)-.*$ depName=json-c/json-c
-  libjson_c_version: 0.16
-  libjson_c_sha256: 8e45ac8f96ec7791eaf3bb7ee50e9c2100bbbc87b8d0f1d030c5ba8a0288d96b
-  libjson_c_sha512: 255cff99033340b2c2678255d41dae7808f83ed0c102e693d2d9e186bd1f21dd1385fcaa360c0fc087a00965a9567fbda733370e6b518a9be2f1bb0a80439151
 
   # renovate datasource=github-releases extractVersion=^libnl(?<version>.*)$ depName=thom311/libnl
   libnl_version: 3_7_0
@@ -223,11 +208,6 @@ vars:
   libtool_version: 2.4.7
   libtool_sha256: 04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8
   libtool_sha512: 27acef46d9eb67203d708b57d80b853f76fa4b9c2720ff36ec161e6cdf702249e7982214ddf60bae75511aa79bc7d92aa27e3eab7ef9c0f5c040e8e42e76a385
-
-  # renovate: datasource=github-releases depName=stefanberger/libtpms
-  libtpms_version: v0.9.6
-  libtpms_sha256: 2807466f1563ebe45fdd12dd26e501e8a0c4fbb99c7c428fbb508789efd221c0
-  libtpms_sha512: 35f26e4849eb98cd73461aff439c19f77bbbcde9b7661402e3d419354c4dcddd057349c4f7178573f1ceea2e95326498eb9afea3bd48064bbff534fc7f6939c3
 
   # renovate: datasource=github-tags depName=libuv/libuv
   libuv_version: v1.44.2
@@ -345,11 +325,6 @@ vars:
   sed_sha256: 6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181
   sed_sha512: 36157a4b4a2430cf421b7bd07f1675d680d9f1616be96cf6ad6ee74a9ec0fe695f8d0b1e1f0b008bbb33cc7fcde5e1c456359bbbc63f8aebdd4fedc3982cf6dc
 
-  # renovate: datasource=git-tags extractVersion=^tag-(?<version>.*)$ depName=git://repo.or.cz/socat.git
-  socat_version: 1.7.4.4
-  socat_sha256: 0f8f4b9d5c60b8c53d17b60d79ababc4a0f51b3bb6d2bd3ae8a6a4b9d68f195e
-  socat_sha512: 709fd393642d4249152d75add4d489ea76e6118c9e6740e796f029e8c5ddd4f5c9218d587977fc57ada640f635a996cbbe4055275236a169881bb2be1d3e5df9
-
   # renovate: datasource=github-tags depName=plougher/squashfs-tools
   squashfs_tools_version: 4.6.1
   squashfs_tools_sha256: 94201754b36121a9f022a190c75f718441df15402df32c2b520ca331a107511c
@@ -359,11 +334,6 @@ vars:
   swig_version: 4.1.1
   swig_sha256: 2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b
   swig_sha512: 1cea1918455a75ebc9b2653dd1715bd5dcd974554955f324295c6a6f14c0a715651b221b85fad4a8af5197e0c75bfe7b590bc6ba7178c26245fbbd9a7e110100
-
-  # renovate: datasource=github-releases depName=stefanberger/swtpm
-  swtpm_version: v0.8.0
-  swtpm_sha256: ad433f9272fb794aafd550914d24cc0ca33d4652cfd087fa41b911fa9e54be3d
-  swtpm_sha512: 7f70c19f732404061be6168c96c0dd3ec91ed8b50dddcafcb50d810062ce0e83ad85360191f97db5db9dc034e01d91cebe3912449d896d2cde68fe060a0adb09
 
   # renovate: datasource=github-releases depName=systemd/systemd
   systemd_version: 253
@@ -384,11 +354,6 @@ vars:
   texinfo_version: 7.0.3
   texinfo_sha256: 74b420d09d7f528e84f97aa330f0dd69a98a6053e7a4e01767eed115038807bf
   texinfo_sha512: 7d14f7458f2b7d0ee0b740e00a5fc2a9d61d33811aa5905d649875ec518dcb4f01be46fb0c46748f7dfe36950597a852f1473ab0648d5add225bc8f35528a8ff
-
-  # renovate: datasource=github-tags depName=tpm2-software/tpm2-tss
-  tpm2_tss_version: 4.0.1
-  tpm2_tss_sha256: 532a70133910b6bd842289915b3f9423c0205c0ea009d65294ca18a74087c950
-  tpm2_tss_sha512: ed6ddc52cb0e8c1082a4bb001e1225eb9905fd2380da88db5fd69ff5b5d9d43a93eb67b634e49d53eb5d586832da3aef2c4c7e5f18d51bb730481f8913319d7d
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
   util_linux_version: 2.38.1
