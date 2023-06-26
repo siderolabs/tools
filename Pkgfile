@@ -42,11 +42,6 @@ vars:
   bzip2_sha256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
-  # update when updating sbsign, for the commit here: https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/tree/lib?h=v0.9.5
-  ccan_version: b1f28e17227f2320d07fe052a8a48942fe17caa5
-  ccan_sha256: 79f709f16f6223c6d464fe17ea0dc4432ee67abaad575ed35b000a85b998f4f7
-  ccan_sha512: 35a1c1de05a755df50a75440865146dd363c47015be6fa84250888f01e6bab1661c3af5db0340e1fd7f9f84db388fb2d5fcd0d86d0e1bde34ed13b23d673d740
-
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
   cmake_version: 3.26.4
   cmake_sha256: 313b6880c291bd4fe31c0aa51d6e62659282a521e695f30d5cc0d25abbd5c208
@@ -63,9 +58,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_1_1
-  curl_sha256: 08a948e061929645597c1ef7194e07b308b22084ff03fa7400b465e6c05149e5
-  curl_sha512: d034b1ab9c00e8a0acf7ba6c6344734945d45666b4f38394f5456fcd9b22623146a897270861b7411412ca25c912e1bbf24eb139a6dfc1a8c00d098b3b925399
+  curl_version: 8_1_2
+  curl_sha256: 31b1118eb8bfd43cd95d9a3f146f814ff874f6ed3999b29d94f4d1e7dbac5ef6
+  curl_sha512: 532ab96eba6dea66d272f3be56f5af5c5da922480f9a10e203de98037c311f12f8145ba6bf813831e42815e068874ccfd108f84f7650743f5dbb3ebc3bc9c4f4
 
   # renovate: datasource=git-tags extractVersion=^dejagnu-(?<version>.*)-release$ depName=git://git.savannah.gnu.org/dejagnu.git
   dejagnu_version: 1.6.3
@@ -118,9 +113,9 @@ vars:
   gawk_sha512: 90611e4daba7226d5ce8230843bf479dc71c0101740c005d851ef7c5b935b6cd4c42089b858abc1619adc05ed25fc7234f993690a76d2ea0b8e61bcbb7dc5a58
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gettext.git
-  gettext_version: 0.21.1
-  gettext_sha256: 50dbc8f39797950aa2c98e939947c527e5ac9ebd2c1b99dd7b06ba33a6767ae6
-  gettext_sha512: 61e93bc9876effd3ca1c4e64ff6ba5bd84b24951ec2cc6f40a0e3248410e60f887552f29ca1f70541fb5524f6a4e8191fed288713c3e280e18922dd5bff1a2c9
+  gettext_version: 0.22
+  gettext_sha256: 0e60393a47061567b46875b249b7d2788b092d6457d656145bb0e7e6a3e26d93
+  gettext_sha512: c6368344aa4e0f6fd7c4a93023a5f7b377c7bb97b8ea688fd54f4c385c069d9ff27611d8763b1aed6328b6d3c4db7b34bd89bfbf6525ecaef11eb58434a4d4fa
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
   git_version: 2.41.0
@@ -291,34 +286,29 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 23.2
-  protobuf_sha256: ddf8c9c1ffccb7e80afd183b3bd32b3b62f7cc54b106be190bf49f2bc09daab5
-  protobuf_sha512: e0404c89bf4b02ac2e895471b9244e438373a0362419ee22faab19b44a66fdb2dae5b6fe0a28a9fedde927cd83d24f883a93c8911db9429b037e97c7724ddea5
+  protobuf_version: 23.3
+  protobuf_sha256: 3a5f47ad3aa10192c5577ff086b24b9739a36937c34ceab6db912a16a3ef7f8e
+  protobuf_sha512: 94e171841b464931d65dea05ebe04869a3c213c08f99a9894812a007559772be1c7d7069d0f122c62fe59fd10cf38206b66fd7b9ef086f2bca3897bb09fa2537
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
-  protoc_gen_go_version: v1.30.0
-  protoc_gen_go_sha256: 3279a16ec3bdd7c53fe1599134de298ed90d9f3b6ec1c1eb5f3b76ba5aaa9f0c
-  protoc_gen_go_sha512: 379860dda3ccff3d6687520d92320a7543562cea104634a17abe5733c2d028116d2740434b33e39e7b263b9468806da7fe15af40c8e23c490c67fd9f9db8b770
+  protoc_gen_go_version: v1.31.0
+  protoc_gen_go_sha256: 96d670e9bae145ff2dd0f48a3693edb1f45ec3ee56d5f50a5f01cc7e060314bc
+  protoc_gen_go_sha512: edcd48b8cee045d69fd8a649a7af8041b6fa71183cfdb6dde6369602d496745e87ccb3a53f0847ed23f4052114bd13d95b46af235f95e3930804951d5e7356b2
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.55.0
-  protoc_gen_go_grpc_sha256: 57ac0ec550cbcc5fd5a0bf15e3c7245feaeb0c66f6a2c2afb003f1253f064b41
-  protoc_gen_go_grpc_sha512: 207d8841ae5049c2b20ad6807277106ba968724a25e3d0ca0d7af88f35704479c7217b9031239d137e343e5d37f1ad1415666d1eb28b5ffc5eb99dc98b2d4909
+  protoc_gen_go_grpc_version: v1.56.1
+  protoc_gen_go_grpc_sha256: 74c4990651c1be12f34d068e48bf58aeb9b6fb3bfc15e90539f4fc0a753b5064
+  protoc_gen_go_grpc_sha512: bb6516be02954ccef5a401e3094652ec7ae29d83918b58b2a686f4027479e7ffc97a301033b3345f7e041f1ecbe338ad12a64224df8738477430ddfb2ad15543
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.11.3
-  python_sha256: 8a5db99c961a7ecf27c75956189c9602c968751f11dbeae2b900dbff1c085b5e
-  python_sha512: a3bba4b69322a47bfeefe42ba0fd7331b5b67fd2ab41441e2219d16ef8c6f307f1a48977afd073c18cfd24ec6cb1bfe0c4bb4b273031eb524dc7e9fb5fbcc3b6
+  python_version: 3.11.4
+  python_sha256: 2f0e409df2ab57aa9fc4cbddfb976af44e4e55bf6f619eee6bc5c2297264a7f6
+  python_sha512: 7eb14fecbf60824d10c22a9057584c3a142c2866f4af6caa2525c10c8bcb24e6e7afb32a44a0e118df0a2b2543d578c3b422ffd4a5fa317dfe6ea371cc7ee1ee
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.3
   rhash_sha256: 1e40fa66966306920f043866cbe8612f4b939b033ba5e2708c3f41be257c8a3e
   rhash_sha512: d87ffcde28d8f25cf775c279fed457e52d24523ed9b695629dae694b3c22372247d18f6032f8ce13a0b70fa2953be408982e46659daaa7c4ab227ae89eaed9c7
-
-  # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git
-  sbsign_version: 0.9.5
-  sbsign_sha256: a2323e54be6d17f50ceb3253ca6ed063171a5bcb7079bfa594008cd2aeb7fdea
-  sbsign_sha512: 3b23bdf1855132a91e2063039bd4d14c5564e9cd8f551711aa89a91646ff783afb6e318479e9cf46eedbc914a1eade142398c774d8dbfef8fd1d65cbbe60aabd
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/sed.git
   sed_version: 4.9

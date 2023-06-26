@@ -65,7 +65,6 @@ dependencies:
   - stage: protoc-gen-go-grpc
   - stage: python3
   - stage: rhash
-  - stage: sbsign
   - stage: sd-boot
   - stage: sd-stub
   - stage: sed
