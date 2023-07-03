@@ -205,9 +205,9 @@ vars:
   libtool_sha512: 27acef46d9eb67203d708b57d80b853f76fa4b9c2720ff36ec161e6cdf702249e7982214ddf60bae75511aa79bc7d92aa27e3eab7ef9c0f5c040e8e42e76a385
 
   # renovate: datasource=github-tags depName=libuv/libuv
-  libuv_version: v1.45.0
-  libuv_sha256: f5b07f65a1e8166e47983a7ed1f42fae0bee08f7458142170c37332fc676a748
-  libuv_sha512: 0501b8629c7ce6318684d618d8e896b8d113064cac2b0ce42e9c6ba0dc33386a621c11e7556e795bdc4c082b670675ab5947b367e100e7575e4250ad070c6cf7
+  libuv_version: v1.46.0
+  libuv_sha256: 111f83958b9fdc65f1489195d25f342b9f7a3e683140c60e62c00fbaccddddce
+  libuv_sha512: 41b5606bd4575e1fd1a3a275d00e0bafdef0f43f251c9a032c49ab03134f50fb361e7f355ac0b34dd35959b3b0d29faf1aa7411002f430e3b0d78935a366b3da
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/m4.git
   m4_version: 1.4.19
@@ -346,9 +346,9 @@ vars:
   texinfo_sha512: 7d14f7458f2b7d0ee0b740e00a5fc2a9d61d33811aa5905d649875ec518dcb4f01be46fb0c46748f7dfe36950597a852f1473ab0648d5add225bc8f35528a8ff
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.39.0
-  util_linux_sha256: 32b30a336cda903182ed61feb3e9b908b762a5e66fe14e43efb88d37162075cb
-  util_linux_sha512: 3d59a0f114c06be19ef7f86fca37ba5b9073823d011b3fc37997ddb00124b4505ea32903b78798a64dffbccf0ba645a692678ee845cc65a5b321824448a82a94
+  util_linux_version: 2.39.1
+  util_linux_sha256: 890ae8ff810247bd19e274df76e8371d202cda01ad277681b0ea88eeaa00286b
+  util_linux_sha512: 8fe2c9014f6161330610f7470b870855cecbd3fab9c187b75d8f22e16573c82516050479be39cfb9f7dd6d7ef1cc298d31d839b194dda5ec4daf0d1197ac71e9
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
   xz_version: v5.4.3
