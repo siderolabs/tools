@@ -1,40 +1,57 @@
-From a4ff7772acf1d983921833aa20ccd7c4d5e59a1c Mon Sep 17 00:00:00 2001
-From: Alexander Kanavin <alex@linutronix.de>
-Date: Mon, 6 Mar 2023 15:24:49 +0100
-Subject: [PATCH] src/boot/efi/efi-string.c: define wchar_t from __WCHAR_TYPE__
+systemd-boot relies on wchar_t being __WCHAR_TYPE__ but musl sets it as
+int here: https://git.musl-libc.org/cgit/musl/tree/arch/x86_64/bits/alltypes.h.in?h=v1.2.4#n9
 
-systemd-boot relies on wchar_t being 16 bit, and breaks at build time otherwise.
+So the patch below sets __DEFINED_wchar_t and loads `stddef.h` later so that we can override it.
 
-To set wchar_t to 16 bit it is passing -fshort-wchar to gcc; this has the
-desired effect on glibc (which sets wchar_t from __WCHAR_TYPE__) but not on
-musl (which hardcodes it to 32 bit).
+diff --git src/boot/efi/efi.h src/boot/efi/efi.h
+index b8d193154e..e432e9c91f 100644
+--- src/boot/efi/efi.h
++++ src/boot/efi/efi.h
+@@ -3,14 +3,15 @@
 
-This patch ensures wchar_t is set from the compiler flags on all systems; note
-that systemd-boot is not actually using functions from musl or other libc, just their headers.
-
-Meanwhile upstream has refactored the code to not rely on libc headers at all;
-however this will not be backported to v253 and we need a different fix.
-
-Upstream-Status: Inappropriate [fixed differently in trunk according to https://github.com/systemd/systemd/pull/26689]
-Signed-off-by: Alexander Kanavin <alex@linutronix.de>
----
- src/boot/efi/efi-string.c | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/src/boot/efi/efi-string.c b/src/boot/efi/efi-string.c
-index 22923d60f6..22a8d1ef71 100644
---- a/src/boot/efi/efi-string.c
-+++ b/src/boot/efi/efi-string.c
-@@ -2,7 +2,13 @@
-
+ #include <stdarg.h>
  #include <stdbool.h>
+-#include <stddef.h>
  #include <stdint.h>
-+
-+#if SD_BOOT
-+typedef __WCHAR_TYPE__ wchar_t;
-+#define __DEFINED_wchar_t
-+#else
- #include <wchar.h>
-+#endif
 
- #include "efi-string.h"
+ #include "macro-fundamental.h"
+
+ #if SD_BOOT
+ /* uchar.h/wchar.h are not suitable for freestanding environments. */
++#define __DEFINED_wchar_t
+ typedef __WCHAR_TYPE__ wchar_t;
++#include <stddef.h>
+ typedef __CHAR16_TYPE__ char16_t;
+ typedef __CHAR32_TYPE__ char32_t;
+
+diff --git src/fundamental/macro-fundamental.h src/fundamental/macro-fundamental.h
+index 1d49765fce..113bda78c7 100644
+--- src/fundamental/macro-fundamental.h
++++ src/fundamental/macro-fundamental.h
+@@ -3,6 +3,9 @@
+
+ #if !SD_BOOT
+ #  include <assert.h>
++#else
++#define __DEFINED_wchar_t
++#include <stddef.h>
+ #endif
+
+ #include <limits.h>
+diff --git src/fundamental/memory-util-fundamental.h src/fundamental/memory-util-fundamental.h
+index 78e2dbec59..4f68b56e9d 100644
+--- src/fundamental/memory-util-fundamental.h
++++ src/fundamental/memory-util-fundamental.h
+@@ -1,10 +1,10 @@
+ /* SPDX-License-Identifier: LGPL-2.1-or-later */
+ #pragma once
+
+-#include <stddef.h>
+-
+ #if SD_BOOT
+ #  include "efi-string.h"
++#define __DEFINED_wchar_t
++#include <stddef.h>
+ #else
+ #  include <string.h>
+ #endif

@@ -6,7 +6,7 @@ dependencies:
   - stage: libtool
 steps:
   - sources:
-      - url: https://dist.libuv.org/dist/{{ .libuv_version }}/libuv-{{ .libuv_version }}.tar.gz
+      - url: https://github.com/libuv/libuv/archive/refs/tags/{{ .libuv_version }}.tar.gz
         destination: libuv.tar.gz
         sha256: "{{ .libuv_sha256 }}"
         sha512: "{{ .libuv_sha512 }}"

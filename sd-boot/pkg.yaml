@@ -2,12 +2,12 @@ name: sd-boot
 dependencies:
   - stage: base
   - stage: coreutils
-  - stage: gnuefi
   - stage: gperf
   - stage: libcap
   - stage: meson
     runtime: true
   - stage: openssl
+  - stage: libffi
   - stage: patch
     runtime: true
   - stage: pkg-config
@@ -31,10 +31,11 @@ steps:
         ln -sf /toolchain/bin/env /usr/bin/env
         ln -sf /toolchain/bin/python3 /toolchain/bin/python
 
-        pip3 install jinja2 ninja
+        pip3 install jinja2 ninja pyelftools
 
-        patch -p1 < /pkg/patches/musl.patch
-        patch -p1 < /pkg/patches/26445.patch
+        patch -p0 < /pkg/patches/musl.patch
+        # TODO: remove after we have a new rc-release https://github.com/systemd/systemd/pull/28293
+        patch -p1 < /pkg/patches/28293.patch
 
         meson setup build \
           --buildtype=release \
@@ -44,9 +45,7 @@ steps:
           -Dsbat-distro-url=https://github.com/siderolabs/tools/issues \
           -Dman=false \
           -Defi=true \
-          -Dgnu-efi=true \
-          -Defi-libdir=/toolchain/lib \
-          -Defi-includedir=/toolchain/include/efi \
+          -Dbootloader=true \
           -Dtests=false
     build:
       - |
@@ -56,6 +55,7 @@ steps:
         mkdir -p /rootfs/toolchain/lib/systemd/boot/efi
 
         cp build/src/boot/efi/*.efi /rootfs/toolchain/lib/systemd/boot/efi
+        cp build/src/boot/efi/*.efi.stub /rootfs/toolchain/lib/systemd/boot/efi
 finalize:
   - from: /rootfs
     to: /

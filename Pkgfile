@@ -206,8 +206,8 @@ vars:
 
   # renovate: datasource=github-tags depName=libuv/libuv
   libuv_version: v1.46.0
-  libuv_sha256: 111f83958b9fdc65f1489195d25f342b9f7a3e683140c60e62c00fbaccddddce
-  libuv_sha512: 41b5606bd4575e1fd1a3a275d00e0bafdef0f43f251c9a032c49ab03134f50fb361e7f355ac0b34dd35959b3b0d29faf1aa7411002f430e3b0d78935a366b3da
+  libuv_sha256: 7aa66be3413ae10605e1f5c9ae934504ffe317ef68ea16fdaa83e23905c681bd
+  libuv_sha512: e3a7c10ffd909f9b128fb2316e09b8456e87278107178b49368f31ba30e7f62d64e7eba650cc59ef2d7eb178199c7a2c5b5c99b333849200492235116d7aee7a
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/m4.git
   m4_version: 1.4.19
@@ -326,9 +326,9 @@ vars:
   swig_sha512: 1cea1918455a75ebc9b2653dd1715bd5dcd974554955f324295c6a6f14c0a715651b221b85fad4a8af5197e0c75bfe7b590bc6ba7178c26245fbbd9a7e110100
 
   # renovate: datasource=github-releases depName=systemd/systemd
-  systemd_version: 253
-  systemd_sha256: acbd86d42ebc2b443722cb469ad215a140f504689c7a9133ecf91b235275a491
-  systemd_sha512: 3bbc431a292ab590b70d3b490a528f71d30ccf478ddfa66d1c210f40c260ef49ac30651c19f2d073acf38d68398a4a6fbf95391f0e3ea0333d94b9d4e81d514f
+  systemd_version: 254-rc1
+  systemd_sha256: 14e62dfce4af2f8b191eb2d152bb51308defe56ba94f58cbdabb6702e3402909
+  systemd_sha512: 84124f4f861e17734bb07e235135cb20d8a2092de6f779ff71dccf93844e7b972304660193aa14834b74a64e29af9b3f70b342aac645aa36230e5cc2462d6d77
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34

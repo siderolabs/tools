@@ -30,7 +30,6 @@ dependencies:
   - stage: gettext
   - stage: git
   - stage: gmp
-  - stage: gnuefi
   - stage: gnutls
   - stage: golang
   - stage: gperf
@@ -66,7 +65,6 @@ dependencies:
   - stage: python3
   - stage: rhash
   - stage: sd-boot
-  - stage: sd-stub
   - stage: sed
   - stage: squashfs-tools
   - stage: swig
