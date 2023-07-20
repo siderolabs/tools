@@ -79,6 +79,9 @@ steps:
   - prepare:
       - |
         cp /pkg/files/adjust.sh ${TOOLCHAIN}/bin
+      - |
+        # clean up some files we don't ever need
+        rm -rf ${TOOLCHAIN}/man ${TOOLCHAIN}/share/doc ${TOOLCHAIN}/share/info ${TOOLCHAIN}/share/locale ${TOOLCHAIN}/share/man
 finalize:
   - from: /toolchain
     to: /toolchain

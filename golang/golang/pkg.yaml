@@ -16,6 +16,7 @@ steps:
 
     prepare:
       - tar -xzf go.src.tar.gz --strip-components=1
+      - rm go.src.tar.gz
 
     build:
       - cd src && sh make.bash
