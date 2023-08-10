@@ -13,6 +13,7 @@ steps:
       GOROOT_BOOTSTRAP: '{{ .TOOLCHAIN }}/go_bootstrap'
       GOROOT_FINAL: '{{ .TOOLCHAIN }}/go'
       CGO_ENABLED: '0'
+      GOTOOLCHAIN: 'local'
 
     prepare:
       - tar -xzf go.src.tar.gz --strip-components=1
