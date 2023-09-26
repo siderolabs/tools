@@ -4,7 +4,7 @@ dependencies:
   - stage: perl
 steps:
   - sources:
-      - url: https://www.openssl.org/source/openssl-{{.openssl_version | replace "_" "." }}.tar.gz
+      - url: https://www.openssl.org/source/openssl-{{.openssl_version }}.tar.gz
         destination: openssl.tar.gz
         sha256: "{{ .openssl_sha256 }}"
         sha512: "{{ .openssl_sha512 }}"
@@ -21,7 +21,7 @@ steps:
           linux-${ARCH} \
           --prefix=${TOOLCHAIN} \
           --libdir=lib \
-          --openssldir=/etc/ssl1.1 \
+          --openssldir=/etc/ssl3.1 \
           shared \
           no-zlib \
           no-async \
@@ -32,7 +32,6 @@ steps:
           no-ec2m \
           no-sm2 \
           no-sm4 \
-          no-ssl2 \
           no-ssl3 \
           no-seed \
           no-weak-ssl-ciphers
@@ -40,7 +39,7 @@ steps:
     build:
       - |
         cd openssl
-        make -j $(nproc)
+        make -j $(nproc) build_sw
     install:
       - |
         cd openssl

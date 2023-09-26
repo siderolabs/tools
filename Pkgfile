@@ -249,10 +249,10 @@ vars:
   nettle_sha256: ccfeff981b0ca71bbd6fbcb054f407c60ffb644389a5be80d6716d5b550c6ce3
   nettle_sha512: 5939c4b43cf9ff6c6272245b85f123c81f8f4e37089fa4f39a00a570016d837f6e706a33226e4bbfc531b02a55b2756ff312461225ed88de338a73069e031ced
 
-  # renovate: datasource=git-tags extractVersion=^OpenSSL_(?<version>.*)$ versioning=loose depName=git://git.openssl.org/openssl.git
-  openssl_version: 1_1_1w
-  openssl_sha256: cf3098950cb4d853ad95c0841f1f9c6d3dc102dccfcacd521d93925208b76ac8
-  openssl_sha512: b4c625fe56a4e690b57b6a011a225ad0cb3af54bd8fb67af77b5eceac55cc7191291d96a660c5b568a08a2fbf62b4612818e7cca1bb95b2b6b4fc649b0552b6d
+  # renovate: datasource=git-tags extractVersion=^openssl-(?<version>.*)$ depName=git://git.openssl.org/openssl.git
+  openssl_version: 3.1.3
+  openssl_sha256: f0316a2ebd89e7f2352976445458689f80302093788c466692fb2a188b2eacf6
+  openssl_sha512: 2388eaa8e99acf1e8af4691a645b9b9af456900c74959e82d4cb02808301e11dcfecc86954a922262b16fa4b664b459894d133ab7d35ec82e1633a33194b7b20
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.25
