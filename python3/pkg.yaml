@@ -40,7 +40,7 @@ steps:
 
         # needed for some packages, especially packages that backport functionality
         # to 2.x from 3.x
-        for item in /rootfs${TOOLCHAIN}/lib/python3.10/test/*; do
+        for item in /rootfs${TOOLCHAIN}/lib/python3.11/test/*; do
           if [[ "$item" != */test_support.py* ]]; then
             rm -rf "$item"
           else

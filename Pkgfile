@@ -58,9 +58,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_3_0
-  curl_sha256: 376d627767d6c4f05105ab6d497b0d9aba7111770dd9d995225478209c37ea63
-  curl_sha512: 6404b4c74fe1185cb482631ca3a143996cb7298d0d8a76bfafd7696e7729c00559999a069bdba782dee3f3eb273fb678a4438cb27d3deca54022878cdff83a51
+  curl_version: 8_4_0
+  curl_sha256: 16c62a9c4af0f703d28bda6d7bbf37ba47055ad3414d70dec63e2e6336f2a82d
+  curl_sha512: 7027dbf3b759b39d6ec9c4da58fadd254e84bb93bff599541b3bc3135bad4c2955c6237d7ddd60973f9f1a6948bc32d7e312985fb50658bc958b9f22fee74f2b
 
   # renovate: datasource=git-tags extractVersion=^dejagnu-(?<version>.*)-release$ depName=git://git.savannah.gnu.org/dejagnu.git
   dejagnu_version: 1.6.3
@@ -78,9 +78,9 @@ vars:
   dtc_sha512: d3ba6902a9a2f2cdbaff55f12fca3cfe4a1ec5779074a38e3d8b88097c7abc981835957e8ce72971e10c131e05fde0b1b961768e888ff96d89e42c75edb53afb
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 0.7.0
-  dwarfutils_sha256: 23b71829de875fa5842e49f232c8ee1a5043805749738bc61424d9abc1189f38
-  dwarfutils_sha512: 0fe027e517551d138c15695ffdebe2dfbb0e89184fc0cc93bed5c342cd1cd901dc23f6b2aa8643ec8e62808cbdc0d94389fe44438c694d19c45c6a7367e8f7af
+  dwarfutils_version: 0.8.0
+  dwarfutils_sha256: 771814a66b5aadacd8381b22d8a03b9e197bd35c202d27e19fb990e9b6d27b17
+  dwarfutils_sha512: 82aa00b6fd5e8935fdc4b7d55379667fb9c514e75763109ea18a7cf7d9c1077ee0eb30d7482fa7d3621df44853bea0d15fde6cb846723bfb47752869e9687145
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.189
@@ -113,9 +113,9 @@ vars:
   gawk_sha512: 90611e4daba7226d5ce8230843bf479dc71c0101740c005d851ef7c5b935b6cd4c42089b858abc1619adc05ed25fc7234f993690a76d2ea0b8e61bcbb7dc5a58
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gettext.git
-  gettext_version: 0.22.2
-  gettext_sha256: 4c82fbfe5e53d71a97c634aa98a898b9da807b08b27410f6a4641e8bb44dc4b2
-  gettext_sha512: c5c24eca1c7e8e242e6b993a39068dc281b84fda7f06e5020dc7fc10ac7de5bfcc476b7e94711723a7f82cc7f5a0845616ddd553078ee69690e3a146fc3f8ae5
+  gettext_version: 0.22.3
+  gettext_sha256: b838228b3f8823a6c1eddf07297197c4db13f7e1b173b9ef93f3f945a63080b6
+  gettext_sha512: ccfd17d664f02da58b91623845fde23b9763442cb988be979d814aff66d774db87ed7d8b27dcce84bf8f118d85d34f4782ce451c5d3cb5a9484161ba2c3f4209
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
   git_version: 2.42.0
@@ -160,9 +160,9 @@ vars:
   gzip_sha512: e3d4d4aa4b2e53fdad980620307257c91dfbbc40bcec9baa8d4e85e8327f55e2ece552c9baf209df7b66a07103ab92d4954ac53c86c57fbde5e1dd461143f94c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
-  kmod_version: 30
-  kmod_sha256: f897dd72698dc6ac1ef03255cd0a5734ad932318e4adbaebc7338ef2f5202f9f
-  kmod_sha512: e2cd34e600a72e44710760dfda9364b790b8352a99eafbd43e683e4a06f37e6b5c0b5d14e7c28070e30fc5fc6ceddedf7b97f3b6c2c5c2d91204fefd630b9a3e
+  kmod_version: 31
+  kmod_sha256: f5a6949043cc72c001b728d8c218609c5a15f3c33d75614b78c79418fcf00d80
+  kmod_sha512: 05ca70381808bec5f262b94db625662c385408988178a35e4aaf4960ee0716dc0cbfc327160ea4b61098d0c2130ab1b5142ea8156bea8e06ded7f4d288b6d085
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
   libbpf_version: v1.2.2
@@ -215,9 +215,9 @@ vars:
   make_sha512: 145260cbd6a8226cef3dfef0c8baba31847beaebc7e6b65d39d02715fd4f4cab9b139b6c3772e550088d4f9ae80c6d3ed20b9a7664c693644dfb96b4cb60e67c
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.2.1
-  meson_sha256: b1db3a153087549497ee52b1c938d2134e0338214fe14f7efd16fecd57b639f5
-  meson_sha512: 6221a14a6046aaba2c6eb601a9a5b928308bbd9da813ccec16b8f7578296b27d741e30e9343723770c3c7825c86b53193b41b9672dd17468d06d3b8d743bf52e
+  meson_version: 1.2.2
+  meson_sha256: 4a0f04de331fbc7af3b802a844fc8838f4ccd1ded1e792ba4f8f2faf8c5fe4d6
+  meson_sha512: 8dde3235f31862953e2f4db2527e441dfa9413b5f7545c85949ebc0f3b58819307ca124bf04d481d6f1425d6a4c93051239a659554322af893c97b651379fa86
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.3.1
@@ -281,9 +281,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 24.3
-  protobuf_sha256: 07d69502e58248927b58c7d7e7424135272ba5b2852a753ab6b67e62d2d29355
-  protobuf_sha512: 2c1a381f81bb2c0afa3a2ff6681f9f37bc7aef3a3882c371eea7284f4e9524c2a0c834de6c7f681706890eee2220a42442367b8f8dc8370f182fab9e2c37cfd2
+  protobuf_version: 24.4
+  protobuf_sha256: 616bb3536ac1fff3fb1a141450fa28b875e985712170ea7f1bfe5e5fc41e2cd8
+  protobuf_sha512: 52b6ab5587d03cbd1f35cf3cdc388e1710fa50f3031559ac53cf754965407ded7602cdead56080444ab695588112cc3391a1d7fdd5e565d90d0af7ad08706315
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.31.0
@@ -291,9 +291,9 @@ vars:
   protoc_gen_go_sha512: edcd48b8cee045d69fd8a649a7af8041b6fa71183cfdb6dde6369602d496745e87ccb3a53f0847ed23f4052114bd13d95b46af235f95e3930804951d5e7356b2
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.58.2
-  protoc_gen_go_grpc_sha256: 14f91d5e667d02fe18c88d8cbe0036f424079bd7001086c77a7a8ec4be47210b
-  protoc_gen_go_grpc_sha512: ec52c168cd08931fd908bb44a8d5b01eed3a1441e390f51dc10a40edff50a9114ffffb2d230e097629fdf57678799dae9050362da62c9e8572b0b91957b2928c
+  protoc_gen_go_grpc_version: v1.58.3
+  protoc_gen_go_grpc_sha256: d56288406a7b9ec60c5d8819ce88e17ca97947d5eb99c25bd0750eb1f1d153d4
+  protoc_gen_go_grpc_sha512: 64837162c2d201da35224ada3e3f9ab661068d9bc13bac0e5d8382bc731dd298bda73efee4354f5ce99534b7d235967ab123bce64aeebe86f87257922370b46d
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.11.5
