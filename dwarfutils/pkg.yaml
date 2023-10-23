@@ -9,7 +9,7 @@ steps:
         sha256: "{{ .dwarfutils_sha256 }}"
         sha512: "{{ .dwarfutils_sha512 }}"
     env:
-      SOURCE_DATE_EPOCH: "1"
+      SOURCE_DATE_EPOCH: {{ .BUILD_ARG_SOURCE_DATE_EPOCH }}
     prepare:
       - |
         tar -xvf dwarfutils.tar.xz --strip-components=1

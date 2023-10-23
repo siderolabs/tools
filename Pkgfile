@@ -143,12 +143,6 @@ vars:
   grep_sha256: 1db2aedde89d0dea42b16d9528f894c8d15dae4e190b59aecc78f5a951276eab
   grep_sha512: f254a1905a08c8173e12fbdd4fd8baed9a200217fba9d7641f0d78e4e002c1f2a621152d67027d9b25f0bb2430898f5233dc70909d8464fd13d7dd9298e65c42
 
-  # renovate: datasource=git-tags depName=https://git.code.sf.net/p/gnu-efi/code.git
-  # we have to use 3.0.15 for now, since anything later breaks building sd-stub/sd-boot.
-  gnuefi_version: 3.0.15
-  gnuefi_sha256: 931a257b9c5c1ba65ff519f18373c438a26825f2db7866b163e96d1b168f20ea
-  gnuefi_sha512: 64d408b6d115bdc6eebae12fbd6cd907ed5f847f54e506c1e8f8ea5de38a95cf6fac66ab1009bd1d0bd2d54ad45ad598d29bcc303926a5899bf5cc25448cbb2f
-
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
   gnutls_version: 3.8.1
   gnutls_sha256: ba8b9e15ae20aba88f44661978f5b5863494316fe7e722ede9d069fe6294829c
