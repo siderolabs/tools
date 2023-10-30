@@ -1,6 +1,6 @@
 name: default
 concurrency:
-  group: ${{ github.event.label == null && github.head_ref || github.run_id }}
+  group: ${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 on:
   push:
@@ -13,19 +13,16 @@ on:
     branches:
       - main
       - release-*
-    types:
-      - opened
-      - synchronize
-      - reopened
-      - labeled
 jobs:
   default:
-    if: (!startsWith(github.head_ref, 'renovate/') && !startsWith(github.head_ref, 'dependabot/')) && (github.event.label == null || (contains(fromJSON('["integration/reproducibility"]'), github.event.label.name)))
+    if: (!startsWith(github.head_ref, 'renovate/') && !startsWith(github.head_ref, 'dependabot/'))
     permissions:
       packages: write
     runs-on:
       - self-hosted
       - pkgs
+    outputs:
+      labels: ${{ steps.workflow-run-info.outputs.pullRequestLabels }}
     services:
       buildkitd:
         image: moby/buildkit:buildx-stable-1
@@ -63,11 +60,16 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           make PUSH=true
+      - name: Retrieve workflow info
+        id: workflow-run-info
+        uses: potiuk/get-workflow-origin@v1_5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
   reproducibility:
     runs-on:
       - self-hosted
       - pkgs
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'integration/reproducibility') }}
+    if: contains(needs.default.outputs.labels, 'integration/reproducibility')
     needs:
       - default
     services:
