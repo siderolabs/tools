@@ -1,0 +1,6 @@
+---
+kind: pkgfile.Build
+spec:
+  targets:
+    - tools
+  reproducibleTargetName: tools

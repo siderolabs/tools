@@ -2,4 +2,6 @@
 #
 # Generated on 2023-11-02T12:25:12Z by kres a0777d5-dirty.
 
-_out
+*
+!README.md
+!pkg.yaml

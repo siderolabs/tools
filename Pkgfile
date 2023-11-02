@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.8.0-10-gfee0af0
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.8.0-12-g804d345
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20230802.1
