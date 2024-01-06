@@ -299,6 +299,11 @@ vars:
   rhash_sha256: 8e7d1a8ccac0143c8fe9b68ebac67d485df119ea17a613f4038cda52f84ef52a
   rhash_sha512: 00a7e5e058b53ce20ae79509815452ed9cb699d1322b678220b72c61dea3ea2f8fa131acfade8bb6d9f6af913f0c3c472330841181b22314b8755166310c946f
 
+  # renovate: datasource=github-tags depName=rust-lang/rust
+  rust_version: 1.75.0
+  rust_sha256: 473978b6f8ff216389f9e89315211c6b683cf95a966196e7914b46e8cf0d74f6
+  rust_sha512: fdb0642e93915c150dd352c1c49fda275f61e78a91a6ff7403bd275fceb86563403055c00a0c745911bc9e17656e80034d257274ad3d306b1f3314ec1c541dcb
+
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/sed.git
   sed_version: 4.9
   sed_sha256: 6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181

@@ -1,0 +1,20 @@
+name: rust
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://static.rust-lang.org/dist/rust-{{ .rust_version }}-x86_64-unknown-linux-gnu.tar.gz
+        destination: rust.tar.gz
+        sha256: "{{ .rust_sha256 }}"
+        sha512: "{{ .rust_sha512 }}"
+    prepare:
+      - |
+        tar -xf rust.tar.gz --strip-components=1
+    install:
+      - |
+        ./install.sh \
+          --destdir=/rootfs \
+          --prefix=${TOOLCHAIN}
+finalize:
+  - from: /rootfs
+    to: /
