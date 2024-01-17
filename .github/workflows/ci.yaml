@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2024-01-15T15:10:45Z by kres latest.
+# Generated on 2024-01-17T11:58:44Z by kres latest.
 
 name: default
 concurrency:
@@ -70,7 +70,7 @@ jobs:
           make  PUSH=true
       - name: Retrieve PR labels
         id: retrieve-pr-labels
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           retries: "3"
           script: |
