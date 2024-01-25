@@ -3,10 +3,17 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://static.rust-lang.org/dist/rust-{{ .rust_version }}-x86_64-unknown-linux-gnu.tar.gz
+    # {{ if eq .ARCH "aarch64" }} This in fact is YAML comment, but Go templating instruction is evaluated by bldr
+      - url: https://static.rust-lang.org/dist/rust-{{ .rust_version }}-aarch64-unknown-linux-musl.tar.gz
         destination: rust.tar.gz
-        sha256: "{{ .rust_sha256 }}"
-        sha512: "{{ .rust_sha512 }}"
+        sha256: 26b5989525b7cf623f3868a37549736e0efe1142a08f191a97e29758cc640ac4
+        sha512: 54604c42a159d27b4f5e9792b44358963d08f757130eac2f3ba1c5275ef4c2c73e03ff198c983197c5a3d5aa4564bfb19135800d4c05b60668e4f9f8cd32eda4
+    # {{ else }} This in fact is YAML comment, but Go templating instruction is evaluated by bldr
+      - url: https://static.rust-lang.org/dist/rust-{{ .rust_version }}-x86_64-unknown-linux-musl.tar.gz
+        destination: rust.tar.gz
+        sha256: cc6ef41aa811ab34f946fe2b4338d1107daf08642125fd566386bf45563597de
+        sha512: eb814763531dd751acec9ac60925c867a750f421c80f3bc110049a53b7a7c10b985dc77210d409e43650bdfb5788758e25cb87358de8a9556272d04480a2a246
+    # {{ end }} This in fact is YAML comment, but Go templating instruction is evaluated by bldr
     prepare:
       - |
         tar -xf rust.tar.gz --strip-components=1
@@ -14,7 +21,8 @@ steps:
       - |
         ./install.sh \
           --destdir=/rootfs \
-          --prefix=${TOOLCHAIN}
+          --prefix=${TOOLCHAIN} \
+          --components=rustc,rust-std-{{ .ARCH }}-unknown-linux-musl,cargo
 finalize:
   - from: /rootfs
     to: /

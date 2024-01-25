@@ -301,8 +301,6 @@ vars:
 
   # renovate: datasource=github-tags depName=rust-lang/rust
   rust_version: 1.75.0
-  rust_sha256: 473978b6f8ff216389f9e89315211c6b683cf95a966196e7914b46e8cf0d74f6
-  rust_sha512: fdb0642e93915c150dd352c1c49fda275f61e78a91a6ff7403bd275fceb86563403055c00a0c745911bc9e17656e80034d257274ad3d306b1f3314ec1c541dcb
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/sed.git
   sed_version: 4.9
