@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.10.0-1-g4886d27
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.11.0-alpha.0-1-g5917598
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20230802.1
@@ -285,9 +285,9 @@ vars:
   protoc_gen_go_sha512: dffb159952282db426af8759346441003b461c6c1dde3a84671f644892a8bce6d0a57bfd6f19ad9d48852bdd4bf52544aae3f8cce66d498eb15be0a3acb276ae
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.60.1
-  protoc_gen_go_grpc_sha256: a97859fadaa14a0a5e0d91d78ea69f301b07d7d206c9caf8ffebb0bc26c7299b
-  protoc_gen_go_grpc_sha512: a92831cdb7b2f5fdd93154ec529f3f48837a1096f5c0c165a136b6201aef08f3f48bf0cb211a1712dbc485d9c286e22716dbdcb3dba6b0a696ed98c654c064e8
+  protoc_gen_go_grpc_version: v1.61.0
+  protoc_gen_go_grpc_sha256: b02c6e892b36619ff36685b6a1080d40ff953eec89a1f2d92f65ba994c610a41
+  protoc_gen_go_grpc_sha512: 1c1bb15a53f3fc6cd968bf15c1abaa5f37584c94f18aaf394c0d8763abed93fa3473ed0f5bd04116b90698901156b2c07dabb484e06c41a699dba7ebe2e0341f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.11.5
@@ -350,9 +350,9 @@ vars:
   xz_sha512: 5cbc3b5bb35a9f5773ad657788fe77013471e3b621c5a8149deb7389d48535926e5bed103456fcfe5ecb044b236b1055b03938a6cc877cfc749372b899fc79e5
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=madler/zlib
-  zlib_version: 1.2.13
-  zlib_sha256: b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30
-  zlib_sha512: 99f0e843f52290e6950cc328820c0f322a4d934a504f66c7caa76bd0cc17ece4bf0546424fc95135de85a2656fed5115abb835fd8d8a390d60ffaf946c8887ad
+  zlib_version: 1.3.1
+  zlib_sha256: 9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23
+  zlib_sha512: 580677aad97093829090d4b605ac81c50327e74a6c2de0b85dd2e8525553f3ddde17556ea46f8f007f89e435493c9a20bc997d1ef1c1c2c23274528e3c46b94f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=facebook/zstd
   zstd_version: 1.5.5
