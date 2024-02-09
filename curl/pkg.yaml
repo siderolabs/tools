@@ -6,6 +6,7 @@ dependencies:
   - stage: zlib
     runtime: true
   - stage: pkg-config
+  - stage: perl
 steps:
   - sources:
       - url: https://curl.haxx.se/download/curl-{{ .curl_version | replace "_" "." }}.tar.xz
@@ -27,7 +28,8 @@ steps:
             --enable-threaded-resolver \
             --with-ca-bundle=${TOOLCHAIN}/etc/ssl/certs/ca-certificates \
             --with-zlib \
-            --with-ssl
+            --with-ssl \
+            --without-libpsl
     build:
       - |
         cd build

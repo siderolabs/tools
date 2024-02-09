@@ -58,9 +58,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_5_0
-  curl_sha256: 42ab8db9e20d8290a3b633e7fbb3cec15db34df65fd1015ef8ac1e4723750eeb
-  curl_sha512: acffa2cf61d9b8e4188575a1b40227da8d722df2e5fe8bb82a222b4eb2fd64bf8aebd90852ce050c79fb5e517d5cee2546bf7de92ede1dd394263e231cb741a3
+  curl_version: 8_6_0
+  curl_sha256: 3ccd55d91af9516539df80625f818c734dc6f2ecf9bada33c76765e99121db15
+  curl_sha512: 359c08d88a5dec441255b36afe1a821730eca0ca8800ba52f57132b9e7d21f32457623907b4ae4876904b5e505eb1a59652372bb7de8dbd8db429dae9785e036
 
   # renovate: datasource=git-tags extractVersion=^dejagnu-(?<version>.*)-release$ depName=git://git.savannah.gnu.org/dejagnu.git
   dejagnu_version: 1.6.3
@@ -78,9 +78,9 @@ vars:
   dtc_sha512: d3ba6902a9a2f2cdbaff55f12fca3cfe4a1ec5779074a38e3d8b88097c7abc981835957e8ce72971e10c131e05fde0b1b961768e888ff96d89e42c75edb53afb
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 0.9.0
-  dwarfutils_sha256: d3cad80a337276a7581bb90ebcddbd743484a99a959157c066dd30f7535db59b
-  dwarfutils_sha512: 282d90dfc9da704eb64a4ba1141f2ae660feeb14bbf1a72377386698e3124928b44a6914d8e88e6141ab08835ce723ad090a853ad57dbcb439dbba57255fb589
+  dwarfutils_version: 0.9.1
+  dwarfutils_sha256: 877e81b189edbb075e3e086f6593457d8353d4df09b02e69f3c0c8aa19b51bf4
+  dwarfutils_sha512: ec66f0dbc72df3dd689a2d38ebae029e081e0ec3008dd510372e0c2c387f0092c2f9fe8d9928ded87b9c2ec30f1c3dc63bfaca7cc4a14e1c8c557d3c3b37d227
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.190
@@ -88,9 +88,9 @@ vars:
   elfutils_sha512: 9c4f5328097e028286c42f29e39dc3d80914b656cdfbbe05b639e91bc787ae8ae64dd4d69a6e317ce30c01648ded10281b86a51e718295f4c589df1225a48102
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_5_0
-  expat_sha256: 6f0e6e01f7b30025fa05c85fdad1e5d0ec7fd35d9f61b22f34998de11969ff67
-  expat_sha512: 22fd904d75aab7506a85c03519b9cf79e44898c8e1ba6abf6cb7f95de71b8e63a7e2d5cf4395e3627d46035ea29342b3e631a8809fef8aad3f59976dc075ad17
+  expat_version: 2_6_0
+  expat_sha256: ff60e6a6b6ce570ae012dc7b73169c7fdf4b6bf08c12ed0ec6f55736b78d85ba
+  expat_sha512: 116587256c8b5a477e56e2dc5a4d0c3c580b43727dd93685e044057c196779d348ee50adf53dd060c305e06855ad7fe9492f1ad69c175063dfc8babf71c1d032
 
   # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ depName=file/file
   file_version: 5_45
@@ -129,9 +129,9 @@ vars:
   gmp_sha512: c99be0950a1d05a0297d65641dd35b75b74466f7bf03c9e8a99895a3b2f9a0856cd17887738fa51cf7499781b65c049769271cbcb77d057d2e9f1ec52e07dd84
 
   # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ depName=golang/go
-  golang_version: 1.21.6
-  golang_sha256: 124926a62e45f78daabbaedb9c011d97633186a33c238ffc1e25320c02046248
-  golang_sha512: 8472c1c6c3fae9fecfb512a16f18ed531c04c087429a75086b9999069330c1b1e4a01a30c6561b5092169144cbc0d787ec2f5f4a50dfc4f79e74398f16423cfd
+  golang_version: 1.22.0
+  golang_sha256: 4d196c3d41a0d6c1dfc64d04e3cc1f608b0c436bd87b7060ce3e23234e1f4d5c
+  golang_sha512: f47fdac3281463757b3db9f6ab747f86ed7263beed52c820ec2571375a578034df02c0b76912c19fab3a58df3b04d79b6aae084163d1d5847c907aeb30b936e3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gperf.git
   gperf_version: 3.1
@@ -194,9 +194,9 @@ vars:
   libtool_sha512: 27acef46d9eb67203d708b57d80b853f76fa4b9c2720ff36ec161e6cdf702249e7982214ddf60bae75511aa79bc7d92aa27e3eab7ef9c0f5c040e8e42e76a385
 
   # renovate: datasource=github-tags depName=libuv/libuv
-  libuv_version: v1.47.0
-  libuv_sha256: d50af7e6d72526db137e66fad812421c8a1cae09d146b0ec2bb9a22c5f23ba93
-  libuv_sha512: 3d0e76c4e29c5de14fddda07409f8db30dc64261d1c0bdfce7f70eb8f5ac911707fe662e81c4f117e4068cb0728158fc2b8255f8aa497c0f688e46c7fb93a5b3
+  libuv_version: v1.48.0
+  libuv_sha256: 8c253adb0f800926a6cbd1c6576abae0bc8eb86a4f891049b72f9e5b7dc58f33
+  libuv_sha512: 81a9580bc51c22385de4dab748968477b5e552aa25f901c376e3ffac624e0e05362b48239222e826cad900329f9a7cbdb080794fb4ada9ca14196efc2969cc57
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/m4.git
   m4_version: 1.4.19
@@ -244,9 +244,9 @@ vars:
   nettle_sha512: 5939c4b43cf9ff6c6272245b85f123c81f8f4e37089fa4f39a00a570016d837f6e706a33226e4bbfc531b02a55b2756ff312461225ed88de338a73069e031ced
 
   # renovate: datasource=git-tags extractVersion=^openssl-(?<version>.*)$ depName=git://git.openssl.org/openssl.git
-  openssl_version: 3.2.0
-  openssl_sha256: 14c826f07c7e433706fb5c69fa9e25dab95684844b4c962a2cf1bf183eb4690e
-  openssl_sha512: ba3ac38365fd0c50f1eaf1693b6200a0d66f01ff53c2d3bb0358643cd83fc0c61fc3b84c0658cf74b6ae91d7d8a9da7291697bd9be3063ada8a9df879e58ed52
+  openssl_version: 3.2.1
+  openssl_sha256: 83c7329fe52c850677d75e5d0b0ca245309b97e8ecbcfdc1dfdc4ab9fac35b39
+  openssl_sha512: bab2b2419319f1feffaba4692f03edbf13b44d1090c6e075a2d69dad67a2d51e64e6edbf83456a26c83900a726d20d2c4ee4ead9c94b322fd0b536f3b5a863c4
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.25
@@ -343,9 +343,9 @@ vars:
   util_linux_sha512: a2de1672f06ca5d2d431db1265a8499808770c3781019ec4a3a40170df4685826d8e3ca120841dcc5df4681ca8c935a993317bd0dc70465b21bf8e0efef65afa
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
-  xz_version: v5.4.5
-  xz_sha256: da9dec6c12cf2ecf269c31ab65b5de18e8e52b96f35d5bcd08c12b43e6878803
-  xz_sha512: 5cbc3b5bb35a9f5773ad657788fe77013471e3b621c5a8149deb7389d48535926e5bed103456fcfe5ecb044b236b1055b03938a6cc877cfc749372b899fc79e5
+  xz_version: v5.4.6
+  xz_sha256: b92d4e3a438affcf13362a1305cd9d94ed47ddda22e456a42791e630a5644f5c
+  xz_sha512: 495cc890d25c075c927c907b77e60d86dd8a4c377cea5b1172c8e916984149a7bb5fb32db25091f7219346b83155b47e4bc0404cc8529d992014cd7ed0c278b7
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=madler/zlib
   zlib_version: 1.3.1
