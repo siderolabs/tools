@@ -8,7 +8,7 @@ vars:
   TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.11.0-alpha.0-1-g5917598
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
-  abseil_version: 20230802.1
+  abseil_version: 20240116.1
   abseil_sha256: 987ce98f02eefbaf930d6e38ab16aa05737234d7afbab2d5c4ea7adbe50c28ed
   abseil_sha512: 14390380655c41483a98487e3b012110dd8d1743fdd68d8cde7e0d7c2730312d564b15726d8c9d2fff237d2fce3983bbbb5213f59612c7c6feaeb402dff9609f
 
