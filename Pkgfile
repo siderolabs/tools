@@ -154,9 +154,9 @@ vars:
   gzip_sha512: e3d4d4aa4b2e53fdad980620307257c91dfbbc40bcec9baa8d4e85e8327f55e2ece552c9baf209df7b66a07103ab92d4954ac53c86c57fbde5e1dd461143f94c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
-  kmod_version: 32
-  kmod_sha256: 630ed0d92275a88cb9a7bf68f5700e911fdadaf02e051cf2e4680ff8480bd492
-  kmod_sha512: 29162135aabd025dff178a4147a754b5da5964855dbeee65ca867dec3b84437f35c1c97f0f027e974a021d3ee9a4940309a716859cc3cfe93c7ed0aada338f24
+  kmod_version: 31 # version 32 goes into segmentation fault
+  kmod_sha256: f5a6949043cc72c001b728d8c218609c5a15f3c33d75614b78c79418fcf00d80
+  kmod_sha512: 05ca70381808bec5f262b94db625662c385408988178a35e4aaf4960ee0716dc0cbfc327160ea4b61098d0c2130ab1b5142ea8156bea8e06ded7f4d288b6d085
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
   libbpf_version: v1.3.0
