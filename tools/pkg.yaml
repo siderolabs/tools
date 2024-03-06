@@ -64,7 +64,6 @@ dependencies:
   - stage: protoc-gen-go-grpc
   - stage: python3
   - stage: rhash
-  - stage: rust
   - stage: sd-boot
   - stage: sed
   - stage: squashfs-tools
