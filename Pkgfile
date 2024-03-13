@@ -1,4 +1,4 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.2.3
+# syntax = ghcr.io/siderolabs/bldr:v0.3.0
 
 # Sync bldr image with Makefile
 
@@ -340,9 +340,9 @@ vars:
   util_linux_sha512: a2de1672f06ca5d2d431db1265a8499808770c3781019ec4a3a40170df4685826d8e3ca120841dcc5df4681ca8c935a993317bd0dc70465b21bf8e0efef65afa
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
-  xz_version: v5.6.0
-  xz_sha256: cdafe1632f139c82937cc1ed824f7a60b7b0a0619dfbbd681dcac02b1ac28f5b
-  xz_sha512: 2158a1e426066a2355f0810f2d65ceb9a7ec47f7e2e4b79c81d08b52f202ca80fb024b819dc4ca8631730248b9a6d431297fdd71e7e1d108eebcb94777e3a80d
+  xz_version: v5.6.1
+  xz_sha256: f334777310ca3ae9ba07206d78ed286a655aa3f44eec27854f740c26b2cd2ed0
+  xz_sha512: a8b6d2e58eb61609a64b182e868c47aaf722d34f87bad3a9598c94ad96fb3357477959a95bb215c1dac59b8c84453cf00dc23669d13358f4aeb5123526f741f2
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=madler/zlib
   zlib_version: 1.3.1
