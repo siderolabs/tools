@@ -29,7 +29,9 @@ steps:
             --with-ca-bundle=${TOOLCHAIN}/etc/ssl/certs/ca-certificates \
             --with-zlib \
             --with-ssl \
-            --without-libpsl
+            --without-libpsl \
+            --disable-docs \
+            --disable-manual
     build:
       - |
         cd build

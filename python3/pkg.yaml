@@ -24,8 +24,6 @@ steps:
         mkdir build
         cd build
 
-        sed -i '/def add_multiarch_paths/a \        return' ../setup.py
-
         ../configure \
             --prefix=${TOOLCHAIN} \
             --with-ensurepip=install
@@ -37,18 +35,6 @@ steps:
       - |
         cd build
         make DESTDIR=/rootfs install
-
-        # needed for some packages, especially packages that backport functionality
-        # to 2.x from 3.x
-        for item in /rootfs${TOOLCHAIN}/lib/python3.11/test/*; do
-          if [[ "$item" != */test_support.py* ]]; then
-            rm -rf "$item"
-          else
-            echo $item
-          fi
-        done
-
-        touch /rootfs${TOOLCHAIN}/lib/python3.11/test/__init__.py
 
         # Determinism: remove all bytecode
         find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"
