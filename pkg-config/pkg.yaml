@@ -16,7 +16,7 @@ steps:
         ../configure \
             --prefix=${TOOLCHAIN} \
             --with-internal-glib \
-            --disable-host-too
+            --disable-host-tool
     build:
       - |
         cd build
