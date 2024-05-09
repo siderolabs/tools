@@ -18,6 +18,7 @@ steps:
             --disable-bash-completion \
             --disable-asciidoc \
             --disable-makeinstall-chown \
+            --disable-liblastlog2 \
             --without-systemd \
             --without-systemdsystemunitdir \
             --without-ncurses \

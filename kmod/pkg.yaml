@@ -1,6 +1,7 @@
 name: kmod
 dependencies:
   - stage: base
+  - stage: patch
 steps:
   - sources:
       - url: https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-{{ .kmod_version }}.tar.xz
@@ -10,6 +11,10 @@ steps:
     prepare:
       - |
         tar -xJf kmod.tar.xz --strip-components=1
+
+        patch -p1 < /pkg/patches/portable-basename.patch
+        patch -p1 < /pkg/patches/strndupa.patch
+
         mkdir build
         cd build
         ../configure \

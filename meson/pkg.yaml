@@ -3,6 +3,7 @@ dependencies:
   - stage: base
   - stage: libffi
   - stage: python3
+  - stage: openssl
 steps:
   - sources:
       - url: https://github.com/mesonbuild/meson/releases/download/{{ .meson_version }}/meson-{{ .meson_version }}.tar.gz
