@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.12.0-alpha.0
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.12.0-alpha.0-1-g7d4daca
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20240116.2
@@ -118,9 +118,9 @@ vars:
   gettext_sha512: a60999bb9d09441f138214d87acb7e59aab81e765bb9253a77c54902681c5de164a5a04de2a9778dfb479dbdefaab2d5de1fbaf6095c555c43e7e9fd7a1c09bd
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.45.0
-  git_sha256: 0aac200bd06476e7df1ff026eb123c6827bc10fe69d2823b4bf2ebebe5953429
-  git_sha512: 36d438bf9a57dee8fe0536c90cb25d53c552e9f80e7575447d1d2af30cadab08522356f4ecd0f69b7877d5a7f84ab3b9766d8386beae57fe8d411d05d70db214
+  git_version: 2.45.1
+  git_sha256: e64d340a8e627ae22cfb8bcc651cca0b497cf1e9fdf523735544ff4a732f12bf
+  git_sha512: 28461855e03f3dd5af73a1c6d26cc3e2b7b71f5eb90852f1daf582d24503b4dd5c4e4dac359e9eba1c2ba542aeb0940e0482506f19d02a354654b181c56c5317
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
@@ -159,9 +159,9 @@ vars:
   kmod_sha512: 29162135aabd025dff178a4147a754b5da5964855dbeee65ca867dec3b84437f35c1c97f0f027e974a021d3ee9a4940309a716859cc3cfe93c7ed0aada338f24
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
-  libbpf_version: v1.4.1
-  libbpf_sha256: cc01a3a05d25e5978c20be7656f14eb8b6fcb120bb1c7e8041e497814fc273cb
-  libbpf_sha512: 3073806d9fc2aafb6620f41bf7d73f17ebe92cff577821a309d0fb2192a88b8bb5a984d11590fe1050035dc4dc154d50372f78c2e87a1000ddb795e30120ddf5
+  libbpf_version: v1.4.2
+  libbpf_sha256: cfa2b6fbafab9608a2ab90d0eaf64f05c27dbf76d81bed516385e825f1aad502
+  libbpf_sha512: b0faf45e77fc0197239b87d74010bad6b7ef7d48c1b3de2a3960164d9029851e2ad204b92d0cccb2fde2d0dfe44d9fa7f24b35a4917179dbab1bee192d3780db
 
   # renovate: datasource=git-tags extractVersion=^libcap-(?<version>.*)$ depName=git://git.kernel.org/pub/scm/libs/libcap/libcap.git
   libcap_version: 2.69
@@ -285,9 +285,9 @@ vars:
   protoc_gen_go_sha512: b7be230422567a72372f07c79eb2cfd036259ad463debf53c1fc75f823612cf3722217d7bc3fe7c430ff5b147ff2d850dc7d2bf6427936c1b2feee1e2da528b0
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.63.2
-  protoc_gen_go_grpc_sha256: ffc7611e4989de79de4c17b015ff10db810b85f749b12520336314746e9d7095
-  protoc_gen_go_grpc_sha512: 2c35a8964acfdc251369484458e65c5aa9be8978ee902805e12b73cdce62478b9aa03e6105b9dde9db35b4f1a5124052b201f5c42c68dd2c410106efa4228103
+  protoc_gen_go_grpc_version: v1.64.0
+  protoc_gen_go_grpc_sha256: 6c0c4d376ce410dbec40ebce05ad65879f67f057eabb9df976701a3fc1bb0c18
+  protoc_gen_go_grpc_sha512: 5c3022316b01e704e679072d119e1a6b1cf5e0bef70822170abac3ed3e9bc1d8b0e1cd8906bbf62458e6297b6feac0765ac2da7c9d7115b33d0cc657a8ba74a4
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.12.3
