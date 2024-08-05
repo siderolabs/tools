@@ -129,9 +129,9 @@ vars:
   gmp_sha512: c99be0950a1d05a0297d65641dd35b75b74466f7bf03c9e8a99895a3b2f9a0856cd17887738fa51cf7499781b65c049769271cbcb77d057d2e9f1ec52e07dd84
 
   # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ depName=golang/go
-  golang_version: 1.22.4
-  golang_sha256: fed720678e728a7ca30ba8d1ded1caafe27d16028fab0232b8ba8e22008fb784
-  golang_sha512: 4855ba7e277b2eb79eb52e3ad2a52f18b3a4cd3adc20b7a17d29fabae74141265bf31399307b8d3f35110031d11ad7f583016aa903f3e36eeb6d1f64cfc8a5ad
+  golang_version: 1.22.5
+  golang_sha256: ac9c723f224969aee624bc34fd34c9e13f2a212d75c71c807de644bb46e112f6
+  golang_sha512: 798c2bd5d59be1fb5d7af98893fa7bb68322117facfdee546a37175ec5e8be634f2bed2d8d0e7d4d0555b354c8e9d72b3829c39670d3be2d2328376a00a48576 
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gperf.git
   gperf_version: 3.1
@@ -326,8 +326,8 @@ vars:
 
   # renovate: datasource=github-tags extractVersion=^core-(?<version>.*)$ depName=tcltk/tcl
   tcl_version: 8-6-14
-  tcl_sha256: 25814e1e2a0dce56e498654ae034efa17241ef6e46e993826f24f2d8a81233cb
-  tcl_sha512: dda0d4749dd2f06e0d30e8b872d803493fd48e4d68bbc1820cd8843e460469518a62eb3f1710fe02592612a11c0ab75a999787f995bebbaea4d2e6bed07bb0c5
+  tcl_sha256: 517656a58506544f9a09beae45311125244e4d602714b8daf1edd4eee9ca52d3
+  tcl_sha512: 8f1fe9585824ff29cd9ba86bd31fa1a13d956274f1bc26f94968ae5e8be9da03786f53e747a2cc922a22f5705942638a389d11020694f15c0f2739d0f11f8781
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ depName=git://git.savannah.gnu.org/texinfo.git
   texinfo_version: 7.1
