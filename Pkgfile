@@ -1,16 +1,16 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.3.1
+# syntax = ghcr.io/siderolabs/bldr:v0.3.2
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.12.0-alpha.0-2-gca64d3f
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.12.0-alpha.0-3-g4b1fb77
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
-  abseil_version: 20240116.2
-  abseil_sha256: 733726b8c3a6d39a4120d7e45ea8b41a434cdacde401cba500f14236c49b39dc
-  abseil_sha512: 5062e731ee8c9a757e6d75fc1c558652deb4dd1daab4d6143f7ad52a139501c61365f89acbf82480be0f9a4911a58286560068d8b1a8b6774e6afad51739766e
+  abseil_version: 20240722.0
+  abseil_sha256: f50e5ac311a81382da7fa75b97310e4b9006474f9560ac46f54a9967f07d4ae3
+  abseil_sha512: bd2cca8f007f2eee66f51c95a979371622b850ceb2ce3608d00ba826f7c494a1da0fba3c1427728f2c173fe50d59b701da35c2c9fdad2752a5a49746b1c8ef31
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -23,9 +23,9 @@ vars:
   autoconf_sha512: c4e9fbd858666d3e5c3b4fe7f89aa3e8e3a0a00dc7e166f8147d937d911b77ba3ac6a016f9d223ccdd830bc8960b3e60397c0607cc6a1fd2c50c7492839ddd17
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/automake.git
-  automake_version: 1.16.5
-  automake_sha256: f01d58cd6d9d77fbdca9eb4bbd5ead1988228fdb73d6f7a201f5f8d6b118b469
-  automake_sha512: 3084ae543aa3fb5a05104ffb2e66cfa9a53080f2343c44809707fd648516869511500dba50dae67ff10f92a1bf3b5a92b2a0fa01cda30adb69b9da03994d9d88
+  automake_version: 1.17
+  automake_sha256: 8920c1fc411e13b90bf704ef9db6f29d540e76d232cb3b2c9f4dc4cc599bd990
+  automake_sha512: 46aba1c9d64a6368b326020803a2999831c1deaf31eaa1c1dfdcfa5138a7f755643294e82a08b6daab3983b31eee725bdb7b9edc4e9a558374c7d1f1b8e854a7
 
   # renovate: datasource=git-tags extractVersion=^bash-(?<version>.*)$ depName=git://git.savannah.gnu.org/bash.git
   bash_version: 5.2
@@ -58,9 +58,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_8_0
-  curl_sha256: 0f58bb95fc330c8a46eeb3df5701b0d90c9d9bfcc42bd1cd08791d12551d4400
-  curl_sha512: 9d2c0d3a0d8f6c31ba4fabe48f801910f886fde43dc198dc4213708d6967ed5e040a1bb7348aa1cb126577ee508a3ec36fe65256d027d861d6ffb70f6383967a
+  curl_version: 8_9_1
+  curl_sha256: f292f6cc051d5bbabf725ef85d432dfeacc8711dd717ea97612ae590643801e5
+  curl_sha512: a0fe234402875db194aad4e4208b7e67e7ffc1562622eea90948d4b9b0122c95c3dde8bbe2f7445a687cb3de7cb09f20e5819d424570442d976aa4c913227fc7
 
   # renovate: datasource=git-tags extractVersion=^dejagnu-(?<version>.*)-release$ depName=git://git.savannah.gnu.org/dejagnu.git
   dejagnu_version: 1.6.3
@@ -118,9 +118,9 @@ vars:
   gettext_sha512: a60999bb9d09441f138214d87acb7e59aab81e765bb9253a77c54902681c5de164a5a04de2a9778dfb479dbdefaab2d5de1fbaf6095c555c43e7e9fd7a1c09bd
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.45.2
-  git_sha256: 51bfe87eb1c02fed1484051875365eeab229831d30d0cec5d89a14f9e40e9adb
-  git_sha512: dce30d0d563f3f76ef49c8dc88105e0cf0941c8cd70303418d9d737f840ffba36bcc575c380c75080edf64af74487e1a680db146ec5f527a32104e887d4ceb73
+  git_version: 2.46.0
+  git_sha256: 7f123462a28b7ca3ebe2607485f7168554c2b10dfc155c7ec46300666ac27f95
+  git_sha512: 3afae7a094da070c627f68ceb54c2345e3a49e04e455197527b732eb220e8c3249f5d09655a59bf4280dd0c0a3e305abc1380693e0a7fb0b8138b741c4708184
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
@@ -144,9 +144,9 @@ vars:
   grep_sha512: f254a1905a08c8173e12fbdd4fd8baed9a200217fba9d7641f0d78e4e002c1f2a621152d67027d9b25f0bb2430898f5233dc70909d8464fd13d7dd9298e65c42
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
-  gnutls_version: 3.8.5
-  gnutls_sha256: 66269a2cfe0e1c2dabec87bdbbd8ab656f396edd9a40dd006978e003cfa52bfc
-  gnutls_sha512: 4bac1aa7ec1dce9b3445cc515cc287a5af032d34c207399aa9722e3dc53ed652f8a57cfbc9c5e40ccc4a2631245d89ab676e3ba2be9563f60ba855aaacb8e23c
+  gnutls_version: 3.8.6
+  gnutls_sha256: 2e1588aae53cb32d43937f1f4eca28febd9c0c7aa1734fc5dd61a7e81e0ebcdd
+  gnutls_sha512: 58631c456dfb43f8cb6a1703ffa91c593a33357f37dc146e808d88692e19c7ac10aeabea40bee9952205be97e00648879e9f0fa80e670e8e695f8633ba726513
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gzip.git
   gzip_version: 1.13
@@ -159,9 +159,9 @@ vars:
   kmod_sha512: 29162135aabd025dff178a4147a754b5da5964855dbeee65ca867dec3b84437f35c1c97f0f027e974a021d3ee9a4940309a716859cc3cfe93c7ed0aada338f24
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
-  libbpf_version: v1.4.3
-  libbpf_sha256: d8be49641dd4c5caa27986a8291907176e3b6fd6fe650e4fee5b45f8093fc935
-  libbpf_sha512: d03965f8abeaac840cda28fdacf9df378869fa6e5ef45d992fc5398bed5970ebedb24f20676b1779f8941b4b912bb691948e198eff87ea1d5d8e5cd95d6e06d1
+  libbpf_version: v1.4.5
+  libbpf_sha256: e225c1fe694b9540271b1f2f15eb882c21c34511ba7b8835b0a13003b3ebde8c
+  libbpf_sha512: c5ed459e89a8897ef7c892723c61efb2f2fdb0e7bea63eaff1c9936d368d2cc9e63b8c093207eef0df3109c021156c52ddb570757f69c54e713909e866dbb2f5
 
   # renovate: datasource=git-tags extractVersion=^libcap-(?<version>.*)$ depName=git://git.kernel.org/pub/scm/libs/libcap/libcap.git
   libcap_version: 2.70
@@ -209,9 +209,9 @@ vars:
   make_sha512: 145260cbd6a8226cef3dfef0c8baba31847beaebc7e6b65d39d02715fd4f4cab9b139b6c3772e550088d4f9ae80c6d3ed20b9a7664c693644dfb96b4cb60e67c
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.4.1
-  meson_sha256: 1b8aad738a5f6ae64294cc8eaba9a82988c1c420204484ac02ef782e5bba5f49
-  meson_sha512: 2616bcca70d5554407d4852aa3494e05e53aa8a33f58859ada42750221922fcb6ea7f3452844883f4800d77eed4a7289b061324871218f052219b3caa02dcc9e
+  meson_version: 1.5.1
+  meson_sha256: 567e533adf255de73a2de35049b99923caf872a455af9ce03e01077e0d384bed
+  meson_sha512: 3239d6f3d64dcedddd456dc451278a37aa6c4460708b0efdff1b04b6e8844c20f5f882060de311c59a678bebd51ee09e1906c9384d4b0c85b28015fd1713ab0a
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.3.1
@@ -275,9 +275,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 27.2
-  protobuf_sha256: e4ff2aeb767da6f4f52485c2e72468960ddfe5262483879ef6ad552e52757a77
-  protobuf_sha512: 664c66b62cf1ed0c65d9b910d8e67d4d5d471113697f1b8edf1573cd5c0fc8e850ac53ce984e48e6c6b9cbbefa12f8530058384e7388e65a59c1e46d03772397
+  protobuf_version: 27.3
+  protobuf_sha256: 1535151efbc7893f38b0578e83cac584f2819974f065698976989ec71c1af84a
+  protobuf_sha512: a3a555f17a069dd4aa0d683d3126915077fe4211ae6532a4947fb76a9eeb1ed7d25d29ada8dc372435a08aad1aa14374d88e92ac7c195510f57609efaf9d341d
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.34.2
@@ -285,9 +285,9 @@ vars:
   protoc_gen_go_sha512: 48b320b167386ed7c81c9e5795a34e2928bdc1c3ce5f0d9d325cfa9603f01632742ae67a126f1493b633eb77a4ec38d7c74dbacf8a0f350ebf856be37b21050d
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.64.0
-  protoc_gen_go_grpc_sha256: 6c0c4d376ce410dbec40ebce05ad65879f67f057eabb9df976701a3fc1bb0c18
-  protoc_gen_go_grpc_sha512: 5c3022316b01e704e679072d119e1a6b1cf5e0bef70822170abac3ed3e9bc1d8b0e1cd8906bbf62458e6297b6feac0765ac2da7c9d7115b33d0cc657a8ba74a4
+  protoc_gen_go_grpc_version: v1.65.0
+  protoc_gen_go_grpc_sha256: 8fb9bfe2d5ee9062edd6366ee36a861d1c39a4d5f24dda0e72136960d48e532a
+  protoc_gen_go_grpc_sha512: a7b8aa8db08bb21903d5913d5e9cf8ff0262ced6e316da5b337d3652799ba046438ed5a84603af93a3cd91798ccdf5820f0bc5783c6ca5e00bb573e9b6abd7f3
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.12.4
@@ -315,9 +315,9 @@ vars:
   swig_sha512: 019dee5a46d57e1030eef47cd5d007ccaadbdcd4e53cd30d7c795f0118ecf4406a78185534502c81c5f6d7bac0713256e7e19b20b5a2d14e2c552219edbaf5cf
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=systemd/systemd
-  systemd_version: 256.1
-  systemd_sha256: 9c9243209e5b1bf429fc213ade6111a95769531a3a741bdf01c8a5dbeeab9f8a
-  systemd_sha512: 5441f634f43b726c13fe57d1ba0030f1b91427d7c2d4f4f32e4add8ff93aeb5139e9337422653df3b897c241e0a8760dafcd441dc622d1e2c1230bbe27dd1a1c
+  systemd_version: 256.4
+  systemd_sha256: 7861d544190f938cac1b242624d78c96fe2ebbc7b72f86166e88b50451c6fa58
+  systemd_sha512: 0357f1b61a07e594aff118dec54bd7233f37b69ccdfa393b91f46f32f08238fa7dd44df70d1df858464c866e114868ae1bec66dc685703d425cbd4c86baddfb8
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34
@@ -326,8 +326,8 @@ vars:
 
   # renovate: datasource=github-tags extractVersion=^core-(?<version>.*)$ depName=tcltk/tcl
   tcl_version: 8-6-14
-  tcl_sha256: 25814e1e2a0dce56e498654ae034efa17241ef6e46e993826f24f2d8a81233cb
-  tcl_sha512: dda0d4749dd2f06e0d30e8b872d803493fd48e4d68bbc1820cd8843e460469518a62eb3f1710fe02592612a11c0ab75a999787f995bebbaea4d2e6bed07bb0c5
+  tcl_sha256: 517656a58506544f9a09beae45311125244e4d602714b8daf1edd4eee9ca52d3
+  tcl_sha512: 8f1fe9585824ff29cd9ba86bd31fa1a13d956274f1bc26f94968ae5e8be9da03786f53e747a2cc922a22f5705942638a389d11020694f15c0f2739d0f11f8781
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ depName=git://git.savannah.gnu.org/texinfo.git
   texinfo_version: 7.1
@@ -335,9 +335,9 @@ vars:
   texinfo_sha512: ceab03e8422d800b08c7b44e8263b0a1f35bb7758d83a81136df6f3304a14daecda98a12a282afb85406d2ca2f665b2295e10b6f4064156ea1285d80d5d355db
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.40.1
-  util_linux_sha256: 59e676aa53ccb44b6c39f0ffe01a8fa274891c91bef1474752fad92461def24f
-  util_linux_sha512: 58ec6eb41d4b6bfc544a80e95c71b5f3798ab4d2a9435d3ee9e5edd56f9b3f09bcb154bdd70e002dc018938937e2e946ae731dcda0f86b362fc43423689e41fc
+  util_linux_version: 2.40.2
+  util_linux_sha256: d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3
+  util_linux_sha512: ffe20b915a518a150401d429b0338bc7022190e4ca0ef91a6d9eea345db8c1e11ad01784163b8fcf978506f3f5cad473f29d5d4ef93a4c66a5ae0ebd9fb0c8f2
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
   # NOTE: using 5.4.5 the version debian downgraded to. Ref: https://www.openwall.com/lists/oss-security/2024/03/29/4
