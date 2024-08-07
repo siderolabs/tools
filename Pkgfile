@@ -129,9 +129,9 @@ vars:
   gmp_sha512: c99be0950a1d05a0297d65641dd35b75b74466f7bf03c9e8a99895a3b2f9a0856cd17887738fa51cf7499781b65c049769271cbcb77d057d2e9f1ec52e07dd84
 
   # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ depName=golang/go
-  golang_version: 1.22.5
-  golang_sha256: ac9c723f224969aee624bc34fd34c9e13f2a212d75c71c807de644bb46e112f6
-  golang_sha512: 798c2bd5d59be1fb5d7af98893fa7bb68322117facfdee546a37175ec5e8be634f2bed2d8d0e7d4d0555b354c8e9d72b3829c39670d3be2d2328376a00a48576
+  golang_version: 1.22.6
+  golang_sha256: 9e48d99d519882579917d8189c17e98c373ce25abaebb98772e2927088992a51
+  golang_sha512: 59f84ba390203271d9fe2d3f04624449d54d3bb73c2b6e54b5f7dc9e9e2dce2192bae07ef56a2afee871cff84d457b90f8a00f4433e072028b97af987f3799e1
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gperf.git
   gperf_version: 3.1
@@ -243,10 +243,10 @@ vars:
   nettle_sha256: ccfeff981b0ca71bbd6fbcb054f407c60ffb644389a5be80d6716d5b550c6ce3
   nettle_sha512: 5939c4b43cf9ff6c6272245b85f123c81f8f4e37089fa4f39a00a570016d837f6e706a33226e4bbfc531b02a55b2756ff312461225ed88de338a73069e031ced
 
-  # renovate: datasource=git-tags extractVersion=^openssl-(?<version>.*)$ depName=git://git.openssl.org/openssl.git
-  openssl_version: 3.3.0
-  openssl_sha256: 53e66b043322a606abf0087e7699a0e033a37fa13feb9742df35c3a33b18fb02
-  openssl_sha512: 1f9daeee6542e1b831c65f1f87befaef98ccedc3abc958c9d17f064ef771924c30849e3ff880f94eed4aaa9d81ea105e3bc8815e6d2e4d6b60b5e890f14fc5da
+  # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
+  openssl_version: 3.3.1
+  openssl_sha256: 777cd596284c883375a2a7a11bf5d2786fc5413255efab20c50d6ffe6d020b7e
+  openssl_sha512: d3682a5ae0721748c6b9ec2f1b74d2b1ba61ee6e4c0d42387b5037a56ef34312833b6abb522d19400b45d807dd65cc834156f5e891cb07fbaf69fcf67e1c595d
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.27
@@ -290,9 +290,9 @@ vars:
   protoc_gen_go_grpc_sha512: a7b8aa8db08bb21903d5913d5e9cf8ff0262ced6e316da5b337d3652799ba046438ed5a84603af93a3cd91798ccdf5820f0bc5783c6ca5e00bb573e9b6abd7f3
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.12.4
-  python_sha256: f6d419a6d8743ab26700801b4908d26d97e8b986e14f95de31b32de2b0e79554
-  python_sha512: 750132ee6369196096130a924f4ddb78b9a55804133e5d136a70b9280928822974d1aa559d844486df02e89155fb0d8117871e1ac532abc18174309ca4b08369
+  python_version: 3.12.5
+  python_sha256: fa8a2e12c5e620b09f53e65bcd87550d2e5a1e2e04bf8ba991dcc55113876397
+  python_sha512: 7a1c30d798434fe24697bc253f6010d75145e7650f66803328425c8525331b9fa6b63d12a652687582db205f8d4c8279c8f73c338168592481517b063351c921
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.4
