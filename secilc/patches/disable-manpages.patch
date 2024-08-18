@@ -1,0 +1,30 @@
+diff --git a/Makefile b/Makefile
+index ef7bc8cd..db1fc6c2 100644
+--- a/Makefile
++++ b/Makefile
+@@ -28,7 +28,7 @@ CFLAGS ?= -Wall -Wshadow -Wextra -Wundef -Wmissing-format-attribute -Wcast-align
+ override CFLAGS += -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64
+ override LDLIBS += -lsepol
+ 
+-all: $(SECILC) $(SECIL2CONF) $(SECIL2TREE) man
++all: $(SECILC) $(SECIL2CONF) $(SECIL2TREE)
+ 
+ $(SECILC): $(SECILC_OBJS)
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LDLIBS)
+@@ -56,15 +56,11 @@ $(SECIL2CONF_MANPAGE): $(SECIL2CONF_MANPAGE).xml
+ $(SECIL2TREE_MANPAGE): $(SECIL2TREE_MANPAGE).xml
+ 	$(XMLTO) man $(SECIL2TREE_MANPAGE).xml
+ 
+-install: all man
++install: all
+ 	-mkdir -p $(DESTDIR)$(BINDIR)
+-	-mkdir -p $(DESTDIR)$(MANDIR)/man8
+ 	install -m 755 $(SECILC) $(DESTDIR)$(BINDIR)
+ 	install -m 755 $(SECIL2CONF) $(DESTDIR)$(BINDIR)
+ 	install -m 755 $(SECIL2TREE) $(DESTDIR)$(BINDIR)
+-	install -m 644 $(SECILC_MANPAGE) $(DESTDIR)$(MANDIR)/man8
+-	install -m 644 $(SECIL2CONF_MANPAGE) $(DESTDIR)$(MANDIR)/man8
+-	install -m 644 $(SECIL2TREE_MANPAGE) $(DESTDIR)$(MANDIR)/man8
+ 
+ doc:
+ 	$(MAKE) -C docs

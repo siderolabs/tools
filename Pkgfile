@@ -178,6 +178,11 @@ vars:
   libnl_sha256: 9fe43ccbeeea72c653bdcf8c93332583135cda46a79507bfd0a483bb57f65939
   libnl_sha512: 80fbbc079299c90afd2a5eda62e4d4f98bf4ef23958c3ce5101f4ed4d81d783af733213bb3bab15f218555d8460bc2394898f909f4ac024fc27281faec86a041
 
+  # renovate: datasource=git-tags depName=SELinuxProject/selinux
+  libsepol_version: 3.7
+  libsepol_sha256: cd741e25244e7ef6cd934d633614131a266c3eaeab33d8bfa45e8a93b45cc901
+  libsepol_sha512: 85d12d0ba5a7a3225f08d041a18fd59641608db5e0a78a1e9649754e45be54a807cd422d4889b88da6e806b4af546336c7a0913448f08ac33dc6ffb983890ef8
+
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.com/gnutls/libtasn1.git
   libtasn1_version: 4.19.0
   libtasn1_sha256: 1613f0ac1cf484d6ec0ce3b8c06d56263cc7242f1c23b30d82d23de345a63f7a
@@ -298,6 +303,11 @@ vars:
   rhash_version: v1.4.4
   rhash_sha256: 8e7d1a8ccac0143c8fe9b68ebac67d485df119ea17a613f4038cda52f84ef52a
   rhash_sha512: 00a7e5e058b53ce20ae79509815452ed9cb699d1322b678220b72c61dea3ea2f8fa131acfade8bb6d9f6af913f0c3c472330841181b22314b8755166310c946f
+
+  # renovate: datasource=git-tags depName=SELinuxProject/selinux
+  secilc_version: 3.7
+  secilc_sha256: 0802e920b779e9e915bb7e68ee22e995f99776554cfcdf9a2af6cb7c3b9873dc
+  secilc_sha512: 1f6061587242b63583370e04cc113b4884060c6071774b90908655df17ddc702187960d1f5b1ed53de9eb6ebd7f0029160e58d8c5f0c1126464bf6222f6f7d3e
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/sed.git
   sed_version: 4.9

@@ -1,0 +1,25 @@
+name: secilc
+dependencies:
+  - stage: base
+  - stage: patch
+  - stage: libsepol
+    runtime: true
+steps:
+  - sources:
+      - url: https://github.com/SELinuxProject/selinux/releases/download/{{ .secilc_version }}/secilc-{{ .secilc_version }}.tar.gz
+        destination: secilc.tar.gz
+        sha256: "{{ .secilc_sha256 }}"
+        sha512: "{{ .secilc_sha512 }}"
+    prepare:
+      - |
+        tar -xzf secilc.tar.gz --strip-components=1
+        patch -p1 < /pkg/patches/disable-manpages.patch
+    build:
+      - |
+        make -j $(nproc) all
+    install:
+      - |
+        make install DESTDIR=/rootfs PREFIX=/toolchain
+finalize:
+  - from: /rootfs
+    to: /

@@ -40,6 +40,7 @@ dependencies:
   - stage: libcap
   - stage: libffi
   - stage: libnl
+  - stage: libsepol
   - stage: libtasn1
   - stage: libtool
   - stage: libunistring
@@ -64,6 +65,7 @@ dependencies:
   - stage: protoc-gen-go-grpc
   - stage: python3
   - stage: rhash
+  - stage: secilc
   - stage: sd-boot
   - stage: sed
   - stage: squashfs-tools
