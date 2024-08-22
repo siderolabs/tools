@@ -1,0 +1,35 @@
+name: fakeroot
+dependencies:
+  - stage: base
+  - stage: patch
+  - stage: autoconf
+  - stage: automake
+  - stage: libtool
+  - stage: libcap
+steps:
+  - sources:
+      - url: https://salsa.debian.org/clint/fakeroot/-/archive/upstream/{{ .fakeroot_version }}/fakeroot-upstream-{{ .fakeroot_version }}.tar.gz
+        destination: fakeroot.tar.gz
+        sha256: "{{ .fakeroot_sha256 }}"
+        sha512: "{{ .fakeroot_sha512 }}"
+    prepare:
+      - |
+        tar -xzvf fakeroot.tar.gz --strip-components=1
+
+        patch -p1 < /pkg/patches/fix-shell.patch
+        patch -p1 < /pkg/patches/no-docs.patch
+        patch -p1 < /pkg/patches/fakeroot-no64.patch
+
+        autoreconf -vif
+        ./configure \
+            --prefix=${TOOLCHAIN} \
+            CFLAGS="${CFLAGS} -fPIC"
+    build:
+      - |
+        make -j $(nproc)
+    install:
+      - |
+        make install DESTDIR=/rootfs PREFIX=/toolchain
+finalize:
+  - from: /rootfs
+    to: /

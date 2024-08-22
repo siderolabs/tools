@@ -23,6 +23,7 @@ dependencies:
   - stage: elfutils
   - stage: expat
   - stage: expect
+  - stage: fakeroot
   - stage: file
   - stage: findutils
   - stage: flex

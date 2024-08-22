@@ -1,0 +1,14 @@
+Description: Fix shell in fakeroot.in
+ Use /bin/sh instead of @SHELL@ in fakeroot.in
+Author: Juan Picca <jumapico@gmail.com>
+Source: Debian
+Last-Update: 2024-08-22 by Dmitrii Sharshakov
+---
+--- a/scripts/fakeroot.in
++++ b/scripts/fakeroot.in
+@@ -1,4 +1,4 @@
+-#!@SHELL@
++#!/toolchain/bin/bash
+ 
+ # This script first starts faked (the daemon), and then it will run
+ # the requested program with fake root privileges.

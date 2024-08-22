@@ -97,6 +97,11 @@ vars:
   file_sha256: 28c01a5ef1a127ef71758222ca019ba6c6bfa4a8fe20c2b525ce75943ee9da3c
   file_sha512: fdd4c5d13d5ea1d25686c76d8ebc3252c54040c4871e3f0f623c4548b3841795d4e36050292a9453eedf0fbf932573890e9d6ac9fa63ccf577215598ae84b9ea
 
+  # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=git://salsa.debian.org/clint/fakeroot.git
+  fakeroot_version: 1.36
+  fakeroot_sha256: 5128dd5df59955d60453aea1817d2f31c29ffb8b8addcc5d7e200460278a6b0a
+  fakeroot_sha512: 1ff4cfe8bd4637652027b9e994ed39bf9885d6ea1608050ff21343dc2977c0607c2af235f51376e086ec88ee975da5cb7115a9888ee9437c927426a2eac1bf4b
+
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
   findutils_version: 4.10.0
   findutils_sha256: 1387e0b67ff247d2abde998f90dfbf70c1491391a59ddfecb8ae698789f0a4f5
