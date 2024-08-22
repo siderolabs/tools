@@ -326,8 +326,8 @@ vars:
 
   # renovate: datasource=github-tags extractVersion=^core-(?<version>.*)$ depName=tcltk/tcl
   tcl_version: 8-6-14
-  tcl_sha256: 517656a58506544f9a09beae45311125244e4d602714b8daf1edd4eee9ca52d3
-  tcl_sha512: 8f1fe9585824ff29cd9ba86bd31fa1a13d956274f1bc26f94968ae5e8be9da03786f53e747a2cc922a22f5705942638a389d11020694f15c0f2739d0f11f8781
+  tcl_sha256: b904f5e84d32e4382986fe2c3415dab9c1eaf458baa7d68c32af85800ceaef6b
+  tcl_sha512: 5612825fa60243c56dc5e797cc5baeec14a4490fbe381d8346378a79272e7e4279089b9a4151cf2d4d9815ef342539e5d7c8670f3f5d33b15902ea71bd4f0c28
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ depName=git://git.savannah.gnu.org/texinfo.git
   texinfo_version: 7.1
