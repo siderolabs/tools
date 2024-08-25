@@ -6,7 +6,7 @@ dependencies:
     runtime: true
 steps:
   - sources:
-      - url: https://github.com/SELinuxProject/selinux/releases/download/{{ .secilc_version }}/secilc-{{ .secilc_version }}.tar.gz
+      - url: https://github.com/SELinuxProject/selinux/releases/download/{{ .selinux_version }}/secilc-{{ .selinux_version }}.tar.gz
         destination: secilc.tar.gz
         sha256: "{{ .secilc_sha256 }}"
         sha512: "{{ .secilc_sha512 }}"

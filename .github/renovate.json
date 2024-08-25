@@ -37,7 +37,7 @@
                 "mirror/ncurses",
                 "PCRE2Project/pcre2",
                 "plougher/squashfs-tools",
-                "https://github.com/SELinuxProject/selinux.git",
+                "SELinuxProject/selinux",
                 "git://git.savannah.gnu.org/make.git",
                 "git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git",
                 "git://git.savannah.gnu.org/automake.git",

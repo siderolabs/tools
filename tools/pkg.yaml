@@ -41,6 +41,7 @@ dependencies:
   - stage: libcap
   - stage: libffi
   - stage: libnl
+  - stage: libselinux
   - stage: libsepol
   - stage: libtasn1
   - stage: libtool
@@ -61,6 +62,7 @@ dependencies:
   - stage: pcre
   - stage: perl
   - stage: pkg-config
+  - stage: policycoreutils
   - stage: protobuf
   - stage: protoc-gen-go
   - stage: protoc-gen-go-grpc

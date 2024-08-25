@@ -1,0 +1,28 @@
+name: policycoreutils
+dependencies:
+  - stage: base
+  - stage: patch
+  - stage: musl-fts
+  - stage: pcre
+  - stage: libsepol
+  - stage: libselinux
+steps:
+  - sources:
+      - url: https://github.com/SELinuxProject/selinux/releases/download/{{ .selinux_version }}/policycoreutils-{{ .selinux_version }}.tar.gz
+        destination: policycoreutils.tar.gz
+        sha256: "{{ .policycoreutils_sha256 }}"
+        sha512: "{{ .policycoreutils_sha512 }}"
+    prepare:
+      - |
+        tar -xzf policycoreutils.tar.gz --strip-components=1
+
+        patch -p1 < /pkg/patches/musl-fts.patch
+    build:
+      - |
+        make -j $(nproc) SUBDIRS=setfiles FTS_LDLIBS="-l:libfts.a -lpcre2-8"
+    install:
+      - |
+        make install DESTDIR=/rootfs/toolchain SUBDIRS=setfiles
+finalize:
+  - from: /rootfs
+    to: /
