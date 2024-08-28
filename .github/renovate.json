@@ -44,7 +44,6 @@
                 "git://git.savannah.gnu.org/bison.git",
                 "git://git.savannah.gnu.org/coreutils.git",
                 "git://git.savannah.gnu.org/diffutils.git",
-                "git://git.savannah.gnu.org/dejagnu.git",
                 "git://sourceware.org/git/elfutils.git",
                 "git://git.savannah.gnu.org/gettext.git",
                 "git://git.savannah.gnu.org/gperf.git",
@@ -71,12 +70,6 @@
                 "systemd/systemd"
             ],
             "versioning": "regex:^(?<major>\\d+)\\.?(?<minor>\\d+)?\\.?(?<patch>\\d+)?$"
-        },
-        {
-            "matchPackageNames": [
-                "tcltk/tcl"
-            ],
-            "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-?(?<patch>\\d+)?$"
         },
         {
             "matchPackageNames": [

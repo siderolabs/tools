@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.12.0-alpha.0-3-g4b1fb77
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.12.0
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20240722.0
@@ -62,11 +62,6 @@ vars:
   curl_sha256: f292f6cc051d5bbabf725ef85d432dfeacc8711dd717ea97612ae590643801e5
   curl_sha512: a0fe234402875db194aad4e4208b7e67e7ffc1562622eea90948d4b9b0122c95c3dde8bbe2f7445a687cb3de7cb09f20e5819d424570442d976aa4c913227fc7
 
-  # renovate: datasource=git-tags extractVersion=^dejagnu-(?<version>.*)-release$ depName=git://git.savannah.gnu.org/dejagnu.git
-  dejagnu_version: 1.6.3
-  dejagnu_sha256: 87daefacd7958b4a69f88c6856dbd1634261963c414079d0c371f589cd66a2e3
-  dejagnu_sha512: 1a737132bd912cb527e7f2fcbe70ffff8ccc8604a0ffdecff87ba2a16aeeefd800f5792aeffdbe79be6daa35cedb1c60e41002ca4aabb5370a460028191b76c4
-
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/diffutils.git
   diffutils_version: 3.10
   diffutils_sha256: 90e5e93cc724e4ebe12ede80df1634063c7a855692685919bfe60b556c9bd09e
@@ -78,9 +73,9 @@ vars:
   dtc_sha512: d3ba6902a9a2f2cdbaff55f12fca3cfe4a1ec5779074a38e3d8b88097c7abc981835957e8ce72971e10c131e05fde0b1b961768e888ff96d89e42c75edb53afb
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 0.10.1
-  dwarfutils_sha256: b511a2dc78b98786064889deaa2c1bc48a0c70115c187900dd838474ded1cc19
-  dwarfutils_sha512: 790317bd81290fa297d19cc6086594f13ea3be8b34d9e3c3494387498f8039d6c7f20fd3628a73ed4442868666600c78fe9cddad4e459e5dfffb14cc0cc4d588
+  dwarfutils_version: 0.11.0
+  dwarfutils_sha256: 846071fb220ac1952f9f15ebbac6c7831ef50d0369b772c07a8a8139a42e07d2
+  dwarfutils_sha512: 050cb111c1ed94980357011a623190b626b68425639ee1ab39ab09a31d0cc55e557ef35739ce1295cf0e1b51848fbcbb3633fe1f6466784db6d8eb008a93c355
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.191
@@ -149,9 +144,9 @@ vars:
   grep_sha512: f254a1905a08c8173e12fbdd4fd8baed9a200217fba9d7641f0d78e4e002c1f2a621152d67027d9b25f0bb2430898f5233dc70909d8464fd13d7dd9298e65c42
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
-  gnutls_version: 3.8.6
-  gnutls_sha256: 2e1588aae53cb32d43937f1f4eca28febd9c0c7aa1734fc5dd61a7e81e0ebcdd
-  gnutls_sha512: 58631c456dfb43f8cb6a1703ffa91c593a33357f37dc146e808d88692e19c7ac10aeabea40bee9952205be97e00648879e9f0fa80e670e8e695f8633ba726513
+  gnutls_version: 3.8.7
+  gnutls_sha256: fe302f2b6ad5a564bcb3678eb61616413ed5277aaf8e7bf7cdb9a95a18d9f477
+  gnutls_sha512: 672d4085d950dbe4aecb105b398458745a1e5cec67b4171a7916daf87762f21db275f677fe048fb8323c52e201ea3da92efd02d20e4cae19a1fe6535723b2bc4
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gzip.git
   gzip_version: 1.13
@@ -159,9 +154,9 @@ vars:
   gzip_sha512: e3d4d4aa4b2e53fdad980620307257c91dfbbc40bcec9baa8d4e85e8327f55e2ece552c9baf209df7b66a07103ab92d4954ac53c86c57fbde5e1dd461143f94c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
-  kmod_version: 32
-  kmod_sha256: 630ed0d92275a88cb9a7bf68f5700e911fdadaf02e051cf2e4680ff8480bd492
-  kmod_sha512: 29162135aabd025dff178a4147a754b5da5964855dbeee65ca867dec3b84437f35c1c97f0f027e974a021d3ee9a4940309a716859cc3cfe93c7ed0aada338f24
+  kmod_version: 33
+  kmod_sha256: dc768b3155172091f56dc69430b5481f2d76ecd9ccb54ead8c2540dbcf5ea9bc
+  kmod_sha512: 32d79d0bb7e89012f18458d4e88325f8e19a7dba6e1d5cff01aec3e618d1757b0f7c119735bf38d02e0d056a14273fd7522fca7c61a4d12a3ea5854bb662fff8
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
   libbpf_version: v1.4.5
@@ -280,9 +275,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 27.3
-  protobuf_sha256: 1535151efbc7893f38b0578e83cac584f2819974f065698976989ec71c1af84a
-  protobuf_sha512: a3a555f17a069dd4aa0d683d3126915077fe4211ae6532a4947fb76a9eeb1ed7d25d29ada8dc372435a08aad1aa14374d88e92ac7c195510f57609efaf9d341d
+  protobuf_version: 27.4
+  protobuf_sha256: 023e2bb164b234af644c5049c6dac1d9c9f6dd2acb133b960d9009105b4226bd
+  protobuf_sha512: d076ce7e075096d0dba7ee2314b12e3223c4239c019e25670636a0ef812ddf0ce3f1fd9b9fe8517319db87b14bbdb2653cc4e06023f90032dfedb014457b2863
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.34.2
@@ -304,7 +299,7 @@ vars:
   rhash_sha256: 8e7d1a8ccac0143c8fe9b68ebac67d485df119ea17a613f4038cda52f84ef52a
   rhash_sha512: 00a7e5e058b53ce20ae79509815452ed9cb699d1322b678220b72c61dea3ea2f8fa131acfade8bb6d9f6af913f0c3c472330841181b22314b8755166310c946f
 
-  # renovate: datasource=git-tags depName=SELinuxProject/selinux
+  # renovate: datasource=github-tags depName=SELinuxProject/selinux
   selinux_version: 3.7
   libselinux_sha256: ea03f42d13a4f95757997dba8cf0b26321fac5d2f164418b4cc856a92d2b17bd
   libselinux_sha512: e949c20b606c50ad521b9592ce55ad6658e8c4b24d9838028f5aba0a4fc762b6d0d0d0d207f5bef7a2e41485e12d91382fa6090df27152dbb40071b273419352
@@ -339,11 +334,6 @@ vars:
   tar_version: 1_34
   tar_sha256: 63bebd26879c5e1eea4352f0d03c991f966aeb3ddeb3c7445c902568d5411d28
   tar_sha512: 5e77c4a7b49983ad7d15238c2bce28be7a8aa437b4b1815fc00abd13096da308b6bba196cc6e3ed79d85e62823d520ae0d8fcda2d93873842cf84dc3369fc902
-
-  # renovate: datasource=github-tags extractVersion=^core-(?<version>.*)$ depName=tcltk/tcl
-  tcl_version: 8-6-14
-  tcl_sha256: b904f5e84d32e4382986fe2c3415dab9c1eaf458baa7d68c32af85800ceaef6b
-  tcl_sha512: 5612825fa60243c56dc5e797cc5baeec14a4490fbe381d8346378a79272e7e4279089b9a4151cf2d4d9815ef342539e5d7c8670f3f5d33b15902ea71bd4f0c28
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ depName=git://git.savannah.gnu.org/texinfo.git
   texinfo_version: 7.1
