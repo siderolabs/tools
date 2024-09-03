@@ -3,28 +3,16 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/gettext/gettext-{{ .gettext_version }}.tar.xz
-        destination: gettext.tar.xz
-        sha256: "{{ .gettext_sha256 }}"
-        sha512: "{{ .gettext_sha512 }}"
+      - url: https://ftp.barfooze.de/pub/sabotage/tarballs/gettext-tiny-{{ .gettext_tiny_version }}.tar.xz
+        destination: gettext-tiny.tar.xz
+        sha256: "{{ .gettext_tiny_sha256 }}"
+        sha512: "{{ .gettext_tiny_sha512 }}"
     prepare:
       - |
-        tar -xJf gettext.tar.xz --strip-components=1
-        mkdir build
-        cd build
-        ../configure \
-            --prefix=${TOOLCHAIN} \
-            --enable-relocatable \
-            --disable-shared \
-            --disable-java
-    build:
-      - |
-        cd build
-        make -j $(nproc)
+        tar -xJf gettext-tiny.tar.xz --strip-components=1
     install:
       - |
-        cd build
-        make install DESTDIR=/rootfs
+        make LIBINTL=musl DESTDIR=/rootfs prefix=${TOOLCHAIN} install
 finalize:
   - from: /rootfs
     to: /
