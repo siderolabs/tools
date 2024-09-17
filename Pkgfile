@@ -112,10 +112,10 @@ vars:
   gawk_sha256: ca9c16d3d11d0ff8c69d79dc0b47267e1329a69b39b799895604ed447d3ca90b
   gawk_sha512: c274a62c7420e7b7769b8ed94db40024bd5917ff49bd50a77ad6df1f16ecf116968aaf85da94015479466bf5570b370b6fdd197f95212ae0c3509dfcb7d9e35a
 
-  # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=sabotage-linux/gettext-tiny
-  gettext_tiny_version: 0.3.2
-  gettext_tiny_sha256: a9a72cfa21853f7d249592a3c6f6d36f5117028e24573d092f9184ab72bbe187
-  gettext_tiny_sha512: 0efde2ce995c1bc5e2b983a5c83b8532cb8e99ae9043c5de7085cf550eb2c052bad4641782fb64b2bc70434844a935f0935d9f1a62954d7facbe247fe4ce1e21
+  # renovate: datasource=git-refs versioning=git depName=https://github.com/sabotage-linux/gettext-tiny.git
+  gettext_tiny_ref: 070f01d7d66eb72f9607830e69d081eae0c84d39
+  gettext_tiny_sha256: 16f385567484dd62a37486366995affe0b308d1d69b6abc26e2508702266449e
+  gettext_tiny_sha512: 6412b7f048d48f3b2ae81c1cc91d8c306f6da2220cf2b45d166cb7c626945a94b6b880279a5e6ae7b3424c581e12eec5fe1fdab54a02240ec3d450d0c9fa4612
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
   git_version: 2.46.0
