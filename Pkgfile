@@ -62,11 +62,6 @@ vars:
   curl_sha256: 6fea2aac6a4610fbd0400afb0bcddbe7258a64c63f1f68e5855ebc0c659710cd
   curl_sha512: 5bbde9d5648e9226f5490fa951690aaf159149345f3a315df2ba58b2468f3e59ca32e8a49734338afc861803a4f81caac6d642a4699b72c6310ebfb1f618aad2
 
-  # renovate: datasource=git-tags extractVersion=^dejagnu-(?<version>.*)-release$ depName=git://git.savannah.gnu.org/dejagnu.git
-  dejagnu_version: 1.6.3
-  dejagnu_sha256: 87daefacd7958b4a69f88c6856dbd1634261963c414079d0c371f589cd66a2e3
-  dejagnu_sha512: 1a737132bd912cb527e7f2fcbe70ffff8ccc8604a0ffdecff87ba2a16aeeefd800f5792aeffdbe79be6daa35cedb1c60e41002ca4aabb5370a460028191b76c4
-
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/diffutils.git
   diffutils_version: 3.10
   diffutils_sha256: 90e5e93cc724e4ebe12ede80df1634063c7a855692685919bfe60b556c9bd09e
@@ -129,9 +124,9 @@ vars:
   gmp_sha512: c99be0950a1d05a0297d65641dd35b75b74466f7bf03c9e8a99895a3b2f9a0856cd17887738fa51cf7499781b65c049769271cbcb77d057d2e9f1ec52e07dd84
 
   # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ depName=golang/go
-  golang_version: 1.22.5
-  golang_sha256: ac9c723f224969aee624bc34fd34c9e13f2a212d75c71c807de644bb46e112f6
-  golang_sha512: 798c2bd5d59be1fb5d7af98893fa7bb68322117facfdee546a37175ec5e8be634f2bed2d8d0e7d4d0555b354c8e9d72b3829c39670d3be2d2328376a00a48576 
+  golang_version: 1.22.7
+  golang_sha256: 66432d87d85e0cfac3edffe637d5930fc4ddf5793313fe11e4a0f333023c879f
+  golang_sha512: 60b37916e31c3482e8395580a29757971df5e1783dc13a9914261007e07aa8b1b9c1a0b874883e297903e16c7831117b8f814aeff0a0d4398948c97c9d73b73a
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gperf.git
   gperf_version: 3.1
@@ -323,11 +318,6 @@ vars:
   tar_version: 1_34
   tar_sha256: 63bebd26879c5e1eea4352f0d03c991f966aeb3ddeb3c7445c902568d5411d28
   tar_sha512: 5e77c4a7b49983ad7d15238c2bce28be7a8aa437b4b1815fc00abd13096da308b6bba196cc6e3ed79d85e62823d520ae0d8fcda2d93873842cf84dc3369fc902
-
-  # renovate: datasource=github-tags extractVersion=^core-(?<version>.*)$ depName=tcltk/tcl
-  tcl_version: 8-6-14
-  tcl_sha256: 517656a58506544f9a09beae45311125244e4d602714b8daf1edd4eee9ca52d3
-  tcl_sha512: 8f1fe9585824ff29cd9ba86bd31fa1a13d956274f1bc26f94968ae5e8be9da03786f53e747a2cc922a22f5705942638a389d11020694f15c0f2739d0f11f8781
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ depName=git://git.savannah.gnu.org/texinfo.git
   texinfo_version: 7.1
