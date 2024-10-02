@@ -275,7 +275,7 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 27.4
+  protobuf_version: 28.2
   protobuf_sha256: 023e2bb164b234af644c5049c6dac1d9c9f6dd2acb133b960d9009105b4226bd
   protobuf_sha512: d076ce7e075096d0dba7ee2314b12e3223c4239c019e25670636a0ef812ddf0ce3f1fd9b9fe8517319db87b14bbdb2653cc4e06023f90032dfedb014457b2863
 
