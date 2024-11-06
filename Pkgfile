@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.12.0
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.13.0-alpha.0
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20240722.0
@@ -28,9 +28,9 @@ vars:
   automake_sha512: 46aba1c9d64a6368b326020803a2999831c1deaf31eaa1c1dfdcfa5138a7f755643294e82a08b6daab3983b31eee725bdb7b9edc4e9a558374c7d1f1b8e854a7
 
   # renovate: datasource=git-tags extractVersion=^bash-(?<version>.*)$ depName=git://git.savannah.gnu.org/bash.git
-  bash_version: 5.2
-  bash_sha256: a139c166df7ff4471c5e0733051642ee5556c1cc8a4a78f145583c5c81ab32fb
-  bash_sha512: 5647636223ba336bf33e0c65e516d8ebcf6932de8b44f37bc468eedb87579c628ad44213f78534beb10f47aebb9c6fa670cb0bed3b4e7717e5faf7e9a1ef81ae
+  bash_version: 5.2.37
+  bash_sha256: 9599b22ecd1d5787ad7d3b7bf0c59f312b3396d1e281175dd1f8a4014da621ff
+  bash_sha512: c07e2715cca7c3c8435fcb13aaf2968671f10f9e1fe5edd7c63d7e34fb821c159087b70386e17bdda723d8223057b53810e75eb249b03ebfc847147b06a8101f
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/bison.git
   bison_version: 3.8.2

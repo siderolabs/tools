@@ -3,6 +3,8 @@ dependencies:
   - stage: base
   - stage: patch
     runtime: true
+  - stage: ncurses
+    runtime: true
 steps:
   - sources:
       - url: https://ftp.gnu.org/gnu/bash/bash-{{ .bash_version }}.tar.gz
@@ -18,7 +20,10 @@ steps:
 
         ../configure \
             --prefix=${TOOLCHAIN} \
-            --without-bash-malloc
+            --disable-nls \
+            --with-curses \
+            --without-bash-malloc \
+            LDFLAGS="-Wl,-rpath=${TOOLCHAIN}/lib"
     build:
       - |
         cd build
