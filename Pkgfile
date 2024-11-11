@@ -58,9 +58,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_10_1
-  curl_sha256: 73a4b0e99596a09fa5924a4fb7e4b995a85fda0d18a2c02ab9cf134bebce04ee
-  curl_sha512: f1c7a12492dcfb8ba08be69b96a83ce9074592cbaa6b95c72b3c16fc58ad35e9f9deec7b72baca7d360d013b0b1c7ea38bd4edae464903ac67aa3c76238d8c6c
+  curl_version: 8_11_0
+  curl_sha256: db59cf0d671ca6e7f5c2c5ec177084a33a79e04c97e71cf183a5cdea235054eb
+  curl_sha512: 3a642d421e0a5c09ecb681bea18498f2c6124e9af4d8afdc074dfb85a9b0211d8972ade9cf00ab44b5dfed9303262cd83551dd3b5e0976d11fc19da3c4a0987e
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/diffutils.git
   diffutils_version: 3.10
@@ -68,9 +68,9 @@ vars:
   diffutils_sha512: 219d2c815a120690c6589846271e43aee5c96c61a7ee4abbef97dfcdb3d6416652ed494b417de0ab6688c4322540d48be63b5e617beb6d20530b5d55d723ccbb
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/dtc/dtc.git
-  dtc_version: 1.7.1
-  dtc_sha256: 398098bac205022b39d3dce5982b98c57f1023f3721a53ebcbb782be4cf7885e
-  dtc_sha512: 3195924b374680e367d7be6b9793691efc0441858068c8bc8d8a908db00bbae781a99184b5c5e272af39045ec58cb0f92adbdd00ff808480b635bd632aa74719
+  dtc_version: 1.7.2
+  dtc_sha256: 92d8ca769805ae1f176204230438fe52808f4e1c7944053c9eec0e649b237539
+  dtc_sha512: 30f3611175a5c29556282f3f2894701a5837eb869608d89d78c280af448bbc3a5b6c83f51c28f991847c0eb7c42aa57599bbc31433f1b3b2c8d162cb2169b91f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
   dwarfutils_version: 0.11.0
@@ -83,9 +83,9 @@ vars:
   elfutils_sha512: 543188f5f2cfe5bc7955a878416c5f252edff9926754e5de0c6c57b132f21d9285c9b29e41281e93baad11d4ae7efbbf93580c114579c182103565fe99bd3909
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_6_3
-  expat_sha256: b8baef92f328eebcf731f4d18103951c61fa8c8ec21d5ff4202fb6f2198aeb2d
-  expat_sha512: ee5acbd0cd1df829ef138217a8497254bfe1952efad6311e805c8e6fcfc0133e8d8324da2f5a9734fe71402acec338c256a220420ec49d40f65b0aa28fced9c8
+  expat_version: 2_6_4
+  expat_sha256: 8dc480b796163d4436e6f1352e71800a774f73dbae213f1860b60607d2a83ada
+  expat_sha512: cd21a5cfafe15b747e6e8964e35eed52a446373811d02bc3730b3e616ccd066f07e4cdbd48f445d6fddfb931841b28072016248b19a8add9cf087cbf83ba18da
 
   # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ depName=file/file
   file_version: 5_45
@@ -144,9 +144,9 @@ vars:
   grep_sha512: f254a1905a08c8173e12fbdd4fd8baed9a200217fba9d7641f0d78e4e002c1f2a621152d67027d9b25f0bb2430898f5233dc70909d8464fd13d7dd9298e65c42
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
-  gnutls_version: 3.8.7
-  gnutls_sha256: fe302f2b6ad5a564bcb3678eb61616413ed5277aaf8e7bf7cdb9a95a18d9f477
-  gnutls_sha512: 672d4085d950dbe4aecb105b398458745a1e5cec67b4171a7916daf87762f21db275f677fe048fb8323c52e201ea3da92efd02d20e4cae19a1fe6535723b2bc4
+  gnutls_version: 3.8.8
+  gnutls_sha256: ac4f020e583880b51380ed226e59033244bc536cad2623f2e26f5afa2939d8fb
+  gnutls_sha512: 4f617c63e8e8392e400d72c9e39989fcd782268b4a4c4e36bbfb0444a4b5bcb0f53054f04a6dce99ab89c0f38f57430c95aaaec6eb9209b8e9329140abf230c3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gzip.git
   gzip_version: 1.13
@@ -285,9 +285,9 @@ vars:
   protoc_gen_go_sha512: 562067af648dc2e2477106771f66ae46c03b0f760da364df2307c6709a9490c420d35b41daa181447a40b776156cc2fabc1932df5900a47a515a76c30e8f3078
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.67.1
-  protoc_gen_go_grpc_sha256: b2a3efc5e4d48ee7b3e9c2f5b9659571f4c2b9045b0b567be7887ad7bef87ef8
-  protoc_gen_go_grpc_sha512: d95408b00797c052e393d7d75a5104200b9025509baf5a8ac2e184d9576f5266d558a088c0397b28dfd6202c23ba5199a561747dc154ec4f3b825c58d2212e6a
+  protoc_gen_go_grpc_version: v1.68.0
+  protoc_gen_go_grpc_sha256: 7831f4c5f7a223eea8c53c6f927b29d723a57c37a6104d9b016356338d0b48e3
+  protoc_gen_go_grpc_sha512: c863769b0f53da268422d981e274ce3f0083c1c784614bbb453993c851d2246a5d856c3ab43cd0ff9179461733d41e5cbb3be49e9a8c30c302ccdea931dbb712
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.13.0
