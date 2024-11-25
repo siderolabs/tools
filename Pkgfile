@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.13.0-alpha.0-1-g540f939
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.13.0
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20240722.0
@@ -118,9 +118,9 @@ vars:
   gettext_tiny_sha512: 25325db240ab79d112c59d83e975fa466f0e69efb4348ca7b0a170349c761b54170001a49a1660eebf834a8895c11403864db52556253fdcc2af29121c361ba1
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.47.0
-  git_sha256: 1ce114da88704271b43e027c51e04d9399f8c88e9ef7542dae7aebae7d87bc4e
-  git_sha512: 58683aa59dba25ffec9fe2c185267c77b34d573e9738c133a15d25071e37095e99486c231c35b8f71aabe3c1e305238b56d2c10039318bfc08f137919bad66ec
+  git_version: 2.47.1
+  git_sha256: f3d8f9bb23ae392374e91cd9d395970dabc5b9c5ee72f39884613cd84a6ed310
+  git_sha512: 6abe551c464b307bc3f6f474257e0be3e1a9eba1406af6463216b796c55a35356009c2f7bd9b4fa2d1798da5f885a3843f6ad8750ab69595f748f9ea8ed76fea
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
@@ -164,9 +164,9 @@ vars:
   libbpf_sha512: 0cc25addcf5fcee0537d598037feab4bc73a513e6025d8f559bed58fe8850a10fcfeefd1a9dafc5e0bac6202d445944b12811cb7254b9b3be4dd3d2cc1e9419b
 
   # renovate: datasource=git-tags extractVersion=^libcap-(?<version>.*)$ depName=git://git.kernel.org/pub/scm/libs/libcap/libcap.git
-  libcap_version: 2.71
-  libcap_sha256: b7006c9af5168315f35fc734bf1a8d2aa70766bd8b8c4340962e05b19c35b900
-  libcap_sha512: 59bb6781d96776595ad3df890f4e5188380634eabbb6128f3a5307946b01cf3bd19dee8a29d3e501de1d9e1c6ed0092c4cd5adc91da227a1260c1f4356cc0bf3
+  libcap_version: 2.72
+  libcap_sha256: 0274f5a15a5205f656d8f0169eef711dd29158ba8ad3b240618b342b2460175b
+  libcap_sha512: c0726bcd5e48395c6f4edd34f0fcaa21d7b2fe35dbc88824c0d86b42859dbe507f55c1ac7f7352e2aa56e3632b7aa9a098ca9cc730c82f942106d2786b10ba2c
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
   libffi_version: 3.4.6
@@ -189,9 +189,9 @@ vars:
   libunistring_sha512: 01a4267bbd301ea5c389b17ee918ae5b7d645da8b2c6c6f0f004ff2dead9f8e50cda2c6047358890a5fceadc8820ffc5154879193b9bb8970f3fb1fea1f411d6
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
-  libtool_version: 2.5.3
-  libtool_sha256: 9322bd8f6bc848fda3e385899dd1934957169652acef716d19d19d24053abb95
-  libtool_sha512: 34922fc868099b195f09f1382b836a561dfca17f107e3c783256beb0a0ab058b170aabe69157e67ac2d6848f36036181d014bace210305cbecfbeec3f9e4de54
+  libtool_version: 2.5.4
+  libtool_sha256: da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf
+  libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
   # renovate: datasource=github-tags depName=libuv/libuv
   libuv_version: v1.49.2
@@ -280,9 +280,9 @@ vars:
   protobuf_sha512: a91e175fed7eb01c4240842a5af73a7d3cefccbb10885434bceeb7bc89ab6c56a74912cee290bf46e81d4026f3c9c2b10faad5545816064e215c4bae7908263d
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
-  protoc_gen_go_version: v1.35.1
-  protoc_gen_go_sha256: 7cead1a711d682796b343931a9b54b3b07dd83456baeda6c069432235de45437
-  protoc_gen_go_sha512: 562067af648dc2e2477106771f66ae46c03b0f760da364df2307c6709a9490c420d35b41daa181447a40b776156cc2fabc1932df5900a47a515a76c30e8f3078
+  protoc_gen_go_version: v1.35.2
+  protoc_gen_go_sha256: 46c472e0ce2f68a50134152d99e8ca8d9b8b627b85ce4181f07e4ab7557e46e2
+  protoc_gen_go_sha512: 4c34090452ea29a0260e842ac960ee91c72e1869cad815c08b56e7f787cba2342d3cc56cab93805711836a683a2b746fd72be32022c7710caea8e466efa0b59f
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
   protoc_gen_go_grpc_version: v1.68.0
@@ -326,9 +326,9 @@ vars:
   swig_sha512: 019dee5a46d57e1030eef47cd5d007ccaadbdcd4e53cd30d7c795f0118ecf4406a78185534502c81c5f6d7bac0713256e7e19b20b5a2d14e2c552219edbaf5cf
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=systemd/systemd
-  systemd_version: 256.7
-  systemd_sha256: 896d76ff65c88f5fd9e42f90d152b0579049158a163431dd77cdc57748b1d7b0
-  systemd_sha512: 2ff3805a7d97780a716b23ddeea3722a85aba6326ecee527e53e9d35510a0ffa5ec0bf0cdbf8f3409bb9c6832406916f63eb7e8305db5f67c284e5590c642422
+  systemd_version: 256.8
+  systemd_sha256: b3d003b4f6d1ab0bfae0cf7a37c4aa559923c49bc8e9d1331b7459e12ebc357a
+  systemd_sha512: 0cdd41274b79177705f6999194ea2698e8bccd123d983733972e0fba4ece5467eddefec419a992d1646e93adda7b811810deec163a15f2c9347473caefe2ce09
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34

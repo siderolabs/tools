@@ -1,6 +1,7 @@
 name: libcap
 dependencies:
   - stage: base
+  - stage: patch
 steps:
   - sources:
       - url: https://kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-{{ .libcap_version }}.tar.xz
@@ -10,6 +11,8 @@ steps:
     prepare:
       - |
         tar -xf libcap.tar.xz --strip-components=1
+      - |
+        patch -p1 < /pkg/patches/getdents.patch
     build:
       - |
         make prefix=${TOOLCHAIN} lib=lib -j $(nproc)
