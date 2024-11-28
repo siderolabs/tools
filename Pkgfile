@@ -88,9 +88,9 @@ vars:
   expat_sha512: cd21a5cfafe15b747e6e8964e35eed52a446373811d02bc3730b3e616ccd066f07e4cdbd48f445d6fddfb931841b28072016248b19a8add9cf087cbf83ba18da
 
   # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ depName=file/file
-  file_version: 5_45
-  file_sha256: 28c01a5ef1a127ef71758222ca019ba6c6bfa4a8fe20c2b525ce75943ee9da3c
-  file_sha512: fdd4c5d13d5ea1d25686c76d8ebc3252c54040c4871e3f0f623c4548b3841795d4e36050292a9453eedf0fbf932573890e9d6ac9fa63ccf577215598ae84b9ea
+  file_version: 5_46
+  file_sha256: 908d74bd8751e35e65611788f58f8b6f5c6d487d437fbd2f845daf0e051818a1
+  file_sha512: 9165bb5bdbe7b8fccac0c8675d4eb251a286ab2ab7a79e6f8ed98d36fa0928b889cf109c1da3a5cfff64d1b1006b5d73934c2d420484adae6f4c8e26a9ede18f
 
   # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=git://salsa.debian.org/clint/fakeroot.git
   fakeroot_version: 1.36
@@ -275,9 +275,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 28.3
-  protobuf_sha256: 7c3ebd7aaedd86fa5dc479a0fda803f602caaf78d8aff7ce83b89e1b8ae7442a
-  protobuf_sha512: a91e175fed7eb01c4240842a5af73a7d3cefccbb10885434bceeb7bc89ab6c56a74912cee290bf46e81d4026f3c9c2b10faad5545816064e215c4bae7908263d
+  protobuf_version: 29.0
+  protobuf_sha256: 10a0d58f39a1a909e95e00e8ba0b5b1dc64d02997f741151953a2b3659f6e78c
+  protobuf_sha512: c5637486a533557ea909d1f880b0f0064fff0c4665612e023170941310c45bf8e7373d2c67de621824b056530e98792c00799d71ec4ff7b6af9142cdc4cb8dee
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.35.2
