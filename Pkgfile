@@ -58,7 +58,7 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_11_0
+  curl_version: 8_11_1
   curl_sha256: db59cf0d671ca6e7f5c2c5ec177084a33a79e04c97e71cf183a5cdea235054eb
   curl_sha512: 3a642d421e0a5c09ecb681bea18498f2c6124e9af4d8afdc074dfb85a9b0211d8972ade9cf00ab44b5dfed9303262cd83551dd3b5e0976d11fc19da3c4a0987e
 
@@ -73,7 +73,7 @@ vars:
   dtc_sha512: 30f3611175a5c29556282f3f2894701a5837eb869608d89d78c280af448bbc3a5b6c83f51c28f991847c0eb7c42aa57599bbc31433f1b3b2c8d162cb2169b91f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 0.11.0
+  dwarfutils_version: 0.11.1
   dwarfutils_sha256: 846071fb220ac1952f9f15ebbac6c7831ef50d0369b772c07a8a8139a42e07d2
   dwarfutils_sha512: 050cb111c1ed94980357011a623190b626b68425639ee1ab39ab09a31d0cc55e557ef35739ce1295cf0e1b51848fbcbb3633fe1f6466784db6d8eb008a93c355
 
@@ -164,7 +164,7 @@ vars:
   libbpf_sha512: 0cc25addcf5fcee0537d598037feab4bc73a513e6025d8f559bed58fe8850a10fcfeefd1a9dafc5e0bac6202d445944b12811cb7254b9b3be4dd3d2cc1e9419b
 
   # renovate: datasource=git-tags extractVersion=^libcap-(?<version>.*)$ depName=git://git.kernel.org/pub/scm/libs/libcap/libcap.git
-  libcap_version: 2.72
+  libcap_version: 2.73
   libcap_sha256: 0274f5a15a5205f656d8f0169eef711dd29158ba8ad3b240618b342b2460175b
   libcap_sha512: c0726bcd5e48395c6f4edd34f0fcaa21d7b2fe35dbc88824c0d86b42859dbe507f55c1ac7f7352e2aa56e3632b7aa9a098ca9cc730c82f942106d2786b10ba2c
 
@@ -249,7 +249,7 @@ vars:
   openssl_sha512: 0784096f00c7907e477919d5ddeadb14b61bcb569a938fa739c1c714949214a7daf63574149d718dae372ed0c91c300042f4e3ba5e8633607e8034a3bda75a26
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
-  pahole_version: 1.27
+  pahole_version: 1.28
   pahole_sha256: 87223298d4f8f9ada9b3cc5cef1bedd7aeb447cd8295abc466e009a26accff13
   pahole_sha512: d239f6ac7cabe7f6fdcfbb9b318100963e80585823fd29f412c6d8b5157a0ceeaf354e0b807e40a36fba338eed86f1b44852ff9c4fd01e0812d764c722726648
 
@@ -275,7 +275,7 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 29.0
+  protobuf_version: 29.1
   protobuf_sha256: 10a0d58f39a1a909e95e00e8ba0b5b1dc64d02997f741151953a2b3659f6e78c
   protobuf_sha512: c5637486a533557ea909d1f880b0f0064fff0c4665612e023170941310c45bf8e7373d2c67de621824b056530e98792c00799d71ec4ff7b6af9142cdc4cb8dee
 
@@ -285,12 +285,12 @@ vars:
   protoc_gen_go_sha512: 4c34090452ea29a0260e842ac960ee91c72e1869cad815c08b56e7f787cba2342d3cc56cab93805711836a683a2b746fd72be32022c7710caea8e466efa0b59f
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.68.0
+  protoc_gen_go_grpc_version: v1.69.0
   protoc_gen_go_grpc_sha256: 7831f4c5f7a223eea8c53c6f927b29d723a57c37a6104d9b016356338d0b48e3
   protoc_gen_go_grpc_sha512: c863769b0f53da268422d981e274ce3f0083c1c784614bbb453993c851d2246a5d856c3ab43cd0ff9179461733d41e5cbb3be49e9a8c30c302ccdea931dbb712
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.13.0
+  python_version: 3.13.1
   python_sha256: 086de5882e3cb310d4dca48457522e2e48018ecd43da9cdf827f6a0759efb07d
   python_sha512: 44a143c9b96b55b01885ec020c3364265bda55289615cd7d5071915b0d0178a6f35e7551a89090001fcb7f3172d38177a56bf8b8532b15c9dbc50295c9210152
 
@@ -321,12 +321,12 @@ vars:
   squashfs_tools_sha512: 10e8a4b1e2327e062aef4f85860e76ebcd7a29e4c19e152ff7edec4a38316982b5bcfde4ab69da6bcb931258d264c2b6cb40cb5f635f9e6f6eba1ed5976267cb
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=swig/swig
-  swig_version: 4.2.1
+  swig_version: 4.3.0
   swig_sha256: fa045354e2d048b2cddc69579e4256245d4676894858fcf0bab2290ecf59b7d8
   swig_sha512: 019dee5a46d57e1030eef47cd5d007ccaadbdcd4e53cd30d7c795f0118ecf4406a78185534502c81c5f6d7bac0713256e7e19b20b5a2d14e2c552219edbaf5cf
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=systemd/systemd
-  systemd_version: 256.8
+  systemd_version: 256.9
   systemd_sha256: b3d003b4f6d1ab0bfae0cf7a37c4aa559923c49bc8e9d1331b7459e12ebc357a
   systemd_sha512: 0cdd41274b79177705f6999194ea2698e8bccd123d983733972e0fba4ece5467eddefec419a992d1646e93adda7b811810deec163a15f2c9347473caefe2ce09
 
