@@ -53,8 +53,8 @@ steps:
       - |
         mkdir -p /rootfs/toolchain/lib/systemd/boot/efi
 
-        cp build/src/boot/efi/*.efi /rootfs/toolchain/lib/systemd/boot/efi
-        cp build/src/boot/efi/*.efi.stub /rootfs/toolchain/lib/systemd/boot/efi
+        cp build/src/boot/*.efi /rootfs/toolchain/lib/systemd/boot/efi
+        cp build/src/boot/*.efi.stub /rootfs/toolchain/lib/systemd/boot/efi
 finalize:
   - from: /rootfs
     to: /

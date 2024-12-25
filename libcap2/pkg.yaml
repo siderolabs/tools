@@ -11,8 +11,6 @@ steps:
     prepare:
       - |
         tar -xf libcap.tar.xz --strip-components=1
-      - |
-        patch -p1 < /pkg/patches/getdents.patch
     build:
       - |
         make prefix=${TOOLCHAIN} lib=lib -j $(nproc)

@@ -32,7 +32,7 @@ steps:
       - |
         cd build
 
-        make
+        make -j $(nproc)
     install:
       - |
         cd build
