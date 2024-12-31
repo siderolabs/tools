@@ -239,7 +239,7 @@ vars:
   ncurses_sha512: 1c2efff87a82a57e57b0c60023c87bae93f6718114c8f9dc010d4c21119a2f7576d0225dab5f0a227c2cfc6fb6bdbd62728e407f35fce5bf351bb50cf9e0fd34
 
   # renovate: datasource=git-tags extractVersion=^nettle_(?<version>.*)_release.*$ depName=https://git.lysator.liu.se/nettle/nettle.git
-  nettle_version: 3.9.1
+  nettle_version: 3.10.1
   nettle_sha256: ccfeff981b0ca71bbd6fbcb054f407c60ffb644389a5be80d6716d5b550c6ce3
   nettle_sha512: 5939c4b43cf9ff6c6272245b85f123c81f8f4e37089fa4f39a00a570016d837f6e706a33226e4bbfc531b02a55b2756ff312461225ed88de338a73069e031ced
 
@@ -280,7 +280,7 @@ vars:
   protobuf_sha512: aeb21773edc3dd92a6c1ba6ccd721cc8a20d61230a5309c75ee3ef19baa554c228a6d1095f191ccc18f10183b646f3140dfe6526f5812bcaa64b7d5260572643
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
-  protoc_gen_go_version: v1.35.2
+  protoc_gen_go_version: v1.36.1
   protoc_gen_go_sha256: 46c472e0ce2f68a50134152d99e8ca8d9b8b627b85ce4181f07e4ab7557e46e2
   protoc_gen_go_sha512: 4c34090452ea29a0260e842ac960ee91c72e1869cad815c08b56e7f787cba2342d3cc56cab93805711836a683a2b746fd72be32022c7710caea8e466efa0b59f
 
@@ -321,7 +321,7 @@ vars:
   squashfs_tools_sha512: 10e8a4b1e2327e062aef4f85860e76ebcd7a29e4c19e152ff7edec4a38316982b5bcfde4ab69da6bcb931258d264c2b6cb40cb5f635f9e6f6eba1ed5976267cb
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=swig/swig
-  swig_version: 4.2.1
+  swig_version: 4.3.0
   swig_sha256: fa045354e2d048b2cddc69579e4256245d4676894858fcf0bab2290ecf59b7d8
   swig_sha512: 019dee5a46d57e1030eef47cd5d007ccaadbdcd4e53cd30d7c795f0118ecf4406a78185534502c81c5f6d7bac0713256e7e19b20b5a2d14e2c552219edbaf5cf
 
