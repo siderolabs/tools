@@ -1,7 +1,6 @@
 name: protoc-gen-go
 dependencies:
   - stage: base
-  - stage: golang
 steps:
   - sources:
       - url: https://github.com/protocolbuffers/protobuf-go/archive/refs/tags/{{ .protoc_gen_go_version }}.tar.gz

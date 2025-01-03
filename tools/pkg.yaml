@@ -30,7 +30,6 @@ dependencies:
   - stage: git
   - stage: gmp
   - stage: gnutls
-  - stage: golang
   - stage: gperf
   - stage: grep
   - stage: gzip
@@ -46,7 +45,6 @@ dependencies:
   - stage: libunistring
   - stage: libuv
   - stage: m4
-  - stage: make
   - stage: meson
   - stage: mpc
   - stage: mpfr

@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.13.0
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.13.0-4-g9f444f6
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20240722.0
@@ -128,11 +128,6 @@ vars:
   gmp_sha256: fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2
   gmp_sha512: c99be0950a1d05a0297d65641dd35b75b74466f7bf03c9e8a99895a3b2f9a0856cd17887738fa51cf7499781b65c049769271cbcb77d057d2e9f1ec52e07dd84
 
-  # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ depName=golang/go
-  golang_version: 1.23.4
-  golang_sha256: ad345ac421e90814293a9699cca19dd5238251c3f687980bbcae28495b263531
-  golang_sha512: 5d1cce76b2cbdf628f86a1a8185a07f362becee053cb4270281520e77b36e3908faeaf5b2a6266e61dec9866dc1f3791f77e8dc1bf5f8beaf858c138d0e18c22
-
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gperf.git
   gperf_version: 3.1
   gperf_sha256: 588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2
@@ -202,11 +197,6 @@ vars:
   m4_version: 1.4.19
   m4_sha256: 63aede5c6d33b6d9b13511cd0be2cac046f2e70fd0a07aa9573a04a82783af96
   m4_sha512: 47f595845c89709727bda0b3fc78e3188ef78ec818965b395532e7041cabe9e49677ee4aca3d042930095a7f8df81de3da1026b23b6897be471f6cf13ddd512b
-
-  # renovate: datasource=git-tags depName=git://git.savannah.gnu.org/make.git
-  make_version: 4.4.1
-  make_sha256: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
-  make_sha512: 145260cbd6a8226cef3dfef0c8baba31847beaebc7e6b65d39d02715fd4f4cab9b139b6c3772e550088d4f9ae80c6d3ed20b9a7664c693644dfb96b4cb60e67c
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
   meson_version: 1.6.1

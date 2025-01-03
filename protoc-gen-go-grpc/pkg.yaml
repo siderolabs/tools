@@ -1,7 +1,6 @@
 name: protoc-gen-go-grpc
 dependencies:
   - stage: base
-  - stage: golang
 steps:
   - sources:
       - url: https://github.com/grpc/grpc-go/archive/refs/tags/{{ .protoc_gen_go_grpc_version }}.tar.gz
