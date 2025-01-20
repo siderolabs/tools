@@ -118,9 +118,9 @@ vars:
   gettext_tiny_sha512: 25325db240ab79d112c59d83e975fa466f0e69efb4348ca7b0a170349c761b54170001a49a1660eebf834a8895c11403864db52556253fdcc2af29121c361ba1
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.47.1
-  git_sha256: f3d8f9bb23ae392374e91cd9d395970dabc5b9c5ee72f39884613cd84a6ed310
-  git_sha512: 6abe551c464b307bc3f6f474257e0be3e1a9eba1406af6463216b796c55a35356009c2f7bd9b4fa2d1798da5f885a3843f6ad8750ab69595f748f9ea8ed76fea
+  git_version: 2.48.1
+  git_sha256: 1c5d545f5dc1eb51e95d2c50d98fdf88b1a36ba1fa30e9ae5d5385c6024f82ad
+  git_sha512: 75c89ab4ca83adc46989a4b05a9b482b40a7ba69d15aa1c1f27d0cee37c2908e154a75d59b0a0a540647352b9c55020f1a5ad309f0eff78e9fd8e631ef9e4606
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
@@ -189,9 +189,9 @@ vars:
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
   # renovate: datasource=github-tags depName=libuv/libuv
-  libuv_version: v1.49.2
-  libuv_sha256: 388ffcf3370d4cf7c4b3a3205504eea06c4be5f9e80d2ab32d19f8235accc1cf
-  libuv_sha512: e90680128bfaac215e5eebd9c8e5ce08e5fe68a7258f65bfcf56377756e9dbf527a232dfaf9d217c7374e713660ec99eeaae05d6fee2b8c5c9b71ad1b0b4dd72
+  libuv_version: v1.50.0
+  libuv_sha256: b1ec56444ee3f1e10c8bd3eed16ba47016ed0b94fe42137435aaf2e0bd574579
+  libuv_sha512: 9073d9dcd17980a57c76030fb8a273300e06c25dc6494a9b1e7b16d849340820bd8188b8247cc5505b5a480ea9c56d970321c6a15c219c50c75c8a83b5ee4fb4
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/m4.git
   m4_version: 1.4.19
@@ -229,9 +229,9 @@ vars:
   ncurses_sha512: 1c2efff87a82a57e57b0c60023c87bae93f6718114c8f9dc010d4c21119a2f7576d0225dab5f0a227c2cfc6fb6bdbd62728e407f35fce5bf351bb50cf9e0fd34
 
   # renovate: datasource=git-tags extractVersion=^nettle_(?<version>.*)_release.*$ depName=https://git.lysator.liu.se/nettle/nettle.git
-  nettle_version: 3.9.1
-  nettle_sha256: ccfeff981b0ca71bbd6fbcb054f407c60ffb644389a5be80d6716d5b550c6ce3
-  nettle_sha512: 5939c4b43cf9ff6c6272245b85f123c81f8f4e37089fa4f39a00a570016d837f6e706a33226e4bbfc531b02a55b2756ff312461225ed88de338a73069e031ced
+  nettle_version: 3.10.1
+  nettle_sha256: b0fcdd7fc0cdea6e80dcf1dd85ba794af0d5b4a57e26397eee3bc193272d9132
+  nettle_sha512: e8673bbcde9cde859ccae75ed6c9c30591e68a995a7c6d724106cfd67a5a5bd45b3468d742443b6565628849d0fd29505a28ca5ee4e89dd13197cdb51429f96c
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
   openssl_version: 3.4.0
@@ -265,19 +265,19 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 29.2
-  protobuf_sha256: 63150aba23f7a90fd7d87bdf514e459dd5fe7023fdde01b56ac53335df64d4bd
-  protobuf_sha512: aeb21773edc3dd92a6c1ba6ccd721cc8a20d61230a5309c75ee3ef19baa554c228a6d1095f191ccc18f10183b646f3140dfe6526f5812bcaa64b7d5260572643
+  protobuf_version: 29.3
+  protobuf_sha256: 008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e
+  protobuf_sha512: 0c776133f5789d21baa8860cb41e7926a162d74810a01722b762a78f93e559494e903fcaa092515bfe2ce057fd065a5dd000b316edb1af32c2ef9dbadf02b4c6
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
-  protoc_gen_go_version: v1.35.2
-  protoc_gen_go_sha256: 46c472e0ce2f68a50134152d99e8ca8d9b8b627b85ce4181f07e4ab7557e46e2
-  protoc_gen_go_sha512: 4c34090452ea29a0260e842ac960ee91c72e1869cad815c08b56e7f787cba2342d3cc56cab93805711836a683a2b746fd72be32022c7710caea8e466efa0b59f
+  protoc_gen_go_version: v1.36.3
+  protoc_gen_go_sha256: d15b5c42786fa47d716b1572e5ba21979dc3163121854ece5101f072d4fa95bb
+  protoc_gen_go_sha512: 1c8c0ff7c69d737acb78a01a37e76a67499db017bad599d603d7bbdac2ba6569d9dd23a1871b9f41a6cb4059ff5af5646e68aaf89566bc40fdc3af3aac99bcad
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.69.2
-  protoc_gen_go_grpc_sha256: 203e346da4e316aa4d866a723944b197dc5f0f2b46444ba1b6017feee8008c22
-  protoc_gen_go_grpc_sha512: f95caccca23583587e2779fad7c8618c890bc4e512dae2bc9aae1474749335141b50603960c5ce2a33db6cfffe594c8b9aa2f411ae9040d2b92c32e38192f73d
+  protoc_gen_go_grpc_version: v1.69.4
+  protoc_gen_go_grpc_sha256: 27f5fef36c75a513e7d4d3dee37df78e84b6afb72f384865316a424407f006bd
+  protoc_gen_go_grpc_sha512: 3ffdc54c8ab0daac797cfca644b28f5c5d7a14ee5c5e490b3491a6b21e0dad73ff8ab2acf7842ba3194bb228d4caba84d85eaac20c92b77cf45916acd08811d1
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
   python_version: 3.13.1
@@ -316,9 +316,9 @@ vars:
   swig_sha512: 019dee5a46d57e1030eef47cd5d007ccaadbdcd4e53cd30d7c795f0118ecf4406a78185534502c81c5f6d7bac0713256e7e19b20b5a2d14e2c552219edbaf5cf
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=systemd/systemd
-  systemd_version: 257.1
-  systemd_sha256: 375365b9f3718ba5fc2a972445eefcd9e229cc18bffe95818220c2a52efe8ed9
-  systemd_sha512: dded7555077f85d0f8106b72cc46604fbe4249452be6b2d55800770b6deb2a3a122697c5a5f23b22dab416e8c050e53fc30d59dfd3bfd7c9fbbdab3162e8ebe5
+  systemd_version: 257.2
+  systemd_sha256: 7f2bc3253e4f87578132c5e433ef9ff7e8fee01d9eb5a5b7c64376d617f694d0
+  systemd_sha512: 4f47fcd9a4148101ee7b85cf5908a04ec9e025dc7a5a2e8e61c05439cfd427851b6d356bb96a0dfae55566bbf6d3c93a13251d220840c09296e94f80bd4a5945
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34
@@ -331,9 +331,9 @@ vars:
   texinfo_sha512: 8e67337ae12a552fc620c43725507a4978710ea6630e98b0f5e98eb3f79a90e191dde5225699aa6217c26f171d277461f76150f0459cd07b40c3234d2f3d89bf
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.40.2
-  util_linux_sha256: d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3
-  util_linux_sha512: ffe20b915a518a150401d429b0338bc7022190e4ca0ef91a6d9eea345db8c1e11ad01784163b8fcf978506f3f5cad473f29d5d4ef93a4c66a5ae0ebd9fb0c8f2
+  util_linux_version: 2.40.4
+  util_linux_sha256: 5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79
+  util_linux_sha512: 0024955056ba7b4c54040a917f9919f49692e57ba6d42d17a6c29c1eefe88bf48b1214a545072b71c468829a63a8f15237f49733e9127c134e11126d1e435124
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
   # NOTE: using 5.4.5 the version debian downgraded to. Ref: https://www.openwall.com/lists/oss-security/2024/03/29/4
