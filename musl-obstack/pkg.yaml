@@ -1,4 +1,5 @@
 name: musl-obstack
+variant: scratch
 dependencies:
   - stage: base
   - stage: libtool
@@ -21,7 +22,7 @@ steps:
         cd build
 
         ../configure \
-            --prefix=${TOOLCHAIN}
+            --prefix=/usr
     build:
       - |
         cd build

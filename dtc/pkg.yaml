@@ -1,4 +1,5 @@
 name: dtc
+variant: scratch
 dependencies:
   - stage: base
   - stage: m4
@@ -21,7 +22,7 @@ steps:
         make -j $(nproc)
     install:
       - |
-        make DESTDIR=/rootfs PREFIX=${TOOLCHAIN} install
+        make DESTDIR=/rootfs PREFIX=/usr install
 finalize:
   - from: /rootfs
     to: /

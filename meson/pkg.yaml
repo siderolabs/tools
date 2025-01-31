@@ -1,21 +1,20 @@
 name: meson
+variant: scratch
 dependencies:
   - stage: base
   - stage: libffi
   - stage: python3
   - stage: openssl
+  - stage: zlib
 steps:
   - sources:
       - url: https://github.com/mesonbuild/meson/releases/download/{{ .meson_version }}/meson-{{ .meson_version }}.tar.gz
         destination: meson.tar.gz
         sha256: "{{ .meson_sha256 }}"
         sha512: "{{ .meson_sha512 }}"
-    env:
-      LD_LIBRARY_PATH: "/toolchain/lib"
+  - network: default
     prepare:
       - |
-        ln -sf /toolchain/bin/python3 /toolchain/bin/python
-
         pip3 install setuptools
 
         tar -xzf meson.tar.gz --strip-components=1
@@ -24,7 +23,7 @@ steps:
         python3 setup.py build
     install:
       - |
-        python3 setup.py install --prefix=/toolchain --root="/rootfs"
+        python3 setup.py install --prefix=/usr --root="/rootfs"
 
         # Determinism: remove all bytecode
         find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"

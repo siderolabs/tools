@@ -1,4 +1,5 @@
 name: cpio
+variant: scratch
 dependencies:
   - stage: base
   - stage: autoconf
@@ -18,7 +19,7 @@ steps:
         mkdir build
         cd build
         ../configure \
-            --prefix=${TOOLCHAIN}
+            --prefix=/usr
     build:
       - |
         cd build

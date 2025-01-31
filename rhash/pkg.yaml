@@ -1,4 +1,5 @@
 name: rhash
+variant: scratch
 dependencies:
   - stage: base
   - stage: openssl
@@ -16,7 +17,7 @@ steps:
         patch -p1 < /pkg/patches/byteorder.patch
 
         ./configure \
-        --prefix="${TOOLCHAIN}" \
+        --prefix="/usr" \
         --enable-openssl \
         --disable-openssl-runtime
 

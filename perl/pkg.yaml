@@ -1,4 +1,5 @@
 name: perl
+variant: scratch
 dependencies:
   - stage: base
   - stage: patch
@@ -16,17 +17,12 @@ steps:
 
         patch -p1 < /pkg/patches/reproducible-build-date.patch
 
-        # This is hardcoded in ./ext/Errno/Errno_pm.P.
-        # Copy it from our toolchain to where it is expected.
-        mkdir -p /usr/include
-        cp ${TOOLCHAIN}/include/errno.h /usr/include/
-
         ./Configure -des \
           -Dcccdlflags='-fPIC' \
           -Dcccdlflags='-fPIC' \
           -Dccdlflags='-rdynamic' \
-          -Dprefix=${TOOLCHAIN} \
-          -Dvendorprefix=${TOOLCHAIN} \
+          -Dprefix=/usr \
+          -Dvendorprefix=/usr \
           -Duselargefiles \
           -Dusethreads \
           -Duseshrplib \

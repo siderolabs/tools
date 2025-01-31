@@ -1,4 +1,5 @@
 name: base
+variant: scratch
 dependencies:
   - image: "{{ .TOOLCHAIN_IMAGE }}"
     runtime: true

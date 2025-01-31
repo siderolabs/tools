@@ -1,4 +1,5 @@
 name: mpc
+variant: scratch
 dependencies:
   - stage: base
   - stage: gmp
@@ -15,7 +16,7 @@ steps:
         mkdir build
         cd build
         ../configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --disable-static
     build:
       - |

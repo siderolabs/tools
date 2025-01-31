@@ -1,4 +1,5 @@
 name: libnl
+variant: scratch
 dependencies:
   - stage: base
   - stage: flex
@@ -14,8 +15,7 @@ steps:
       - |
         tar -xzf libnl.tar.gz --strip-components=1
 
-        ./configure \
-          --prefix="${TOOLCHAIN}"
+        ./configure --prefix="/usr"
     build:
       - |
         make -j $(nproc)

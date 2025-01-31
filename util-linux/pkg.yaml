@@ -1,6 +1,8 @@
 name: util-linux
+variant: scratch
 dependencies:
   - stage: base
+  - stage: bash
 steps:
   - sources:
       - url: https://www.kernel.org/pub/linux/utils/util-linux/v{{ regexReplaceAll ".\\d+$" .util_linux_version "${1}" }}/util-linux-{{  regexReplaceAll "\\.0$" .util_linux_version "${1}" }}.tar.xz
@@ -13,7 +15,10 @@ steps:
         mkdir build
         cd build
         ../configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
+            --bindir=/usr/bin \
+            --sbindir=/usr/bin \
+            --libdir=/usr/lib \
             --without-python \
             --disable-bash-completion \
             --disable-asciidoc \

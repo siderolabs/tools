@@ -1,6 +1,8 @@
 name: protoc-gen-go
+variant: scratch
 dependencies:
   - stage: base
+  - stage: ca-certificates
 steps:
   - sources:
       - url: https://github.com/protocolbuffers/protobuf-go/archive/refs/tags/{{ .protoc_gen_go_version }}.tar.gz
@@ -10,16 +12,17 @@ steps:
     prepare:
       - |
         tar -xzf protobuf-go.tar.gz --strip-components=1
+  - network: default
     build:
       - |
-        export PATH=${TOOLCHAIN}/go/bin:${PATH}
+        export PATH=/go/bin:${PATH}
         export GO111MODULE=on
         cd cmd/protoc-gen-go
         go build .
     install:
       - |
-        mkdir -p /rootfs${TOOLCHAIN}/bin
-        mv cmd/protoc-gen-go/protoc-gen-go /rootfs${TOOLCHAIN}/bin
+        mkdir -p /rootfs/usr/bin
+        mv cmd/protoc-gen-go/protoc-gen-go /rootfs/usr/bin
 finalize:
   - from: /rootfs
     to: /

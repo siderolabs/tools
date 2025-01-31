@@ -8,7 +8,7 @@ Last-Update: 2024-08-22 by Dmitrii Sharshakov
 +++ b/scripts/fakeroot.in
 @@ -1,4 +1,4 @@
 -#!@SHELL@
-+#!/toolchain/bin/bash
++#!/bin/sh
  
  # This script first starts faked (the daemon), and then it will run
  # the requested program with fake root privileges.

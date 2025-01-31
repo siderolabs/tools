@@ -1,4 +1,5 @@
 name: cmake
+variant: scratch
 dependencies:
   - stage: base
   - stage: bzip2
@@ -18,19 +19,17 @@ steps:
     env:
       CC: gcc
       CXX: g++
-      LD_LIBRARY_PATH: /toolchain/lib
     prepare:
       - |
         tar -xzf cmake.tar.gz --strip-components=1
 
         ./bootstrap \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --system-libs \
             --no-system-jsoncpp \
             --no-system-libarchive \
             --parallel=$(nproc) \
-            -- -DCMAKE_BUILD_TYPE:STRING=Release \
-               -DCMAKE_INSTALL_RPATH=/toolchain/lib
+            -- -DCMAKE_BUILD_TYPE:STRING=Release
     build:
       - |
         make -j $(nproc)

@@ -1,4 +1,5 @@
 name: dwarfutils
+variant: scratch
 dependencies:
   - stage: base
 steps:
@@ -17,7 +18,7 @@ steps:
         cd build
 
         ../configure \
-          --prefix=${TOOLCHAIN} \
+          --prefix=/usr \
           --enable-shared \
           --disable-static
     build:

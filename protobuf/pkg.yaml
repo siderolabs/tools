@@ -1,4 +1,5 @@
 name: protobuf
+variant: scratch
 dependencies:
   - stage: base
   - stage: cmake
@@ -18,7 +19,7 @@ steps:
       - |
         tar -xzf protobuf.tar.gz --strip-components=1
 
-        cmake . -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_ABSL_PROVIDER=package -DCMAKE_INSTALL_PREFIX=${TOOLCHAIN}
+        cmake . -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_ABSL_PROVIDER=package -DCMAKE_INSTALL_PREFIX=/usr
     build:
       - |
         make -j $(nproc)

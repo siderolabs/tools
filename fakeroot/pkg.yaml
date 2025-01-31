@@ -1,4 +1,5 @@
 name: fakeroot
+variant: scratch
 dependencies:
   - stage: base
   - stage: patch
@@ -22,14 +23,14 @@ steps:
 
         autoreconf -vif
         ./configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             CFLAGS="${CFLAGS} -fPIC"
     build:
       - |
         make -j $(nproc)
     install:
       - |
-        make install DESTDIR=/rootfs PREFIX=/toolchain
+        make install DESTDIR=/rootfs PREFIX=/usr
 finalize:
   - from: /rootfs
     to: /

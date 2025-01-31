@@ -1,4 +1,5 @@
 name: flex
+variant: scratch
 dependencies:
   - stage: base
   - stage: m4
@@ -17,7 +18,7 @@ steps:
         sed -i "/math.h/a #include <malloc.h>" ../src/flexdef.h
 
         ../configure \
-            --prefix=${TOOLCHAIN}
+            --prefix=/usr
     build:
       - |
         cd build

@@ -1,4 +1,5 @@
 name: swig
+variant: scratch
 dependencies:
   - stage: base
   - stage: zlib
@@ -17,9 +18,8 @@ steps:
         cd build
 
         ../configure \
-            --prefix=${TOOLCHAIN} \
-            --without-maximum-compile-warnings \
-            LDFLAGS="-Wl,-rpath=${TOOLCHAIN}/lib"
+            --prefix=/usr \
+            --without-maximum-compile-warnings
     build:
       - |
         cd build

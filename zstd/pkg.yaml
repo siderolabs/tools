@@ -1,4 +1,5 @@
 name: zstd
+variant: scratch
 dependencies:
   - stage: base
 steps:
@@ -8,7 +9,7 @@ steps:
         sha256: "{{ .zstd_sha256 }}"
         sha512: "{{ .zstd_sha512 }}"
     env:
-      PREFIX: /toolchain
+      PREFIX: /usr
       CFLAGS: -O2
     prepare:
       - |

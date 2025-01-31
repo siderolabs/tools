@@ -1,4 +1,5 @@
 name: curl
+variant: scratch
 dependencies:
   - stage: base
   - stage: openssl
@@ -20,13 +21,13 @@ steps:
         cd build
 
         # This is required to avoid "One or more libs available at link-time are not available at run-time".
-        export PKG_CONFIG_PATH=${TOOLCHAIN}/lib/pkgconfig
+        export PKG_CONFIG_PATH=/usr/lib/pkgconfig
 
         ../configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --disable-static \
             --enable-threaded-resolver \
-            --with-ca-bundle=${TOOLCHAIN}/etc/ssl/certs/ca-certificates \
+            --with-ca-bundle=/etc/ssl/certs/ca-certificates \
             --with-zlib \
             --with-ssl \
             --without-libpsl \

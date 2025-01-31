@@ -1,4 +1,5 @@
 name: argp-standalone
+variant: scratch
 dependencies:
   - stage: base
   - stage: patch
@@ -17,7 +18,7 @@ steps:
 
         autoreconf -vif
         ./configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --disable-static \
             CFLAGS="${CFLAGS} -fPIC"
     build:
@@ -25,10 +26,10 @@ steps:
         make -j $(nproc)
     install:
       - |
-        mkdir -p /rootfs${TOOLCHAIN}/lib
-        mkdir -p /rootfs${TOOLCHAIN}/include
-        cp -v libargp.a /rootfs${TOOLCHAIN}/lib
-        cp -v argp.h /rootfs${TOOLCHAIN}/include
+        mkdir -p /rootfs/usr/lib
+        mkdir -p /rootfs/usr/include
+        cp -v libargp.a /rootfs/usr/lib
+        cp -v argp.h /rootfs/usr/include
 finalize:
   - from: /rootfs
     to: /

@@ -1,4 +1,5 @@
 name: coreutils
+variant: scratch
 dependencies:
   - stage: base
 steps:
@@ -13,7 +14,7 @@ steps:
         mkdir build
         cd build
         ../configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --enable-install-program=hostname \
             FORCE_UNSAFE_CONFIGURE=1 \
             TIME_T_32_BIT_OK=yes

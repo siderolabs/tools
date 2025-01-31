@@ -1,4 +1,5 @@
 name: bzip2
+variant: scratch
 dependencies:
   - stage: base
 steps:
@@ -15,7 +16,7 @@ steps:
         make -j $(nproc)
     install:
       - |
-        make PREFIX=/rootfs${TOOLCHAIN} install
+        make PREFIX=/rootfs/usr install
 finalize:
   - from: /rootfs
     to: /

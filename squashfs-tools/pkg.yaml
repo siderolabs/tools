@@ -1,4 +1,5 @@
 name: squashfs-tools
+variant: scratch
 dependencies:
   - stage: base
   - stage: xz
@@ -19,12 +20,12 @@ steps:
     build:
       - |
         cd squashfs-tools
-        make LDFLAGS="$LDFLAGS -Wl,-rpath=/toolchain/lib" XZ_SUPPORT=1 LZMA_XZ_SUPPORT=0 LZMA_SUPPORT=0 ZSTD_SUPPORT=1
+        make XZ_SUPPORT=1 LZMA_XZ_SUPPORT=0 LZMA_SUPPORT=0 ZSTD_SUPPORT=1
     install:
       - |
         cd squashfs-tools
-        mkdir -p /rootfs/toolchain/bin
-        make install INSTALL_DIR=/rootfs/toolchain/bin
+        mkdir -p /rootfs/usr/bin
+        make install INSTALL_DIR=/rootfs/usr/bin
 finalize:
   - from: /rootfs
     to: /

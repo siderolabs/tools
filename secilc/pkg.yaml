@@ -1,4 +1,5 @@
 name: secilc
+variant: scratch
 dependencies:
   - stage: base
   - stage: patch
@@ -19,7 +20,7 @@ steps:
         make -j $(nproc) all
     install:
       - |
-        make install DESTDIR=/rootfs PREFIX=/toolchain
+        make install DESTDIR=/rootfs PREFIX=/usr
 finalize:
   - from: /rootfs
     to: /

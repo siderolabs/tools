@@ -1,4 +1,5 @@
 name: libtasn1
+variant: scratch
 dependencies:
   - stage: base
 steps:
@@ -12,7 +13,7 @@ steps:
         tar -xf libtasn1.tar.gz --strip-components=1
 
         ./configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --disable-static \
 
     build:

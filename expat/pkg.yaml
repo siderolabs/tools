@@ -1,4 +1,5 @@
 name: expat
+variant: scratch
 dependencies:
   - stage: base
 steps:
@@ -12,7 +13,7 @@ steps:
         tar -xjf expat.tar.bz2 --strip-components=1
 
         ./configure \
-        --prefix="${TOOLCHAIN}" \
+        --prefix="/usr" \
         --enable-static
     build:
       - |

@@ -1,4 +1,5 @@
 name: policycoreutils
+variant: scratch
 dependencies:
   - stage: base
   - stage: patch
@@ -22,7 +23,7 @@ steps:
         make -j $(nproc) SUBDIRS=setfiles FTS_LDLIBS="-l:libfts.a -lpcre2-8"
     install:
       - |
-        make install DESTDIR=/rootfs/toolchain SUBDIRS=setfiles
+        make install DESTDIR=/rootfs/usr SUBDIRS=setfiles
 finalize:
   - from: /rootfs
     to: /

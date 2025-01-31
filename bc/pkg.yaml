@@ -1,6 +1,8 @@
 name: bc
+variant: scratch
 dependencies:
   - stage: base
+  - stage: bash
   - stage: texinfo
   - stage: perl
 steps:
@@ -30,10 +32,10 @@ steps:
         mkdir build
         cd build
         ../configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --with-readline \
-            --mandir=${TOOLCHAIN}/share/man \
-            --infodir=${TOOLCHAIN}/share/info
+            --mandir=/usr/share/man \
+            --infodir=/usr/share/info
     build:
       - |
         cd build

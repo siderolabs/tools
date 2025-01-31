@@ -1,4 +1,5 @@
 name: bison
+variant: scratch
 dependencies:
   - stage: base
   - stage: m4
@@ -16,7 +17,7 @@ steps:
         cd build
 
         ../configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             FORCE_UNSAFE_CONFIGURE=1
     build:
       - |

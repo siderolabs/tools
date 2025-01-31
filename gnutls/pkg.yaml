@@ -1,4 +1,5 @@
 name: gnutls
+variant: scratch
 dependencies:
   - stage: base
   - stage: nettle
@@ -19,7 +20,7 @@ steps:
         tar -xf gnutls.tar.xz --strip-components=1
 
         ./configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --enable-ktls \
             --disable-openssl-compatibility \
             --disable-rpath \

@@ -1,4 +1,5 @@
 name: libunistring
+variant: scratch
 dependencies:
   - stage: base
 steps:
@@ -12,7 +13,7 @@ steps:
         tar -xf libunistring.tar.xz --strip-components=1
 
         ./configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --disable-static \
 
     build:

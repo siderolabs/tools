@@ -1,6 +1,6 @@
 name: tools
 variant: scratch
-shell: /toolchain/bin/bash
+shell: /bin/sh
 dependencies:
   - image: '{{ .TOOLCHAIN_IMAGE }}'
   - stage: abseil
@@ -22,7 +22,6 @@ dependencies:
   - stage: elfutils
   - stage: expat
   - stage: fakeroot
-  - stage: file
   - stage: findutils
   - stage: flex
   - stage: gawk
@@ -50,6 +49,7 @@ dependencies:
   - stage: mpfr
   - stage: musl-fts
   - stage: musl-obstack
+  - stage: musl-utils
   - stage: ncurses
   - stage: nettle
   - stage: openssl
@@ -64,8 +64,8 @@ dependencies:
   - stage: protoc-gen-go-grpc
   - stage: python3
   - stage: rhash
-  - stage: secilc
   - stage: sd-boot
+  - stage: secilc
   - stage: sed
   - stage: squashfs-tools
   - stage: swig
@@ -78,10 +78,8 @@ dependencies:
 steps:
   - prepare:
       - |
-        cp /pkg/files/adjust.sh ${TOOLCHAIN}/bin
-      - |
         # clean up some files we don't ever need
-        rm -rf ${TOOLCHAIN}/man ${TOOLCHAIN}/share/doc ${TOOLCHAIN}/share/info ${TOOLCHAIN}/share/locale ${TOOLCHAIN}/share/man
+        rm -rf /usr/man /usr/share/doc /usr/share/info /usr/share/locale /usr/share/man
 finalize:
-  - from: /toolchain
-    to: /toolchain
+  - from: /
+    to: /

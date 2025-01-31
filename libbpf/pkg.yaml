@@ -1,4 +1,5 @@
 name: libbpf
+variant: scratch
 dependencies:
   - stage: base
   - stage: elfutils
@@ -19,8 +20,8 @@ steps:
     install:
       - |
         cd src
-        make install PREFIX=${TOOLCHAIN} LIBSUBDIR=lib DESTDIR=/rootfs
-        make install_uapi_headers PREFIX=${TOOLCHAIN} LIBSUBDIR=lib DESTDIR=/rootfs
+        make install PREFIX=/usr LIBSUBDIR=lib DESTDIR=/rootfs
+        make install_uapi_headers PREFIX=/usr LIBSUBDIR=lib DESTDIR=/rootfs
 finalize:
   - from: /rootfs
     to: /

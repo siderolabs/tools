@@ -1,4 +1,5 @@
 name: autoconf
+variant: scratch
 dependencies:
   - stage: base
   - stage: perl
@@ -18,7 +19,7 @@ steps:
         cd build
 
         ../configure \
-            --prefix=${TOOLCHAIN}
+            --prefix=/usr
     build:
       - |
         cd build

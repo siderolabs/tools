@@ -1,4 +1,5 @@
 name: bash
+variant: scratch
 dependencies:
   - stage: base
   - stage: patch
@@ -19,11 +20,10 @@ steps:
         cd build
 
         ../configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
             --disable-nls \
             --with-curses \
-            --without-bash-malloc \
-            LDFLAGS="-Wl,-rpath=${TOOLCHAIN}/lib"
+            --without-bash-malloc
     build:
       - |
         cd build

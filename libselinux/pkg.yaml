@@ -1,6 +1,8 @@
 name: libselinux
+variant: scratch
 dependencies:
   - stage: base
+  - stage: coreutils
   - stage: patch
   - stage: musl-fts
   - stage: libsepol
@@ -18,13 +20,12 @@ steps:
 
         patch -p1 < /pkg/patches/musl-lstat.patch
         patch -p1 < /pkg/patches/selabel-digest-uninit.patch
-        patch -p1 < /pkg/patches/busybox-ln.patch
     build:
       - |
         make -j $(nproc) FTS_LDLIBS="-l:libfts.a"
     install:
       - |
-        make install DESTDIR=/rootfs PREFIX=/toolchain
+        make install DESTDIR=/rootfs SHLIBDIR=/usr/lib
 finalize:
   - from: /rootfs
     to: /

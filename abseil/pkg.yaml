@@ -1,4 +1,5 @@
 name: abseil
+variant: scratch
 dependencies:
   - stage: base
   - stage: cmake

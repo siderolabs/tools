@@ -1,4 +1,5 @@
 name: pcre
+variant: scratch
 dependencies:
   - stage: base
   - stage: zlib
@@ -15,7 +16,7 @@ steps:
         mkdir build
         cd build
         ../configure \
-            --prefix=${TOOLCHAIN} \
+            --prefix=/usr \
               --enable-unicode-properties \
               --enable-pcre216 \
               --enable-pcre232 \
@@ -30,7 +31,7 @@ steps:
       - |
         cd build
         make DESTDIR=/rootfs install
-        rm -rf /rootfs/toolchain/share
+        rm -rf /rootfs/usr/share
 finalize:
   - from: /rootfs
     to: /
