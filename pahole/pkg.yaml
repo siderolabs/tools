@@ -42,6 +42,9 @@ steps:
         cd build
         make DESTDIR=/rootfs install
         rm -rf /rootfs/usr/share
+        mkdir -p /rootfs/usr/lib
+        mv /rootfs/usr/lib64/* /rootfs/usr/lib/
+        rm -r /rootfs/usr/lib64
 finalize:
   - from: /rootfs
     to: /
