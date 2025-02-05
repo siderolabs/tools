@@ -15,7 +15,6 @@ steps:
   - network: default
     build:
       - |
-        export PATH=/go/bin:${PATH}
         export GO111MODULE=on
         cd cmd/protoc-gen-go-grpc
         go build .
