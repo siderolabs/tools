@@ -22,7 +22,6 @@ dependencies:
   - stage: elfutils
   - stage: expat
   - stage: fakeroot
-  - stage: file
   - stage: findutils
   - stage: flex
   - stage: gawk

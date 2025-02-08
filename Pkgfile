@@ -87,11 +87,6 @@ vars:
   expat_sha256: 8dc480b796163d4436e6f1352e71800a774f73dbae213f1860b60607d2a83ada
   expat_sha512: cd21a5cfafe15b747e6e8964e35eed52a446373811d02bc3730b3e616ccd066f07e4cdbd48f445d6fddfb931841b28072016248b19a8add9cf087cbf83ba18da
 
-  # renovate: datasource=github-tags extractVersion=^FILE(?<version>.*)$ depName=file/file
-  file_version: 5_46
-  file_sha256: 908d74bd8751e35e65611788f58f8b6f5c6d487d437fbd2f845daf0e051818a1
-  file_sha512: 9165bb5bdbe7b8fccac0c8675d4eb251a286ab2ab7a79e6f8ed98d36fa0928b889cf109c1da3a5cfff64d1b1006b5d73934c2d420484adae6f4c8e26a9ede18f
-
   # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=git://salsa.debian.org/clint/fakeroot.git
   fakeroot_version: 1.36
   fakeroot_sha256: 5128dd5df59955d60453aea1817d2f31c29ffb8b8addcc5d7e200460278a6b0a
@@ -129,9 +124,9 @@ vars:
   gmp_sha512: c99be0950a1d05a0297d65641dd35b75b74466f7bf03c9e8a99895a3b2f9a0856cd17887738fa51cf7499781b65c049769271cbcb77d057d2e9f1ec52e07dd84
 
   # renovate: datasource=github-tags extractVersion=^go(?<version>.*)$ depName=golang/go
-  golang_version: 1.23.5
-  golang_sha256: a6f3f4bbd3e6bdd626f79b668f212fbb5649daf75084fb79b678a0ae4d97423b
-  golang_sha512: b04317afeab2d0ced7c36b8682dd32ac085d95d874cf3f614daa34859d7f7f2b75138132e7a64e237c6b4d711d5b03a4d20533f92a44840915630f4ea7cfafa2
+  golang_version: 1.23.6
+  golang_sha256: 039c5b04e65279daceee8a6f71e70bd05cf5b801782b6f77c6e19e2ed0511222
+  golang_sha512: c504476d42cdbcd1b6afe53c0974e82c19eb0efac974bc06d41c1641440676891cfe6416455a0cfc81fe82902a9b82ea0a1d95089c676667d05487e45f5e04e3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gperf.git
   gperf_version: 3.1
