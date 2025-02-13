@@ -4,9 +4,9 @@ dependencies:
   - stage: base
   - stage: patch
   - stage: musl-fts
-  - stage: pcre
-  - stage: libsepol
-  - stage: libselinux
+  - stage: tools-pcre2
+  - stage: tools-libsepol
+  - stage: tools-libselinux
 steps:
   - sources:
       - url: https://github.com/SELinuxProject/selinux/releases/download/{{ .selinux_version }}/policycoreutils-{{ .selinux_version }}.tar.gz

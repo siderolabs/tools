@@ -1,0 +1,28 @@
+name: python-setuptools
+variant: scratch
+dependencies:
+  - stage: base
+  - stage: libffi
+  - stage: python3
+  - stage: zlib
+steps:
+  - sources:
+      - url: https://github.com/pypa/setuptools/archive/refs/tags/{{ .python_setuptools_version }}.tar.gz
+        destination: setuptools.tar.gz
+        sha256: "{{ .python_setuptools_sha256 }}"
+        sha512: "{{ .python_setuptools_sha512 }}"
+    prepare:
+      - |
+        tar -xzf setuptools.tar.gz --strip-components=1
+    build:
+      - |
+        python3 setup.py build
+    install:
+      - |
+        python3 setup.py install --root=/rootfs
+        rm /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages/setuptools/*.exe
+        # Determinism: remove all bytecode
+        find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"
+finalize:
+  - from: /rootfs
+    to: /

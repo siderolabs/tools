@@ -2,7 +2,7 @@ name: protoc-gen-go
 variant: scratch
 dependencies:
   - stage: base
-  - stage: ca-certificates
+  - stage: tools-ca-certificates
 steps:
   - sources:
       - url: https://github.com/protocolbuffers/protobuf-go/archive/refs/tags/{{ .protoc_gen_go_version }}.tar.gz
@@ -12,7 +12,6 @@ steps:
     prepare:
       - |
         tar -xzf protobuf-go.tar.gz --strip-components=1
-  - network: default
     build:
       - |
         export GO111MODULE=on

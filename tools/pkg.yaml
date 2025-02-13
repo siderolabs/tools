@@ -11,7 +11,6 @@ dependencies:
   - stage: bc
   - stage: bison
   - stage: bzip2
-  - stage: ca-certificates
   - stage: cmake
   - stage: coreutils
   - stage: cpio
@@ -32,13 +31,9 @@ dependencies:
   - stage: gperf
   - stage: grep
   - stage: gzip
-  - stage: kmod
   - stage: libbpf
-  - stage: libcap
   - stage: libffi
   - stage: libnl
-  - stage: libselinux
-  - stage: libsepol
   - stage: libtasn1
   - stage: libtool
   - stage: libunistring
@@ -52,26 +47,40 @@ dependencies:
   - stage: musl-utils
   - stage: ncurses
   - stage: nettle
-  - stage: openssl
+  - stage: ninja
   - stage: pahole
   - stage: patch
-  - stage: pcre
   - stage: perl
   - stage: pkg-config
   - stage: policycoreutils
   - stage: protobuf
   - stage: protoc-gen-go
   - stage: protoc-gen-go-grpc
+  - stage: pyelftools
+  - stage: python-build
+  - stage: python-flit_core
+  - stage: python-gpep517
+  - stage: python-installer
+  - stage: python-jinja2
+  - stage: python-markupsafe
+  - stage: python-packaging
+  - stage: python-setuptools
   - stage: python3
   - stage: rhash
-  - stage: sd-boot
   - stage: secilc
   - stage: sed
   - stage: squashfs-tools
   - stage: swig
   - stage: tar
   - stage: texinfo
-  - stage: util-linux
+  - stage: tools-ca-certificates
+  - stage: tools-kmod
+  - stage: tools-libcap
+  - stage: tools-libselinux
+  - stage: tools-libsepol
+  - stage: tools-openssl
+  - stage: tools-pcre2
+  - stage: tools-util-linux
   - stage: xz
   - stage: zlib
   - stage: zstd

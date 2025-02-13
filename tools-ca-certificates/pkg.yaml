@@ -1,4 +1,4 @@
-name: ca-certificates
+name: tools-ca-certificates
 variant: scratch
 dependencies:
   - stage: base
@@ -10,8 +10,7 @@ steps:
     sha512: bf578937d7826106bae1ebe74a70bfbc439387445a1f41ef57430de9d9aea6fcfa1884381bf0ef14632f6b89e9543642c9b774fcca93837efffdc557c4958dbd
   install:
   - |
-    mkdir -p /rootfs/etc/ssl/certs
-    mv cacert.pem /rootfs/etc/ssl/certs/ca-certificates
+    install -m644 -D cacert.pem /rootfs/etc/ssl/certs/ca-certificates
 finalize:
 - from: /rootfs
   to: /

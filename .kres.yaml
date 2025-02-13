@@ -3,6 +3,14 @@ kind: pkgfile.Build
 spec:
   targets:
     - tools
+    - tools-ca-certificates
+    - tools-kmod
+    - tools-libcap
+    - tools-libselinux
+    - tools-libsepol
+    - tools-openssl
+    - tools-pcre2
+    - tools-util-linux
   reproducibleTargetName: tools
 ---
 kind: common.Renovate

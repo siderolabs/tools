@@ -1,0 +1,36 @@
+name: python-jinja2
+variant: scratch
+dependencies:
+  - stage: base
+  - stage: libffi
+  - stage: python3
+  - stage: python-build
+  - stage: python-gpep517
+  - stage: python-flit_core
+  - stage: python-installer
+  - stage: python-markupsafe
+  - stage: zlib
+steps:
+  - sources:
+      - url: https://github.com/pallets/jinja/archive/refs/tags/{{ .python_jinja2_version }}.tar.gz
+        destination: jinja2.tar.gz
+        sha256: "{{ .python_jinja2_sha256 }}"
+        sha512: "{{ .python_jinja2_sha512 }}"
+    prepare:
+      - |
+        tar -xzf jinja2.tar.gz --strip-components=1
+    build:
+      - |
+        python3 -m gpep517 build-wheel --wheel-dir /tmp --output-fd 1
+    install:
+      - |
+        python3 -m installer -d /rootfs /tmp/*.whl
+        # Determinism: remove all bytecode
+        find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"
+    test:
+      - |
+        python3 -m installer /tmp/*.whl
+        python3 -c "import jinja2"
+finalize:
+  - from: /rootfs
+    to: /

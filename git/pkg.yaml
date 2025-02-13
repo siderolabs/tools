@@ -5,7 +5,7 @@ dependencies:
   - stage: zlib
     runtime: true
   - stage: gettext
-  - stage: openssl
+  - stage: tools-openssl
   - stage: curl
     runtime: true
   - stage: autoconf

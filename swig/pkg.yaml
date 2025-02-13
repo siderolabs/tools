@@ -3,10 +3,13 @@ variant: scratch
 dependencies:
   - stage: base
   - stage: zlib
-  - stage: pcre
+  - stage: autoconf
+  - stage: automake
+  - stage: tools-pcre2
+  - stage: bison
 steps:
   - sources:
-      - url: https://src.fedoraproject.org/lookaside/extras/swig/swig-{{ .swig_version }}.tar.gz/sha512/019dee5a46d57e1030eef47cd5d007ccaadbdcd4e53cd30d7c795f0118ecf4406a78185534502c81c5f6d7bac0713256e7e19b20b5a2d14e2c552219edbaf5cf/swig-{{ .swig_version }}.tar.gz
+      - url: https://github.com/swig/swig/archive/refs/tags/{{ .swig_version }}.tar.gz
         destination: swig.tar.gz
         sha256: "{{ .swig_sha256 }}"
         sha512: "{{ .swig_sha512 }}"
@@ -14,19 +17,15 @@ steps:
       - |
         tar -xzf swig.tar.gz --strip-components=1
 
-        mkdir build
-        cd build
-
-        ../configure \
+        ./autogen.sh
+        ./configure \
             --prefix=/usr \
             --without-maximum-compile-warnings
     build:
       - |
-        cd build
         make -j $(nproc)
     install:
       - |
-        cd build
         make DESTDIR=/rootfs install
 finalize:
   - from: /rootfs

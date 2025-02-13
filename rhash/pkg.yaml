@@ -2,7 +2,7 @@ name: rhash
 variant: scratch
 dependencies:
   - stage: base
-  - stage: openssl
+  - stage: tools-openssl
   - stage: patch
 steps:
   - sources:

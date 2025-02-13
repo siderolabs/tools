@@ -20,10 +20,10 @@ dependencies:
   - stage: xz
 steps:
   - sources:
-      - url: https://git.kernel.org/pub/scm/devel/pahole/pahole.git/snapshot/pahole-{{.pahole_version }}.tar.gz
+      - url: https://git.kernel.org/pub/scm/devel/pahole/pahole.git/snapshot/pahole-{{ .pahole_version }}.tar.gz
         destination: pahole.tar.gz
-        sha256: "{{.pahole_sha256 }}"
-        sha512: "{{.pahole_sha512 }}"
+        sha256: "{{ .pahole_sha256 }}"
+        sha512: "{{ .pahole_sha512 }}"
     prepare:
       - |
         tar -xzf pahole.tar.gz --strip-components=1

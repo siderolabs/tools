@@ -1,12 +1,12 @@
-name: libselinux
+name: tools-libselinux
 variant: scratch
 dependencies:
   - stage: base
   - stage: coreutils
   - stage: patch
   - stage: musl-fts
-  - stage: libsepol
-  - stage: pcre
+  - stage: tools-libsepol
+  - stage: tools-pcre2
   - stage: pkg-config
 steps:
   - sources:
@@ -20,12 +20,13 @@ steps:
 
         patch -p1 < /pkg/patches/musl-lstat.patch
         patch -p1 < /pkg/patches/selabel-digest-uninit.patch
+        patch -p1 < /pkg/patches/0001-libselinux-exclude-requirement-for-etc-selinux.patch
     build:
       - |
-        make -j $(nproc) FTS_LDLIBS="-l:libfts.a"
+        make -j $(nproc) FTS_LDLIBS="-l:libfts.a" SUBDIRS="include src" SHLIBDIR=/usr/lib
     install:
       - |
-        make install DESTDIR=/rootfs SHLIBDIR=/usr/lib
+        make install DESTDIR=/rootfs SUBDIRS="include src" SHLIBDIR=/usr/lib
 finalize:
   - from: /rootfs
     to: /

@@ -1,0 +1,20 @@
+name: python-build
+variant: scratch
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://github.com/pypa/build/archive/refs/tags/{{ .python_build_version }}.tar.gz
+        destination: python-build.tar.gz
+        sha256: "{{ .python_build_sha256 }}"
+        sha512: "{{ .python_build_sha512 }}"
+    prepare:
+      - |
+        tar -xzf python-build.tar.gz --strip-components=1
+    install:
+      - |
+        mkdir -p /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages
+        cp -rd src/build /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages/
+finalize:
+  - from: /rootfs
+    to: /

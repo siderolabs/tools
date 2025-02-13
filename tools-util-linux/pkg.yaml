@@ -1,4 +1,4 @@
-name: util-linux
+name: tools-util-linux
 variant: scratch
 dependencies:
   - stage: base
@@ -14,6 +14,7 @@ steps:
         tar -xJf util-linux.tar.xz --strip-components=1
         mkdir build
         cd build
+
         ../configure \
             --prefix=/usr \
             --bindir=/usr/bin \
@@ -26,8 +27,10 @@ steps:
             --disable-liblastlog2 \
             --without-systemd \
             --without-systemdsystemunitdir \
-            --without-ncurses \
-            PKG_CONFIG=""
+            --disable-all-programs \
+            --enable-libmount \
+            --enable-libblkid \
+            --enable-libuuid
     build:
       - |
         cd build
@@ -37,6 +40,7 @@ steps:
         cd build
         mkdir /rootfs
         make install DESTDIR=/rootfs
+        rm -r /rootfs/usr/sbin
 finalize:
   - from: /rootfs
     to: /

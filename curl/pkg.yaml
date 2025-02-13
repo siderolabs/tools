@@ -2,7 +2,7 @@ name: curl
 variant: scratch
 dependencies:
   - stage: base
-  - stage: openssl
+  - stage: tools-openssl
     runtime: true
   - stage: zlib
     runtime: true

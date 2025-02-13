@@ -1,4 +1,4 @@
-name: libcap
+name: tools-libcap
 variant: scratch
 dependencies:
   - stage: base

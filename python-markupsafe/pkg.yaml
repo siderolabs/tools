@@ -1,0 +1,36 @@
+name: python-markupsafe
+variant: scratch
+dependencies:
+  - stage: base
+  - stage: libffi
+  - stage: python3
+  - stage: python-build
+  - stage: python-gpep517
+  - stage: python-flit_core
+  - stage: python-installer
+  - stage: python-setuptools
+  - stage: zlib
+steps:
+  - sources:
+      - url: https://github.com/pallets/markupsafe/archive/refs/tags/{{ .python_markupsafe_version }}.tar.gz
+        destination: markupsafe.tar.gz
+        sha256: "{{ .python_markupsafe_sha256 }}"
+        sha512: "{{ .python_markupsafe_sha512 }}"
+    prepare:
+      - |
+        tar -xzf markupsafe.tar.gz --strip-components=1
+    build:
+      - |
+        python3 -m gpep517 build-wheel --wheel-dir /tmp --output-fd 1
+    install:
+      - |
+        python3 -m installer -d /rootfs /tmp/*.whl
+        # Determinism: remove all bytecode
+        find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"
+    test:
+      - |
+        python3 -m installer /tmp/*.whl
+        python3 -c "import markupsafe"
+finalize:
+  - from: /rootfs
+    to: /

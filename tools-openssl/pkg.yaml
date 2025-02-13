@@ -1,4 +1,4 @@
-name: openssl
+name: tools-openssl
 variant: scratch
 dependencies:
   - stage: base

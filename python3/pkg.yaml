@@ -5,7 +5,7 @@ dependencies:
   - stage: zlib
   - stage: patch
   - stage: libffi
-  - stage: openssl
+  - stage: tools-openssl
   - stage: pkg-config
 steps:
   - sources:

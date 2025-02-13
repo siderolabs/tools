@@ -1,28 +1,26 @@
-name: meson
+name: pyelftools
 variant: scratch
 dependencies:
   - stage: base
   - stage: libffi
   - stage: python3
   - stage: python-setuptools
-  - stage: tools-openssl
   - stage: zlib
 steps:
   - sources:
-      - url: https://github.com/mesonbuild/meson/releases/download/{{ .meson_version }}/meson-{{ .meson_version }}.tar.gz
-        destination: meson.tar.gz
-        sha256: "{{ .meson_sha256 }}"
-        sha512: "{{ .meson_sha512 }}"
+      - url: https://github.com/eliben/pyelftools/archive/refs/tags/{{ .pyelftools_version }}.tar.gz
+        destination: pyelftools.tar.gz
+        sha256: "{{ .pyelftools_sha256 }}"
+        sha512: "{{ .pyelftools_sha512 }}"
     prepare:
       - |
-        tar -xzf meson.tar.gz --strip-components=1
+        tar -xzf pyelftools.tar.gz --strip-components=1
     build:
       - |
         python3 setup.py build
     install:
       - |
-        python3 setup.py install --prefix=/usr --root="/rootfs"
-
+        python3 setup.py install --root=/rootfs
         # Determinism: remove all bytecode
         find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"
 finalize:

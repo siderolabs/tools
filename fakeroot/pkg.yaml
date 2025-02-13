@@ -6,7 +6,7 @@ dependencies:
   - stage: autoconf
   - stage: automake
   - stage: libtool
-  - stage: libcap
+  - stage: tools-libcap
 steps:
   - sources:
       - url: https://salsa.debian.org/clint/fakeroot/-/archive/upstream/{{ .fakeroot_version }}/fakeroot-upstream-{{ .fakeroot_version }}.tar.gz

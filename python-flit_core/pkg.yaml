@@ -1,0 +1,20 @@
+name: python-flit_core
+variant: scratch
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://github.com/pypa/flit/archive/refs/tags/{{ .python_flit_core_version }}.tar.gz
+        destination: python_flit_core.tar.gz
+        sha256: "{{ .python_flit_core_sha256 }}"
+        sha512: "{{ .python_flit_core_sha512 }}"
+    prepare:
+      - |
+        tar -xzf python_flit_core.tar.gz --strip-components=1
+    install:
+      - |
+        mkdir -p /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages
+        cp -rd flit_core/flit_core /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages/
+finalize:
+  - from: /rootfs
+    to: /

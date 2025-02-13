@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2025-01-15T13:57:46Z by kres 3b3f992.
+# Generated on 2025-02-13T13:00:26Z by kres 5e9dc91.
 
 # common variables
 
@@ -25,7 +25,7 @@ SOURCE_DATE_EPOCH := $(shell git log $(INITIAL_COMMIT_SHA) --pretty=%ct)
 
 # sync bldr image with pkgfile
 
-BLDR_RELEASE := v0.4.0-1-g76a2c8f
+BLDR_RELEASE := v0.4.1
 BLDR_IMAGE := ghcr.io/siderolabs/bldr:$(BLDR_RELEASE)
 BLDR := docker run --rm --user $(shell id -u):$(shell id -g) --volume $(PWD):/src --entrypoint=/bldr $(BLDR_IMAGE) --root=/src
 
@@ -45,6 +45,14 @@ COMMON_ARGS += --build-arg=SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH)
 # targets defines all the available targets
 
 TARGETS = tools
+TARGETS += tools-ca-certificates
+TARGETS += tools-kmod
+TARGETS += tools-libcap
+TARGETS += tools-libselinux
+TARGETS += tools-libsepol
+TARGETS += tools-openssl
+TARGETS += tools-pcre2
+TARGETS += tools-util-linux
 
 # help menu
 

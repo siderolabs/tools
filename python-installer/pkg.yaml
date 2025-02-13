@@ -1,0 +1,21 @@
+name: python-installer
+variant: scratch
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://github.com/pypa/installer/archive/refs/tags/{{ .python_installer_version }}.tar.gz
+        destination: python_installer.tar.gz
+        sha256: "{{ .python_installer_sha256 }}"
+        sha512: "{{ .python_installer_sha512 }}"
+    prepare:
+      - |
+        tar -xzf python_installer.tar.gz --strip-components=1
+    install:
+      - |
+        mkdir -p /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages
+        rm -rf src/installer/_scripts/*.exe
+        cp -rd src/installer /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages/
+finalize:
+  - from: /rootfs
+    to: /

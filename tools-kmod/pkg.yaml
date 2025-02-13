@@ -1,4 +1,4 @@
-name: kmod
+name: tools-kmod
 variant: scratch
 dependencies:
   - stage: base

@@ -1,4 +1,4 @@
-name: pcre
+name: tools-pcre2
 variant: scratch
 dependencies:
   - stage: base
@@ -16,13 +16,13 @@ steps:
         mkdir build
         cd build
         ../configure \
-            --prefix=/usr \
-              --enable-unicode-properties \
-              --enable-pcre216 \
-              --enable-pcre232 \
-              --enable-pcre2grep-libz \
-              --enable-pcre2grep-libbz2 \
-              --disable-static
+          --prefix=/usr \
+          --enable-unicode-properties \
+          --enable-pcre216 \
+          --enable-pcre232 \
+          --enable-pcre2grep-libz \
+          --enable-pcre2grep-libbz2 \
+          --disable-static
     build:
       - |
         cd build

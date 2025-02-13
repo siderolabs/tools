@@ -3,7 +3,7 @@ variant: scratch
 dependencies:
   - stage: base
   - stage: patch
-  - stage: libsepol
+  - stage: tools-libsepol
     runtime: true
 steps:
   - sources:

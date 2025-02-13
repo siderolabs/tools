@@ -1,4 +1,4 @@
-name: libsepol
+name: tools-libsepol
 variant: scratch
 dependencies:
   - stage: base
@@ -15,9 +15,11 @@ steps:
     prepare:
       - |
         tar -xzf libsepol.tar.gz --strip-components=1
+        # Do not build CLI utilities we do not use
+        patch -p1 < /pkg/patches/dont-build-utils.patch
     build:
       - |
-        make -j $(nproc)
+        make -j $(nproc) SHLIBDIR=/usr/lib
     install:
       - |
         make install DESTDIR=/rootfs SHLIBDIR=/usr/lib
