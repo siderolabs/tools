@@ -23,7 +23,7 @@ steps:
         make -j $(nproc) SUBDIRS=setfiles FTS_LDLIBS="-l:libfts.a -lpcre2-8"
     install:
       - |
-        make install DESTDIR=/rootfs/usr SUBDIRS=setfiles
+        make install DESTDIR=/rootfs/usr SBINDIR=/usr/bin SUBDIRS=setfiles
 finalize:
   - from: /rootfs
     to: /

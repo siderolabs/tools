@@ -86,9 +86,18 @@ dependencies:
   - stage: zstd
 steps:
   - prepare:
-      - |
-        # clean up some files we don't ever need
-        rm -rf /usr/man /usr/share/doc /usr/share/info /usr/share/locale /usr/share/man
+    - |
+      # clean up some files we don't ever need
+      rm -rf /usr/man /usr/share/doc /usr/share/info /usr/share/locale /usr/share/man
+  - test:
+    - |
+      # Validate usrmerge symlinks from toolchain did not get overwritten
+      [ -L /bin ] && [ -d /bin ]
+      [ -L /lib ] && [ -d /lib ]
+      [ -L /lib64 ] && [ -d /lib64 ]
+      [ -L /usr/lib64 ] && [ -d /usr/lib64 ]
+      [ -L /sbin ] && [ -d /sbin ]
+      [ -L /usr/sbin ] && [ -d /usr/sbin ]
 finalize:
   - from: /
     to: /
