@@ -362,7 +362,7 @@ vars:
   swig_sha512: 0a9bdcc4a28f1374f9e564fdb372f684bd277bf7b590491218c3538c230bcacd8de32365717a37cf5d7d02165dec9f3955e1bb1207181885fb5b7fbc7476ff04
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=systemd/systemd
-  systemd_version: 257.2
+  systemd_version: 257.3
   systemd_sha256: 7f2bc3253e4f87578132c5e433ef9ff7e8fee01d9eb5a5b7c64376d617f694d0
   systemd_sha512: 4f47fcd9a4148101ee7b85cf5908a04ec9e025dc7a5a2e8e61c05439cfd427851b6d356bb96a0dfae55566bbf6d3c93a13251d220840c09296e94f80bd4a5945
 
