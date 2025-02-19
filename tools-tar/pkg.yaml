@@ -1,4 +1,4 @@
-name: tar
+name: tools-tar
 variant: scratch
 dependencies:
   - stage: base

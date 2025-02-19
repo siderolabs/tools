@@ -1,10 +1,10 @@
-name: squashfs-tools
+name: tools-squashfs-tools
 variant: scratch
 dependencies:
   - stage: base
-  - stage: xz
+  - stage: tools-xz
   - stage: zlib
-  - stage: zstd
+  - stage: tools-zstd
   - stage: patch
 steps:
   - sources:

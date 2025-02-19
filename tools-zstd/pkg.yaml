@@ -1,4 +1,4 @@
-name: zstd
+name: tools-zstd
 variant: scratch
 dependencies:
   - stage: base

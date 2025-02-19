@@ -8,7 +8,7 @@ dependencies:
   - stage: libuv
   - stage: ncurses
   - stage: rhash
-  - stage: xz
+  - stage: tools-xz
   - stage: zlib
 steps:
   - sources:

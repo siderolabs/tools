@@ -6,7 +6,7 @@ dependencies:
   - stage: abseil
   - stage: curl
   - stage: libuv
-  - stage: xz
+  - stage: tools-xz
   - stage: expat
   - stage: rhash
 steps:

@@ -13,7 +13,6 @@ dependencies:
   - stage: bzip2
   - stage: cmake
   - stage: coreutils
-  - stage: cpio
   - stage: curl
   - stage: diffutils
   - stage: dtc
@@ -69,21 +68,23 @@ dependencies:
   - stage: rhash
   - stage: secilc
   - stage: sed
-  - stage: squashfs-tools
   - stage: swig
-  - stage: tar
   - stage: texinfo
   - stage: tools-ca-certificates
+  - stage: tools-cpio
   - stage: tools-kmod
   - stage: tools-libcap
   - stage: tools-libselinux
   - stage: tools-libsepol
   - stage: tools-openssl
   - stage: tools-pcre2
+  - stage: tools-squashfs-tools
+  - stage: tools-tar
   - stage: tools-util-linux
-  - stage: xz
+  - stage: tools-xz
+  - stage: tools-zstd
   - stage: zlib
-  - stage: zstd
+
 steps:
   - prepare:
     - |

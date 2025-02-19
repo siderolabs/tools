@@ -1,4 +1,4 @@
-name: cpio
+name: tools-cpio
 variant: scratch
 dependencies:
   - stage: base

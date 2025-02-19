@@ -1,4 +1,4 @@
-name: xz
+name: tools-xz
 variant: scratch
 dependencies:
   - stage: base

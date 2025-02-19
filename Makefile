@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2025-02-13T13:00:26Z by kres 5e9dc91.
+# Generated on 2025-02-19T14:40:34Z by kres 8a48729.
 
 # common variables
 
@@ -46,13 +46,18 @@ COMMON_ARGS += --build-arg=SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH)
 
 TARGETS = tools
 TARGETS += tools-ca-certificates
+TARGETS += tools-cpio
 TARGETS += tools-kmod
 TARGETS += tools-libcap
 TARGETS += tools-libselinux
 TARGETS += tools-libsepol
 TARGETS += tools-openssl
 TARGETS += tools-pcre2
+TARGETS += tools-squashfs-tools
+TARGETS += tools-tar
 TARGETS += tools-util-linux
+TARGETS += tools-xz
+TARGETS += tools-zstd
 
 # help menu
 

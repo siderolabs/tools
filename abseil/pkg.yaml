@@ -5,7 +5,7 @@ dependencies:
   - stage: cmake
   - stage: curl
   - stage: libuv
-  - stage: xz
+  - stage: tools-xz
   - stage: expat
   - stage: rhash
 steps:
