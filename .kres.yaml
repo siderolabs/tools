@@ -15,6 +15,7 @@ spec:
     - tools-tar
     - tools-util-linux
     - tools-xz
+    - tools-zlib
     - tools-zstd
   reproducibleTargetName: tools
 ---

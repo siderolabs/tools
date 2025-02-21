@@ -4,7 +4,7 @@ dependencies:
   - stage: base
   - stage: nettle
   - stage: gmp
-  - stage: zlib
+  - stage: tools-zlib
   - stage: texinfo
   - stage: pkg-config
   - stage: libtasn1

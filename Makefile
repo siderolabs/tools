@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2025-02-19T14:40:34Z by kres 8a48729.
+# Generated on 2025-02-21T15:31:46Z by kres 8a48729.
 
 # common variables
 
@@ -57,6 +57,7 @@ TARGETS += tools-squashfs-tools
 TARGETS += tools-tar
 TARGETS += tools-util-linux
 TARGETS += tools-xz
+TARGETS += tools-zlib
 TARGETS += tools-zstd
 
 # help menu

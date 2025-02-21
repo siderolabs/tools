@@ -2,7 +2,7 @@ name: elfutils
 variant: scratch
 dependencies:
   - stage: base
-  - stage: zlib
+  - stage: tools-zlib
   - stage: argp-standalone
   - stage: musl-fts
   - stage: musl-obstack

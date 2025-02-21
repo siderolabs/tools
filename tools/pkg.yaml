@@ -83,7 +83,7 @@ dependencies:
   - stage: tools-util-linux
   - stage: tools-xz
   - stage: tools-zstd
-  - stage: zlib
+  - stage: tools-zlib
 
 steps:
   - prepare:

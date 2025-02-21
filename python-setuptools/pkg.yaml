@@ -4,7 +4,7 @@ dependencies:
   - stage: base
   - stage: libffi
   - stage: python3
-  - stage: zlib
+  - stage: tools-zlib
 steps:
   - sources:
       - url: https://github.com/pypa/setuptools/archive/refs/tags/{{ .python_setuptools_version }}.tar.gz

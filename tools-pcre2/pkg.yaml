@@ -2,7 +2,7 @@ name: tools-pcre2
 variant: scratch
 dependencies:
   - stage: base
-  - stage: zlib
+  - stage: tools-zlib
   - stage: bzip2
 steps:
   - sources:

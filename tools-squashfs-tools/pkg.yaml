@@ -3,7 +3,7 @@ variant: scratch
 dependencies:
   - stage: base
   - stage: tools-xz
-  - stage: zlib
+  - stage: tools-zlib
   - stage: tools-zstd
   - stage: patch
 steps:

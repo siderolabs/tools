@@ -9,7 +9,7 @@ dependencies:
   - stage: ncurses
   - stage: rhash
   - stage: tools-xz
-  - stage: zlib
+  - stage: tools-zlib
 steps:
   - sources:
       - url: https://www.cmake.org/files/v{{ regexReplaceAll ".\\d+$" .cmake_version "${1}" }}/cmake-{{ .cmake_version }}.tar.gz

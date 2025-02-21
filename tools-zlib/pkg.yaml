@@ -1,4 +1,4 @@
-name: zlib
+name: tools-zlib
 variant: scratch
 dependencies:
   - stage: base

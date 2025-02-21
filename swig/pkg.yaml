@@ -2,7 +2,7 @@ name: swig
 variant: scratch
 dependencies:
   - stage: base
-  - stage: zlib
+  - stage: tools-zlib
   - stage: autoconf
   - stage: automake
   - stage: tools-pcre2
