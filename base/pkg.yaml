@@ -2,4 +2,9 @@ name: base
 variant: scratch
 dependencies:
   - image: "{{ .TOOLCHAIN_IMAGE }}"
-    runtime: true
+    to: /rootfs
+finalize:
+  - from: /pkg/fhs-validator.sh
+    to: /usr/bin/fhs-validator
+  - from: /rootfs
+    to: /
