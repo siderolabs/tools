@@ -41,6 +41,10 @@ steps:
         mkdir /rootfs
         make install DESTDIR=/rootfs
         rm -r /rootfs/usr/sbin
+        rm -r /rootfs/usr/share
+    test:
+      - |
+        fhs-validator /rootfs
 finalize:
   - from: /rootfs
     to: /

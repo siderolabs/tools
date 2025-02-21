@@ -2,7 +2,7 @@ name: tools
 variant: scratch
 shell: /bin/sh
 dependencies:
-  - image: '{{ .TOOLCHAIN_IMAGE }}'
+  - stage: base # toolchain + fhs-validator
   - stage: abseil
   - stage: argp-standalone
   - stage: autoconf

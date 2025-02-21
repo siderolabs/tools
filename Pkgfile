@@ -144,9 +144,9 @@ vars:
   gzip_sha512: e3d4d4aa4b2e53fdad980620307257c91dfbbc40bcec9baa8d4e85e8327f55e2ece552c9baf209df7b66a07103ab92d4954ac53c86c57fbde5e1dd461143f94c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
-  kmod_version: 33
-  kmod_sha256: dc768b3155172091f56dc69430b5481f2d76ecd9ccb54ead8c2540dbcf5ea9bc
-  kmod_sha512: 32d79d0bb7e89012f18458d4e88325f8e19a7dba6e1d5cff01aec3e618d1757b0f7c119735bf38d02e0d056a14273fd7522fca7c61a4d12a3ea5854bb662fff8
+  kmod_version: 34
+  kmod_sha256: 12e7884484151fbd432b6a520170ea185c159f4393c7a2c2a886ab820313149a
+  kmod_sha512: 214ef8ea78da059a1dd8cce66267690f27ee47e22398e7b0e0b68834c42eb94f2b77cf99ef9c4bdb3f0aee103abda1d9bc9dfc414051e9ad47a72e063802fdbf
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
   libbpf_version: v1.5.0
@@ -296,9 +296,9 @@ vars:
   python_build_sha512: bdf023c6b578ea77c7fc49c71c7d908bcc9ff6b9255b2767e45b09aca0a39a5297d264695a864fe34772e5d8898a18a90f6e262514bf90daf14db762a8bbe4be
 
   # renovate: datasource=github-tags depName=pypa/flit
-  python_flit_core_version: 3.10.1
-  python_flit_core_sha256: caf7f938719658c11699ad014964e10a9fce8cb04fe4ff8bf15c613136b579f0
-  python_flit_core_sha512: 51f797f480102fe89cd69f3fbd91c614b2390a37659c589622f2c7938cc64bc223f710e07365766159b6833d7afdafef4461a92667b6e3ae786df5137a877ee1
+  python_flit_core_version: 3.11.0
+  python_flit_core_sha256: f7ae0e714dce1f733d510bce47a4ce10cd088acffc00053f0a873f625466ca9f
+  python_flit_core_sha512: 99ebec876ee9607b4fc8803719a5e62716bd48df3d2704f4d8cf99504421ec5068c4c59947a1b6f2d1e7e2a714e39e50b30385e04bb14c52c271e1dcadd8b6b5
 
   # renovate: datasource=github-tags depName=projg2/gpep517
   python_gpep517_version: v16
@@ -325,10 +325,10 @@ vars:
   python_packaging_sha256: c448ea78de5134f5002a2aa2bb62a0fb4714bb4ab2d2b00bce8ed6ca22502d5a
   python_packaging_sha512: cab6be7284c6bc2abce7a5bbdc25a40e33378576c5590dad4aef9d835a2205af81ca24af7ae3603d0e4e32f8865d87a621187dae2f86df6ac613c9886d482804
 
-  # renovate: datasource=github-releases depName=pypa/setuptools
-  python_setuptools_version: v75.8.0
-  python_setuptools_sha256: 7a1ab1a2335ac305db3297961774d516d39fe516a9495832011ed16105a439c2
-  python_setuptools_sha512: 500cbd8605970f1ef7d70d512a8f7879b43e6807bb335d8c7f03c18c53ac6212ef3337d2e7678b626adde12b1d6830fe384e001a26c7919ac2594c53e243356a
+  # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
+  python_setuptools_version: 75.8.0
+  python_setuptools_sha256: c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6
+  python_setuptools_sha512: 4afa657c5259f9f405c39d82d8c264236749861ba2b104e8b26dd49da8ffb27ad3089ea894f2bb65208f480d7a4042114b93228f1cf2b224dc248774d7681a3d
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.5
@@ -388,8 +388,8 @@ vars:
   zlib_sha512: 580677aad97093829090d4b605ac81c50327e74a6c2de0b85dd2e8525553f3ddde17556ea46f8f007f89e435493c9a20bc997d1ef1c1c2c23274528e3c46b94f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=facebook/zstd
-  zstd_version: 1.5.6
-  zstd_sha256: 8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a34fd403c1
-  zstd_sha512: 54a578f2484da0520a6e9a24f501b9540a3fe3806785d6bc9db79fc095b7c142a7c121387c7eecd460ca71446603584ef1ba4d29a33ca90873338c9ffbd04f14
+  zstd_version: 1.5.7
+  zstd_sha256: eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3
+  zstd_sha512: b4de208f179b68d4c6454139ca60d66ed3ef3893a560d6159a056640f83d3ee67cdf6ffb88971cdba35449dba4b597eaa8b4ae908127ef7fd58c89f40bf9a705
 labels:
   org.opencontainers.image.source: https://github.com/siderolabs/tools

@@ -2,7 +2,18 @@ name: tools-kmod
 variant: scratch
 dependencies:
   - stage: base
-  - stage: patch
+  - stage: coreutils
+  - stage: libffi
+  - stage: python3
+  - stage: python-setuptools
+  - stage: tools-openssl
+  - stage: tools-zlib
+  - stage: meson
+  - stage: ninja
+  - stage: pkg-config
+  - stage: tools-zstd
+  - stage: tools-xz
+  - stage: gzip
 steps:
   - sources:
       - url: https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-{{ .kmod_version }}.tar.xz
@@ -12,22 +23,16 @@ steps:
     prepare:
       - |
         tar -xJf kmod.tar.xz --strip-components=1
-
-        patch -p1 < /pkg/patches/strndupa.patch
-
-        mkdir build
-        cd build
-        ../configure \
-            --prefix=/usr \
-            --disable-manpages
+        meson setup build --prefix=/usr -Dmanpages=false --sbindir=bin
     build:
       - |
-        cd build
-        make -j $(nproc)
+        meson compile -C build
     install:
       - |
-        cd build
-        make DESTDIR=/rootfs install
+        meson install -C build --destdir=/rootfs
+    test:
+      - |
+        fhs-validator /rootfs
 finalize:
   - from: /rootfs
     to: /

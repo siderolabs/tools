@@ -45,6 +45,9 @@ steps:
       - |
         cd openssl
         make DESTDIR=/rootfs install_sw
+    test:
+      - |
+        fhs-validator /rootfs
 finalize:
   - from: /rootfs
     to: /

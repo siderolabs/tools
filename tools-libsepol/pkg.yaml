@@ -23,6 +23,9 @@ steps:
     install:
       - |
         make install DESTDIR=/rootfs SHLIBDIR=/usr/lib
+    test:
+      - |
+        fhs-validator /rootfs
 finalize:
   - from: /rootfs
     to: /

@@ -26,6 +26,9 @@ steps:
         cd squashfs-tools
         mkdir -p /rootfs/usr/bin
         make install INSTALL_DIR=/rootfs/usr/bin
+    test:
+      - |
+        fhs-validator /rootfs
 finalize:
   - from: /rootfs
     to: /
