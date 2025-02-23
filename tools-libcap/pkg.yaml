@@ -20,6 +20,9 @@ steps:
       - |
         make DESTDIR=/rootfs PREFIX=/usr lib=/usr/lib sbin=/usr/bin install
         rm -rf /rootfs/usr/share
+    test:
+      - |
+        fhs-validator /rootfs
 finalize:
   - from: /rootfs
     to: /
