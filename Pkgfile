@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.14.0-alpha.0-6-g818b320
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.14.0-alpha.0-7-g60b660e
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20250127.0
@@ -145,7 +145,7 @@ vars:
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
   kmod_version: 33
-  kmod_sha256: dc768b3155172091f56dc69430b5481f2d76ecd9ccb54ead8c2540dbcf5ea9bc 
+  kmod_sha256: dc768b3155172091f56dc69430b5481f2d76ecd9ccb54ead8c2540dbcf5ea9bc
   kmod_sha512: 32d79d0bb7e89012f18458d4e88325f8e19a7dba6e1d5cff01aec3e618d1757b0f7c119735bf38d02e0d056a14273fd7522fca7c61a4d12a3ea5854bb662fff8
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
@@ -154,9 +154,9 @@ vars:
   libbpf_sha512: 0cc25addcf5fcee0537d598037feab4bc73a513e6025d8f559bed58fe8850a10fcfeefd1a9dafc5e0bac6202d445944b12811cb7254b9b3be4dd3d2cc1e9419b
 
   # renovate: datasource=git-tags extractVersion=^libcap-(?<version>.*)$ depName=git://git.kernel.org/pub/scm/libs/libcap/libcap.git
-  libcap_version: 2.73
-  libcap_sha256: 6405f6089cf4cdd8c271540cd990654d78dd0b1989b2d9bda20f933a75a795a5
-  libcap_sha512: 8ab72cf39bf029656b2a4a5972a0da4ab4b46a3d8a8da66d6cde925e06fe34df2fa5fc4d0b62c9cec4972b0b2678fdac6ef9421b6fb83c2a5bf869cf8d5fdb16
+  libcap_version: 2.75
+  libcap_sha256: de4e7e064c9ba451d5234dd46e897d7c71c96a9ebf9a0c445bc04f4742d83632
+  libcap_sha512: 229e9b62a1d54024107cbf321fffcb152c0071154554a3fcee6e09e19cc47fd1fd862575135a4fc589b79a043f760bf40d26ea9fd58638f26e809533c017d65f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
   libffi_version: 3.4.7
@@ -265,9 +265,9 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 29.3
-  protobuf_sha256: 008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e
-  protobuf_sha512: 0c776133f5789d21baa8860cb41e7926a162d74810a01722b762a78f93e559494e903fcaa092515bfe2ce057fd065a5dd000b316edb1af32c2ef9dbadf02b4c6
+  protobuf_version: 30.0
+  protobuf_sha256: 9df0e9e8ebe39f4fbbb9cf7db3d811287fe3616b2f191eb2bf5eaa12539c881f
+  protobuf_sha512: 7acdf9b3754aec1032ebcfe764cd13e6530a4da6d64197cab498b206b6ea91d7a1afc9a97e3d2c8654d5c6291ffaa050916faa2eb5e9e223fd35aa0ec162ebdd
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
   protoc_gen_go_version: v1.36.5
@@ -275,9 +275,9 @@ vars:
   protoc_gen_go_sha512: 19c42045781216fbcece6d2b7904e6cb65bc2f8070cf7befbb1215d10582307850c2b53178112279ad43238583a080a3e62eab6ecfff8e4f3b53c3883875a79b
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.70.0
-  protoc_gen_go_grpc_sha256: 40719afc7a6fed9572cb4deeb902e7659095370dac87bb74c4273128deff38c3
-  protoc_gen_go_grpc_sha512: 662f95b05a7614957147660aab44797f2be7923616003d827147da6bce033a40aa4a6509b96ebe1cd9eb30d0f42e577fb6e1b5cbd3f263733c51f73dc2fdf6ee
+  protoc_gen_go_grpc_version: v1.71.0
+  protoc_gen_go_grpc_sha256: e9efa4bf90bf3b290bb8cebb6ed3b03c0e5ec87f3f10f47b81db9994702b5e7a
+  protoc_gen_go_grpc_sha512: 30b3c7a37d7299a8addae888c14193779c9ff5f07f1fd9f3c37eaa38ff60ffee5a10ac024810d35202e7920d9fc0ca83313351b04a41318ac96cabcb633df200
 
   # renovate: datasource=github-tags depName=eliben/pyelftools
   pyelftools_version: v0.31
@@ -326,9 +326,9 @@ vars:
   python_packaging_sha512: cab6be7284c6bc2abce7a5bbdc25a40e33378576c5590dad4aef9d835a2205af81ca24af7ae3603d0e4e32f8865d87a621187dae2f86df6ac613c9886d482804
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
-  python_setuptools_version: 75.8.0
-  python_setuptools_sha256: c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6
-  python_setuptools_sha512: 4afa657c5259f9f405c39d82d8c264236749861ba2b104e8b26dd49da8ffb27ad3089ea894f2bb65208f480d7a4042114b93228f1cf2b224dc248774d7681a3d
+  python_setuptools_version: 75.8.2
+  python_setuptools_sha256: 4880473a969e5f23f2a2be3646b2dfd84af9028716d398e46192f84bc36900d2
+  python_setuptools_sha512: adf7f5d2eab7621b03c86e3f96857b176631108dc8a0eba2b16b87e394bff0b607998bc24cc074cd3f7b0ed6dbe0bd753cce5af2f108fce2473fb50b22f32913
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.5
