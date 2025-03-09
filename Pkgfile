@@ -144,7 +144,7 @@ vars:
   gzip_sha512: e3d4d4aa4b2e53fdad980620307257c91dfbbc40bcec9baa8d4e85e8327f55e2ece552c9baf209df7b66a07103ab92d4954ac53c86c57fbde5e1dd461143f94c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
-  kmod_version: 33
+  kmod_version: 34.1
   kmod_sha256: dc768b3155172091f56dc69430b5481f2d76ecd9ccb54ead8c2540dbcf5ea9bc
   kmod_sha512: 32d79d0bb7e89012f18458d4e88325f8e19a7dba6e1d5cff01aec3e618d1757b0f7c119735bf38d02e0d056a14273fd7522fca7c61a4d12a3ea5854bb662fff8
 
@@ -311,7 +311,7 @@ vars:
   python_installer_sha512: a509c6ea9d88b8527cce0428ca6109077820cb9aa352967a389012bac40f8ec04039ab73710f4fb32b32ed20affd520ce0ba16ba18d9d380ce0af1f51fe8e2c6
 
   # renovate: datasource=github-releases depName=pallets/jinja
-  python_jinja2_version: 3.1.5
+  python_jinja2_version: 3.1.6
   python_jinja2_sha256: 684d78790cc747f4b4b68b365783af8cac770c2c66d9f414b21c8b8480e019d0
   python_jinja2_sha512: 8dcd663e30ed2b9d81822779fe7f857caf54d95ecb2ba6f7e43bd8a3cf8d11bb15a7c6e82af6cbf2ccd40a075b55b2bd5a39511e645e614378831f4b57706b68
 
@@ -326,7 +326,7 @@ vars:
   python_packaging_sha512: cab6be7284c6bc2abce7a5bbdc25a40e33378576c5590dad4aef9d835a2205af81ca24af7ae3603d0e4e32f8865d87a621187dae2f86df6ac613c9886d482804
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
-  python_setuptools_version: 75.8.2
+  python_setuptools_version: 75.9.1
   python_setuptools_sha256: 4880473a969e5f23f2a2be3646b2dfd84af9028716d398e46192f84bc36900d2
   python_setuptools_sha512: adf7f5d2eab7621b03c86e3f96857b176631108dc8a0eba2b16b87e394bff0b607998bc24cc074cd3f7b0ed6dbe0bd753cce5af2f108fce2473fb50b22f32913
 
@@ -336,7 +336,7 @@ vars:
   rhash_sha512: 49bd6aa2497efc4871ae31eaca51d2dc78ceb7126311557d5280b14fafe9355eaecad37f0f78f865e4e1dd1aeb506d3301989cd2f9fff7b0091c81978e8c2f2e
 
   # renovate: datasource=github-tags depName=SELinuxProject/selinux
-  selinux_version: 3.8
+  selinux_version: 3.8.1
   libselinux_sha256: 0c3756bca047c9270281d7c4dcdecd000b72e38a183c930661eba9690839b541
   libselinux_sha512: e36edec33c3960679a8975f839a4d64d4b1f82d51346fba21082c2686136259040099c7fee2c947ac2ca180d61d10356c9b3d359a1c5f1242b6ecdd7c036005e
   libsepol_sha256: 844fbdbf02334b9ce03833ad8a671053f67b4076d72db4f03e0ee2665ec2eb55
