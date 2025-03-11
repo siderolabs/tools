@@ -1,144 +1,60 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": "THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.",
+    "prHeader": "Update Request | Renovate Bot",
     "extends": [
         ":dependencyDashboard",
         ":gitSignOff",
         ":semanticCommitScopeDisabled",
         "schedule:earlyMondays"
     ],
-    "prHeader": "Update Request | Renovate Bot",
-    "regexManagers": [
+    "customManagers": [
         {
+            "customType": "regex",
+            "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}",
             "fileMatch": [
                 "Pkgfile"
             ],
             "matchStrings": [
-                "# renovate: datasource=(?<datasource>.*?)(?:\\s+extractVersion=(?<extractVersion>.+?))?(?:\\s+versioning=(?<versioning>.+?))?\\s+depName=(?<depName>.+?)?\\s(?:\\s+.*_(?:version|VERSION):\\s+(?<currentValue>.*))?(?:\\s.*_(?:ref|REF):\\s+(?<currentDigest>.*))?"
-            ],
-            "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+                "# renovate: datasource=(?<datasource>.*?)(?:\\s+extractVersion=(?<extractVersion>.+?))?(?:\\s+versioning=(?<versioning>.+?))?\\s+depName=(?<depName>.+?)?\\s(?:.*_(?:version|VERSION):\\s+(?<currentValue>.*))?(?:(\\s)?.*_(?:ref|REF):\\s+(?<currentDigest>.*))?"
+            ]
         },
         {
+            "customType": "regex",
+            "datasourceTemplate": "github-tags",
+            "depNameTemplate": "siderolabs/bldr",
+            "versioningTemplate": "semver",
             "fileMatch": [
-                "Pkgfile",
-                "Makefile"
+                "Pkgfile"
             ],
             "matchStrings": [
                 "ghcr.io\\/siderolabs\\/bldr:(?<currentValue>v.*)"
-            ],
-            "depNameTemplate": "siderolabs/bldr",
-            "datasourceTemplate": "github-tags",
-            "versioningTemplate": "semver"
+            ]
         }
     ],
     "packageRules": [
         {
-            "matchPackageNames": [
-                "golang/go",
-                "mirror/ncurses",
-                "PCRE2Project/pcre2",
-                "plougher/squashfs-tools",
-                "SELinuxProject/selinux",
-                "git://git.savannah.gnu.org/make.git",
-                "git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git",
-                "git://git.savannah.gnu.org/automake.git",
-                "git://git.savannah.gnu.org/bison.git",
-                "git://git.savannah.gnu.org/coreutils.git",
-                "git://git.savannah.gnu.org/diffutils.git",
-                "git://sourceware.org/git/elfutils.git",
-                "git://git.savannah.gnu.org/gettext.git",
-                "git://git.savannah.gnu.org/gperf.git",
-                "git://git.savannah.gnu.org/grep.git",
-                "git://git.savannah.gnu.org/gzip.git",
-                "git://git.kernel.org/pub/scm/devel/pahole/pahole.git",
-                "git://git.savannah.gnu.org/patch.git",
-                "https://gitlab.freedesktop.org/pkg-config/pkg-config.git",
-                "git://git.savannah.gnu.org/sed.git",
-                "git://git.savannah.gnu.org/texinfo.git",
-                "git://git.kernel.org/pub/scm/libs/libcap/libcap.git"
-            ],
-            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?$"
+            "groupName": "dependencies",
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch",
+                "pin",
+                "digest"
+            ]
         },
         {
-            "matchPackageNames": [
-                "abseil/abseil-cpp"
-            ],
-            "versioning": "regex:^(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})\\.?(?<build>\\d+)?$"
+            "enabled": false,
+            "matchFileNames": [
+                "Dockerfile"
+            ]
         },
         {
-            "matchPackageNames": [
-                "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git",
-                "systemd/systemd"
-            ],
-            "versioning": "regex:^(?<major>\\d+)\\.?(?<minor>\\d+)?\\.?(?<patch>\\d+)?$"
-        },
-        {
-            "matchPackageNames": [
-                "protocolbuffers/protobuf"
-            ],
-            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)"
-        },
-        {
-            "matchPackageNames": [
-                "curl/curl",
-                "libexpat/libexpat",
-                "file/file",
-                "git://git.savannah.gnu.org/cpio.git",
-                "git://git.savannah.gnu.org/tar.git"
-            ],
-            "versioning": "regex:^(?<major>\\d+)_(?<minor>\\d+)_?(?<patch>\\d+)?$"
-        },
-        {
-            "matchPackageNames": [
-                "git://git.savannah.gnu.org/autoconf.git",
-                "git://git.savannah.gnu.org/bash.git"
-            ],
-            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?$"
-        },
-        {
-            "matchPackageNames": [
-                "Perl/perl5"
-            ],
-            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d[02468]+)\\.(?<patch>\\d+)$"
-        },
-        {
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "matchDatasources": [
-                "docker"
-            ],
-            "groupName": "container images"
-        },
-        {
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "matchDatasources": [
-                "go",
-                "golang-version"
-            ],
-            "groupName": "go packages"
-        },
-        {
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "matchDatasources": [
-                "npm"
-            ],
-            "groupName": "node packages"
-        },
-        {
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "matchDatasources": [
-                "git-refs",
-                "git-tags",
-                "github-tags",
-                "github-releases"
-            ],
-            "groupName": "releases"
+            "enabled": false,
+            "matchFileNames": [
+                ".github/workflows/*.yaml"
+            ]
         }
-    ]
+    ],
+    "separateMajorMinor": false
 }
