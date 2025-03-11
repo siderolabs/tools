@@ -357,9 +357,9 @@ vars:
   squashfs_tools_sha512: 10e8a4b1e2327e062aef4f85860e76ebcd7a29e4c19e152ff7edec4a38316982b5bcfde4ab69da6bcb931258d264c2b6cb40cb5f635f9e6f6eba1ed5976267cb
 
   # renovate: datasource=github-tags depName=swig/swig
-  swig_version: v4.3.0
-  swig_sha256: f2136da1137a20dfcec795fe0d17ca1a2465d28e3b307f122526629b6b2f2294
-  swig_sha512: 0a9bdcc4a28f1374f9e564fdb372f684bd277bf7b590491218c3538c230bcacd8de32365717a37cf5d7d02165dec9f3955e1bb1207181885fb5b7fbc7476ff04
+  swig_version: v4.2.1
+  swig_sha256: 8895878b9215612e73611203dc8f5232c626e4d07ffc4532922f375518f067ca
+  swig_sha512: 5d653333f73356d4d5ba8b615882e49f33f188bc68d8204352116bc4aca7946ec01ce2e02524c5ce805b98c2219ed05e664120485bf18095c5c0785436487074
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34
