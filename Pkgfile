@@ -372,9 +372,9 @@ vars:
   texinfo_sha512: 8e67337ae12a552fc620c43725507a4978710ea6630e98b0f5e98eb3f79a90e191dde5225699aa6217c26f171d277461f76150f0459cd07b40c3234d2f3d89bf
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.41
-  util_linux_sha256: 81ee93b3cfdfeb7d7c4090cedeba1d7bbce9141fd0b501b686b3fe475ddca4c6
-  util_linux_sha512: 800ff92ee7a047732c0accb9dd759d6ed659947373ca72e0dd3ca601d0a6fed9db92c0838cfaff6bcdb8c08bdc1ffa675721893f42945885c57ccd59ab676318
+  util_linux_version: 2.40.4
+  util_linux_sha256: 5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79
+  util_linux_sha512: 0024955056ba7b4c54040a917f9919f49692e57ba6d42d17a6c29c1eefe88bf48b1214a545072b71c468829a63a8f15237f49733e9127c134e11126d1e435124
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
   # NOTE: using 5.4.5 the version debian downgraded to. Ref: https://www.openwall.com/lists/oss-security/2024/03/29/4
