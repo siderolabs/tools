@@ -3,10 +3,14 @@ variant: scratch
 dependencies:
   - stage: base
   - stage: libffi
+    runtime: true
   - stage: python3
+    runtime: true
   - stage: python-setuptools
   - stage: tools-openssl
+    runtime: true
   - stage: tools-zlib
+    runtime: true
 steps:
   - sources:
       - url: https://github.com/mesonbuild/meson/releases/download/{{ .meson_version }}/meson-{{ .meson_version }}.tar.gz

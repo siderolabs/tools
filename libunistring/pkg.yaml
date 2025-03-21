@@ -18,7 +18,7 @@ steps:
 
     build:
       - |
-        make DESTDIR=/rootfs
+        make -j $(nproc) DESTDIR=/rootfs
     install:
       - |
         make DESTDIR=/rootfs install
