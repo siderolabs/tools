@@ -83,7 +83,7 @@ vars:
   elfutils_sha512: 543188f5f2cfe5bc7955a878416c5f252edff9926754e5de0c6c57b132f21d9285c9b29e41281e93baad11d4ae7efbbf93580c114579c182103565fe99bd3909
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_7_0
+  expat_version: 2_7_1
   expat_sha256: 10f3e94896cd7f44de566cafa2e0e1f35e8df06d119b38d117c0e72d74a4b4b7
   expat_sha512: 5c21df2c84b20e3021ab62674b6afbc68a00f37d2b1e6120632d8aeb02cf4bd9bd925da9ff696ab34b3c188c59cd461df41e5d4b287de53f9034729d434c34d7
 
@@ -144,7 +144,7 @@ vars:
   gzip_sha512: e3d4d4aa4b2e53fdad980620307257c91dfbbc40bcec9baa8d4e85e8327f55e2ece552c9baf209df7b66a07103ab92d4954ac53c86c57fbde5e1dd461143f94c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
-  kmod_version: 34.1
+  kmod_version: 34.2
   kmod_sha256: 125957c9125fc5db1bd6a2641a1c9a6a0b500882fb8ccf7fb6483fcae5309b17
   kmod_sha512: f1f5026f31747270aea8b65df9eca95cc253e48622bfdb87e016e272a79ad1e90c0026cdf83a947fd53d8cbc1be1c546a5116db9617b690ab1b80f9792b6f5b2
 
@@ -265,12 +265,12 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 30.1
+  protobuf_version: 30.2
   protobuf_sha256: 1451b03faec83aed17cdc71671d1bbdfd72e54086b827f5f6fd02bf7a4041b68
   protobuf_sha512: bd1516718a8bfa2420a75ac94476dcc3315ee78633656d3ccdb346189320bad1584040d0c13904139dd0d11c89472dcc2b211f92efd6b298a648714fac56bb95
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
-  protoc_gen_go_version: v1.36.5
+  protoc_gen_go_version: v1.36.6
   protoc_gen_go_sha256: a669a85f92c229768e51877c6ed9b2c7d33c31ab089345b616dd3da1d815534d
   protoc_gen_go_sha512: 19c42045781216fbcece6d2b7904e6cb65bc2f8070cf7befbb1215d10582307850c2b53178112279ad43238583a080a3e62eab6ecfff8e4f3b53c3883875a79b
 
@@ -296,7 +296,7 @@ vars:
   python_build_sha512: bdf023c6b578ea77c7fc49c71c7d908bcc9ff6b9255b2767e45b09aca0a39a5297d264695a864fe34772e5d8898a18a90f6e262514bf90daf14db762a8bbe4be
 
   # renovate: datasource=github-tags depName=pypa/flit
-  python_flit_core_version: 3.11.0
+  python_flit_core_version: 3.12.0
   python_flit_core_sha256: f7ae0e714dce1f733d510bce47a4ce10cd088acffc00053f0a873f625466ca9f
   python_flit_core_sha512: 99ebec876ee9607b4fc8803719a5e62716bd48df3d2704f4d8cf99504421ec5068c4c59947a1b6f2d1e7e2a714e39e50b30385e04bb14c52c271e1dcadd8b6b5
 
@@ -326,7 +326,7 @@ vars:
   python_packaging_sha512: cab6be7284c6bc2abce7a5bbdc25a40e33378576c5590dad4aef9d835a2205af81ca24af7ae3603d0e4e32f8865d87a621187dae2f86df6ac613c9886d482804
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
-  python_setuptools_version: 77.0.3
+  python_setuptools_version: 78.1.0
   python_setuptools_sha256: 583b361c8da8de57403743e756609670de6fb2345920e36dc5c2d914c319c945
   python_setuptools_sha512: 3b8ff731b4c42c3a4d0a8b785822f6f112ebce950874e7adb3a86aedc27bf53a88d931146313f5f05c131be383a8b2c06fb0c1bf542ca7eb209e68d110b4f958
 
@@ -357,7 +357,7 @@ vars:
   squashfs_tools_sha512: 10e8a4b1e2327e062aef4f85860e76ebcd7a29e4c19e152ff7edec4a38316982b5bcfde4ab69da6bcb931258d264c2b6cb40cb5f635f9e6f6eba1ed5976267cb
 
   # renovate: datasource=github-tags depName=swig/swig
-  swig_version: v4.2.1
+  swig_version: v4.3.0
   swig_sha256: 8895878b9215612e73611203dc8f5232c626e4d07ffc4532922f375518f067ca
   swig_sha512: 5d653333f73356d4d5ba8b615882e49f33f188bc68d8204352116bc4aca7946ec01ce2e02524c5ce805b98c2219ed05e664120485bf18095c5c0785436487074
 
@@ -372,7 +372,7 @@ vars:
   texinfo_sha512: 8e67337ae12a552fc620c43725507a4978710ea6630e98b0f5e98eb3f79a90e191dde5225699aa6217c26f171d277461f76150f0459cd07b40c3234d2f3d89bf
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.40.4
+  util_linux_version: 2.41
   util_linux_sha256: 5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79
   util_linux_sha512: 0024955056ba7b4c54040a917f9919f49692e57ba6d42d17a6c29c1eefe88bf48b1214a545072b71c468829a63a8f15237f49733e9127c134e11126d1e435124
 
