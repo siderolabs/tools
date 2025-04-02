@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.14.0-alpha.0-7-g60b660e
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v0.14.0-alpha.0-9-g98c4d8a
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20250127.1
@@ -43,9 +43,9 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 3.26.4 # cmake 3.27.1 seems buggy, looks for jsoncpp while disabled
-  cmake_sha256: 313b6880c291bd4fe31c0aa51d6e62659282a521e695f30d5cc0d25abbd5c208
-  cmake_sha512: fe817c8d5e247db3f0a9a58ee37c466a47220100d9e90711cd5d06c223cef87e41d1a756e75d1537e5f8cd010dcb8971cbeab4684b1ac12bcecf84bf7b720167
+  cmake_version: 4.0.0
+  cmake_sha256: ddc54ad63b87e153cf50be450a6580f1b17b4881de8941da963ff56991a4083b
+  cmake_sha512: 6892f68a48f428b7d7321e646b75d72f751a20b44e74696d445c90dc0dc8be7894f546d70e3749ff44a1bbea0371e9f4d509a9c116c17c231db65affe60945df
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.6
@@ -58,9 +58,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_12_1
-  curl_sha256: 0341f1ed97a26c811abaebd37d62b833956792b7607ea3f15d001613c76de202
-  curl_sha512: 88915468fa1bb7256e3dd6c9d058ada6894faa1e3e7800c7d9bfee3e8be4081ae57e7f2bf260c5342b709499fc4302ddc2d7864e25bfa3300fa07f118a3de603
+  curl_version: 8_13_0
+  curl_sha256: 4a093979a3c2d02de2fbc00549a32771007f2e78032c6faa5ecd2f7a9e152025
+  curl_sha512: d266e460f162ee455b56726e5b7247b2d1aa5265ae12081513fc0c5c79e785a594097bc71d505dc9bcd2c2f6f1ff6f4bab9dbd9d120bb76d06c5be8521a8ca7d
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/diffutils.git
   diffutils_version: 3.11
@@ -83,9 +83,9 @@ vars:
   elfutils_sha512: 543188f5f2cfe5bc7955a878416c5f252edff9926754e5de0c6c57b132f21d9285c9b29e41281e93baad11d4ae7efbbf93580c114579c182103565fe99bd3909
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_7_0
-  expat_sha256: 10f3e94896cd7f44de566cafa2e0e1f35e8df06d119b38d117c0e72d74a4b4b7
-  expat_sha512: 5c21df2c84b20e3021ab62674b6afbc68a00f37d2b1e6120632d8aeb02cf4bd9bd925da9ff696ab34b3c188c59cd461df41e5d4b287de53f9034729d434c34d7
+  expat_version: 2_7_1
+  expat_sha256: 45c98ae1e9b5127325d25186cf8c511fa814078e9efeae7987a574b482b79b3d
+  expat_sha512: ea78781ca03367a014afc1bb37c2306883b6f666d7cd90dc84a39c4abc6b7ec261636b8668540aa286c708a41dd02baae8249dc4391306da56431700460a0f23
 
   # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=git://salsa.debian.org/clint/fakeroot.git
   fakeroot_version: 1.36
@@ -144,9 +144,9 @@ vars:
   gzip_sha512: e3d4d4aa4b2e53fdad980620307257c91dfbbc40bcec9baa8d4e85e8327f55e2ece552c9baf209df7b66a07103ab92d4954ac53c86c57fbde5e1dd461143f94c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
-  kmod_version: 34.1
-  kmod_sha256: 125957c9125fc5db1bd6a2641a1c9a6a0b500882fb8ccf7fb6483fcae5309b17
-  kmod_sha512: f1f5026f31747270aea8b65df9eca95cc253e48622bfdb87e016e272a79ad1e90c0026cdf83a947fd53d8cbc1be1c546a5116db9617b690ab1b80f9792b6f5b2
+  kmod_version: 34.2
+  kmod_sha256: 5a5d5073070cc7e0c7a7a3c6ec2a0e1780850c8b47b3e3892226b93ffcb9cb54
+  kmod_sha512: 0e095c45ad61a6c61ce1ad61b9aa10cf5040e688b749f9a933b0e7d12de493c58027a5068b459cbbce05576fc564a22b83a3dbef1e6511b2a3e27034c88afd33
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
   libbpf_version: v1.5.0
@@ -194,9 +194,9 @@ vars:
   m4_sha512: 47f595845c89709727bda0b3fc78e3188ef78ec818965b395532e7041cabe9e49677ee4aca3d042930095a7f8df81de3da1026b23b6897be471f6cf13ddd512b
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.7.0
-  meson_sha256: 08efbe84803eed07f863b05092d653a9d348f7038761d900412fddf56deb0284
-  meson_sha512: a5d1f00b193ca37ae64f85c9dfc29a2661c167d82d9953b9acd1393b222b05fa5fc03ffdf00fd1ae7a2014da3a7366c35f70bf02e3204e929b74f7b00c17c840
+  meson_version: 1.7.1
+  meson_sha256: 155780a5be87f6dd7f427ad8bcbf0f2b2c5f62ee5fdacca7caa9de8439a24b89
+  meson_sha512: bad913c59f540b701a0d234a868bd88615ccfcdc09931f8dea7b4da48bcc3a3c3c7e9cdeeff5abfcd48c6b2b25e5c60590811125b7156da36b714e00b35813c6
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.3.1
@@ -244,9 +244,9 @@ vars:
   pahole_sha512: 3b7324b20bef5cc58ff113783d1197e5342514ba40116972a73ba76314613934574cee9d6874444532838d5bcceb834bbd9307f0d507175a23d10f2f96578584
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/patch.git
-  patch_version: 2.7.6
-  patch_sha256: ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
-  patch_sha512: fcca87bdb67a88685a8a25597f9e015f5e60197b9a269fa350ae35a7991ed8da553939b4bbc7f7d3cfd863c67142af403b04165633acbce4339056a905e87fbd
+  patch_version: 2.8
+  patch_sha256: f87cee69eec2b4fcbf60a396b030ad6aa3415f192aa5f7ee84cad5e11f7f5ae3
+  patch_sha512: d689d696660a662753e8660792733c3be0a94c76abfe7a28b0f9f70300c3a42d6437d081553a59bfde6e1b0d5ee13ed89be48d0b00b6da2cadbfc14a15ada603
 
   # renovate: datasource=github-releases extractVersion=^pcre2-(?<version>.*)$ depName=PCRE2Project/pcre2
   pcre2_version: 10.45
@@ -265,19 +265,19 @@ vars:
   pkg_config_sha512: 4861ec6428fead416f5cbbbb0bbad10b9152967e481d4b0ff2eb396a9f297f552984c9bb72f6864a37dcd8fca1d9ccceda3ef18d8f121938dbe4fdf2b870fe75
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=protocolbuffers/protobuf
-  protobuf_version: 30.1
-  protobuf_sha256: 1451b03faec83aed17cdc71671d1bbdfd72e54086b827f5f6fd02bf7a4041b68
-  protobuf_sha512: bd1516718a8bfa2420a75ac94476dcc3315ee78633656d3ccdb346189320bad1584040d0c13904139dd0d11c89472dcc2b211f92efd6b298a648714fac56bb95
+  protobuf_version: 30.2
+  protobuf_sha256: fb06709acc393cc36f87c251bb28a5500a2e12936d4346099f2c6240f6c7a941
+  protobuf_sha512: 555d1b18d175eeaf17f3879f124d33080f490367840d35b34bfc4e4a5b383bf6a1d09f1570acb6af9c53ac4940a14572d46423b6e3dd0c712e7802c986fb6be6
 
   # renovate: datasource=github-releases depName=protocolbuffers/protobuf-go
-  protoc_gen_go_version: v1.36.5
-  protoc_gen_go_sha256: a669a85f92c229768e51877c6ed9b2c7d33c31ab089345b616dd3da1d815534d
-  protoc_gen_go_sha512: 19c42045781216fbcece6d2b7904e6cb65bc2f8070cf7befbb1215d10582307850c2b53178112279ad43238583a080a3e62eab6ecfff8e4f3b53c3883875a79b
+  protoc_gen_go_version: v1.36.6
+  protoc_gen_go_sha256: afa2b0e8f86d6da9d09c51ab4270d93c2888327220316982be9db345f523a6a1
+  protoc_gen_go_sha512: 8da292743722bf7322691b93c6374fd87a11c6d6c87606684f437e089b928842578c7492e57f19effe23b5b01ad415fd0047701026cfe8cbbaa6281722426be0
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.71.0
-  protoc_gen_go_grpc_sha256: e9efa4bf90bf3b290bb8cebb6ed3b03c0e5ec87f3f10f47b81db9994702b5e7a
-  protoc_gen_go_grpc_sha512: 30b3c7a37d7299a8addae888c14193779c9ff5f07f1fd9f3c37eaa38ff60ffee5a10ac024810d35202e7920d9fc0ca83313351b04a41318ac96cabcb633df200
+  protoc_gen_go_grpc_version: v1.71.1
+  protoc_gen_go_grpc_sha256: 6e4e81a5656912f333ffa6bb72bc252634d3b9b923a932717a6a39b912ba18f7
+  protoc_gen_go_grpc_sha512: 7f380d90a1aaf332fcad7055660616254bc477c9bc133d502a7858e04559ee15f988ede8a3ec204fc08c22613e228636b31e3a0e601dedc2cee5a263f4369182
 
   # renovate: datasource=github-tags depName=eliben/pyelftools
   pyelftools_version: v0.31
@@ -296,9 +296,9 @@ vars:
   python_build_sha512: bdf023c6b578ea77c7fc49c71c7d908bcc9ff6b9255b2767e45b09aca0a39a5297d264695a864fe34772e5d8898a18a90f6e262514bf90daf14db762a8bbe4be
 
   # renovate: datasource=github-tags depName=pypa/flit
-  python_flit_core_version: 3.11.0
-  python_flit_core_sha256: f7ae0e714dce1f733d510bce47a4ce10cd088acffc00053f0a873f625466ca9f
-  python_flit_core_sha512: 99ebec876ee9607b4fc8803719a5e62716bd48df3d2704f4d8cf99504421ec5068c4c59947a1b6f2d1e7e2a714e39e50b30385e04bb14c52c271e1dcadd8b6b5
+  python_flit_core_version: 3.12.0
+  python_flit_core_sha256: c157ff92c01f4bb169182722ff76aadac113926b729215e91909021aa56e2ea3
+  python_flit_core_sha512: ff6df66dfdae6fdf7b277cc3fbb7c9a569103cbe82a3e3ce6f315ec6adec46be8692eba4549a66b3af537d128e6b57ed8f49316b705636466c25674198503643
 
   # renovate: datasource=github-tags depName=projg2/gpep517
   python_gpep517_version: v16
@@ -326,9 +326,9 @@ vars:
   python_packaging_sha512: cab6be7284c6bc2abce7a5bbdc25a40e33378576c5590dad4aef9d835a2205af81ca24af7ae3603d0e4e32f8865d87a621187dae2f86df6ac613c9886d482804
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
-  python_setuptools_version: 77.0.3
-  python_setuptools_sha256: 583b361c8da8de57403743e756609670de6fb2345920e36dc5c2d914c319c945
-  python_setuptools_sha512: 3b8ff731b4c42c3a4d0a8b785822f6f112ebce950874e7adb3a86aedc27bf53a88d931146313f5f05c131be383a8b2c06fb0c1bf542ca7eb209e68d110b4f958
+  python_setuptools_version: 78.1.0
+  python_setuptools_sha256: 18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54
+  python_setuptools_sha512: e0b9562a8b3bb7a6b664da84ef37e4f4f71df5dd3129b636ece798878e62bf4be60ff6b6643a98b7047e540e14c931eeb54b4e08c583ac1a86ffb5dc5e921c68
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.5

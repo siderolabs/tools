@@ -4,10 +4,10 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://curl.se/ca/cacert-2024-12-31.pem
+      - url: https://curl.se/ca/cacert-2025-02-25.pem
         destination: cacert.pem
-        sha256: a3f328c21e39ddd1f2be1cea43ac0dec819eaa20a90425d7da901a11531b3aa5
-        sha512: bf578937d7826106bae1ebe74a70bfbc439387445a1f41ef57430de9d9aea6fcfa1884381bf0ef14632f6b89e9543642c9b774fcca93837efffdc557c4958dbd
+        sha256: 50a6277ec69113f00c5fd45f09e8b97a4b3e32daa35d3a95ab30137a55386cef
+        sha512: e5fe41820460e6b65e8cd463d1a5f01b7103e1ef66cb75fedc15ebcba3ba6600d77e5e7c2ab94cbb1f11c63b688026a04422bbe2d7a861f7a988f67522ffae3c
     install:
       - |
         install -m644 -D cacert.pem /rootfs/etc/ssl/certs/ca-certificates

@@ -47,6 +47,7 @@ spec:
         - git://git.kernel.org/pub/scm/libs/libcap/libcap.git
         - git://git.savannah.gnu.org/autoconf.git
         - git://git.savannah.gnu.org/bash.git
+        - https://gitlab.kitware.com/cmake/cmake.git
       versioning: 'regex:^(?<major>\d+)\.(?<minor>\d+)\.?(?<patch>\d+)?$'
     - matchPackageNames:
         - abseil/abseil-cpp

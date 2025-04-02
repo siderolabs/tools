@@ -81,7 +81,8 @@
                 "git://git.savannah.gnu.org/texinfo.git",
                 "git://git.kernel.org/pub/scm/libs/libcap/libcap.git",
                 "git://git.savannah.gnu.org/autoconf.git",
-                "git://git.savannah.gnu.org/bash.git"
+                "git://git.savannah.gnu.org/bash.git",
+                "https://gitlab.kitware.com/cmake/cmake.git"
             ]
         },
         {

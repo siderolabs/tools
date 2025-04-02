@@ -25,7 +25,6 @@ steps:
 
         ./bootstrap \
             --prefix=/usr \
-            --system-libs \
             --no-system-jsoncpp \
             --no-system-libarchive \
             --parallel=$(nproc) \
