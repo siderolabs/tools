@@ -58,6 +58,7 @@
         {
             "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?$",
             "matchPackageNames": [
+                "AgentD/squashfs-tools-ng",
                 "golang/go",
                 "mirror/ncurses",
                 "PCRE2Project/pcre2",
