@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.11.0-alpha.0-1-gfa0b147
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.11.0-alpha.0-2-g96a1a28
 
   # stick to whatever version protobuf requires, see https://github.com/protocolbuffers/protobuf/blob/33d0cd03571aca25adf11d3a62add1d52d1cc27d/cmake/dependencies.cmake#L15
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
