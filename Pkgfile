@@ -9,7 +9,7 @@ vars:
 
   # stick to whatever version protobuf requires, see https://github.com/protocolbuffers/protobuf/blob/33d0cd03571aca25adf11d3a62add1d52d1cc27d/cmake/dependencies.cmake#L15
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
-  abseil_version: 20250127.1
+  abseil_version: 20250512.0
   abseil_sha256: b396401fd29e2e679cace77867481d388c807671dc2acc602a0259eeb79b7811
   abseil_sha512: 8312acf0ed74fa28c6397f3e41ada656dbd5ca2bf8db484319d74b144ad19c0ebdc77f7f03436be6c6ca1cde706b9055079233cf0d6b5ada4ca48406f8a55dd8
 
@@ -59,7 +59,7 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_14_0
+  curl_version: 8_14_1
   curl_sha256: b3634cfc538c72c9c6ca794ef4c73d7fdbd171e8dee2db837d83a5e45231002a
   curl_sha512: d9f49cac0b93dbc53879713cc017392b4277d84b489bbf2ef3b585c6a50eea6c3a7b80043286b34062af04329560f2dc321f315b0038ce93435aa9bbcaec1eea
 
@@ -130,7 +130,7 @@ vars:
   gperf_sha512: 246b75b8ce7d77d6a8725cd15f1cf2e68da404812573af1d5bf32dbe6ad4228f48757baefc77bcb1f5597c2397043c04d31d8a04ab507bfa7a80f85e1ab6045f
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/grep.git
-  grep_version: 3.11
+  grep_version: 3.12
   grep_sha256: 1db2aedde89d0dea42b16d9528f894c8d15dae4e190b59aecc78f5a951276eab
   grep_sha512: f254a1905a08c8173e12fbdd4fd8baed9a200217fba9d7641f0d78e4e002c1f2a621152d67027d9b25f0bb2430898f5233dc70909d8464fd13d7dd9298e65c42
 
@@ -160,7 +160,7 @@ vars:
   libcap_sha512: f9448628ce036a10ce71958b25e5dd31032c4d86d8d34d905d2dfa32890ad443804169d4c6b825fd4bfe260b5de20f046cee958e40268bcadbbe7f7731ae40ad
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
-  libffi_version: 3.4.8
+  libffi_version: 3.5.0
   libffi_sha256: bc9842a18898bfacb0ed1252c4febcc7e78fa139fd27fdc7a3e30d9d9356119b
   libffi_sha512: 05344c6c1a1a5b44704f6cf99277098d1ea3ac1dc11c2a691c501786a214f76184ec0637135588630db609ce79e49df3dbd00282dd61e7f21137afba70e24ffe
 
@@ -276,7 +276,7 @@ vars:
   protoc_gen_go_sha512: 8da292743722bf7322691b93c6374fd87a11c6d6c87606684f437e089b928842578c7492e57f19effe23b5b01ad415fd0047701026cfe8cbbaa6281722426be0
 
   # renovate: datasource=github-tags depName=grpc/grpc-go
-  protoc_gen_go_grpc_version: v1.72.2
+  protoc_gen_go_grpc_version: v1.73.0
   protoc_gen_go_grpc_sha256: 1162ab2d9c330d86407676b15c21dbc4c04d50f937b5fd2961d3bb4829d02add
   protoc_gen_go_grpc_sha512: 0bef7614cea7169e9d15c91ea2b3fa6edeb52bb246e5743502fe650db3735ca28c4e14e904ef53dc986a839858a9bb199b0dfb479bc25a648ecb0b8d55df5217
 
@@ -286,7 +286,7 @@ vars:
   pyelftools_sha512: 7f4ef37da7fda75125cb95ced2f3084848943592eff7deae7ae917508f1cd5281c96960ee3bbc6e503e71a4e2196622cd68cc67e3df1f4cd99b9b675f14fd58c
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.13.3
+  python_version: 3.13.4
   python_maj_min_version: 3.13
   python_sha256: 40f868bcbdeb8149a3149580bb9bfd407b3321cd48f0be631af955ac92c0e041
   python_sha512: f7559b6dceae69f48742af0a6497fbec42cd1e5304f64b6eb9d89222a1171ccf12fa186cc0decabb4e98d05223184967a4a7537754c01083dacdc9073cb1a578
@@ -353,12 +353,12 @@ vars:
   sed_sha512: 36157a4b4a2430cf421b7bd07f1675d680d9f1616be96cf6ad6ee74a9ec0fe695f8d0b1e1f0b008bbb33cc7fcde5e1c456359bbbc63f8aebdd4fedc3982cf6dc
 
   # renovate: datasource=github-tags depName=plougher/squashfs-tools
-  squashfs_tools_version: 4.6.1
+  squashfs_tools_version: 4.7
   squashfs_tools_sha256: 94201754b36121a9f022a190c75f718441df15402df32c2b520ca331a107511c
   squashfs_tools_sha512: 10e8a4b1e2327e062aef4f85860e76ebcd7a29e4c19e152ff7edec4a38316982b5bcfde4ab69da6bcb931258d264c2b6cb40cb5f635f9e6f6eba1ed5976267cb
 
   # renovate: datasource=github-tags depName=swig/swig
-  swig_version: v4.2.1
+  swig_version: v4.3.1
   swig_sha256: 8895878b9215612e73611203dc8f5232c626e4d07ffc4532922f375518f067ca
   swig_sha512: 5d653333f73356d4d5ba8b615882e49f33f188bc68d8204352116bc4aca7946ec01ce2e02524c5ce805b98c2219ed05e664120485bf18095c5c0785436487074
 
@@ -373,7 +373,7 @@ vars:
   texinfo_sha512: 8e67337ae12a552fc620c43725507a4978710ea6630e98b0f5e98eb3f79a90e191dde5225699aa6217c26f171d277461f76150f0459cd07b40c3234d2f3d89bf
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.40.4
+  util_linux_version: 2.41
   util_linux_sha256: 5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79
   util_linux_sha512: 0024955056ba7b4c54040a917f9919f49692e57ba6d42d17a6c29c1eefe88bf48b1214a545072b71c468829a63a8f15237f49733e9127c134e11126d1e435124
 
