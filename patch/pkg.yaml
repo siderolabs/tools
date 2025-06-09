@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/patch/patch-{{ .patch_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/patch/patch-{{ .patch_version }}.tar.xz
         destination: patch.tar.xz
         sha256: "{{ .patch_sha256 }}"
         sha512: "{{ .patch_sha512 }}"

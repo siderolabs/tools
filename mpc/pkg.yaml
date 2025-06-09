@@ -6,7 +6,7 @@ dependencies:
   - stage: mpfr
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/mpc/mpc-{{ .mpc_version }}.tar.gz
+      - url: https://ftpmirror.gnu.org/gnu/mpc/mpc-{{ .mpc_version }}.tar.gz
         destination: mpc.tar.gz
         sha256: "{{ .mpc_sha256 }}"
         sha512: "{{ .mpc_sha512 }}"

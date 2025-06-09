@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/findutils/findutils-{{ .findutils_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/findutils/findutils-{{ .findutils_version }}.tar.xz
         destination: findutils.tar.gz
         sha256: "{{ .findutils_sha256 }}"
         sha512: "{{ .findutils_sha512 }}"

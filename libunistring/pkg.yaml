@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/libunistring/libunistring-{{ .libunistring_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/libunistring/libunistring-{{ .libunistring_version }}.tar.xz
         destination: libunistring.tar.xz
         sha256: "{{ .libunistring_sha256 }}"
         sha512: "{{ .libunistring_sha512 }}"

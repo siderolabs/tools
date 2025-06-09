@@ -3,12 +3,9 @@ variant: scratch
 dependencies:
   - stage: base
 steps:
-  - sources:
-      # Actually there're other utils as well, but we only need getent for systemd
-      - url: https://gitlab.alpinelinux.org/alpine/aports/-/raw/fc814abe062715f90dbc17c47b3b360138a9a271/main/musl/getent.c
-        destination: getent.c
-        sha256: "b25f32d306d542246e9358ef65cd67c12b3e3a77656bc467853d3b0c76b5fbbd"
-        sha512: "27fa820dc847b1e4a89a45ab7c7ffb8b6436b6b7f1089004b12561d939b227617797d5fc81696658da3f07daab6cc71ea171eb6afb6f5082336b57e2d0ac8463"
+  - prepare:
+      - |
+        cp /pkg/src/getent.c .
     build:
       - |
         mkdir -p /rootfs/usr/bin

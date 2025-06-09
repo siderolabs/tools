@@ -8,7 +8,7 @@ dependencies:
     runtime: yes
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/autoconf/autoconf-{{ .autoconf_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/autoconf/autoconf-{{ .autoconf_version }}.tar.xz
         destination: autoconf.tar.xz
         sha256: "{{ .autoconf_sha256 }}"
         sha512: "{{ .autoconf_sha512 }}"

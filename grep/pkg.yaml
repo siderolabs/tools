@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/grep/grep-{{ .grep_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/grep/grep-{{ .grep_version }}.tar.xz
         destination: grep.tar.xz
         sha256: "{{ .grep_sha256 }}"
         sha512: "{{ .grep_sha512 }}"
