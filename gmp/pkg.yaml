@@ -5,7 +5,7 @@ dependencies:
   - stage: m4
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/gmp/gmp-{{ .gmp_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/gmp/gmp-{{ .gmp_version }}.tar.xz
         destination: gmp.tar.xz
         sha256: "{{ .gmp_sha256 }}"
         sha512: "{{ .gmp_sha512 }}"

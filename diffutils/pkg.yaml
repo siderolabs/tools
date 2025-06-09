@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/diffutils/diffutils-{{ .diffutils_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/diffutils/diffutils-{{ .diffutils_version }}.tar.xz
         destination: diffutils.tar.xz
         sha256: "{{ .diffutils_sha256 }}"
         sha512: "{{ .diffutils_sha512 }}"

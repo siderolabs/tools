@@ -5,7 +5,7 @@ dependencies:
   - stage: patch
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/ncurses/ncurses-{{ .ncurses_version }}.tar.gz
+      - url: https://ftpmirror.gnu.org/gnu/ncurses/ncurses-{{ .ncurses_version }}.tar.gz
         destination: ncurses.tar.gz
         sha256: "{{ .ncurses_sha256 }}"
         sha512: "{{ .ncurses_sha512 }}"

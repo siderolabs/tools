@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/sed/sed-{{ .sed_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/sed/sed-{{ .sed_version }}.tar.xz
         destination: sed.tar.xz
         sha256: "{{ .sed_sha256 }}"
         sha512: "{{ .sed_sha512 }}"

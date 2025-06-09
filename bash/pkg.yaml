@@ -8,7 +8,7 @@ dependencies:
     runtime: true
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/bash/bash-{{ .bash_version }}.tar.gz
+      - url: https://ftpmirror.gnu.org/gnu/bash/bash-{{ .bash_version }}.tar.gz
         destination: bash.tar.gz
         sha256: "{{ .bash_sha256 }}"
         sha512: "{{ .bash_sha512 }}"

@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/gawk/gawk-{{ .gawk_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/gawk/gawk-{{ .gawk_version }}.tar.xz
         destination: gawk.tar.xz
         sha256: "{{ .gawk_sha256 }}"
         sha512: "{{ .gawk_sha512 }}"

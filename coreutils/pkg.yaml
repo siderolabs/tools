@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/coreutils/coreutils-{{ .coreutils_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/coreutils/coreutils-{{ .coreutils_version }}.tar.xz
         destination: coreutils.tar.xz
         sha256: "{{ .coreutils_sha256 }}"
         sha512: "{{ .coreutils_sha512 }}"

@@ -7,7 +7,7 @@ dependencies:
   - stage: autoconf
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/automake/automake-{{ .automake_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/automake/automake-{{ .automake_version }}.tar.xz
         destination: automake.tar.xz
         sha256: "{{ .automake_sha256 }}"
         sha512: "{{ .automake_sha512 }}"

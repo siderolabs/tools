@@ -5,7 +5,7 @@ dependencies:
   - stage: gmp
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/mpfr/mpfr-{{ .mpfr_version }}.tar.xz
+      - url: https://ftpmirror.gnu.org/gnu/mpfr/mpfr-{{ .mpfr_version }}.tar.xz
         destination: mpfr.tar.xz
         sha256: "{{ .mpfr_sha256 }}"
         sha512: "{{ .mpfr_sha512 }}"

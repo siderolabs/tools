@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftp.gnu.org/gnu/libtasn1/libtasn1-{{ .libtasn1_version }}.tar.gz
+      - url: https://ftpmirror.gnu.org/gnu/libtasn1/libtasn1-{{ .libtasn1_version }}.tar.gz
         destination: libtasn1.tar.gz
         sha256: "{{ .libtasn1_sha256 }}"
         sha512: "{{ .libtasn1_sha512 }}"
