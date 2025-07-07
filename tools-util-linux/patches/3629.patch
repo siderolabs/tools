@@ -1,0 +1,1738 @@
+See https://github.com/util-linux/util-linux/issues/3626
+https://patch-diff.githubusercontent.com/raw/util-linux/util-linux/pull/3629.patch
+
+From f39ffccf2b9b8dcaaf2069346cc50735c2f0f95d Mon Sep 17 00:00:00 2001
+From: Karel Zak <kzak@redhat.com>
+Date: Thu, 26 Jun 2025 13:47:00 +0200
+Subject: [PATCH 1/6] lib/strv: use ul_ prefix for strv functions
+
+The functions are originally from systemd/udev, so it's possible that
+during static linking, they may collide with other systemd-based
+components.
+
+Fixes: https://github.com/util-linux/util-linux/issues/3626
+Signed-off-by: Karel Zak <kzak@redhat.com>
+---
+ include/strv.h               | 47 +++++++++++----------
+ lib/env.c                    |  6 +--
+ lib/strv.c                   | 80 ++++++++++++++++++------------------
+ libmount/src/context.c       | 10 ++---
+ libmount/src/context_mount.c |  4 +-
+ login-utils/su-common.c      |  1 -
+ misc-utils/logger.c          |  8 ++--
+ sys-utils/chmem.c            |  8 ++--
+ sys-utils/lscpu-riscv.c      | 10 ++---
+ sys-utils/mount.c            |  2 +-
+ sys-utils/rtcwake.c          |  6 +--
+ sys-utils/wdctl.c            |  4 +-
+ sys-utils/zramctl.c          |  8 ++--
+ term-utils/script.c          |  2 +-
+ term-utils/wall.c            | 10 ++---
+ text-utils/bits.c            |  6 +--
+ text-utils/column.c          | 24 +++++------
+ 17 files changed, 117 insertions(+), 119 deletions(-)
+
+diff --git a/include/strv.h b/include/strv.h
+index db24ce482b1..b565a910cfa 100644
+--- a/include/strv.h
++++ b/include/strv.h
+@@ -8,52 +8,51 @@
+
+ #include "c.h"
+
+-char **strv_free(char **l);
+-void strv_clear(char **l);
+-char **strv_copy(char * const *l);
+-unsigned strv_length(char * const *l);
++char **ul_strv_free(char **l);
++char **ul_strv_copy(char * const *l);
++unsigned ul_strv_length(char * const *l);
+
+-int strv_extend_strv(char ***a, char **b);
+-int strv_extend_strv_concat(char ***a, char **b, const char *suffix);
+-int strv_extend(char ***l, const char *value);
++int ul_strv_extend_strv(char ***a, char **b);
++int ul_strv_extend_strv_concat(char ***a, char **b, const char *suffix);
++int ul_strv_extend(char ***l, const char *value);
+
+-int strv_extendv(char ***l, const char *format, va_list ap)
++int ul_strv_extendv(char ***l, const char *format, va_list ap)
+ 		__attribute__ ((__format__ (__printf__, 2, 0)));
+-int strv_extendf(char ***l, const char *format, ...)
++int ul_strv_extendf(char ***l, const char *format, ...)
+ 		__attribute__ ((__format__ (__printf__, 2, 3)));
+
+-int strv_push(char ***l, char *value);
+-int strv_push_prepend(char ***l, char *value);
+-int strv_consume(char ***l, char *value);
+-int strv_consume_prepend(char ***l, char *value);
++int ul_strv_push(char ***l, char *value);
++int ul_strv_push_prepend(char ***l, char *value);
++int ul_strv_consume(char ***l, char *value);
++int ul_strv_consume_prepend(char ***l, char *value);
+
+-char **strv_remove(char **l, const char *s);
++char **ul_strv_remove(char **l, const char *s);
+
+-char **strv_new(const char *x, ...);
++char **ul_strv_new(const char *x, ...);
+
+-static inline const char* STRV_IFNOTNULL(const char *x) {
++static inline const char* UL_STRV_IFNOTNULL(const char *x) {
+         return x ? x : (const char *) -1;
+ }
+
+-static inline int strv_isempty(char * const *l) {
++static inline int ul_strv_isempty(char * const *l) {
+         return !l || !*l;
+ }
+
+-char **strv_split(const char *s, const char *separator);
+-char *strv_join(char **l, const char *separator);
++char **ul_strv_split(const char *s, const char *separator);
++char *ul_strv_join(char **l, const char *separator);
+
+-#define STRV_FOREACH(s, l)                      \
++#define UL_STRV_FOREACH(s, l)                      \
+         for ((s) = (l); (s) && *(s); (s)++)
+
+-#define STRV_FOREACH_BACKWARDS(s, l)            \
+-        STRV_FOREACH(s, l)                      \
++#define UL_STRV_FOREACH_BACKWARDS(s, l)            \
++        UL_STRV_FOREACH(s, l)                      \
+                 ;                               \
+         for ((s)--; (l) && ((s) >= (l)); (s)--)
+
+
+-#define STRV_MAKE_EMPTY ((char*[1]) { NULL })
++#define UL_STRV_MAKE_EMPTY ((char*[1]) { NULL })
+
+-char **strv_reverse(char **l);
++char **ul_strv_reverse(char **l);
+
+ #endif /* UTIL_LINUX_STRV */
+
+diff --git a/lib/env.c b/lib/env.c
+index dc65c5584af..cdd8f8c5876 100644
+--- a/lib/env.c
++++ b/lib/env.c
+@@ -150,14 +150,14 @@ struct ul_env_list *env_list_add_getenvs(struct ul_env_list *ls, const char *str
+ 	if (!str)
+ 		return ls;
+
+-	all = strv_split(str, ",");
++	all = ul_strv_split(str, ",");
+ 	if (!all)
+ 		return ls;
+
+-	STRV_FOREACH(name, all)
++	UL_STRV_FOREACH(name, all)
+ 		ls = env_list_add_getenv(ls, *name, NULL);
+
+-	strv_free(all);
++	ul_strv_free(all);
+ 	return ls;
+ }
+
+diff --git a/lib/strv.c b/lib/strv.c
+index fd84fe32af6..6946f409b14 100644
+--- a/lib/strv.c
++++ b/lib/strv.c
+@@ -24,7 +24,7 @@
+ #include "strutils.h"
+ #include "strv.h"
+
+-void strv_clear(char **l) {
++static void ul_strv_clear(char **l) {
+         char **k;
+
+         if (!l)
+@@ -36,16 +36,16 @@ void strv_clear(char **l) {
+         *l = NULL;
+ }
+
+-char **strv_free(char **l) {
+-        strv_clear(l);
++char **ul_strv_free(char **l) {
++        ul_strv_clear(l);
+         free(l);
+         return NULL;
+ }
+
+-char **strv_copy(char * const *l) {
++char **ul_strv_copy(char * const *l) {
+         char **r, **k;
+
+-        k = r = malloc(sizeof(char *) * (strv_length(l) + 1));
++        k = r = malloc(sizeof(char *) * (ul_strv_length(l) + 1));
+         if (!r)
+                 return NULL;
+
+@@ -53,7 +53,7 @@ char **strv_copy(char * const *l) {
+                 for (; *l; k++, l++) {
+                         *k = strdup(*l);
+                         if (!*k) {
+-                                strv_free(r);
++                                ul_strv_free(r);
+                                 return NULL;
+                         }
+                 }
+@@ -62,7 +62,7 @@ char **strv_copy(char * const *l) {
+         return r;
+ }
+
+-unsigned strv_length(char * const *l) {
++unsigned ul_strv_length(char * const *l) {
+         unsigned n = 0;
+
+         if (!l)
+@@ -74,7 +74,7 @@ unsigned strv_length(char * const *l) {
+         return n;
+ }
+
+-static char **strv_new_ap(const char *x, va_list ap) {
++static char **ul_strv_new_ap(const char *x, va_list ap) {
+         const char *s;
+         char **a;
+         unsigned n = 0, i = 0;
+@@ -82,7 +82,7 @@ static char **strv_new_ap(const char *x, va_list ap) {
+
+         /* As a special trick we ignore all listed strings that equal
+          * (const char*) -1. This is supposed to be used with the
+-         * STRV_IFNOTNULL() macro to include possibly NULL strings in
++         * UL_STRV_IFNOTNULL() macro to include possibly NULL strings in
+          * the string list. */
+
+         if (x) {
+@@ -129,27 +129,27 @@ static char **strv_new_ap(const char *x, va_list ap) {
+         return a;
+
+ fail:
+-        strv_free(a);
++        ul_strv_free(a);
+         return NULL;
+ }
+
+-char **strv_new(const char *x, ...) {
++char **ul_strv_new(const char *x, ...) {
+         char **r;
+         va_list ap;
+
+         va_start(ap, x);
+-        r = strv_new_ap(x, ap);
++        r = ul_strv_new_ap(x, ap);
+         va_end(ap);
+
+         return r;
+ }
+
+-int strv_extend_strv(char ***a, char **b) {
++int ul_strv_extend_strv(char ***a, char **b) {
+         int r;
+         char **s;
+
+-        STRV_FOREACH(s, b) {
+-                r = strv_extend(a, *s);
++        UL_STRV_FOREACH(s, b) {
++                r = ul_strv_extend(a, *s);
+                 if (r < 0)
+                         return r;
+         }
+@@ -157,18 +157,18 @@ int strv_extend_strv(char ***a, char **b) {
+         return 0;
+ }
+
+-int strv_extend_strv_concat(char ***a, char **b, const char *suffix) {
++int ul_strv_extend_strv_concat(char ***a, char **b, const char *suffix) {
+         int r;
+         char **s;
+
+-        STRV_FOREACH(s, b) {
++        UL_STRV_FOREACH(s, b) {
+                 char *v;
+
+                 v = strconcat(*s, suffix);
+                 if (!v)
+                         return -ENOMEM;
+
+-                r = strv_push(a, v);
++                r = ul_strv_push(a, v);
+                 if (r < 0) {
+                         free(v);
+                         return r;
+@@ -186,7 +186,7 @@ int strv_extend_strv_concat(char ***a, char **b, const char *suffix) {
+         _FOREACH_WORD(word, length, s, separator, false, state)
+
+
+-char **strv_split(const char *s, const char *separator) {
++char **ul_strv_split(const char *s, const char *separator) {
+         const char *word, *state;
+         size_t l;
+         unsigned n, i;
+@@ -206,7 +206,7 @@ char **strv_split(const char *s, const char *separator) {
+         FOREACH_WORD_SEPARATOR(word, l, s, separator, state) {
+                 r[i] = strndup(word, l);
+                 if (!r[i]) {
+-                        strv_free(r);
++                        ul_strv_free(r);
+                         return NULL;
+                 }
+
+@@ -217,7 +217,7 @@ char **strv_split(const char *s, const char *separator) {
+         return r;
+ }
+
+-char *strv_join(char **l, const char *separator) {
++char *ul_strv_join(char **l, const char *separator) {
+         char *r, *e;
+         char **s;
+         size_t n, k;
+@@ -228,7 +228,7 @@ char *strv_join(char **l, const char *separator) {
+         k = strlen(separator);
+
+         n = 0;
+-        STRV_FOREACH(s, l) {
++        UL_STRV_FOREACH(s, l) {
+                 if (n != 0)
+                         n += k;
+                 n += strlen(*s);
+@@ -239,7 +239,7 @@ char *strv_join(char **l, const char *separator) {
+                 return NULL;
+
+         e = r;
+-        STRV_FOREACH(s, l) {
++        UL_STRV_FOREACH(s, l) {
+                 if (e != r)
+                         e = stpcpy(e, separator);
+
+@@ -251,14 +251,14 @@ char *strv_join(char **l, const char *separator) {
+         return r;
+ }
+
+-int strv_push(char ***l, char *value) {
++int ul_strv_push(char ***l, char *value) {
+         char **c;
+         unsigned n, m;
+
+         if (!value)
+                 return 0;
+
+-        n = strv_length(*l);
++        n = ul_strv_length(*l);
+
+         /* Increase and check for overflow */
+         m = n + 2;
+@@ -276,14 +276,14 @@ int strv_push(char ***l, char *value) {
+         return 0;
+ }
+
+-int strv_push_prepend(char ***l, char *value) {
++int ul_strv_push_prepend(char ***l, char *value) {
+         char **c;
+         unsigned n, m, i;
+
+         if (!value)
+                 return 0;
+
+-        n = strv_length(*l);
++        n = ul_strv_length(*l);
+
+         /* increase and check for overflow */
+         m = n + 2;
+@@ -306,27 +306,27 @@ int strv_push_prepend(char ***l, char *value) {
+         return 0;
+ }
+
+-int strv_consume(char ***l, char *value) {
++int ul_strv_consume(char ***l, char *value) {
+         int r;
+
+-        r = strv_push(l, value);
++        r = ul_strv_push(l, value);
+         if (r < 0)
+                 free(value);
+
+         return r;
+ }
+
+-int strv_consume_prepend(char ***l, char *value) {
++int ul_strv_consume_prepend(char ***l, char *value) {
+         int r;
+
+-        r = strv_push_prepend(l, value);
++        r = ul_strv_push_prepend(l, value);
+         if (r < 0)
+                 free(value);
+
+         return r;
+ }
+
+-int strv_extend(char ***l, const char *value) {
++int ul_strv_extend(char ***l, const char *value) {
+         char *v;
+
+         if (!value)
+@@ -336,10 +336,10 @@ int strv_extend(char ***l, const char *value) {
+         if (!v)
+                 return -ENOMEM;
+
+-        return strv_consume(l, v);
++        return ul_strv_consume(l, v);
+ }
+
+-char **strv_remove(char **l, const char *s) {
++char **ul_strv_remove(char **l, const char *s) {
+         char **f, **t;
+
+         if (!l)
+@@ -360,7 +360,7 @@ char **strv_remove(char **l, const char *s) {
+         return l;
+ }
+
+-int strv_extendf(char ***l, const char *format, ...) {
++int ul_strv_extendf(char ***l, const char *format, ...) {
+         va_list ap;
+         char *x;
+         int r;
+@@ -372,10 +372,10 @@ int strv_extendf(char ***l, const char *format, ...) {
+         if (r < 0)
+                 return -ENOMEM;
+
+-        return strv_consume(l, x);
++        return ul_strv_consume(l, x);
+ }
+
+-int strv_extendv(char ***l, const char *format, va_list ap) {
++int ul_strv_extendv(char ***l, const char *format, va_list ap) {
+         char *x;
+         int r;
+
+@@ -383,13 +383,13 @@ int strv_extendv(char ***l, const char *format, va_list ap) {
+         if (r < 0)
+                 return -ENOMEM;
+
+-        return strv_consume(l, x);
++        return ul_strv_consume(l, x);
+ }
+
+-char **strv_reverse(char **l) {
++char **ul_strv_reverse(char **l) {
+         unsigned n, i;
+
+-        n = strv_length(l);
++        n = ul_strv_length(l);
+         if (n <= 1)
+                 return l;
+
+diff --git a/libmount/src/context.c b/libmount/src/context.c
+index dfecab788d1..55cf75ddd15 100644
+--- a/libmount/src/context.c
++++ b/libmount/src/context.c
+@@ -2737,7 +2737,7 @@ void mnt_context_syscall_reset_status(struct libmnt_context *cxt)
+ void mnt_context_reset_mesgs(struct libmnt_context *cxt)
+ {
+ 	DBG(CXT, ul_debug("reset messages"));
+-	strv_free(cxt->mesgs);
++	ul_strv_free(cxt->mesgs);
+ 	cxt->mesgs = NULL;
+ }
+
+@@ -2746,7 +2746,7 @@ int mnt_context_append_mesg(struct libmnt_context *cxt, const char *msg)
+ 	if (msg) {
+ 		DBG(CXT, ul_debug("mesg: '%s'", msg));
+ 	}
+-	return strv_extend(&cxt->mesgs, msg);
++	return ul_strv_extend(&cxt->mesgs, msg);
+ }
+
+ int mnt_context_sprintf_mesg(struct libmnt_context *cxt, const char *msg, ...)
+@@ -2755,7 +2755,7 @@ int mnt_context_sprintf_mesg(struct libmnt_context *cxt, const char *msg, ...)
+ 	va_list ap;
+
+ 	va_start(ap, msg);
+-	rc = strv_extendv(&cxt->mesgs, msg, ap);
++	rc = ul_strv_extendv(&cxt->mesgs, msg, ap);
+ 	va_end(ap);
+
+ 	return rc;
+@@ -2808,10 +2808,10 @@ size_t mnt_context_get_nmesgs(struct libmnt_context *cxt, char type)
+ 	if (!cxt || !cxt->mesgs)
+ 		return 0;
+
+-	n = strv_length(cxt->mesgs);
++	n = ul_strv_length(cxt->mesgs);
+ 	if (n && type) {
+ 		n = 0;
+-		STRV_FOREACH(s, cxt->mesgs) {
++		UL_STRV_FOREACH(s, cxt->mesgs) {
+ 			if (*s && **s == type)
+ 				n++;
+ 		}
+diff --git a/libmount/src/context_mount.c b/libmount/src/context_mount.c
+index 14ff9ba13a8..24369857d97 100644
+--- a/libmount/src/context_mount.c
++++ b/libmount/src/context_mount.c
+@@ -1449,10 +1449,10 @@ static void join_err_mesgs(struct libmnt_context *cxt, char *buf, size_t bufsz)
+ 	char **s;
+ 	int n = 0;
+
+-	if (!cxt || !buf || strv_isempty(cxt->mesgs))
++	if (!cxt || !buf || ul_strv_isempty(cxt->mesgs))
+ 		return;
+
+-	STRV_FOREACH(s, cxt->mesgs) {
++	UL_STRV_FOREACH(s, cxt->mesgs) {
+ 		size_t len;
+
+ 		if (!bufsz)
+diff --git a/login-utils/su-common.c b/login-utils/su-common.c
+index 2cdeba857f6..38d476a1a29 100644
+--- a/login-utils/su-common.c
++++ b/login-utils/su-common.c
+@@ -61,7 +61,6 @@
+ #include "pathnames.h"
+ #include "env.h"
+ #include "closestream.h"
+-#include "strv.h"
+ #include "strutils.h"
+ #include "ttyutils.h"
+ #include "pwdutils.h"
+diff --git a/misc-utils/logger.c b/misc-utils/logger.c
+index 14710eb9cc7..4883c7e43f9 100644
+--- a/misc-utils/logger.c
++++ b/misc-utils/logger.c
+@@ -622,7 +622,7 @@ static void add_structured_data_param(struct list_head *ls, const char *param)
+
+ 	sd = list_last_entry(ls, struct structured_data, sds);
+
+-	if (strv_extend(&sd->params,  param))
++	if (ul_strv_extend(&sd->params,  param))
+ 		err_oom();
+ }
+
+@@ -638,7 +638,7 @@ static void __attribute__ ((__format__ (__printf__, 2, 3)))
+
+ 	sd = list_last_entry(ls, struct structured_data, sds);
+ 	va_start(ap, fmt);
+-	x = strv_extendv(&sd->params, fmt, ap);
++	x = ul_strv_extendv(&sd->params, fmt, ap);
+ 	va_end(ap);
+
+ 	if (x)
+@@ -649,11 +649,11 @@ static char *strdup_structured_data(struct structured_data *sd)
+ {
+ 	char *res, *tmp;
+
+-	if (strv_isempty(sd->params))
++	if (ul_strv_isempty(sd->params))
+ 		return NULL;
+
+ 	xasprintf(&res, "[%s %s]", sd->id,
+-			(tmp = strv_join(sd->params, " ")));
++			(tmp = ul_strv_join(sd->params, " ")));
+ 	free(tmp);
+ 	return res;
+ }
+diff --git a/sys-utils/chmem.c b/sys-utils/chmem.c
+index 932d0af13da..52e6f49b3f7 100644
+--- a/sys-utils/chmem.c
++++ b/sys-utils/chmem.c
+@@ -319,14 +319,14 @@ static void parse_parameter(struct chmem_desc *desc, char *param)
+ {
+ 	char **split;
+
+-	split = strv_split(param, "-");
+-	if (strv_length(split) > 2)
++	split = ul_strv_split(param, "-");
++	if (ul_strv_length(split) > 2)
+ 		errx(EXIT_FAILURE, _("Invalid parameter: %s"), param);
+-	if (strv_length(split) == 1)
++	if (ul_strv_length(split) == 1)
+ 		parse_single_param(desc, split[0]);
+ 	else
+ 		parse_range_param(desc, split[0], split[1]);
+-	strv_free(split);
++	ul_strv_free(split);
+ 	if (desc->start > desc->end)
+ 		errx(EXIT_FAILURE, _("Invalid range: %s"), param);
+ }
+
+diff --git a/sys-utils/mount.c b/sys-utils/mount.c
+index 86800a12702..875d249b477 100644
+--- a/sys-utils/mount.c
++++ b/sys-utils/mount.c
+@@ -390,7 +390,7 @@ static size_t libmount_mesgs(struct libmnt_context *cxt, char type)
+ 	}
+
+ 	/* Messages */
+-	STRV_FOREACH(s, mesgs) {
++	UL_STRV_FOREACH(s, mesgs) {
+ 		switch (type) {
+ 		case 'e':
+ 			if (!startswith(*s, "e "))
+diff --git a/sys-utils/rtcwake.c b/sys-utils/rtcwake.c
+index 49dab17bdd7..d01f5ed343c 100644
+--- a/sys-utils/rtcwake.c
++++ b/sys-utils/rtcwake.c
+@@ -267,7 +267,7 @@ static char **get_sys_power_states(struct rtcwake_control *ctl)
+ 		if (ss <= 0)
+ 			goto nothing;
+ 		buf[ss] = '\0';
+-		ctl->possible_modes = strv_split(buf, " \n");
++		ctl->possible_modes = ul_strv_split(buf, " \n");
+ 		close(fd);
+ 	}
+ 	return ctl->possible_modes;
+@@ -385,7 +385,7 @@ static int get_rtc_mode(struct rtcwake_control *ctl, const char *s)
+ 	size_t i;
+ 	char **modes = get_sys_power_states(ctl), **m;
+
+-	STRV_FOREACH(m, modes) {
++	UL_STRV_FOREACH(m, modes) {
+ 		if (strcmp(s, *m) == 0)
+ 			return SYSFS_MODE;
+ 	}
+@@ -421,7 +421,7 @@ static void list_modes(struct rtcwake_control *ctl)
+ 	if (!modes)
+ 		errx(EXIT_FAILURE, _("could not read: %s"), SYS_POWER_STATE_PATH);
+
+-	STRV_FOREACH(m, modes)
++	UL_STRV_FOREACH(m, modes)
+ 		printf("%s ", *m);
+
+ 	for (i = 0; i < ARRAY_SIZE(rtcwake_mode_string); i++)
+diff --git a/sys-utils/wdctl.c b/sys-utils/wdctl.c
+index 9290eb31202..b3203d46118 100644
+--- a/sys-utils/wdctl.c
++++ b/sys-utils/wdctl.c
+@@ -594,7 +594,7 @@ static int read_governors(struct wd_device *wd)
+ 		while ((sz = getline(&line, &dummy, f)) >= 0) {
+ 			if (rtrim_whitespace((unsigned char *) line) == 0)
+ 				continue;
+-			strv_consume(&wd->available_governors, line);
++			ul_strv_consume(&wd->available_governors, line);
+ 			dummy = 0;
+ 			line = NULL;
+ 		}
+@@ -663,7 +663,7 @@ static void show_governors(struct wd_device *wd)
+ 	if (wd->governor)
+ 		printf(_("%-14s %s\n"), _("Pre-timeout governor:"), wd->governor);
+ 	if (wd->available_governors) {
+-		char *tmp = strv_join(wd->available_governors, " ");
++		char *tmp = ul_strv_join(wd->available_governors, " ");
+
+ 		if (tmp)
+ 			printf(_("%-14s %s\n"),
+diff --git a/sys-utils/zramctl.c b/sys-utils/zramctl.c
+index 175ad98d51f..e9eea4d1e28 100644
+--- a/sys-utils/zramctl.c
++++ b/sys-utils/zramctl.c
+@@ -308,7 +308,7 @@ static void zram_unlock(struct zram *z) {
+ static void zram_reset_stat(struct zram *z)
+ {
+ 	if (z) {
+-		strv_free(z->mm_stat);
++		ul_strv_free(z->mm_stat);
+ 		z->mm_stat = NULL;
+ 		z->mm_stat_probed = 0;
+ 	}
+@@ -525,11 +525,11 @@ static int get_mm_stat(struct zram *z,
+ 	if (!z->mm_stat && !z->mm_stat_probed) {
+ 		char *str = NULL;
+ 		if (ul_path_read_string(sysfs, &str, "mm_stat") > 0 && str) {
+-			z->mm_stat = strv_split(str, " ");
++			z->mm_stat = ul_strv_split(str, " ");
+
+ 			/* make sure kernel provides mm_stat as expected */
+-			if (strv_length(z->mm_stat) < ARRAY_SIZE(mm_stat_names)) {
+-				strv_free(z->mm_stat);
++			if (ul_strv_length(z->mm_stat) < ARRAY_SIZE(mm_stat_names)) {
++				ul_strv_free(z->mm_stat);
+ 				z->mm_stat = NULL;
+ 			}
+ 		}
+diff --git a/term-utils/wall.c b/term-utils/wall.c
+index c6067a0c8f0..293275cb3ef 100644
+--- a/term-utils/wall.c
++++ b/term-utils/wall.c
+@@ -195,7 +195,7 @@ static int has_tty(char **ttys, char *name)
+ {
+ 	char **str;
+
+-	STRV_FOREACH(str, ttys) {
++	UL_STRV_FOREACH(str, ttys) {
+ 		if (strcmp(*str, name) == 0)
+ 			return 1;
+ 	}
+@@ -292,7 +292,7 @@ int main(int argc, char **argv)
+ 			}
+ 			if (!(group_buf && !is_gr_member(name, group_buf))
+ 			    && sd_session_get_tty(sessions_list[i], &tty) >= 0
+-			    && strv_consume(&ttys, tty) < 0)
++			    && ul_strv_consume(&ttys, tty) < 0)
+ 				err(EXIT_FAILURE, _("failed to allocate lines list"));
+
+ 			free(name);
+@@ -324,19 +324,19 @@ int main(int argc, char **argv)
+ 			mem2strcpy(line, utmpptr->ut_line, sizeof(utmpptr->ut_line), sizeof(line));
+ 			if (has_tty(ttys, line))
+ 				continue;
+-			if (strv_extend(&ttys, line) < 0)
++			if (ul_strv_extend(&ttys, line) < 0)
+ 				err(EXIT_FAILURE, _("failed to allocate lines list"));
+ 		}
+ 		endutxent();
+ 	}
+
+-	STRV_FOREACH(str, ttys) {
++	UL_STRV_FOREACH(str, ttys) {
+ 		char *er = ttymsg(&iov, 1, *str, timeout);
+ 		if (er)
+ 			 warnx("%s", er);
+ 	}
+
+-	strv_free(ttys);
++	ul_strv_free(ttys);
+ 	free(mbuf);
+ 	free_group_workspace(group_buf);
+ 	exit(EXIT_SUCCESS);
+diff --git a/text-utils/bits.c b/text-utils/bits.c
+index d758c3f5679..aca4306ee1e 100644
+--- a/text-utils/bits.c
++++ b/text-utils/bits.c
+@@ -302,11 +302,11 @@ int main(int argc, char **argv)
+ 		while (fgets(buf, sizeof(buf), stdin)) {
+ 			/* strip LF, CR, CRLF, LFCR */
+ 			rtrim_whitespace((unsigned char *)buf);
+-			if (strv_push(&stdin_lines, xstrdup(buf)) < 0)
++			if (ul_strv_push(&stdin_lines, xstrdup(buf)) < 0)
+ 				errx(EXIT_FAILURE, _("cannot allocate memory"));
+ 		}
+
+-		argc = strv_length(stdin_lines);
++		argc = ul_strv_length(stdin_lines);
+ 		argv = stdin_lines;
+ 	}
+
+@@ -320,7 +320,7 @@ int main(int argc, char **argv)
+ 	for (; argc > 0; argc--, argv++)
+ 		parse_mask_or_list(*argv, bits, width);
+
+-	strv_free(stdin_lines);
++	ul_strv_free(stdin_lines);
+
+ 	print_bits(bits, width, mode);
+
+diff --git a/text-utils/column.c b/text-utils/column.c
+index a929cd8136a..c3321ae1666 100644
+--- a/text-utils/column.c
++++ b/text-utils/column.c
+@@ -318,7 +318,7 @@ static wchar_t *local_wcstok(struct column_control const *const ctl, wchar_t *p,
+
+ static char **split_or_error(const char *str, const char *errmsg)
+ {
+-	char **res = strv_split(str, ",");
++	char **res = ul_strv_split(str, ",");
+ 	if (!res) {
+ 		if (errno == ENOMEM)
+ 			err_oom();
+@@ -350,7 +350,7 @@ static void init_table(struct column_control *ctl)
+ 	if (ctl->tab_columns) {
+ 		char **opts;
+
+-		STRV_FOREACH(opts, ctl->tab_columns) {
++		UL_STRV_FOREACH(opts, ctl->tab_columns) {
+ 			struct libscols_column *cl;
+
+ 			cl = scols_table_new_column(ctl->tab, NULL, 0, 0);
+@@ -360,7 +360,7 @@ static void init_table(struct column_control *ctl)
+ 	} else if (ctl->tab_colnames) {
+ 		char **name;
+
+-		STRV_FOREACH(name, ctl->tab_colnames)
++		UL_STRV_FOREACH(name, ctl->tab_colnames)
+ 			scols_table_new_column(ctl->tab, *name, 0, 0);
+ 	} else
+ 		scols_table_enable_noheadings(ctl->tab, 1);
+@@ -436,13 +436,13 @@ static int has_unnamed(const char *list)
+
+ 	all = split_or_error(list, NULL);
+ 	if (all) {
+-		STRV_FOREACH(one, all) {
++		UL_STRV_FOREACH(one, all) {
+ 			if (strcmp(*one, "-") == 0) {
+ 				rc = 1;
+ 				break;
+ 			}
+ 		}
+-		strv_free(all);
++		ul_strv_free(all);
+ 	}
+
+ 	return rc;
+@@ -473,7 +473,7 @@ static void apply_columnflag_from_list(struct column_control *ctl, const char *l
+ 	all = split_or_error(list, errmsg);
+
+ 	/* apply to columns specified by name */
+-	STRV_FOREACH(one, all) {
++	UL_STRV_FOREACH(one, all) {
+ 		int low = 0, up = 0;
+
+ 		if (strcmp(*one, "-") == 0) {
+@@ -499,7 +499,7 @@ static void apply_columnflag_from_list(struct column_control *ctl, const char *l
+ 		if (cl)
+ 			column_set_flag(cl, flag);
+ 	}
+-	strv_free(all);
++	ul_strv_free(all);
+
+ 	/* apply flag to all columns without name */
+ 	if (unnamed) {
+@@ -527,7 +527,7 @@ static void reorder_table(struct column_control *ctl)
+
+ 	wanted = xcalloc(ncols, sizeof(struct libscols_column *));
+
+-	STRV_FOREACH(one, order) {
++	UL_STRV_FOREACH(one, order) {
+ 		struct libscols_column *cl = string_to_column(ctl, *one);
+ 		if (cl)
+ 			wanted[count++] = cl;
+@@ -539,7 +539,7 @@ static void reorder_table(struct column_control *ctl)
+ 	}
+
+ 	free(wanted);
+-	strv_free(order);
++	ul_strv_free(order);
+ }
+
+ static void create_tree(struct column_control *ctl)
+@@ -998,7 +998,7 @@ int main(int argc, char **argv)
+
+ 		switch(c) {
+ 		case 'C':
+-			if (strv_extend(&ctl.tab_columns, optarg))
++			if (ul_strv_extend(&ctl.tab_columns, optarg))
+ 				err_oom();
+ 			break;
+ 		case 'c':
+@@ -1143,9 +1143,9 @@ int main(int argc, char **argv)
+
+ 			scols_unref_table(ctl.tab);
+ 			if (ctl.tab_colnames)
+-				strv_free(ctl.tab_colnames);
++				ul_strv_free(ctl.tab_colnames);
+ 			if (ctl.tab_columns)
+-				strv_free(ctl.tab_columns);
++				ul_strv_free(ctl.tab_columns);
+ 		}
+ 		break;
+ 	case COLUMN_MODE_FILLCOLS:
+
+From aa07db0ac1449627b3926669b052b07a1d3986ca Mon Sep 17 00:00:00 2001
+From: Karel Zak <kzak@redhat.com>
+Date: Mon, 30 Jun 2025 11:15:30 +0200
+Subject: [PATCH 2/6] lib/strutils: add ul_ prefix to startswith() and
+ endswith()
+
+Addresses: https://github.com/util-linux/util-linux/issues/3626
+Signed-off-by: Karel Zak <kzak@redhat.com>
+---
+ disk-utils/partx.c              |  2 +-
+ disk-utils/sfdisk.c             |  6 +++---
+ include/strutils.h              |  6 +++---
+ lib/canonicalize.c              |  2 +-
+ lib/loopdev.c                   |  2 +-
+ lib/sysfs.c                     |  2 +-
+ lib/timeutils.c                 |  4 ++--
+ libfdisk/src/utils.c            |  2 +-
+ libmount/src/context_mount.c    |  4 ++--
+ libmount/src/context_umount.c   |  2 +-
+ libmount/src/hook_idmap.c       |  6 +++---
+ libmount/src/optmap.c           |  2 +-
+ libmount/src/optstr.c           |  2 +-
+ libmount/src/tab.c              |  4 ++--
+ libmount/src/tab_parse.c        |  2 +-
+ libmount/src/tab_update.c       |  2 +-
+ libmount/src/utils.c            |  4 ++--
+ misc-utils/lsblk-properties.c   |  2 +-
+ misc-utils/lsclocks.c           |  2 +-
+ pam_lastlog2/src/pam_lastlog2.c |  6 +++---
+ sys-utils/lscpu-cputype.c       |  2 +-
+ sys-utils/mount.c               |  6 +++---
+ sys-utils/rtcwake.c             |  4 ++--
+ sys-utils/setpriv-landlock.c    |  4 ++--
+ text-utils/bits.c               | 12 ++++++------
+ 25 files changed, 46 insertions(+), 46 deletions(-)
+
+diff --git a/disk-utils/partx.c b/disk-utils/partx.c
+index 4c8b1f09b09..347d5daad30 100644
+--- a/disk-utils/partx.c
++++ b/disk-utils/partx.c
+@@ -953,7 +953,7 @@ int main(int argc, char **argv)
+ 			device = argv[optind];
+ 			wholedisk = xstrdup(argv[optind + 1]);
+
+-			if (device && wholedisk && !startswith(device, wholedisk))
++			if (device && wholedisk && !ul_startswith(device, wholedisk))
+ 				errx(EXIT_FAILURE, _("partition and disk name do not match"));
+ 		}
+ 	} else if (optind == argc - 1) {
+diff --git a/disk-utils/sfdisk.c b/disk-utils/sfdisk.c
+index 7f2f3deea2b..ad9bbb3cf8a 100644
+--- a/disk-utils/sfdisk.c
++++ b/disk-utils/sfdisk.c
+@@ -1794,12 +1794,12 @@ static void refresh_prompt_buffer(struct sfdisk *sf, const char *devname,
+ 		if (!partname)
+ 			err(EXIT_FAILURE, _("failed to allocate partition name"));
+
+-		if (!sf->prompt || !startswith(sf->prompt, partname)) {
++		if (!sf->prompt || !ul_startswith(sf->prompt, partname)) {
+ 			free(sf->prompt);
+ 			xasprintf(&sf->prompt,"%s: ", partname);
+ 		}
+ 		free(partname);
+-	} else if (!sf->prompt || !startswith(sf->prompt, SFDISK_PROMPT)) {
++	} else if (!sf->prompt || !ul_startswith(sf->prompt, SFDISK_PROMPT)) {
+ 		free(sf->prompt);
+ 		sf->prompt = xstrdup(SFDISK_PROMPT);
+ 	}
+@@ -2024,7 +2024,7 @@ static int command_fdisk(struct sfdisk *sf, int argc, char **argv)
+
+ 			if (!rc) {		/* add partition */
+ 				if (!sf->interactive && !sf->quiet &&
+-				    (!sf->prompt || startswith(sf->prompt, SFDISK_PROMPT))) {
++				    (!sf->prompt || ul_startswith(sf->prompt, SFDISK_PROMPT))) {
+ 					refresh_prompt_buffer(sf, devname, next_partno, created);
+ 					fputs(sf->prompt, stdout);
+ 				}
+diff --git a/include/strutils.h b/include/strutils.h
+index e462040c80c..2cea6e6e815 100644
+--- a/include/strutils.h
++++ b/include/strutils.h
+@@ -269,7 +269,7 @@ extern int streq_paths(const char *a, const char *b);
+ /*
+  * Match string beginning.
+  */
+-static inline const char *startswith(const char *s, const char *prefix)
++static inline const char *ul_startswith(const char *s, const char *prefix)
+ {
+ 	size_t sz = prefix ? strlen(prefix) : 0;
+
+@@ -306,7 +306,7 @@ static inline const char *startswithpath(const char *s, const char *prefix)
+ /*
+  * Match string ending.
+  */
+-static inline const char *endswith(const char *s, const char *postfix)
++static inline const char *ul_endswith(const char *s, const char *postfix)
+ {
+ 	size_t sl = s ? strlen(s) : 0;
+ 	size_t pl = postfix ? strlen(postfix) : 0;
+diff --git a/lib/canonicalize.c b/lib/canonicalize.c
+index 0992a47472c..6e70afe18a1 100644
+--- a/lib/canonicalize.c
++++ b/lib/canonicalize.c
+@@ -96,7 +96,7 @@ char *absolute_path(const char *path)
+ 		return NULL;
+
+ 	/* simple clean up */
+-	if (startswith(path, "./"))
++	if (ul_startswith(path, "./"))
+ 		path += 2;
+ 	else if (strcmp(path, ".") == 0)
+ 		path = NULL;
+diff --git a/lib/loopdev.c b/lib/loopdev.c
+index 65efeb9ea1f..8c5beaeb7e1 100644
+--- a/lib/loopdev.c
++++ b/lib/loopdev.c
+@@ -695,7 +695,7 @@ int is_loopdev(const char *device)
+ 		cn = canonicalize_path(name);
+ 		if (cn)
+ 			p = stripoff_last_component(cn);
+-		rc = p && startswith(p, "loop");
++		rc = p && ul_startswith(p, "loop");
+ 		free(cn);
+ 	}
+
+diff --git a/lib/sysfs.c b/lib/sysfs.c
+index 951de6332a3..c888617b77f 100644
+--- a/lib/sysfs.c
++++ b/lib/sysfs.c
+@@ -978,7 +978,7 @@ dev_t __sysfs_devname_to_devno(const char *prefix, const char *name, const char
+ 	/*
+ 	 * Read from /sys/block/<parent>/<partition>/dev
+ 	 */
+-	if (!dev && parent && startswith(name, parent)) {
++	if (!dev && parent && ul_startswith(name, parent)) {
+ 		len = snprintf(buf, sizeof(buf),
+ 				"%s" _PATH_SYS_BLOCK "/%s/%s/dev",
+ 				prefix, _parent, _name);
+diff --git a/lib/timeutils.c b/lib/timeutils.c
+index 2688f60d71c..48e91d8dee2 100644
+--- a/lib/timeutils.c
++++ b/lib/timeutils.c
+@@ -118,7 +118,7 @@ static int parse_sec(const char *t, usec_t *usec)
+ 		e += strspn(e, WHITESPACE);
+
+ 		for (i = 0; i < ARRAY_SIZE(table); i++)
+-			if (startswith(e, table[i].suffix)) {
++			if (ul_startswith(e, table[i].suffix)) {
+ 				usec_t k = (usec_t) z * table[i].usec;
+
+ 				for (; n > 0; n--)
+@@ -278,7 +278,7 @@ static int parse_timestamp_reference(time_t x, const char *t, usec_t *usec)
+ 			goto finish;
+
+ 		return -EINVAL;
+-	} else if (endswith(t, " ago")) {
++	} else if (ul_endswith(t, " ago")) {
+ 		char *z;
+
+ 		z = strndup(t, strlen(t) - 4);
+diff --git a/libfdisk/src/utils.c b/libfdisk/src/utils.c
+index a7c8bfa2e51..ef2663737dd 100644
+--- a/libfdisk/src/utils.c
++++ b/libfdisk/src/utils.c
+@@ -143,7 +143,7 @@ char *fdisk_partname(const char *dev, size_t partno)
+
+ 	/* devfs kludge - note: fdisk partition names are not supposed
+ 	   to equal kernel names, so there is no reason to do this */
+-	if (endswith(dev, "disc")) {
++	if (ul_endswith(dev, "disc")) {
+ 		w -= 4;
+ 		p = "part";
+ 	}
+diff --git a/libmount/src/context_mount.c b/libmount/src/context_mount.c
+index 24369857d97..9a1832550cf 100644
+--- a/libmount/src/context_mount.c
++++ b/libmount/src/context_mount.c
+@@ -447,7 +447,7 @@ static int exec_helper(struct libmnt_context *cxt)
+ 		}
+ 		if (type
+ 		    && strchr(type, '.')
+-		    && !endswith(cxt->helper, type)) {
++		    && !ul_endswith(cxt->helper, type)) {
+ 			args[i++] = "-t";		/* 10 */
+ 			args[i++] = type;		/* 11 */
+ 		}
+@@ -1457,7 +1457,7 @@ static void join_err_mesgs(struct libmnt_context *cxt, char *buf, size_t bufsz)
+
+ 		if (!bufsz)
+ 			break;
+-		if (!startswith(*s, "e "))
++		if (!ul_startswith(*s, "e "))
+ 			continue;
+ 		if (n) {
+ 			len = xstrncpy(buf, "; ", bufsz);
+diff --git a/libmount/src/context_umount.c b/libmount/src/context_umount.c
+index 64a1d884ba0..27319f77cf2 100644
+--- a/libmount/src/context_umount.c
++++ b/libmount/src/context_umount.c
+@@ -725,7 +725,7 @@ static int exec_helper(struct libmnt_context *cxt)
+ 			args[i++] = "-r";			/* 7 */
+ 		if (type
+ 		    && strchr(type, '.')
+-		    && !endswith(cxt->helper, type)) {
++		    && !ul_endswith(cxt->helper, type)) {
+ 			args[i++] = "-t";			/* 8 */
+ 			args[i++] = type;			/* 9 */
+ 		}
+diff --git a/libmount/src/hook_idmap.c b/libmount/src/hook_idmap.c
+index e8c4cab5a06..5095de1f6ac 100644
+--- a/libmount/src/hook_idmap.c
++++ b/libmount/src/hook_idmap.c
+@@ -434,15 +434,15 @@ static int hook_prepare_options(
+ 		idmap_type_t map_type;
+ 		uint32_t nsid = UINT_MAX, hostid = UINT_MAX, range = UINT_MAX;
+
+-		if (startswith(tok, "b:")) {
++		if (ul_startswith(tok, "b:")) {
+ 			/* b:id-mount:id-host:id-range */
+ 			map_type = ID_TYPE_UIDGID;
+ 			tok += 2;
+-		} else if (startswith(tok, "g:")) {
++		} else if (ul_startswith(tok, "g:")) {
+ 			/* g:id-mount:id-host:id-range */
+ 			map_type = ID_TYPE_GID;
+ 			tok += 2;
+-		} else if (startswith(tok, "u:")) {
++		} else if (ul_startswith(tok, "u:")) {
+ 			/* u:id-mount:id-host:id-range */
+ 			map_type = ID_TYPE_UID;
+ 			tok += 2;
+diff --git a/libmount/src/optmap.c b/libmount/src/optmap.c
+index d7569a0f038..4ea455d9445 100644
+--- a/libmount/src/optmap.c
++++ b/libmount/src/optmap.c
+@@ -250,7 +250,7 @@ const struct libmnt_optmap *mnt_optmap_get_entry(
+
+ 		for (ent = map; ent && ent->name; ent++) {
+ 			if (ent->mask & MNT_PREFIX) {
+-				if (startswith(name, ent->name)) {
++				if (ul_startswith(name, ent->name)) {
+ 					if (mapent)
+ 						*mapent = ent;
+ 					return map;
+diff --git a/libmount/src/optstr.c b/libmount/src/optstr.c
+index 30cd1af6166..ac20d875571 100644
+--- a/libmount/src/optstr.c
++++ b/libmount/src/optstr.c
+@@ -914,7 +914,7 @@ int mnt_match_options(const char *optstr, const char *pattern)
+
+ 		if (*name == '+')
+ 			name++, namesz--;
+-		else if ((no = (startswith(name, "no") != NULL))) {
++		else if ((no = (ul_startswith(name, "no") != NULL))) {
+ 			name += 2, namesz -= 2;
+ 			if (!*name || *name == ',') {
+ 				match = 0;
+diff --git a/libmount/src/tab.c b/libmount/src/tab.c
+index a5070f8240c..c8433674f9f 100644
+--- a/libmount/src/tab.c
++++ b/libmount/src/tab.c
+@@ -1818,7 +1818,7 @@ struct libmnt_fs *mnt_table_get_fs_root(struct libmnt_table *tb,
+
+ 		DBG(FS, ul_debugobj(fs, "source root: %s, source FS root: %s", root, src_root));
+
+-		if (src_root && root && !startswith(root, src_root)) {
++		if (src_root && root && !ul_startswith(root, src_root)) {
+ 			if (strcmp(root, "/") == 0) {
+ 				free(root);
+ 				root = strdup(src_root);
+@@ -1948,7 +1948,7 @@ int __mnt_table_is_fs_mounted(struct libmnt_table *tb, struct libmnt_fs *fstab_f
+ 			int flags = 0;
+
+ 			if (!mnt_fs_get_srcpath(fs) ||
+-			    !startswith(mnt_fs_get_srcpath(fs), "/dev/loop"))
++			    !ul_startswith(mnt_fs_get_srcpath(fs), "/dev/loop"))
+ 				continue;	/* does not look like loopdev */
+
+ 			if (mnt_fs_get_option(fstab_fs, "offset", &val, &len) == 0) {
+diff --git a/libmount/src/tab_parse.c b/libmount/src/tab_parse.c
+index e5db3e385cd..3dd8538802e 100644
+--- a/libmount/src/tab_parse.c
++++ b/libmount/src/tab_parse.c
+@@ -395,7 +395,7 @@ static int mnt_parse_swaps_line(struct libmnt_fs *fs, const char *s)
+ 	/* (1) source */
+ 	p = unmangle(s, &s);
+ 	if (p) {
+-		char *x = (char *) endswith(p, PATH_DELETED_SUFFIX);
++		char *x = (char *) ul_endswith(p, PATH_DELETED_SUFFIX);
+ 		if (x && *x)
+ 			*x = '\0';
+ 	}
+diff --git a/libmount/src/tab_update.c b/libmount/src/tab_update.c
+index a256edf8582..3cb5b30f956 100644
+--- a/libmount/src/tab_update.c
++++ b/libmount/src/tab_update.c
+@@ -763,7 +763,7 @@ static int update_modify_target(struct libmnt_update *upd)
+ 			char *p;
+ 			const char *e;
+
+-			e = startswith(mnt_fs_get_target(fs), upd_source);
++			e = ul_startswith(mnt_fs_get_target(fs), upd_source);
+ 			if (!e || (*e && *e != '/'))
+ 				continue;
+ 			if (*e == '/')
+diff --git a/libmount/src/utils.c b/libmount/src/utils.c
+index 8c3151b7368..46050ff51f5 100644
+--- a/libmount/src/utils.c
++++ b/libmount/src/utils.c
+@@ -1393,7 +1393,7 @@ static int test_startswith(struct libmnt_test *ts __attribute__((unused)),
+ 	char *optstr = argv[1];
+ 	char *pattern = argv[2];
+
+-	printf("%s\n", startswith(optstr, pattern) ? "YES" : "NOT");
++	printf("%s\n", ul_startswith(optstr, pattern) ? "YES" : "NOT");
+ 	return 0;
+ }
+
+@@ -1406,7 +1406,7 @@ static int test_endswith(struct libmnt_test *ts __attribute__((unused)),
+ 	char *optstr = argv[1];
+ 	char *pattern = argv[2];
+
+-	printf("%s\n", endswith(optstr, pattern) ? "YES" : "NOT");
++	printf("%s\n", ul_endswith(optstr, pattern) ? "YES" : "NOT");
+ 	return 0;
+ }
+
+diff --git a/misc-utils/lsblk-properties.c b/misc-utils/lsblk-properties.c
+index 8c88025e2d3..1f80f3e18ae 100644
+--- a/misc-utils/lsblk-properties.c
++++ b/misc-utils/lsblk-properties.c
+@@ -157,7 +157,7 @@ static struct lsblk_devprop *get_properties_by_udev(struct lsblk_device *ld)
+ 		const char *name = udev_list_entry_get_name(le);
+ 		size_t sz;
+
+-		if (!name || !startswith(name,  LSBLK_UDEV_BYID_PREFIX))
++		if (!name || !ul_startswith(name,  LSBLK_UDEV_BYID_PREFIX))
+ 			continue;
+ 		name += LSBLK_UDEV_BYID_PREFIXSZ;
+ 		if (!*name)
+diff --git a/misc-utils/lsclocks.c b/misc-utils/lsclocks.c
+index 24761bbd368..435894182bc 100644
+--- a/misc-utils/lsclocks.c
++++ b/misc-utils/lsclocks.c
+@@ -258,7 +258,7 @@ static int64_t get_namespace_offset(const char *name)
+ 		line = strtok_r(tokstr, "\n", &saveptr);
+ 		if (!line)
+ 			continue;
+-		line = (char *) startswith(line, name);
++		line = (char *) ul_startswith(line, name);
+ 		if (!line || line[0] != ' ')
+ 			continue;
+
+diff --git a/pam_lastlog2/src/pam_lastlog2.c b/pam_lastlog2/src/pam_lastlog2.c
+index c3ca989c1cb..0e3b8971949 100644
+--- a/pam_lastlog2/src/pam_lastlog2.c
++++ b/pam_lastlog2/src/pam_lastlog2.c
+@@ -98,9 +98,9 @@ _pam_parse_args (pam_handle_t *pamh,
+ 			ctrl |= LASTLOG2_DEBUG;
+ 		else if (strcmp (*argv, "silent") == 0)
+ 			ctrl |= LASTLOG2_QUIET;
+-		else if ((str = startswith (*argv, "database=")) != NULL)
++		else if ((str = ul_startswith (*argv, "database=")) != NULL)
+ 			lastlog2_path = str;
+-		else if ((str = startswith (*argv, "silent_if=")) != NULL) {
++		else if ((str = ul_startswith (*argv, "silent_if=")) != NULL) {
+ 			const void *void_str = NULL;
+ 			const char *service;
+ 			if ((pam_get_item (pamh, PAM_SERVICE, &void_str) != PAM_SUCCESS) ||
+@@ -143,7 +143,7 @@ write_login_data (pam_handle_t *pamh, int ctrl, const char *user)
+ 		tty = void_str;
+
+ 	/* strip leading "/dev/" from tty. */
+-	const char *str = startswith(tty, "/dev/");
++	const char *str = ul_startswith(tty, "/dev/");
+ 	if (str != NULL)
+ 		tty = str;
+
+diff --git a/sys-utils/lscpu-cputype.c b/sys-utils/lscpu-cputype.c
+index 50eec6a373e..d741ce60024 100644
+--- a/sys-utils/lscpu-cputype.c
++++ b/sys-utils/lscpu-cputype.c
+@@ -966,7 +966,7 @@ int lscpu_read_vulnerabilities(struct lscpu_cxt *cxt)
+
+ 		/* Description */
+ 		vu->text = str;
+-		p = (char *) startswith(vu->text, "Mitigation");
++		p = (char *) ul_startswith(vu->text, "Mitigation");
+ 		if (p) {
+ 			*p = ';';
+ 			strrem(vu->text, ':');
+diff --git a/sys-utils/mount.c b/sys-utils/mount.c
+index 875d249b477..b4b8fb63a53 100644
+--- a/sys-utils/mount.c
++++ b/sys-utils/mount.c
+@@ -393,17 +393,17 @@ static size_t libmount_mesgs(struct libmnt_context *cxt, char type)
+ 	UL_STRV_FOREACH(s, mesgs) {
+ 		switch (type) {
+ 		case 'e':
+-			if (!startswith(*s, "e "))
++			if (!ul_startswith(*s, "e "))
+ 				break;
+ 			fprintf(stderr, "      * %s\n", (*s) + 2);
+ 			break;
+ 		case 'w':
+-			if (!startswith(*s, "w "))
++			if (!ul_startswith(*s, "w "))
+ 				break;
+ 			fprintf(stdout, "      * %s\n", (*s) + 2);
+ 			break;
+ 		case 'i':
+-			if (!startswith(*s, "i "))
++			if (!ul_startswith(*s, "i "))
+ 				break;
+ 			fprintf(stdout, "      * %s\n", (*s) + 2);
+ 			break;
+diff --git a/sys-utils/rtcwake.c b/sys-utils/rtcwake.c
+index d01f5ed343c..45cbe9bc689 100644
+--- a/sys-utils/rtcwake.c
++++ b/sys-utils/rtcwake.c
+@@ -138,7 +138,7 @@ static int is_wakeup_enabled(const char *devname)
+ 	FILE	*f;
+ 	size_t	skip = 0;
+
+-	if (startswith(devname, "/dev/"))
++	if (ul_startswith(devname, "/dev/"))
+ 		skip = 5;
+ 	snprintf(buf, sizeof buf, SYS_WAKEUP_PATH_TEMPLATE, devname + skip);
+ 	f = fopen(buf, "r");
+@@ -402,7 +402,7 @@ static int open_dev_rtc(const char *devname)
+ 	int fd;
+ 	char *devpath = NULL;
+
+-	if (startswith(devname, "/dev"))
++	if (ul_startswith(devname, "/dev"))
+ 		devpath = xstrdup(devname);
+ 	else
+ 		xasprintf(&devpath, "/dev/%s", devname);
+diff --git a/sys-utils/setpriv-landlock.c b/sys-utils/setpriv-landlock.c
+index efbacafd0b1..1adea773f32 100644
+--- a/sys-utils/setpriv-landlock.c
++++ b/sys-utils/setpriv-landlock.c
+@@ -120,7 +120,7 @@ void parse_landlock_access(struct setpriv_landlock_opts *opts, const char *str)
+ 		return;
+ 	}
+
+-	type = startswith(str, "fs:");
++	type = ul_startswith(str, "fs:");
+ 	if (type)
+ 		opts->access_fs |= parse_landlock_fs_access(type);
+ }
+@@ -132,7 +132,7 @@ void parse_landlock_rule(struct setpriv_landlock_opts *opts, const char *str)
+ 	char *accesses_part;
+ 	int parent_fd;
+
+-	accesses = startswith(str, "path-beneath:");
++	accesses = ul_startswith(str, "path-beneath:");
+ 	if (!accesses)
+ 		errx(EXIT_FAILURE, _("invalid landlock rule: %s"), str);
+ 	path = strchr(accesses, ':');
+diff --git a/text-utils/bits.c b/text-utils/bits.c
+index aca4306ee1e..97a77a82f72 100644
+--- a/text-utils/bits.c
++++ b/text-utils/bits.c
+@@ -39,16 +39,16 @@ static void parse_mask_or_list(const char *cmdline_arg,
+ 	arg = cmdline_arg;
+
+ 	/* strip optional operator first */
+-	if (startswith(arg, "&")) {
++	if (ul_startswith(arg, "&")) {
+ 		bitwise_op = '&';
+ 		arg++;
+-	} else if (startswith(arg, "^")) {
++	} else if (ul_startswith(arg, "^")) {
+ 		bitwise_op = '^';
+ 		arg++;
+-	} else if (startswith(arg, "~")) {
++	} else if (ul_startswith(arg, "~")) {
+ 		bitwise_op = '~';
+ 		arg++;
+-	} else if (startswith(arg, "|")) {
++	} else if (ul_startswith(arg, "|")) {
+ 		arg++;
+ 	}
+
+@@ -56,8 +56,8 @@ static void parse_mask_or_list(const char *cmdline_arg,
+ 	if (bits == NULL)
+ 		errx(EXIT_FAILURE, _("error: cannot allocate bit mask"));
+
+-	if (startswith(arg, ",") || startswith(arg, "0x")) {
+-		if (startswith(arg, ","))
++	if (ul_startswith(arg, ",") || ul_startswith(arg, "0x")) {
++		if (ul_startswith(arg, ","))
+ 			arg++;
+ 		if (cpumask_parse(arg, bits, size) < 0)
+ 			errx(EXIT_FAILURE, _("error: invalid bit mask: %s"), cmdline_arg);
+
+From c128ee3ea488174230065f6a35286e01e98996f8 Mon Sep 17 00:00:00 2001
+From: Karel Zak <kzak@redhat.com>
+Date: Mon, 30 Jun 2025 11:15:30 +0200
+Subject: [PATCH 3/6] lib/strutils: add ul_ prefix to strconcat() functions
+
+Addresses: https://github.com/util-linux/util-linux/issues/3626
+Signed-off-by: Karel Zak <kzak@redhat.com>
+---
+ include/strutils.h   |  6 +++---
+ lib/strutils.c       | 10 +++++-----
+ lib/strv.c           |  2 +-
+ libmount/src/tab.c   |  2 +-
+ misc-utils/getopt.c  |  2 +-
+ misc-utils/logger.c  |  4 ++--
+ sys-utils/ipcutils.c |  2 +-
+ 7 files changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/include/strutils.h b/include/strutils.h
+index 2cea6e6e815..db95f79cb85 100644
+--- a/include/strutils.h
++++ b/include/strutils.h
+@@ -456,9 +456,9 @@ static inline char *ul_next_string(char *p, char *end)
+ 	return NULL;
+ }
+
+-extern char *strnconcat(const char *s, const char *suffix, size_t b);
+-extern char *strconcat(const char *s, const char *suffix);
+-extern char *strfconcat(const char *s, const char *format, ...)
++extern char *ul_strnconcat(const char *s, const char *suffix, size_t b);
++extern char *ul_strconcat(const char *s, const char *suffix);
++extern char *ul_strfconcat(const char *s, const char *format, ...)
+ 		 __attribute__ ((__format__ (__printf__, 2, 3)));
+
+ extern int strappend(char **a, const char *b);
+diff --git a/lib/strutils.c b/lib/strutils.c
+index 2316ada11fd..f25d8aba1d6 100644
+--- a/lib/strutils.c
++++ b/lib/strutils.c
+@@ -964,7 +964,7 @@ int streq_paths(const char *a, const char *b)
+ }
+
+ /* concatenate two strings to a new string, the size of the second string is limited by @b */
+-char *strnconcat(const char *s, const char *suffix, size_t b)
++char *ul_strnconcat(const char *s, const char *suffix, size_t b)
+ {
+         size_t a;
+         char *r;
+@@ -995,13 +995,13 @@ char *strnconcat(const char *s, const char *suffix, size_t b)
+ }
+
+ /* concatenate two strings to a new string */
+-char *strconcat(const char *s, const char *suffix)
++char *ul_strconcat(const char *s, const char *suffix)
+ {
+-        return strnconcat(s, suffix, suffix ? strlen(suffix) : 0);
++        return ul_strnconcat(s, suffix, suffix ? strlen(suffix) : 0);
+ }
+
+ /* concatenate @s and string defined by @format to a new string */
+-char *strfconcat(const char *s, const char *format, ...)
++char *ul_strfconcat(const char *s, const char *format, ...)
+ {
+ 	va_list ap;
+ 	char *val, *res;
+@@ -1014,7 +1014,7 @@ char *strfconcat(const char *s, const char *format, ...)
+ 	if (sz < 0)
+ 		return NULL;
+
+-	res = strnconcat(s, val, sz);
++	res = ul_strnconcat(s, val, sz);
+ 	free(val);
+ 	return res;
+ }
+diff --git a/lib/strv.c b/lib/strv.c
+index 6946f409b14..bd006e353a8 100644
+--- a/lib/strv.c
++++ b/lib/strv.c
+@@ -164,7 +164,7 @@ int ul_strv_extend_strv_concat(char ***a, char **b, const char *suffix) {
+         UL_STRV_FOREACH(s, b) {
+                 char *v;
+
+-                v = strconcat(*s, suffix);
++                v = ul_strconcat(*s, suffix);
+                 if (!v)
+                         return -ENOMEM;
+
+diff --git a/libmount/src/tab.c b/libmount/src/tab.c
+index c8433674f9f..bde55b73d7e 100644
+--- a/libmount/src/tab.c
++++ b/libmount/src/tab.c
+@@ -1900,7 +1900,7 @@ int __mnt_table_is_fs_mounted(struct libmnt_table *tb, struct libmnt_fs *fstab_f
+ 			src = mnt_fs_get_srcpath(rootfs);
+ 			if (fstype && strncmp(fstype, "nfs", 3) == 0 && root) {
+ 				/* NFS stores the root at the end of the source */
+-				src = src2 = strconcat(src, root);
++				src = src2 = ul_strconcat(src, root);
+ 				free(root);
+ 				root = NULL;
+ 			}
+diff --git a/misc-utils/getopt.c b/misc-utils/getopt.c
+index 4cd3cda3ab1..ca68d964835 100644
+--- a/misc-utils/getopt.c
++++ b/misc-utils/getopt.c
+@@ -279,7 +279,7 @@ static void add_short_options(struct getopt_control *ctl, char *options)
+ {
+ 	free(ctl->optstr);
+ 	if (*options != '+' && getenv("POSIXLY_CORRECT"))
+-		ctl->optstr = strconcat("+", options);
++		ctl->optstr = ul_strconcat("+", options);
+ 	else
+ 		ctl->optstr = xstrdup(options);
+ 	if (!ctl->optstr)
+diff --git a/misc-utils/logger.c b/misc-utils/logger.c
+index 4883c7e43f9..83b39542f66 100644
+--- a/misc-utils/logger.c
++++ b/misc-utils/logger.c
+@@ -670,7 +670,7 @@ static char *strdup_structured_data_list(struct list_head *ls)
+
+ 		if (!one)
+ 			continue;
+-		res = strconcat(tmp, one);
++		res = ul_strconcat(tmp, one);
+ 		free(tmp);
+ 		free(one);
+ 	}
+@@ -688,7 +688,7 @@ static char *get_structured_data_string(struct logger_ctl *ctl)
+ 		usr = strdup_structured_data_list(&ctl->user_sds);
+
+ 	if (sys && usr) {
+-		res = strconcat(sys, usr);
++		res = ul_strconcat(sys, usr);
+ 		free(sys);
+ 		free(usr);
+ 	} else
+diff --git a/sys-utils/ipcutils.c b/sys-utils/ipcutils.c
+index e3da523b7cd..c130103fd8b 100644
+--- a/sys-utils/ipcutils.c
++++ b/sys-utils/ipcutils.c
+@@ -715,7 +715,7 @@ int posix_ipc_msg_get_info(const char *name, struct posix_msg_data **msgds)
+ 		}
+ 		fclose(f);
+
+-		p->mname = strconcat("/", de->d_name);
++		p->mname = ul_strconcat("/", de->d_name);
+
+ 		mqd_t mq = mq_open(p->mname, O_RDONLY);
+ 		struct mq_attr attr;
+
+From d42e5e4bc355277b820d98768e2fda52e2d08e76 Mon Sep 17 00:00:00 2001
+From: Karel Zak <kzak@redhat.com>
+Date: Mon, 30 Jun 2025 11:15:30 +0200
+Subject: [PATCH 4/6] lib/strutils: add ul_ prefix to strappend() functions
+
+Addresses: https://github.com/util-linux/util-linux/issues/3626
+Signed-off-by: Karel Zak <kzak@redhat.com>
+---
+ include/strutils.h | 4 ++--
+ include/xalloc.h   | 4 ++--
+ lib/strutils.c     | 8 ++++----
+ libmount/src/fs.c  | 2 +-
+ libmount/src/tab.c | 4 ++--
+ 5 files changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/include/strutils.h b/include/strutils.h
+index db95f79cb85..73aba597501 100644
+--- a/include/strutils.h
++++ b/include/strutils.h
+@@ -461,10 +461,10 @@ extern char *ul_strconcat(const char *s, const char *suffix);
+ extern char *ul_strfconcat(const char *s, const char *format, ...)
+ 		 __attribute__ ((__format__ (__printf__, 2, 3)));
+
+-extern int strappend(char **a, const char *b);
++extern int ul_strappend(char **a, const char *b);
+ extern int strfappend(char **a, const char *format, ...)
+ 		 __attribute__ ((__format__ (__printf__, 2, 3)));
+-extern int strvfappend(char **a, const char *format, va_list ap)
++extern int ul_strvfappend(char **a, const char *format, va_list ap)
+ 		 __attribute__ ((__format__ (__printf__, 2, 0)));
+
+ extern const char *split(const char **state, size_t *l, const char *separator, int quoted);
+diff --git a/include/xalloc.h b/include/xalloc.h
+index 2d13d54b931..c620a4921dd 100644
+--- a/include/xalloc.h
++++ b/include/xalloc.h
+@@ -139,7 +139,7 @@ int xvasprintf(char **strp, const char *fmt, va_list ap)
+
+ static inline void xstrappend(char **a, const char *b)
+ {
+-	if (strappend(a, b) < 0)
++	if (ul_strappend(a, b) < 0)
+ 		err(XALLOC_EXIT_CODE, "cannot allocate string");
+ }
+
+@@ -153,7 +153,7 @@ static inline
+ __attribute__((__format__(printf, 2, 0)))
+ int xstrvfappend(char **a, const char *format, va_list ap)
+ {
+-	int ret = strvfappend(a, format, ap);
++	int ret = ul_strvfappend(a, format, ap);
+
+ 	if (ret < 0)
+ 		err(XALLOC_EXIT_CODE, "cannot allocate string");
+diff --git a/lib/strutils.c b/lib/strutils.c
+index f25d8aba1d6..c686feafe02 100644
+--- a/lib/strutils.c
++++ b/lib/strutils.c
+@@ -1019,7 +1019,7 @@ char *ul_strfconcat(const char *s, const char *format, ...)
+ 	return res;
+ }
+
+-int strappend(char **a, const char *b)
++int ul_strappend(char **a, const char *b)
+ {
+ 	size_t al, bl;
+ 	char *tmp;
+@@ -1051,13 +1051,13 @@ int strfappend(char **a, const char *format, ...)
+ 	int res;
+
+ 	va_start(ap, format);
+-	res = strvfappend(a, format, ap);
++	res = ul_strvfappend(a, format, ap);
+ 	va_end(ap);
+
+ 	return res;
+ }
+
+-extern int strvfappend(char **a, const char *format, va_list ap)
++extern int ul_strvfappend(char **a, const char *format, va_list ap)
+ {
+ 	char *val;
+ 	int sz;
+@@ -1067,7 +1067,7 @@ extern int strvfappend(char **a, const char *format, va_list ap)
+ 	if (sz < 0)
+ 		return -errno;
+
+-	res = strappend(a, val);
++	res = ul_strappend(a, val);
+ 	free(val);
+ 	return res;
+ }
+diff --git a/libmount/src/fs.c b/libmount/src/fs.c
+index c01c313b112..64c7ee865c0 100644
+--- a/libmount/src/fs.c
++++ b/libmount/src/fs.c
+@@ -1668,7 +1668,7 @@ int mnt_fs_append_comment(struct libmnt_fs *fs, const char *comm)
+ 	if (!fs)
+ 		return -EINVAL;
+
+-	return strappend(&fs->comment, comm);
++	return ul_strappend(&fs->comment, comm);
+ }
+
+ /**
+diff --git a/libmount/src/tab.c b/libmount/src/tab.c
+index bde55b73d7e..4209d697a53 100644
+--- a/libmount/src/tab.c
++++ b/libmount/src/tab.c
+@@ -318,7 +318,7 @@ int mnt_table_append_intro_comment(struct libmnt_table *tb, const char *comm)
+ {
+ 	if (!tb)
+ 		return -EINVAL;
+-	return strappend(&tb->comm_intro, comm);
++	return ul_strappend(&tb->comm_intro, comm);
+ }
+
+ /**
+@@ -359,7 +359,7 @@ int mnt_table_append_trailing_comment(struct libmnt_table *tb, const char *comm)
+ {
+ 	if (!tb)
+ 		return -EINVAL;
+-	return strappend(&tb->comm_tail, comm);
++	return ul_strappend(&tb->comm_tail, comm);
+ }
+
+ /**
+
+From 6b627aa34d2977eb347b32040c1c3075daad3d1d Mon Sep 17 00:00:00 2001
+From: Karel Zak <kzak@redhat.com>
+Date: Mon, 30 Jun 2025 11:15:30 +0200
+Subject: [PATCH 5/6] lib/strutils: add ul_ prefix to split() function
+
+Addresses: https://github.com/util-linux/util-linux/issues/3626
+Signed-off-by: Karel Zak <kzak@redhat.com>
+---
+ include/strutils.h | 2 +-
+ lib/strutils.c     | 2 +-
+ lib/strv.c         | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/include/strutils.h b/include/strutils.h
+index 73aba597501..04c867fde88 100644
+--- a/include/strutils.h
++++ b/include/strutils.h
+@@ -467,7 +467,7 @@ extern int strfappend(char **a, const char *format, ...)
+ extern int ul_strvfappend(char **a, const char *format, va_list ap)
+ 		 __attribute__ ((__format__ (__printf__, 2, 0)));
+
+-extern const char *split(const char **state, size_t *l, const char *separator, int quoted);
++extern const char *ul_split(const char **state, size_t *l, const char *separator, int quoted);
+
+ extern char *ul_strchr_escaped(const char *s, int c);
+
+diff --git a/lib/strutils.c b/lib/strutils.c
+index c686feafe02..c27d645c21b 100644
+--- a/lib/strutils.c
++++ b/lib/strutils.c
+@@ -1122,7 +1122,7 @@ char *ul_strchr_escaped(const char *s, int c)
+ }
+
+ /* Split a string into words. */
+-const char *split(const char **state, size_t *l, const char *separator, int quoted)
++const char *ul_split(const char **state, size_t *l, const char *separator, int quoted)
+ {
+         const char *current;
+
+diff --git a/lib/strv.c b/lib/strv.c
+index bd006e353a8..6da638c1a26 100644
+--- a/lib/strv.c
++++ b/lib/strv.c
+@@ -180,7 +180,7 @@ int ul_strv_extend_strv_concat(char ***a, char **b, const char *suffix) {
+
+
+ #define _FOREACH_WORD(word, length, s, separator, quoted, state)        \
+-        for ((state) = (s), (word) = split(&(state), &(length), (separator), (quoted)); (word); (word) = split(&(state), &(length), (separator), (quoted)))
++        for ((state) = (s), (word) = ul_split(&(state), &(length), (separator), (quoted)); (word); (word) = ul_split(&(state), &(length), (separator), (quoted)))
+
+ #define FOREACH_WORD_SEPARATOR(word, length, s, separator, state)       \
+         _FOREACH_WORD(word, length, s, separator, false, state)
+
+From 7bb1151e559710f18682454384c99d7cd67f35fb Mon Sep 17 00:00:00 2001
+From: Karel Zak <kzak@redhat.com>
+Date: Mon, 30 Jun 2025 11:15:30 +0200
+Subject: [PATCH 6/6] lib/strutils: add ul_ prefix to strrep() and strrem()
+ functions
+
+Addresses: https://github.com/util-linux/util-linux/issues/3626
+Signed-off-by: Karel Zak <kzak@redhat.com>
+---
+ include/strutils.h            | 4 ++--
+ sys-utils/lscpu-cputype.c     | 4 ++--
+ term-utils/script-playutils.c | 2 +-
+ term-utils/script.c           | 4 ++--
+ 4 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/include/strutils.h b/include/strutils.h
+index 04c867fde88..2ee7c3e531e 100644
+--- a/include/strutils.h
++++ b/include/strutils.h
+@@ -420,13 +420,13 @@ static inline size_t normalize_whitespace(unsigned char *str)
+ 	return __normalize_whitespace(str, sz, str, sz + 1);
+ }
+
+-static inline void strrep(char *s, int find, int replace)
++static inline void ul_strrep(char *s, int find, int replace)
+ {
+ 	while (s && *s && (s = strchr(s, find)) != NULL)
+ 		*s++ = replace;
+ }
+
+-static inline void strrem(char *s, int rem)
++static inline void ul_strrem(char *s, int rem)
+ {
+ 	char *p;
+
+diff --git a/sys-utils/lscpu-cputype.c b/sys-utils/lscpu-cputype.c
+index d741ce60024..c3a4cbaa2f9 100644
+--- a/sys-utils/lscpu-cputype.c
++++ b/sys-utils/lscpu-cputype.c
+@@ -962,14 +962,14 @@ int lscpu_read_vulnerabilities(struct lscpu_cxt *cxt)
+ 		/* Name */
+ 		vu->name = xstrdup(d->d_name);
+ 		*vu->name = toupper(*vu->name);
+-		strrep(vu->name, '_', ' ');
++		ul_strrep(vu->name, '_', ' ');
+
+ 		/* Description */
+ 		vu->text = str;
+ 		p = (char *) ul_startswith(vu->text, "Mitigation");
+ 		if (p) {
+ 			*p = ';';
+-			strrem(vu->text, ':');
++			ul_strrem(vu->text, ':');
+ 		}
+ 	}
+ 	closedir(dir);
+diff --git a/term-utils/script-playutils.c b/term-utils/script-playutils.c
+index 854d9525228..8c68ad14ca5 100644
+--- a/term-utils/script-playutils.c
++++ b/term-utils/script-playutils.c
+@@ -359,7 +359,7 @@ static int read_multistream_step(struct replay_step *step, FILE *f, char type)
+ 			break;
+ 		}
+ 		if (*buf) {
+-			strrem(buf, '\n');
++			ul_strrem(buf, '\n');
+ 			step->value = strrealloc(step->value, buf);
+ 			if (!step->value)
+ 				err_oom();
+diff --git a/term-utils/script.c b/term-utils/script.c
+index 7f31c141cf0..b7777776eb0 100644
+--- a/term-utils/script.c
++++ b/term-utils/script.c
+@@ -826,7 +826,7 @@ int main(int argc, char **argv)
+ 		case 'c':
+ 			ctl.command = optarg;
+ 			ctl.command_norm = xstrdup(ctl.command);
+-			strrep(ctl.command_norm, '\n', ' ');
++			ul_strrep(ctl.command_norm, '\n', ' ');
+ 			break;
+ 		case 'E':
+ 			if (strcmp(optarg, "auto") == 0)

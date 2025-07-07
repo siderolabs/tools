@@ -2,6 +2,7 @@ name: tools-squashfs-tools
 variant: scratch
 dependencies:
   - stage: base
+  - stage: sed
   - stage: tools-xz
   - stage: tools-zlib
   - stage: tools-zstd
@@ -17,15 +18,17 @@ steps:
         tar -xf squashfs.tar.gz --strip-components=1
 
         patch -p1 </pkg/patches/fix-compat.patch
+        patch -p1 </pkg/patches/fix-pid_t.patch
+        patch -p1 </pkg/patches/fix-Makefile.patch
     build:
       - |
         cd squashfs-tools
-        make XZ_SUPPORT=1 LZMA_XZ_SUPPORT=0 LZMA_SUPPORT=0 ZSTD_SUPPORT=1
+        make LZ4_SUPPORT=0 LZO_SUPPORT=0 CONFIG=1 
     install:
       - |
         cd squashfs-tools
         mkdir -p /rootfs/usr/bin
-        make install INSTALL_DIR=/rootfs/usr/bin
+        make install INSTALL_DIR=/rootfs/usr/bin LZ4_SUPPORT=0 LZO_SUPPORT=0 CONFIG=1 INSTALL_MANPAGES_DIR=
     test:
       - |
         fhs-validator /rootfs
