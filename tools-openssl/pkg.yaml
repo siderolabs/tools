@@ -48,6 +48,13 @@ steps:
     test:
       - |
         fhs-validator /rootfs
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/openssl.spdx.json
+      version: {{ .openssl_version }}
+      cpes:
+        - cpe:2.3:a:openssl:openssl:{{ .openssl_version }}:*:*:*:*:*:*:*
+      licenses:
+        - Apache-2.0
 finalize:
   - from: /rootfs
     to: /

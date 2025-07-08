@@ -35,6 +35,13 @@ steps:
     test:
       - |
         fhs-validator /rootfs
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/pcre2.spdx.json
+      version: {{ .pcre2_version }}
+      cpes:
+        - cpe:2.3:a:pcre:pcre2:{{ .pcre2_version }}:*:*:*:*:*:*:*
+      licenses:
+        - BSD-3-Clause WITH PCRE2-exception
 finalize:
   - from: /rootfs
     to: /

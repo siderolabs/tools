@@ -30,6 +30,13 @@ steps:
     test:
       - |
         fhs-validator /rootfs
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/libselinux.spdx.json
+      version: {{ .selinux_version }}
+      cpes:
+        - cpe:2.3:a:selinuxproject:libselinux:{{ .selinux_version }}:*:*:*:*:*:*:*
+      licenses:
+        - CUSTOM
 finalize:
   - from: /rootfs
     to: /

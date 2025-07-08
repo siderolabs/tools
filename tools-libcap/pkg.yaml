@@ -23,6 +23,13 @@ steps:
     test:
       - |
         fhs-validator /rootfs
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/libcap.spdx.json
+      version: {{ .libcap_version }}
+      cpes:
+        - cpe:2.3:a:libcap_project:libcap:{{ .libcap_version }}:*:*:*:*:*:*:*
+      licenses:
+        - BSD-3-Clause OR GPL-2.0-only
 finalize:
   - from: /rootfs
     to: /

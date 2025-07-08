@@ -26,6 +26,13 @@ steps:
     test:
       - |
         fhs-validator /rootfs
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/libsepol.spdx.json
+      version: {{ .selinux_version }}
+      cpes:
+        - cpe:2.3:a:selinuxproject:libsepol:{{ .selinux_version }}:*:*:*:*:*:*:*
+      licenses:
+        - LGPL-2.1-only
 finalize:
   - from: /rootfs
     to: /

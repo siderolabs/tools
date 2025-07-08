@@ -31,6 +31,13 @@ steps:
     test:
       - |
         fhs-validator /rootfs
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/tar.spdx.json
+      version: {{ .tar_version }}
+      cpes:
+        - cpe:2.3:a:gnu:tar:{{ .tar_version }}:*:*:*:*:*:*:*
+      licenses:
+        - GPL-3.0-only
 finalize:
   - from: /rootfs
     to: /

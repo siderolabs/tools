@@ -38,6 +38,14 @@ steps:
     test:
       - |
         fhs-validator /rootfs
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/kmod.spdx.json
+      version: {{ .kmod_version }}
+      cpes:
+        - cpe:2.3:a:kernel:kmod:{{ .kmod_version }}:*:*:*:*:*:*:*
+      licenses:
+        - GPL-2.0-or-later
+        - LGPL-2.1-or-later
 finalize:
   - from: /rootfs
     to: /

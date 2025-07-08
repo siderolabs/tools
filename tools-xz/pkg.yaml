@@ -38,6 +38,15 @@ steps:
     test:
       - |
         fhs-validator /rootfs
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/xz.spdx.json
+      version: {{ .xz_version }}
+      cpes:
+        - cpe:2.3:a:tukaani:xz:{{ .xz_version }}:*:*:*:*:*:*:*
+      licenses:
+        - 0BSD
+        - LGPL-2.1-or-later
+        - GPL-3.0-or-later
 finalize:
   - from: /rootfs
     to: /
