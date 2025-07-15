@@ -50,6 +50,7 @@ steps:
         fhs-validator /rootfs
     sbom:
       outputPath: /rootfs/usr/share/spdx/openssl.spdx.json
+      name: openssl
       version: {{ .openssl_version }}
       cpes:
         - cpe:2.3:a:openssl:openssl:{{ .openssl_version }}:*:*:*:*:*:*:*

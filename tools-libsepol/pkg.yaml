@@ -28,6 +28,7 @@ steps:
         fhs-validator /rootfs
     sbom:
       outputPath: /rootfs/usr/share/spdx/libsepol.spdx.json
+      name: libsepol
       version: {{ .selinux_version }}
       cpes:
         - cpe:2.3:a:selinuxproject:libsepol:{{ .selinux_version }}:*:*:*:*:*:*:*

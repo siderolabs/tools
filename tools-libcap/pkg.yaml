@@ -25,6 +25,7 @@ steps:
         fhs-validator /rootfs
     sbom:
       outputPath: /rootfs/usr/share/spdx/libcap.spdx.json
+      name: libcap
       version: {{ .libcap_version }}
       cpes:
         - cpe:2.3:a:libcap_project:libcap:{{ .libcap_version }}:*:*:*:*:*:*:*

@@ -33,6 +33,7 @@ steps:
         fhs-validator /rootfs
     sbom:
       outputPath: /rootfs/usr/share/spdx/tar.spdx.json
+      name: tar
       version: {{ .tar_version }}
       cpes:
         - cpe:2.3:a:gnu:tar:{{ .tar_version }}:*:*:*:*:*:*:*
