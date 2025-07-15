@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.4.1-3-g38d5691
+# syntax = ghcr.io/siderolabs/bldr:v0.5.0
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.11.0-alpha.0-5-gb5dd147
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.11.0-alpha.0-6-g44ba1dd
 
   # stick to whatever version protobuf requires, see https://github.com/protocolbuffers/protobuf/blob/33d0cd03571aca25adf11d3a62add1d52d1cc27d/cmake/dependencies.cmake#L15
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
@@ -114,9 +114,9 @@ vars:
   gettext_tiny_sha512: 25325db240ab79d112c59d83e975fa466f0e69efb4348ca7b0a170349c761b54170001a49a1660eebf834a8895c11403864db52556253fdcc2af29121c361ba1
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.50.0
-  git_sha256: dff3c000e400ace3a63b8a6f8b3b76b88ecfdffd4504a04aba4248372cdec045
-  git_sha512: a8fdf5b0ab156822324b76aa7200071eb7244f7714807c39f05bc3361bc261272a6fdd1d0bc3a097dbbf27e92c02eda612aac17cb2a45ddfa222d74937cac67f
+  git_version: 2.50.1
+  git_sha256: 7e3e6c36decbd8f1eedd14d42db6674be03671c2204864befa2a41756c5c8fc4
+  git_sha512: 09f37290c0d4d074b97363f4a4be1813426e93ac3fa993c4d671bb1462bcc9335713c17d1442196a35205a603eeb052662382935d27498875a251f4fe86f6b36
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
@@ -135,9 +135,9 @@ vars:
   grep_sha512: c54b4db5a8b9afe098c088decd94977746305284d716666a60bac82b4edc0fae4acf828970b5b6fc7d58ecd549f638e17e6958f33a71fedcc7d7415b9228b161
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
-  gnutls_version: 3.8.9
-  gnutls_sha256: 69e113d802d1670c4d5ac1b99040b1f2d5c7c05daec5003813c049b5184820ed
-  gnutls_sha512: b3b201671bf4e75325610a0291d4cd36a669718e22b3685246b64bde97b5bd94f463ab376ed817869869714115f4ff11bdc53c32604bb04a8ff8e10daa6d1fc7
+  gnutls_version: 3.8.10
+  gnutls_sha256: db7fab7cce791e7727ebbef2334301c821d79a550ec55c9ef096b610b03eb6b7
+  gnutls_sha512: d453bd4527af95cb3905ce8753ceafd969e3f442ad1d148544a233ebf13285b999930553a805a0511293cc25390bb6a040260df5544a7c55019640f920ad3d92
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gzip.git
   gzip_version: 1.14
@@ -230,9 +230,9 @@ vars:
   nettle_sha512: bf37ddd7dca8e78488da2a5286dcf16761d527d620572b42f2ad27bb8ee8c12999d92b0272e06f53766e7155a3f4a1ab7ad9c4b1c3caec47c031878b6b1772fb
 
   # renovate: datasource=github-releases depName=ninja-build/ninja
-  ninja_version: v1.13.0
-  ninja_sha256: f08641d00099a9e40d44ec0146f841c472ae58b7e6dd517bee3945cfd923cedf
-  ninja_sha512: e03f721a34c19e47160eae2daa56299f4d030df646f63a277b8089b37ed8922e0cc944c421d257a33ee05b177a61ed15d8eb0e8584c3196da3137677b7b41db6
+  ninja_version: v1.13.1
+  ninja_sha256: f0055ad0369bf2e372955ba55128d000cfcc21777057806015b45e4accbebf23
+  ninja_sha512: ec94d42967b962d66ab0747fcb9d095510117159de0473ec08df47a657895aa2523f920798e4608d0c6cf0e2e382512c14aec8a54ea58b6cd4b01edd3a7c8e62
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
   openssl_version: 3.5.1
