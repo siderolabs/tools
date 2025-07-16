@@ -79,6 +79,7 @@ dependencies:
   - stage: tools-openssl
   - stage: tools-pcre2
   - stage: tools-squashfs-tools
+  - stage: tools-squashfs-tools-ng
   - stage: tools-tar
   - stage: tools-util-linux
   - stage: tools-xz
