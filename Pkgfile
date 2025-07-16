@@ -9,7 +9,7 @@ vars:
 
   # stick to whatever version protobuf requires, see https://github.com/protocolbuffers/protobuf/blob/33d0cd03571aca25adf11d3a62add1d52d1cc27d/cmake/dependencies.cmake#L15
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
-  abseil_version: 20250127.1
+  abseil_version: 20250512.1
   abseil_sha256: b396401fd29e2e679cace77867481d388c807671dc2acc602a0259eeb79b7811
   abseil_sha512: 8312acf0ed74fa28c6397f3e41ada656dbd5ca2bf8db484319d74b144ad19c0ebdc77f7f03436be6c6ca1cde706b9055079233cf0d6b5ada4ca48406f8a55dd8
 
@@ -59,7 +59,7 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_14_1
+  curl_version: 8_15_0
   curl_sha256: f4619a1e2474c4bbfedc88a7c2191209c8334b48fa1f4e53fd584cc12e9120dd
   curl_sha512: 7f6eae04cc23c50fc41d448aa28dfa59141018009e42c5b1e3f4e0d40c0633460b4e6eec05dfc290f7953671096abfa70a8b5443fccdd3f1be6be32ac10b31d9
 
@@ -337,7 +337,7 @@ vars:
   rhash_sha512: c125b71ec36cce2ec31057239cac8b987555f5e3b152dacb6386b905f8cc4d449c1de5b53e5a5206a2d87975681225c9b54e5826c10ffd91b3440f8595d22b15
 
   # renovate: datasource=github-tags depName=SELinuxProject/selinux
-  selinux_version: 3.8.1
+  selinux_version: 3.9
   libselinux_sha256: ec2d2789f931152d21c1db1eb4bc202ce4eccede34d9be9e360e3b45243cee2c
   libselinux_sha512: 646a31dff3b670a530adb9fc2fdc3ca9fe34a58e67e0fac52cc33bc7a01fa63c175987ef254c6c3bc7299cef137bc6f258dc378f4d70ae5c0fa0ece3bef42ab4
   libsepol_sha256: 0e78705305f955abd4c0654d37a5477ee26349ab74db9e2b03a7868897ae1ddf
@@ -358,7 +358,7 @@ vars:
   squashfs_tools_sha512: db69937dd62c61c77ee555df0346942a5da671e5a9c2e93cd76ea1132f7e20b17fc701d53d8a232b192301c4769869b6b1ea47dac877afcc8dfa9a4eea31e1e0
 
   # renovate: datasource=github-tags depName=swig/swig
-  swig_version: v4.2.1
+  swig_version: v4.3.1
   swig_sha256: 8895878b9215612e73611203dc8f5232c626e4d07ffc4532922f375518f067ca
   swig_sha512: 5d653333f73356d4d5ba8b615882e49f33f188bc68d8204352116bc4aca7946ec01ce2e02524c5ce805b98c2219ed05e664120485bf18095c5c0785436487074
 
