@@ -3,7 +3,6 @@ variant: scratch
 shell: /bin/sh
 dependencies:
   - stage: base # toolchain + fhs-validator
-  - stage: abseil
   - stage: argp-standalone
   - stage: autoconf
   - stage: automake
@@ -52,9 +51,6 @@ dependencies:
   - stage: perl
   - stage: pkg-config
   - stage: policycoreutils
-  - stage: protobuf
-  - stage: protoc-gen-go
-  - stage: protoc-gen-go-grpc
   - stage: pyelftools
   - stage: python-build
   - stage: python-flit_core

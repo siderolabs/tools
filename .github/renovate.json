@@ -86,22 +86,10 @@
             ]
         },
         {
-            "versioning": "regex:^(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})\\.?(?<build>\\d+)?$",
-            "matchPackageNames": [
-                "abseil/abseil-cpp"
-            ]
-        },
-        {
             "versioning": "regex:^(?<major>\\d+)\\.?(?<minor>\\d+)?\\.?(?<patch>\\d+)?$",
             "matchPackageNames": [
                 "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git",
                 "systemd/systemd"
-            ]
-        },
-        {
-            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)",
-            "matchPackageNames": [
-                "protocolbuffers/protobuf"
             ]
         },
         {

@@ -50,15 +50,9 @@ spec:
         - https://gitlab.kitware.com/cmake/cmake.git
       versioning: 'regex:^(?<major>\d+)\.(?<minor>\d+)\.?(?<patch>\d+)?$'
     - matchPackageNames:
-        - abseil/abseil-cpp
-      versioning: 'regex:^(?<major>\d{4})(?<minor>\d{2})(?<patch>\d{2})\.?(?<build>\d+)?$'
-    - matchPackageNames:
         - git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
         - systemd/systemd
       versioning: 'regex:^(?<major>\d+)\.?(?<minor>\d+)?\.?(?<patch>\d+)?$'
-    - matchPackageNames:
-        - protocolbuffers/protobuf
-      versioning: 'regex:^(?<major>\d+)\.(?<minor>\d+)'
     - matchPackageNames:
         - curl/curl
         - libexpat/libexpat
