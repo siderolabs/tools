@@ -27,6 +27,8 @@ steps:
             --with-shared \
             --without-debug \
             --without-ada \
+            --without-cxx-binding \
+            --without-cxx-shared \
             --enable-overwrite
     build:
       - |

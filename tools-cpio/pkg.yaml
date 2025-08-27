@@ -15,6 +15,7 @@ steps:
         tar -xzf cpio.tar.gz --strip-components=1
 
         patch -p1 < /pkg/patches/gcc-10.patch
+        patch -p1 < /pkg/patches/gcc-15.patch
 
         mkdir build
         cd build

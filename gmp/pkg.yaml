@@ -2,6 +2,10 @@ name: gmp
 variant: scratch
 dependencies:
   - stage: base
+  - stage: patch
+  - stage: autoconf
+  - stage: automake
+  - stage: libtool
   - stage: m4
 steps:
   - sources:
@@ -12,6 +16,11 @@ steps:
     prepare:
       - |
         tar -xJf gmp.tar.xz --strip-components=1
+
+        patch -p1 < /pkg/patches/gmp-gcc-15.patch
+
+        autoreconf -vif
+
         mkdir build
         cd build
         ../configure \

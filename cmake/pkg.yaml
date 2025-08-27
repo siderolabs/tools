@@ -6,7 +6,6 @@ dependencies:
   - stage: curl
   - stage: expat
   - stage: libuv
-  - stage: ncurses
   - stage: rhash
   - stage: tools-xz
   - stage: tools-zlib
@@ -28,7 +27,7 @@ steps:
             --no-system-jsoncpp \
             --no-system-libarchive \
             --parallel=$(nproc) \
-            -- -DCMAKE_BUILD_TYPE:STRING=Release
+            -- -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_CursesDialog=OFF
     build:
       - |
         make -j $(nproc)
