@@ -9,7 +9,7 @@ dependencies:
   - stage: patch
   - stage: autoconf
   - stage: automake
-  - stage: pkg-config
+  - stage: pkgconf
 steps:
   - sources:
       - url: https://sourceware.org/elfutils/ftp/{{ .elfutils_version }}/elfutils-{{ .elfutils_version }}.tar.bz2

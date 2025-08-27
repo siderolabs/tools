@@ -6,7 +6,7 @@ dependencies:
   - stage: patch
   - stage: libffi
   - stage: tools-openssl
-  - stage: pkg-config
+  - stage: pkgconf
 steps:
   - sources:
       - url: https://www.python.org/ftp/python/{{ .python_version }}/Python-{{ .python_version }}.tar.xz

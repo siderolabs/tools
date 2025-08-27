@@ -18,12 +18,10 @@ steps:
         tar -xf squashfs.tar.gz --strip-components=1
 
         patch -p1 </pkg/patches/fix-compat.patch
-        patch -p1 </pkg/patches/fix-pid_t.patch
-        patch -p1 </pkg/patches/fix-Makefile.patch
     build:
       - |
         cd squashfs-tools
-        make LZ4_SUPPORT=0 LZO_SUPPORT=0 CONFIG=1 
+        make LZ4_SUPPORT=0 LZO_SUPPORT=0 CONFIG=1
     install:
       - |
         cd squashfs-tools

@@ -49,7 +49,7 @@ dependencies:
   - stage: pahole
   - stage: patch
   - stage: perl
-  - stage: pkg-config
+  - stage: pkgconf
   - stage: policycoreutils
   - stage: pyelftools
   - stage: python-build

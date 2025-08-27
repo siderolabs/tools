@@ -6,7 +6,7 @@ dependencies:
   - stage: gmp
   - stage: tools-zlib
   - stage: texinfo
-  - stage: pkg-config
+  - stage: pkgconf
   - stage: libtasn1
   - stage: libunistring
 steps:

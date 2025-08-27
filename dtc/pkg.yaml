@@ -5,7 +5,7 @@ dependencies:
   - stage: m4
   - stage: bison
   - stage: flex
-  - stage: pkg-config
+  - stage: pkgconf
 steps:
   - sources:
       - url: https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-{{ .dtc_version }}.tar.xz

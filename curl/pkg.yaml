@@ -6,7 +6,7 @@ dependencies:
     runtime: true
   - stage: tools-zlib
     runtime: true
-  - stage: pkg-config
+  - stage: pkgconf
   - stage: perl
 steps:
   - sources:

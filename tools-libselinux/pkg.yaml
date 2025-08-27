@@ -7,7 +7,7 @@ dependencies:
   - stage: musl-fts
   - stage: tools-libsepol
   - stage: tools-pcre2
-  - stage: pkg-config
+  - stage: pkgconf
 steps:
   - sources:
       - url: https://github.com/SELinuxProject/selinux/releases/download/{{ .selinux_version }}/libselinux-{{ .selinux_version }}.tar.gz

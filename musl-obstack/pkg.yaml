@@ -5,7 +5,7 @@ dependencies:
   - stage: libtool
   - stage: autoconf
   - stage: automake
-  - stage: pkg-config
+  - stage: pkgconf
 steps:
   - sources:
       - url: https://github.com/void-linux/musl-obstack/archive/refs/tags/{{ .musl_obstack_version }}.tar.gz

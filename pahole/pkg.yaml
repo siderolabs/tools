@@ -8,7 +8,7 @@ dependencies:
   - stage: elfutils
   - stage: dwarfutils
   - stage: cmake
-  - stage: pkg-config
+  - stage: pkgconf
     runtime: true
   - stage: curl
   - stage: expat

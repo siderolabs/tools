@@ -28,6 +28,7 @@ spec:
         - PCRE2Project/pcre2
         - plougher/squashfs-tools
         - SELinuxProject/selinux
+        - pkgconf/pkgconf
         - git://git.savannah.gnu.org/make.git
         - git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
         - git://git.savannah.gnu.org/automake.git
@@ -41,7 +42,6 @@ spec:
         - git://git.savannah.gnu.org/gzip.git
         - git://git.kernel.org/pub/scm/devel/pahole/pahole.git
         - git://git.savannah.gnu.org/patch.git
-        - https://gitlab.freedesktop.org/pkg-config/pkg-config.git
         - git://git.savannah.gnu.org/sed.git
         - git://git.savannah.gnu.org/texinfo.git
         - git://git.kernel.org/pub/scm/libs/libcap/libcap.git

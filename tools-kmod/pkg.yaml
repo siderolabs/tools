@@ -3,7 +3,7 @@ variant: scratch
 dependencies:
   - stage: base
   - stage: meson
-  - stage: pkg-config
+  - stage: pkgconf
   - stage: tools-xz
   - stage: tools-zstd
   - stage: ninja

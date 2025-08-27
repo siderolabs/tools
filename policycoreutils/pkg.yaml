@@ -3,6 +3,7 @@ variant: scratch
 dependencies:
   - stage: base
   - stage: patch
+  - stage: pkgconf
   - stage: musl-fts
   - stage: tools-pcre2
   - stage: tools-libsepol
@@ -16,11 +17,9 @@ steps:
     prepare:
       - |
         tar -xzf policycoreutils.tar.gz --strip-components=1
-
-        patch -p1 < /pkg/patches/musl-fts.patch
     build:
       - |
-        make -j $(nproc) SUBDIRS=setfiles FTS_LDLIBS="-l:libfts.a -lpcre2-8"
+        make -j $(nproc) SUBDIRS=setfiles
     install:
       - |
         make install DESTDIR=/rootfs SBINDIR=/usr/bin SUBDIRS=setfiles
