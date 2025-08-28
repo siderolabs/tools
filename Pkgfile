@@ -344,6 +344,11 @@ vars:
   squashfs_tools_sha256: 4672b5c47d9418d3a5ae5b243defc6d9eae8275b9771022247c6a6082c815914
   squashfs_tools_sha512: 4ef134935e97267544837806d8494f7eab14bae834afdb5caf4862703652c6f33bd38ade45e3a276927bfdb4877d5474c1d5b8c14090cc3a63a80aa931e6b25f
 
+  # renovate: datasource=github-tags depName=AgentD/squashfs-tools-ng
+  squashfs_tools_ng_version: v1.3.2
+  squashfs_tools_ng_sha256: 21f40dc82f69b721e92bfc539e47bfb8581753f8de492c877c59737ce2e3bf0f
+  squashfs_tools_ng_sha512: 21d080718f5b68b2c3ae12899b04d9eb51644d62f2cff32261f1aedc1919f9bc15b37e8bc723db54f24ed95914db8ee6e43c544dcf375a6c002ff615d15dc6d1
+
   # renovate: datasource=github-tags depName=swig/swig
   swig_version: v4.2.1
   swig_sha256: 8895878b9215612e73611203dc8f5232c626e4d07ffc4532922f375518f067ca
