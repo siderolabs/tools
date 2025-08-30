@@ -250,9 +250,9 @@ vars:
   patch_sha512: d689d696660a662753e8660792733c3be0a94c76abfe7a28b0f9f70300c3a42d6437d081553a59bfde6e1b0d5ee13ed89be48d0b00b6da2cadbfc14a15ada603
 
   # renovate: datasource=github-releases extractVersion=^pcre2-(?<version>.*)$ depName=PCRE2Project/pcre2
-  pcre2_version: 10.45
-  pcre2_sha256: 21547f3516120c75597e5b30a992e27a592a31950b5140e7b8bfde3f192033c4
-  pcre2_sha512: 4c1f0cf793624516d7eeb15745d6c07c9f678dd2c2b349062c6b614e88bf42262972d133576e85140dee2a882984aaf2d688953fc9c69ec7105b2daaeae89845
+  pcre2_version: 10.46
+  pcre2_sha256: 15fbc5aba6beee0b17aecb04602ae39432393aba1ebd8e39b7cabf7db883299f
+  pcre2_sha512: 795b0d74efb898347990c29fefc85f37ac81e7795f9d6a5598d1169a03c547df7ff7eac280f708b1fef68d3e7686e0d4cd55f0c6364e287ff2a983bbd1a3c334
 
   # perl uses even numbered minor versions for stable releases - https://www.cpan.org/src/README.html
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=Perl/perl5
