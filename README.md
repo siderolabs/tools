@@ -1,6 +1,6 @@
 # tools
 
-![Dependency Diagram](/deps.png)
+![Dependency Diagram](/deps.svg)
 
 This repository produces a set of binaries suitable for building a target Linux distribution.
 
