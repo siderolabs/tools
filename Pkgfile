@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.5.3
+# syntax = ghcr.io/siderolabs/bldr:v0.5.4
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.12.0-alpha.0-4-g00e3d96
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.12.0-alpha.0-6-gfd8b77d
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -41,9 +41,10 @@ vars:
   bzip2_sha256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
-  ca_certificates_version: 2025-08-12
-  ca_certificates_sha256: 64dfd5b1026700e0a0a324964749da9adc69ae5e51e899bf16ff47d6fd0e9a5e
-  ca_certificates_sha512: f9d72ca604f238f86d3b0233b4bd20cd728529f74eb190ad7a37f942b00b014a717fa771c848233365938ca090e7e855ac2c3abdd4a25e18ce16b99b65ef56c3
+  # renovate: datasource=repology versioning=regex:^(?<major>\d+)-(?<minor>\d+)-(?<patch>\d+)$ depName=homebrew/ca-certificates
+  ca_certificates_version: 2025-09-09
+  ca_certificates_sha256: f290e6acaf904a4121424ca3ebdd70652780707e28e8af999221786b86bb1975
+  ca_certificates_sha512: bddfc1575a830d31417b3f55adf3b18c2d4bd1434da6e3883f771ab61194e3bf2d5a7d50033f60354bd425bc78f2e07d0663ddab711bfb9d48a8ea2e8cf7de4e
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
   cmake_version: 4.1.1
@@ -61,9 +62,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_15_0
-  curl_sha256: 6cd0a8a5b126ddfda61c94dc2c3fc53481ba7a35461cf7c5ab66aa9d6775b609
-  curl_sha512: d27e316d70973906ac4b8d2c280f7e99b7528966aa1220c13a38ed45fca2ed6bbde54b8a9d7bed9e283171b92edb621f7b95162ef7d392e6383b0ee469de3191
+  curl_version: 8_16_0
+  curl_sha256: 40c8cddbcb6cc6251c03dea423a472a6cea4037be654ba5cf5dec6eb2d22ff1d
+  curl_sha512: 8262c3dc113cfd5744ef1b82dbccaa69448a9395ad5c094c22df5cf537a047a927d3332db2cb3be12a31a68a60d8d0fa8485b916e975eda36a4ebd860da4f621
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/diffutils.git
   diffutils_version: 3.12
@@ -86,9 +87,9 @@ vars:
   elfutils_sha512: 557e328e3de0d2a69d09c15a9333f705f3233584e2c6a7d3ce855d06a12dc129e69168d6be64082803630397bd64e1660a8b5324d4f162d17922e10ddb367d76
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_7_1
-  expat_sha256: 45c98ae1e9b5127325d25186cf8c511fa814078e9efeae7987a574b482b79b3d
-  expat_sha512: ea78781ca03367a014afc1bb37c2306883b6f666d7cd90dc84a39c4abc6b7ec261636b8668540aa286c708a41dd02baae8249dc4391306da56431700460a0f23
+  expat_version: 2_7_2
+  expat_sha256: 976f6c2d358953c22398d64cd93790ba5abc62e02a1bbc204a3a264adea149b8
+  expat_sha512: adf416f4e792602c80dba011d0a06e9f9fcec5ec379c0a8da60654570dd0cfb0b6ba1518d627c7a287200fb0c9b8808b3bfdfdd76f0a22c9470c913679824028
 
   # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=git://salsa.debian.org/clint/fakeroot.git
   fakeroot_version: 1.36
@@ -237,9 +238,9 @@ vars:
   ninja_sha512: ec94d42967b962d66ab0747fcb9d095510117159de0473ec08df47a657895aa2523f920798e4608d0c6cf0e2e382512c14aec8a54ea58b6cd4b01edd3a7c8e62
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 3.5.2
-  openssl_sha256: c53a47e5e441c930c3928cf7bf6fb00e5d129b630e0aa873b08258656e7345ec
-  openssl_sha512: db2c7a88bea432f96d867a98af15f850f371d4136c657338de93cb88a39a3578c025b5df7310e195a02fc715ad5a2422a319a44f0247c6a7e2ba8b36aad77651
+  openssl_version: 3.5.3
+  openssl_sha256: c9489d2abcf943cdc8329a57092331c598a402938054dc3a22218aea8a8ec3bf
+  openssl_sha512: 58265c05d208a269418d4928d3127d22738e696d5d080ab8f1c0cbd2cd30e4e1e07e244a1d81c9b40f1a7f972fe835f4f122c098a7b2177ac48492881416aa78
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.30
