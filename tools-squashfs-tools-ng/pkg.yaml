@@ -1,0 +1,41 @@
+name: tools-squashfs-tools-ng
+variant: scratch
+dependencies:
+  - stage: base
+  - stage: autoconf
+  - stage: automake
+  - stage: libtool
+  - stage: pkg-config
+  - stage: tools-libselinux
+  - stage: tools-xz
+  - stage: tools-zlib
+  - stage: tools-zstd
+steps:
+  - sources:
+      - url: https://github.com/AgentD/squashfs-tools-ng/archive/refs/tags/{{ .squashfs_tools_ng_version }}.tar.gz
+        destination: squashfs-tools-ng.tar.gz
+        sha256: "{{ .squashfs_tools_ng_sha256 }}"
+        sha512: "{{ .squashfs_tools_ng_sha512 }}"
+    prepare:
+      - |
+        mkdir -p squashfs-tools-ng build
+
+        tar -xf squashfs-tools-ng.tar.gz --strip-components=1 -C squashfs-tools-ng
+        cd squashfs-tools-ng
+        ./autogen.sh
+        cd ../build
+        ../squashfs-tools-ng/configure \
+          --prefix=/usr
+    build:
+      - |
+        make -C build -j $(nproc)
+    install:
+      - |
+        make -C build DESTDIR=/rootfs install
+        rm -rf /rootfs/usr/share/man
+    test:
+      - |
+        fhs-validator /rootfs
+finalize:
+  - from: /rootfs
+    to: /
