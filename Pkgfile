@@ -41,7 +41,7 @@ vars:
   bzip2_sha256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
-  # renovate: datasource=repology versioning=regex:^(?<major>\d+)-(?<minor>\d+)-(?<patch>\d+)$ depName=homebrew/ca-certificates
+  # renovate: datasource=repology versioning=regex:^(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)$ depName=homebrew/ca-certificates
   ca_certificates_version: 2025-09-09
   ca_certificates_sha256: f290e6acaf904a4121424ca3ebdd70652780707e28e8af999221786b86bb1975
   ca_certificates_sha512: bddfc1575a830d31417b3f55adf3b18c2d4bd1434da6e3883f771ab61194e3bf2d5a7d50033f60354bd425bc78f2e07d0663ddab711bfb9d48a8ea2e8cf7de4e
