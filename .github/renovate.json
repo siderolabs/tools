@@ -107,6 +107,12 @@
             "matchPackageNames": [
                 "Perl/perl5"
             ]
+        },
+        {
+            "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)$",
+            "matchPackageNames": [
+                "homebrew/ca-certificates"
+            ]
         }
     ],
     "separateMajorMinor": false
