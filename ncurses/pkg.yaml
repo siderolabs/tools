@@ -25,6 +25,7 @@ steps:
         ../configure \
             --prefix=/usr \
             --with-shared \
+            --with-termlib=tinfo \
             --without-debug \
             --without-ada \
             --without-cxx-binding \
