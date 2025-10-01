@@ -12,7 +12,6 @@ steps:
     prepare:
       - |
         tar -xJf util-linux.tar.xz --strip-components=1
-        patch -p1 </pkg/patches/3629.patch
       - |
         mkdir build
         cd build
