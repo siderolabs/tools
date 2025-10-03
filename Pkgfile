@@ -47,9 +47,9 @@ vars:
   ca_certificates_sha512: bddfc1575a830d31417b3f55adf3b18c2d4bd1434da6e3883f771ab61194e3bf2d5a7d50033f60354bd425bc78f2e07d0663ddab711bfb9d48a8ea2e8cf7de4e
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.1.1
-  cmake_sha256: b29f6f19733aa224b7763507a108a427ed48c688e1faf22b29c44e1c30549282
-  cmake_sha512: 40f16fbe66562aec574e08758c7b8a09536b8c7086fe7f6f9123e5255a9fc1aa638b0f88b3812ed5c8e6bc4550d0ee0be304dc71be6c980dbc44d1899d238e30
+  cmake_version: 4.1.2
+  cmake_sha256: 643f04182b7ba323ab31f526f785134fb79cba3188a852206ef0473fee282a15
+  cmake_sha512: 169b8ebfbd2c880a1f3ed8c3da8d4b8e9252a5a1ff9f0011e39bb3bb84d183f0379eea880b80e2e052c333db91e49b80e5a65131f71fc8582709b604e94bf280
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.8
@@ -238,9 +238,9 @@ vars:
   ninja_sha512: ec94d42967b962d66ab0747fcb9d095510117159de0473ec08df47a657895aa2523f920798e4608d0c6cf0e2e382512c14aec8a54ea58b6cd4b01edd3a7c8e62
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 3.5.3
-  openssl_sha256: c9489d2abcf943cdc8329a57092331c598a402938054dc3a22218aea8a8ec3bf
-  openssl_sha512: 58265c05d208a269418d4928d3127d22738e696d5d080ab8f1c0cbd2cd30e4e1e07e244a1d81c9b40f1a7f972fe835f4f122c098a7b2177ac48492881416aa78
+  openssl_version: 3.5.4
+  openssl_sha256: 967311f84955316969bdb1d8d4b983718ef42338639c621ec4c34fddef355e99
+  openssl_sha512: 365aca6f2e59b5c8261fba683425d177874cf6024b0d216ca309112b879c1f4e8da78617e23c3c95d0b4a26b83ecd0d8348038b999d30e597d19f466c4761227
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.30
