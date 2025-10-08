@@ -20,7 +20,7 @@ steps:
     install:
       - |
         python3 setup.py install --root=/rootfs
-        rm /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages/setuptools/*.exe
+        rm /rootfs/usr/lib/python{{ regexReplaceAll ".\\d+$" .python_version "${1}" }}/site-packages/setuptools/*.exe
         # Determinism: remove all bytecode
         find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"
 finalize:

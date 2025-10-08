@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.12.0-alpha.0-7-gf18ccb8
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.12.0-alpha.0-8-g7839234
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -238,9 +238,9 @@ vars:
   ninja_sha512: ec94d42967b962d66ab0747fcb9d095510117159de0473ec08df47a657895aa2523f920798e4608d0c6cf0e2e382512c14aec8a54ea58b6cd4b01edd3a7c8e62
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 3.5.4
-  openssl_sha256: 967311f84955316969bdb1d8d4b983718ef42338639c621ec4c34fddef355e99
-  openssl_sha512: 365aca6f2e59b5c8261fba683425d177874cf6024b0d216ca309112b879c1f4e8da78617e23c3c95d0b4a26b83ecd0d8348038b999d30e597d19f466c4761227
+  openssl_version: 3.6.0
+  openssl_sha256: b6a5f44b7eb69e3fa35dbf15524405b44837a481d43d81daddde3ff21fcbb8e9
+  openssl_sha512: 866825a1cdf0b705b409402fbc7a713e7d9b8e7736c5126be57b354927954c148a341fc52b02c0629c1e015a889bfd40217f8e703b73235892e91da060909b76
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.30
@@ -274,15 +274,14 @@ vars:
   pyelftools_sha512: 7f4ef37da7fda75125cb95ced2f3084848943592eff7deae7ae917508f1cd5281c96960ee3bbc6e503e71a4e2196622cd68cc67e3df1f4cd99b9b675f14fd58c
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.13.7
-  python_maj_min_version: 3.13
-  python_sha256: 5462f9099dfd30e238def83c71d91897d8caa5ff6ebc7a50f14d4802cdaaa79a
-  python_sha512: 73fa04db860e8b98c204f84d403598fcb802b19bfc8f2675df2fddb6b153b1643daf081746a043f57c8fa71b950a439581aa5204c2bfadb8cfd8864ca4f42f0d
+  python_version: 3.14.0
+  python_sha256: 2299dae542d395ce3883aca00d3c910307cd68e0b2f7336098c8e7b7eee9f3e9
+  python_sha512: 46e9e205c3a084cba68bf7f267ab2fd0862a05430165e0eb713f2d6b3a1a4452f72f563de5de55caea824be9df56f66dd568f4814941667a9bb0954229772c53
 
   # renovate: datasource=github-releases depName=pypa/build
-  python_build_version: 1.2.2.post1
-  python_build_sha256: 25ae1da38e6d071da0d47d7229d58cef24852388669e89ce7500ec26e6261b58
-  python_build_sha512: bdf023c6b578ea77c7fc49c71c7d908bcc9ff6b9255b2767e45b09aca0a39a5297d264695a864fe34772e5d8898a18a90f6e262514bf90daf14db762a8bbe4be
+  python_build_version: 1.3.0
+  python_build_sha256: fd7a275d4b34e2b5b4c73fb57ae3c8239b54e4d09752eb540d4167c77bfa043d
+  python_build_sha512: f34450ffc92a434af2614f4341b38c8feed18ce9a799196bff3f735afc52334cacb34d2a831c3264bbfaacda642a5e4defe3842f8010cd687d47e2d018a191d0
 
   # renovate: datasource=github-tags depName=pypa/flit
   python_flit_core_version: 3.12.0
@@ -290,9 +289,9 @@ vars:
   python_flit_core_sha512: ff6df66dfdae6fdf7b277cc3fbb7c9a569103cbe82a3e3ce6f315ec6adec46be8692eba4549a66b3af537d128e6b57ed8f49316b705636466c25674198503643
 
   # renovate: datasource=github-tags depName=projg2/gpep517
-  python_gpep517_version: v16
-  python_gpep517_sha256: 965ff7cb2217fa03091face01fcb9a2b0205f58be80c8be9ccf832eab7a55414
-  python_gpep517_sha512: fcd7cb0f98003a8ecb9976cffe3d4140b16e537dbfcfa8e8416569cd7e38e8e9ab359b35c1e22b830dc2711b3c07f8e3113c0f6b73d415ce63ad5f7d76f180c6
+  python_gpep517_version: v19
+  python_gpep517_sha256: 17879b79edbb5a21d3dca6cfae997bda8e4c99254caf16616a6ae70d15a43c09
+  python_gpep517_sha512: 463c3812f388ea7ef83aaf6b3b90de4036b0a8200038a654621822c02d46627f7adf2ed4c7accf016293f89b8c3a2080d9ac80d2f82caaa3fdd370aa98c4335b
 
   # renovate: datasource=github-tags depName=pypa/installer
   python_installer_version: 0.7.0
@@ -310,9 +309,9 @@ vars:
   python_markupsafe_sha512: 2259dba158c37d06f87ef208603706f1d79b536124cec599ee634717d6061cccd89ee4bc8c35aa40ce9c728d595f2b802b6e68e9c7219c2f17135ed91854d777
 
   # renovate: datasource=github-releases depName=pypa/packaging
-  python_packaging_version: 24.2
-  python_packaging_sha256: c448ea78de5134f5002a2aa2bb62a0fb4714bb4ab2d2b00bce8ed6ca22502d5a
-  python_packaging_sha512: cab6be7284c6bc2abce7a5bbdc25a40e33378576c5590dad4aef9d835a2205af81ca24af7ae3603d0e4e32f8865d87a621187dae2f86df6ac613c9886d482804
+  python_packaging_version: 25.0
+  python_packaging_sha256: 15b6ba95eb12d8f99dcf215ea37cbea16812ef28358e8ef3d9344acb827acac1
+  python_packaging_sha512: fb8419f81f0f817440c0b297fc6e963832e219e7a324bf4e0321f1e131a4822f17a19f2eb033a8d4adb622ccb16db59776ec44906a0c0b34f2877b59b9558c18
 
   # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
   python_setuptools_version: 80.9.0
@@ -346,9 +345,9 @@ vars:
   squashfs_tools_sha512: 4ef134935e97267544837806d8494f7eab14bae834afdb5caf4862703652c6f33bd38ade45e3a276927bfdb4877d5474c1d5b8c14090cc3a63a80aa931e6b25f
 
   # renovate: datasource=github-tags depName=swig/swig
-  swig_version: v4.2.1
-  swig_sha256: 8895878b9215612e73611203dc8f5232c626e4d07ffc4532922f375518f067ca
-  swig_sha512: 5d653333f73356d4d5ba8b615882e49f33f188bc68d8204352116bc4aca7946ec01ce2e02524c5ce805b98c2219ed05e664120485bf18095c5c0785436487074
+  swig_version: v4.3.1
+  swig_sha256: c6091ef5f2e397945a66899bf6859845f35ef603340e79c086d7f2ecf348678c
+  swig_sha512: dce353c199d3070680c7f78308d0aa57d0fdd4b694d0ea348f2fbbe29945d5688d3513ba0efd15883bf7c70a1782563a808b18553f5bff7508e2c96ce12e0107
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34
@@ -366,10 +365,9 @@ vars:
   util_linux_sha512: 696c87e7cf185acc9b4b969ddade6155ea2945ae494eaecfd7b1f35d9607166cb09be79878fb793dd31b4d4dcac8c9be4be76af3886185db7ae8b58c303fb0cf
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
-  # NOTE: using 5.4.5 the version debian downgraded to. Ref: https://www.openwall.com/lists/oss-security/2024/03/29/4
-  xz_version: v5.4.5
-  xz_sha256: da9dec6c12cf2ecf269c31ab65b5de18e8e52b96f35d5bcd08c12b43e6878803
-  xz_sha512: 5cbc3b5bb35a9f5773ad657788fe77013471e3b621c5a8149deb7389d48535926e5bed103456fcfe5ecb044b236b1055b03938a6cc877cfc749372b899fc79e5
+  xz_version: v5.8.1
+  xz_sha256: 0b54f79df85912504de0b14aec7971e3f964491af1812d83447005807513cd9e
+  xz_sha512: 34dbc874a697f4fd17127b3dc828236dd7fd35120a77e0867325273c5d56c4ecddc8a39dce6cbdb3141fff32c56001f4ab18edfa572076d10f2fd55b07ff2b9e
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=madler/zlib
   zlib_version: 1.3.1

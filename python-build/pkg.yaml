@@ -13,8 +13,8 @@ steps:
         tar -xzf python-build.tar.gz --strip-components=1
     install:
       - |
-        mkdir -p /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages
-        cp -rd src/build /rootfs/usr/lib/python{{ .python_maj_min_version }}/site-packages/
+        mkdir -p /rootfs/usr/lib/python{{ regexReplaceAll ".\\d+$" .python_version "${1}" }}/site-packages
+        cp -rd src/build /rootfs/usr/lib/python{{ regexReplaceAll ".\\d+$" .python_version "${1}" }}/site-packages/
 finalize:
   - from: /rootfs
     to: /
