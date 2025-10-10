@@ -82,14 +82,15 @@
                 "git://git.kernel.org/pub/scm/libs/libcap/libcap.git",
                 "git://git.savannah.gnu.org/autoconf.git",
                 "git://git.savannah.gnu.org/bash.git",
-                "https://gitlab.kitware.com/cmake/cmake.git"
+                "https://gitlab.kitware.com/cmake/cmake.git",
+                "git://git.savannah.gnu.org/libunistring.git"
             ]
         },
         {
             "versioning": "regex:^(?<major>\\d+)\\.?(?<minor>\\d+)?\\.?(?<patch>\\d+)?$",
             "matchPackageNames": [
                 "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git",
-                "systemd/systemd"
+                "gentoo/gpep517"
             ]
         },
         {
@@ -98,6 +99,7 @@
                 "curl/curl",
                 "libexpat/libexpat",
                 "file/file",
+                "thom311/libnl",
                 "git://git.savannah.gnu.org/cpio.git",
                 "git://git.savannah.gnu.org/tar.git"
             ]
@@ -106,6 +108,12 @@
             "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d[02468]+)\\.(?<patch>\\d+)$",
             "matchPackageNames": [
                 "Perl/perl5"
+            ]
+        },
+        {
+            "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.?(?<patch>\\d+)?\\.?(?<build>\\d+)?$",
+            "matchPackageNames": [
+                "https://salsa.debian.org/clint/fakeroot.git"
             ]
         },
         {

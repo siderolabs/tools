@@ -26,6 +26,8 @@ steps:
             --prefix=/usr \
             --with-shared \
             --with-termlib=tinfo \
+            --enable-pc-files \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig \
             --without-debug \
             --without-ada \
             --without-cxx-binding \

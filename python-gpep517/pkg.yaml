@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://github.com/projg2/gpep517/archive/refs/tags/{{ .python_gpep517_version }}.tar.gz
+      - url: https://github.com/projg2/gpep517/archive/refs/tags/v{{ .python_gpep517_version }}.tar.gz
         destination: python_gpep517.tar.gz
         sha256: "{{ .python_gpep517_sha256 }}"
         sha512: "{{ .python_gpep517_sha512 }}"

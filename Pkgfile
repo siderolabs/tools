@@ -77,9 +77,9 @@ vars:
   dtc_sha512: 30f3611175a5c29556282f3f2894701a5837eb869608d89d78c280af448bbc3a5b6c83f51c28f991847c0eb7c42aa57599bbc31433f1b3b2c8d162cb2169b91f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 2.1.0
-  dwarfutils_sha256: 461bd29cbb9a41c26a25b0e527c3736c772bb7a89f6260d1edb39ab105226e06
-  dwarfutils_sha512: fd58ee55fc7f685f70cf7e79733d926d7064752c4e1ffe3eede1b1cc1090e127c76c59def3a3b32d5514384cd901bb69f9f2afeefa518d0ce9460f529b498078
+  dwarfutils_version: 2.2.0
+  dwarfutils_sha256: 54c0abbbeb4190bd1babb5d28574d2b20c2309343ec764cc7ca611e527ee4a42
+  dwarfutils_sha512: 1a5145b3b9bebbae6e6691590521c56327adb92c0ae95f145bcba8e4402b637d1479c2c6adad069ef9e0e36b2f7c8afc2811173f39e444418e2de7f4277ec393
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.193
@@ -91,10 +91,10 @@ vars:
   expat_sha256: 59c31441fec9a66205307749eccfee551055f2d792f329f18d97099e919a3b2f
   expat_sha512: 92dd8a31a88ca73d5d8890be40c231ec037d8d13f6059a88bcf7bfaaa77c1c94dc2874f2dae508c0d077a3798bc006cfe9d7d0a918e08a67149d332c7fce4d23
 
-  # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=git://salsa.debian.org/clint/fakeroot.git
-  fakeroot_version: 1.36
-  fakeroot_sha256: 5128dd5df59955d60453aea1817d2f31c29ffb8b8addcc5d7e200460278a6b0a
-  fakeroot_sha512: 1ff4cfe8bd4637652027b9e994ed39bf9885d6ea1608050ff21343dc2977c0607c2af235f51376e086ec88ee975da5cb7115a9888ee9437c927426a2eac1bf4b
+  # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=https://salsa.debian.org/clint/fakeroot.git
+  fakeroot_version: 1.37.1.2
+  fakeroot_sha256: 2ffa2384d4b8f8d59ee54d94fa12d3ecdfe04d51dfa9c4e4668ba8b3c6e3424e
+  fakeroot_sha512: 2de524e2ccbf5f08d446856439b82028e2a90eec9dc94cb2da829f314cfa700bb0cecf0a86222dc3d343f406364133f94807755643c71e7101439ae1362be2cf
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
   findutils_version: 4.10.0
@@ -167,10 +167,10 @@ vars:
   libffi_sha256: f3a3082a23b37c293a4fcd1053147b371f2ff91fa7ea1b2a52e335676bac82dc
   libffi_sha512: 76974a84e3aee6bbd646a6da2e641825ae0b791ca6efdc479b2d4cbcd3ad607df59cffcf5031ad5bd30822961a8c6de164ac8ae379d1804acd388b1975cdbf4d
 
-  # renovate datasource=github-releases extractVersion=^libnl(?<version>.*)$ depName=thom311/libnl
-  libnl_version: 3_7_0
-  libnl_sha256: 9fe43ccbeeea72c653bdcf8c93332583135cda46a79507bfd0a483bb57f65939
-  libnl_sha512: 80fbbc079299c90afd2a5eda62e4d4f98bf4ef23958c3ce5101f4ed4d81d783af733213bb3bab15f218555d8460bc2394898f909f4ac024fc27281faec86a041
+  # renovate: datasource=github-tags extractVersion=^libnl(?<version>.*)$ depName=thom311/libnl
+  libnl_version: 3_11_0
+  libnl_sha256: 2a56e1edefa3e68a7c00879496736fdbf62fc94ed3232c0baba127ecfa76874d
+  libnl_sha512: 69ecec6e792fc7b9c443fff8742cf45782af5c5c4664687440942eaeb616ba7b4ed2b606e33c5d86e44e6b49a9c79a1fed4b7c77781a059e13cf6a844d94530e
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.com/gnutls/libtasn1.git
   libtasn1_version: 4.20.0
@@ -178,9 +178,9 @@ vars:
   libtasn1_sha512: 0c0660085f5e80537aa3d65197967029be6cc5e27d7029789713902989c1694fdb49421ae0415b79b953e11893bb4bdaada85f7aff847dd0bb4075c91887e7b4
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libunistring.git
-  libunistring_version: 1.1
-  libunistring_sha256: 827c1eb9cb6e7c738b171745dac0888aa58c5924df2e59239318383de0729b98
-  libunistring_sha512: 01a4267bbd301ea5c389b17ee918ae5b7d645da8b2c6c6f0f004ff2dead9f8e50cda2c6047358890a5fceadc8820ffc5154879193b9bb8970f3fb1fea1f411d6
+  libunistring_version: 1.4.1
+  libunistring_sha256: 67d88430892527861903788868c77802a217b0959990f7449f2976126a307763
+  libunistring_sha512: e0838b4324193aa927c6a3d647b9a482f12e11525d0cf2b5f0e6cf6b9afc9f2ee751d39d72e3c980bac3fc91e0d9d043c4a1c5662dde3cc26c52312d224d80f0
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
   libtool_version: 2.5.4
@@ -268,7 +268,7 @@ vars:
   pkgconf_sha256: 79721badcad1987dead9c3609eb4877ab9b58821c06bdacb824f2c8897c11f2a
   pkgconf_sha512: 53244f372ea21125a1d97c5b89a84299740b55a66165782e807ed23adab3a07408a1547f1f40156e3060359660d07f49846c8b4893beef10ac9440ab7e8611cc
 
-  # renovate: datasource=github-tags depName=eliben/pyelftools
+  # renovate: datasource=github-tags versioning=python depName=eliben/pyelftools
   pyelftools_version: v0.31
   pyelftools_sha256: 24815cbfff9c5f68f5268983f55d969540a087bfdaa73c93f1a88e2a771f80f1
   pyelftools_sha512: 7f4ef37da7fda75125cb95ced2f3084848943592eff7deae7ae917508f1cd5281c96960ee3bbc6e503e71a4e2196622cd68cc67e3df1f4cd99b9b675f14fd58c
@@ -278,42 +278,42 @@ vars:
   python_sha256: 2299dae542d395ce3883aca00d3c910307cd68e0b2f7336098c8e7b7eee9f3e9
   python_sha512: 46e9e205c3a084cba68bf7f267ab2fd0862a05430165e0eb713f2d6b3a1a4452f72f563de5de55caea824be9df56f66dd568f4814941667a9bb0954229772c53
 
-  # renovate: datasource=github-releases depName=pypa/build
+  # renovate: datasource=github-releases versioning=python depName=pypa/build
   python_build_version: 1.3.0
   python_build_sha256: fd7a275d4b34e2b5b4c73fb57ae3c8239b54e4d09752eb540d4167c77bfa043d
   python_build_sha512: f34450ffc92a434af2614f4341b38c8feed18ce9a799196bff3f735afc52334cacb34d2a831c3264bbfaacda642a5e4defe3842f8010cd687d47e2d018a191d0
 
-  # renovate: datasource=github-tags depName=pypa/flit
+  # renovate: datasource=github-tags versioning=python depName=pypa/flit
   python_flit_core_version: 3.12.0
   python_flit_core_sha256: c157ff92c01f4bb169182722ff76aadac113926b729215e91909021aa56e2ea3
   python_flit_core_sha512: ff6df66dfdae6fdf7b277cc3fbb7c9a569103cbe82a3e3ce6f315ec6adec46be8692eba4549a66b3af537d128e6b57ed8f49316b705636466c25674198503643
 
-  # renovate: datasource=github-tags depName=projg2/gpep517
-  python_gpep517_version: v19
+  # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ versioning=python depName=gentoo/gpep517
+  python_gpep517_version: 19
   python_gpep517_sha256: 17879b79edbb5a21d3dca6cfae997bda8e4c99254caf16616a6ae70d15a43c09
   python_gpep517_sha512: 463c3812f388ea7ef83aaf6b3b90de4036b0a8200038a654621822c02d46627f7adf2ed4c7accf016293f89b8c3a2080d9ac80d2f82caaa3fdd370aa98c4335b
 
-  # renovate: datasource=github-tags depName=pypa/installer
+  # renovate: datasource=github-tags versioning=python depName=pypa/installer
   python_installer_version: 0.7.0
   python_installer_sha256: e1589201863a6b6f570ce2f9994febe54a8d9196e0cc54fd331cd7ffd728fb86
   python_installer_sha512: a509c6ea9d88b8527cce0428ca6109077820cb9aa352967a389012bac40f8ec04039ab73710f4fb32b32ed20affd520ce0ba16ba18d9d380ce0af1f51fe8e2c6
 
-  # renovate: datasource=github-releases depName=pallets/jinja
+  # renovate: datasource=github-releases versioning=python depName=pallets/jinja
   python_jinja2_version: 3.1.6
   python_jinja2_sha256: 2074b22a72caa65474902234b320d73463d6d4c223ee49f4b433495758356337
   python_jinja2_sha512: a3558f89d9d60676583bfc05e8987e9c486c2335affb71c9733b93040d56a2f97fb036974f1be1bf82c5b0767f482b2e795d58ea35456fcfe7e705f5e6b7a778
 
-  # renovate: datasource=github-releases depName=pallets/markupsafe
+  # renovate: datasource=github-releases versioning=python depName=pallets/markupsafe
   python_markupsafe_version: 3.0.3
   python_markupsafe_sha256: f1d9d06c34515dd3ad210ec769da613057b536d11d6c039183b87757a883a254
   python_markupsafe_sha512: 2259dba158c37d06f87ef208603706f1d79b536124cec599ee634717d6061cccd89ee4bc8c35aa40ce9c728d595f2b802b6e68e9c7219c2f17135ed91854d777
 
-  # renovate: datasource=github-releases depName=pypa/packaging
+  # renovate: datasource=github-releases versioning=python depName=pypa/packaging
   python_packaging_version: 25.0
   python_packaging_sha256: 15b6ba95eb12d8f99dcf215ea37cbea16812ef28358e8ef3d9344acb827acac1
   python_packaging_sha512: fb8419f81f0f817440c0b297fc6e963832e219e7a324bf4e0321f1e131a4822f17a19f2eb033a8d4adb622ccb16db59776ec44906a0c0b34f2877b59b9558c18
 
-  # renovate: datasource=github-releases extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
+  # renovate: datasource=github-releases versioning=python extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
   python_setuptools_version: 80.9.0
   python_setuptools_sha256: f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c
   python_setuptools_sha512: 36eb1f219d29c6b9e135936bde2001ad70a971c8069cd0175d3a5325b450e6843a903d3f70043c9f534768ebeab8ab0c544b8f44456555d333f1ed72daa5c18b
