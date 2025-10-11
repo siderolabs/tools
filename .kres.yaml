@@ -12,6 +12,7 @@ spec:
     - tools-openssl
     - tools-pcre2
     - tools-squashfs-tools
+    - tools-squashfs-tools-ng
     - tools-tar
     - tools-util-linux
     - tools-xz
@@ -23,6 +24,7 @@ kind: common.Renovate
 spec:
   packageRules:
     - matchPackageNames:
+        - AgentD/squashfs-tools-ng
         - golang/go
         - mirror/ncurses
         - PCRE2Project/pcre2
