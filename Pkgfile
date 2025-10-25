@@ -82,7 +82,7 @@ vars:
   dwarfutils_sha512: 1a5145b3b9bebbae6e6691590521c56327adb92c0ae95f145bcba8e4402b637d1479c2c6adad069ef9e0e36b2f7c8afc2811173f39e444418e2de7f4277ec393
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
-  elfutils_version: 0.193
+  elfutils_version: 0.194
   elfutils_sha256: 7857f44b624f4d8d421df851aaae7b1402cfe6bcdd2d8049f15fc07d3dde7635
   elfutils_sha512: 557e328e3de0d2a69d09c15a9333f705f3233584e2c6a7d3ce855d06a12dc129e69168d6be64082803630397bd64e1660a8b5324d4f162d17922e10ddb367d76
 
@@ -183,7 +183,7 @@ vars:
   libunistring_sha512: e0838b4324193aa927c6a3d647b9a482f12e11525d0cf2b5f0e6cf6b9afc9f2ee751d39d72e3c980bac3fc91e0d9d043c4a1c5662dde3cc26c52312d224d80f0
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
-  libtool_version: 2.5.4
+  libtool_version: 2.6.0
   libtool_sha256: da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
@@ -253,7 +253,7 @@ vars:
   patch_sha512: d689d696660a662753e8660792733c3be0a94c76abfe7a28b0f9f70300c3a42d6437d081553a59bfde6e1b0d5ee13ed89be48d0b00b6da2cadbfc14a15ada603
 
   # renovate: datasource=github-releases extractVersion=^pcre2-(?<version>.*)$ depName=PCRE2Project/pcre2
-  pcre2_version: 10.46
+  pcre2_version: 10.47
   pcre2_sha256: 15fbc5aba6beee0b17aecb04602ae39432393aba1ebd8e39b7cabf7db883299f
   pcre2_sha512: 795b0d74efb898347990c29fefc85f37ac81e7795f9d6a5598d1169a03c547df7ff7eac280f708b1fef68d3e7686e0d4cd55f0c6364e287ff2a983bbd1a3c334
 
@@ -345,7 +345,7 @@ vars:
   squashfs_tools_sha512: 4ef134935e97267544837806d8494f7eab14bae834afdb5caf4862703652c6f33bd38ade45e3a276927bfdb4877d5474c1d5b8c14090cc3a63a80aa931e6b25f
 
   # renovate: datasource=github-tags depName=swig/swig
-  swig_version: v4.3.1
+  swig_version: v4.4.0
   swig_sha256: c6091ef5f2e397945a66899bf6859845f35ef603340e79c086d7f2ecf348678c
   swig_sha512: dce353c199d3070680c7f78308d0aa57d0fdd4b694d0ea348f2fbbe29945d5688d3513ba0efd15883bf7c70a1782563a808b18553f5bff7508e2c96ce12e0107
 
