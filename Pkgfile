@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.5.4
+# syntax = ghcr.io/siderolabs/bldr:v0.5.5
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.12.0-alpha.0-10-gfc7f2c7
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.12.0
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -52,9 +52,9 @@ vars:
   cmake_sha512: 169b8ebfbd2c880a1f3ed8c3da8d4b8e9252a5a1ff9f0011e39bb3bb84d183f0379eea880b80e2e052c333db91e49b80e5a65131f71fc8582709b604e94bf280
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
-  coreutils_version: 9.8
-  coreutils_sha256: e6d4fd2d852c9141a1c2a18a13d146a0cd7e45195f72293a4e4c044ec6ccca15
-  coreutils_sha512: 7b6c420907f0e33e4aff3dd92270f8cbd3e94b2ae8cf7caa2d5d1cfd5e9958319904a6547127abd55ee63aae0316f5b1228586b2da34ea402da032e925a25e53
+  coreutils_version: 9.9
+  coreutils_sha256: 19bcb6ca867183c57d77155eae946c5eced88183143b45ca51ad7d26c628ca75
+  coreutils_sha512: e7b0e59f7732d2c098ea4934014f470248bd5c4764210e9200a698010a8e3b95bbb26e543f0cd73ed5a4b8e1f8cda932c73f39954d68175e4deaa47526610c65
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/cpio.git
   cpio_version: 2_13
@@ -243,9 +243,9 @@ vars:
   openssl_sha512: 866825a1cdf0b705b409402fbc7a713e7d9b8e7736c5126be57b354927954c148a341fc52b02c0629c1e015a889bfd40217f8e703b73235892e91da060909b76
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
-  pahole_version: 1.30
-  pahole_sha256: 88b93515a09fa6df3ad554660fb115affa97439f3cc4d2fa0049b17c0f325f5c
-  pahole_sha512: ca345a202fcc48f73ab67953d1448e3e10957f892ac2e96ce7412dce816823f99fe64d583006fdf61a534df906d9691ef54376cbb45bed2853d0142e1a5cd6be
+  pahole_version: 1.31
+  pahole_sha256: a0b9d79bdb8d3028a87afd402a61d0ff5b05c982b15f6bab1be08ca1662cd0e9
+  pahole_sha512: 78b0d42c5b33381c2a1bc975861344c2de22898b877a0eceb890f59ca5699a894efe50b551e98e0aedd0e0a4c4dad04eb245282e588442be5579b4e808e2a1d0
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/patch.git
   patch_version: 2.8
@@ -340,9 +340,9 @@ vars:
   sed_sha512: 36157a4b4a2430cf421b7bd07f1675d680d9f1616be96cf6ad6ee74a9ec0fe695f8d0b1e1f0b008bbb33cc7fcde5e1c456359bbbc63f8aebdd4fedc3982cf6dc
 
   # renovate: datasource=github-tags depName=plougher/squashfs-tools
-  squashfs_tools_version: 4.7.2
-  squashfs_tools_sha256: 4672b5c47d9418d3a5ae5b243defc6d9eae8275b9771022247c6a6082c815914
-  squashfs_tools_sha512: 4ef134935e97267544837806d8494f7eab14bae834afdb5caf4862703652c6f33bd38ade45e3a276927bfdb4877d5474c1d5b8c14090cc3a63a80aa931e6b25f
+  squashfs_tools_version: 4.7.4
+  squashfs_tools_sha256: 91c49f9a1ed972ad00688a38222119e2baf49ba74cf5fda05729a79d7d59d335
+  squashfs_tools_sha512: 16943b331723c301d7e65c14e5946d3fa27f974ba509a412ab6182a48d83a935d445feb80a27d89a5b5ba5cf86e55835f12d28c2b2b57f5623e1151cb2966376
 
   # renovate: datasource=github-tags depName=swig/swig
   swig_version: v4.4.0

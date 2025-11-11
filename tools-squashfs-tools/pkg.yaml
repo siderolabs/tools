@@ -9,7 +9,7 @@ dependencies:
   - stage: patch
 steps:
   - sources:
-      - url: https://github.com/plougher/squashfs-tools/archive/refs/tags/{{ .squashfs_tools_version }}.tar.gz
+      - url: https://github.com/plougher/squashfs-tools/releases/download/{{ .squashfs_tools_version }}/squashfs-tools-{{ .squashfs_tools_version }}.tar.gz
         destination: squashfs.tar.gz
         sha256: "{{ .squashfs_tools_sha256 }}"
         sha512: "{{ .squashfs_tools_sha512 }}"
