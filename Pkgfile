@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.4.1
+# syntax = ghcr.io/siderolabs/bldr:v0.5.5
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.10.0-6-gaaa8029
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.10.0-7-g02220b5
 
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
   abseil_version: 20250127.1
