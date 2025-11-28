@@ -5,7 +5,7 @@ project_name = "tools"
 github_repo = "talos-systems/tools"
 match_deps = "^github.com/(talos-systems/[a-zA-Z0-9-]+)$"
 
-# previous = -
+previous = "v1.12.0"
 # pre_release = true
 
 # [notes]
