@@ -1,0 +1,55 @@
+name: clang
+variant: scratch
+dependencies:
+  - stage: base
+  - stage: cmake
+  - stage: curl
+  - stage: ninja
+  - stage: python3
+  - stage: llvm
+steps:
+  - sources:
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/clang-{{ .llvm_version }}.src.tar.xz
+        destination: clang.tar.xz
+        sha256: "{{ .llvm_clang_sha256 }}"
+        sha512: "{{ .llvm_clang_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/cmake-{{ .llvm_version }}.src.tar.xz
+        destination: cmake.tar.xz
+        sha256: "{{ .llvm_cmake_sha256 }}"
+        sha512: "{{ .llvm_cmake_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/third-party-{{ .llvm_version }}.src.tar.xz
+        destination: third-party.tar.xz
+        sha256: "{{ .llvm_third_party_sha256 }}"
+        sha512: "{{ .llvm_third_party_sha512 }}"
+    prepare:
+      - |
+        mkdir clang
+        tar -xJf clang.tar.xz --strip-components=1 -C clang
+        mkdir cmake
+        tar -xJf cmake.tar.xz --strip-components=1 -C cmake
+        mkdir third-party
+        tar -xJf third-party.tar.xz --strip-components=1 -C third-party
+      - |
+        cmake -S clang -B build -G Ninja \
+              -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_INSTALL_PREFIX=/usr \
+              -DCMAKE_SKIP_RPATH=ON \
+              -DLLVM_INCLUDE_TESTS=OFF \
+              -DLLVM_ENABLE_ASSERTIONS=OFF \
+              -DCLANG_BUILT_STANDALONE=ON \
+              -DBUILD_SHARED_LIBS=ON \
+              -DCLANG_DEFAULT_PIE_ON_LINUX=ON \
+              -DCLANG_LINK_CLANG_DYLIB=ON \
+              -DENABLE_LINKER_BUILD_ID=ON \
+              -DLIBCLANG_BUILD_STATIC=ON \
+              -DCLANG_VENDOR=siderolabs \
+              -DLLVM_LINK_LLVM_DYLIB=ON
+    build:
+      - |
+        cmake --build build
+    install:
+      - |
+        DESTDIR=/rootfs cmake --install build
+finalize:
+  - from: /rootfs
+    to: /

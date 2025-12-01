@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2025-11-11T11:24:41Z by kres 911d166.
+# Generated on 2025-12-01T18:47:27Z by kres a1a34ff.
 
 # common variables
 
@@ -52,6 +52,7 @@ TARGETS += tools-kmod
 TARGETS += tools-libcap
 TARGETS += tools-libselinux
 TARGETS += tools-libsepol
+TARGETS += tools-llvm
 TARGETS += tools-openssl
 TARGETS += tools-pcre2
 TARGETS += tools-squashfs-tools
