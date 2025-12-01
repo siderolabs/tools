@@ -77,7 +77,7 @@ jobs:
       - name: Push to ttl.sh
         if: github.event_name == 'pull_request'
         run: |
-          make PUSH=true REGISTRY=ttl.sh
+          make PUSH=true REGISTRY=ttl.sh PROGRESS=plain
         continue-on-error: true
       - name: Login to registry
         if: github.event_name != 'pull_request'
