@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2026-01-02T09:24:08Z by kres 8a4aebf.
+# Generated on 2026-02-05T16:48:34Z by kres dc032d7.
 
 # common variables
 
@@ -48,6 +48,7 @@ COMMON_ARGS += $(BUILD_ARGS)
 # targets defines all the available targets
 
 TARGETS = tools
+TARGETS += llvm
 TARGETS += tools-ca-certificates
 TARGETS += tools-cpio
 TARGETS += tools-kmod
@@ -136,7 +137,7 @@ docker-%:  ## Builds the specified target defined in the Pkgfile using the docke
 	@$(MAKE) target-$* TARGET_ARGS="$(TARGET_ARGS)"
 
 reproducibility-test:  ## Builds the reproducibility test target
-	@$(MAKE) reproducibility-test-local-tools
+	@$(MAKE) reproducibility-test-local-reproducibility
 
 reproducibility-test-local-%:  ## Builds the specified target defined in the Pkgfile using the local output type with and without cahce. The build result will be output to the specified local destination
 	@rm -rf $(ARTIFACTS)/build-a $(ARTIFACTS)/build-b
