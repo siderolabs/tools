@@ -1,0 +1,90 @@
+name: llvm
+variant: scratch
+dependencies:
+  - stage: base
+  - stage: patch
+  - stage: cmake
+  - stage: curl
+  - stage: ninja
+  - stage: python3
+steps:
+  - sources:
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/llvm-{{ .llvm_version }}.src.tar.xz
+        destination: llvm.tar.xz
+        sha256: "{{ .llvm_sha256 }}"
+        sha512: "{{ .llvm_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/cmake-{{ .llvm_version }}.src.tar.xz
+        destination: cmake.tar.xz
+        sha256: "{{ .llvm_cmake_sha256 }}"
+        sha512: "{{ .llvm_cmake_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/third-party-{{ .llvm_version }}.src.tar.xz
+        destination: third-party.tar.xz
+        sha256: "{{ .llvm_third_party_sha256 }}"
+        sha512: "{{ .llvm_third_party_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/clang-{{ .llvm_version }}.src.tar.xz
+        destination: clang.tar.xz
+        sha256: "{{ .llvm_clang_sha256 }}"
+        sha512: "{{ .llvm_clang_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/lld-{{ .llvm_version }}.src.tar.xz
+        destination: lld.tar.xz
+        sha256: "{{ .llvm_lld_sha256 }}"
+        sha512: "{{ .llvm_lld_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/libunwind-{{ .llvm_version }}.src.tar.xz
+        destination: libunwind.tar.xz
+        sha256: "{{ .llvm_libunwind_sha256 }}"
+        sha512: "{{ .llvm_libunwind_sha512 }}"
+    prepare:
+      - |
+        mkdir llvm
+        tar -xJf llvm.tar.xz --strip-components=1 -C llvm
+        mkdir cmake
+        tar -xJf cmake.tar.xz --strip-components=1 -C cmake
+        mkdir third-party
+        tar -xJf third-party.tar.xz --strip-components=1 -C third-party
+        mkdir clang
+        tar -xJf clang.tar.xz --strip-components=1 -C clang
+        mkdir lld
+        tar -xJf lld.tar.xz --strip-components=1 -C lld
+        mkdir libunwind
+        tar -xJf libunwind.tar.xz --strip-components=1 -C libunwind
+
+        patch -p1 < /pkg/patches/fix-memory-mf_exec-on-aarch64.patch
+        patch -p1 < /pkg/patches/llvm-stack-size.patch
+      - |
+        cmake -S llvm -B build -G Ninja \
+              -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_INSTALL_PREFIX=/usr \
+              -DLLVM_DEFAULT_TARGET_TRIPLE="${ARCH}-linux-musl" \
+              -DLLVM_HOST_TRIPLE="${ARCH}-linux-musl" \
+              -DLLVM_ENABLE_PROJECTS="clang;lld" \
+              -DLLVM_BUILD_LLVM_DYLIB=ON \
+              -DLLVM_LINK_LLVM_DYLIB=ON \
+              -DLLVM_INCLUDE_TESTS=OFF \
+              -DLLVM_INCLUDE_DOCS=OFF \
+              -DLLVM_INCLUDE_EXAMPLES=OFF \
+              -DLLVM_INCLUDE_BENCHMARKS=OFF \
+              -DLLVM_ENABLE_BINDINGS=OFF \
+              -DLLVM_INSTALL_UTILS=ON \
+              -DLLVM_TARGETS_TO_BUILD='ARM;AArch64;X86' \
+              -DLLVM_ENABLE_ASSERTIONS=OFF \
+              -DLLVM_ENABLE_LTO=ON
+    build:
+      - |
+        cmake --build build
+    install:
+      - |
+        DESTDIR=/rootfs cmake --install build
+        # remove LLVM development files
+        rm -rf /rootfs/usr/include /rootfs/usr/lib/cmake /rootfs/usr/lib/*.a
+    test:
+      - |
+        # Validate usrmerge symlinks from toolchain did not get overwritten
+        [ -L /bin ] && [ -d /bin ]
+        [ -L /lib ] && [ -d /lib ]
+        [ -L /lib64 ] && [ -d /lib64 ]
+        [ -L /usr/lib64 ] && [ -d /usr/lib64 ]
+        [ -L /sbin ] && [ -d /sbin ]
+        [ -L /usr/sbin ] && [ -d /usr/sbin ]
+finalize:
+  - from: /rootfs
+    to: /
