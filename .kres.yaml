@@ -9,6 +9,7 @@ spec:
     - tools-libcap
     - tools-libselinux
     - tools-libsepol
+    - tools-llvm
     - tools-openssl
     - tools-pcre2
     - tools-squashfs-tools
