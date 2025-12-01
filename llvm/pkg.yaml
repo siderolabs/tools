@@ -33,6 +33,8 @@ steps:
               -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_INSTALL_PREFIX=/usr \
               -DCMAKE_SKIP_RPATH=ON \
+          		-DLLVM_DEFAULT_TARGET_TRIPLE="${ARCH}-linux-musl" \
+          		-DLLVM_HOST_TRIPLE="${ARCH}-linux-musl" \
               -DLLVM_INCLUDE_TESTS=OFF \
               -DLLVM_INCLUDE_DOCS=OFF \
               -DLLVM_INCLUDE_EXAMPLES=OFF \

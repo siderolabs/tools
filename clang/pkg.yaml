@@ -42,7 +42,6 @@ steps:
               -DCLANG_LINK_CLANG_DYLIB=ON \
               -DENABLE_LINKER_BUILD_ID=ON \
               -DLIBCLANG_BUILD_STATIC=ON \
-              -DCLANG_VENDOR=siderolabs \
               -DLLVM_LINK_LLVM_DYLIB=ON
     build:
       - |
