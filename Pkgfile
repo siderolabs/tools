@@ -47,7 +47,7 @@ vars:
   ca_certificates_sha512: aef293e084ef15a55a4f9dee395ee4bbbadea1f5a49c0590e0ff67a0630b5298d2bc79699ab95d70be0d2d06f9f1e55fe676b3e1d5ff912df88f2d6bff0d5736
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.1.2
+  cmake_version: 4.2.0
   cmake_sha256: 643f04182b7ba323ab31f526f785134fb79cba3188a852206ef0473fee282a15
   cmake_sha512: 169b8ebfbd2c880a1f3ed8c3da8d4b8e9252a5a1ff9f0011e39bb3bb84d183f0379eea880b80e2e052c333db91e49b80e5a65131f71fc8582709b604e94bf280
 
@@ -117,7 +117,7 @@ vars:
   gettext_tiny_sha512: 25325db240ab79d112c59d83e975fa466f0e69efb4348ca7b0a170349c761b54170001a49a1660eebf834a8895c11403864db52556253fdcc2af29121c361ba1
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.51.2
+  git_version: 2.52.0
   git_sha256: 233d7143a2d58e60755eee9b76f559ec73ea2b3c297f5b503162ace95966b4e3
   git_sha512: 547c3e522d9e6a2c2ccab24ee0c7f4f2d29878759563356e3a2ae9675884b7044ce5a236803170a203b79443760eb18a7089eec02bd105316e3ab045ab7603a7
 
@@ -138,7 +138,7 @@ vars:
   grep_sha512: c54b4db5a8b9afe098c088decd94977746305284d716666a60bac82b4edc0fae4acf828970b5b6fc7d58ecd549f638e17e6958f33a71fedcc7d7415b9228b161
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
-  gnutls_version: 3.8.10
+  gnutls_version: 3.8.11
   gnutls_sha256: db7fab7cce791e7727ebbef2334301c821d79a550ec55c9ef096b610b03eb6b7
   gnutls_sha512: d453bd4527af95cb3905ce8753ceafd969e3f442ad1d148544a233ebf13285b999930553a805a0511293cc25390bb6a040260df5544a7c55019640f920ad3d92
 
@@ -168,7 +168,7 @@ vars:
   libffi_sha512: 76974a84e3aee6bbd646a6da2e641825ae0b791ca6efdc479b2d4cbcd3ad607df59cffcf5031ad5bd30822961a8c6de164ac8ae379d1804acd388b1975cdbf4d
 
   # renovate: datasource=github-tags extractVersion=^libnl(?<version>.*)$ depName=thom311/libnl
-  libnl_version: 3_11_0
+  libnl_version: 3_12_0
   libnl_sha256: 2a56e1edefa3e68a7c00879496736fdbf62fc94ed3232c0baba127ecfa76874d
   libnl_sha512: 69ecec6e792fc7b9c443fff8742cf45782af5c5c4664687440942eaeb616ba7b4ed2b606e33c5d86e44e6b49a9c79a1fed4b7c77781a059e13cf6a844d94530e
 
@@ -183,7 +183,7 @@ vars:
   libunistring_sha512: e0838b4324193aa927c6a3d647b9a482f12e11525d0cf2b5f0e6cf6b9afc9f2ee751d39d72e3c980bac3fc91e0d9d043c4a1c5662dde3cc26c52312d224d80f0
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
-  libtool_version: 2.5.4
+  libtool_version: 2.6.0
   libtool_sha256: da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
@@ -198,7 +198,7 @@ vars:
   m4_sha512: dc7b4f61452e564b095010029bf6ce4246e5a03959989cd76b09eb8012db7424c52819143020fab21a3471ff57ab026d3eccbd00dd3969819208980565a9fec0
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.9.1
+  meson_version: 1.9.2
   meson_sha256: 4e076606f2afff7881d195574bddcd8d89286f35a17b4977a216f535dc0c74ac
   meson_sha512: e5a167ff035f1494d6b1df7d3bf6feb37aa6421222fd27bfbebb36de4c7c3083e327679b82b7d9d3d4a2cc4dc2a3babb7cbf03358e4a2784d47eb34502014a1c
 
@@ -233,7 +233,7 @@ vars:
   nettle_sha512: bf37ddd7dca8e78488da2a5286dcf16761d527d620572b42f2ad27bb8ee8c12999d92b0272e06f53766e7155a3f4a1ab7ad9c4b1c3caec47c031878b6b1772fb
 
   # renovate: datasource=github-releases depName=ninja-build/ninja
-  ninja_version: v1.13.1
+  ninja_version: v1.13.2
   ninja_sha256: f0055ad0369bf2e372955ba55128d000cfcc21777057806015b45e4accbebf23
   ninja_sha512: ec94d42967b962d66ab0747fcb9d095510117159de0473ec08df47a657895aa2523f920798e4608d0c6cf0e2e382512c14aec8a54ea58b6cd4b01edd3a7c8e62
 
@@ -274,7 +274,7 @@ vars:
   pyelftools_sha512: 7f4ef37da7fda75125cb95ced2f3084848943592eff7deae7ae917508f1cd5281c96960ee3bbc6e503e71a4e2196622cd68cc67e3df1f4cd99b9b675f14fd58c
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.14.0
+  python_version: 3.14.2
   python_sha256: 2299dae542d395ce3883aca00d3c910307cd68e0b2f7336098c8e7b7eee9f3e9
   python_sha512: 46e9e205c3a084cba68bf7f267ab2fd0862a05430165e0eb713f2d6b3a1a4452f72f563de5de55caea824be9df56f66dd568f4814941667a9bb0954229772c53
 
