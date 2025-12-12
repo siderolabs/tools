@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.5.4
+# syntax = ghcr.io/siderolabs/bldr:v0.5.6
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.11.0-3-g0390e22
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.11.0-4-g63685d2
 
   # stick to whatever version protobuf requires, see https://github.com/protocolbuffers/protobuf/blob/33d0cd03571aca25adf11d3a62add1d52d1cc27d/cmake/dependencies.cmake#L15
   # renovate: datasource=github-releases depName=abseil/abseil-cpp
@@ -42,6 +42,11 @@ vars:
   bzip2_version: 1.0.8
   bzip2_sha256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
+
+  # renovate: datasource=repology depName=homebrew/ca-certificates
+  ca_certificates_version: 2025-12-02
+  ca_certificates_sha256: f1407d974c5ed87d544bd931a278232e13925177e239fca370619aba63c757b4
+  ca_certificates_sha512: aef293e084ef15a55a4f9dee395ee4bbbadea1f5a49c0590e0ff67a0630b5298d2bc79699ab95d70be0d2d06f9f1e55fe676b3e1d5ff912df88f2d6bff0d5736
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
   cmake_version: 4.0.3
