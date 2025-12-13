@@ -31,7 +31,7 @@ steps:
         tar -xJf third-party.tar.xz --strip-components=1 -C third-party
       - |
         cmake -S clang -B build -G Ninja \
-              -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_DO_STRIP=OFF \
+              -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_INSTALL_PREFIX=/usr \
               -DCMAKE_SKIP_RPATH=ON \
               -DLLVM_INCLUDE_TESTS=OFF \
@@ -42,13 +42,7 @@ steps:
               -DCLANG_LINK_CLANG_DYLIB=ON \
               -DENABLE_LINKER_BUILD_ID=ON \
               -DLIBCLANG_BUILD_STATIC=ON \
-              -DLLVM_LINK_LLVM_DYLIB=ON \
-              -DCMAKE_EXE_LINKER_FLAGS_DEBUG="" \
-              -DCMAKE_SHARED_LINKER_FLAGS_DEBUG="" \
-              -DCMAKE_MODULE_LINKER_FLAGS_DEBUG="" \
-              -DCMAKE_EXE_LINKER_FLAGS="" \
-              -DCMAKE_SHARED_LINKER_FLAGS="" \
-              -DCMAKE_MODULE_LINKER_FLAGS=""
+              -DLLVM_LINK_LLVM_DYLIB=ON
     build:
       - |
         cmake --build build
