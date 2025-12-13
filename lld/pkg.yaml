@@ -41,6 +41,9 @@ steps:
         tar -xJf libunwind.tar.xz --strip-components=1 -C libunwind
         mkdir llvm
         tar -xJf llvm.tar.xz --strip-components=1 -C llvm
+
+        patch -p1 < /pkg/patches/fix-memory-mf_exec-on-aarch64.patch
+        patch -p1 < /pkg/patches/llvm-stack-size.patch
       - |
         cmake -S lld -B build -G Ninja \
               -DCMAKE_BUILD_TYPE=Release \
