@@ -1,0 +1,65 @@
+name: lld
+variant: scratch
+dependencies:
+  - stage: base
+  - stage: cmake
+  - stage: curl
+  - stage: ninja
+  - stage: python3
+  - stage: llvm
+steps:
+  - sources:
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/lld-{{ .llvm_version }}.src.tar.xz
+        destination: lld.tar.xz
+        sha256: "{{ .llvm_lld_sha256 }}"
+        sha512: "{{ .llvm_lld_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/cmake-{{ .llvm_version }}.src.tar.xz
+        destination: cmake.tar.xz
+        sha256: "{{ .llvm_cmake_sha256 }}"
+        sha512: "{{ .llvm_cmake_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/third-party-{{ .llvm_version }}.src.tar.xz
+        destination: third-party.tar.xz
+        sha256: "{{ .llvm_third_party_sha256 }}"
+        sha512: "{{ .llvm_third_party_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/libunwind-{{ .llvm_version }}.src.tar.xz
+        destination: libunwind.tar.xz
+        sha256: "{{ .llvm_libunwind_sha256 }}"
+        sha512: "{{ .llvm_libunwind_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/llvm-{{ .llvm_version }}.src.tar.xz
+        destination: llvm.tar.xz
+        sha256: "{{ .llvm_sha256 }}"
+        sha512: "{{ .llvm_sha512 }}"
+    prepare:
+      - |
+        mkdir lld
+        tar -xJf lld.tar.xz --strip-components=1 -C lld
+        mkdir cmake
+        tar -xJf cmake.tar.xz --strip-components=1 -C cmake
+        mkdir third-party
+        tar -xJf third-party.tar.xz --strip-components=1 -C third-party
+        mkdir libunwind
+        tar -xJf libunwind.tar.xz --strip-components=1 -C libunwind
+        mkdir llvm
+        tar -xJf llvm.tar.xz --strip-components=1 -C llvm
+
+        patch -p1 < /pkg/patches/fix-memory-mf_exec-on-aarch64.patch
+        patch -p1 < /pkg/patches/llvm-stack-size.patch
+      - |
+        cmake -S lld -B build -G Ninja \
+              -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_INSTALL_PREFIX=/usr \
+              -DCMAKE_SKIP_RPATH=ON \
+              -DLLVM_INCLUDE_TESTS=OFF \
+              -DLLVM_ENABLE_ASSERTIONS=OFF \
+              -DLLD_BUILT_STANDALONE=ON \
+              -DBUILD_SHARED_LIBS=ON \
+              -DLLVM_LINK_LLVM_DYLIB=ON
+    build:
+      - |
+        cmake --build build
+    install:
+      - |
+        DESTDIR=/rootfs cmake --install build
+finalize:
+  - from: /rootfs
+    to: /

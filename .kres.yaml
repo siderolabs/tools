@@ -9,6 +9,7 @@ spec:
     - tools-libcap
     - tools-libselinux
     - tools-libsepol
+    - tools-llvm
     - tools-openssl
     - tools-pcre2
     - tools-squashfs-tools
@@ -17,7 +18,7 @@ spec:
     - tools-xz
     - tools-zlib
     - tools-zstd
-  reproducibleTargetName: tools
+  reproducibleTargetName: tools-llvm
 ---
 kind: common.Renovate
 spec:
