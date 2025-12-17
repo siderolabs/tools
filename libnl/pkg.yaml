@@ -5,6 +5,7 @@ dependencies:
   - stage: flex
   - stage: bison
   - stage: m4
+  - stage: pkgconf
 steps:
   - sources:
       - url: https://github.com/thom311/libnl/releases/download/libnl{{ .libnl_version }}/libnl-{{ .libnl_version | replace "_" "." }}.tar.gz

@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-alpha.0-1-g2e0222b
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-alpha.0-2-g0823283
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -47,9 +47,9 @@ vars:
   ca_certificates_sha512: aef293e084ef15a55a4f9dee395ee4bbbadea1f5a49c0590e0ff67a0630b5298d2bc79699ab95d70be0d2d06f9f1e55fe676b3e1d5ff912df88f2d6bff0d5736
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.1.2
-  cmake_sha256: 643f04182b7ba323ab31f526f785134fb79cba3188a852206ef0473fee282a15
-  cmake_sha512: 169b8ebfbd2c880a1f3ed8c3da8d4b8e9252a5a1ff9f0011e39bb3bb84d183f0379eea880b80e2e052c333db91e49b80e5a65131f71fc8582709b604e94bf280
+  cmake_version: 4.2.1
+  cmake_sha256: 414aacfac54ba0e78e64a018720b64ed6bfca14b587047b8b3489f407a14a070
+  cmake_sha512: 75617692e975f5974bc015d62983e48d0dedaed2daa1e25d93807d25c6ed836e73e37de064e1e924078162fc20f38f9210ac1c4d699c9bd795050119abc848ce
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.9
@@ -117,9 +117,9 @@ vars:
   gettext_tiny_sha512: 25325db240ab79d112c59d83e975fa466f0e69efb4348ca7b0a170349c761b54170001a49a1660eebf834a8895c11403864db52556253fdcc2af29121c361ba1
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.51.2
-  git_sha256: 233d7143a2d58e60755eee9b76f559ec73ea2b3c297f5b503162ace95966b4e3
-  git_sha512: 547c3e522d9e6a2c2ccab24ee0c7f4f2d29878759563356e3a2ae9675884b7044ce5a236803170a203b79443760eb18a7089eec02bd105316e3ab045ab7603a7
+  git_version: 2.52.0
+  git_sha256: 3cd8fee86f69a949cb610fee8cd9264e6873d07fa58411f6060b3d62729ed7c5
+  git_sha512: 965e5ebb72d1f080d64e34bdb75f0bb1689c9dd41dcf63b020d986bad49808ac09bfb1115962bc0c5b95bac8622367ac4cd09aa89266f73d2137fe94c90dd3ed
 
   # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
@@ -138,9 +138,9 @@ vars:
   grep_sha512: c54b4db5a8b9afe098c088decd94977746305284d716666a60bac82b4edc0fae4acf828970b5b6fc7d58ecd549f638e17e6958f33a71fedcc7d7415b9228b161
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
-  gnutls_version: 3.8.10
-  gnutls_sha256: db7fab7cce791e7727ebbef2334301c821d79a550ec55c9ef096b610b03eb6b7
-  gnutls_sha512: d453bd4527af95cb3905ce8753ceafd969e3f442ad1d148544a233ebf13285b999930553a805a0511293cc25390bb6a040260df5544a7c55019640f920ad3d92
+  gnutls_version: 3.8.11
+  gnutls_sha256: 91bd23c4a86ebc6152e81303d20cf6ceaeb97bc8f84266d0faec6e29f17baa20
+  gnutls_sha512: 68f9e5bec3aa6686fd3319cc9c88a5cc44e2a75144049fc9de5fb55fef2241b4e16996af4be5dd48308abbee8cfaed6c862903f6bb89aff5dfa5410075bd7386
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gzip.git
   gzip_version: 1.14
@@ -168,9 +168,9 @@ vars:
   libffi_sha512: 76974a84e3aee6bbd646a6da2e641825ae0b791ca6efdc479b2d4cbcd3ad607df59cffcf5031ad5bd30822961a8c6de164ac8ae379d1804acd388b1975cdbf4d
 
   # renovate: datasource=github-tags extractVersion=^libnl(?<version>.*)$ depName=thom311/libnl
-  libnl_version: 3_11_0
-  libnl_sha256: 2a56e1edefa3e68a7c00879496736fdbf62fc94ed3232c0baba127ecfa76874d
-  libnl_sha512: 69ecec6e792fc7b9c443fff8742cf45782af5c5c4664687440942eaeb616ba7b4ed2b606e33c5d86e44e6b49a9c79a1fed4b7c77781a059e13cf6a844d94530e
+  libnl_version: 3_12_0
+  libnl_sha256: fc51ca7196f1a3f5fdf6ffd3864b50f4f9c02333be28be4eeca057e103c0dd18
+  libnl_sha512: 6230b8cab608355346030cf32f37c43983b1d1b632cb7677ae383d4f2369b4a3773b35d2d51007d3b9c16f333aaf351682c4602b3d229cd602eec5ad53efd6f3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.com/gnutls/libtasn1.git
   libtasn1_version: 4.20.0
@@ -198,9 +198,9 @@ vars:
   m4_sha512: dc7b4f61452e564b095010029bf6ce4246e5a03959989cd76b09eb8012db7424c52819143020fab21a3471ff57ab026d3eccbd00dd3969819208980565a9fec0
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.9.1
-  meson_sha256: 4e076606f2afff7881d195574bddcd8d89286f35a17b4977a216f535dc0c74ac
-  meson_sha512: e5a167ff035f1494d6b1df7d3bf6feb37aa6421222fd27bfbebb36de4c7c3083e327679b82b7d9d3d4a2cc4dc2a3babb7cbf03358e4a2784d47eb34502014a1c
+  meson_version: 1.10.0
+  meson_sha256: 8071860c1f46a75ea34801490fd1c445c9d75147a65508cd3a10366a7006cc1c
+  meson_sha512: 4e6ad56e18c7d5b244b94b99c7e42489b8d4e79634abb97607c3f277f74b0c3c1cb043ba48816f444d2960fe96dc38459c404207e415a1401f5fad7c6f5d60e5
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.3.1
@@ -233,9 +233,9 @@ vars:
   nettle_sha512: bf37ddd7dca8e78488da2a5286dcf16761d527d620572b42f2ad27bb8ee8c12999d92b0272e06f53766e7155a3f4a1ab7ad9c4b1c3caec47c031878b6b1772fb
 
   # renovate: datasource=github-releases depName=ninja-build/ninja
-  ninja_version: v1.13.1
-  ninja_sha256: f0055ad0369bf2e372955ba55128d000cfcc21777057806015b45e4accbebf23
-  ninja_sha512: ec94d42967b962d66ab0747fcb9d095510117159de0473ec08df47a657895aa2523f920798e4608d0c6cf0e2e382512c14aec8a54ea58b6cd4b01edd3a7c8e62
+  ninja_version: v1.13.2
+  ninja_sha256: 974d6b2f4eeefa25625d34da3cb36bdcebe7fbce40f4c16ac0835fd1c0cbae17
+  ninja_sha512: c0b401b4db91a2eea01a474ee979b2c6f1daa97b4c8d1f856871ce5f6d567c4b26d6246bc57e2a5f914329302abcd9c00ab0d4394a25f2ad502b6b00a07903d2
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
   openssl_version: 3.6.0
@@ -274,9 +274,9 @@ vars:
   pyelftools_sha512: 7f4ef37da7fda75125cb95ced2f3084848943592eff7deae7ae917508f1cd5281c96960ee3bbc6e503e71a4e2196622cd68cc67e3df1f4cd99b9b675f14fd58c
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.14.0
-  python_sha256: 2299dae542d395ce3883aca00d3c910307cd68e0b2f7336098c8e7b7eee9f3e9
-  python_sha512: 46e9e205c3a084cba68bf7f267ab2fd0862a05430165e0eb713f2d6b3a1a4452f72f563de5de55caea824be9df56f66dd568f4814941667a9bb0954229772c53
+  python_version: 3.14.2
+  python_sha256: ce543ab854bc256b61b71e9b27f831ffd1bfd60a479d639f8be7f9757cf573e9
+  python_sha512: 165256b4c713e0262767cd7a2c65622f3f086423524646a39bfa64912376be9e5b70863d5a3c95224b516152d0b79e7ccbfe2f2cf35b809d132f2c38ebb3ab3b
 
   # renovate: datasource=github-releases versioning=python depName=pypa/build
   python_build_version: 1.3.0
@@ -345,9 +345,9 @@ vars:
   squashfs_tools_sha512: 16943b331723c301d7e65c14e5946d3fa27f974ba509a412ab6182a48d83a935d445feb80a27d89a5b5ba5cf86e55835f12d28c2b2b57f5623e1151cb2966376
 
   # renovate: datasource=github-tags depName=swig/swig
-  swig_version: v4.4.0
-  swig_sha256: 00735db2dc5abfae43c702dd927fc81a439e32d875839200cc0b5681cc70f66e
-  swig_sha512: d0405937efd3ccb5773e6ae1747d02047b4acc34ecf9a243e742543143626508fa5f07dafaf5f0e12086fa6a1fc1ee703feff9de88fecf7c7cfa98115d5bfcb5
+  swig_version: v4.4.1
+  swig_sha256: 8bf32042beb7ee1eeb5c71aa15a62513d964893f84234f2cd77e4a8e2ed41e87
+  swig_sha512: 5ca61bd3eac0b3c6a3196afdfc2c4f40d3dce5d626b29543ba5f16560efada1c38b7f53184f79e983b32a0c0ebc26e63fe035b5680fcea0ba9a1de6aa33550c7
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34
@@ -360,9 +360,9 @@ vars:
   texinfo_sha512: 8e67337ae12a552fc620c43725507a4978710ea6630e98b0f5e98eb3f79a90e191dde5225699aa6217c26f171d277461f76150f0459cd07b40c3234d2f3d89bf
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.41.2
-  util_linux_sha256: 6062a1d89b571a61932e6fc0211f36060c4183568b81ee866cf363bce9f6583e
-  util_linux_sha512: 696c87e7cf185acc9b4b969ddade6155ea2945ae494eaecfd7b1f35d9607166cb09be79878fb793dd31b4d4dcac8c9be4be76af3886185db7ae8b58c303fb0cf
+  util_linux_version: 2.41.3
+  util_linux_sha256: 3330d873f0fceb5560b89a7dc14e4f3288bbd880e96903ed9b50ec2b5799e58b
+  util_linux_sha512: 3d299f0e05a4c982a04dbcbaaeff1222152feedf51c56c5dbdeb75999c68269d652a994f5cdf4c1ee42bb7b28475dd0792192c299fd9bc3b45198c5b153dad00
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
   xz_version: v5.8.1
