@@ -26,6 +26,13 @@ steps:
         fhs-validator /rootfs
       - |
         make test
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/zlib-ng.spdx.json
+      version: {{ .zlib_ng_version }}
+      cpes:
+        - cpe:2.3:a:zlib-ng:zlib-ng:{{ .zlib_ng_version }}:*:*:*:*:*:*:*
+      licenses:
+        - Zlib
 finalize:
   - from: /rootfs
     to: /
