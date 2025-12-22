@@ -43,6 +43,7 @@ dependencies:
   - stage: musl-fts
   - stage: musl-obstack
   - stage: musl-utils
+  - stage: nasm
   - stage: ncurses
   - stage: nettle
   - stage: ninja
@@ -79,7 +80,7 @@ dependencies:
   - stage: tools-util-linux
   - stage: tools-xz
   - stage: tools-zstd
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
 
 steps:
   - prepare:

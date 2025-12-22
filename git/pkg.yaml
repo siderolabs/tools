@@ -2,7 +2,7 @@ name: git
 variant: scratch
 dependencies:
   - stage: base
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
     runtime: true
   - stage: gettext
   - stage: tools-openssl

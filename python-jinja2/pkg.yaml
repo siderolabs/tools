@@ -9,7 +9,7 @@ dependencies:
   - stage: python-flit_core
   - stage: python-installer
   - stage: python-markupsafe
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
 steps:
   - sources:
       - url: https://github.com/pallets/jinja/archive/refs/tags/{{ .python_jinja2_version }}.tar.gz

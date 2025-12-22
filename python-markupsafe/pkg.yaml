@@ -9,7 +9,7 @@ dependencies:
   - stage: python-flit_core
   - stage: python-installer
   - stage: python-setuptools
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
 steps:
   - sources:
       - url: https://github.com/pallets/markupsafe/archive/refs/tags/{{ .python_markupsafe_version }}.tar.gz

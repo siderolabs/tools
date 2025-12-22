@@ -4,7 +4,7 @@ dependencies:
   - stage: base
   - stage: tools-openssl
     runtime: true
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
     runtime: true
   - stage: pkgconf
   - stage: perl

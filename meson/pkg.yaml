@@ -9,7 +9,7 @@ dependencies:
   - stage: python-setuptools
   - stage: tools-openssl
     runtime: true
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
     runtime: true
 steps:
   - sources:

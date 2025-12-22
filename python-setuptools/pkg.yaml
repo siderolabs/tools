@@ -4,7 +4,7 @@ dependencies:
   - stage: base
   - stage: libffi
   - stage: python3
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
 steps:
   - sources:
       - url: https://pypi.io/packages/source/s/setuptools/setuptools-{{ .python_setuptools_version }}.tar.gz

@@ -1,0 +1,32 @@
+name: nasm
+variant: scratch
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://www.nasm.us/pub/nasm/releasebuilds/{{ .nasm_version }}/nasm-{{ .nasm_version }}.tar.xz
+        destination: nasm.tar.xz
+        sha256: "{{ .nasm_sha256 }}"
+        sha512: "{{ .nasm_sha512 }}"
+    prepare:
+      - |
+        tar -xJf nasm.tar.xz --strip-components=1
+      - |
+        patch -p1 < /pkg/patches/musl.patch
+      - |
+        mkdir build
+        cd build
+
+        ../configure \
+            --prefix=/usr \
+    build:
+      - |
+        cd build
+        make -j $(nproc)
+    install:
+      - |
+        cd build
+        make DESTDIR=/rootfs install
+finalize:
+  - from: /rootfs
+    to: /

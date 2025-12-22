@@ -4,7 +4,7 @@ dependencies:
   - stage: base
   - stage: sed
   - stage: tools-xz
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
   - stage: tools-zstd
   - stage: patch
 steps:

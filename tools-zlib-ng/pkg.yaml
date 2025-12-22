@@ -1,33 +1,31 @@
-name: tools-zlib
+name: tools-zlib-ng
 variant: scratch
 dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://zlib.net/fossils/zlib-{{ .zlib_version }}.tar.gz
+      - url: https://github.com/zlib-ng/zlib-ng/archive/refs/tags/{{ .zlib_ng_version }}.tar.gz
         destination: zlib.tar.gz
-        sha256: "{{ .zlib_sha256 }}"
-        sha512: "{{ .zlib_sha512 }}"
+        sha256: "{{ .zlib_ng_sha256 }}"
+        sha512: "{{ .zlib_ng_sha512 }}"
     prepare:
       - |
         tar -xf zlib.tar.gz --strip-components=1
-        mkdir build
-        cd build
-
-        ../configure \
-            --prefix=/usr
+      - |
+        ./configure --prefix=/usr \
+          --zlib-compat
     build:
       - |
-        cd build
-        make -j $(nproc)
+        make -j $(nproc)  
     install:
       - |
-        cd build
         make DESTDIR=/rootfs install
         rm -r /rootfs/usr/share
     test:
       - |
         fhs-validator /rootfs
+      - |
+        make test
 finalize:
   - from: /rootfs
     to: /

@@ -2,7 +2,7 @@ name: python3
 variant: scratch
 dependencies:
   - stage: base
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
   - stage: patch
   - stage: libffi
   - stage: tools-openssl

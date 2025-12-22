@@ -3,7 +3,7 @@ variant: scratch
 dependencies:
   - stage: base
   - stage: elfutils
-  - stage: tools-zlib
+  - stage: tools-zlib-ng
 steps:
   - sources:
       - url: https://github.com/libbpf/libbpf/archive/refs/tags/{{ .libbpf_version }}.tar.gz
