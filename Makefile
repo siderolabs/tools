@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2025-11-11T11:24:41Z by kres 911d166.
+# Generated on 2026-01-02T09:24:08Z by kres 8a4aebf.
 
 # common variables
 
@@ -36,6 +36,7 @@ PLATFORM ?= linux/amd64,linux/arm64
 PROGRESS ?= auto
 PUSH ?= false
 CI_ARGS ?=
+WITH_BUILD_DEBUG ?=
 BUILD_ARGS = --build-arg=SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH)
 COMMON_ARGS = --file=Pkgfile
 COMMON_ARGS += --provenance=false
@@ -111,6 +112,10 @@ respectively.
 
 endef
 
+ifneq (, $(filter $(WITH_BUILD_DEBUG), t true TRUE y yes 1))
+BUILD := BUILDX_EXPERIMENTAL=1 docker buildx debug --invoke /bin/sh --on error build
+endif
+
 all: $(TARGETS)  ## Builds all targets defined.
 
 $(ARTIFACTS):  ## Creates artifacts directory.
@@ -175,4 +180,3 @@ release-notes: $(ARTIFACTS)
 conformance:
 	@docker pull $(CONFORMANCE_IMAGE)
 	@docker run --rm -it -v $(PWD):/src -w /src $(CONFORMANCE_IMAGE) enforce
-
