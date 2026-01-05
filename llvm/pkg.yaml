@@ -55,7 +55,7 @@ steps:
         cmake --build build
     install:
       - |
-        DESTDIR=/rootfs ninja -C build install-distribution
+        DESTDIR=/rootfs cmake --install build
         # rm /rootfs/usr/lib/*.a # TODO - remove static libs from the tools image
 finalize:
   - from: /rootfs

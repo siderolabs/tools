@@ -46,7 +46,7 @@ steps:
         cmake --build build
     install:
       - |
-        DESTDIR=/rootfs ninja -C build install-distribution
+        DESTDIR=/rootfs cmake --install build
 finalize:
   - from: /rootfs
     to: /
