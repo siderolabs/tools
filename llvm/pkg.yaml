@@ -57,8 +57,6 @@ steps:
       - |
         DESTDIR=/rootfs ninja -C build install-distribution
         # rm /rootfs/usr/lib/*.a # TODO - remove static libs from the tools image
-        # optviewer
-        rm -r /rootfs/usr/share
 finalize:
   - from: /rootfs
     to: /
