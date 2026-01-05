@@ -48,18 +48,16 @@ steps:
         cmake -S lld -B build -G Ninja \
               -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_INSTALL_PREFIX=/usr \
-              -DCMAKE_SKIP_RPATH=ON \
               -DLLVM_INCLUDE_TESTS=OFF \
               -DLLVM_ENABLE_ASSERTIONS=OFF \
               -DLLD_BUILT_STANDALONE=ON \
-              -DBUILD_SHARED_LIBS=ON \
               -DLLVM_LINK_LLVM_DYLIB=ON
     build:
       - |
         cmake --build build
     install:
       - |
-        DESTDIR=/rootfs cmake --install build
+        DESTDIR=/rootfs ninja -C build install-distribution
 finalize:
   - from: /rootfs
     to: /

@@ -32,10 +32,11 @@ steps:
         patch -p1 < /pkg/patches/fix-memory-mf_exec-on-aarch64.patch
         patch -p1 < /pkg/patches/llvm-stack-size.patch
       - |
+        # -DLLVM_ENABLE_PROJECTS="clang,lld" \
+        # -DLLVM_DISTRIBUTION_COMPONENTS=
         cmake -S llvm -B build -G Ninja \
               -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_INSTALL_PREFIX=/usr \
-              -DCMAKE_SKIP_RPATH=ON \
               -DLLVM_DEFAULT_TARGET_TRIPLE="${ARCH}-linux-musl" \
               -DLLVM_HOST_TRIPLE="${ARCH}-linux-musl" \
               -DLLVM_INCLUDE_TESTS=OFF \
@@ -54,7 +55,7 @@ steps:
         cmake --build build
     install:
       - |
-        DESTDIR=/rootfs cmake --install build
+        DESTDIR=/rootfs ninja -C build install-distribution
         # rm /rootfs/usr/lib/*.a # TODO - remove static libs from the tools image
         # optviewer
         rm -r /rootfs/usr/share

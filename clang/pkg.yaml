@@ -33,11 +33,9 @@ steps:
         cmake -S clang -B build -G Ninja \
               -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_INSTALL_PREFIX=/usr \
-              -DCMAKE_SKIP_RPATH=ON \
               -DLLVM_INCLUDE_TESTS=OFF \
               -DLLVM_ENABLE_ASSERTIONS=OFF \
               -DCLANG_BUILT_STANDALONE=ON \
-              -DBUILD_SHARED_LIBS=ON \
               -DCLANG_DEFAULT_PIE_ON_LINUX=ON \
               -DCLANG_LINK_CLANG_DYLIB=ON \
               -DENABLE_LINKER_BUILD_ID=ON \
@@ -48,7 +46,7 @@ steps:
         cmake --build build
     install:
       - |
-        DESTDIR=/rootfs cmake --install build
+        DESTDIR=/rootfs ninja -C build install-distribution
 finalize:
   - from: /rootfs
     to: /
