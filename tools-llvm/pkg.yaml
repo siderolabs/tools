@@ -4,10 +4,10 @@ dependencies:
   - stage: base
   - stage: llvm
     to: /rootfs
-  - stage: clang
-    to: /rootfs
-  - stage: lld
-    to: /rootfs
+  # - stage: clang
+  #   to: /rootfs
+  # - stage: lld
+  #   to: /rootfs
 steps:
   - prepare:
     - |

@@ -20,6 +20,18 @@ steps:
         destination: third-party.tar.xz
         sha256: "{{ .llvm_third_party_sha256 }}"
         sha512: "{{ .llvm_third_party_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/clang-{{ .llvm_version }}.src.tar.xz
+        destination: clang.tar.xz
+        sha256: "{{ .llvm_clang_sha256 }}"
+        sha512: "{{ .llvm_clang_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/lld-{{ .llvm_version }}.src.tar.xz
+        destination: lld.tar.xz
+        sha256: "{{ .llvm_lld_sha256 }}"
+        sha512: "{{ .llvm_lld_sha512 }}"
+      - url: https://github.com/llvm/llvm-project/releases/download/llvmorg-{{ .llvm_version }}/libunwind-{{ .llvm_version }}.src.tar.xz
+        destination: libunwind.tar.xz
+        sha256: "{{ .llvm_libunwind_sha256 }}"
+        sha512: "{{ .llvm_libunwind_sha512 }}"
     prepare:
       - |
         mkdir llvm
@@ -28,17 +40,23 @@ steps:
         tar -xJf cmake.tar.xz --strip-components=1 -C cmake
         mkdir third-party
         tar -xJf third-party.tar.xz --strip-components=1 -C third-party
+        mkdir clang
+        tar -xJf clang.tar.xz --strip-components=1 -C clang
+        mkdir lld
+        tar -xJf lld.tar.xz --strip-components=1 -C lld
+        # A dependency needed for lld
+        mkdir libunwind
+        tar -xJf libunwind.tar.xz --strip-components=1 -C libunwind
 
         patch -p1 < /pkg/patches/fix-memory-mf_exec-on-aarch64.patch
         patch -p1 < /pkg/patches/llvm-stack-size.patch
       - |
-        # -DLLVM_ENABLE_PROJECTS="clang,lld" \
-        # -DLLVM_DISTRIBUTION_COMPONENTS=
         cmake -S llvm -B build -G Ninja \
               -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_INSTALL_PREFIX=/usr \
               -DLLVM_DEFAULT_TARGET_TRIPLE="${ARCH}-linux-musl" \
               -DLLVM_HOST_TRIPLE="${ARCH}-linux-musl" \
+              -DLLVM_ENABLE_PROJECTS="clang;lld" \
               -DLLVM_INCLUDE_TESTS=OFF \
               -DLLVM_INCLUDE_DOCS=OFF \
               -DLLVM_INCLUDE_EXAMPLES=OFF \
