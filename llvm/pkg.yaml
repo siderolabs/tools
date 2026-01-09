@@ -64,9 +64,7 @@ steps:
               -DLLVM_INSTALL_UTILS=ON \
               -DLLVM_TARGETS_TO_BUILD='ARM;AArch64;X86' \
               -DLLVM_ENABLE_ASSERTIONS=OFF \
-              -DCLANG_ENABLE_BOOTSTRAP=ON \
-              -DLLVM_ENABLE_LTO=ON \
-              -DCLANG_BOOTSTRAP_PASSTHROUGH="CMAKE_INSTALL_PREFIX;LLVM_ENABLE_LTO;LLVM_ENABLE_ASSERTIONS;LLVM_TARGETS_TO_BUILD"
+              -DLLVM_ENABLE_LTO=ON
     build:
       - |
         cmake --build build
