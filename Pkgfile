@@ -62,7 +62,7 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_17_0
+  curl_version: 8_18_0
   curl_sha256: 955f6e729ad6b3566260e8fef68620e76ba3c31acf0a18524416a185acf77992
   curl_sha512: fc6349def40c3c259de2a568631507df17dff83e78a2edbb93f069586dce594439fdc88bef7ce2bed7491f35800b8c0c181c8c88e6ef656cc3c18f9834681eca
 
@@ -112,7 +112,7 @@ vars:
   gawk_sha512: 2268150fa35ae049a6ff3d0d0fa110db10477014c25f50e2ab4e3ee5fd60133369d2a994f59db4eb718020a0af5c4003ae7278c63e7fffa72f431ff4a1429e48
 
   # renovate: datasource=git-refs versioning=git depName=https://github.com/sabotage-linux/gettext-tiny.git
-  gettext_tiny_ref: 55a8ae9015b7dd5b28e03e93286ab19528cc7e3e
+  gettext_tiny_ref: acca7c3d509b9d9d4b33935e822a5bc39b35be01
   gettext_tiny_sha256: 5ee774b7b6c10cc0dd663c759fa104afb8326176c81f61806317c3d93f2b2c54
   gettext_tiny_sha512: 25325db240ab79d112c59d83e975fa466f0e69efb4348ca7b0a170349c761b54170001a49a1660eebf834a8895c11403864db52556253fdcc2af29121c361ba1
 
@@ -173,7 +173,7 @@ vars:
   libnl_sha512: 6230b8cab608355346030cf32f37c43983b1d1b632cb7677ae383d4f2369b4a3773b35d2d51007d3b9c16f333aaf351682c4602b3d229cd602eec5ad53efd6f3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.com/gnutls/libtasn1.git
-  libtasn1_version: 4.20.0
+  libtasn1_version: 4.21.0
   libtasn1_sha256: 92e0e3bd4c02d4aeee76036b2ddd83f0c732ba4cda5cb71d583272b23587a76c
   libtasn1_sha512: 0c0660085f5e80537aa3d65197967029be6cc5e27d7029789713902989c1694fdb49421ae0415b79b953e11893bb4bdaada85f7aff847dd0bb4075c91887e7b4
 
@@ -183,7 +183,7 @@ vars:
   libunistring_sha512: e0838b4324193aa927c6a3d647b9a482f12e11525d0cf2b5f0e6cf6b9afc9f2ee751d39d72e3c980bac3fc91e0d9d043c4a1c5662dde3cc26c52312d224d80f0
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
-  libtool_version: 2.5.4
+  libtool_version: 2.6.0
   libtool_sha256: da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
@@ -284,7 +284,7 @@ vars:
   python_sha512: 165256b4c713e0262767cd7a2c65622f3f086423524646a39bfa64912376be9e5b70863d5a3c95224b516152d0b79e7ccbfe2f2cf35b809d132f2c38ebb3ab3b
 
   # renovate: datasource=github-releases versioning=python depName=pypa/build
-  python_build_version: 1.3.0
+  python_build_version: 1.4.0
   python_build_sha256: fd7a275d4b34e2b5b4c73fb57ae3c8239b54e4d09752eb540d4167c77bfa043d
   python_build_sha512: f34450ffc92a434af2614f4341b38c8feed18ce9a799196bff3f735afc52334cacb34d2a831c3264bbfaacda642a5e4defe3842f8010cd687d47e2d018a191d0
 
