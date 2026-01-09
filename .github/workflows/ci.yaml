@@ -74,6 +74,11 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           make
+      - name: Push to ttl.sh
+        if: github.event_name == 'pull_request'
+        run: |
+          make PUSH=true REGISTRY=ttl.sh PROGRESS=plain
+        continue-on-error: true
       - name: Login to registry
         if: github.event_name != 'pull_request'
         uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef # version: v3.6.0

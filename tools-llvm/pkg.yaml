@@ -1,0 +1,18 @@
+name: tools-llvm
+variant: scratch
+dependencies:
+  - stage: base
+  - stage: llvm
+    to: /rootfs
+  # - stage: clang
+  #   to: /rootfs
+  # - stage: lld
+  #   to: /rootfs
+steps:
+  - prepare:
+    - |
+      # remove LLVM development files
+      rm -rf /rootfs/usr/include /rootfs/usr/lib/cmake /rootfs/usr/lib/libLLVM*.a
+finalize:
+  - from: /rootfs
+    to: /
