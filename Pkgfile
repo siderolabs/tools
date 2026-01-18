@@ -92,7 +92,7 @@ vars:
   expat_sha512: 92dd8a31a88ca73d5d8890be40c231ec037d8d13f6059a88bcf7bfaaa77c1c94dc2874f2dae508c0d077a3798bc006cfe9d7d0a918e08a67149d332c7fce4d23
 
   # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=https://salsa.debian.org/clint/fakeroot.git
-  fakeroot_version: 1.37.1.2
+  fakeroot_version: 1.37.2
   fakeroot_sha256: 2ffa2384d4b8f8d59ee54d94fa12d3ecdfe04d51dfa9c4e4668ba8b3c6e3424e
   fakeroot_sha512: 2de524e2ccbf5f08d446856439b82028e2a90eec9dc94cb2da829f314cfa700bb0cecf0a86222dc3d343f406364133f94807755643c71e7101439ae1362be2cf
 
@@ -183,7 +183,7 @@ vars:
   libunistring_sha512: e0838b4324193aa927c6a3d647b9a482f12e11525d0cf2b5f0e6cf6b9afc9f2ee751d39d72e3c980bac3fc91e0d9d043c4a1c5662dde3cc26c52312d224d80f0
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
-  libtool_version: 2.5.4
+  libtool_version: 2.6.0
   libtool_sha256: da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
