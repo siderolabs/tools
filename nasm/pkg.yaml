@@ -14,6 +14,8 @@ steps:
       - |
         patch -p1 < /pkg/patches/musl.patch
       - |
+        patch -p1 < /pkg/patches/reproducibility.patch
+      - |
         mkdir build
         cd build
 
