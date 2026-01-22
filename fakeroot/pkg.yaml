@@ -16,12 +16,12 @@ steps:
     prepare:
       - |
         tar -xzvf fakeroot.tar.gz --strip-components=1
-
+      - |
         patch -p1 < /pkg/patches/fix-shell.patch
         patch -p1 < /pkg/patches/no-docs.patch
-        patch -p1 < /pkg/patches/fakeroot-no64.patch
-
+      - |
         autoreconf -vif
+      - |
         ./configure \
             --prefix=/usr \
             CFLAGS="${CFLAGS} -fPIC"

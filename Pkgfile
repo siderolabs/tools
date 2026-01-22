@@ -47,9 +47,9 @@ vars:
   ca_certificates_sha512: aef293e084ef15a55a4f9dee395ee4bbbadea1f5a49c0590e0ff67a0630b5298d2bc79699ab95d70be0d2d06f9f1e55fe676b3e1d5ff912df88f2d6bff0d5736
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.2.1
-  cmake_sha256: 414aacfac54ba0e78e64a018720b64ed6bfca14b587047b8b3489f407a14a070
-  cmake_sha512: 75617692e975f5974bc015d62983e48d0dedaed2daa1e25d93807d25c6ed836e73e37de064e1e924078162fc20f38f9210ac1c4d699c9bd795050119abc848ce
+  cmake_version: 4.2.2
+  cmake_sha256: bbda94dd31636e89eb1cc18f8355f6b01d9193d7676549fba282057e8b730f58
+  cmake_sha512: c768979a968f1b16109bc6ca31bbf21faa118dac7086d6ca372d389361440ab512d6fbf416860209f8f6cdd06decc3e8d31cbbc564b414b7729f42d2c1b099ef
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.9
@@ -92,9 +92,9 @@ vars:
   expat_sha512: 92dd8a31a88ca73d5d8890be40c231ec037d8d13f6059a88bcf7bfaaa77c1c94dc2874f2dae508c0d077a3798bc006cfe9d7d0a918e08a67149d332c7fce4d23
 
   # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=https://salsa.debian.org/clint/fakeroot.git
-  fakeroot_version: 1.37.1.2
-  fakeroot_sha256: 2ffa2384d4b8f8d59ee54d94fa12d3ecdfe04d51dfa9c4e4668ba8b3c6e3424e
-  fakeroot_sha512: 2de524e2ccbf5f08d446856439b82028e2a90eec9dc94cb2da829f314cfa700bb0cecf0a86222dc3d343f406364133f94807755643c71e7101439ae1362be2cf
+  fakeroot_version: 1.37.2
+  fakeroot_sha256: bfc22c23fa402a16a6e60b2ed4c2d26a9a57807de9b38ba24b78cc3429722939
+  fakeroot_sha512: bba207ae5b52fbf8deeb4268de9f1953103c3a08433172a678cdb5eba02c9cf29ca736ca2bca94f6e9ad85ab433131ad4367d68f503e613fc6a9fa45359d2222
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
   findutils_version: 4.10.0
@@ -198,9 +198,9 @@ vars:
   m4_sha512: dc7b4f61452e564b095010029bf6ce4246e5a03959989cd76b09eb8012db7424c52819143020fab21a3471ff57ab026d3eccbd00dd3969819208980565a9fec0
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.10.0
-  meson_sha256: 8071860c1f46a75ea34801490fd1c445c9d75147a65508cd3a10366a7006cc1c
-  meson_sha512: 4e6ad56e18c7d5b244b94b99c7e42489b8d4e79634abb97607c3f277f74b0c3c1cb043ba48816f444d2960fe96dc38459c404207e415a1401f5fad7c6f5d60e5
+  meson_version: 1.10.1
+  meson_sha256: c42296f12db316a4515b9375a5df330f2e751ccdd4f608430d41d7d6210e4317
+  meson_sha512: 69fe938dad22728a969d1848f1e3ba43c72a2083158431fd639eb51ebce4f2b38e4a2797663d2e4bb251ed0870533bfab57705da6ae941f541769290b126fd45
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.3.1
@@ -319,9 +319,9 @@ vars:
   python_packaging_sha512: fb8419f81f0f817440c0b297fc6e963832e219e7a324bf4e0321f1e131a4822f17a19f2eb033a8d4adb622ccb16db59776ec44906a0c0b34f2877b59b9558c18
 
   # renovate: datasource=github-releases versioning=python extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
-  python_setuptools_version: 80.9.0
-  python_setuptools_sha256: f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c
-  python_setuptools_sha512: 36eb1f219d29c6b9e135936bde2001ad70a971c8069cd0175d3a5325b450e6843a903d3f70043c9f534768ebeab8ab0c544b8f44456555d333f1ed72daa5c18b
+  python_setuptools_version: 80.10.1
+  python_setuptools_sha256: bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a
+  python_setuptools_sha512: ce0f37be10d873d320aa18573d7b6ec51e2ecb0fef07d672bc295fbef909ed8be496331c925181169f57fb8cee7109f4fbef292151ca0a491da169b85220eaf1
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.6
