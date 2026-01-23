@@ -1,6 +1,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2026-01-02T09:24:08Z by kres 8a4aebf.
+# Generated on 2026-01-05T09:37:20Z by kres 8a4aebf.
 
 # common variables
 
@@ -54,6 +54,7 @@ TARGETS += tools-kmod
 TARGETS += tools-libcap
 TARGETS += tools-libselinux
 TARGETS += tools-libsepol
+TARGETS += tools-llvm
 TARGETS += tools-openssl
 TARGETS += tools-pcre2
 TARGETS += tools-squashfs-tools
@@ -136,7 +137,7 @@ docker-%:  ## Builds the specified target defined in the Pkgfile using the docke
 	@$(MAKE) target-$* TARGET_ARGS="$(TARGET_ARGS)"
 
 reproducibility-test:  ## Builds the reproducibility test target
-	@$(MAKE) reproducibility-test-local-tools
+	@$(MAKE) reproducibility-test-local-tools-llvm
 
 reproducibility-test-local-%:  ## Builds the specified target defined in the Pkgfile using the local output type with and without cahce. The build result will be output to the specified local destination
 	@rm -rf $(ARTIFACTS)/build-a $(ARTIFACTS)/build-b
