@@ -243,9 +243,9 @@ vars:
   ninja_sha512: c0b401b4db91a2eea01a474ee979b2c6f1daa97b4c8d1f856871ce5f6d567c4b26d6246bc57e2a5f914329302abcd9c00ab0d4394a25f2ad502b6b00a07903d2
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 3.6.0
-  openssl_sha256: b6a5f44b7eb69e3fa35dbf15524405b44837a481d43d81daddde3ff21fcbb8e9
-  openssl_sha512: 866825a1cdf0b705b409402fbc7a713e7d9b8e7736c5126be57b354927954c148a341fc52b02c0629c1e015a889bfd40217f8e703b73235892e91da060909b76
+  openssl_version: 3.6.1
+  openssl_sha256: b1bfedcd5b289ff22aee87c9d600f515767ebf45f77168cb6d64f231f518a82e
+  openssl_sha512: 492cd2e0a7506e085d9840a929ead994390409a35c24e47e0cf44987920711b61f1513f21b7eee50e56f226b26cd654cda6dbd1f6e439563a93a8f0e530fefb5
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.31
