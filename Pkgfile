@@ -47,9 +47,9 @@ vars:
   ca_certificates_sha512: aef293e084ef15a55a4f9dee395ee4bbbadea1f5a49c0590e0ff67a0630b5298d2bc79699ab95d70be0d2d06f9f1e55fe676b3e1d5ff912df88f2d6bff0d5736
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.2.2
-  cmake_sha256: bbda94dd31636e89eb1cc18f8355f6b01d9193d7676549fba282057e8b730f58
-  cmake_sha512: c768979a968f1b16109bc6ca31bbf21faa118dac7086d6ca372d389361440ab512d6fbf416860209f8f6cdd06decc3e8d31cbbc564b414b7729f42d2c1b099ef
+  cmake_version: 4.2.3
+  cmake_sha256: 7efaccde8c5a6b2968bad6ce0fe60e19b6e10701a12fce948c2bf79bac8a11e9
+  cmake_sha512: 56cac755277bc3fcf190d6c947c99a718ee555b0524132427989a5d2d51d030c76c07f198ddeea0d9c7e57b24488d352e9b29bb106c1ad15397b92fb4487a88f
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.9
@@ -77,9 +77,9 @@ vars:
   dtc_sha512: 30f3611175a5c29556282f3f2894701a5837eb869608d89d78c280af448bbc3a5b6c83f51c28f991847c0eb7c42aa57599bbc31433f1b3b2c8d162cb2169b91f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 2.2.0
-  dwarfutils_sha256: 54c0abbbeb4190bd1babb5d28574d2b20c2309343ec764cc7ca611e527ee4a42
-  dwarfutils_sha512: 1a5145b3b9bebbae6e6691590521c56327adb92c0ae95f145bcba8e4402b637d1479c2c6adad069ef9e0e36b2f7c8afc2811173f39e444418e2de7f4277ec393
+  dwarfutils_version: 2.3.0
+  dwarfutils_sha256: a153e8101828a478f88d18341267b59c19a3fc794bea47388347ce994ba90c17
+  dwarfutils_sha512: c6d91016d190af0761a3efa5ef77e8c964fcf853841b90b516294f716f50c876db73e20876db9f6ccd1888be7ffa0c0608418e52719a18e95e149d99d950b2a6
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.194
@@ -87,9 +87,9 @@ vars:
   elfutils_sha512: 5d00502f61b92643bf61dc61da4ddded36c423466388d992bcd388c5208761b8ed9db1a01492c085cd0984eef30c08f895a8e307e78e0df8df40b56ae35b78a5
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_7_3
-  expat_sha256: 59c31441fec9a66205307749eccfee551055f2d792f329f18d97099e919a3b2f
-  expat_sha512: 92dd8a31a88ca73d5d8890be40c231ec037d8d13f6059a88bcf7bfaaa77c1c94dc2874f2dae508c0d077a3798bc006cfe9d7d0a918e08a67149d332c7fce4d23
+  expat_version: 2_7_4
+  expat_sha256: e6af11b01e32e5ef64906a5cca8809eabc4beb7ff2f9a0e6aabbd42e825135d0
+  expat_sha512: 3dac4864d31dcceeafe5b78e521d9830ea425427a02001908d7e96949567f6ad9c5d4dc10f9b03a55441344850a2cfc684450c6a659663eae2f63914962b4732
 
   # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=https://salsa.debian.org/clint/fakeroot.git
   fakeroot_version: 1.37.2
@@ -319,9 +319,9 @@ vars:
   python_packaging_sha512: fb8419f81f0f817440c0b297fc6e963832e219e7a324bf4e0321f1e131a4822f17a19f2eb033a8d4adb622ccb16db59776ec44906a0c0b34f2877b59b9558c18
 
   # renovate: datasource=github-releases versioning=python extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
-  python_setuptools_version: 80.10.1
-  python_setuptools_sha256: bf2e513eb8144c3298a3bd28ab1a5edb739131ec5c22e045ff93cd7f5319703a
-  python_setuptools_sha512: ce0f37be10d873d320aa18573d7b6ec51e2ecb0fef07d672bc295fbef909ed8be496331c925181169f57fb8cee7109f4fbef292151ca0a491da169b85220eaf1
+  python_setuptools_version: 80.10.2
+  python_setuptools_sha256: 8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70
+  python_setuptools_sha512: 7dbc657878b418a9bdba124e5b8f98228af0590ffbb02c6396ac5b3d84be8f04b327780a7b1f9fa223d4c179004e822e2b00eec673f8eeb700b08b095ff6491d
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.6
