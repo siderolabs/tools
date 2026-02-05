@@ -3,6 +3,7 @@ kind: pkgfile.Build
 spec:
   targets:
     - tools
+    - llvm
     - tools-ca-certificates
     - tools-cpio
     - tools-kmod
@@ -17,7 +18,7 @@ spec:
     - tools-xz
     - tools-zlib-ng
     - tools-zstd
-  reproducibleTargetName: tools
+  reproducibleTargetName: reproducibility
 ---
 kind: common.Renovate
 spec:
