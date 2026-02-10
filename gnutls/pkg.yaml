@@ -27,6 +27,7 @@ steps:
             --disable-static \
             --disable-guile \
             --disable-valgrind-tests \
+            --disable-doc \
             --without-p11-kit
 
     build:

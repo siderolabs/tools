@@ -1,8 +1,8 @@
-diff --git a/Makefile b/Makefile
-index 5b5d03e2..5744d7a4 100644
---- a/Makefile
-+++ b/Makefile
-@@ -4,26 +4,21 @@ export DISABLE_CIL
+diff --git a/libsepol/Makefile b/libsepol/Makefile
+index 223edcec..ed3ed3a7 100644
+--- a/libsepol/Makefile
++++ b/libsepol/Makefile
+@@ -4,20 +4,16 @@ export DISABLE_CIL
  
  all: 
  	$(MAKE) -C src 
@@ -22,10 +22,4 @@ index 5b5d03e2..5744d7a4 100644
 -	$(MAKE) -C utils clean
  	$(MAKE) -C tests clean
  
- indent:
- 	$(MAKE) -C src $@
- 	$(MAKE) -C include $@
--	$(MAKE) -C utils $@
- 
  test:
- 	$(MAKE) -C tests test
