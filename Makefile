@@ -58,6 +58,7 @@ TARGETS += tools-libsepol
 TARGETS += tools-openssl
 TARGETS += tools-pcre2
 TARGETS += tools-squashfs-tools
+TARGETS += tools-squashfs-tools-ng
 TARGETS += tools-tar
 TARGETS += tools-util-linux
 TARGETS += tools-xz
