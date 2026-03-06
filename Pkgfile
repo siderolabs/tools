@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-alpha.0-5-g5657601
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-alpha.0-6-g5b44ff9
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -107,9 +107,9 @@ vars:
   flex_sha512: e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e
 
   # renovate: datasource=git-tags extractVersion=^gawk-(?<version>.*)$ depName=git://git.savannah.gnu.org/gawk.git
-  gawk_version: 5.3.2
-  gawk_sha256: f8c3486509de705192138b00ef2c00bbbdd0e84c30d5c07d23fc73a9dc4cc9cc
-  gawk_sha512: 2268150fa35ae049a6ff3d0d0fa110db10477014c25f50e2ab4e3ee5fd60133369d2a994f59db4eb718020a0af5c4003ae7278c63e7fffa72f431ff4a1429e48
+  gawk_version: 5.4.0
+  gawk_sha256: 3dd430f0cd3b4428c6c3f6afc021b9cd3c1f8c93f7a688dc268ca428a90b4ac1
+  gawk_sha512: b212c6ffd235d5e7f98f0cae5a4fbe9a7139c420400710a747dc2c33dcbda445adc2f6f8ebab330c52c432da67b92be1806c628d261db826a72c89011b2d9d77
 
   # renovate: datasource=git-refs versioning=git depName=https://github.com/sabotage-linux/gettext-tiny.git
   gettext_tiny_ref: acca7c3d509b9d9d4b33935e822a5bc39b35be01
@@ -188,9 +188,9 @@ vars:
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
   # renovate: datasource=github-tags depName=libuv/libuv
-  libuv_version: v1.51.0
-  libuv_sha256: 27e55cf7083913bfb6826ca78cde9de7647cded648d35f24163f2d31bb9f51cd
-  libuv_sha512: cf3ca916fc3a762a194dac86718a5a7fe24f230e34172a48f9b3401ad72fbc1cf21b46ceaba956cdf6783d323e518d40f8632fff965943869819a1c26992a3c1
+  libuv_version: v1.52.0
+  libuv_sha256: eee139c05f7c868f5ae7a54b1e155fd5b6ed13a22329958d2ba711faad016353
+  libuv_sha512: 920727ebcfae39db665e518d4d90abef0ca838efcddca2b0f5ba0effc38f2d7e60df79fa5e7aa94dba8ea6e8e800d498c89ee01b36e46ed0b455b6c284852fe9
 
   # renovate: datasource=github-releases extractVersion=^llvmorg-(?<version>.*)$ depName=llvm/llvm-project
   llvm_version: 21.1.8
@@ -360,9 +360,9 @@ vars:
   sed_sha512: 36157a4b4a2430cf421b7bd07f1675d680d9f1616be96cf6ad6ee74a9ec0fe695f8d0b1e1f0b008bbb33cc7fcde5e1c456359bbbc63f8aebdd4fedc3982cf6dc
 
   # renovate: datasource=github-tags depName=plougher/squashfs-tools
-  squashfs_tools_version: 4.7.4
-  squashfs_tools_sha256: 91c49f9a1ed972ad00688a38222119e2baf49ba74cf5fda05729a79d7d59d335
-  squashfs_tools_sha512: 16943b331723c301d7e65c14e5946d3fa27f974ba509a412ab6182a48d83a935d445feb80a27d89a5b5ba5cf86e55835f12d28c2b2b57f5623e1151cb2966376
+  squashfs_tools_version: 4.7.5
+  squashfs_tools_sha256: 547b7b7f4d2e44bf91b6fc554664850c69563701deab9fd9cd7e21f694c88ea6
+  squashfs_tools_sha512: d24f1c8611dc7dcb17b81f3a34ee8c0d3484141c70ebe7c77c91c966e76cddc671e24d3f4a471ddc819c4708480cdd179168fe2bca8a09e97cebf0da9ef83b1c
 
   # renovate: datasource=github-tags depName=swig/swig
   swig_version: v4.4.1
