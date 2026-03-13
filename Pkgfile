@@ -13,7 +13,7 @@ vars:
   argp_standalone_sha512: fa2eb61ea00f7a13385e5c1e579dd88471d6ba3a13b6353e924fe71914b90b40688b42a9f1789bc246e03417fee1788b1990753cda8c8d4a544e85f26b63f9e2
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/autoconf.git
-  autoconf_version: 2.72
+  autoconf_version: 2.72.90
   autoconf_sha256: ba885c1319578d6c94d46e9b0dceb4014caafe2490e437a0dbca3f270a223f5a
   autoconf_sha512: c4e9fbd858666d3e5c3b4fe7f89aa3e8e3a0a00dc7e166f8147d937d911b77ba3ac6a016f9d223ccdd830bc8960b3e60397c0607cc6a1fd2c50c7492839ddd17
 
@@ -183,7 +183,7 @@ vars:
   libunistring_sha512: e0838b4324193aa927c6a3d647b9a482f12e11525d0cf2b5f0e6cf6b9afc9f2ee751d39d72e3c980bac3fc91e0d9d043c4a1c5662dde3cc26c52312d224d80f0
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
-  libtool_version: 2.5.4
+  libtool_version: 2.6.0
   libtool_sha256: da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
