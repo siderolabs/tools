@@ -62,9 +62,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_18_0
-  curl_sha256: 40df79166e74aa20149365e11ee4c798a46ad57c34e4f68fd13100e2c9a91946
-  curl_sha512: 50c7a7b0528e0019697b0c59b3e56abb2578c71d77e4c085b56797276094b5611718c0a9cb2b14db7f8ab502fcf8f42a364297a3387fae3870a4d281484ba21c
+  curl_version: 8_19_0
+  curl_sha256: 4eb41489790d19e190d7ac7e18e82857cdd68af8f4e66b292ced562d333f11df
+  curl_sha512: ee97faaf588b255428000599293c47a2f648af11d1a0b7b823db6aec151e2090f5c7b921745ddb2c3818d92b16e0a4c15d7a9b3d1ff45df1f35438504bd16574
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/diffutils.git
   diffutils_version: 3.12
@@ -77,9 +77,9 @@ vars:
   dtc_sha512: 30f3611175a5c29556282f3f2894701a5837eb869608d89d78c280af448bbc3a5b6c83f51c28f991847c0eb7c42aa57599bbc31433f1b3b2c8d162cb2169b91f
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 2.3.0
-  dwarfutils_sha256: a153e8101828a478f88d18341267b59c19a3fc794bea47388347ce994ba90c17
-  dwarfutils_sha512: c6d91016d190af0761a3efa5ef77e8c964fcf853841b90b516294f716f50c876db73e20876db9f6ccd1888be7ffa0c0608418e52719a18e95e149d99d950b2a6
+  dwarfutils_version: 2.3.1
+  dwarfutils_sha256: 28cf9a5d27aceff5c1f906244a4fe7ae208e41d20a6d8fc7e091c633a40b6e97
+  dwarfutils_sha512: 45489f19a0547c286a7f7606743860dd93f9feeec84bc32068c04b8a85d31c103948e044991ca89d2bb28ef56d467f1e57e2ea51d53ce86f53444ee75a6158a4
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.194
@@ -188,14 +188,14 @@ vars:
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
   # renovate: datasource=github-tags depName=libuv/libuv
-  libuv_version: v1.52.0
-  libuv_sha256: eee139c05f7c868f5ae7a54b1e155fd5b6ed13a22329958d2ba711faad016353
-  libuv_sha512: 920727ebcfae39db665e518d4d90abef0ca838efcddca2b0f5ba0effc38f2d7e60df79fa5e7aa94dba8ea6e8e800d498c89ee01b36e46ed0b455b6c284852fe9
+  libuv_version: v1.52.1
+  libuv_sha256: 478baf2599bfbc882c355288c9cb6f92e0e7dda435fa04031fa5b607cf3f414c
+  libuv_sha512: c23bb26f8fdcf678dbf14bcee9855830927a40b8ae64dfa287ef1e910f37ad30cb868ecdeaad6f7b2bf3f3fccca1a7282a31b22c547206b672f923d0651f5b0c
 
   # renovate: datasource=github-releases extractVersion=^llvmorg-(?<version>.*)$ depName=llvm/llvm-project
-  llvm_version: 22.1.0
-  llvm_sha256: 25d2e2adc4356d758405dd885fcfd6447bce82a90eb78b6b87ce0934bd077173
-  llvm_sha512: 588753a26742cfc76ca179398eaac6a31e68b1fa5bfaf7300ce710a89bba1dc9bfe41229bb9277663a3cde4468e74922153e5d1529eb7c6fe4de5ba3cb62ba45
+  llvm_version: 22.1.1
+  llvm_sha256: 9c6f37f6f5f68d38f435d25f770fc48c62d92b2412205767a16dac2c942f0c95
+  llvm_sha512: dddf09651c0e77caa83284788765016b023a9e239cfe35820bab7be64b68218e86bcf39bb07ee14dcddf7b0974b551344d2bff0e109cc9458b0394a3c940917c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/m4.git
   m4_version: 1.4.21
@@ -269,9 +269,9 @@ vars:
 
   # perl uses even numbered minor versions for stable releases - https://www.cpan.org/src/README.html
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=Perl/perl5
-  perl_version: 5.42.0
-  perl_sha256: 73cf6cc1ea2b2b1c110a18c14bbbc73a362073003893ffcedc26d22ebdbdd0c3
-  perl_sha512: b10f74d1245a879ae51d3ad93ad519a148df126ec865715474c801548ccfc3f542ef3bbb1f59568cea2ec77302d428dc772aba605357d7faf13eb6a351917275
+  perl_version: 5.42.1
+  perl_sha256: 098c7f76e7a28443f6403610c7e339777905360c5225798fd142b8d33b05c6b4
+  perl_sha512: 5f669af62ce9064bbcccf5be67ae09c14f91e1341f790a534cd128a35072e6bc7073d1da51157f8ecd112bee8274f55aee6fbfc566017732b412b157aaff0acb
 
   # renovate: datasource=github-tags extractVersion=^pkgconf-(?<version>.*)$ depName=pkgconf/pkgconf
   pkgconf_version: 2.5.1
@@ -324,9 +324,9 @@ vars:
   python_packaging_sha512: fb8419f81f0f817440c0b297fc6e963832e219e7a324bf4e0321f1e131a4822f17a19f2eb033a8d4adb622ccb16db59776ec44906a0c0b34f2877b59b9558c18
 
   # renovate: datasource=github-releases versioning=python extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
-  python_setuptools_version: 82.0.0
-  python_setuptools_sha256: 22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb
-  python_setuptools_sha512: 52424f813bb8efa1d3aa8cb910338d29c36c6a641f7ded91d298c1abe7c1a24d572c60c14c028f3825af29b46d57a4ee454845b1d22b73b03278a9500d957dd9
+  python_setuptools_version: 82.0.1
+  python_setuptools_sha256: 7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9
+  python_setuptools_sha512: 5d70e9efd818245fb8119a4eed64d776078469ed884facc188f141ea491efd9fde5c10c928d3236ea5e2e431b16616f18ed14870b867f95e6320251707332395
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.6
@@ -365,9 +365,9 @@ vars:
   tar_sha512: 5e77c4a7b49983ad7d15238c2bce28be7a8aa437b4b1815fc00abd13096da308b6bba196cc6e3ed79d85e62823d520ae0d8fcda2d93873842cf84dc3369fc902
 
   # renovate: datasource=git-tags extractVersion=^texinfo-(?<version>.*)$ depName=git://git.savannah.gnu.org/texinfo.git
-  texinfo_version: 7.2
-  texinfo_sha256: 0329d7788fbef113fa82cb80889ca197a344ce0df7646fe000974c5d714363a6
-  texinfo_sha512: 8e67337ae12a552fc620c43725507a4978710ea6630e98b0f5e98eb3f79a90e191dde5225699aa6217c26f171d277461f76150f0459cd07b40c3234d2f3d89bf
+  texinfo_version: 7.3
+  texinfo_sha256: 51f74eb0f51cfa9873b85264dfdd5d46e8957ec95b88f0fb762f63d9e164c72e
+  texinfo_sha512: fb1a16df67f870e79c31f4b96d8431d9c944eb84e5aa71e9d94890417ce63047918d55620fa63bd582232c47e9b412a6f95a11a2479f53f40e92e49bc018d926
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
   util_linux_version: 2.41.3
