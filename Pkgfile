@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-beta.0
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.14.0-alpha.0
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -42,9 +42,9 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=repology depName=homebrew/ca-certificates
-  ca_certificates_version: 2025-12-02
-  ca_certificates_sha256: f1407d974c5ed87d544bd931a278232e13925177e239fca370619aba63c757b4
-  ca_certificates_sha512: aef293e084ef15a55a4f9dee395ee4bbbadea1f5a49c0590e0ff67a0630b5298d2bc79699ab95d70be0d2d06f9f1e55fe676b3e1d5ff912df88f2d6bff0d5736
+  ca_certificates_version: 2026-03-19
+  ca_certificates_sha256: b6e66569cc3d438dd5abe514d0df50005d570bfc96c14dca8f768d020cb96171
+  ca_certificates_sha512: efe2d37cbb60532f7b9be99c3c2826b97c55661b7880f6a108c30ee1ebf270f3dee69de164f241def51fccbe2f3d95cf6882bcc59ba72f48a2a316b81f03bb55
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
   cmake_version: 4.2.3
@@ -193,9 +193,9 @@ vars:
   libuv_sha512: c23bb26f8fdcf678dbf14bcee9855830927a40b8ae64dfa287ef1e910f37ad30cb868ecdeaad6f7b2bf3f3fccca1a7282a31b22c547206b672f923d0651f5b0c
 
   # renovate: datasource=github-releases extractVersion=^llvmorg-(?<version>.*)$ depName=llvm/llvm-project
-  llvm_version: 22.1.1
-  llvm_sha256: 9c6f37f6f5f68d38f435d25f770fc48c62d92b2412205767a16dac2c942f0c95
-  llvm_sha512: dddf09651c0e77caa83284788765016b023a9e239cfe35820bab7be64b68218e86bcf39bb07ee14dcddf7b0974b551344d2bff0e109cc9458b0394a3c940917c
+  llvm_version: 22.1.2
+  llvm_sha256: 62f2f13ff25b1bb28ea507888e858212d19aafb65e8e72b4a65ee0629ec4ae0c
+  llvm_sha512: d5adfbb8e5026b845f8251f5f490b4646ccd2ecaf81a2b80091d1c71044f5c7726f2df6680a95589f2dedc614bdd9cdd88febcce6d5fc92f638f616d503b8066
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/m4.git
   m4_version: 1.4.21
