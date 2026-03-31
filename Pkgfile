@@ -13,7 +13,7 @@ vars:
   argp_standalone_sha512: fa2eb61ea00f7a13385e5c1e579dd88471d6ba3a13b6353e924fe71914b90b40688b42a9f1789bc246e03417fee1788b1990753cda8c8d4a544e85f26b63f9e2
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/autoconf.git
-  autoconf_version: 2.72
+  autoconf_version: 2.73
   autoconf_sha256: ba885c1319578d6c94d46e9b0dceb4014caafe2490e437a0dbca3f270a223f5a
   autoconf_sha512: c4e9fbd858666d3e5c3b4fe7f89aa3e8e3a0a00dc7e166f8147d937d911b77ba3ac6a016f9d223ccdd830bc8960b3e60397c0607cc6a1fd2c50c7492839ddd17
 
@@ -47,7 +47,7 @@ vars:
   ca_certificates_sha512: efe2d37cbb60532f7b9be99c3c2826b97c55661b7880f6a108c30ee1ebf270f3dee69de164f241def51fccbe2f3d95cf6882bcc59ba72f48a2a316b81f03bb55
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.2.3
+  cmake_version: 4.3.1
   cmake_sha256: 7efaccde8c5a6b2968bad6ce0fe60e19b6e10701a12fce948c2bf79bac8a11e9
   cmake_sha512: 56cac755277bc3fcf190d6c947c99a718ee555b0524132427989a5d2d51d030c76c07f198ddeea0d9c7e57b24488d352e9b29bb106c1ad15397b92fb4487a88f
 
@@ -87,7 +87,7 @@ vars:
   elfutils_sha512: 5d00502f61b92643bf61dc61da4ddded36c423466388d992bcd388c5208761b8ed9db1a01492c085cd0984eef30c08f895a8e307e78e0df8df40b56ae35b78a5
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_7_4
+  expat_version: 2_7_5
   expat_sha256: e6af11b01e32e5ef64906a5cca8809eabc4beb7ff2f9a0e6aabbd42e825135d0
   expat_sha512: 3dac4864d31dcceeafe5b78e521d9830ea425427a02001908d7e96949567f6ad9c5d4dc10f9b03a55441344850a2cfc684450c6a659663eae2f63914962b4732
 
@@ -153,7 +153,7 @@ vars:
   kmod_sha512: 0e095c45ad61a6c61ce1ad61b9aa10cf5040e688b749f9a933b0e7d12de493c58027a5068b459cbbce05576fc564a22b83a3dbef1e6511b2a3e27034c88afd33
 
   # renovate: datasource=github-tags depName=libbpf/libbpf
-  libbpf_version: v1.6.3
+  libbpf_version: v1.7.0
   libbpf_sha256: 989ed3c1a3db8ff0f7c08dd43953c6b9d0c3ac252653a48d566aaedf98bc80ca
   libbpf_sha512: e7b1e42c21de0fc17e768e076314951bc305391985b64388bebf4c7049868cc430fb0f17dde7bb64aacd84762f6bf4d6da3bcc7ce98581e033791ace90676cc1
 
@@ -183,7 +183,7 @@ vars:
   libunistring_sha512: e0838b4324193aa927c6a3d647b9a482f12e11525d0cf2b5f0e6cf6b9afc9f2ee751d39d72e3c980bac3fc91e0d9d043c4a1c5662dde3cc26c52312d224d80f0
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
-  libtool_version: 2.5.4
+  libtool_version: 2.6.0
   libtool_sha256: da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
@@ -203,12 +203,12 @@ vars:
   m4_sha512: efe5ec212f6431129a79667f098b2efe2e824122112f73a675deccb9c0d8c9b0bc9e3bf50c9cd5c0b894dc0af1b3f02253e5e67893fb9548a6a9d3bed7c829f7
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.10.1
+  meson_version: 1.10.2
   meson_sha256: c42296f12db316a4515b9375a5df330f2e751ccdd4f608430d41d7d6210e4317
   meson_sha512: 69fe938dad22728a969d1848f1e3ba43c72a2083158431fd639eb51ebce4f2b38e4a2797663d2e4bb251ed0870533bfab57705da6ae941f541769290b126fd45
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
-  mpc_version: 1.3.1
+  mpc_version: 1.4.0
   mpc_sha256: ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8
   mpc_sha512: 4bab4ef6076f8c5dfdc99d810b51108ced61ea2942ba0c1c932d624360a5473df20d32b300fc76f2ba4aa2a97e1f275c9fd494a1ba9f07c4cb2ad7ceaeb1ae97
 
@@ -269,7 +269,7 @@ vars:
 
   # perl uses even numbered minor versions for stable releases - https://www.cpan.org/src/README.html
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=Perl/perl5
-  perl_version: 5.42.1
+  perl_version: 5.42.2
   perl_sha256: 098c7f76e7a28443f6403610c7e339777905360c5225798fd142b8d33b05c6b4
   perl_sha512: 5f669af62ce9064bbcccf5be67ae09c14f91e1341f790a534cd128a35072e6bc7073d1da51157f8ecd112bee8274f55aee6fbfc566017732b412b157aaff0acb
 
@@ -289,7 +289,7 @@ vars:
   python_sha512: 9fd875f7a1d96d64e7150913ef38b72b0aeecfcbc24ba46967e57b6495146b0cba6b940c273561fc4d656b6d0ce2e23ffb7bd32bcd0b61fd59a6d90585998c07
 
   # renovate: datasource=github-releases versioning=python depName=pypa/build
-  python_build_version: 1.4.0
+  python_build_version: 1.4.2
   python_build_sha256: 8d69501c4802d5af985db4b1c3841f094a9e951475f07967382d8a4d0774d3a0
   python_build_sha512: aad08af8a163c914671c1b149306061ea93fc1fb5f066dda5a351ddec4b7b374160bf657d30b0eccc498c4f53950307646d792b58cb0efb91975b2541e111d88
 
@@ -304,7 +304,7 @@ vars:
   python_gpep517_sha512: 463c3812f388ea7ef83aaf6b3b90de4036b0a8200038a654621822c02d46627f7adf2ed4c7accf016293f89b8c3a2080d9ac80d2f82caaa3fdd370aa98c4335b
 
   # renovate: datasource=github-tags versioning=python depName=pypa/installer
-  python_installer_version: 0.7.0
+  python_installer_version: 1.0.0
   python_installer_sha256: e1589201863a6b6f570ce2f9994febe54a8d9196e0cc54fd331cd7ffd728fb86
   python_installer_sha512: a509c6ea9d88b8527cce0428ca6109077820cb9aa352967a389012bac40f8ec04039ab73710f4fb32b32ed20affd520ce0ba16ba18d9d380ce0af1f51fe8e2c6
 
@@ -375,7 +375,7 @@ vars:
   util_linux_sha512: 3d299f0e05a4c982a04dbcbaaeff1222152feedf51c56c5dbdeb75999c68269d652a994f5cdf4c1ee42bb7b28475dd0792192c299fd9bc3b45198c5b153dad00
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
-  xz_version: v5.8.2
+  xz_version: v5.8.3
   xz_sha256: 890966ec3f5d5cc151077879e157c0593500a522f413ac50ba26d22a9a145214
   xz_sha512: 9cb422456d51df4261c16bcd68b188d64b778f43c875188cb140372dab9793c873111f5608c3dfe3dffe5dd6da9ba7ba96d7154d3d4fae26cb1cc22b6b66910e
 
