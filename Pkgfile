@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-beta.0-1-gbd8fc83
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-beta.0-4-g973353d
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -370,14 +370,14 @@ vars:
   texinfo_sha512: fb1a16df67f870e79c31f4b96d8431d9c944eb84e5aa71e9d94890417ce63047918d55620fa63bd582232c47e9b412a6f95a11a2479f53f40e92e49bc018d926
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.41.3
-  util_linux_sha256: 3330d873f0fceb5560b89a7dc14e4f3288bbd880e96903ed9b50ec2b5799e58b
-  util_linux_sha512: 3d299f0e05a4c982a04dbcbaaeff1222152feedf51c56c5dbdeb75999c68269d652a994f5cdf4c1ee42bb7b28475dd0792192c299fd9bc3b45198c5b153dad00
+  util_linux_version: 2.41.4
+  util_linux_sha256: a8c213cc06048862602a42b2d299b340001f6d05c4407b549f3e03521df83688
+  util_linux_sha512: c21ad77b787ab5892169c80cbec1ba46ed6bba36c1db278f2d1cd8712ae237f5cd25bfd20f2dc638334d1c47c5ff6102703147147d42f71c995bd397e735691a
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
-  xz_version: v5.8.2
-  xz_sha256: 890966ec3f5d5cc151077879e157c0593500a522f413ac50ba26d22a9a145214
-  xz_sha512: 9cb422456d51df4261c16bcd68b188d64b778f43c875188cb140372dab9793c873111f5608c3dfe3dffe5dd6da9ba7ba96d7154d3d4fae26cb1cc22b6b66910e
+  xz_version: v5.8.3
+  xz_sha256: fff1ffcf2b0da84d308a14de513a1aa23d4e9aa3464d17e64b9714bfdd0bbfb6
+  xz_sha512: c288f436b211031ca122e9169d85403d4ab8b0500a6542b2d9ba101587e04a4358ab5509f5d15cc7899f1ab3e0118567866ca0508f880007b4af802dedd7068d
 
   # renovate: datasource=github-releases depName=zlib-ng/zlib-ng
   zlib_ng_version: 2.3.3
