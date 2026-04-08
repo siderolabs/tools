@@ -360,14 +360,14 @@ vars:
   texinfo_sha512: 8e67337ae12a552fc620c43725507a4978710ea6630e98b0f5e98eb3f79a90e191dde5225699aa6217c26f171d277461f76150f0459cd07b40c3234d2f3d89bf
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.41.2
-  util_linux_sha256: 6062a1d89b571a61932e6fc0211f36060c4183568b81ee866cf363bce9f6583e
-  util_linux_sha512: 696c87e7cf185acc9b4b969ddade6155ea2945ae494eaecfd7b1f35d9607166cb09be79878fb793dd31b4d4dcac8c9be4be76af3886185db7ae8b58c303fb0cf
+  util_linux_version: 2.41.4
+  util_linux_sha256: a8c213cc06048862602a42b2d299b340001f6d05c4407b549f3e03521df83688
+  util_linux_sha512: c21ad77b787ab5892169c80cbec1ba46ed6bba36c1db278f2d1cd8712ae237f5cd25bfd20f2dc638334d1c47c5ff6102703147147d42f71c995bd397e735691a
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
-  xz_version: v5.8.2
-  xz_sha256: 890966ec3f5d5cc151077879e157c0593500a522f413ac50ba26d22a9a145214
-  xz_sha512: 9cb422456d51df4261c16bcd68b188d64b778f43c875188cb140372dab9793c873111f5608c3dfe3dffe5dd6da9ba7ba96d7154d3d4fae26cb1cc22b6b66910e
+  xz_version: v5.8.3
+  xz_sha256: fff1ffcf2b0da84d308a14de513a1aa23d4e9aa3464d17e64b9714bfdd0bbfb6
+  xz_sha512: c288f436b211031ca122e9169d85403d4ab8b0500a6542b2d9ba101587e04a4358ab5509f5d15cc7899f1ab3e0118567866ca0508f880007b4af802dedd7068d
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=madler/zlib
   zlib_version: 1.3.1
