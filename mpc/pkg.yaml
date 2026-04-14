@@ -6,13 +6,13 @@ dependencies:
   - stage: mpfr
 steps:
   - sources:
-      - url: https://ftpmirror.gnu.org/gnu/mpc/mpc-{{ .mpc_version }}.tar.gz
-        destination: mpc.tar.gz
+      - url: https://ftpmirror.gnu.org/gnu/mpc/mpc-{{ .mpc_version }}.tar.xz
+        destination: mpc.tar.xz
         sha256: "{{ .mpc_sha256 }}"
         sha512: "{{ .mpc_sha512 }}"
     prepare:
       - |
-        tar -xzf mpc.tar.gz --strip-components=1
+        tar -xJf mpc.tar.xz --strip-components=1
         mkdir build
         cd build
         ../configure \
