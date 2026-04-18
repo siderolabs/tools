@@ -27,6 +27,7 @@ vars:
   bash_sha256: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
   bash_sha512: 426702c8b0fb9e0c9956259973ce5b657890fd47f4f807a64febf20077bb48d0b91474ed6e843d2ef277186b46c5fffa79b808da9b48d4ec027d5e2de1b28ed8
 
+  # renovate: datasource=custom.bc extractVersion=^bc-(?<version>.+)\.tar\.gz$ versioning=regex:^(?<major>\d+)\.(?<minor>\d+)\.?(?<patch>\d+)?$ depName=bc
   bc_version: 1.08.2
   bc_sha256: ae470fec429775653e042015edc928d07c8c3b2fc59765172a330d3d87785f86
   bc_sha512: 0876a4c5bfc23da79479519c6a8e03ac9f59ae54077eb71ffdcc6ddaccb76c4b7595b088e89e6ad82d833c072eeff5b378178084276584813c00eedace4c6f8c
@@ -41,7 +42,7 @@ vars:
   bzip2_sha256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
-  # renovate: datasource=repology depName=homebrew/ca-certificates
+  # renovate: datasource=custom.ca-certificates extractVersion=^/ca/cacert-(?<version>.+)\.pem$ versioning=regex:^(?<major>\d+)-(?<minor>\d+)-(?<patch>\d+)$ depName=ca-certificates
   ca_certificates_version: 2026-03-19
   ca_certificates_sha256: b6e66569cc3d438dd5abe514d0df50005d570bfc96c14dca8f768d020cb96171
   ca_certificates_sha512: efe2d37cbb60532f7b9be99c3c2826b97c55661b7880f6a108c30ee1ebf270f3dee69de164f241def51fccbe2f3d95cf6882bcc59ba72f48a2a316b81f03bb55
@@ -121,8 +122,7 @@ vars:
   git_sha256: 5818bd7d80b061bbbdfec8a433d609dc8818a05991f731ffc4a561e2ca18c653
   git_sha512: f9c0c0f527e10fe3eb524e368b1a24088bfd41097d8cac7854dae7ff21ab8ab2a1716384be53ea6174023ca5a2af3eeddca1d9feb57e447713f82e061df55c8d
 
-  # official source code uses mercurial https://gmplib.org/devel/repo-usage, so falling back to a GitHub mirror,
-  # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=alisw/GMP
+  # renovate: datasource=custom.gmp extractVersion=^gmp-(?<version>.+)\.tar\.xz$ depName=gmp
   gmp_version: 6.3.0
   gmp_sha256: a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
   gmp_sha512: e85a0dab5195889948a3462189f0e0598d331d3457612e2d3350799dba2e244316d256f8161df5219538eb003e4b5343f989aaa00f96321559063ed8c8f29fd2

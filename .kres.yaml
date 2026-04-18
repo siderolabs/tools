@@ -69,6 +69,13 @@ spec:
     - matchPackageNames:
         - https://salsa.debian.org/clint/fakeroot.git
       versioning: 'regex:^(?<major>\d+)\.(?<minor>\d+)\.?(?<patch>\d+)?\.?(?<build>\d+)?$'
-    - matchPackageNames:
-        - homebrew/ca-certificates
-      versioning: 'regex:^(?<major>\d+)-(?<minor>\d+)-(?<patch>\d+)$'
+  customDatasources:
+    bc:
+      defaultRegistryUrlTemplate: https://ftp.gnu.org/gnu/bc/
+      format: html
+    gmp:
+      defaultRegistryUrlTemplate: https://ftp.gnu.org/gnu/gmp/
+      format: html
+    ca-certificates:
+      defaultRegistryUrlTemplate: https://curl.se/docs/caextract.html
+      format: html
