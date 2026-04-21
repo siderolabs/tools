@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.14.0-alpha.0-4-g468f004
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.14.0-alpha.0-6-g08ac561
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -53,9 +53,9 @@ vars:
   cmake_sha512: 010744f82b5448e589a8cbcaa45aea43280e529cafc1897ff311f5c21598c71ee4e822ef7fd679cdf0e49c4d22941f83a3fe21ffde08b2e39bbb92fb94d83ba3
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
-  coreutils_version: 9.10
-  coreutils_sha256: 16535a9adf0b10037364e2d612aad3d9f4eca3a344949ced74d12faf4bd51d25
-  coreutils_sha512: 976ccfb8b906273a687ec330938a25ab72fb130988ca2fcad4fb6e12f4b621eb76b6e9ee091ad060361e95a8da26835b2484fffd3b5f9c7cdb100c1eb7b7d676
+  coreutils_version: 9.11
+  coreutils_sha256: 394024eda0a5955217ceda9cd1201e65dc8fa3aa29c2951135a49521d57c3cc3
+  coreutils_sha512: 73f4192747ab793fd29cccafeda35c499a11800830227ea4d26b00afb2c496dd69cb493005691d0f62a168beea6b55c1e28e82b6cf795e7370f9d53d13555410
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/cpio.git
   cpio_version: 2_13
@@ -83,9 +83,9 @@ vars:
   dwarfutils_sha512: 45489f19a0547c286a7f7606743860dd93f9feeec84bc32068c04b8a85d31c103948e044991ca89d2bb28ef56d467f1e57e2ea51d53ce86f53444ee75a6158a4
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
-  elfutils_version: 0.194
-  elfutils_sha256: 09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e
-  elfutils_sha512: 5d00502f61b92643bf61dc61da4ddded36c423466388d992bcd388c5208761b8ed9db1a01492c085cd0984eef30c08f895a8e307e78e0df8df40b56ae35b78a5
+  elfutils_version: 0.195
+  elfutils_sha256: 37629fdf7f1f3dc2818e138fca2b8094177d6c2d0f701d3bb650a561218dc026
+  elfutils_sha512: e1e1fdf4f7f72bf520deb0103bb8fd208dc247bab14af100c6fb56d38c0ef6c6d54ff5bd15b84e4f70e2b2ea481e5999fea2842360f8932a861122df79b5fc8f
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
   expat_version: 2_7_5
@@ -118,9 +118,9 @@ vars:
   gettext_tiny_sha512: 2862572d404367dcbf30a1113053ff0886f787a8a498ef11e6212cba6f8327de5290c3ea2fda47fdac1e99cb0874dafc151b0db28959cc6b8689b82e9bf90ce9
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.53.0
-  git_sha256: 5818bd7d80b061bbbdfec8a433d609dc8818a05991f731ffc4a561e2ca18c653
-  git_sha512: f9c0c0f527e10fe3eb524e368b1a24088bfd41097d8cac7854dae7ff21ab8ab2a1716384be53ea6174023ca5a2af3eeddca1d9feb57e447713f82e061df55c8d
+  git_version: 2.54.0
+  git_sha256: f689162364c10de79ef89aa8dbf48731eb057e34edbbd20aca510ce0154681a3
+  git_sha512: cb363917124edc245c9f6745e6e0c4093990275b4d57f9d2213c655b304ac81b05ece8d88546122727495ebc48a5ae19ab166a3ee43b6b8c68da488ac0270064
 
   # renovate: datasource=custom.gmp extractVersion=^gmp-(?<version>.+)\.tar\.xz$ depName=gmp
   gmp_version: 6.3.0
@@ -203,14 +203,14 @@ vars:
   m4_sha512: efe5ec212f6431129a79667f098b2efe2e824122112f73a675deccb9c0d8c9b0bc9e3bf50c9cd5c0b894dc0af1b3f02253e5e67893fb9548a6a9d3bed7c829f7
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.11.0
-  meson_sha256: dffdd0915ceb028541fe3bed77d63ba35e78514591c043736b450d62634eeb31
-  meson_sha512: 9a4c678c523388d51e47ae1f1a506368f539fab0a9c1eb51ae6e148aeb6418ab26bae758c10c4c3d6f41bfc00949003ec52aabbcd7a9dc7bd33de8fa02477926
+  meson_version: 1.11.1
+  meson_sha256: 6788ae299979643f8d841bcaf64352558436cae45a0355148a3aeeccf7913866
+  meson_sha512: c30c98714ab595ca1b5241fbb546c9c5fbb3eada53bfe782652a5734b04d45d66944a5fc8673ee602797c8173e27473036bcb01e09032bbc518567ee89dd6d70
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
-  mpc_version: 1.4.0
-  mpc_sha256: 3210b3a546b1cb00c296ca360891d7740ee6ff06deb02a27a35b20cd3c0bb1a5
-  mpc_sha512: de297e434b05905101b5a860e732b598da82129bdc28e3efebc0b36a107b6f2f4ae6962f55921ee20193df1dab241caf74dfc5d4dc1ae4b4edefbbcfe5b9c762
+  mpc_version: 1.4.1
+  mpc_sha256: 91204cd32f164bd3b7c992d4a6a8ce6519511aadab30f78b6982d0bf8d73e931
+  mpc_sha512: cdfbe64e80e30df64dbd536e8104a6bb10471582415d5b45a1dd30eb2a312781b38389a9531243413c14e0f88866a35159b20e77900718f28c1030253a1305b9
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpfr/mpfr.git
   mpfr_version: 4.2.2
