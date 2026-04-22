@@ -1,18 +1,19 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED, PLEASE DO NOT EDIT.
 #
-# Generated on 2026-01-20T12:20:16Z by kres 1ffefb6.
+# Generated on 2026-04-22T11:11:05Z by kres 7d181e7.
 
 # common variables
 
 SHA := $(shell git describe --match=none --always --abbrev=8 --dirty)
-TAG := $(shell git describe --tag --always --dirty --match v[0-9]\*)
+TAG ?= $(shell git describe --tag --always --dirty --match v[0-9]\*)
 TAG_SUFFIX ?=
-ABBREV_TAG := $(shell git describe --tags >/dev/null 2>/dev/null && git describe --tag --always --match v[0-9]\* --abbrev=0 || echo 'undefined')
+ABBREV_TAG ?= $(shell git describe --tags >/dev/null 2>/dev/null && git describe --tag --always --match v[0-9]\* --abbrev=0 || echo 'undefined')
 BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 ARTIFACTS := _out
 IMAGE_TAG ?= $(TAG)$(TAG_SUFFIX)
 OPERATING_SYSTEM := $(shell uname -s | tr '[:upper:]' '[:lower:]')
 GOARCH := $(shell uname -m | sed 's/x86_64/amd64/' | sed 's/aarch64/arm64/')
+CI_RELEASE_TAG := $(shell git log --oneline --format=%B -n 1 HEAD^2 -- 2>/dev/null | head -n 1 | sed -r "/^release\(.*\)/ s/^release\((.*)\):.*$$/\\1/; t; Q")
 REGISTRY ?= ghcr.io
 USERNAME ?= siderolabs
 REGISTRY_AND_USERNAME ?= $(REGISTRY)/$(USERNAME)
@@ -126,6 +127,14 @@ $(ARTIFACTS):  ## Creates artifacts directory.
 clean:  ## Cleans up all artifacts.
 	@rm -rf $(ARTIFACTS)
 
+.PHONY: ci-temp-release-tag
+ci-temp-release-tag:  ## Generates a temporary release tag for CI run.
+	@if [ -n "$(CI_RELEASE_TAG)" -a -n "$${GITHUB_ENV}" ]; then \
+		echo Setting temporary release tag "$(CI_RELEASE_TAG)"; \
+		echo "TAG=$(CI_RELEASE_TAG)" >> "$${GITHUB_ENV}"; \
+		echo "ABBREV_TAG=$(CI_RELEASE_TAG)" >> "$${GITHUB_ENV}"; \
+	fi
+
 target-%:  ## Builds the specified target defined in the Pkgfile. The build result will only remain in the build cache.
 	@$(BUILD) --target=$* $(COMMON_ARGS) $(TARGET_ARGS) $(CI_ARGS) .
 
@@ -146,7 +155,7 @@ reproducibility-test-local-%:  ## Builds the specified target defined in the Pkg
 	@diffoscope $(ARTIFACTS)/build-a $(ARTIFACTS)/build-b
 	@rm -rf $(ARTIFACTS)/build-a $(ARTIFACTS)/build-b
 
-$(ARTIFACTS)/bldr: $(ARTIFACTS)  ## Downloads bldr binary.
+$(ARTIFACTS)/bldr: | $(ARTIFACTS)  ## Downloads bldr binary.
 	@curl -sSL https://github.com/siderolabs/bldr/releases/download/$(BLDR_RELEASE)/bldr-$(OPERATING_SYSTEM)-$(GOARCH) -o $(ARTIFACTS)/bldr
 	@chmod +x $(ARTIFACTS)/bldr
 
@@ -181,4 +190,16 @@ release-notes: $(ARTIFACTS)
 conformance:
 	@docker pull $(CONFORMANCE_IMAGE)
 	@docker run --rm -it -v $(PWD):/src -w /src $(CONFORMANCE_IMAGE) enforce
+
+.PHONY: renovate-local
+renovate-local:  ## runs renovate locally to check syntax and test configuration
+	@docker run --rm \
+		--user $(shell id -u):$(shell id -g) \
+		-v $(PWD):/src \
+		-w /src \
+		-e GITHUB_TOKEN \
+		-e LOG_LEVEL=debug \
+		-e RENOVATE_PLATFORM=local \
+		-e RENOVATE_DRY_RUN=full \
+	renovate/renovate
 
