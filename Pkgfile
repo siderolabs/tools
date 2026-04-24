@@ -48,7 +48,7 @@ vars:
   ca_certificates_sha512: efe2d37cbb60532f7b9be99c3c2826b97c55661b7880f6a108c30ee1ebf270f3dee69de164f241def51fccbe2f3d95cf6882bcc59ba72f48a2a316b81f03bb55
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.3.1
+  cmake_version: 4.3.2
   cmake_sha256: 0798f4be7a1a406a419ac32db90c2956936fecbf50db3057d7af47d69a2d7edb
   cmake_sha512: 010744f82b5448e589a8cbcaa45aea43280e529cafc1897ff311f5c21598c71ee4e822ef7fd679cdf0e49c4d22941f83a3fe21ffde08b2e39bbb92fb94d83ba3
 
@@ -88,7 +88,7 @@ vars:
   elfutils_sha512: e1e1fdf4f7f72bf520deb0103bb8fd208dc247bab14af100c6fb56d38c0ef6c6d54ff5bd15b84e4f70e2b2ea481e5999fea2842360f8932a861122df79b5fc8f
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_7_5
+  expat_version: 2_8_0
   expat_sha256: 386a423d40580f1e392e8b512b7635cac5083fe0631961e74e036b0a7a830d77
   expat_sha512: 2c2d4b70840af30c68b8a9881fca82492f2af25829627016173bce901eb59d329a4547aea23dd16ee4c5ecbcd5876e4d8e16bb45f8ccb0532aa0ad35a757b719
 
@@ -183,7 +183,7 @@ vars:
   libunistring_sha512: e0838b4324193aa927c6a3d647b9a482f12e11525d0cf2b5f0e6cf6b9afc9f2ee751d39d72e3c980bac3fc91e0d9d043c4a1c5662dde3cc26c52312d224d80f0
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
-  libtool_version: 2.5.4
+  libtool_version: 2.6.0
   libtool_sha256: da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf
   libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
 
@@ -193,7 +193,7 @@ vars:
   libuv_sha512: c23bb26f8fdcf678dbf14bcee9855830927a40b8ae64dfa287ef1e910f37ad30cb868ecdeaad6f7b2bf3f3fccca1a7282a31b22c547206b672f923d0651f5b0c
 
   # renovate: datasource=github-releases extractVersion=^llvmorg-(?<version>.*)$ depName=llvm/llvm-project
-  llvm_version: 22.1.3
+  llvm_version: 22.1.4
   llvm_sha256: 2488c33a959eafba1c44f253e5bbe7ac958eb53fa626298a3a5f4b87373767cd
   llvm_sha512: 3557a955d55471671ae2f7b9c809affd59a29a6fb1e70a2a5d040dc1c6376246deb0635be8ca36cae09112981760e9afb128c822e5554bd722589fb8dee3f0df
 
@@ -248,7 +248,7 @@ vars:
   ninja_sha512: c0b401b4db91a2eea01a474ee979b2c6f1daa97b4c8d1f856871ce5f6d567c4b26d6246bc57e2a5f914329302abcd9c00ab0d4394a25f2ad502b6b00a07903d2
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 3.6.2
+  openssl_version: 4.0.0
   openssl_sha256: aaf51a1fe064384f811daeaeb4ec4dce7340ec8bd893027eee676af31e83a04f
   openssl_sha512: 46549ed4d6b0160adfa3e1406bc16f3083a7f3c85bdda289c1dbebd0db91433c39855dae765787ec68157faffba4cdb05a0600af4652e3e35da939e0bad8ef1e
 
@@ -289,7 +289,7 @@ vars:
   python_sha512: 89a7f8b8a31f48d150badb4751df137d47d9014c9c422649a1a55aef5618aa7f0259dd18c151e6804fa8312c6a21544332a9f630ee81150dc00505637e62bb8c
 
   # renovate: datasource=github-releases versioning=python depName=pypa/build
-  python_build_version: 1.4.3
+  python_build_version: 1.4.4
   python_build_sha256: eb2025781869b424ce326cfceb491aec39845596e0e67b8b32c8bc61e06af586
   python_build_sha512: 34158d518257aaeaffc0fba4275d4af9f62b2fa5fff80528aa968a33a3c2d91df96681167d964dd2922e2fcc694263a1a489ea1295f8dd4d75046ed7035ac266
 
@@ -345,7 +345,7 @@ vars:
   secilc_sha512: 91b793c5f4c3d1028abf0d4e3ea5c6090470fd94f4774dcd24a6f2ceef0a2fedf37cee4a2303283b79689644f53aa1a576e938026e1ff9d84e490ebabc63a6eb
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/sed.git
-  sed_version: 4.9
+  sed_version: 4.10
   sed_sha256: 6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181
   sed_sha512: 36157a4b4a2430cf421b7bd07f1675d680d9f1616be96cf6ad6ee74a9ec0fe695f8d0b1e1f0b008bbb33cc7fcde5e1c456359bbbc63f8aebdd4fedc3982cf6dc
 
