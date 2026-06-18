@@ -93,9 +93,9 @@ vars:
   expat_sha512: 92dd8a31a88ca73d5d8890be40c231ec037d8d13f6059a88bcf7bfaaa77c1c94dc2874f2dae508c0d077a3798bc006cfe9d7d0a918e08a67149d332c7fce4d23
 
   # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=https://salsa.debian.org/clint/fakeroot.git
-  fakeroot_version: 1.37.1.2
-  fakeroot_sha256: 2ffa2384d4b8f8d59ee54d94fa12d3ecdfe04d51dfa9c4e4668ba8b3c6e3424e
-  fakeroot_sha512: 2de524e2ccbf5f08d446856439b82028e2a90eec9dc94cb2da829f314cfa700bb0cecf0a86222dc3d343f406364133f94807755643c71e7101439ae1362be2cf
+  fakeroot_version: 1.38.1
+  fakeroot_sha256: 37c5063942efe2e2aeefd6e71ae2690bcb9b7d512c53bc6409b54d0730cbdac1
+  fakeroot_sha512: 8750191114636bf707b9c9c56ffe55d6471fac062ca3d811eaedda5459996299df5f77f34ac8c7084ed734c03c15c846bb25e5929abaad2b747f8f12719cdbf5
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
   findutils_version: 4.10.0
@@ -158,9 +158,9 @@ vars:
   libbpf_sha512: aa7511771858f2a58b283edb94595c986d1e9f25e1d8a439484e2ded85b75f87426d417aa7dd162d680f23f416abcfb195902cc13e48e444b99b6a24a179a9b6
 
   # renovate: datasource=git-tags extractVersion=^libcap-(?<version>.*)$ depName=git://git.kernel.org/pub/scm/libs/libcap/libcap.git
-  libcap_version: 2.77
-  libcap_sha256: 897bc18b44afc26c70e78cead3dbb31e154acc24bee085a5a09079a88dbf6f52
-  libcap_sha512: c783cb43ffb40eb005fb880efe18e72667c743af79d647f67ee3201d5ff1e64446f9c850cced935a04b63a8ee3380bbf28dd91e2dfbcbddb561c8d096da610d0
+  libcap_version: 2.78
+  libcap_sha256: 0d621e562fd932ccf67b9660fb018e468a683d7b827541df27813228c996bb11
+  libcap_sha512: a156a8708dd59f13400f701f4e1ddc81f915fe4e7b32f93a328f7d6f030b7a004fb985fa9ac60812dfffeb8ad860d2e1f59895485497350250efd9378682626b
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
   libffi_version: 3.5.2
@@ -238,9 +238,9 @@ vars:
   ninja_sha512: ec94d42967b962d66ab0747fcb9d095510117159de0473ec08df47a657895aa2523f920798e4608d0c6cf0e2e382512c14aec8a54ea58b6cd4b01edd3a7c8e62
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 3.6.2
-  openssl_sha256: aaf51a1fe064384f811daeaeb4ec4dce7340ec8bd893027eee676af31e83a04f
-  openssl_sha512: 46549ed4d6b0160adfa3e1406bc16f3083a7f3c85bdda289c1dbebd0db91433c39855dae765787ec68157faffba4cdb05a0600af4652e3e35da939e0bad8ef1e
+  openssl_version: 3.6.3
+  openssl_sha256: 243a86649cf6f23eeb6a2ff2456e09e5d77dd9018a54d3d96b0c6bdd6ba6c7f1
+  openssl_sha512: 4179ad56f285fd27a1c7b294472afdca588e915d4f8a9610e461f34f0678004aebe32e88434ae536a63a7c9aff6607702a3b341e2faacb7899c27d6def4cc92d
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.31
