@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.12.0-11-gce759f6
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.12.0-13-gd5c3eea
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
