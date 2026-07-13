@@ -78,9 +78,9 @@ vars:
   dtc_sha512: 9a2987aab1e3be91b71a72e5aea7a4e3f88e66521e68fea25345f5e1f86189c0ed82668e31d4ce7869cb0e0277289ffa3b62bc2a002f2d18849be84aa4fab757
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=davea42/libdwarf-code
-  dwarfutils_version: 2.3.1
-  dwarfutils_sha256: 28cf9a5d27aceff5c1f906244a4fe7ae208e41d20a6d8fc7e091c633a40b6e97
-  dwarfutils_sha512: 45489f19a0547c286a7f7606743860dd93f9feeec84bc32068c04b8a85d31c103948e044991ca89d2bb28ef56d467f1e57e2ea51d53ce86f53444ee75a6158a4
+  dwarfutils_version: 2.3.2
+  dwarfutils_sha256: 7992e7b9019ebfabdda5773e86243517c48cf89fafed3209e853692bc9573efd
+  dwarfutils_sha512: 6d53f409d96678a5a1d552dab1d77eda2233c7321cabe87f74bbc725023a5d8420771a9ee9fb6c0da2065be7811bb12822dc3f094421bb388386f075b0b018b7
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
   elfutils_version: 0.195
@@ -103,9 +103,9 @@ vars:
   flex_sha512: e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e
 
   # renovate: datasource=git-tags extractVersion=^gawk-(?<version>.*)$ depName=git://git.savannah.gnu.org/gawk.git
-  gawk_version: 5.4.0
-  gawk_sha256: 3dd430f0cd3b4428c6c3f6afc021b9cd3c1f8c93f7a688dc268ca428a90b4ac1
-  gawk_sha512: b212c6ffd235d5e7f98f0cae5a4fbe9a7139c420400710a747dc2c33dcbda445adc2f6f8ebab330c52c432da67b92be1806c628d261db826a72c89011b2d9d77
+  gawk_version: 5.4.1
+  gawk_sha256: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
+  gawk_sha512: a1e79b71e13ce7d5487f89fb62125ec873dc89e0a3ff37ebdff017fdd6dfd38b1eaa95fedcf773c037ae84c95f0ea0817d53bc1c14b4284568f87606da6aa152
 
   # renovate: datasource=git-refs versioning=git depName=https://github.com/sabotage-linux/gettext-tiny.git
   gettext_tiny_ref: acca7c3d509b9d9d4b33935e822a5bc39b35be01
@@ -198,9 +198,9 @@ vars:
   m4_sha512: efe5ec212f6431129a79667f098b2efe2e824122112f73a675deccb9c0d8c9b0bc9e3bf50c9cd5c0b894dc0af1b3f02253e5e67893fb9548a6a9d3bed7c829f7
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.11.1
-  meson_sha256: 6788ae299979643f8d841bcaf64352558436cae45a0355148a3aeeccf7913866
-  meson_sha512: c30c98714ab595ca1b5241fbb546c9c5fbb3eada53bfe782652a5734b04d45d66944a5fc8673ee602797c8173e27473036bcb01e09032bbc518567ee89dd6d70
+  meson_version: 1.11.2
+  meson_sha256: 698feae069cef3ecd4d7aaf281d7df359bdfcf555a9a1564383d3b913fa8a736
+  meson_sha512: 2be37c49c99b7882910956f513c251bd588e5222e2a69c5ee81a7f272bf9cbbb22402c9bc152ebd20ce81a522b4f60a68e39d755e8cd8fc11de5500e37436278
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.4.1
@@ -284,9 +284,9 @@ vars:
   python_sha512: 90a82f46c28f0fca613b67358fdc57c145ab05d20fb56bf3bc0c9e4e54947c7d30fbaa6856c41a41909237a9e601d1a7d19579d4b25c7a784ebcfe9012defc41
 
   # renovate: datasource=github-releases versioning=python depName=pypa/build
-  python_build_version: 1.5.0
-  python_build_sha256: 6ddf82d99317b6b61c56eb6ec0139ea91ee69dd03c6ed7dfdf160011b7d09f5d
-  python_build_sha512: 25f69c82047698e802feaf162a1ee334d32f83689ace3e2116d2329a10310b3bcfc6f2e42242d875f4781dffb364c95112819eb2bdaaecc0ebd4b9c00a94b99b
+  python_build_version: 1.5.1
+  python_build_sha256: 5a2a17d683cc597aa1930b28d824993f8077ce608e14a07c2cfb8c5565ee51b5
+  python_build_sha512: d1ef87a2559ff29c0de4436ca2b9ed4e1f27660f81673afd40318586ff8fee581dc85936a00bf4b1afef8160746c0378a6a99c6c6887d64772450adc8387b2a3
 
   # renovate: datasource=github-tags versioning=python depName=pypa/flit
   python_flit_core_version: 4.0.0
