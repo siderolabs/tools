@@ -22,10 +22,12 @@ steps:
         ./configure --prefix=/usr
     build:
       - |
-        make -j $(nproc)
+        # NO_RUST=1: opt out of git's optional Rust subsystem (needs cargo, not
+        # in the toolchain). Git 3.0 will make Rust mandatory - revisit then.
+        make -j $(nproc) NO_RUST=1
     install:
       - |
-        make DESTDIR=/rootfs install
+        make DESTDIR=/rootfs NO_RUST=1 install
 finalize:
   - from: /rootfs
     to: /

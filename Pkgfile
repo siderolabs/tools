@@ -48,9 +48,9 @@ vars:
   ca_certificates_sha512: 161cb987d3da5aca72083f346c3b51394cfe76d52c263d8c1c611e29944c8798aae054f2ef2f7109e035e3a1e27102d8e6d520cf34f7c5a951c9dbb280b29620
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.3.4
-  cmake_sha256: fdeff897b9eb49d764539f2b1edc6eb7e1440df325678a97c1978499e931adda
-  cmake_sha512: 3194f604432549eacd8bf0def22798eb84356e7c63ce288a4d60cbf31f63405ded0a1c004682fd5e1507f2a709ea9fe93df40d8fb16a9681f4c56b35afc83e06
+  cmake_version: 4.4.0
+  cmake_sha256: 65757f442fdd242e27f1728fc26dc0cba4164f7a0791a5c788631c00080369bc
+  cmake_sha512: 1d5840738813743bdafd30dcb8680e4bc72aacc61466abaedbc2dbfe5397da59a3e34d0016555e6a7b63b2f05e58dee4c97716a51750150dd0618a263e173e31
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/coreutils.git
   coreutils_version: 9.11
@@ -93,9 +93,9 @@ vars:
   expat_sha512: 9dc9d7c064c5ffe43af704af5006465f805d13602e458118cb9c32e0ae0b8f88b72a7824c85d313c529774af65c5e4d6a0ef1636362ac57514c176d3119dea22
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
-  findutils_version: 4.10.0
-  findutils_sha256: 1387e0b67ff247d2abde998f90dfbf70c1491391a59ddfecb8ae698789f0a4f5
-  findutils_sha512: b8b683d21cd26c6da4f41c56e83cadbda4780f8610a2bbd4b4e34bb1f339c3209721974b03e076d5eef0331fd876d947b398197aad37c29bbcc2e0405c641b34
+  findutils_version: 4.11.0
+  findutils_sha256: bfd19cb06cc71f3352d567e90284d8cdac02ac89774bbeadf0b533b0c11432fd
+  findutils_sha512: 1b667c5363b599135ceabab6b4b5388dbee6de4e7fa301f5dfefc854473e442fbfe7dda93a28a70505c026987acd375d13169f76d18da49d29c1fb2e09c83fef
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=westes/flex
   flex_version: 2.6.4
@@ -113,9 +113,9 @@ vars:
   gettext_tiny_sha512: 2862572d404367dcbf30a1113053ff0886f787a8a498ef11e6212cba6f8327de5290c3ea2fda47fdac1e99cb0874dafc151b0db28959cc6b8689b82e9bf90ce9
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.54.0
-  git_sha256: f689162364c10de79ef89aa8dbf48731eb057e34edbbd20aca510ce0154681a3
-  git_sha512: cb363917124edc245c9f6745e6e0c4093990275b4d57f9d2213c655b304ac81b05ece8d88546122727495ebc48a5ae19ab166a3ee43b6b8c68da488ac0270064
+  git_version: 2.55.0
+  git_sha256: 457fdb04dc8728e007d4688695e6912e6f680727920f2a40bf11eacc17505357
+  git_sha512: 73a53e5e79e9c357884512ad9fe5788ce48c33fd7ebb49f7c68f63c872beb5c5766f4fd1a9d9a2d8c89c192dc801ac7339422e9eec644ada56215fe9803af741
 
   # renovate: datasource=custom.gmp extractVersion=^gmp-(?<version>.+)\.tar\.xz$ depName=gmp
   gmp_version: 6.3.0
@@ -158,9 +158,9 @@ vars:
   libcap_sha512: a156a8708dd59f13400f701f4e1ddc81f915fe4e7b32f93a328f7d6f030b7a004fb985fa9ac60812dfffeb8ad860d2e1f59895485497350250efd9378682626b
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
-  libffi_version: 3.6.0
-  libffi_sha256: 31ff1fe32deaebfbb388727f32677bb254bf2a41382c51464c0b1837c9ee9828
-  libffi_sha512: 716f0e7884cd7206ceb7410a8422a0c2229bf48151ff525575f7489d389683531bd0c6cf8c78a3a5f9c54444ef485a7f2b0e1e6e4180b4da599dec9021a40491
+  libffi_version: 3.7.1
+  libffi_sha256: d5e9a6638ddbd2513ddb54518eb67e4bbe6fa707bcc01c10f6212f0a088d819d
+  libffi_sha512: 03c04616261a8199794d5d482d734298f2f60b2c9c5968cf717b58df7fd0e4bba33d0cb38f73aec361339128dddf4fdbe5d64002b54fdb8b3fc01c07d8b90a31
 
   # renovate: datasource=github-tags extractVersion=^libnl(?<version>.*)$ depName=thom311/libnl
   libnl_version: 3_12_0
@@ -334,13 +334,13 @@ vars:
   rhash_sha512: c125b71ec36cce2ec31057239cac8b987555f5e3b152dacb6386b905f8cc4d449c1de5b53e5a5206a2d87975681225c9b54e5826c10ffd91b3440f8595d22b15
 
   # renovate: datasource=github-tags depName=SELinuxProject/selinux
-  selinux_version: 3.10
-  libselinux_sha256: 1ef216c5b56fb7e0a51cd2909787a175a17ee391e0467894807873539ebe766b
-  libselinux_sha512: 5783f737675eb94e0bdff082013589e5bddfa0669a357df185eb89f4f88cec8b90779e86c4b17b58f5c248175da0208c80cc2642046e348c7384dd799f1ba4c1
-  libsepol_sha256: d555586797fa9f38344496d2a7ec1147b6caaf3fcc44c42d8d5173edd7a79a71
-  libsepol_sha512: 95a12779a41577d02a13922d1a484954a6b041b3be9a76836e179ab3a4e4b83b90df63e3a3f32b0862466ed8748280fa9b820f8dc96a3887bcdde081947e7450
-  secilc_sha256: 6658071d6f1044184d3973062a798187537ae1c3ddb4c31afd417df333316c10
-  secilc_sha512: 91b793c5f4c3d1028abf0d4e3ea5c6090470fd94f4774dcd24a6f2ceef0a2fedf37cee4a2303283b79689644f53aa1a576e938026e1ff9d84e490ebabc63a6eb
+  selinux_version: 3.11
+  libselinux_sha256: 73d419c6e20e874adaa4019372cbd097eecf4d276e13f27ec5e67d35c0bd203c
+  libselinux_sha512: 49eb0b180b77b4b61505117ecd98ab9fdd79a36801b6d2216813ea370a02ba4f58a0f87a18e92a2d4eeffc11d9df67e4692d2d8f5d3ee77a2abd3f606196aaad
+  libsepol_sha256: 79f3d2c88f44b7eb5cf54d9792e03232297e17f97a179163f2750099a00f164d
+  libsepol_sha512: 38335292be8b8ce8b22bb2a0e481f92e2bbf532d9a2ee5319ada0b3fd294df487e5eba8041bac2a09ef7b048fee13ca0520c34cb3283fea1f95fcc5752f66b81
+  secilc_sha256: 1fb7de005d35ae0ac6ff8f8fc955d08a15b5c1a67e961b97ef987576af0db11a
+  secilc_sha512: 4b8d86ddd2fac3d48e5f524a989f3768e9a3e6593fb1ad0d44fbae7af7c98032cb84caf363c158db5d06f38327abbef4003c53237c507d7869f24f08d56ca5ba
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/sed.git
   sed_version: 4.10
