@@ -269,9 +269,9 @@ vars:
   perl_sha512: 3c77dbede22df1a7ab3714c7dc6d675f14cb99b084fcc4e4d9b65aed1a080ac4d5ecf2cbf4759b2565f6452e52b337633f870dbcbf152dc66833cfe71f04fffc
 
   # renovate: datasource=github-tags extractVersion=^pkgconf-(?<version>.*)$ depName=pkgconf/pkgconf
-  pkgconf_version: 2.9.93
-  pkgconf_sha256: b9632d0d91321f56645de720fd8cd3584b0d0ca8ff13a3d9d5285888869fcc98
-  pkgconf_sha512: e014096f5486b7cdfa8c6410992b9143b63c7ef0ba540c7cad09923867c3924b951c1dfbd9a85f6d786b0deb30be1b7284f67317f4b261b6e0eca70b20ace1af
+  pkgconf_version: 3.0.1
+  pkgconf_sha256: b65286de873153e7feab6d997c0b983e11f65f1fa79eeb4621584e7b10d05d9b
+  pkgconf_sha512: e68d9191c74b767462a3af6bc46a676953191e17d359a57a81f0e1c5532f872e2c5ad6e112e43f3bfb1d7b84f6d92a1a4bfecbc613b7f669cae890561c98d6f1
 
   # renovate: datasource=github-tags versioning=python depName=eliben/pyelftools
   pyelftools_version: v0.31
@@ -319,9 +319,9 @@ vars:
   python_packaging_sha512: fb8419f81f0f817440c0b297fc6e963832e219e7a324bf4e0321f1e131a4822f17a19f2eb033a8d4adb622ccb16db59776ec44906a0c0b34f2877b59b9558c18
 
   # renovate: datasource=github-releases versioning=python extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
-  python_setuptools_version: 82.0.1
-  python_setuptools_sha256: 7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9
-  python_setuptools_sha512: 5d70e9efd818245fb8119a4eed64d776078469ed884facc188f141ea491efd9fde5c10c928d3236ea5e2e431b16616f18ed14870b867f95e6320251707332395
+  python_setuptools_version: 83.0.0
+  python_setuptools_sha256: 025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef
+  python_setuptools_sha512: d426f235471d30b41391bda63e8f3d461f54a6a4127594a2e2d0cab0c7576d511db5e5f211ed6cdac2afc620d3695e991a1dd08106f1201ec64697b14b3e0390
 
   # renovate: datasource=github-releases versioning=python depName=pypa/wheel
   python_wheel_version: 0.47.0
