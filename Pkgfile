@@ -43,7 +43,7 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=custom.ca-certificates extractVersion=^/ca/cacert-(?<version>.+)\.pem$ versioning=regex:^(?<major>\d+)-(?<minor>\d+)-(?<patch>\d+)$ depName=ca-certificates
-  ca_certificates_version: 2026-05-14
+  ca_certificates_version: "2026-05-14"
   ca_certificates_sha256: 86a1f3366afac7c6f8ae9f3c779ac221129328c43f0ab2b8817eb2f362a5025c
   ca_certificates_sha512: 161cb987d3da5aca72083f346c3b51394cfe76d52c263d8c1c611e29944c8798aae054f2ef2f7109e035e3a1e27102d8e6d520cf34f7c5a951c9dbb280b29620
 
