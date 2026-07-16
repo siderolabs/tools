@@ -375,9 +375,9 @@ vars:
   texinfo_sha512: fb1a16df67f870e79c31f4b96d8431d9c944eb84e5aa71e9d94890417ce63047918d55620fa63bd582232c47e9b412a6f95a11a2479f53f40e92e49bc018d926
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.41.4
-  util_linux_sha256: a8c213cc06048862602a42b2d299b340001f6d05c4407b549f3e03521df83688
-  util_linux_sha512: c21ad77b787ab5892169c80cbec1ba46ed6bba36c1db278f2d1cd8712ae237f5cd25bfd20f2dc638334d1c47c5ff6102703147147d42f71c995bd397e735691a
+  util_linux_version: 2.42.2
+  util_linux_sha256: 03a05d3adf9602ef128f2da05b84b3205ce60c351e5737c0370f74000679ce8a
+  util_linux_sha512: 7415add0be2930654e322830808dde03ff6d511bd357f0679e6b6287a13ca79fe58ce4ac05edef86b76fb381b3a36ca2da9d3c31b5dc0a1d889c203156a57277
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
   xz_version: v5.8.3
