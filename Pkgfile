@@ -178,9 +178,9 @@ vars:
   libunistring_sha512: 0215f7f40f426227eca5174140654a3fa43ac1520eeb212c2ba08043470f905687b2703afdda12e9635359a6187643900136b6bb11b422bd7567d17ca71b555f
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/libtool.git
-  libtool_version: 2.5.4
-  libtool_sha256: da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf
-  libtool_sha512: 60599f5c3168a287fe3a35062fd2e32e0b73433fce820bfd18d28b0e3bd7a8fefde6d6f0505fbbc2d664119ab7c539269184993843289932c895847ea1ab9f04
+  libtool_version: 2.6.2
+  libtool_sha256: 24adb3aa9ae035c70faba344af57d73215eb89281045af6c7ccd307751f8b0bf
+  libtool_sha512: e4e4df9f191152241c813e3f79f6afdc4b8a0a6d9e94d76f2b9fbea6ab98a9f5280376ec34325b5a08bc93e5b702fb2e7183488294457ee8bed33e1ec8aa4a35
 
   # renovate: datasource=github-tags depName=libuv/libuv
   libuv_version: v1.52.1
@@ -269,9 +269,9 @@ vars:
   perl_sha512: 3c77dbede22df1a7ab3714c7dc6d675f14cb99b084fcc4e4d9b65aed1a080ac4d5ecf2cbf4759b2565f6452e52b337633f870dbcbf152dc66833cfe71f04fffc
 
   # renovate: datasource=github-tags extractVersion=^pkgconf-(?<version>.*)$ depName=pkgconf/pkgconf
-  pkgconf_version: 3.0.1
-  pkgconf_sha256: b65286de873153e7feab6d997c0b983e11f65f1fa79eeb4621584e7b10d05d9b
-  pkgconf_sha512: e68d9191c74b767462a3af6bc46a676953191e17d359a57a81f0e1c5532f872e2c5ad6e112e43f3bfb1d7b84f6d92a1a4bfecbc613b7f669cae890561c98d6f1
+  pkgconf_version: 3.0.3
+  pkgconf_sha256: 90bb12369d296f2e0bea14832b421c4ba40d442e1519758e6e1e7855afab3149
+  pkgconf_sha512: 4e49bb7b10c6fdebfa1175b4c33138b8aeca2582e49adb5c7ba66d08e8614771ef060b0c2673bd098c1aed821c8ade1a6dd276c1f4ac6e29bd7efcb8f4c0402e
 
   # renovate: datasource=github-tags versioning=python depName=eliben/pyelftools
   pyelftools_version: v0.31
@@ -294,9 +294,9 @@ vars:
   python_flit_core_sha512: 1de9358fa33d0924355679ab6bccf5933f2f154257a875dfec7bf88bb569fce487129ff2d7ea13df16287acaedf9da49ce5f9baccd160ebfb6fd33e831e9c9cb
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ versioning=python depName=gentoo/gpep517
-  python_gpep517_version: 19
-  python_gpep517_sha256: 17879b79edbb5a21d3dca6cfae997bda8e4c99254caf16616a6ae70d15a43c09
-  python_gpep517_sha512: 463c3812f388ea7ef83aaf6b3b90de4036b0a8200038a654621822c02d46627f7adf2ed4c7accf016293f89b8c3a2080d9ac80d2f82caaa3fdd370aa98c4335b
+  python_gpep517_version: 20
+  python_gpep517_sha256: b1573c544199af49ea5d75882a4262d84bacd8b37d999bc3ad2577cb5565f479
+  python_gpep517_sha512: 3a8782eb513bb189b6d4d10516a122fa496185960a2970445058030fccde10b841e222cce04ce3bde2c3f1e1186cb8e3f50f44e40be2fd35e7e1b91e937585b0
 
   # renovate: datasource=github-tags versioning=python depName=pypa/installer
   python_installer_version: 1.0.1
