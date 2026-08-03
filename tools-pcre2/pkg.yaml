@@ -22,7 +22,7 @@ steps:
           --enable-pcre232 \
           --enable-pcre2grep-libz \
           --enable-pcre2grep-libbz2 \
-          --disable-static
+          --enable-static # this allows us to drop pcre2 from extensions
     build:
       - |
         cd build
