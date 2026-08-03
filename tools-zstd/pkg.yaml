@@ -25,6 +25,14 @@ steps:
     test:
       - |
         fhs-validator /rootfs
+    sbom:
+      outputPath: /rootfs/usr/share/spdx/zstd.spdx.json
+      name: zstd
+      version: "{{ .zstd_version }}"
+      cpes:
+        - cpe:2.3:a:facebook:zstandard:{{ .zstd_version }}:*:*:*:*:*:*:*
+      licenses:
+        - BSD-3-Clause OR GPL-2.0-only
 finalize:
   - from: /rootfs
     to: /

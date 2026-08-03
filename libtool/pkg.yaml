@@ -6,7 +6,7 @@ dependencies:
     runtime: true
 steps:
   - sources:
-      - url: http://ftpmirror.gnu.org/libtool/libtool-{{ .libtool_version }}.tar.gz
+      - url: "{{ .GNU_MIRROR_URL }}/gnu/libtool/libtool-{{ .libtool_version }}.tar.gz"
         destination: libtool.tar.gz
         sha256: "{{ .libtool_sha256 }}"
         sha512: "{{ .libtool_sha512 }}"
