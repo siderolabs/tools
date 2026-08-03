@@ -40,7 +40,7 @@ steps:
     sbom:
       outputPath: /rootfs/usr/share/spdx/xz.spdx.json
       name: xz
-      version: {{ .xz_version }}
+      version: "{{ .xz_version }}"
       cpes:
         - cpe:2.3:a:tukaani:xz:{{ .xz_version }}:*:*:*:*:*:*:*
       licenses:

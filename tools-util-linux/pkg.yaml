@@ -49,7 +49,7 @@ steps:
     sbom:
       outputPath: /rootfs/usr/share/spdx/util-linux.spdx.json
       name: util-linux
-      version: {{ .util_linux_version }}
+      version: "{{ .util_linux_version }}"
       cpes:
         - cpe:2.3:a:kernel:util-linux:{{ .util_linux_version }}:*:*:*:*:*:*:*
       licenses:

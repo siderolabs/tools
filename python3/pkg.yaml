@@ -14,7 +14,7 @@ steps:
         sha256: "{{ .python_sha256 }}"
         sha512: "{{ .python_sha512 }}"
     env:
-      SOURCE_DATE_EPOCH: {{ .BUILD_ARG_SOURCE_DATE_EPOCH }}
+      SOURCE_DATE_EPOCH: "{{ .BUILD_ARG_SOURCE_DATE_EPOCH }}"
     prepare:
       - |
         tar -xJf python.tar.xz --strip-components=1

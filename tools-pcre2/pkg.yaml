@@ -38,7 +38,7 @@ steps:
     sbom:
       outputPath: /rootfs/usr/share/spdx/pcre2.spdx.json
       name: pcre2
-      version: {{ .pcre2_version }}
+      version: "{{ .pcre2_version }}"
       cpes:
         - cpe:2.3:a:pcre:pcre2:{{ .pcre2_version }}:*:*:*:*:*:*:*
       licenses:
