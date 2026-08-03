@@ -4,7 +4,7 @@ dependencies:
   - stage: base
 steps:
   - sources:
-      - url: https://ftpmirror.gnu.org/gnu/tar/tar-{{ .tar_version | replace "_" "." }}.tar.xz
+      - url: '{{ .GNU_MIRROR_URL }}/gnu/tar/tar-{{ .tar_version | replace "_" "." }}.tar.xz'
         destination: tar.tar.xz
         sha256: "{{ .tar_sha256 }}"
         sha512: "{{ .tar_sha512 }}"
@@ -34,7 +34,7 @@ steps:
     sbom:
       outputPath: /rootfs/usr/share/spdx/tar.spdx.json
       name: tar
-      version: {{ .tar_version }}
+      version: "{{ .tar_version }}"
       cpes:
         - cpe:2.3:a:gnu:tar:{{ .tar_version }}:*:*:*:*:*:*:*
       licenses:

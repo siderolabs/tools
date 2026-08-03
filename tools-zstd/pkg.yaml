@@ -28,7 +28,7 @@ steps:
     sbom:
       outputPath: /rootfs/usr/share/spdx/zstd.spdx.json
       name: zstd
-      version: {{ .zstd_version }}
+      version: "{{ .zstd_version }}"
       cpes:
         - cpe:2.3:a:facebook:zstandard:{{ .zstd_version }}:*:*:*:*:*:*:*
       licenses:

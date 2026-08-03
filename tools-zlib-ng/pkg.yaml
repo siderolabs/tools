@@ -28,7 +28,7 @@ steps:
         make test
     sbom:
       outputPath: /rootfs/usr/share/spdx/zlib-ng.spdx.json
-      version: {{ .zlib_ng_version }}
+      version: "{{ .zlib_ng_version }}"
       name: zlib-ng
       cpes:
         - cpe:2.3:a:zlib-ng:zlib-ng:{{ .zlib_ng_version }}:*:*:*:*:*:*:*

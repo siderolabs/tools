@@ -6,7 +6,7 @@ dependencies:
   - stage: perl
 steps:
   - sources:
-      - url: https://ftpmirror.gnu.org/gnu/bison/bison-{{ .bison_version }}.tar.xz
+      - url: "{{ .GNU_MIRROR_URL }}/gnu/bison/bison-{{ .bison_version }}.tar.xz"
         destination: bison.tar.xz
         sha256: "{{ .bison_sha256 }}"
         sha512: "{{ .bison_sha512 }}"
