@@ -58,6 +58,7 @@ dependencies:
   - stage: python-jinja2
   - stage: python-markupsafe
   - stage: python-packaging
+  - stage: python-pyyaml
   - stage: python-setuptools
   - stage: python-wheel
   - stage: python3

@@ -313,6 +313,11 @@ vars:
   python_markupsafe_sha256: f1d9d06c34515dd3ad210ec769da613057b536d11d6c039183b87757a883a254
   python_markupsafe_sha512: 2259dba158c37d06f87ef208603706f1d79b536124cec599ee634717d6061cccd89ee4bc8c35aa40ce9c728d595f2b802b6e68e9c7219c2f17135ed91854d777
 
+  # renovate: datasource=github-releases versioning=python depName=yaml/pyyaml
+  python_pyyaml_version: 6.0.3
+  python_pyyaml_sha256: c7b45011e052458ae79015d5eea3046c37d099023d4b253dde26ee1c29ea2f36
+  python_pyyaml_sha512: a0da43e32d127409ad61b11dc1d733b2e9c743977b3d72c05c81fc2ab183b40bc284452b0874dbeae1a736e1cd4a34f0df641ceefd5e9df38b3e53155fc5f633
+
   # renovate: datasource=github-releases versioning=python depName=pypa/packaging
   python_packaging_version: 25.0
   python_packaging_sha256: 15b6ba95eb12d8f99dcf215ea37cbea16812ef28358e8ef3d9344acb827acac1
@@ -320,8 +325,8 @@ vars:
 
   # renovate: datasource=github-releases versioning=python extractVersion=^v(?<version>.*)$ depName=pypa/setuptools
   python_setuptools_version: 83.0.0
-  python_setuptools_sha256: 025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef
-  python_setuptools_sha512: d426f235471d30b41391bda63e8f3d461f54a6a4127594a2e2d0cab0c7576d511db5e5f211ed6cdac2afc620d3695e991a1dd08106f1201ec64697b14b3e0390
+  python_setuptools_sha256: 188917862e785dc039fbc353b809ff185237411101fa270241034a6ec0e4f44b
+  python_setuptools_sha512: 35649de8da5b1d493b641992cbc1b14e517afaba9354060007abbf5262a4b65813a3bab7ed1dbde3e3c4335355fce9aeb39f61f9b7fcfee3289e1c9b9169f1b5
 
   # renovate: datasource=github-releases versioning=python depName=pypa/wheel
   python_wheel_version: 0.47.0

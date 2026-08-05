@@ -1,0 +1,36 @@
+name: python-pyyaml
+variant: scratch
+dependencies:
+  - stage: base
+  - stage: libffi
+  - stage: python3
+  - stage: python-setuptools
+  - stage: tools-zlib-ng
+steps:
+  - sources:
+      - url: https://github.com/yaml/pyyaml/archive/refs/tags/{{ .python_pyyaml_version }}.tar.gz
+        destination: python-pyyaml.tar.gz
+        sha256: "{{ .python_pyyaml_sha256 }}"
+        sha512: "{{ .python_pyyaml_sha512 }}"
+    env:
+      # Ceph only needs the Python module; avoid the optional libyaml C extension.
+      PYYAML_FORCE_LIBYAML: "0"
+    prepare:
+      - |
+        tar -xzf python-pyyaml.tar.gz --strip-components=1
+    build:
+      - |
+        python3 setup.py --without-libyaml build
+    install:
+      - |
+        python3 setup.py --without-libyaml install --root=/rootfs
+
+        # Determinism: remove all bytecode
+        find /rootfs -type d -name __pycache__ -print0 | xargs -0 -I {} rm -rf "{}"
+    test:
+      - |
+        python3 setup.py --without-libyaml install
+        python3 -c "import yaml"
+finalize:
+  - from: /rootfs
+    to: /
