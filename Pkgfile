@@ -264,9 +264,9 @@ vars:
 
   # perl uses even numbered minor versions for stable releases - https://www.cpan.org/src/README.html
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=Perl/perl5
-  perl_version: 5.42.2
-  perl_sha256: 0a585eeb9e363c0f80482ddb3571625250c2c86aeb408853e8ea50805cfb14bb
-  perl_sha512: 3c77dbede22df1a7ab3714c7dc6d675f14cb99b084fcc4e4d9b65aed1a080ac4d5ecf2cbf4759b2565f6452e52b337633f870dbcbf152dc66833cfe71f04fffc
+  perl_version: 5.44.0
+  perl_sha256: 505cf43912e9480495c344c70260452e32aa2a73c546a026b3f100053b23ce91
+  perl_sha512: 734d00d00678add11544e8f483bf953e61ae391aa6a2bba61ec4e7727275e243cc411525d30e6a73f70ccc0603ebe85bc0c6dd69b0106a6162e21a4595d11075
 
   # renovate: datasource=github-tags extractVersion=^pkgconf-(?<version>.*)$ depName=pkgconf/pkgconf
   pkgconf_version: 3.0.5
