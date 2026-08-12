@@ -88,9 +88,9 @@ vars:
   elfutils_sha512: e1e1fdf4f7f72bf520deb0103bb8fd208dc247bab14af100c6fb56d38c0ef6c6d54ff5bd15b84e4f70e2b2ea481e5999fea2842360f8932a861122df79b5fc8f
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_8_2
-  expat_sha256: 69e7f52417d85b1c2b7fe855e176eec55d0b2d7d92d691372d833a1c7df7923b
-  expat_sha512: 9dc9d7c064c5ffe43af704af5006465f805d13602e458118cb9c32e0ae0b8f88b72a7824c85d313c529774af65c5e4d6a0ef1636362ac57514c176d3119dea22
+  expat_version: 2_8_3
+  expat_sha256: b4cc2483927d5e90bf8c40b44a6b95b368b42a8a96e25883fce188b48a92b670
+  expat_sha512: 0cf46319fa490b8ed0e9f114471641b037b5c224c4c7d864fd4f840fa239fd2346fd48c228a927d01054f373cb0b06f87d246ba6121f14d0cb4cf124994baae1
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
   findutils_version: 4.11.0
@@ -198,9 +198,9 @@ vars:
   m4_sha512: efe5ec212f6431129a79667f098b2efe2e824122112f73a675deccb9c0d8c9b0bc9e3bf50c9cd5c0b894dc0af1b3f02253e5e67893fb9548a6a9d3bed7c829f7
 
   # renovate: datasource=github-releases depName=mesonbuild/meson
-  meson_version: 1.11.2
-  meson_sha256: 698feae069cef3ecd4d7aaf281d7df359bdfcf555a9a1564383d3b913fa8a736
-  meson_sha512: 2be37c49c99b7882910956f513c251bd588e5222e2a69c5ee81a7f272bf9cbbb22402c9bc152ebd20ce81a522b4f60a68e39d755e8cd8fc11de5500e37436278
+  meson_version: 1.12.0
+  meson_sha256: 88afe0c20e52030218924ac37d0c81c59b4b5f3ae3752c8c6d7470c7d365886c
+  meson_sha512: 776efa8e5c490285925738d0836474b309e43c5f12af9f1e61d0457c2f4c1d4c197fcc3fcb0166b523e1051bc0e37d2ef4e10f4f703e562278227805e311e0ef
 
   # renovate: datasource=git-tags depName=https://gitlab.inria.fr/mpc/mpc.git
   mpc_version: 1.4.1
@@ -329,9 +329,9 @@ vars:
   python_setuptools_sha512: 2013e52eb239e4689ad1e0c3c88f24e441aa2969133c69e8f5af5aac84cb4c7502587f608aad1bd8a8d61fd7269153905080d374e0622c5ee7a6b29b77f5f731
 
   # renovate: datasource=github-releases versioning=python depName=pypa/wheel
-  python_wheel_version: 0.47.0
-  python_wheel_sha256: 7077424e2d404e5ed1c1be5075b05afa1807ccf251939a5e753567fdcfcd7a58
-  python_wheel_sha512: c07fa4a4e9efa28680f5ee7601058d71d9de3f005771eb452029a3866d0734a5a341d51b73f90f94773e9bb39a1438755aa1f9a34a24929c253047b7f7e65708
+  python_wheel_version: 0.48.0
+  python_wheel_sha256: c3beae7abe07db04c2303502e4483122cc6b3686a7dfb0d8ca050dd034d5bdfe
+  python_wheel_sha512: 2eb1b9d8f24b9f7221d24a49b54352f001df778172828d7d58626fd5b5463109cef7fbbdc48548c128b8cdf99a4b76a833f4092d758239375ede7285dfa7c701
 
   # renovate: datasource=github-tags depName=rhash/RHash
   rhash_version: v1.4.6
