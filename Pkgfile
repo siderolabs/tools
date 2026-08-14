@@ -1,4 +1,4 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.6.1
+# syntax = ghcr.io/siderolabs/bldr:v0.6.2
 
 # Sync bldr image with Makefile
 
