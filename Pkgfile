@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-3-gc4993d7
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-4-gd4c09bb
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -92,9 +92,9 @@ vars:
   expat_sha512: 3dac4864d31dcceeafe5b78e521d9830ea425427a02001908d7e96949567f6ad9c5d4dc10f9b03a55441344850a2cfc684450c6a659663eae2f63914962b4732
 
   # renovate: datasource=git-tags extractVersion=^upstream/(?<version>.*)$ depName=https://salsa.debian.org/clint/fakeroot.git
-  fakeroot_version: 1.38.1
-  fakeroot_sha256: 37c5063942efe2e2aeefd6e71ae2690bcb9b7d512c53bc6409b54d0730cbdac1
-  fakeroot_sha512: 8750191114636bf707b9c9c56ffe55d6471fac062ca3d811eaedda5459996299df5f77f34ac8c7084ed734c03c15c846bb25e5929abaad2b747f8f12719cdbf5
+  fakeroot_version: 1.37.1.1
+  fakeroot_sha256: 86b0b75bf319ca42e525c098675b6ed10a06b76e69ec9ccf20ef5e03883b3a14
+  fakeroot_sha512: 768db08ea9fc6345aeb3604345cb45a6fc588053101fbd5e6f1c43cbf9e5e6fd787f189f0e8b04835ebdcce70935c2b32aa2501ba0079f9cb79c01ad8ad84c97
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
   findutils_version: 4.10.0

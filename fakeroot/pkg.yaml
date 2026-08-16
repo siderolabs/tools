@@ -19,6 +19,7 @@ steps:
       - |
         patch -p1 < /pkg/patches/fix-shell.patch
         patch -p1 < /pkg/patches/no-docs.patch
+        patch -p1 < /pkg/patches/fakeroot-no64.patch
       - |
         autoreconf -vif
       - |
