@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.6.2
+# syntax = ghcr.io/siderolabs/bldr:v0.6.3
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.14.0-1-g903e590
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.14.0-3-g386b969
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -83,9 +83,9 @@ vars:
   dwarfutils_sha512: 6d53f409d96678a5a1d552dab1d77eda2233c7321cabe87f74bbc725023a5d8420771a9ee9fb6c0da2065be7811bb12822dc3f094421bb388386f075b0b018b7
 
   # renovate: datasource=git-tags extractVersion=^elfutils-(?<version>.*)$ depName=git://sourceware.org/git/elfutils.git
-  elfutils_version: 0.195
-  elfutils_sha256: 37629fdf7f1f3dc2818e138fca2b8094177d6c2d0f701d3bb650a561218dc026
-  elfutils_sha512: e1e1fdf4f7f72bf520deb0103bb8fd208dc247bab14af100c6fb56d38c0ef6c6d54ff5bd15b84e4f70e2b2ea481e5999fea2842360f8932a861122df79b5fc8f
+  elfutils_version: 0.196
+  elfutils_sha256: fd5cc6b77ad6773cac93cb3f415f9318ac3b3455eecf801f6b4a742c4f6c7209
+  elfutils_sha512: 02a5c1aaeefb6264dd43c52e78612864a51275becf781c309beb398267e1e12f166fd7190a0d09f16e386a5fd14116dc49d1efe5a59191d22df0f46c19a081f7
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
   expat_version: 2_8_3
