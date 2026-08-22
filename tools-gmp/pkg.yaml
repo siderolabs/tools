@@ -1,4 +1,4 @@
-name: gmp
+name: tools-gmp
 variant: scratch
 dependencies:
   - stage: base

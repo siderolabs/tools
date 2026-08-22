@@ -12,39 +12,39 @@ dependencies:
   - stage: bzip2
   - stage: cmake
   - stage: coreutils
-  - stage: curl
+  - stage: tools-curl
   - stage: diffutils
-  - stage: dtc
+  - stage: tools-dtc
   - stage: dwarfutils
-  - stage: elfutils
+  - stage: tools-elfutils
   - stage: expat
   - stage: findutils
   - stage: flex
   - stage: gawk
   - stage: gettext
   - stage: git
-  - stage: gmp
-  - stage: gnutls
+  - stage: tools-gmp
+  - stage: tools-gnutls
   - stage: gperf
   - stage: grep
   - stage: gzip
-  - stage: libbpf
-  - stage: libffi
+  - stage: tools-libbpf
+  - stage: tools-libffi
   - stage: libnl
-  - stage: libtasn1
+  - stage: tools-libtasn1
   - stage: libtool
-  - stage: libunistring
+  - stage: tools-libunistring
   - stage: libuv
   - stage: m4
   - stage: meson
   - stage: mpc
   - stage: mpfr
-  - stage: musl-fts
-  - stage: musl-obstack
+  - stage: tools-musl-fts
+  - stage: tools-musl-obstack
   - stage: musl-utils
   - stage: nasm
   - stage: ncurses
-  - stage: nettle
+  - stage: tools-nettle
   - stage: ninja
   - stage: pahole
   - stage: patch

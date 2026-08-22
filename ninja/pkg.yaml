@@ -3,7 +3,7 @@ variant: scratch
 dependencies:
   - stage: base
   - stage: cmake
-  - stage: curl
+  - stage: tools-curl
   - stage: libuv
   - stage: tools-xz
   - stage: expat

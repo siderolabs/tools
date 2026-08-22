@@ -5,17 +5,17 @@ dependencies:
   - stage: argp-standalone
   - stage: patch
     runtime: true
-  - stage: elfutils
+  - stage: tools-elfutils
   - stage: dwarfutils
   - stage: cmake
   - stage: pkgconf
     runtime: true
-  - stage: curl
+  - stage: tools-curl
   - stage: expat
   - stage: libuv
-  - stage: libbpf
-  - stage: musl-obstack
-  - stage: musl-fts
+  - stage: tools-libbpf
+  - stage: tools-musl-obstack
+  - stage: tools-musl-fts
   - stage: rhash
   - stage: tools-xz
 steps:

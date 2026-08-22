@@ -1,4 +1,4 @@
-name: libtasn1
+name: tools-libtasn1
 variant: scratch
 dependencies:
   - stage: base

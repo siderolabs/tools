@@ -1,9 +1,9 @@
-name: nettle
+name: tools-nettle
 variant: scratch
 dependencies:
   - stage: base
   - stage: m4
-  - stage: gmp
+  - stage: tools-gmp
 steps:
   - sources:
       - url: "{{ .GNU_MIRROR_URL }}/gnu/nettle/nettle-{{ .nettle_version }}.tar.gz"

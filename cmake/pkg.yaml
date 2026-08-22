@@ -3,7 +3,7 @@ variant: scratch
 dependencies:
   - stage: base
   - stage: bzip2
-  - stage: curl
+  - stage: tools-curl
   - stage: expat
   - stage: libuv
   - stage: rhash

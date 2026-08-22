@@ -2,7 +2,7 @@ name: python-pyyaml
 variant: scratch
 dependencies:
   - stage: base
-  - stage: libffi
+  - stage: tools-libffi
   - stage: python3
   - stage: python-setuptools
   - stage: tools-zlib-ng

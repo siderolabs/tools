@@ -1,4 +1,4 @@
-name: curl
+name: tools-curl
 variant: scratch
 dependencies:
   - stage: base

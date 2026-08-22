@@ -1,4 +1,4 @@
-name: libffi
+name: tools-libffi
 variant: scratch
 dependencies:
   - stage: base

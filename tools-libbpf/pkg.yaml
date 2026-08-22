@@ -1,8 +1,8 @@
-name: libbpf
+name: tools-libbpf
 variant: scratch
 dependencies:
   - stage: base
-  - stage: elfutils
+  - stage: tools-elfutils
   - stage: tools-zlib-ng
 steps:
   - sources:
