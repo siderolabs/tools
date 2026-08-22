@@ -1,0 +1,16 @@
+name: tools-gcc-runtime
+variant: scratch
+dependencies:
+  - stage: base
+steps:
+  - install:
+      - |
+        mkdir -p /rootfs/usr/lib
+        cp -a /usr/lib/libgcc_s.so* /usr/lib/libstdc++.so* /rootfs/usr/lib/
+  - test:
+      - |
+        test -e /rootfs/usr/lib/libgcc_s.so.1
+        test -e /rootfs/usr/lib/libstdc++.so.6
+finalize:
+  - from: /rootfs
+    to: /

@@ -1,4 +1,4 @@
-name: musl-fts
+name: tools-musl-fts
 variant: scratch
 dependencies:
   - stage: base

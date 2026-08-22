@@ -2,7 +2,7 @@ name: python-markupsafe
 variant: scratch
 dependencies:
   - stage: base
-  - stage: libffi
+  - stage: tools-libffi
   - stage: python3
   - stage: python-build
   - stage: python-gpep517

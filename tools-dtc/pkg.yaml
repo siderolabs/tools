@@ -1,4 +1,4 @@
-name: dtc
+name: tools-dtc
 variant: scratch
 dependencies:
   - stage: base

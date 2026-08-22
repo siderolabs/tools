@@ -2,7 +2,7 @@ name: meson
 variant: scratch
 dependencies:
   - stage: base
-  - stage: libffi
+  - stage: tools-libffi
     runtime: true
   - stage: python3
     runtime: true

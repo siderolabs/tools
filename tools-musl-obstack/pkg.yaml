@@ -1,4 +1,4 @@
-name: musl-obstack
+name: tools-musl-obstack
 variant: scratch
 dependencies:
   - stage: base

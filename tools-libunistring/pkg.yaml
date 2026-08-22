@@ -1,4 +1,4 @@
-name: libunistring
+name: tools-libunistring
 variant: scratch
 dependencies:
   - stage: base

@@ -4,7 +4,7 @@ dependencies:
   - stage: base
   - stage: patch
   - stage: cmake
-  - stage: curl
+  - stage: tools-curl
   - stage: ninja
   - stage: python3
 steps:

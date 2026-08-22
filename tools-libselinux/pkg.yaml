@@ -4,7 +4,7 @@ dependencies:
   - stage: base
   - stage: coreutils
   - stage: patch
-  - stage: musl-fts
+  - stage: tools-musl-fts
   - stage: tools-libsepol
   - stage: tools-pcre2
   - stage: pkgconf

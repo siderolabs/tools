@@ -1,11 +1,11 @@
-name: elfutils
+name: tools-elfutils
 variant: scratch
 dependencies:
   - stage: base
   - stage: tools-zlib-ng
   - stage: argp-standalone
-  - stage: musl-fts
-  - stage: musl-obstack
+  - stage: tools-musl-fts
+  - stage: tools-musl-obstack
   - stage: patch
   - stage: autoconf
   - stage: automake

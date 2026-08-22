@@ -2,7 +2,7 @@ name: mpfr
 variant: scratch
 dependencies:
   - stage: base
-  - stage: gmp
+  - stage: tools-gmp
 steps:
   - sources:
       - url: "{{ .GNU_MIRROR_URL }}/gnu/mpfr/mpfr-{{ .mpfr_version }}.tar.xz"

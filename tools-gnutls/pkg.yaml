@@ -1,14 +1,14 @@
-name: gnutls
+name: tools-gnutls
 variant: scratch
 dependencies:
   - stage: base
-  - stage: nettle
-  - stage: gmp
+  - stage: tools-nettle
+  - stage: tools-gmp
   - stage: tools-zlib-ng
   - stage: texinfo
   - stage: pkgconf
-  - stage: libtasn1
-  - stage: libunistring
+  - stage: tools-libtasn1
+  - stage: tools-libunistring
 steps:
   - sources:
       - url: https://www.gnupg.org/ftp/gcrypt/gnutls/v{{ regexReplaceAll ".\\d+$" .gnutls_version "${1}" }}/gnutls-{{ .gnutls_version }}.tar.xz

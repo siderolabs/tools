@@ -4,7 +4,7 @@ dependencies:
   - stage: base
   - stage: tools-zlib-ng
   - stage: patch
-  - stage: libffi
+  - stage: tools-libffi
   - stage: tools-openssl
   - stage: pkgconf
 steps:

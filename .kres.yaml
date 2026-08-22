@@ -4,6 +4,19 @@ spec:
   targets:
     - tools
     - llvm
+    - tools-curl
+    - tools-dtc
+    - tools-elfutils
+    - tools-gcc-runtime
+    - tools-gmp
+    - tools-gnutls
+    - tools-libbpf
+    - tools-libffi
+    - tools-libtasn1
+    - tools-libunistring
+    - tools-musl-fts
+    - tools-musl-obstack
+    - tools-nettle
     - tools-ca-certificates
     - tools-cpio
     - tools-kmod

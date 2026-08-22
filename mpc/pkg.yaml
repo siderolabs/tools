@@ -2,7 +2,7 @@ name: mpc
 variant: scratch
 dependencies:
   - stage: base
-  - stage: gmp
+  - stage: tools-gmp
   - stage: mpfr
 steps:
   - sources:
