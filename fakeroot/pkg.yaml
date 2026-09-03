@@ -9,7 +9,7 @@ dependencies:
   - stage: tools-libcap
 steps:
   - sources:
-      - url: https://ftp.debian.org/debian/pool/main/f/fakeroot/fakeroot_{{ .fakeroot_version }}.orig.tar.gz
+      - url: https://snapshot.debian.org/file/8cb51d4e3fab1c967ebc2785aec7b108d06de335/fakeroot_{{ .fakeroot_version }}.orig.tar.gz
         destination: fakeroot.tar.gz
         sha256: "{{ .fakeroot_sha256 }}"
         sha512: "{{ .fakeroot_sha512 }}"
