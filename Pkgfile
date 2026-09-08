@@ -63,9 +63,9 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_21_0
-  curl_sha256: aa1b66a70eace83dc624508745646c08ae561de512ab403adffb93ac87fc72e6
-  curl_sha512: 5f7c646e5a3d4d3d8b8a3675adfa29c266a3148599d510d24f91c82d6ff064bfafce420af01522f8be973019619f3eee5e970398fa79be168b77f697c52bf8e5
+  curl_version: 8_22_0
+  curl_sha256: f7ef3ae8a22e521f289803fe93543eb64c329b58aa73a9e224dfd915a2a5f4f7
+  curl_sha512: d6badf794e7a72760a353db73adb8b671804ce41619b401265b22dc8f6770ebeaa5adb3c4d1312722082c56013612a382884e025cca49397a8ab47577dd659f7
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/diffutils.git
   diffutils_version: 3.12
@@ -88,9 +88,9 @@ vars:
   elfutils_sha512: 02a5c1aaeefb6264dd43c52e78612864a51275becf781c309beb398267e1e12f166fd7190a0d09f16e386a5fd14116dc49d1efe5a59191d22df0f46c19a081f7
 
   # renovate: datasource=github-releases extractVersion=^R_(?<version>.*)$ depName=libexpat/libexpat
-  expat_version: 2_8_3
-  expat_sha256: b4cc2483927d5e90bf8c40b44a6b95b368b42a8a96e25883fce188b48a92b670
-  expat_sha512: 0cf46319fa490b8ed0e9f114471641b037b5c224c4c7d864fd4f840fa239fd2346fd48c228a927d01054f373cb0b06f87d246ba6121f14d0cb4cf124994baae1
+  expat_version: 2_8_4
+  expat_sha256: 963250a823c16a498582b4ad82ad0f88926be0769675d3b6956be4d769a1cd8f
+  expat_sha512: 4d21c0a1753f3828c73e54d6dad26cac0d3285a877f0e2131597335c549607768488d46ec93e51cf475fdece7b19311df7e42cf35551d40d4d69d53b71caa3d2
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/findutils.git
   findutils_version: 4.11.0
@@ -188,9 +188,9 @@ vars:
   libuv_sha512: c23bb26f8fdcf678dbf14bcee9855830927a40b8ae64dfa287ef1e910f37ad30cb868ecdeaad6f7b2bf3f3fccca1a7282a31b22c547206b672f923d0651f5b0c
 
   # renovate: datasource=github-releases extractVersion=^llvmorg-(?<version>.*)$ depName=llvm/llvm-project
-  llvm_version: 22.1.8
-  llvm_sha256: 922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888
-  llvm_sha512: 2615b20ba08534f83ab8ecc7b5ba43b5f1dfcf9cdb2534a32fcdbf0ccdd9a008b46276e45ef26ed9377f65b5e4ae89ea798f3863fd034484b5715140f3a7b35c
+  llvm_version: 23.1.1
+  llvm_sha256: ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6
+  llvm_sha512: e51c45f01e95272771bfee8382b213a2e21d3c62e273ff58967cfe40b87f45d2b37a4797b8b83fab025ed7a0ad32adef48406ade2d049da3d7f1799b30edea39
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/m4.git
   m4_version: 1.4.21
@@ -258,9 +258,9 @@ vars:
   patch_sha512: d689d696660a662753e8660792733c3be0a94c76abfe7a28b0f9f70300c3a42d6437d081553a59bfde6e1b0d5ee13ed89be48d0b00b6da2cadbfc14a15ada603
 
   # renovate: datasource=github-releases extractVersion=^pcre2-(?<version>.*)$ depName=PCRE2Project/pcre2
-  pcre2_version: 10.47
-  pcre2_sha256: 47fe8c99461250d42f89e6e8fdaeba9da057855d06eb7fc08d9ca03fd08d7bc7
-  pcre2_sha512: 889a6fdc80f8a7285e4a75d189c183b4588df81bdf048302cf0830e11bbf9b9eeb387ba43dfd3aff8ffb3aa693291e8c535845c06e8ce92d1028cefa6b474804
+  pcre2_version: 10.48
+  pcre2_sha256: b6c68fdf6f3ac31388b50aa89ff0fc49c00c987c16e7b5146491d12003f2c8ed
+  pcre2_sha512: b350b8bfc909f3ebf9dfe39c535f04cc4618997f0fa025d12b4d92aaaac3c15ae93b6def62ed220eabbe08df9277cda0b80de4eedb7ec7376daf7e6a78a868b8
 
   # perl uses even numbered minor versions for stable releases - https://www.cpan.org/src/README.html
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=Perl/perl5
@@ -269,9 +269,9 @@ vars:
   perl_sha512: 734d00d00678add11544e8f483bf953e61ae391aa6a2bba61ec4e7727275e243cc411525d30e6a73f70ccc0603ebe85bc0c6dd69b0106a6162e21a4595d11075
 
   # renovate: datasource=github-tags extractVersion=^pkgconf-(?<version>.*)$ depName=pkgconf/pkgconf
-  pkgconf_version: 3.0.5
-  pkgconf_sha256: 245d441b9d8f7b74390e060cb9db1a326c26f1b96b1a6c3216b54a5d5439367a
-  pkgconf_sha512: ea462a2e81c904db565542c6071d20f1172cae6376284113853823e5e7951d970d99e93f7648f531f90a4a5ed2f29f4542b4f3319a4f69533b14e6cda35239bc
+  pkgconf_version: 3.0.7
+  pkgconf_sha256: a9ae678879771fcf15247ac2435e7ad8308be8a5921898e6720b3b8949410f73
+  pkgconf_sha512: 2e5d7ab3698320fb4f9fd14d95df0cef1302b7177afa8823c2410a145aeb4e15d2386637cb1bed0d96b994b89349f0572b1540f42187665b8344df9fd71de511
 
   # renovate: datasource=github-tags versioning=python depName=eliben/pyelftools
   pyelftools_version: v0.31
@@ -284,9 +284,9 @@ vars:
   python_sha512: 3d4e2e2f983b320dec47005c408d7178d3656a6de0c4430ce21514797174b972f461200898b25d3dfac2a455019ef87e45d0fb2bb6ec2ca887124d10037a2a07
 
   # renovate: datasource=github-releases versioning=python depName=pypa/build
-  python_build_version: 1.5.1
-  python_build_sha256: 5a2a17d683cc597aa1930b28d824993f8077ce608e14a07c2cfb8c5565ee51b5
-  python_build_sha512: d1ef87a2559ff29c0de4436ca2b9ed4e1f27660f81673afd40318586ff8fee581dc85936a00bf4b1afef8160746c0378a6a99c6c6887d64772450adc8387b2a3
+  python_build_version: 1.6.0
+  python_build_sha256: 68120277ad16ed130d5d9865826d7ebd9560bbc4c25174478cd49fd36e393847
+  python_build_sha512: 42105517da9e685f64cf65da082251a77a8a82048d15f7ac517dd1d80819c4ed9dacbc2ec92ee9561ae276de03c65afd8bb1c7ae03f03748de09af2d3820bcd0
 
   # renovate: datasource=github-tags versioning=python depName=pypa/flit
   python_flit_core_version: 4.0.2
@@ -294,9 +294,9 @@ vars:
   python_flit_core_sha512: 10086861c59047fad5b02b39b527f3e805bf93ea21d66879ce67743ab04fca4021b491963d89590821806c3747baccdc697f953a27ef50f0608eb0519f8a6909
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ versioning=python depName=gentoo/gpep517
-  python_gpep517_version: 20
-  python_gpep517_sha256: b1573c544199af49ea5d75882a4262d84bacd8b37d999bc3ad2577cb5565f479
-  python_gpep517_sha512: 3a8782eb513bb189b6d4d10516a122fa496185960a2970445058030fccde10b841e222cce04ce3bde2c3f1e1186cb8e3f50f44e40be2fd35e7e1b91e937585b0
+  python_gpep517_version: 22
+  python_gpep517_sha256: 2b24ac03c49f4322d88f6deaaef64782006b279bebe9c5605d1cd4b5f1fd702b
+  python_gpep517_sha512: 421a681e7de79ea06fb89920dbe1e2ba58f5dcb8ecd1bb4043dea5415978621b817c212b001a64d3955a1f7b8156b6a845e2b4c64130ebefc155de20701dcbc9
 
   # renovate: datasource=github-tags versioning=python depName=pypa/installer
   python_installer_version: 1.0.1
@@ -358,9 +358,9 @@ vars:
   squashfs_tools_sha512: d24f1c8611dc7dcb17b81f3a34ee8c0d3484141c70ebe7c77c91c966e76cddc671e24d3f4a471ddc819c4708480cdd179168fe2bca8a09e97cebf0da9ef83b1c
 
   # renovate: datasource=github-tags depName=swig/swig
-  swig_version: v4.5.0
-  swig_sha256: eb797b32194d5ed995f571f58839e2307a2e9b2d5cfa6ad1ec7b43f6663dc59a
-  swig_sha512: dca446410ac5c73a0a66e5769942540b0725d83142d051741d5fcb093764dbd3968527f22b1667f881742380bdd570b259d80fcaf0980ea4b9dd3cc4a1f09fd8
+  swig_version: v4.5.1
+  swig_sha256: dd219a0c8947afe63b818892304390427c2ee7f6edfa1a37853d4efd891982be
+  swig_sha512: 30819f102e56d6f7bd4119c090b33ab3040266abbb6982e4f9e16d0ba3dcaeb7c25e3a74e612a9b1ab26f81b8f88531296f95c0f466652d95cd299a7ed87f786
 
   # renovate: datasource=git-tags extractVersion=^release_(?<version>.*)$ depName=git://git.savannah.gnu.org/tar.git
   tar_version: 1_34
