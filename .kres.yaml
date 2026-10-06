@@ -24,6 +24,7 @@ spec:
     - tools-libselinux
     - tools-libsepol
     - tools-openssl
+    - tools-osslsigncode
     - tools-pcre2
     - tools-squashfs-tools
     - tools-tar

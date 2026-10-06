@@ -74,6 +74,7 @@ dependencies:
   - stage: tools-libselinux
   - stage: tools-libsepol
   - stage: tools-openssl
+  - stage: tools-osslsigncode
   - stage: tools-pcre2
   - stage: tools-squashfs-tools
   - stage: tools-tar
