@@ -2,6 +2,7 @@ name: gzip
 variant: scratch
 dependencies:
   - stage: base
+  - stage: patch
 steps:
   - sources:
       - url: "{{ .GNU_MIRROR_URL }}/gnu/gzip/gzip-{{ .gzip_version }}.tar.xz"
@@ -11,6 +12,7 @@ steps:
     prepare:
       - |
         tar -xJf gzip.tar.xz --strip-components=1
+        patch -p1 < /pkg/patches/fix-aarch64-build.patch
         mkdir build
         cd build
         ../configure \
