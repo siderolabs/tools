@@ -243,7 +243,7 @@ vars:
   ninja_sha512: c0b401b4db91a2eea01a474ee979b2c6f1daa97b4c8d1f856871ce5f6d567c4b26d6246bc57e2a5f914329302abcd9c00ab0d4394a25f2ad502b6b00a07903d2
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 3.6.5
+  openssl_version: 4.0.3
   openssl_sha256: a2157c2830efdec3788939b00c9b0638306d3f0bbb76dc4832ee503bb397df98
   openssl_sha512: 1243d8ef75be54d38233251a06609eef1f1f1085999bfd85d509cc298498d2820956465eed7bba094d940f08c0f7cf9c5247eca78bb978d12a3c3ea16f2afa4e
 
@@ -269,7 +269,7 @@ vars:
   perl_sha512: 734d00d00678add11544e8f483bf953e61ae391aa6a2bba61ec4e7727275e243cc411525d30e6a73f70ccc0603ebe85bc0c6dd69b0106a6162e21a4595d11075
 
   # renovate: datasource=github-tags extractVersion=^pkgconf-(?<version>.*)$ depName=pkgconf/pkgconf
-  pkgconf_version: 3.0.7
+  pkgconf_version: 3.0.8
   pkgconf_sha256: a9ae678879771fcf15247ac2435e7ad8308be8a5921898e6720b3b8949410f73
   pkgconf_sha512: 2e5d7ab3698320fb4f9fd14d95df0cef1302b7177afa8823c2410a145aeb4e15d2386637cb1bed0d96b994b89349f0572b1540f42187665b8344df9fd71de511
 
@@ -279,7 +279,7 @@ vars:
   pyelftools_sha512: 7f4ef37da7fda75125cb95ced2f3084848943592eff7deae7ae917508f1cd5281c96960ee3bbc6e503e71a4e2196622cd68cc67e3df1f4cd99b9b675f14fd58c
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.14.8
+  python_version: 3.15.0
   python_sha256: c2215904f02b175596dc49351585104f4bc20341e1c47378b26a2c274360ce73
   python_sha512: f9e6809b0c45d90fcc174b8051e15058a3037981c9136c598d110a118a22cbbb8263fbd677e07b2b9d93e1aa83cd9cb835b61b6af898fd301d1080a29c2156fe
 
