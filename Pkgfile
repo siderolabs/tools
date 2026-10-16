@@ -1,4 +1,4 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.6.4
+# syntax = ghcr.io/siderolabs/bldr:v0.6.5
 
 # Sync bldr image with Makefile
 
@@ -63,7 +63,7 @@ vars:
   cpio_sha512: 1e1ca6b3e3e64f206f9d828a152d6b4f8f6974de7a953ff96e02698b1c3c2c777c2111450e6a71c0693e29ca8bc01c3dda9f5e829b8e3221f647414df49dff6a
 
   # renovate: datasource=github-releases extractVersion=^curl-(?<version>.*)$ depName=curl/curl
-  curl_version: 8_22_0
+  curl_version: 8_23_0
   curl_sha256: f7ef3ae8a22e521f289803fe93543eb64c329b58aa73a9e224dfd915a2a5f4f7
   curl_sha512: d6badf794e7a72760a353db73adb8b671804ce41619b401265b22dc8f6770ebeaa5adb3c4d1312722082c56013612a382884e025cca49397a8ab47577dd659f7
 
@@ -243,7 +243,7 @@ vars:
   ninja_sha512: c0b401b4db91a2eea01a474ee979b2c6f1daa97b4c8d1f856871ce5f6d567c4b26d6246bc57e2a5f914329302abcd9c00ab0d4394a25f2ad502b6b00a07903d2
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 3.6.5
+  openssl_version: 4.0.3
   openssl_sha256: a2157c2830efdec3788939b00c9b0638306d3f0bbb76dc4832ee503bb397df98
   openssl_sha512: 1243d8ef75be54d38233251a06609eef1f1f1085999bfd85d509cc298498d2820956465eed7bba094d940f08c0f7cf9c5247eca78bb978d12a3c3ea16f2afa4e
 
@@ -269,7 +269,7 @@ vars:
   perl_sha512: 734d00d00678add11544e8f483bf953e61ae391aa6a2bba61ec4e7727275e243cc411525d30e6a73f70ccc0603ebe85bc0c6dd69b0106a6162e21a4595d11075
 
   # renovate: datasource=github-tags extractVersion=^pkgconf-(?<version>.*)$ depName=pkgconf/pkgconf
-  pkgconf_version: 3.0.7
+  pkgconf_version: 3.0.9
   pkgconf_sha256: a9ae678879771fcf15247ac2435e7ad8308be8a5921898e6720b3b8949410f73
   pkgconf_sha512: 2e5d7ab3698320fb4f9fd14d95df0cef1302b7177afa8823c2410a145aeb4e15d2386637cb1bed0d96b994b89349f0572b1540f42187665b8344df9fd71de511
 
@@ -279,7 +279,7 @@ vars:
   pyelftools_sha512: 7f4ef37da7fda75125cb95ced2f3084848943592eff7deae7ae917508f1cd5281c96960ee3bbc6e503e71a4e2196622cd68cc67e3df1f4cd99b9b675f14fd58c
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=python/cpython
-  python_version: 3.14.8
+  python_version: 3.15.0
   python_sha256: c2215904f02b175596dc49351585104f4bc20341e1c47378b26a2c274360ce73
   python_sha512: f9e6809b0c45d90fcc174b8051e15058a3037981c9136c598d110a118a22cbbb8263fbd677e07b2b9d93e1aa83cd9cb835b61b6af898fd301d1080a29c2156fe
 
@@ -299,7 +299,7 @@ vars:
   python_gpep517_sha512: f61deb134d4b39a56f6782884b87383fbe864ce0c6c7c2b53c0fe0a17019637f8d37b9c420194ba0cc6ac40dd09bd5b3518a4cabb61331a9da5c53fb2d18c660
 
   # renovate: datasource=github-tags versioning=python depName=pypa/installer
-  python_installer_version: 1.0.1
+  python_installer_version: 1.1.0
   python_installer_sha256: 391b8068eb6b5629496a71e33b948b10c31bea77a12d302034323406ee03ffd1
   python_installer_sha512: 6acd541201c5f2b7dc0ae8b8e6d5137ad4eba4faa575e7ddabb239213f03c758f8de3b5888b329b7782397f36610fc877800fb6f41e4f0ee2789111e5e90cf18
 
