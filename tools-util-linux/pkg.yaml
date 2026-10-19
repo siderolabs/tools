@@ -13,8 +13,6 @@ steps:
     prepare:
       - |
         tar -xJf util-linux.tar.xz --strip-components=1
-
-        patch -p1 < /pkg/patches/fileutils-include.patch
       - |
         mkdir build
         cd build

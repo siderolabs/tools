@@ -5,7 +5,7 @@
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-6-g3d4094f
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-7-g2356ff3
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
@@ -42,7 +42,7 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=repology depName=homebrew/ca-certificates
-  ca_certificates_version: 2026-05-14
+  ca_certificates_version: "2026-05-14"
   ca_certificates_sha256: 86a1f3366afac7c6f8ae9f3c779ac221129328c43f0ab2b8817eb2f362a5025c
   ca_certificates_sha512: 161cb987d3da5aca72083f346c3b51394cfe76d52c263d8c1c611e29944c8798aae054f2ef2f7109e035e3a1e27102d8e6d520cf34f7c5a951c9dbb280b29620
 
@@ -138,9 +138,9 @@ vars:
   grep_sha512: c54b4db5a8b9afe098c088decd94977746305284d716666a60bac82b4edc0fae4acf828970b5b6fc7d58ecd549f638e17e6958f33a71fedcc7d7415b9228b161
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
-  gnutls_version: 3.8.12
-  gnutls_sha256: a7b341421bfd459acf7a374ca4af3b9e06608dcd7bd792b2bf470bea012b8e51
-  gnutls_sha512: 332a8e5200461517c7f08515e3aaab0bec6222747422e33e9e7d25d35613e3d0695a803fce226bd6a83f723054f551328bd99dcf0573e142be777dcf358e1a3b
+  gnutls_version: 3.8.13
+  gnutls_sha256: ffed8ec1bf09c2426d4f14aae377de4753b53e537d685e604e99a8b16ca9c97e
+  gnutls_sha512: 71bf189a836fd18d58b9e995d4bfcecdb0aae6129dfd44247b98422b2f127dd868f9905d28fad2ca05afd919a0e6b3c8eebb6b95804067d3a8dab31ebdc72453
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/gzip.git
   gzip_version: 1.14
@@ -248,9 +248,9 @@ vars:
   ninja_sha512: c0b401b4db91a2eea01a474ee979b2c6f1daa97b4c8d1f856871ce5f6d567c4b26d6246bc57e2a5f914329302abcd9c00ab0d4394a25f2ad502b6b00a07903d2
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 3.6.4
-  openssl_sha256: 9bffaa1ad1e07b354c21bd3324ec02fa15579f45a7d0494b3e74bc449b7333ef
-  openssl_sha512: 9e7f4039082880357969c0857f33b20a6a4306d1b5e4f8fcbd7ec8dc41edc96e87c526a1db0b8259f5000c4ced84149b03547562ce4f9df35194634a7576dac0
+  openssl_version: 3.6.5
+  openssl_sha256: a2157c2830efdec3788939b00c9b0638306d3f0bbb76dc4832ee503bb397df98
+  openssl_sha512: 1243d8ef75be54d38233251a06609eef1f1f1085999bfd85d509cc298498d2820956465eed7bba094d940f08c0f7cf9c5247eca78bb978d12a3c3ea16f2afa4e
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/devel/pahole/pahole.git
   pahole_version: 1.31
@@ -375,14 +375,14 @@ vars:
   texinfo_sha512: fb1a16df67f870e79c31f4b96d8431d9c944eb84e5aa71e9d94890417ce63047918d55620fa63bd582232c47e9b412a6f95a11a2479f53f40e92e49bc018d926
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
-  util_linux_version: 2.42.3
-  util_linux_sha256: 66ac7c0e725278eb2b039e3104f2c91119341d941b41bac7a285c695f940bd57
-  util_linux_sha512: 2a307943d4fbb34ac02131e10ff7260f181dd706b21e68a891d25d6eb30476a612bcc19b674bb2256283c9c716146e0d79909f37324efc9aa9d45a44e0d58988
+  util_linux_version: 2.42.4
+  util_linux_sha256: fbd62a100ab7bb8746ba0661255c3c48185b1e9021507c624da01fbc696330ec
+  util_linux_sha512: 3aea9ebd835b353e0c73356f0e4543ba4c3ad448e4f50a386c35cfaac81cbf45425b1a6c7552ed5673580acf2b58f8af2792f5b3019ffe478edd77c7ebf444dc
 
   # renovate: datasource=github-releases depName=tukaani-project/xz
-  xz_version: v5.8.3
-  xz_sha256: fff1ffcf2b0da84d308a14de513a1aa23d4e9aa3464d17e64b9714bfdd0bbfb6
-  xz_sha512: c288f436b211031ca122e9169d85403d4ab8b0500a6542b2d9ba101587e04a4358ab5509f5d15cc7899f1ab3e0118567866ca0508f880007b4af802dedd7068d
+  xz_version: v5.8.4
+  xz_sha256: 4ce24038fd4221e0d13bc1a2de7a4db56e90b92b3bf75321f6c14be73f65de4b
+  xz_sha512: 6ade85c1bcff651cdb9543d0b9e7d932c50c9a45e362ada3ef5edf173cd6fb18786f24bc73058db37440f3d92d2178a4e24448f725f4f22146c9a63ed15be432
 
   # renovate: datasource=github-releases depName=zlib-ng/zlib-ng
   zlib_ng_version: 2.3.3
