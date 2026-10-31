@@ -48,7 +48,7 @@ vars:
   ca_certificates_sha512: 1d79b49c96037156e55665b48cefaa10bd0eb162b0626bbab1f6c6e7bfc159f1c7d60b37ed2c2d6b715b86a3ad46ab5261058ee10141905f72a6cc8622429316
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.4.4
+  cmake_version: 4.4.5
   cmake_sha256: bd24c30d80a7744ae84b845ff080cc8453b06c622ef01066564108e9cefc44cf
   cmake_sha512: 3928c728b8d89de8277ef7cd535efd4faf1325388ff830fdcfe67fb568a573311cb107e6d551542105c32647f8e8fc7f3b084afba9553915251e108478b1bd63
 
@@ -143,7 +143,7 @@ vars:
   gzip_sha512: 4a2ff92df8a49e1bbcbf65c3a70434660ad02f084d1b453f7dcaa8ee84f248cc4bb06f62bd8e57fea1e05ba1275c7c584ce97a58856e4ca6105f6417c8efbc3c
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
-  kmod_version: 34.2
+  kmod_version: 34.3
   kmod_sha256: 5a5d5073070cc7e0c7a7a3c6ec2a0e1780850c8b47b3e3892226b93ffcb9cb54
   kmod_sha512: 0e095c45ad61a6c61ce1ad61b9aa10cf5040e688b749f9a933b0e7d12de493c58027a5068b459cbbce05576fc564a22b83a3dbef1e6511b2a3e27034c88afd33
 
@@ -243,7 +243,7 @@ vars:
   ninja_sha512: c0b401b4db91a2eea01a474ee979b2c6f1daa97b4c8d1f856871ce5f6d567c4b26d6246bc57e2a5f914329302abcd9c00ab0d4394a25f2ad502b6b00a07903d2
 
   # renovate: datasource=github-releases extractVersion=^openssl-(?<version>.*)$ depName=openssl/openssl
-  openssl_version: 4.0.3
+  openssl_version: 4.1.0
   openssl_sha256: 325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9
   openssl_sha512: cc424e5f8470a47e2c7345e95516a6a0e2a5eee0fe4feef3de3d39b75071b1f42f4a2388d1c8926652bba4082108b7050ddc30b274543b62937c46bdcad3b3c0
 
@@ -289,7 +289,7 @@ vars:
   python_build_sha512: 83a3a49fc92bdd717ad64fe3772489ba72c7f362484e7bb9baf7f5a68a167c876abe1222778691599e40f021c993223b9336437bcfab752d754b110651e2e11b
 
   # renovate: datasource=github-tags versioning=python depName=pypa/flit
-  python_flit_core_version: 4.1.0
+  python_flit_core_version: 4.2.0
   python_flit_core_sha256: 9f0d26ee4d8345e452fb2fb809966eaca4774baef9933e8174894ded0b7141a1
   python_flit_core_sha512: e31f86cb595f6749867da1173f56b9c2563fcb9c3c38cdbc637a511992e7b462f7627571aad3ef1da5cc6c6574448dc69cfeb9a37d3ed7a6ce5537e90dcb5fb9
 
