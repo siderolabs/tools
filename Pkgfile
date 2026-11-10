@@ -18,7 +18,7 @@ vars:
   autoconf_sha512: be051d542f9bd93752eccbdc9b1f3cf1fa4069a153ef34edd5303bfdf162e24d56e33e70df1b978cebb8d1139a82417bb8299cfe6c38cff8613040a829cc624f
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.savannah.gnu.org/automake.git
-  automake_version: 1.19
+  automake_version: 1.20
   automake_sha256: e3e2c2e3abf37898138db5b6c1d1dc35c9160c5978be7947d2c741705251d445
   automake_sha512: 98b0ceb15a1009d72502346cd1f0ca3fbc6c161471d82e184a2cce4907c76a7368146805d3a31fa8990b833b53f662e02b72d00bf8a5d02c767abc238cca5fc3
 
@@ -43,7 +43,7 @@ vars:
   bzip2_sha512: 083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3
 
   # renovate: datasource=custom.ca-certificates extractVersion=^/ca/cacert-(?<version>.+)\.pem$ versioning=regex:^(?<major>\d+)-(?<minor>\d+)-(?<patch>\d+)$ depName=ca-certificates
-  ca_certificates_version: "2026-10-20"
+  ca_certificates_version: "2026-11-05"
   ca_certificates_sha256: 796f1389bfea13c0ed78f663b765baaff54a508e5483786bd6ece73c5e3e3cbe
   ca_certificates_sha512: 1d79b49c96037156e55665b48cefaa10bd0eb162b0626bbab1f6c6e7bfc159f1c7d60b37ed2c2d6b715b86a3ad46ab5261058ee10141905f72a6cc8622429316
 
@@ -98,7 +98,7 @@ vars:
   findutils_sha512: 1b667c5363b599135ceabab6b4b5388dbee6de4e7fa301f5dfefc854473e442fbfe7dda93a28a70505c026987acd375d13169f76d18da49d29c1fb2e09c83fef
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=westes/flex
-  flex_version: 2.6.4
+  flex_version: 2.6.5
   flex_sha256: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
   flex_sha512: e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e
 
@@ -113,7 +113,7 @@ vars:
   gettext_tiny_sha512: e013b6f703bfcee34efac1092283abd8711d303079122a32fdb7bd5cf757451ea010141f10d65dd6e5f5287719dcddf67cb50d7a84c4ec23c001c767a830d533
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=git://git.kernel.org/pub/scm/git/git.git
-  git_version: 2.56.0
+  git_version: 2.56.1
   git_sha256: 26c56c296b38c0695b26fa95f475f1d01704d2d38e73465ca30b0b2f5dc789d3
   git_sha512: d240240aac3ad17fce48861be91dc0cd899c59d3d6014f7e0cc4b3174ef37c4fbfd5b6c4a520a6f5d7e452e5ad97752b40774ab680dc226acc630173475c6b87
 
