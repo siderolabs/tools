@@ -48,7 +48,7 @@ vars:
   ca_certificates_sha512: bc2ee0e972c5ebe9e064f5b85c28445e58192183db4db77316a6d638eed42a4655f861b8ed29e160adcc8d89eb15c962a285bcb1ff002126d67781c16ef43d63
 
   # renovate: datasource=git-tags extractVersion=^v(?<version>.*)$ depName=https://gitlab.kitware.com/cmake/cmake.git
-  cmake_version: 4.4.5
+  cmake_version: 4.5.1
   cmake_sha256: a0c54c88abb8078dd8eccadb717fc6bb194bf18e7d44c86309910288886e04e2
   cmake_sha512: f4b467b78ac097737a7e46aec352e5aa40a6ebee2d422bec6ee02e86d7f2fc2a600aa8d662f2ad641e0fab8dcd015452d23fc40dcab90eba5a1de9cb106be47b
 
@@ -98,12 +98,12 @@ vars:
   findutils_sha512: 1b667c5363b599135ceabab6b4b5388dbee6de4e7fa301f5dfefc854473e442fbfe7dda93a28a70505c026987acd375d13169f76d18da49d29c1fb2e09c83fef
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=westes/flex
-  flex_version: 2.6.4
+  flex_version: 2.7.3
   flex_sha256: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
   flex_sha512: e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e
 
   # renovate: datasource=git-tags extractVersion=^gawk-(?<version>.*)$ depName=git://git.savannah.gnu.org/gawk.git
-  gawk_version: 5.4.1
+  gawk_version: 5.4.2
   gawk_sha256: 07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37
   gawk_sha512: a1e79b71e13ce7d5487f89fb62125ec873dc89e0a3ff37ebdff017fdd6dfd38b1eaa95fedcf773c037ae84c95f0ea0817d53bc1c14b4284568f87606da6aa152
 
@@ -133,7 +133,7 @@ vars:
   grep_sha512: c54b4db5a8b9afe098c088decd94977746305284d716666a60bac82b4edc0fae4acf828970b5b6fc7d58ecd549f638e17e6958f33a71fedcc7d7415b9228b161
 
   # renovate: datasource=git-tags depName=https://gitlab.com/gnutls/gnutls.git
-  gnutls_version: 3.8.13
+  gnutls_version: 3.8.14
   gnutls_sha256: ffed8ec1bf09c2426d4f14aae377de4753b53e537d685e604e99a8b16ca9c97e
   gnutls_sha512: 71bf189a836fd18d58b9e995d4bfcecdb0aae6129dfd44247b98422b2f127dd868f9905d28fad2ca05afd919a0e6b3c8eebb6b95804067d3a8dab31ebdc72453
 
@@ -158,7 +158,7 @@ vars:
   libcap_sha512: a156a8708dd59f13400f701f4e1ddc81f915fe4e7b32f93a328f7d6f030b7a004fb985fa9ac60812dfffeb8ad860d2e1f59895485497350250efd9378682626b
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
-  libffi_version: 3.8.0
+  libffi_version: 3.8.1
   libffi_sha256: 7da3e2d9a171eb0a038f592ecad3ff2bb2550f3496d87b3b29ad0cf4430c0db4
   libffi_sha512: a259d50f40b5dcde9cb6227bd105761e667290f107553b204a5a6cfdfbf2e6b022ed04be2ea4596da42961d11396125425def3cb67e2844a9eba90b6750c8c39
 
@@ -188,7 +188,7 @@ vars:
   libuv_sha512: 8f26c14b016368a8e382539026e1fa3cf187a7cc8bd8b50498a9b26003e9da3e48a89f4d2032694e5f152cd4177386e259b85e8280cf814153ab58950d205014
 
   # renovate: datasource=github-releases extractVersion=^llvmorg-(?<version>.*)$ depName=llvm/llvm-project
-  llvm_version: 23.1.5
+  llvm_version: 23.1.6
   llvm_sha256: fb50b1eac93ddeb3aa8dab4cfe324dff74f4a9c2bdee6160c9e36188f8d06a6e
   llvm_sha512: fae39af451683ad864299f497167616e63d3a1bb5719f0d5123119e7398972cb602aef8cc271b8433910064afa88e1e7b8eede3fdd1ff58664c3189cf4ab5880
 
@@ -269,7 +269,7 @@ vars:
   perl_sha512: 734d00d00678add11544e8f483bf953e61ae391aa6a2bba61ec4e7727275e243cc411525d30e6a73f70ccc0603ebe85bc0c6dd69b0106a6162e21a4595d11075
 
   # renovate: datasource=github-tags extractVersion=^pkgconf-(?<version>.*)$ depName=pkgconf/pkgconf
-  pkgconf_version: 3.0.10
+  pkgconf_version: 3.0.11
   pkgconf_sha256: 11818a25f2730132f3b258ac8be4e82f83b9db03a1a99a6c29cd01b94fc9d310
   pkgconf_sha512: 8680602b31c88dbcfa31cd2c3979b9a00f608422fbe1c0a9cf703e416d8c2e656a8f7b1640ed364d1c0387badf2567267b3fe2e2d6da4ddbdce816560fac0e6a
 
@@ -314,7 +314,7 @@ vars:
   python_markupsafe_sha512: 15b592495b7bd6b90610fe1f8d21d4fef64e987db98b1962a1fb17470740bafabc71aa1bf68b74f0a4d71df13a6a25a2d82165b488370871a0fc66500f835ef9
 
   # renovate: datasource=github-releases versioning=python depName=yaml/pyyaml
-  python_pyyaml_version: 6.0.3
+  python_pyyaml_version: 6.0.4
   python_pyyaml_sha256: c7b45011e052458ae79015d5eea3046c37d099023d4b253dde26ee1c29ea2f36
   python_pyyaml_sha512: a0da43e32d127409ad61b11dc1d733b2e9c743977b3d72c05c81fc2ab183b40bc284452b0874dbeae1a736e1cd4a34f0df641ceefd5e9df38b3e53155fc5f633
 
