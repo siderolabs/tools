@@ -1,11 +1,11 @@
-# syntax = ghcr.io/siderolabs/bldr:v0.5.6
+# syntax = ghcr.io/siderolabs/bldr:v0.5.6-2-g0d638e7
 
 # Sync bldr image with Makefile
 
 format: v1alpha2
 
 vars:
-  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-8-g4a2f0ee
+  TOOLCHAIN_IMAGE: ghcr.io/siderolabs/toolchain:v1.13.0-11-g26f7b90
 
   # renovate: datasource=github-tags depName=argp-standalone/argp-standalone
   argp_standalone_version: 1.5.0
