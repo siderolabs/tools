@@ -98,7 +98,7 @@ vars:
   findutils_sha512: 1b667c5363b599135ceabab6b4b5388dbee6de4e7fa301f5dfefc854473e442fbfe7dda93a28a70505c026987acd375d13169f76d18da49d29c1fb2e09c83fef
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=westes/flex
-  flex_version: 2.7.9
+  flex_version: 2.7.11
   flex_sha256: eda7d158abe845c49956554488a0749a637891124824a77ab16dadbe0ce58eb7
   flex_sha512: 1d22060dcda2557197d18a11c5fbc543d82611353c7f41f9ab986e78c9be8effc4b06a0686f736eb1aca30244979989b960007be16f203f655fde82a34a1a3c7
 
@@ -158,7 +158,7 @@ vars:
   libcap_sha512: a156a8708dd59f13400f701f4e1ddc81f915fe4e7b32f93a328f7d6f030b7a004fb985fa9ac60812dfffeb8ad860d2e1f59895485497350250efd9378682626b
 
   # renovate: datasource=github-tags extractVersion=^v(?<version>.*)$ depName=libffi/libffi
-  libffi_version: 3.8.1
+  libffi_version: 3.8.2
   libffi_sha256: 81e879c094cc5ec3186c48510c6385ac6b3e866192e8bc71a35245703757ee40
   libffi_sha512: 44370f8779765ac83161d927025c8178919ae30feffaad6cdd2b9f95fd8314ca96d2c75d23d102f4af06e55787ec25ebf3cf35cec6ea6881c16e526b27bec0dc
 
